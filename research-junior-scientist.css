@@ -1,0 +1,616 @@
+/* ============================================================
+   USMLE Wise — Junior Scientist Program page
+   Loads after: research-catalyst.css + research-program.css
+   ============================================================ */
+
+/* Hero, breadcrumb, and stats bar reuse the shared rc-hero / rc-stat
+   styles from research-catalyst.css — no page-specific overrides needed. */
+
+/* ---- PROBLEM CARDS ---- */
+.jsp-problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: clamp(36px, 4.5vw, 56px);
+}
+.jsp-problem-card {
+  background: var(--uw-bg);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  padding: clamp(22px, 2.5vw, 32px);
+}
+.jsp-problem-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.jsp-problem-card__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--r-md);
+  background: var(--uw-red-50);
+  color: var(--uw-red-500);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.jsp-problem-card__num {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--uw-red-100);
+  line-height: 1;
+  margin-left: auto;
+}
+.jsp-problem-card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--uw-ink-700);
+  margin: 0;
+}
+@media (max-width: 720px) { .jsp-problem-grid { grid-template-columns: 1fr; } }
+
+/* ---- MENTOR SECTION ---- */
+.jsp-mentor {
+  background: var(--uw-bg);
+  border-top: 1px solid var(--uw-border);
+  border-bottom: 1px solid var(--uw-border);
+}
+.jsp-mentor__grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+.jsp-mentor__photo-col {
+  position: sticky;
+  top: 88px;
+}
+.jsp-mentor__photo {
+  position: relative;
+  border-radius: var(--r-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--uw-border);
+  background: var(--uw-ink-900);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+.jsp-mentor__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.jsp-mentor__photo-mono {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 10vw, 120px);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+}
+.jsp-mentor__name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  margin: 16px 0 2px;
+}
+.jsp-mentor__role {
+  font-size: 13px;
+  color: var(--uw-ink-500);
+  line-height: 1.4;
+}
+.jsp-mentor__tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+.jsp-mentor__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  background: var(--uw-blue-50);
+  color: var(--uw-blue-600);
+  padding: 5px 11px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--uw-blue-100);
+}
+.jsp-mentor__letter {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--uw-ink-700);
+}
+.jsp-mentor__letter p { margin: 0 0 20px; max-width: 54ch; }
+.jsp-mentor__letter p:last-child { margin-bottom: 0; }
+.jsp-mentor__letter strong { color: var(--uw-ink-900); font-weight: 600; }
+.jsp-mentor__pull {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.3vw, 27px);
+  font-weight: 400;
+  line-height: 1.28;
+  color: var(--uw-blue-700);
+  margin: 26px 0 24px !important;
+  max-width: 28ch;
+}
+@media (max-width: 820px) {
+  .jsp-mentor__grid { grid-template-columns: 1fr; }
+  .jsp-mentor__photo-col { position: static; }
+  .jsp-mentor__photo { max-width: 360px; }
+}
+
+/* ---- WHY IT WORKS — wide card modifier ---- */
+.rp-include--wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-8);
+  text-align: left;
+}
+.rp-include--wide .rp-include__icon { flex: none; }
+
+/* ---- CURRICULUM ---- */
+.jsp-curric-section {
+  background: var(--uw-blue-800);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(64px, 8vw, 112px);
+}
+.jsp-curric-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+.jsp-curric-section .msp-eyebrow { color: var(--uw-red-300); }
+.jsp-curric-section .msp-h2 { color: #fff; }
+.jsp-curric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.jsp-curric-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r-md);
+  padding: 14px 18px;
+}
+.jsp-curric-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--uw-success-300);
+  min-width: 28px;
+  flex: none;
+}
+.jsp-curric-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(255,255,255,.1);
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.9);
+  flex: none;
+}
+.jsp-curric-text {
+  font-size: 15px;
+  flex: 1;
+  color: rgba(255,255,255,.9);
+}
+.jsp-curric-period {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: var(--uw-success-300);
+  opacity: 0.85;
+  flex: none;
+}
+@media (max-width: 640px) {
+  .jsp-curric-grid { grid-template-columns: 1fr; }
+  .jsp-curric-period { display: none; }
+}
+
+/* ---- PROJECTS ---- */
+.jsp-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: clamp(36px, 4.5vw, 52px);
+}
+.jsp-proj {
+  background: var(--uw-surface);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  padding: clamp(22px, 2.5vw, 30px);
+  position: relative;
+  overflow: hidden;
+}
+.jsp-proj::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--uw-red-500);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s var(--ease-out);
+}
+.jsp-proj.reveal.is-in::before { transform: scaleY(1); }
+.jsp-proj__tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+.jsp-proj__h {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(17px, 1.8vw, 21px);
+  color: var(--uw-ink-900);
+  margin: 0 0 var(--space-3);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.jsp-proj__p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--uw-ink-600);
+  margin: 0;
+}
+.jsp-proj--wide { grid-column: 1 / -1; }
+@media (max-width: 640px) {
+  .jsp-projects-grid { grid-template-columns: 1fr; }
+  .jsp-proj--wide { grid-column: 1; }
+}
+
+/* ---- COMPARE TABLE ---- */
+.jsp-compare {
+  overflow-x: auto;
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+}
+.jsp-compare table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+  font-size: 14px;
+}
+.jsp-compare th {
+  text-align: left;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--uw-border);
+}
+.jsp-compare .th-feat {
+  background: var(--uw-bg);
+  color: var(--uw-ink-500);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: 26%;
+}
+.jsp-compare .th-us {
+  background: var(--uw-blue-500);
+  color: #fff;
+  width: 40%;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 15px;
+}
+.jsp-compare .th-them {
+  background: var(--uw-bg);
+  color: var(--uw-ink-600);
+  font-weight: 600;
+}
+.jsp-compare td {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--uw-border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.jsp-compare td.feat-c { font-weight: 600; color: var(--uw-ink-900); }
+.jsp-compare td.us-c { color: var(--uw-ink-800); background: rgba(44, 51, 134, .04); }
+.jsp-compare td.them-c { color: var(--uw-ink-600); }
+.jsp-compare tr:last-child td { border-bottom: none; }
+.ck { color: var(--uw-success-500); }
+.xk { color: var(--uw-red-400); }
+.jsp-compare-cards { display: none; flex-direction: column; gap: 14px; }
+@media (max-width: 760px) {
+  .jsp-compare { display: none; }
+  .jsp-compare-cards { display: flex; }
+}
+
+/* ---- DUALITY ---- */
+.jsp-duality-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2.5vw, 28px);
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.jsp-dcol {
+  border-radius: var(--r-xl);
+  padding: clamp(24px, 3vw, 34px);
+}
+.jsp-dcol--bad  { background: var(--uw-red-50);  border: 1px solid var(--uw-red-100); }
+.jsp-dcol--good { background: var(--uw-blue-50); border: 1px solid var(--uw-blue-100); }
+.jsp-dcol__head {
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+.jsp-dcol--bad  .jsp-dcol__head { color: var(--uw-red-600); }
+.jsp-dcol--good .jsp-dcol__head { color: var(--uw-blue-700); }
+.jsp-dcol__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.jsp-dcol__list li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--uw-ink-700);
+}
+.jsp-dcol__list li svg { flex: none; margin-top: 2px; }
+@media (max-width: 640px) { .jsp-duality-grid { grid-template-columns: 1fr; } }
+
+/* ---- TESTIMONIALS MARQUEE ---- */
+.jsp-marquee-section {
+  background: var(--uw-bg);
+  border-top: 1px solid var(--uw-border);
+  border-bottom: 1px solid var(--uw-border);
+  overflow: hidden;
+  padding-block: clamp(56px, 7vw, 96px);
+}
+@keyframes jsp-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.jsp-marq-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  margin-top: clamp(32px, 4vw, 48px);
+  overflow: hidden;
+}
+.jsp-marq-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: jsp-marq 56s linear infinite;
+}
+.jsp-marq-mask:hover .jsp-marq-track { animation-play-state: paused; }
+.jsp-qcard {
+  width: 300px;
+  background: var(--uw-surface);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  padding: 22px;
+  box-shadow: var(--shadow-xs);
+  flex: none;
+}
+.jsp-qcard__stars { color: var(--uw-success-500); font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; }
+.jsp-qcard__text  { font-size: 14.5px; line-height: 1.55; color: var(--uw-ink-800); margin: 0; }
+.jsp-qcard__who {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+  margin-top: var(--space-3);
+}
+@media (prefers-reduced-motion: reduce) { .jsp-marq-track { animation: none; } }
+
+/* ---- GUARANTEE ---- */
+.jsp-guarantee-box {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background: var(--uw-success-50);
+  border: 1px solid var(--uw-success-300);
+  border-radius: var(--r-xl);
+  padding: clamp(20px, 2.5vw, 28px) clamp(22px, 2.8vw, 32px);
+  max-width: 760px;
+  margin-inline: auto;
+}
+.jsp-guarantee-box svg { flex: none; margin-top: 1px; }
+.jsp-guarantee-box p { font-size: 15px; line-height: 1.65; color: var(--uw-ink-700); margin: 0; }
+.jsp-guarantee-box strong { color: var(--uw-ink-900); font-weight: 600; }
+
+/* ---- FAQ (details/summary) ---- */
+.jsp-faq-label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+  display: block;
+  margin: clamp(28px, 3.5vw, 40px) 0 var(--space-3);
+}
+.jsp-faq-label:first-child { margin-top: 0; }
+.jsp-faq details {
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-md);
+  background: var(--uw-surface);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+.jsp-faq details[open] { margin-bottom: var(--space-4); }
+.jsp-faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: 17px 20px;
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--uw-ink-900);
+  line-height: 1.45;
+  transition: background var(--dur-fast);
+}
+.jsp-faq summary:hover { background: var(--uw-ink-75); }
+.jsp-faq summary::-webkit-details-marker { display: none; }
+.summary__sign {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1;
+  color: var(--uw-blue-500);
+  width: 22px;
+  text-align: center;
+  transition: color var(--dur-fast);
+}
+.summary__sign::before { content: '+'; }
+.jsp-faq details[open] .summary__sign { color: var(--uw-red-500); }
+.jsp-faq details[open] .summary__sign::before { content: '−'; }
+.details__ans {
+  padding: 0 20px 18px;
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: var(--uw-ink-600);
+  max-width: 66ch;
+}
+
+/* ---- URGENCY ---- */
+.jsp-urgency {
+  background: var(--uw-blue-800);
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(64px, 8vw, 112px);
+}
+.jsp-urgency::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+.jsp-urgency__inner {
+  position: relative;
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+}
+.jsp-urgency__quote {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.7vw, 30px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0 0 clamp(28px, 3.5vw, 40px);
+}
+.jsp-urgency__quote em { font-style: italic; color: var(--uw-blue-100); }
+
+/* ---- CONTACT ---- */
+.jsp-contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+.jsp-contact__wa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: #25D366;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 22px;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  margin-bottom: var(--space-4);
+  transition: filter var(--dur-fast);
+}
+.jsp-contact__wa:hover { filter: brightness(0.92); color: #fff; }
+.jsp-contact__email { font-size: 14px; color: var(--uw-ink-600); }
+.jsp-contact__email a { color: var(--uw-blue-600); font-weight: 600; }
+.jsp-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--uw-ink-700);
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+}
+.jsp-form input,
+.jsp-form textarea {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: 11px 13px;
+  border: 1px solid var(--uw-border-strong);
+  border-radius: var(--r-md);
+  background: var(--uw-surface);
+  color: var(--uw-ink-900);
+  outline: none;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.jsp-form input:focus,
+.jsp-form textarea:focus {
+  border-color: var(--uw-blue-400);
+  box-shadow: 0 0 0 3px var(--uw-blue-100);
+}
+.jsp-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.jsp-form__note { font-size: 12px; color: var(--uw-ink-400); margin-top: var(--space-3); }
+@media (max-width: 820px) {
+  .jsp-contact-grid { grid-template-columns: 1fr; }
+  .jsp-form-row { grid-template-columns: 1fr; }
+}
+
+/* ---- MOBILE STICKY BAR ---- */
+.jsp-mobile-bar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+  background: rgba(250, 250, 249, 0.94);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--uw-border);
+  box-shadow: 0 -8px 26px rgba(20, 21, 28, .10);
+}
+.jsp-mobile-bar__title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  line-height: 1.15;
+}
+.jsp-mobile-bar__sub {
+  font-size: 11.5px;
+  color: var(--uw-ink-500);
+  margin-top: 1px;
+}
+@media (max-width: 880px) {
+  .jsp-mobile-bar { display: flex; }
+  .msp { padding-bottom: 72px; }
+}
