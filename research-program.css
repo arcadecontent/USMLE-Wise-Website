@@ -1,0 +1,221 @@
+/* ============================================================
+   USMLE Wise — Research Program pages (shared)
+   rp- prefix; loads after research-catalyst.css
+   ============================================================ */
+
+/* ---- HERO ---- */
+.rp-hero {
+  padding-block: clamp(64px, 9vw, 120px);
+  border-bottom: 1px solid var(--uw-border);
+  position: relative;
+  overflow: hidden;
+}
+.rp-hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, oklch(90% 0.06 255 / 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+.rp-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.rp-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.rp-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--uw-blue-600);
+  background: var(--uw-blue-50);
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid oklch(88% 0.08 255);
+  width: fit-content;
+}
+.rp-hero__badge--recorded {
+  color: oklch(52% 0.11 55);
+  background: oklch(97% 0.04 75);
+  border-color: oklch(87% 0.07 65);
+}
+.rp-hero__h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--uw-ink-900);
+  margin: 0;
+  max-width: 20ch;
+}
+.rp-hero__sub {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.65;
+  color: var(--uw-ink-600);
+  max-width: 48ch;
+  margin: 0;
+}
+.rp-hero__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.rp-hero__price {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.rp-hero__format {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+}
+.rp-hero__actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-1);
+}
+
+/* ---- HERO DELIVERABLE CARD ---- */
+.rp-hero__card {
+  background: var(--uw-ink-900);
+  border-radius: var(--r-xl);
+  padding: clamp(24px, 3vw, 36px);
+  position: relative;
+  overflow: hidden;
+}
+.rp-hero__card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, oklch(55% 0.2 255 / 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.rp-hero__card-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 16px;
+  display: block;
+}
+.rp-hero__card-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rp-hero__card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.45;
+}
+.rp-hero__card-item i {
+  flex-shrink: 0;
+  color: oklch(70% 0.18 255);
+  margin-top: 1px;
+}
+.rp-hero__card-divider {
+  height: 1px;
+  background: rgba(255,255,255,.08);
+  margin: 18px 0;
+}
+.rp-hero__card-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,.35);
+  letter-spacing: 0.06em;
+}
+.rp-hero__card-foot i {
+  color: rgba(255,255,255,.25);
+}
+
+/* ---- INCLUDES SECTION ---- */
+.rp-includes {
+  border-bottom: 1px solid var(--uw-border);
+}
+.rp-includes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.rp-include {
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  padding: clamp(20px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.rp-include:hover {
+  box-shadow: 0 4px 16px oklch(50% 0.12 255 / 0.07), 0 2px 6px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+}
+.rp-include__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--uw-blue-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--uw-blue-600);
+  flex-shrink: 0;
+}
+.rp-include__head {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--uw-ink-900);
+  margin: 0;
+}
+.rp-include p {
+  font-size: 13.5px;
+  color: var(--uw-ink-500);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 820px) {
+  .rp-hero__grid { grid-template-columns: 1fr; }
+  .rp-hero__card { display: none; }
+  .rp-includes__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .rp-includes__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>USMLE Wise — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+(function(){
+  var s = localStorage.getItem('uw-theme');
+  var d = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+  if (s === 'dark' || (s === null && d)) document.documentElement.setAttribute('data-theme','dark');
+  window.uwToggleTheme = function() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('uw-theme','light');
+    } else {
+      document.documentElement.setAttribute('data-theme','dark');
+      localStorage.setItem('uw-theme','dark');
+    }
+  };
+})();
+</script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- SVG sprite for icons used throughout the doc -->
+<div class="app">
+
+  <!-- ============== SIDEBAR ============== -->
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <div class="sidebar__brand">
+      <img src="assets/emblem.svg" alt="USMLE Wise emblem" />
+      <div>
+        <div class="sidebar__brand-name">USMLE Wise</div>
+        <div class="sidebar__brand-sub">Design System v1.2</div>
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode" onclick="window.uwToggleTheme()">
+        <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group__label">Foundations</div>
+      <a class="nav-link" href="#brand"><span class="nav-link__num">01</span> Brand Overview</a>
+      <a class="nav-link" href="#personality"><span class="nav-link__num">02</span> Brand Personality</a>
+      <a class="nav-link" href="#logo"><span class="nav-link__num">03</span> Logo System</a>
+      <a class="nav-link" href="#color"><span class="nav-link__num">04</span> Color System</a>
+      <a class="nav-link" href="#type"><span class="nav-link__num">05</span> Typography</a>
+      <a class="nav-link" href="#spacing"><span class="nav-link__num">06</span> Spacing</a>
+      <a class="nav-link" href="#grid"><span class="nav-link__num">07</span> Grid System</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group__label">Components</div>
+      <a class="nav-link" href="#buttons"><span class="nav-link__num">08</span> Buttons</a>
+      <a class="nav-link" href="#forms"><span class="nav-link__num">09</span> Forms &amp; Inputs</a>
+      <a class="nav-link" href="#cards"><span class="nav-link__num">10</span> Cards</a>
+      <a class="nav-link" href="#nav"><span class="nav-link__num">11</span> Navigation</a>
+      <a class="nav-link" href="#dashboard-comp"><span class="nav-link__num">12</span> Dashboard</a>
+      <a class="nav-link" href="#edu"><span class="nav-link__num">13</span> Educational UI</a>
+      <a class="nav-link" href="#progress"><span class="nav-link__num">14</span> Progress Tracking</a>
+      <a class="nav-link" href="#mentors"><span class="nav-link__num">15</span> Mentor Profiles</a>
+      <a class="nav-link" href="#courses"><span class="nav-link__num">16</span> Course Cards</a>
+      <a class="nav-link" href="#testimonials"><span class="nav-link__num">17</span> Testimonials</a>
+      <a class="nav-link" href="#tables"><span class="nav-link__num">18</span> Tables &amp; Data</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group__label">Visual Language</div>
+      <a class="nav-link" href="#icons"><span class="nav-link__num">19</span> Icons &amp; Illustration</a>
+      <a class="nav-link" href="#motion"><span class="nav-link__num">20</span> Motion</a>
+      <a class="nav-link" href="#a11y"><span class="nav-link__num">21</span> Accessibility</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group__label">Patterns</div>
+      <a class="nav-link" href="#landing"><span class="nav-link__num">22</span> Landing Page</a>
+      <a class="nav-link" href="#dashboard"><span class="nav-link__num">23</span> Student Dashboard</a>
+      <a class="nav-link" href="#mobile"><span class="nav-link__num">24</span> Mobile</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group__label">Reference</div>
+      <a class="nav-link" href="#tokens"><span class="nav-link__num">25</span> Design Tokens</a>
+      <a class="nav-link" href="#handoff"><span class="nav-link__num">26</span> Dev Handoff</a>
+    </div>
+  </aside>
+
+  <!-- ============== CONTENT ============== -->
+  <main class="content">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero__meta">
+        <span class="hero__tag hero__tag--dot">Living document · v1.2</span>
+        <span class="hero__tag">Updated May 18, 2026</span>
+      </div>
+      <h1>The visual language behind <em>becoming a&nbsp;doctor</em> in the United States.</h1>
+      <p class="hero__sub">USMLE Wise is a guided pathway from medical student to US physician. This document is the source of truth for our brand, interface, and product — built so every screen feels like a steady hand on the shoulder.</p>
+      <div class="hero__stats">
+        <div>
+          <div class="hero__stat-num">3</div>
+          <div class="hero__stat-label">CORE COLORS</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">26</div>
+          <div class="hero__stat-label">SECTIONS</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">120+</div>
+          <div class="hero__stat-label">TOKENS</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">WCAG&nbsp;AA</div>
+          <div class="hero__stat-label">CONTRAST</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========== 01 · BRAND OVERVIEW =========== -->
+    <section class="section" id="brand">
+      <div class="section__eyebrow">01 — Foundation</div>
+      <h2 class="section__title">Brand Overview</h2>
+      <p class="section__lede">USMLE Wise guides international medical graduates through the USMLE and the Match — the long, ambiguous journey of becoming a US physician. Our brand exists to make that journey feel knowable.</p>
+
+      <div class="grid-2">
+        <div class="card card--flat" style="background: var(--uw-blue-500); color:#fff; border-color:var(--uw-blue-700); padding: var(--space-8);">
+          <div class="card__eyebrow" style="color: rgba(255,255,255,.6);">MISSION</div>
+          <p style="font-family:var(--font-display); font-size: 28px; line-height: 1.15; letter-spacing:-0.015em; margin: 8px 0 0;">To turn the most overwhelming process in medical education into a clear, walkable path — with a mentor at every step.</p>
+        </div>
+        <div class="card" style="padding: var(--space-8);">
+          <div class="card__eyebrow">PROMISES</div>
+          <ul style="list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:10px;"><i data-lucide="check" width="20" height="20"></i><span><b>We know the process.</b> Every step, every form, every deadline.</span></li>
+            <li style="display:flex; gap:10px;"><i data-lucide="check" width="20" height="20"></i><span><b>We know how to get the outcome.</b> Match-ready, residency-bound.</span></li>
+            <li style="display:flex; gap:10px;"><i data-lucide="check" width="20" height="20"></i><span><b>You are not alone.</b> US physician mentors, real students like you.</span></li>
+            <li style="display:flex; gap:10px;"><i data-lucide="check" width="20" height="20"></i><span><b>Beginner or advanced — we will guide you.</b> Meet you where you are.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="h-sub">What we make</h3>
+      <div class="grid-4">
+        <div class="card card--hover"><div class="card__eyebrow">STEP 1 · 2 · 3</div><div class="card__title">USMLE Prep</div><div class="card__body">Structured, physician-led preparation for every step of the exam sequence.</div></div>
+        <div class="card card--hover"><div class="card__eyebrow">RESIDENCY</div><div class="card__title">Match Coaching</div><div class="card__body">Strategy, applications, interview prep, rank-list mentorship through Match Day.</div></div>
+        <div class="card card--hover"><div class="card__eyebrow">A → Z</div><div class="card__title">Pathway Guidance</div><div class="card__body">ECFMG, clinical experience, visas, the full US medical pathway in one place.</div></div>
+        <div class="card card--hover"><div class="card__eyebrow">COMMUNITY</div><div class="card__title">Mentorship</div><div class="card__body">1:1 mentor matching, cohort study groups, and an active student community.</div></div>
+      </div>
+    </section>
+
+    <!-- =========== 02 · PERSONALITY =========== -->
+    <section class="section" id="personality">
+      <div class="section__eyebrow">02 — Foundation</div>
+      <h2 class="section__title">Brand Personality</h2>
+      <p class="section__lede">Calm confidence. We are the senior physician sitting across the desk who has done this 100 times before — patient, prepared, and certain you'll get there.</p>
+
+      <h3 class="h-sub h-sub--first">Voice attributes</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+        <div class="card card--accent" style="grid-column: span 2; display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-8);">
+          <div class="card__eyebrow" style="color: rgba(255,255,255,.55);">DEFINING TRAIT</div>
+          <div class="card__title" style="color: #fff; font-family: var(--font-display); font-size: 22px; font-weight: 400; letter-spacing: -0.015em;">Certain &amp; Competent</div>
+          <div class="card__body" style="color: rgba(255,255,255,.82); max-width: 52ch;">We speak with the authority of physicians who have actually walked this path. No hedging on what matters — but no arrogance about what doesn't.</div>
+        </div>
+        <div class="card"><div class="card__title">Friendly &amp; Welcoming</div><div class="card__body">Medicine is intimidating enough. We greet students the way a good attending greets a new resident.</div></div>
+        <div class="card"><div class="card__title">Clear &amp; Structured</div><div class="card__body">No jargon for jargon's sake. We turn ambiguity into checklists, milestones, and next steps.</div></div>
+        <div class="card"><div class="card__title">Human &amp; Calm</div><div class="card__body">We never amplify anxiety. The tone is measured, encouraging, never urgent without reason.</div></div>
+        <div class="card"><div class="card__title">Academic &amp; Precise</div><div class="card__body">When we talk about content, we are exact. Sources cited, ranges given, edge cases noted.</div></div>
+        <div class="callout callout--success" style="grid-column: span 2; font-size: 14px;">
+          <b>Motivational &amp; Patient</b>Progress over pressure. We celebrate effort and stamina, not just scores. A student who needed two attempts is not a failure — they are a physician who learned to persist.
+        </div>
+      </div>
+
+      <h3 class="h-sub">Voice — do &amp; don't</h3>
+      <div class="grid-2">
+        <div class="callout callout--success">
+          <b>Do · "We know the process."</b>
+          "Step&nbsp;1 is changing in 2027. Here's what stays the same and what your study plan should adjust — we'll walk through it together."
+        </div>
+        <div class="callout callout--red">
+          <b>Don't · "We're disruptive."</b>
+          "Crush Step&nbsp;1 with our AI-powered next-gen revolutionary platform 🚀 — students are LOVING it!!!"
+        </div>
+      </div>
+
+      <h3 class="h-sub">Audience snapshot</h3>
+      <div class="grid-3">
+        <div class="card"><div class="card__eyebrow">PRIMARY</div><div class="card__title">The IMG</div><div class="card__body">International medical graduate, ages 23–32, often outside the US, balancing study with work, family, visa timelines. Overwhelmed by ambiguity more than by content.</div></div>
+        <div class="card"><div class="card__eyebrow">SECONDARY</div><div class="card__title">US MD/DO Students</div><div class="card__body">Domestic students seeking sharper Step prep and Match strategy. Time-poor, score-anxious, evidence-driven.</div></div>
+        <div class="card"><div class="card__eyebrow">INFLUENCERS</div><div class="card__title">Mentors &amp; Family</div><div class="card__body">US physician mentors who teach on platform; parents and partners researching options on behalf of students.</div></div>
+      </div>
+    </section>
+
+    <!-- =========== 03 · LOGO =========== -->
+    <section class="section" id="logo">
+      <div class="section__eyebrow">03 — Foundation</div>
+      <h2 class="section__title">Logo System</h2>
+      <p class="section__lede">The emblem is the foundation: a US physician inside the circle of our colors. The wordmark pairs a confident geometric sans (USMLE) with an editorial italic serif (Wise) — competence meeting wisdom.</p>
+
+      <h3 class="h-sub h-sub--first">Primary lockup — horizontal</h3>
+      <div class="logo-frame">
+        <div class="lockup">
+          <img src="assets/emblem.svg" alt="USMLE Wise emblem" />
+          <div class="wordmark">
+            <div class="wordmark__main">
+              <span class="wordmark__usmle">USMLE</span>
+              <span class="wordmark__wise">Wise</span>
+            </div>
+          </div>
+        </div>
+        <div class="logo-frame__caption">Primary · Light</div>
+      </div>
+
+      <h3 class="h-sub">Variants</h3>
+      <div class="grid-2">
+        <div class="logo-frame">
+          <div class="lockup lockup--stacked">
+            <img src="assets/emblem.svg" alt="USMLE Wise emblem stacked" />
+            <div class="wordmark">
+              <div class="wordmark__main">
+                <span class="wordmark__usmle">USMLE</span>
+                <span class="wordmark__wise">Wise</span>
+              </div>            </div>
+          </div>
+          <div class="logo-frame__caption">Stacked · for square placements</div>
+        </div>
+
+        <div class="logo-frame logo-frame--dark">
+          <div class="lockup">
+            <img src="assets/emblem.svg" alt="USMLE Wise emblem dark" />
+            <div class="wordmark">
+              <div class="wordmark__main">
+                <span class="wordmark__usmle" style="color:#fff;">USMLE</span>
+                <span class="wordmark__wise" style="color:#fff;">Wise</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-frame__caption">Dark mode</div>
+        </div>
+
+        <div class="logo-frame logo-frame--blue">
+          <div class="lockup">
+            <img src="assets/emblem.svg" alt="USMLE Wise emblem on blue" style="filter: brightness(0) invert(1);" />
+            <div class="wordmark">
+              <div class="wordmark__main">
+                <span class="wordmark__usmle" style="color:#fff;">USMLE</span>
+                <span class="wordmark__wise" style="color:#fff;">Wise</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-frame__caption">On brand blue · monochrome</div>
+        </div>
+
+        <div class="logo-frame logo-frame--red">
+          <div class="lockup">
+            <img src="assets/emblem.svg" alt="USMLE Wise emblem on red" style="filter: brightness(0) invert(1);" />
+            <div class="wordmark">
+              <div class="wordmark__main">
+                <span class="wordmark__usmle" style="color:#fff;">USMLE</span>
+                <span class="wordmark__wise" style="color:#fff;">Wise</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-frame__caption">On brand red · monochrome</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Clearspace</h3>
+      <p class="note">Minimum clear space equals the height of the lowercase <code class="inline">e</code> in the wordmark on all four sides. Never place type or imagery inside this zone.</p>
+      <div class="logo-frame logo-frame--clearspace">
+        <div class="cs-canvas">
+          <div class="cs-inner">
+            <div class="cs-v"></div>
+            <span class="cs-x t">1×</span>
+            <span class="cs-x b">1×</span>
+            <span class="cs-x l">1×</span>
+            <span class="cs-x r">1×</span>
+            <img src="assets/emblem.svg" alt="" style="width:44px; height:44px;" />
+            <div class="wordmark">
+              <div class="wordmark__main"><span class="wordmark__usmle">USMLE</span><span class="wordmark__wise">Wise</span></div>            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Sizing</h3>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Context</th><th>Minimum emblem</th><th>Minimum wordmark</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>App navigation</td><td>24 px</td><td>—</td><td>Emblem only acceptable</td></tr>
+            <tr><td>Marketing nav</td><td>32 px</td><td>120 px wide</td><td>Always with wordmark</td></tr>
+            <tr><td>Hero / Landing</td><td>56 px</td><td>240 px wide</td><td>Use stacked when centered</td></tr>
+            <tr><td>Print &amp; signage</td><td>0.5 in</td><td>1.25 in wide</td><td>Reproduce in vector only</td></tr>
+            <tr><td>Favicon / social</td><td>16 px / 512 px square</td><td>—</td><td>Emblem only, white circle preserved</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="h-sub">Misuse</h3>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card__eyebrow" style="color: var(--uw-red-500);">DO NOT STRETCH</div>
+          <div style="height: 100px; background: var(--uw-ink-75); border-radius: 6px; display: grid; place-items: center; margin-top: 12px;">
+            <img src="assets/emblem.svg" alt="" style="width: 120px; height: 50px;" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__eyebrow" style="color: var(--uw-red-500);">DO NOT RECOLOR</div>
+          <div style="height: 100px; background: var(--uw-ink-75); border-radius: 6px; display: grid; place-items: center; margin-top: 12px;">
+            <img src="assets/emblem.svg" alt="" style="width: 60px; height: 60px; filter: hue-rotate(90deg) saturate(1.5);" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__eyebrow" style="color: var(--uw-red-500);">DO NOT ROTATE</div>
+          <div style="height: 100px; background: var(--uw-ink-75); border-radius: 6px; display: grid; place-items: center; margin-top: 12px;">
+            <img src="assets/emblem.svg" alt="" style="width: 60px; height: 60px; transform: rotate(18deg);" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 04 · COLOR =========== -->
+    <section class="section" id="color">
+      <div class="section__eyebrow">04 — Foundation</div>
+      <h2 class="section__title">Color System</h2>
+      <p class="section__lede">Three colors anchor everything: the emblem blue, the emblem red, and white. Every additional color is a tint or shade of those — or a calm neutral that gets out of their way.</p>
+
+      <h3 class="h-sub h-sub--first">Brand core</h3>
+      <div class="grid-3">
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--uw-blue-500);"></div>
+          <div class="swatch__info">
+            <div class="swatch__name">USMLE Blue <span class="swatch__hex">#2C3386</span></div>
+            <div style="font-size: 12px; color: var(--uw-ink-500);">Primary brand · trust, stability, intelligence. Surfaces, headers, links.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--uw-red-500);"></div>
+          <div class="swatch__info">
+            <div class="swatch__name">Wise Red <span class="swatch__hex">#E32124</span></div>
+            <div style="font-size: 12px; color: var(--uw-ink-500);">Accent · energy, action, momentum. CTAs &amp; key moments only.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__color swatch__color--check" style="background: #fff;"></div>
+          <div class="swatch__info">
+            <div class="swatch__name">Paper White <span class="swatch__hex">#FFFFFF</span></div>
+            <div style="font-size: 12px; color: var(--uw-ink-500);">Pure white. Cards, modals. Page bg uses warmer #FAFAF9.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">USMLE Blue · 10-step scale</h3>
+      <div class="scale">
+        <div class="scale__step" style="background: var(--uw-blue-50);">50</div>
+        <div class="scale__step" style="background: var(--uw-blue-100);">100</div>
+        <div class="scale__step" style="background: var(--uw-blue-200);">200</div>
+        <div class="scale__step" style="background: var(--uw-blue-300);">300</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-400);">400</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-500);">500</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-600);">600</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-700);">700</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-800);">800</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-900);">900</div>
+      </div>
+
+      <h3 class="h-sub">Wise Red · 8-step scale</h3>
+      <div class="scale" style="grid-template-columns: repeat(8, 1fr);">
+        <div class="scale__step" style="background: var(--uw-red-50);">50</div>
+        <div class="scale__step" style="background: var(--uw-red-100);">100</div>
+        <div class="scale__step" style="background: var(--uw-red-200);">200</div>
+        <div class="scale__step" style="background: var(--uw-red-300);">300</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-red-400);">400</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-red-500);">500</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-red-600);">600</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-red-700);">700</div>
+      </div>
+
+      <h3 class="h-sub">Neutral Ink · for type, borders, surfaces</h3>
+      <div class="scale" style="grid-template-columns: repeat(10, 1fr);">
+        <div class="scale__step" style="background: var(--uw-ink-50);">50</div>
+        <div class="scale__step" style="background: var(--uw-ink-75);">75</div>
+        <div class="scale__step" style="background: var(--uw-ink-100);">100</div>
+        <div class="scale__step" style="background: var(--uw-ink-200);">200</div>
+        <div class="scale__step" style="background: var(--uw-ink-300);">300</div>
+        <div class="scale__step" style="background: var(--uw-ink-400);">400</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-ink-500);">500</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-ink-600);">600</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-ink-700);">700</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-ink-900);">900</div>
+      </div>
+
+      <h3 class="h-sub">Semantic</h3>
+      <div class="grid-4">
+        <div class="swatch"><div class="swatch__color" style="background: var(--uw-success-500);"></div><div class="swatch__info"><div class="swatch__name">Success <span class="swatch__hex">#2F8A5A</span></div><div style="font-size: 12px; color: var(--uw-ink-500);">Milestones, passing scores</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background: var(--uw-warning-500);"></div><div class="swatch__info"><div class="swatch__name">Warning <span class="swatch__hex">#C98A14</span></div><div style="font-size: 12px; color: var(--uw-ink-500);">Deadlines, schedule risks</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background: var(--uw-info-500);"></div><div class="swatch__info"><div class="swatch__name">Info <span class="swatch__hex">#3A5FC0</span></div><div style="font-size: 12px; color: var(--uw-ink-500);">Tips, neutral notices</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background: var(--uw-danger-500);"></div><div class="swatch__info"><div class="swatch__name">Danger <span class="swatch__hex">#B91C1C</span></div><div style="font-size: 12px; color: var(--uw-ink-500);">Errors, destructive actions. Distinct from Wise Red (CTAs).</div></div></div>
+      </div>
+
+      <h3 class="h-sub">Color usage rules</h3>
+      <div class="grid-2">
+        <div class="callout"><b>The 60·30·10 rule</b>60% neutral surfaces (white, paper, ink-75) · 30% USMLE Blue for structure and trust · 10% Wise Red exclusively for CTAs and energy moments.</div>
+        <div class="callout callout--red"><b>Red is precious</b>Never use Wise Red as a large background, body text color, or for routine UI chrome. Reserve it for primary CTAs, key statistics, and one accent moment per screen.</div>
+        <div class="callout callout--success" style="grid-column: span 2;"><b>CTA red ≠ Danger red</b>Wise Red (#E32124) is for action — buttons, conversion moments, energy. Danger (#B91C1C) is for errors, destructive states, and alerts. Using the same color for both trains users to distrust the interface. Never share a hex between these two roles.</div>
+      </div>
+    </section>
+
+    <!-- =========== 05 · TYPOGRAPHY =========== -->
+    <section class="section" id="type">
+      <div class="section__eyebrow">05 — Foundation</div>
+      <h2 class="section__title">Typography</h2>
+      <p class="section__lede">A two-family system: <b>Geist</b> for everything functional — UI, body, data — and <b>Source Serif 4</b> for moments that should feel human, warm, and earned. JetBrains Mono for code and tokens.</p>
+
+      <div class="specimen">
+        <div class="specimen__big">USMLE <em>Wise</em></div>
+        <div class="specimen__meta">
+          <div><b>Display</b>Source Serif 4</div>
+          <div><b>Sans</b>Geist · 300–700</div>
+          <div><b>Mono</b>JetBrains Mono</div>
+          <div><b>Languages</b>Latin Extended</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Display scale — Source Serif 4</h3>
+      <div>
+        <div class="type-row"><div class="type-row__label">Display XL</div><div class="type-display" style="font-size: 84px;">Calm Confidence</div><div class="type-row__meta">84/88 · -0.02em</div></div>
+        <div class="type-row"><div class="type-row__label">Display L</div><div class="type-display" style="font-size: 64px;">Become a doctor.</div><div class="type-row__meta">64/68 · -0.02em</div></div>
+        <div class="type-row"><div class="type-row__label">Display M</div><div class="type-display" style="font-size: 48px;">Section header</div><div class="type-row__meta">48/52 · -0.015em</div></div>
+        <div class="type-row"><div class="type-row__label">Display S</div><div class="type-display" style="font-size: 36px;">Card title</div><div class="type-row__meta">36/40 · -0.015em</div></div>
+      </div>
+
+      <h3 class="h-sub">UI scale — Geist</h3>
+      <div>
+        <div class="type-row"><div class="type-row__label">H1</div><div class="type-sans" style="font-size: 28px; font-weight: 600;">The next step is clear.</div><div class="type-row__meta">28/34 · 600</div></div>
+        <div class="type-row"><div class="type-row__label">H2</div><div class="type-sans" style="font-size: 22px; font-weight: 600;">Step 2 CK Strategy</div><div class="type-row__meta">22/28 · 600</div></div>
+        <div class="type-row"><div class="type-row__label">H3</div><div class="type-sans" style="font-size: 18px; font-weight: 600;">Pulmonary Physiology</div><div class="type-row__meta">18/26 · 600</div></div>
+        <div class="type-row"><div class="type-row__label">Body L</div><div class="type-sans" style="font-size: 16px;">For students aiming at competitive specialties, the calculus is different — we build a plan around your target program list.</div><div class="type-row__meta">16/26 · 400</div></div>
+        <div class="type-row"><div class="type-row__label">Body</div><div class="type-sans" style="font-size: 15px;">Two attempts at Step&nbsp;1 are common. Your mentor will help recalibrate.</div><div class="type-row__meta">15/23 · 400</div></div>
+        <div class="type-row"><div class="type-row__label">Caption</div><div class="type-sans" style="font-size: 13px; color: var(--uw-ink-500);">Updated 2 hours ago by Dr. Anika Rao, MD</div><div class="type-row__meta">13/18 · 400</div></div>
+        <div class="type-row"><div class="type-row__label">Overline</div><div class="type-sans" style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-mono);">SECTION · 03</div><div class="type-row__meta">11/14 · mono</div></div>
+      </div>
+
+      <h3 class="h-sub">Line-height scale</h3>
+      <div>
+        <div class="type-row"><div class="type-row__label">lh-tight</div><div style="font-family:var(--font-sans); font-size:15px; line-height:1.1; color:var(--uw-ink-900);">The long road to<br/>residency match.</div><div class="type-row__meta">1.1 · Display headings</div></div>
+        <div class="type-row"><div class="type-row__label">lh-snug</div><div style="font-family:var(--font-sans); font-size:15px; line-height:1.25; color:var(--uw-ink-900);">The long road to<br/>residency match.</div><div class="type-row__meta">1.25 · Subheadings, UI</div></div>
+        <div class="type-row"><div class="type-row__label">lh-base</div><div style="font-family:var(--font-sans); font-size:15px; line-height:1.55; color:var(--uw-ink-900);">The long road to<br/>residency match.</div><div class="type-row__meta">1.55 · Body copy</div></div>
+        <div class="type-row"><div class="type-row__label">lh-loose</div><div style="font-family:var(--font-sans); font-size:15px; line-height:1.75; color:var(--uw-ink-900);">The long road to<br/>residency match.</div><div class="type-row__meta">1.75 · Small text, captions</div></div>
+      </div>
+
+      <h3 class="h-sub">Type pairings in practice</h3>
+      <div class="demo demo--canvas">
+        <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--uw-red-500); margin: 0 0 8px;">Step 2 CK · Week 4</p>
+        <h2 style="font-family:var(--font-display); font-weight:400; font-size: 48px; letter-spacing:-0.015em; margin: 0 0 16px; color: var(--uw-ink-900);">Internal medicine, condensed.</h2>
+        <p style="font-family: var(--font-sans); font-size: 17px; line-height: 1.55; color: var(--uw-ink-600); max-width: 56ch; margin:0;">Five hundred high-yield cards, organized by organ system. Dr. Patel walks you through the patterns that show up on every exam.</p>
+      </div>
+    </section>
+
+    <!-- =========== 06 · SPACING =========== -->
+    <section class="section" id="spacing">
+      <div class="section__eyebrow">06 — Foundation</div>
+      <h2 class="section__title">Spacing</h2>
+      <p class="section__lede">Everything in the interface sits on a 4&nbsp;px base grid. Eight named tokens cover every space we need, from 4&nbsp;px gutters between badges to 96&nbsp;px section breathers.</p>
+
+      <div class="grid-2">
+        <div>
+          <h3 class="h-sub h-sub--first">Scale</h3>
+          <div>
+            <div class="spacing-row"><span class="spacing-row__token">space-1</span><div class="spacing-row__bar" style="width: 4px;"></div><span class="spacing-row__val">4 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-2</span><div class="spacing-row__bar" style="width: 8px;"></div><span class="spacing-row__val">8 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-3</span><div class="spacing-row__bar" style="width: 12px;"></div><span class="spacing-row__val">12 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-4</span><div class="spacing-row__bar" style="width: 16px;"></div><span class="spacing-row__val">16 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-5</span><div class="spacing-row__bar" style="width: 20px;"></div><span class="spacing-row__val">20 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-6</span><div class="spacing-row__bar" style="width: 24px;"></div><span class="spacing-row__val">24 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-8</span><div class="spacing-row__bar" style="width: 32px;"></div><span class="spacing-row__val">32 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-10</span><div class="spacing-row__bar" style="width: 40px;"></div><span class="spacing-row__val">40 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-12</span><div class="spacing-row__bar" style="width: 48px;"></div><span class="spacing-row__val">48 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-16</span><div class="spacing-row__bar" style="width: 64px;"></div><span class="spacing-row__val">64 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-20</span><div class="spacing-row__bar" style="width: 80px;"></div><span class="spacing-row__val">80 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-24</span><div class="spacing-row__bar" style="width: 96px;"></div><span class="spacing-row__val">96 px</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="h-sub h-sub--first">Density rules</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="card"><div class="card__title">Inline (4–8 px)</div><div class="card__body">Between an icon and its label, between badges in a row, between a value and its unit.</div></div>
+            <div class="card"><div class="card__title">Component (12–24 px)</div><div class="card__body">Card padding, button padding, gaps between siblings in a flex row.</div></div>
+            <div class="card"><div class="card__title">Block (32–48 px)</div><div class="card__body">Vertical rhythm between content blocks, hero internal padding, dashboard widget gaps.</div></div>
+            <div class="card"><div class="card__title">Section (64–96 px)</div><div class="card__body">Page-level breathers. Always 96 px between top-level marketing sections.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Radius &amp; elevation</h3>
+      <div class="grid-4">
+        <div class="card" style="text-align:center;"><div style="height:60px; background: var(--uw-blue-500); border-radius: 4px; margin-bottom: 12px;"></div><div style="font-family:var(--font-mono); font-size:11px; color:var(--uw-ink-500);">r-xs · 4 px</div><div style="font-size:12px; color:var(--uw-ink-500); margin-top:2px;">Inputs, tags</div></div>
+        <div class="card" style="text-align:center;"><div style="height:60px; background: var(--uw-blue-500); border-radius: 8px; margin-bottom: 12px;"></div><div style="font-family:var(--font-mono); font-size:11px; color:var(--uw-ink-500);">r-md · 8 px</div><div style="font-size:12px; color:var(--uw-ink-500); margin-top:2px;">Buttons, fields</div></div>
+        <div class="card" style="text-align:center;"><div style="height:60px; background: var(--uw-blue-500); border-radius: 12px; margin-bottom: 12px;"></div><div style="font-family:var(--font-mono); font-size:11px; color:var(--uw-ink-500);">r-lg · 12 px</div><div style="font-size:12px; color:var(--uw-ink-500); margin-top:2px;">Cards, modals</div></div>
+        <div class="card" style="text-align:center;"><div style="height:60px; background: var(--uw-blue-500); border-radius: 999px; margin-bottom: 12px;"></div><div style="font-family:var(--font-mono); font-size:11px; color:var(--uw-ink-500);">r-pill · 999 px</div><div style="font-size:12px; color:var(--uw-ink-500); margin-top:2px;">Badges, avatars</div></div>
+      </div>
+
+      <h3 class="h-sub">Shadow elevation</h3>
+      <div class="grid-4">
+        <div class="shadow-tile" style="box-shadow: var(--shadow-xs);"><div class="shadow-tile__name">shadow-xs</div><div class="shadow-tile__val">resting</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-sm);"><div class="shadow-tile__name">shadow-sm</div><div class="shadow-tile__val">card / button</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-md);"><div class="shadow-tile__name">shadow-md</div><div class="shadow-tile__val">hover / dropdown</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-lg);"><div class="shadow-tile__name">shadow-lg</div><div class="shadow-tile__val">modal / popover</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-xl);"><div class="shadow-tile__name">shadow-xl</div><div class="shadow-tile__val">hero panels · featured cards</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-blue);"><div class="shadow-tile__name">shadow-blue</div><div class="shadow-tile__val">primary CTA · blue surfaces</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-red);"><div class="shadow-tile__name">shadow-red</div><div class="shadow-tile__val">btn--primary hover state</div></div>
+      </div>
+    </section>
+
+    <!-- =========== 07 · GRID =========== -->
+    <section class="section" id="grid">
+      <div class="section__eyebrow">07 — Foundation</div>
+      <h2 class="section__title">Grid System</h2>
+      <p class="section__lede">A 12-column responsive grid with 16&nbsp;px gutters. Marketing pages use the full 1200&nbsp;px canvas; product pages use the 1080&nbsp;px reading column with a fixed 240&nbsp;px navigation rail.</p>
+
+      <h3 class="h-sub h-sub--first">12-column grid</h3>
+      <div class="grid-demo">
+        <div class="grid-demo__col">1</div><div class="grid-demo__col">2</div><div class="grid-demo__col">3</div>
+        <div class="grid-demo__col">4</div><div class="grid-demo__col">5</div><div class="grid-demo__col">6</div>
+        <div class="grid-demo__col">7</div><div class="grid-demo__col">8</div><div class="grid-demo__col">9</div>
+        <div class="grid-demo__col">10</div><div class="grid-demo__col">11</div><div class="grid-demo__col">12</div>
+      </div>
+
+      <h3 class="h-sub">Breakpoints</h3>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Token</th><th>Min width</th><th>Columns</th><th>Gutter</th><th>Margin</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td><code class="inline">xs</code></td><td>0</td><td>4</td><td>12 px</td><td>16 px</td><td>Phones</td></tr>
+            <tr><td><code class="inline">sm</code></td><td>640 px</td><td>8</td><td>16 px</td><td>24 px</td><td>Large phones, small tablets</td></tr>
+            <tr><td><code class="inline">md</code></td><td>900 px</td><td>12</td><td>16 px</td><td>32 px</td><td>Tablets, small laptops</td></tr>
+            <tr><td><code class="inline">lg</code></td><td>1200 px</td><td>12</td><td>24 px</td><td>48 px</td><td>Laptops, marketing canvas</td></tr>
+            <tr><td><code class="inline">xl</code></td><td>1440 px</td><td>12</td><td>24 px</td><td>auto</td><td>Desktop</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="h-sub">Layout templates</h3>
+      <div class="grid-3">
+        <div class="card"><div class="card__title">Marketing</div><div style="display:flex; gap:6px; margin: 12px 0;"><div style="flex:1; height:80px; background:var(--uw-blue-50); border-radius:4px;"></div></div><div class="card__body">Full-width 1200 px canvas, 12 cols, generous vertical rhythm.</div></div>
+        <div class="card"><div class="card__title">Product</div><div style="display:flex; gap:6px; margin: 12px 0;"><div style="width:60px; height:80px; background:var(--uw-blue-500); border-radius:4px;"></div><div style="flex:1; height:80px; background:var(--uw-blue-50); border-radius:4px;"></div></div><div class="card__body">Left rail nav (240 px) + reading column (max 1080 px).</div></div>
+        <div class="card"><div class="card__title">Dashboard</div><div style="display:flex; gap:6px; margin: 12px 0;"><div style="width:50px; height:80px; background:var(--uw-blue-500); border-radius:4px;"></div><div style="flex:2; height:80px; background:var(--uw-blue-50); border-radius:4px;"></div><div style="flex:1; height:80px; background:var(--uw-blue-100); border-radius:4px;"></div></div><div class="card__body">Sidebar + main canvas + utility panel (3-pane).</div></div>
+      </div>
+    </section>
+
+    <!-- =========== 08 · BUTTONS =========== -->
+    <section class="section" id="buttons">
+      <div class="section__eyebrow">08 — Components</div>
+      <h2 class="section__title">Buttons</h2>
+      <p class="section__lede">Buttons signal what we want students to do next. Primary is Wise Red — reserved for the single most important action on a screen. Secondary is brand blue. Outline and ghost handle everything else.</p>
+
+      <h3 class="h-sub h-sub--first">Hierarchy</h3>
+      <div class="demo">
+        <div class="row row--wrap" style="align-items:center;">
+          <button class="btn btn--primary btn--lg">Start your USMLE plan <i data-lucide="arrow-right" class="ic-arrow"></i></button>
+          <button class="btn btn--secondary btn--lg">Talk to a mentor</button>
+          <button class="btn btn--outline btn--lg">Explore curriculum</button>
+          <button class="btn btn--ghost btn--lg">Learn more</button>
+          <a class="btn btn--link" href="#">Read the syllabus →</a>
+        </div>
+        <div class="caption"><span>Use one primary per screen. Pair with at most one secondary.</span><code>btn--primary</code></div>
+      </div>
+
+      <h3 class="h-sub">Sizes</h3>
+      <div class="demo">
+        <div class="row row--wrap" style="align-items:center;">
+          <button class="btn btn--primary btn--xl">Extra Large</button>
+          <button class="btn btn--primary btn--lg">Large</button>
+          <button class="btn btn--primary">Default</button>
+          <button class="btn btn--primary btn--sm">Small</button>
+          <button class="btn btn--primary btn--xs">XSmall</button>
+        </div>
+      </div>
+
+      <h3 class="h-sub">States</h3>
+      <div class="grid-4">
+        <div class="demo" style="padding: 20px; text-align: center;"><button class="btn btn--primary">Default</button><div class="caption" style="justify-content:center;">Rest</div></div>
+        <div class="demo" style="padding: 20px; text-align: center;"><button class="btn btn--primary" style="background: var(--uw-red-600); box-shadow: var(--shadow-red);">Hover</button><div class="caption" style="justify-content:center;">+ shadow-red</div></div>
+        <div class="demo" style="padding: 20px; text-align: center;"><button class="btn btn--primary" style="outline: 2px solid var(--uw-blue-300); outline-offset: 2px;">Focus</button><div class="caption" style="justify-content:center;">a11y ring</div></div>
+        <div class="demo" style="padding: 20px; text-align: center;"><button class="btn btn--primary" disabled>Disabled</button><div class="caption" style="justify-content:center;">0.45 opacity</div></div>
+      </div>
+
+      <h3 class="h-sub">With icons</h3>
+      <div class="demo">
+        <div class="row row--wrap" style="align-items:center;">
+          <button class="btn btn--primary"><i data-lucide="play" width="14" height="14"></i> Resume video</button>
+          <button class="btn btn--secondary"><i data-lucide="calendar" width="14" height="14"></i> Schedule session</button>
+          <button class="btn btn--outline"><i data-lucide="book-open" width="14" height="14"></i> Open question bank</button>
+          <button class="btn btn--outline btn--icon" aria-label="Settings"><i data-lucide="settings" width="16" height="16"></i></button>
+          <button class="btn btn--ghost btn--icon" aria-label="Notifications"><i data-lucide="bell" width="16" height="16"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 09 · FORMS =========== -->
+    <section class="section" id="forms">
+      <div class="section__eyebrow">09 — Components</div>
+      <h2 class="section__title">Forms &amp; Inputs</h2>
+      <p class="section__lede">Form work is some of the most anxiety-laden interaction a student has with us — visas, applications, eligibility. Inputs are oversized, calm, and forgiving.</p>
+
+      <div class="grid-2">
+        <div class="demo">
+          <div class="field">
+            <label class="field__label" for="d-email">School email</label>
+            <input id="d-email" class="input" type="email" placeholder="you@medschool.edu" />
+            <div class="field__hint">Used only to verify your medical school.</div>
+          </div>
+
+          <div class="field">
+            <label class="field__label">USMLE step</label>
+            <select class="select">
+              <option>Step 1 — preparing</option>
+              <option>Step 2 CK — preparing</option>
+              <option>Step 3</option>
+              <option>I'm not sure yet</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="d-search">Search the question bank</label>
+            <div class="input--icon-wrap">
+              <i data-lucide="search" width="16" height="16"></i>
+              <input id="d-search" class="input" placeholder="e.g. acute pancreatitis" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="d-error">Target exam date</label>
+            <input id="d-error" class="input input--error" value="2024-02-30" />
+            <div class="field__error"><i data-lucide="alert-circle" width="12" height="12"></i> That date doesn't exist — check the month.</div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="d-note">Your goal in one sentence</label>
+            <textarea id="d-note" class="textarea" rows="3" placeholder="Match into Internal Medicine in 2027."></textarea>
+          </div>
+        </div>
+
+        <div class="demo">
+          <h3 style="margin: 0 0 12px; font-size: 14px; font-weight: 600; color: var(--uw-ink-900);">Selection controls</h3>
+          <div style="display:flex; flex-direction:column; gap: 12px;">
+            <label class="checkbox"><input type="checkbox" checked> Daily question reminders</label>
+            <label class="checkbox"><input type="checkbox"> Weekly progress digest</label>
+            <label class="checkbox"><input type="checkbox" checked> Mentor session reminders</label>
+          </div>
+
+          <hr style="border:none; border-top:1px solid var(--uw-border); margin: 20px 0;" />
+
+          <h3 style="margin: 0 0 12px; font-size: 14px; font-weight: 600; color: var(--uw-ink-900);">Study intensity</h3>
+          <div style="display:flex; flex-direction:column; gap: 12px;">
+            <label class="radio"><input type="radio" name="r"> Casual — 1–2 hrs/day</label>
+            <label class="radio"><input type="radio" name="r" checked> Standard — 3–4 hrs/day</label>
+            <label class="radio"><input type="radio" name="r"> Intensive — 6+ hrs/day</label>
+          </div>
+
+          <hr style="border:none; border-top:1px solid var(--uw-border); margin: 20px 0;" />
+
+          <h3 style="margin: 0 0 12px; font-size: 14px; font-weight: 600; color: var(--uw-ink-900);">Preferences</h3>
+          <div style="display:flex; flex-direction:column; gap: 12px;">
+            <label class="toggle"><input type="checkbox" checked><span class="toggle__track"></span> Email digests</label>
+            <label class="toggle"><input type="checkbox"><span class="toggle__track"></span> WhatsApp reminders</label>
+            <label class="toggle"><input type="checkbox" checked><span class="toggle__track"></span> Mentor visibility</label>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Form pattern · onboarding step</h3>
+      <div class="demo demo--padded" style="background: var(--uw-bg);">
+        <div style="max-width: 460px; margin: 0 auto; background: var(--uw-surface); border:1px solid var(--uw-border); border-radius: var(--r-lg); padding: 32px;">
+          <div style="display:flex; gap: 4px; margin-bottom: 24px;">
+            <div style="flex:1; height: 3px; background: var(--uw-blue-500); border-radius: 999px;"></div>
+            <div style="flex:1; height: 3px; background: var(--uw-blue-500); border-radius: 999px;"></div>
+            <div style="flex:1; height: 3px; background: var(--uw-ink-100); border-radius: 999px;"></div>
+            <div style="flex:1; height: 3px; background: var(--uw-ink-100); border-radius: 999px;"></div>
+          </div>
+          <div class="card__eyebrow">STEP 2 OF 4</div>
+          <h3 style="font-family: var(--font-display); font-size: 28px; font-weight: 400; letter-spacing: -0.015em; margin: 8px 0 8px; color: var(--uw-ink-900);">When do you want to take the exam?</h3>
+          <p style="color: var(--uw-ink-500); font-size: 14px; margin: 0 0 24px;">Don't overthink this — we'll adjust based on your readiness scores.</p>
+
+          <div class="field">
+            <label class="field__label">Target date</label>
+            <input class="input" value="June 14, 2026" />
+          </div>
+          <div class="field">
+            <label class="field__label">Flexibility</label>
+            <select class="select"><option>Within 2 weeks · recommended</option><option>Locked — exam booked</option><option>Open — any month works</option></select>
+          </div>
+
+          <div style="display:flex; gap: 10px; margin-top: 24px;">
+            <button class="btn btn--outline" style="flex:1;">Back</button>
+            <button class="btn btn--primary" style="flex:2;">Continue <i data-lucide="arrow-right" class="ic-arrow"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 10 · CARDS =========== -->
+    <section class="section" id="cards">
+      <div class="section__eyebrow">10 — Components</div>
+      <h2 class="section__title">Cards</h2>
+      <p class="section__lede">Cards are how we package information into walkable, scannable units. Five variants cover almost every container need we have.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card__eyebrow">DEFAULT</div>
+          <div class="card__title">Pulmonary embolism</div>
+          <div class="card__body">High-yield review — ten cards, six images, one interactive ECG.</div>
+        </div>
+        <div class="card card--hover">
+          <div class="card__eyebrow">HOVER</div>
+          <div class="card__title">Cardiac auscultation</div>
+          <div class="card__body">Lift on hover. Use for clickable items in lists.</div>
+        </div>
+        <div class="card card--elevated">
+          <div class="card__eyebrow">ELEVATED</div>
+          <div class="card__title">Mentor call · 6pm</div>
+          <div class="card__body">For floating items: notifications, dropdowns, modals.</div>
+        </div>
+        <div class="card card--accent">
+          <div class="card__eyebrow" style="color: rgba(255,255,255,.6);">ACCENT</div>
+          <div class="card__title" style="color: #fff;">You're on a 14-day streak</div>
+          <div class="card__body" style="color: rgba(255,255,255,.78);">Use sparingly for moments that should feel like a win.</div>
+        </div>
+        <div class="card" style="border-style: dashed; background: transparent;">
+          <div class="card__eyebrow">EMPTY / ADD</div>
+          <div class="card__title" style="color: var(--uw-ink-600);">+ Add a study block</div>
+          <div class="card__body">For empty states and "add new" affordances.</div>
+        </div>
+        <div class="card card--alert-demo">
+          <div class="card__eyebrow" style="color: var(--uw-red-600);">ALERT</div>
+          <div class="card__title">Step 1 score released</div>
+          <div class="card__body">For drawing attention without shouting. Use a tinted background and stronger border, never a side stripe.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 11 · NAVIGATION =========== -->
+    <section class="section" id="nav">
+      <div class="section__eyebrow">11 — Components</div>
+      <h2 class="section__title">Navigation Components</h2>
+      <p class="section__lede">Navigation should always tell a student where they are, what's around them, and what comes next. Three primitives: top nav, side rail, breadcrumb.</p>
+
+      <h3 class="h-sub h-sub--first">Marketing top nav</h3>
+      <div class="topnav">
+        <div class="lockup">
+          <img src="assets/emblem.svg" alt="" style="width: 32px; height: 32px;" />
+          <div class="wordmark" style="font-size: 18px;">
+            <div class="wordmark__main" style="font-size: 18px;"><span class="wordmark__usmle">USMLE</span><span class="wordmark__wise" style="font-size: 20px;">Wise</span></div>
+          </div>
+        </div>
+        <div class="topnav__links">
+          <a class="topnav__link is-active">USMLE Prep</a>
+          <a class="topnav__link">Match Coaching</a>
+          <a class="topnav__link">Mentors</a>
+          <a class="topnav__link">Resources</a>
+          <a class="topnav__link">Pricing</a>
+        </div>
+        <div class="row">
+          <button class="btn btn--ghost btn--sm">Sign in</button>
+          <button class="btn btn--primary btn--sm">Start free trial</button>
+        </div>
+      </div>
+
+      <h3 class="h-sub">App side rail</h3>
+      <div class="demo demo--sunk" style="display: flex; gap: 16px; align-items: flex-start;">
+        <div class="appside">
+          <div class="lockup" style="padding: 4px 6px 12px;">
+            <img src="assets/emblem.svg" alt="" style="width: 28px; height: 28px;" />
+            <div class="wordmark"><div class="wordmark__main" style="font-size: 14px;"><span class="wordmark__usmle">USMLE</span><span class="wordmark__wise" style="font-size: 16px;">Wise</span></div></div>
+          </div>
+          <div class="appside__head">Study</div>
+          <a class="appside__item is-active"><span class="appside__dot"><i data-lucide="grid-2x2" width="11" height="11"></i></span> Today</a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="book-open" width="11" height="11"></i></span> Question bank</a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="target" width="11" height="11"></i></span> Practice tests</a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="flame" width="11" height="11"></i></span> Streak</a>
+          <div class="appside__head" style="margin-top: 8px;">Coach</div>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="user" width="11" height="11"></i></span> My mentor</a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="message-circle" width="11" height="11"></i></span> Sessions</a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="calendar" width="11" height="11"></i></span> Calendar</a>
+        </div>
+
+        <div style="flex:1; display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <h4 style="margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--uw-ink-700);">Tabs</h4>
+            <div class="tabs">
+              <button class="tabs__btn is-active">Overview</button>
+              <button class="tabs__btn">Performance</button>
+              <button class="tabs__btn">Schedule</button>
+              <button class="tabs__btn">Notes</button>
+            </div>
+          </div>
+
+          <div>
+            <h4 style="margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--uw-ink-700);">Breadcrumb</h4>
+            <div class="breadcrumb"><a href="#">Step 2 CK</a><span class="breadcrumb__sep">/</span><a href="#">Internal Medicine</a><span class="breadcrumb__sep">/</span><span class="breadcrumb__current">Cardiology</span></div>
+          </div>
+
+          <div>
+            <h4 style="margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--uw-ink-700);">Pagination</h4>
+            <div class="pagination">
+              <button class="pagination__btn">‹</button>
+              <button class="pagination__btn">1</button>
+              <button class="pagination__btn is-active">2</button>
+              <button class="pagination__btn">3</button>
+              <button class="pagination__btn">4</button>
+              <span style="padding: 0 6px; color: var(--uw-ink-400);">…</span>
+              <button class="pagination__btn">14</button>
+              <button class="pagination__btn">›</button>
+            </div>
+          </div>
+
+          <div>
+            <h4 style="margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--uw-ink-700);">Dropdown menu</h4>
+            <div class="dropdown">
+              <div class="dropdown__item"><i data-lucide="user" width="14" height="14"></i> View profile <span class="dropdown__shortcut">⌘P</span></div>
+              <div class="dropdown__item"><i data-lucide="settings" width="14" height="14"></i> Account settings</div>
+              <div class="dropdown__item"><i data-lucide="bar-chart-2" width="14" height="14"></i> My performance</div>
+              <div class="dropdown__divider"></div>
+              <div class="dropdown__item" style="color: var(--uw-red-600);">Sign out</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 12 · DASHBOARD COMP =========== -->
+    <section class="section" id="dashboard-comp">
+      <div class="section__eyebrow">12 — Components</div>
+      <h2 class="section__title">Dashboard Components</h2>
+      <p class="section__lede">The KPI tiles, progress widgets, and small charts students see every time they sign in. Numbers in serif for warmth; metadata in mono for precision.</p>
+
+      <div class="grid-4">
+        <div class="kpi">
+          <div class="kpi__label">Days to exam</div>
+          <div class="kpi__val">87</div>
+          <div class="kpi__delta"><span style="color: var(--uw-ink-500);">Target: June 14</span></div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__label">QBank accuracy</div>
+          <div class="kpi__val">72%</div>
+          <div class="kpi__delta kpi__delta--up">▲ 4% past 7 days</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__label">Hours this week</div>
+          <div class="kpi__val">28h</div>
+          <div class="kpi__delta kpi__delta--up">▲ 6h vs target</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi__label">Current streak</div>
+          <div class="kpi__val">14<span style="font-size: 16px; color: var(--uw-ink-500); margin-left: 6px; font-family: var(--font-sans);">days</span></div>
+          <div class="kpi__delta" style="color: var(--uw-red-600);"><i data-lucide="flame" width="12" height="12"></i> Personal best</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Alerts &amp; notifications</h3>
+      <div class="grid-2">
+        <div class="alert alert--info"><div class="alert__icon">i</div><div><b style="display:block; color: var(--uw-ink-900);">Your mock NBME is ready</b><span style="color: var(--uw-ink-600);">Open it before Friday to keep your readiness score current.</span></div></div>
+        <div class="alert alert--ok"><div class="alert__icon">✓</div><div><b style="display:block; color: var(--uw-ink-900);">Step 1 attested</b><span style="color: var(--uw-ink-600);">ECFMG confirmed receipt on May 14.</span></div></div>
+        <div class="alert alert--warn"><div class="alert__icon">!</div><div><b style="display:block; color: var(--uw-ink-900);">Scheduling deadline in 9 days</b><span style="color: var(--uw-ink-600);">Reserve your Step 2 CK seat before May 27.</span></div></div>
+        <div class="alert alert--err"><div class="alert__icon">×</div><div><b style="display:block; color: var(--uw-ink-900);">Payment failed</b><span style="color: var(--uw-ink-600);">We weren't able to charge your card ending in 4729.</span></div></div>
+      </div>
+
+      <h3 class="h-sub">Empty state</h3>
+      <div class="empty">
+        <div class="empty__ic"><i data-lucide="book-open" width="22" height="22"></i></div>
+        <h4 style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: var(--uw-ink-900);">No saved questions yet</h4>
+        <p style="margin: 0 0 16px; font-size: 13.5px; color: var(--uw-ink-500); max-width: 36ch; margin-inline: auto;">Tap the bookmark icon on any question in the QBank to keep it here.</p>
+        <button class="btn btn--outline btn--sm">Open the QBank</button>
+      </div>
+    </section>
+
+    <!-- =========== 13 · EDUCATIONAL UI =========== -->
+    <section class="section" id="edu">
+      <div class="section__eyebrow">13 — Components</div>
+      <h2 class="section__title">Educational UI</h2>
+      <p class="section__lede">Patterns specific to learning: questions, explanations, flashcards, lessons. Every educational surface follows the same shape: stem · choices · explanation · references.</p>
+
+      <h3 class="h-sub h-sub--first">QBank question</h3>
+      <div class="demo">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 20px;">
+          <div>
+            <span class="badge badge--blue">Cardiology</span>
+            <span class="badge badge--neutral">Step 2 CK</span>
+            <span class="badge badge--neutral">High yield</span>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--uw-ink-500); letter-spacing: 0.04em;">Q 42 of 80 · 01:24</span>
+        </div>
+        <p style="font-size: 15.5px; line-height: 1.65; color: var(--uw-ink-900); margin: 0 0 24px;">A 64-year-old man presents with substernal chest pain that began 90 minutes ago while shoveling snow. Pain radiates to the left jaw and is associated with diaphoresis and nausea. He has a history of hypertension and type 2 diabetes. On exam, BP is 162/94, HR 98, SpO₂ 97%. ECG shows 2 mm ST-segment elevation in leads II, III, and aVF. Which of the following is the most appropriate next step?</p>
+
+        <div style="display:flex; flex-direction:column; gap: 8px;">
+          <label class="card" style="display:flex; gap: 12px; cursor: pointer; padding: 14px; align-items: flex-start;">
+            <span style="width:24px; height:24px; border:1.5px solid var(--uw-border-strong); border-radius:50%; flex-shrink:0; display:grid; place-items:center; font-family:var(--font-mono); font-size:12px; font-weight:600; color: var(--uw-ink-600);">A</span>
+            <span style="font-size: 14px; color: var(--uw-ink-800);">Order a CT pulmonary angiogram</span>
+          </label>
+          <label class="card card--answer-correct" style="display:flex; gap: 12px; cursor: pointer; padding: 14px; align-items: flex-start;">
+            <span style="width:24px; height:24px; background: var(--uw-red-500); color:#fff; border-radius:50%; flex-shrink:0; display:grid; place-items:center; font-family:var(--font-mono); font-size:12px; font-weight:600;">B</span>
+            <span class="card--answer-correct__text" style="font-size: 14px; font-weight: 500;">Activate the cath lab for emergent PCI</span>
+          </label>
+          <label class="card" style="display:flex; gap: 12px; cursor: pointer; padding: 14px; align-items: flex-start;">
+            <span style="width:24px; height:24px; border:1.5px solid var(--uw-border-strong); border-radius:50%; flex-shrink:0; display:grid; place-items:center; font-family:var(--font-mono); font-size:12px; font-weight:600; color: var(--uw-ink-600);">C</span>
+            <span style="font-size: 14px; color: var(--uw-ink-800);">Give IV tPA</span>
+          </label>
+          <label class="card" style="display:flex; gap: 12px; cursor: pointer; padding: 14px; align-items: flex-start;">
+            <span style="width:24px; height:24px; border:1.5px solid var(--uw-border-strong); border-radius:50%; flex-shrink:0; display:grid; place-items:center; font-family:var(--font-mono); font-size:12px; font-weight:600; color: var(--uw-ink-600);">D</span>
+            <span style="font-size: 14px; color: var(--uw-ink-800);">Echocardiogram</span>
+          </label>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--uw-border);">
+          <div class="row">
+            <button class="btn btn--ghost btn--sm">⌘B Bookmark</button>
+            <button class="btn btn--ghost btn--sm">Flag for review</button>
+          </div>
+          <div class="row">
+            <button class="btn btn--outline">Skip</button>
+            <button class="btn btn--primary">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Explanation panel</h3>
+      <div class="demo">
+        <div class="row" style="align-items: center; gap: 12px; margin-bottom: 16px;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--uw-success-500); color:#fff; display:grid; place-items:center;"><i data-lucide="check" width="18" height="18"></i></div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 22px; color: var(--uw-ink-900); letter-spacing: -0.01em;">Correct — <em style="color: var(--uw-success-700);">B</em></div>
+            <div style="font-size: 12.5px; color: var(--uw-ink-500);">Inferior STEMI · time-to-PCI 90 min</div>
+          </div>
+        </div>
+        <p style="font-size: 14.5px; line-height: 1.7; color: var(--uw-ink-800); margin: 0 0 16px;">ST-elevation in II, III, and aVF identifies an <b>inferior wall MI</b>, most commonly involving the right coronary artery. The clear time of symptom onset and the diagnostic ECG meet criteria for emergent reperfusion. PCI is preferred over fibrinolytics when door-to-balloon &lt; 90 min is achievable.</p>
+        <div class="callout"><b>Pearl</b>Always check a right-sided V4R lead in inferior STEMI — RV involvement changes management (avoid nitrates).</div>
+        <h4 style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--uw-ink-500); margin: 20px 0 8px;">References</h4>
+        <ul style="font-size: 13px; color: var(--uw-ink-600); margin: 0; padding-left: 18px; line-height: 1.7;">
+          <li>2022 ACC/AHA STEMI Guideline · §3.1</li>
+          <li>First Aid USMLE Step 2 CK 2026 · Cardiology Ch. 4</li>
+        </ul>
+      </div>
+
+      <h3 class="h-sub">Flashcard</h3>
+      <div class="grid-2">
+        <div class="card" style="padding: 24px; min-height: 180px; display:flex; flex-direction:column; justify-content: space-between;">
+          <div>
+            <div class="card__eyebrow">FRONT · TAP TO FLIP</div>
+            <h4 style="font-family: var(--font-display); font-size: 26px; font-weight: 400; letter-spacing: -0.015em; margin: 12px 0 0; color: var(--uw-ink-900);">What is the mechanism of action of metformin?</h4>
+          </div>
+          <div style="display:flex; gap: 6px;">
+            <span class="badge badge--blue">Pharmacology</span>
+            <span class="badge badge--neutral">Endocrine</span>
+          </div>
+        </div>
+        <div class="card card--flashback" style="padding: 24px; min-height: 180px;">
+          <div class="card__eyebrow" style="color: rgba(255,255,255,.5);">BACK</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,.9); margin: 8px 0 16px;">Activates <b>AMPK</b>, decreasing hepatic gluconeogenesis and increasing peripheral insulin sensitivity. Does not cause hypoglycemia as monotherapy.</p>
+          <div style="display:flex; gap: 6px;">
+            <button class="btn btn--sm" style="background: rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2);">Again</button>
+            <button class="btn btn--sm" style="background: rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2);">Hard</button>
+            <button class="btn btn--sm" style="background: rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2);">Good</button>
+            <button class="btn btn--sm" style="background: var(--uw-red-500); color:#fff;">Easy</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Learning journey roadmap</h3>
+      <div class="demo">
+        <div class="journey">
+          <div class="journey__step journey__step--done">
+            <div class="journey__num"></div>
+            <div style="flex:1;">
+              <div class="journey__title">ECFMG application submitted</div>
+              <div class="journey__sub">Completed March 12 · verified by mentor Dr. Anika Rao</div>
+            </div>
+            <span class="badge badge--green badge--dot">Done</span>
+          </div>
+          <div class="journey__step journey__step--done">
+            <div class="journey__num"></div>
+            <div style="flex:1;">
+              <div class="journey__title">USMLE Step 1 — passed</div>
+              <div class="journey__sub">Reported May 03 · 14-week study plan</div>
+            </div>
+            <span class="badge badge--green badge--dot">Done</span>
+          </div>
+          <div class="journey__step journey__step--now">
+            <div class="journey__num"><span>3</span></div>
+            <div style="flex:1;">
+              <div class="journey__title">USMLE Step 2 CK — in progress</div>
+              <div class="journey__sub">Target: June 14, 2026 · 87 days · 72% QBank accuracy</div>
+            </div>
+            <span class="badge badge--red badge--dot">Active</span>
+          </div>
+          <div class="journey__step">
+            <div class="journey__num"><span>4</span></div>
+            <div style="flex:1;">
+              <div class="journey__title">US clinical experience</div>
+              <div class="journey__sub">Begin sub-internship rotations after Step 2 CK</div>
+            </div>
+            <span class="badge badge--neutral">Upcoming</span>
+          </div>
+          <div class="journey__step">
+            <div class="journey__num"><span>5</span></div>
+            <div style="flex:1;">
+              <div class="journey__title">Residency Match</div>
+              <div class="journey__sub">ERAS opens September · interviews October–January</div>
+            </div>
+            <span class="badge badge--neutral">Upcoming</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 14 · PROGRESS =========== -->
+    <section class="section" id="progress">
+      <div class="section__eyebrow">14 — Components</div>
+      <h2 class="section__title">Progress Tracking</h2>
+      <p class="section__lede">Progress is the emotional heart of the product. We use rings, bars, and streak grids to give students unambiguous evidence of forward motion.</p>
+
+      <h3 class="h-sub h-sub--first">Rings, bars, streaks</h3>
+      <div class="grid-3">
+        <div class="card" style="text-align: center; padding: 28px;">
+          <div class="progress-ring" style="--p: 72; margin: 0 auto 14px;">
+            <div class="progress-ring__label">72%</div>
+            <div class="progress-ring__sub">READY</div>
+          </div>
+          <div class="card__title" style="text-align: left;">Readiness for Step 2 CK</div>
+          <div class="card__body" style="text-align: left;">Composite of NBME mocks, QBank accuracy, and review depth.</div>
+        </div>
+        <div class="card" style="padding: 28px;">
+          <div class="card__eyebrow">SUBJECT MASTERY</div>
+          <div style="display:flex; flex-direction:column; gap: 14px; margin-top: 14px;">
+            <div><div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;"><span>Internal Medicine</span><span style="color:var(--uw-ink-500); font-family:var(--font-mono);">88%</span></div><div class="progress"><div class="progress__bar progress__bar--green" style="width:88%;"></div></div></div>
+            <div><div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;"><span>Surgery</span><span style="color:var(--uw-ink-500); font-family:var(--font-mono);">74%</span></div><div class="progress"><div class="progress__bar" style="width:74%;"></div></div></div>
+            <div><div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;"><span>OB/GYN</span><span style="color:var(--uw-ink-500); font-family:var(--font-mono);">61%</span></div><div class="progress"><div class="progress__bar" style="width:61%;"></div></div></div>
+            <div><div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;"><span>Pediatrics</span><span style="color:var(--uw-ink-500); font-family:var(--font-mono);">42%</span></div><div class="progress"><div class="progress__bar progress__bar--red" style="width:42%;"></div></div></div>
+          </div>
+        </div>
+        <div class="card" style="padding: 28px;">
+          <div class="card__eyebrow">STREAK · 14 DAYS</div>
+          <div class="streak" style="margin-top: 14px;">
+            <div class="streak__day l3"></div><div class="streak__day l2"></div><div class="streak__day l3"></div><div class="streak__day l1"></div><div class="streak__day l2"></div><div class="streak__day l3"></div><div class="streak__day l3"></div>
+            <div class="streak__day l2"></div><div class="streak__day l3"></div><div class="streak__day l3"></div><div class="streak__day l2"></div><div class="streak__day l3"></div><div class="streak__day l3"></div><div class="streak__day l3"></div>
+            <div class="streak__day l3"></div><div class="streak__day l2"></div><div class="streak__day l3"></div><div class="streak__day l3"></div><div class="streak__day l1"></div><div class="streak__day l2"></div><div class="streak__day l3"></div>
+            <div class="streak__day l3"></div><div class="streak__day l3"></div><div class="streak__day l2"></div><div class="streak__day l3"></div><div class="streak__day l3"></div><div class="streak__day l3"></div><div class="streak__day l3"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--uw-ink-500); margin-top: 10px;">
+            <span>4 wks ago</span><span>Today</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Mock-exam trend</h3>
+      <div class="demo" style="padding: 32px;">
+        <div class="row" style="justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+          <div>
+            <div class="card__eyebrow">NBME PRACTICE SCORES</div>
+            <h4 style="font-family: var(--font-display); font-size: 32px; font-weight: 400; letter-spacing: -0.015em; margin: 4px 0 0;">238<span style="font-size: 16px; color: var(--uw-ink-500); margin-left: 8px; font-family: var(--font-sans);">last NBME</span></h4>
+          </div>
+          <div style="font-size: 13px; color: var(--uw-success-700); font-weight: 600;">▲ 18 pts since start</div>
+        </div>
+        <!-- minimal inline svg chart -->
+        <svg viewBox="0 0 800 200" style="width:100%; height: 200px;" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="ar" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2c3386" stop-opacity="0.18"/><stop offset="100%" stop-color="#2c3386" stop-opacity="0"/></linearGradient>
+          </defs>
+          <line x1="0" y1="50"  x2="800" y2="50"  stroke="#e6e6e2"/>
+          <line x1="0" y1="100" x2="800" y2="100" stroke="#e6e6e2"/>
+          <line x1="0" y1="150" x2="800" y2="150" stroke="#e6e6e2"/>
+          <path d="M 20 160 L 130 145 L 240 130 L 350 110 L 460 95 L 570 80 L 680 60 L 780 50" fill="none" stroke="#2c3386" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M 20 160 L 130 145 L 240 130 L 350 110 L 460 95 L 570 80 L 680 60 L 780 50 L 780 200 L 20 200 Z" fill="url(#ar)"/>
+          <circle cx="780" cy="50" r="5" fill="#e32124"/>
+          <circle cx="780" cy="50" r="11" fill="#e32124" opacity="0.18"/>
+        </svg>
+        <div style="display:grid; grid-template-columns: repeat(8, 1fr); font-family:var(--font-mono); font-size:10.5px; color:var(--uw-ink-500); margin-top:8px; text-align: center;">
+          <span>Wk 1</span><span>Wk 3</span><span>Wk 5</span><span>Wk 7</span><span>Wk 9</span><span>Wk 11</span><span>Wk 13</span><span>Wk 15</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 15 · MENTORS =========== -->
+    <section class="section" id="mentors">
+      <div class="section__eyebrow">15 — Components</div>
+      <h2 class="section__title">Mentor Profiles</h2>
+      <p class="section__lede">Mentors are the human face of the product. Profiles emphasize the qualifications that build trust — institution, specialty, residency year, languages — while keeping the tone warm, not clinical.</p>
+
+      <div class="grid-3">
+        <div class="mentor">
+          <div class="avatar">AR<div class="avatar__online"></div></div>
+          <div style="flex:1;">
+            <div class="mentor__name">Dr. Anika Rao, MD</div>
+            <div class="mentor__title">Internal Medicine · PGY-3 · Johns Hopkins</div>
+            <div class="row" style="gap: 6px; margin-top: 10px;">
+              <span class="badge badge--blue">Step 2 CK</span>
+              <span class="badge badge--neutral">Match strategy</span>
+            </div>
+            <div class="mentor__meta">
+              <span><i data-lucide="star" width="13" height="13"></i> 4.97</span>
+              <span><i data-lucide="globe" width="13" height="13"></i> EN · HI</span>
+              <span><i data-lucide="clock" width="13" height="13"></i> 240 sessions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mentor">
+          <div class="avatar avatar--red">MP<div class="avatar__online"></div></div>
+          <div style="flex:1;">
+            <div class="mentor__name">Dr. Marco Pereira, MD</div>
+            <div class="mentor__title">Surgery · PGY-5 · UCSF</div>
+            <div class="row" style="gap: 6px; margin-top: 10px;">
+              <span class="badge badge--red">High-yield surgery</span>
+              <span class="badge badge--neutral">CS prep</span>
+            </div>
+            <div class="mentor__meta">
+              <span><i data-lucide="star" width="13" height="13"></i> 4.92</span>
+              <span><i data-lucide="globe" width="13" height="13"></i> EN · PT · ES</span>
+              <span><i data-lucide="clock" width="13" height="13"></i> 180 sessions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mentor">
+          <div class="avatar avatar--green">SC</div>
+          <div style="flex:1;">
+            <div class="mentor__name">Dr. Sofia Chen, MD</div>
+            <div class="mentor__title">Pediatrics · Attending · Boston Children's</div>
+            <div class="row" style="gap: 6px; margin-top: 10px;">
+              <span class="badge badge--green">Pediatrics</span>
+              <span class="badge badge--neutral">Step 3</span>
+            </div>
+            <div class="mentor__meta">
+              <span><i data-lucide="star" width="13" height="13"></i> 4.99</span>
+              <span><i data-lucide="globe" width="13" height="13"></i> EN · ZH</span>
+              <span><i data-lucide="clock" width="13" height="13"></i> 410 sessions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Expanded mentor profile</h3>
+      <div class="demo">
+        <div style="display:grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start;">
+          <div style="text-align: center;">
+            <div class="avatar" style="width: 120px; height: 120px; font-size: 42px; margin: 0 auto 16px;">AR<div class="avatar__online" style="width: 22px; height: 22px; border-width: 3px;"></div></div>
+            <button class="btn btn--primary" style="width:100%;">Book a session</button>
+            <button class="btn btn--outline" style="width:100%; margin-top: 8px;">Send a message</button>
+          </div>
+          <div>
+            <div class="card__eyebrow">JOHNS HOPKINS · INTERNAL MEDICINE</div>
+            <h3 style="font-family: var(--font-display); font-size: 36px; font-weight: 400; letter-spacing: -0.015em; margin: 6px 0 4px; color: var(--uw-ink-900);">Dr. Anika Rao, MD</h3>
+            <div style="color: var(--uw-ink-500); font-size: 14px; margin-bottom: 16px;">PGY-3 · Available Mon, Wed, Fri evenings (UTC-5)</div>
+
+            <p style="font-size: 14.5px; line-height: 1.65; color: var(--uw-ink-700); margin: 0 0 20px; max-width: 60ch;">"I moved to the US from Mumbai in 2018 — I did Step 1 while working night shifts and I still remember every late-night moment of doubt. I'll help you build a plan that doesn't require you to burn out to get there."</p>
+
+            <div class="grid-3" style="margin-top: 20px;">
+              <div><div style="font-family:var(--font-display); font-size: 28px; color: var(--uw-ink-900);">4.97<span style="font-size: 13px; color: var(--uw-ink-500); font-family: var(--font-sans);"> /5</span></div><div style="font-size:11px; color: var(--uw-ink-500); letter-spacing:0.04em;">RATING · 240 SESSIONS</div></div>
+              <div><div style="font-family:var(--font-display); font-size: 28px; color: var(--uw-ink-900);">94%</div><div style="font-size:11px; color: var(--uw-ink-500); letter-spacing:0.04em;">STUDENTS PASS STEP 2</div></div>
+              <div><div style="font-family:var(--font-display); font-size: 28px; color: var(--uw-ink-900);">26m</div><div style="font-size:11px; color: var(--uw-ink-500); letter-spacing:0.04em;">AVG RESPONSE TIME</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 16 · COURSES =========== -->
+    <section class="section" id="courses">
+      <div class="section__eyebrow">16 — Components</div>
+      <h2 class="section__title">Course Cards</h2>
+      <p class="section__lede">Courses are the largest unit of content. Cards lean on color-coded covers — blue for Step 1, red for Step 2 CK, ink for Step 3, green for the Match — and surface duration, mentor, and progress.</p>
+
+      <div class="grid-4">
+        <div class="course">
+          <div class="course__cover course__cover--step1"><span class="course__sticker">Step 1</span></div>
+          <div class="course__body">
+            <div class="course__title">Foundations of Pathology</div>
+            <div class="course__sub">Dr. Anika Rao, MD</div>
+            <div class="progress" style="height:6px;"><div class="progress__bar" style="width:64%;"></div></div>
+            <div class="course__meta"><span><i data-lucide="clock" width="12" height="12"></i> 14h</span><span><i data-lucide="book-open" width="12" height="12"></i> 32 lessons</span><span>64% done</span></div>
+          </div>
+        </div>
+
+        <div class="course">
+          <div class="course__cover course__cover--step2"><span class="course__sticker">Step 2 CK</span></div>
+          <div class="course__body">
+            <div class="course__title">Internal Medicine Mastery</div>
+            <div class="course__sub">Dr. Marco Pereira, MD</div>
+            <div class="progress" style="height:6px;"><div class="progress__bar progress__bar--red" style="width:28%;"></div></div>
+            <div class="course__meta"><span><i data-lucide="clock" width="12" height="12"></i> 22h</span><span><i data-lucide="book-open" width="12" height="12"></i> 48 lessons</span><span>New</span></div>
+          </div>
+        </div>
+
+        <div class="course">
+          <div class="course__cover course__cover--step3"><span class="course__sticker">Step 3</span></div>
+          <div class="course__body">
+            <div class="course__title">CCS Cases — Inpatient</div>
+            <div class="course__sub">Dr. Sofia Chen, MD</div>
+            <div class="progress" style="height:6px;"><div class="progress__bar" style="width:0%;"></div></div>
+            <div class="course__meta"><span><i data-lucide="clock" width="12" height="12"></i> 10h</span><span><i data-lucide="book-open" width="12" height="12"></i> 26 lessons</span><span>Locked</span></div>
+          </div>
+        </div>
+
+        <div class="course">
+          <div class="course__cover course__cover--match"><span class="course__sticker">Match</span></div>
+          <div class="course__body">
+            <div class="course__title">Personal Statement Workshop</div>
+            <div class="course__sub">5 mentor instructors</div>
+            <div class="progress" style="height:6px;"><div class="progress__bar progress__bar--green" style="width:100%;"></div></div>
+            <div class="course__meta"><span><i data-lucide="clock" width="12" height="12"></i> 6h</span><span><i data-lucide="book-open" width="12" height="12"></i> 12 lessons</span><span>Complete</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 17 · TESTIMONIALS =========== -->
+    <section class="section" id="testimonials">
+      <div class="section__eyebrow">17 — Components</div>
+      <h2 class="section__title">Testimonials</h2>
+      <p class="section__lede">Real student stories. Italic display serif for the quote; mentor / step / outcome metadata for credibility. Never decorate — let the words breathe.</p>
+
+      <div class="grid-3">
+        <div class="quote">
+          <div class="quote__mark">"</div>
+          <div class="quote__text">I'd failed Step&nbsp;1 once before I found USMLE Wise. Dr.&nbsp;Rao rebuilt my plan from week one and held me to it. I passed on my second attempt with a 248.</div>
+          <div class="quote__author">
+            <div class="avatar avatar--red" style="width:40px; height:40px; font-size: 15px;">PT</div>
+            <div><div class="quote__name">Priya Thomas, MD</div><div class="quote__role">IMG · Now PGY-1, Internal Medicine</div></div>
+          </div>
+        </div>
+        <div class="quote">
+          <div class="quote__mark">"</div>
+          <div class="quote__text">The Match coaching paid for itself ten times over. I went from zero interviews on my first try to nine programs in my second cycle.</div>
+          <div class="quote__author">
+            <div class="avatar" style="width:40px; height:40px; font-size: 15px;">JL</div>
+            <div><div class="quote__name">Jorge Luque, MD</div><div class="quote__role">IMG Brazil · Matched at Emory · Family Med</div></div>
+          </div>
+        </div>
+        <div class="quote">
+          <div class="quote__mark">"</div>
+          <div class="quote__text">What I needed wasn't more content. It was someone who'd done it telling me what to skip. That's what Wise gave me.</div>
+          <div class="quote__author">
+            <div class="avatar avatar--green" style="width:40px; height:40px; font-size: 15px;">FM</div>
+            <div><div class="quote__name">Fatima Malik</div><div class="quote__role">MS3 · NYU School of Medicine</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 18 · TABLES =========== -->
+    <section class="section" id="tables">
+      <div class="section__eyebrow">18 — Components</div>
+      <h2 class="section__title">Tables &amp; Data Display</h2>
+      <p class="section__lede">Tables are for dense, scannable data: NBME scores, deadlines, program lists. Uppercase mono headers, plenty of vertical padding, badges for status.</p>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Mock exam</th>
+              <th>Date taken</th>
+              <th>Score</th>
+              <th>Predicted</th>
+              <th>Status</th>
+              <th style="text-align:right;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b style="color: var(--uw-ink-900);">NBME 14</b><div style="font-size: 12px; color: var(--uw-ink-500);">Step 2 CK</div></td>
+              <td>May 12, 2026</td>
+              <td><span style="font-family: var(--font-mono); color: var(--uw-success-700); font-weight: 600;">238</span></td>
+              <td>231–246</td>
+              <td><span class="badge badge--green badge--dot">Passed</span></td>
+              <td style="text-align: right;"><button class="btn btn--ghost btn--sm">Review</button></td>
+            </tr>
+            <tr>
+              <td><b style="color: var(--uw-ink-900);">NBME 13</b><div style="font-size: 12px; color: var(--uw-ink-500);">Step 2 CK</div></td>
+              <td>April 28, 2026</td>
+              <td><span style="font-family: var(--font-mono); font-weight: 600;">224</span></td>
+              <td>218–232</td>
+              <td><span class="badge badge--green badge--dot">Passed</span></td>
+              <td style="text-align: right;"><button class="btn btn--ghost btn--sm">Review</button></td>
+            </tr>
+            <tr>
+              <td><b style="color: var(--uw-ink-900);">UWSA 1</b><div style="font-size: 12px; color: var(--uw-ink-500);">Step 2 CK</div></td>
+              <td>April 14, 2026</td>
+              <td><span style="font-family: var(--font-mono); font-weight: 600;">220</span></td>
+              <td>215–229</td>
+              <td><span class="badge badge--amber badge--dot">Borderline</span></td>
+              <td style="text-align: right;"><button class="btn btn--ghost btn--sm">Review</button></td>
+            </tr>
+            <tr>
+              <td><b style="color: var(--uw-ink-900);">CMS Surgery</b><div style="font-size: 12px; color: var(--uw-ink-500);">Subject</div></td>
+              <td>March 31, 2026</td>
+              <td><span style="font-family: var(--font-mono); font-weight: 600;">68%</span></td>
+              <td>—</td>
+              <td><span class="badge badge--red badge--dot">Needs work</span></td>
+              <td style="text-align: right;"><button class="btn btn--ghost btn--sm">Review</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- =========== 19 · ICONS =========== -->
+    <section class="section" id="icons">
+      <div class="section__eyebrow">19 — Visual Language</div>
+      <h2 class="section__title">Icons &amp; Illustration</h2>
+      <p class="section__lede">Icons are stroked, not filled. 24&nbsp;× 24&nbsp;px grid, 2&nbsp;px stroke, rounded caps and joins. They sit alongside text, never replace it. The icon library is <a href="https://lucide.dev" target="_blank" rel="noopener noreferrer"><b>Lucide</b></a>, loaded via CDN and rendered with <code class="inline">lucide.createIcons()</code>.</p>
+
+      <h3 class="h-sub h-sub--first">Icon set</h3>
+      <div class="icon-grid">
+        <div class="icon-cell"><i data-lucide="grid-2x2" width="20" height="20"></i><span>grid-2x2</span></div>
+        <div class="icon-cell"><i data-lucide="book-open" width="20" height="20"></i><span>book-open</span></div>
+        <div class="icon-cell"><i data-lucide="target" width="20" height="20"></i><span>target</span></div>
+        <div class="icon-cell"><i data-lucide="bar-chart-2" width="20" height="20"></i><span>bar-chart-2</span></div>
+        <div class="icon-cell"><i data-lucide="calendar" width="20" height="20"></i><span>calendar</span></div>
+        <div class="icon-cell"><i data-lucide="clock" width="20" height="20"></i><span>clock</span></div>
+        <div class="icon-cell"><i data-lucide="bell" width="20" height="20"></i><span>bell</span></div>
+        <div class="icon-cell"><i data-lucide="user" width="20" height="20"></i><span>user</span></div>
+        <div class="icon-cell"><i data-lucide="message-circle" width="20" height="20"></i><span>message-circle</span></div>
+        <div class="icon-cell"><i data-lucide="search" width="20" height="20"></i><span>search</span></div>
+        <div class="icon-cell"><i data-lucide="flame" width="20" height="20"></i><span>flame</span></div>
+        <div class="icon-cell"><i data-lucide="heart" width="20" height="20"></i><span>heart</span></div>
+        <div class="icon-cell"><i data-lucide="globe" width="20" height="20"></i><span>globe</span></div>
+        <div class="icon-cell"><i data-lucide="shield" width="20" height="20"></i><span>shield</span></div>
+        <div class="icon-cell"><i data-lucide="settings" width="20" height="20"></i><span>settings</span></div>
+        <div class="icon-cell"><i data-lucide="check" width="20" height="20"></i><span>check</span></div>
+        <div class="icon-cell"><i data-lucide="arrow-right" width="20" height="20"></i><span>arrow-right</span></div>
+        <div class="icon-cell"><i data-lucide="play" width="20" height="20"></i><span>play</span></div>
+        <div class="icon-cell"><i data-lucide="star" width="20" height="20"></i><span>star</span></div>
+        <div class="icon-cell"><i data-lucide="sparkles" width="20" height="20"></i><span>sparkles</span></div>
+      </div>
+
+      <h3 class="h-sub">Illustration direction</h3>
+      <div class="card">
+        <div class="card__title">Photography direction</div>
+        <div class="card__body" style="margin-bottom: 16px;">Natural light, real mentors and students, real clinical settings. Warm tones, eye contact. Never stock-photo doctors-in-perfect-lab-coats.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: 180px;">
+          <div style="background: repeating-linear-gradient(45deg, #f0e5d8, #f0e5d8 4px, #e8dcc8 4px, #e8dcc8 8px); border-radius: 6px; display:grid; place-items:center; font-family: var(--font-mono); font-size: 11px; color: var(--uw-ink-600);">portrait</div>
+          <div style="background: repeating-linear-gradient(45deg, #e7eaee, #e7eaee 4px, #d9dde2 4px, #d9dde2 8px); border-radius: 6px; display:grid; place-items:center; font-family: var(--font-mono); font-size: 11px; color: var(--uw-ink-600);">clinical</div>
+          <div style="background: repeating-linear-gradient(45deg, #efe1e1, #efe1e1 4px, #e3d3d3 4px, #e3d3d3 8px); border-radius: 6px; grid-column: span 2; display:grid; place-items:center; font-family: var(--font-mono); font-size: 11px; color: var(--uw-ink-600);">candid · environmental</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 20 · MOTION =========== -->
+    <section class="section" id="motion">
+      <div class="section__eyebrow">20 — Visual Language</div>
+      <h2 class="section__title">Motion &amp; Animation</h2>
+      <p class="section__lede">Motion should feel like a hand guiding a page — never bouncy, never showy. Three durations, two easings, one principle: motion exists to explain change, not to entertain.</p>
+
+      <h3 class="h-sub h-sub--first">Durations &amp; easings</h3>
+      <div class="grid-3">
+        <div class="motion-tile">
+          <div class="motion-tile__name">fast · 140 ms · ease-out</div>
+          <div class="motion-track"><div class="motion-ball"></div></div>
+          <div style="font-size: 12px; color: var(--uw-ink-500); margin-top: 12px;">Hover, focus, micro-state changes</div>
+        </div>
+        <div class="motion-tile">
+          <div class="motion-tile__name">medium · 240 ms · ease-out</div>
+          <div class="motion-track"><div class="motion-ball"></div></div>
+          <div style="font-size: 12px; color: var(--uw-ink-500); margin-top: 12px;">Dropdowns, tooltips, card lifts</div>
+        </div>
+        <div class="motion-tile">
+          <div class="motion-tile__name">slow · 420 ms · ease-in-out</div>
+          <div class="motion-track"><div class="motion-ball"></div></div>
+          <div style="font-size: 12px; color: var(--uw-ink-500); margin-top: 12px;">Modal entry, page transitions, progress fills</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top: 16px;">Hover any tile above to preview the curve. All motion respects <code class="inline">prefers-reduced-motion</code>; under that media query, durations collapse to 0&nbsp;ms.</p>
+
+      <h3 class="h-sub">Loading states</h3>
+      <div class="grid-3">
+        <div class="demo" style="padding: 24px;">
+          <div class="card__eyebrow">SKELETON</div>
+          <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+            <div class="skeleton" style="height: 14px; width: 70%;"></div>
+            <div class="skeleton" style="height: 10px;"></div>
+            <div class="skeleton" style="height: 10px; width: 90%;"></div>
+            <div class="skeleton" style="height: 10px; width: 60%;"></div>
+          </div>
+        </div>
+        <div class="demo" style="padding: 24px; display:flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center;">
+          <div class="card__eyebrow">SPINNER</div>
+          <div class="spinner"></div>
+          <div style="font-size: 12px; color: var(--uw-ink-500);">Indeterminate · 0.9s</div>
+        </div>
+        <div class="demo" style="padding: 24px;">
+          <div class="card__eyebrow">PROGRESS</div>
+          <div class="progress" style="margin-top: 14px;"><div class="progress__bar" style="width: 64%;"></div></div>
+          <div style="font-size: 12px; color: var(--uw-ink-500); margin-top: 10px;">Determinate · animates on value change</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Motion principles</h3>
+      <div class="grid-2">
+        <div class="callout"><b>Purposeful</b>Every animation explains a change in state. If you can't say what changed, it shouldn't move.</div>
+        <div class="callout"><b>Calm</b>Default to ease-out. We never overshoot, never bounce, never spring. Students are anxious enough.</div>
+        <div class="callout"><b>Consistent</b>Three durations and two curves cover the entire product. Anything else needs a written justification.</div>
+        <div class="callout"><b>Accessible</b>All motion under 5 seconds, never auto-loops in the periphery, fully disabled at reduced-motion.</div>
+      </div>
+    </section>
+
+    <!-- =========== 21 · A11Y =========== -->
+    <section class="section" id="a11y">
+      <div class="section__eyebrow">21 — Visual Language</div>
+      <h2 class="section__title">Accessibility</h2>
+      <p class="section__lede">Our students study for 8-hour blocks. The interface has to hold up under tired eyes, on poor connections, in second languages. WCAG 2.2 AA is the floor, not the ceiling.</p>
+
+      <h3 class="h-sub h-sub--first">Contrast — verified pairings</h3>
+      <div class="grid-4">
+        <div class="card" style="background: var(--uw-blue-500); color:#fff; border-color: var(--uw-blue-500);"><div style="font-weight:600;">Blue 500 on White</div><div style="font-family: var(--font-mono); font-size: 12px; margin-top:8px; opacity: 0.85;">12.4 : 1 · AAA</div></div>
+        <div class="card" style="background: #fff; color: var(--uw-blue-500);"><div style="font-weight:600;">Blue 500 text</div><div style="font-family: var(--font-mono); font-size: 12px; color: var(--uw-ink-500); margin-top:8px;">12.4 : 1 · AAA</div></div>
+        <div class="card" style="background: var(--uw-red-500); color:#fff; border-color: var(--uw-red-500);"><div style="font-weight:600;">Red 500 on White</div><div style="font-family: var(--font-mono); font-size: 12px; margin-top:8px; opacity: 0.85;">5.2 : 1 · AA</div></div>
+        <div class="card card--contrast-ink" style="color:#fff;"><div style="font-weight:600;">Ink 900 on White</div><div style="font-family: var(--font-mono); font-size: 12px; margin-top:8px; opacity: 0.85;">17.9 : 1 · AAA</div></div>
+      </div>
+
+      <h3 class="h-sub">Operating principles</h3>
+      <div class="grid-2">
+        <div class="callout callout--success"><b>Color is never the only signal</b>Status badges always pair with a dot, icon, or label. A correct answer is green AND a check mark AND the word "Correct".</div>
+        <div class="callout"><b>Focus is always visible</b>Every interactive element has a 2px outset focus ring at 3:1 contrast minimum. Never <code class="inline">outline:none</code> without a replacement.</div>
+        <div class="callout"><b>Minimum target: 44 × 44 px</b>Touch targets meet WCAG 2.2 AA. Phone navigation, answer choices, and primary CTAs are 48 px on mobile.</div>
+        <div class="callout"><b>Reading line length</b>Body copy is constrained to 56–75 characters per line. Forms cap input width to 480 px so the eye doesn't have to track.</div>
+        <div class="callout"><b>Cognitive load</b>One primary action per screen. Onboarding flows split into max-4-step progressive disclosure. Save state continuously, never lose work.</div>
+        <div class="callout"><b>Long-session usability</b>Default to system font scaling. Dark mode planned for v1.1. Auto-pauses video after 30 min of no interaction.</div>
+      </div>
+
+      <h3 class="h-sub">Keyboard map</h3>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Action</th><th>Key</th><th>Surface</th></tr></thead>
+          <tbody>
+            <tr><td>Open command palette</td><td><code class="inline">⌘K</code></td><td>Anywhere</td></tr>
+            <tr><td>Submit answer</td><td><code class="inline">Enter</code></td><td>QBank</td></tr>
+            <tr><td>Skip question</td><td><code class="inline">S</code></td><td>QBank</td></tr>
+            <tr><td>Flag for review</td><td><code class="inline">F</code></td><td>QBank</td></tr>
+            <tr><td>Next / Prev card</td><td><code class="inline">→</code> / <code class="inline">←</code></td><td>Flashcards</td></tr>
+            <tr><td>Flip card</td><td><code class="inline">Space</code></td><td>Flashcards</td></tr>
+            <tr><td>Self-rate (1–4)</td><td><code class="inline">1 2 3 4</code></td><td>Flashcards</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- =========== 22 · LANDING =========== -->
+    <section class="section" id="landing">
+      <div class="section__eyebrow">22 — Patterns</div>
+      <h2 class="section__title">Landing Page Sections</h2>
+      <p class="section__lede">The marketing page exists to make a stressed-out student feel: <i>"this is the place that finally tells me what to do."</i> Three sections do the heavy lifting: hero, proof, and next-step.</p>
+
+      <div class="lp">
+        <div class="lp__nav">
+          <div class="lockup">
+            <img src="assets/emblem.svg" alt="" style="width:32px; height:32px;" />
+            <div class="wordmark"><div class="wordmark__main" style="font-size: 18px;"><span class="wordmark__usmle">USMLE</span><span class="wordmark__wise" style="font-size: 20px;">Wise</span></div></div>
+          </div>
+          <div class="lp__nav-links">
+            <a>USMLE Prep</a><a>Match Coaching</a><a>Mentors</a><a>Stories</a><a>Pricing</a>
+          </div>
+          <div class="row">
+            <button class="btn btn--ghost btn--sm">Sign in</button>
+            <button class="btn btn--primary btn--sm">Start free trial</button>
+          </div>
+        </div>
+
+        <div class="lp__hero">
+          <div>
+            <span class="badge badge--blue" style="margin-bottom: 16px;">⬢ Trusted by 12,400+ IMGs in 84 countries</span>
+            <h1 class="lp__h1">Become a US physician — <em>with someone who's done it.</em></h1>
+            <p class="lp__h1-sub">USMLE Wise is a guided pathway from medical school to Match Day, taught by US physicians who walked the same road. Steady plan, real mentor, no guessing.</p>
+            <div class="lp__hero-cta">
+              <button class="btn btn--primary btn--lg">Build my study plan <i data-lucide="arrow-right" class="ic-arrow"></i></button>
+              <button class="btn btn--outline btn--lg"><i data-lucide="play" width="14" height="14"></i> Watch 90-sec intro</button>
+            </div>
+            <div class="lp__trust">
+              <span><i data-lucide="check" width="14" height="14"></i> <b>94%</b> Step pass rate</span>
+              <span><i data-lucide="check" width="14" height="14"></i> <b>87%</b> Match in 1st cycle</span>
+              <span><i data-lucide="shield" width="14" height="14"></i> Free to start</span>
+            </div>
+          </div>
+          <div class="lp__visual">
+            <!-- header row stays white-on-blue, but at full opacity now -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; position: relative; z-index: 1;">
+              <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,.9);">Your pathway · 2026</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; background: var(--uw-red-500); color: #fff; padding: 3px 10px; border-radius: 999px;">87 days to exam</span>
+            </div>
+
+            <!-- solid white cards — dark text, full contrast -->
+            <div style="display: flex; flex-direction: column; gap: 8px; position: relative; z-index: 1;">
+
+              <!-- Step 1 — done -->
+              <div style="background: var(--uw-surface); border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--uw-success-500); color: #fff; display: grid; place-items: center; flex-shrink: 0;">
+                  <i data-lucide="check" width="14" height="14"></i>
+                </div>
+                <div style="flex: 1;">
+                  <div style="font-size: 13.5px; font-weight: 600; color: var(--uw-ink-900); line-height: 1.2;">Step 1 — passed</div>
+                  <div style="font-size: 11.5px; color: var(--uw-ink-500); margin-top: 2px; font-family: var(--font-mono);">May 03, 2026 · score 232</div>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--uw-success-700); background: var(--uw-success-50); padding: 2px 8px; border-radius: 999px;">Done</span>
+              </div>
+
+              <!-- Step 2 CK — active -->
+              <div style="background: var(--uw-surface); border-radius: 10px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 12px; box-shadow: 0 0 0 2px var(--uw-red-500);">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--uw-red-500); color: #fff; display: grid; place-items: center; flex-shrink: 0; font-family: var(--font-mono); font-size: 11px; font-weight: 600;">2</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 13.5px; font-weight: 600; color: var(--uw-ink-900); line-height: 1.2;">Step 2 CK — in progress</div>
+                  <div style="font-size: 11.5px; color: var(--uw-ink-500); margin-top: 2px; font-family: var(--font-mono);">72% QBank · NBME 238</div>
+                  <div style="margin-top: 8px; background: var(--uw-ink-100); height: 5px; border-radius: 999px; overflow: hidden;">
+                    <div style="width: 72%; height: 100%; background: var(--uw-red-500); border-radius: 999px;"></div>
+                  </div>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--uw-red-600); background: var(--uw-red-50); padding: 2px 8px; border-radius: 999px; white-space: nowrap;">Active</span>
+              </div>
+
+              <!-- Clinical -->
+              <div style="background: var(--uw-surface); border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; opacity: 0.85;">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--uw-ink-100); color: var(--uw-ink-500); display: grid; place-items: center; flex-shrink: 0; font-family: var(--font-mono); font-size: 11px; font-weight: 600;">3</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 13.5px; font-weight: 600; color: var(--uw-ink-700); line-height: 1.2;">Clinical experience</div>
+                  <div style="font-size: 11.5px; color: var(--uw-ink-400); margin-top: 2px; font-family: var(--font-mono);">2 sub-Is scheduled</div>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--uw-ink-500); background: var(--uw-ink-75); padding: 2px 8px; border-radius: 999px;">Upcoming</span>
+              </div>
+
+              <!-- Match -->
+              <div style="background: var(--uw-surface); border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; opacity: 0.75;">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--uw-ink-100); color: var(--uw-ink-400); display: grid; place-items: center; flex-shrink: 0; font-family: var(--font-mono); font-size: 11px; font-weight: 600;">4</div>
+                <div style="flex: 1;">
+                  <div style="font-size: 13.5px; font-weight: 600; color: var(--uw-ink-600); line-height: 1.2;">Match · 2027</div>
+                  <div style="font-size: 11.5px; color: var(--uw-ink-400); margin-top: 2px; font-family: var(--font-mono);">Application opens September</div>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--uw-ink-400); background: var(--uw-ink-75); padding: 2px 8px; border-radius: 999px;">Upcoming</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="lp__feats">
+          <h3 style="font-family: var(--font-display); font-weight: 400; font-size: 36px; letter-spacing: -0.015em; margin: 0 0 8px; color: var(--uw-ink-900);">Three pillars. One outcome.</h3>
+          <p style="color: var(--uw-ink-600); max-width: 56ch; margin: 0 0 32px;">Every student gets a plan, a mentor, and a community. The product wraps around all three.</p>
+          <div class="lp__feat-grid">
+            <div class="lp__feat">
+              <div class="lp__feat-ic"><i data-lucide="target" width="20" height="20"></i></div>
+              <h4>A plan, not a content library</h4>
+              <p>Structured weekly schedules calibrated to your exam date, your hours, and your weakest organ systems.</p>
+            </div>
+            <div class="lp__feat">
+              <div class="lp__feat-ic"><i data-lucide="user" width="20" height="20"></i></div>
+              <h4>A mentor who actually matched</h4>
+              <p>1:1 sessions with US physicians and senior residents. Real availability, real accountability.</p>
+            </div>
+            <div class="lp__feat">
+              <div class="lp__feat-ic"><i data-lucide="message-circle" width="20" height="20"></i></div>
+              <h4>A community walking with you</h4>
+              <p>Cohort study groups, weekly office hours, a private channel of students sitting the same exam window.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 23 · DASHBOARD MOCK =========== -->
+    <section class="section" id="dashboard">
+      <div class="section__eyebrow">23 — Patterns</div>
+      <h2 class="section__title">Student Dashboard</h2>
+      <p class="section__lede">The "Today" view a student sees every morning. The dashboard's job is to answer one question — <i>what do I do next?</i> — within three seconds.</p>
+
+      <div class="dash">
+        <aside class="dash__side">
+          <div class="lockup">
+            <img src="assets/emblem.svg" alt="" />
+            <div class="wordmark"><div class="wordmark__main"><span class="wordmark__usmle">USMLE</span><span class="wordmark__wise">Wise</span></div></div>
+          </div>
+          <div class="appside__head">Today</div>
+          <a class="appside__item is-active"><span class="appside__dot"><i data-lucide="grid-2x2" width="11" height="11"></i></span> Dashboard</a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="target" width="11" height="11"></i></span> Study plan</a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="book-open" width="11" height="11"></i></span> Question bank <span class="badge badge--red" style="margin-left:auto; font-size:10px; padding: 1px 6px;">42</span></a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="bar-chart-2" width="11" height="11"></i></span> Performance</a>
+
+          <div class="appside__head" style="margin-top: 16px;">Coach</div>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="user" width="11" height="11"></i></span> Dr. Anika Rao</a>
+          <a class="appside__item"><span class="appside__dot"><i data-lucide="calendar" width="11" height="11"></i></span> Schedule</a>
+
+          <div style="margin-top: auto; padding-top: 24px;">
+            <div class="card" style="padding: 14px; background: var(--uw-blue-50); border-color: transparent;">
+              <div style="font-size: 12px; color: var(--uw-blue-700); font-weight: 600;">87 days to Step 2 CK</div>
+              <div style="font-size: 11px; color: var(--uw-blue-600); margin-top: 2px;">Target: June 14, 2026</div>
+              <div class="progress" style="margin-top: 8px; background: rgba(44,51,134,.15); height: 5px;"><div class="progress__bar" style="width: 38%;"></div></div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="dash__main">
+          <div class="dash__greeting">
+            <div>
+              <h2>Good morning, Priya.</h2>
+              <p>Day 14 of your streak. Mentor session tonight at 6 PM with Dr. Rao.</p>
+            </div>
+            <div class="row">
+              <button class="btn btn--outline btn--sm"><i data-lucide="search" width="14" height="14"></i> Search ⌘K</button>
+              <button class="btn btn--ghost btn--icon btn--sm"><i data-lucide="bell" width="14" height="14"></i></button>
+            </div>
+          </div>
+
+          <div class="grid-4">
+            <div class="kpi"><div class="kpi__label">Days to exam</div><div class="kpi__val">87</div><div class="kpi__delta" style="color: var(--uw-ink-500);">June 14, 2026</div></div>
+            <div class="kpi"><div class="kpi__label">QBank accuracy</div><div class="kpi__val">72%</div><div class="kpi__delta kpi__delta--up">▲ 4% wk</div></div>
+            <div class="kpi"><div class="kpi__label">Readiness</div><div class="kpi__val">A−</div><div class="kpi__delta kpi__delta--up">▲ from B+</div></div>
+            <div class="kpi"><div class="kpi__label">Streak</div><div class="kpi__val">14d</div><div class="kpi__delta" style="color: var(--uw-red-600);"><i data-lucide="flame" width="11" height="11"></i> personal best</div></div>
+          </div>
+
+          <div class="dash__row">
+            <div class="card" style="padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <div>
+                  <div class="card__eyebrow">TODAY · WED, MAY 18</div>
+                  <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 400; letter-spacing: -0.01em; margin: 4px 0 0;">Your 3 things</h3>
+                </div>
+                <button class="btn btn--ghost btn--sm">Edit plan</button>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="card" style="display:flex; gap: 14px; align-items: center; padding: 14px;">
+                  <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--uw-blue-50); color: var(--uw-blue-500); display:grid; place-items:center;"><i data-lucide="book-open" width="16" height="16"></i></div>
+                  <div style="flex:1;"><div style="font-weight:600; font-size:14px; color: var(--uw-ink-900);">40 cardiology QBank questions</div><div style="font-size:12.5px; color:var(--uw-ink-500);">~90 min · timed mode</div></div>
+                  <button class="btn btn--primary btn--sm">Start</button>
+                </div>
+                <div class="card" style="display:flex; gap: 14px; align-items: center; padding: 14px;">
+                  <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--uw-blue-50); color: var(--uw-blue-500); display:grid; place-items:center;"><i data-lucide="sparkles" width="16" height="16"></i></div>
+                  <div style="flex:1;"><div style="font-weight:600; font-size:14px; color: var(--uw-ink-900);">Review flashcards — pharmacology</div><div style="font-size:12.5px; color:var(--uw-ink-500);">72 cards due · ~30 min</div></div>
+                  <button class="btn btn--outline btn--sm">Open</button>
+                </div>
+                <div class="card" style="display:flex; gap: 14px; align-items: center; padding: 14px;">
+                  <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--uw-red-50); color: var(--uw-red-500); display:grid; place-items:center;"><i data-lucide="message-circle" width="16" height="16"></i></div>
+                  <div style="flex:1;"><div style="font-weight:600; font-size:14px; color: var(--uw-ink-900);">Mentor session · Dr. Anika Rao</div><div style="font-size:12.5px; color:var(--uw-ink-500);">6:00 PM · 45 min · video call</div></div>
+                  <button class="btn btn--outline btn--sm">Prep notes</button>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="card" style="padding: 22px; text-align: center;">
+                <div class="card__eyebrow">READINESS</div>
+                <div class="progress-ring" style="--p: 72; margin: 14px auto 8px;">
+                  <div class="progress-ring__label">72%</div>
+                  <div class="progress-ring__sub">READY</div>
+                </div>
+                <div style="font-size: 12.5px; color: var(--uw-ink-500); line-height: 1.5;">Estimated Step 2 CK score: <b style="color: var(--uw-ink-900); font-family: var(--font-mono);">231–246</b></div>
+              </div>
+              <div class="card" style="padding: 18px;">
+                <div class="card__eyebrow">NEXT MILESTONE</div>
+                <div style="display:flex; gap: 12px; align-items: center; margin-top: 10px;">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--uw-blue-500); color: #fff; display:grid; place-items:center; font-family: var(--font-display); font-size: 17px;">M</div>
+                  <div>
+                    <div style="font-size:13.5px; font-weight: 600; color: var(--uw-ink-900);">NBME 15 mock</div>
+                    <div style="font-size:11.5px; color: var(--uw-ink-500);">In 9 days · Sunday morning</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== 24 · MOBILE =========== -->
+    <section class="section" id="mobile">
+      <div class="section__eyebrow">24 — Patterns</div>
+      <h2 class="section__title">Mobile Responsiveness</h2>
+      <p class="section__lede">Most studying happens on a phone, in 15-minute pockets between rounds. The mobile experience is not a shrunken desktop — it's a focused, single-action surface.</p>
+
+      <div class="grid-3" style="align-items:start;">
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="phone__notch"></div>
+            <div class="phone__status"><span>9:41</span><span>•••</span></div>
+            <div class="phone__body">
+              <div style="display:flex; justify-content: space-between; align-items: center;">
+                <img src="assets/emblem.svg" alt="" style="width: 28px; height: 28px;" />
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--uw-ink-100); display:grid; place-items: center;"><i data-lucide="bell" width="14" height="14"></i></div>
+              </div>
+              <div>
+                <div style="font-family: var(--font-display); font-size: 24px; line-height: 1.05; letter-spacing: -0.015em; color: var(--uw-ink-900);">Good morning,<br/>Priya.</div>
+                <div style="font-size: 11px; color: var(--uw-ink-500); margin-top: 4px;">87 days to Step 2 CK</div>
+              </div>
+              <div style="background: var(--uw-blue-500); border-radius: 12px; padding: 14px; color: #fff;">
+                <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; opacity: 0.7;">UP NEXT</div>
+                <div style="font-size: 14px; font-weight: 600; margin-top: 6px;">40 Cardio QBank Qs</div>
+                <div style="font-size: 11px; opacity: 0.7; margin-top: 2px;">~90 min · timed</div>
+                <button class="btn btn--sm" style="margin-top: 10px; background:#fff; color: var(--uw-blue-700);">Start →</button>
+              </div>
+              <div style="background: var(--uw-surface); border:1px solid var(--uw-border); border-radius: 12px; padding: 12px; display: flex; gap: 10px; align-items: center;">
+                <div class="avatar" style="width: 32px; height: 32px; font-size: 13px;">AR</div>
+                <div><div style="font-size: 12px; font-weight: 600; color: var(--uw-ink-900);">Dr. Anika · 6 PM</div><div style="font-size: 11px; color: var(--uw-ink-500);">Mentor session tonight</div></div>
+              </div>
+              <div style="margin-top: auto; background: var(--uw-surface); border: 1px solid var(--uw-border); border-radius: 999px; padding: 6px; display: flex; gap: 4px; justify-content: space-around;">
+                <div style="padding: 6px 10px; background: var(--uw-blue-500); color:#fff; border-radius: 999px;"><i data-lucide="grid-2x2" width="14" height="14"></i></div>
+                <div style="padding: 6px 10px; color: var(--uw-ink-500);"><i data-lucide="book-open" width="14" height="14"></i></div>
+                <div style="padding: 6px 10px; color: var(--uw-ink-500);"><i data-lucide="bar-chart-2" width="14" height="14"></i></div>
+                <div style="padding: 6px 10px; color: var(--uw-ink-500);"><i data-lucide="message-circle" width="14" height="14"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="phone__notch"></div>
+            <div class="phone__status"><span>9:41</span><span>•••</span></div>
+            <div class="phone__body">
+              <div style="display:flex; justify-content: space-between;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--uw-ink-500);">Q 12 of 40 · 01:24</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--uw-red-500);">FLAG</span>
+              </div>
+              <div style="font-size: 13px; line-height: 1.55; color: var(--uw-ink-900);">A 64-year-old man presents with substernal chest pain that began 90 minutes ago while shoveling snow. ECG shows 2 mm ST elevation in leads II, III, aVF…</div>
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <div style="padding: 10px; border: 1px solid var(--uw-border); border-radius: 8px; font-size: 12.5px;"><b style="color:var(--uw-ink-500); margin-right: 6px;">A</b>CT pulmonary angiogram</div>
+                <div class="qbank-answer--correct" style="padding: 10px; border-radius: 8px; font-size: 12.5px;"><b class="qbank-answer__letter" style="margin-right: 6px;">B</b>Activate cath lab for PCI</div>
+                <div style="padding: 10px; border: 1px solid var(--uw-border); border-radius: 8px; font-size: 12.5px;"><b style="color:var(--uw-ink-500); margin-right: 6px;">C</b>IV tPA</div>
+                <div style="padding: 10px; border: 1px solid var(--uw-border); border-radius: 8px; font-size: 12.5px;"><b style="color:var(--uw-ink-500); margin-right: 6px;">D</b>Echocardiogram</div>
+              </div>
+              <div style="margin-top: auto;"><button class="btn btn--primary" style="width: 100%;">Submit</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="phone__notch"></div>
+            <div class="phone__status"><span>9:41</span><span>•••</span></div>
+            <div class="phone__body">
+              <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--uw-red-500);">PERFORMANCE</div>
+              <div style="font-family: var(--font-display); font-size: 28px; line-height: 1.05; letter-spacing: -0.015em;">You're trending up.</div>
+              <div class="progress-ring" style="--p: 72; --size: 96px; margin: 8px auto;">
+                <div class="progress-ring__label">72%</div>
+                <div class="progress-ring__sub">READY</div>
+              </div>
+              <div style="display:flex; flex-direction: column; gap: 8px;">
+                <div><div style="display:flex; justify-content: space-between; font-size:11px; margin-bottom: 4px;"><span>Internal Med</span><span style="font-family: var(--font-mono); color: var(--uw-ink-500);">88%</span></div><div class="progress" style="height:6px;"><div class="progress__bar progress__bar--green" style="width:88%;"></div></div></div>
+                <div><div style="display:flex; justify-content: space-between; font-size:11px; margin-bottom: 4px;"><span>Surgery</span><span style="font-family: var(--font-mono); color: var(--uw-ink-500);">74%</span></div><div class="progress" style="height:6px;"><div class="progress__bar" style="width:74%;"></div></div></div>
+                <div><div style="display:flex; justify-content: space-between; font-size:11px; margin-bottom: 4px;"><span>Pediatrics</span><span style="font-family: var(--font-mono); color: var(--uw-ink-500);">42%</span></div><div class="progress" style="height:6px;"><div class="progress__bar progress__bar--red" style="width:42%;"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Breakpoint behavior</h3>
+      <div class="grid-3">
+        <div class="callout"><b>Phone — &lt; 640 px</b>Single column. Bottom tab bar replaces sidebar. CTAs become full-width. Tables collapse into stacked cards.</div>
+        <div class="callout"><b>Tablet — 640–1023 px</b>Two-column where it helps. Sidebar collapsible. Modals fill 80% width with margin.</div>
+        <div class="callout"><b>Desktop — ≥ 1024 px</b>Full three-pane layouts. Sidebar fixed. Reading column max 1080 px. Hover states active.</div>
+      </div>
+    </section>
+
+    <!-- =========== 25 · TOKENS =========== -->
+    <section class="section" id="tokens">
+      <div class="section__eyebrow">25 — Reference</div>
+      <h2 class="section__title">Design Tokens</h2>
+      <p class="section__lede">All CSS variables exposed by this system. Use the token, not the hex. Tokens are the contract between design and engineering — if you can't find what you need here, ask, don't invent.</p>
+
+      <h3 class="h-sub h-sub--first">Color</h3>
+      <div class="token-grid">
+        <div>--uw-blue-500</div><div>#2C3386</div>
+        <div>--uw-blue-700</div><div>#1F2461</div>
+        <div>--uw-red-500</div><div>#E32124</div>
+        <div>--uw-red-700</div><div>#A01517</div>
+        <div>--uw-ink-900</div><div>#14151C</div>
+        <div>--uw-ink-700</div><div>#32343F</div>
+        <div>--uw-ink-500</div><div>#6D7080</div>
+        <div>--uw-ink-100</div><div>#ECECEF</div>
+        <div>--uw-bg</div><div>#FAFAF9</div>
+        <div>--uw-surface</div><div>#FFFFFF</div>
+        <div>--uw-border</div><div>#E6E6E2</div>
+        <div>--uw-success-500</div><div>#2F8A5A</div>
+        <div>--uw-warning-500</div><div>#C98A14</div>
+        <div>--uw-info-500</div><div>#3A5FC0</div>
+      </div>
+
+      <h3 class="h-sub">Spacing</h3>
+      <div class="token-grid">
+        <div>--space-1</div><div>4 px</div>
+        <div>--space-2</div><div>8 px</div>
+        <div>--space-3</div><div>12 px</div>
+        <div>--space-4</div><div>16 px</div>
+        <div>--space-5</div><div>20 px</div>
+        <div>--space-6</div><div>24 px</div>
+        <div>--space-8</div><div>32 px</div>
+        <div>--space-10</div><div>40 px</div>
+        <div>--space-12</div><div>48 px</div>
+        <div>--space-16</div><div>64 px</div>
+        <div>--space-20</div><div>80 px</div>
+        <div>--space-24</div><div>96 px</div>
+      </div>
+
+      <h3 class="h-sub">Radius &amp; motion</h3>
+      <div class="token-grid">
+        <div>--r-xs</div><div>4 px</div>
+        <div>--r-md</div><div>8 px</div>
+        <div>--r-lg</div><div>12 px</div>
+        <div>--r-xl</div><div>16 px</div>
+        <div>--r-pill</div><div>999 px</div>
+        <div>--dur-fast</div><div>140 ms</div>
+        <div>--dur-med</div><div>240 ms</div>
+        <div>--dur-slow</div><div>420 ms</div>
+        <div>--ease-out</div><div>cubic-bezier(.16, 1, .3, 1)</div>
+      </div>
+    </section>
+
+    <!-- =========== 26 · HANDOFF =========== -->
+    <section class="section" id="handoff">
+      <div class="section__eyebrow">26 — Reference</div>
+      <h2 class="section__title">Developer Handoff</h2>
+      <p class="section__lede">Practical notes for the engineering team. The system ships as plain CSS variables today. A token JSON / Tailwind config is on the v1.1 roadmap.</p>
+
+      <h3 class="h-sub h-sub--first">Using the system</h3>
+      <pre class="code"><span class="c">/* Import the stylesheet once at the app root */</span>
+<span class="k">@import</span> <span class="s">"styles.css"</span>;
+
+<span class="c">/* Then use tokens — never hex values directly */</span>
+<span class="k">.cta</span> {
+  background: <span class="n">var(--uw-red-500)</span>;
+  color: <span class="n">#fff</span>;
+  padding: <span class="n">var(--space-3) var(--space-5)</span>;
+  border-radius: <span class="n">var(--r-md)</span>;
+  font-family: <span class="n">var(--font-sans)</span>;
+  transition: background <span class="n">var(--dur-fast) var(--ease-out)</span>;
+}
+<span class="k">.cta:hover</span> { background: <span class="n">var(--uw-red-600)</span>; }</pre>
+
+      <h3 class="h-sub">Component naming</h3>
+      <div class="callout">BEM-style class names: <code class="inline">block__element--modifier</code>. Examples: <code class="inline">card__title</code>, <code class="inline">btn--primary</code>, <code class="inline">course__cover--step2</code>. Every component prefix is unique to that component — no global utility soup.</div>
+
+      <h3 class="h-sub">FAQ</h3>
+      <div class="accordion">
+        <div class="accordion__item">
+          <button class="accordion__head">Where do I get the Geist and Source Serif 4 fonts?</button>
+          <div class="accordion__body">Both are loaded from Google Fonts via the <code class="inline">&lt;link&gt;</code> in <code class="inline">index.html</code>. For self-hosted production builds, download the variable font files into <code class="inline">/fonts</code> and replace the Google Fonts link with a local <code class="inline">@font-face</code> declaration.</div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head">Can I add a new color outside the scale?</button>
+          <div class="accordion__body">No. If you need a tint or shade not already in the system, add it to the scale tokens — don't inline a new hex. Open a design-system PR with the proposed swatch and an explanation of the gap.</div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head">When is the Wise Red appropriate?</button>
+          <div class="accordion__body">Primary CTAs (one per screen), key statistics meant to draw attention, the editorial italic accent in display headlines, destructive actions, and the brand emblem. Never for body text, large background fills, or routine UI affordances.</div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head">How do we support dark mode?</button>
+          <div class="accordion__body">Dark mode is planned for v1.1. The token system is structured to swap surface, border, and ink scales under <code class="inline">[data-theme="dark"]</code> while keeping brand and semantic colors stable.</div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head">What about icon libraries?</button>
+          <div class="accordion__body">We use <b>Lucide</b> (regular weight, 24&nbsp;px grid) as our primary icon set — MIT licensed, actively maintained, and available via CDN. Use <code class="inline">data-lucide="icon-name"</code> on any element, then call <code class="inline">lucide.createIcons()</code>. Browse at <b>lucide.dev</b>. For anything not in Lucide, fall back to <b>Phosphor</b> (regular weight) — both match our stroke width and rounded-cap style.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Versioning</h3>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Change type</th><th>Bump</th><th>Communicate</th></tr></thead>
+          <tbody>
+            <tr><td>New token added</td><td>Minor — 1.x.0</td><td>Changelog + #design Slack</td></tr>
+            <tr><td>Existing token value changed</td><td>Major — x.0.0</td><td>Migration note + 1-sprint deprecation</td></tr>
+            <tr><td>Token renamed</td><td>Major — x.0.0</td><td>Codemod provided</td></tr>
+            <tr><td>New component added</td><td>Minor — 1.x.0</td><td>Doc PR + screenshot</td></tr>
+            <tr><td>Component breaking change</td><td>Major — x.0.0</td><td>Migration guide + paired-PR review</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--uw-border); display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+        <img src="assets/emblem.svg" alt="" style="width: 44px; height: 44px;" />
+        <div style="flex: 1; min-width: 280px;">
+          <div style="font-family: var(--font-display); font-size: 24px; letter-spacing: -0.015em; color: var(--uw-ink-900); margin-bottom: 4px;">USMLE Wise Design System</div>
+          <div style="font-size: 13px; color: var(--uw-ink-500);">v1.2 · Last updated May 18, 2026 · Maintained by Brand &amp; Product Design</div>
+        </div>
+        <div class="row">
+          <button class="btn btn--outline btn--sm">Changelog</button>
+          <button class="btn btn--primary btn--sm">Request a token</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
