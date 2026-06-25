@@ -73,6 +73,7 @@
         margin-top: 2.25rem;
       }
       .msp-faq .accordion .msp-eyebrow:first-child { margin-top: 0; }
+      .msp-faq .msp-h2 { margin-inline: auto; }
       @media (max-width: 640px) {
         .msp-faq .accordion__head { padding: 18px 44px; font-size: 15px; }
         .msp-faq .accordion__body { padding: 0 24px 20px; }
@@ -116,6 +117,70 @@
       }
       @media (max-width: 860px) {
         .jsp-prob__grid { grid-template-columns: 1fr; }
+      }
+
+      /* ---- JSP: founder story ---- */
+      .jsp-story__inner {
+        display: grid;
+        grid-template-columns: .82fr 1.18fr;
+        gap: clamp(32px, 5vw, 64px);
+        align-items: start;
+      }
+      .jsp-story__aside { position: sticky; top: 100px; }
+      .jsp-story__ava {
+        position: relative;
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--uw-border);
+        background: var(--uw-blue-700);
+        aspect-ratio: 1/1;
+        display: grid;
+        place-items: center;
+      }
+      .jsp-story__ava span {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: clamp(56px, 9vw, 84px);
+        color: #fff;
+        letter-spacing: .02em;
+      }
+      .jsp-story__name {
+        font-family: var(--font-display);
+        font-size: 19px;
+        font-weight: 600;
+        color: var(--uw-ink-900);
+        margin: 16px 0 0;
+      }
+      .jsp-story__role { font-size: 13px; color: var(--uw-ink-500); margin: 4px 0 0; line-height: 1.5; }
+      .jsp-story__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 14px;
+        font-size: 11.5px;
+        font-family: var(--font-mono);
+        letter-spacing: .04em;
+        background: var(--uw-blue-50);
+        color: var(--uw-blue-600);
+        padding: 5px 11px;
+        border-radius: 999px;
+      }
+      .jsp-story__lede {
+        font-family: var(--font-display);
+        font-size: clamp(20px, 2.2vw, 26px);
+        line-height: 1.4;
+        color: var(--uw-ink-900);
+        margin: 0 0 22px;
+        letter-spacing: -0.01em;
+      }
+      .jsp-story__copy { font-size: 16.5px; line-height: 1.6; color: var(--uw-ink-700); max-width: 56ch; }
+      .jsp-story__copy p { margin: 0 0 20px; }
+      .jsp-story__copy strong { color: var(--uw-ink-900); font-weight: 600; }
+      .jsp-story__cta { margin-top: 28px; }
+      @media (max-width: 880px) {
+        .jsp-story__inner { grid-template-columns: 1fr; }
+        .jsp-story__aside { position: static; max-width: 420px; }
       }
 
       /* ---- JSP: final CTA — compact, centered ---- */
@@ -227,6 +292,148 @@
           color: var(--uw-ink-500);
         }
       }
+
+      /* ---- JSP: proof / real studies ---- */
+      .jsp-proof__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(16px, 2vw, 24px);
+        margin-top: clamp(40px, 5vw, 64px);
+      }
+      .jsp-proof__card {
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        padding: clamp(26px, 3vw, 40px);
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .jsp-proof__card:hover {
+        border-color: var(--uw-blue-200);
+        box-shadow: var(--shadow-md);
+      }
+      .jsp-proof__tag {
+        align-self: flex-start;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--uw-blue-600);
+        background: var(--uw-blue-50);
+        padding: 5px 11px;
+        border-radius: 999px;
+      }
+      .jsp-proof__q {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(20px, 2.2vw, 25px);
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: var(--uw-ink-900);
+        margin: 0;
+      }
+      .jsp-proof__card p {
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--uw-ink-600);
+        margin: 0;
+      }
+      .jsp-proof__head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .jsp-proof__card--feat { grid-column: 1 / -1; }
+      @media (min-width: 861px) {
+        .jsp-proof__card--feat {
+          flex-direction: row;
+          align-items: center;
+          gap: clamp(36px, 5vw, 80px);
+        }
+        .jsp-proof__card--feat .jsp-proof__head { flex: 1; }
+        .jsp-proof__card--feat p { flex: 1; font-size: 16px; }
+        .jsp-proof__card--feat .jsp-proof__q {
+          font-size: clamp(24px, 2.8vw, 33px);
+        }
+      }
+      @media (max-width: 860px) {
+        .jsp-proof__grid { grid-template-columns: 1fr; }
+      }
+
+      /* ---- JSP: a year from now — two paths ---- */
+      .jsp-year .msp-head { text-align: center; margin-inline: auto; }
+      .jsp-year .msp-h2 { margin-inline: auto; }
+      .jsp-year__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(16px, 2vw, 24px);
+        margin-top: clamp(40px, 5vw, 64px);
+        align-items: stretch;
+      }
+      .jsp-year__col {
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        padding: clamp(28px, 3.2vw, 44px);
+      }
+      .jsp-year__col--without { background: var(--uw-ink-75); }
+      .jsp-year__col--with {
+        background: var(--uw-blue-50);
+        border-color: var(--uw-blue-200);
+        box-shadow: var(--shadow-md);
+      }
+      .jsp-year__label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin: 0 0 clamp(20px, 2.4vw, 28px);
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--uw-border);
+      }
+      .jsp-year__col--without .jsp-year__label { color: var(--uw-ink-500); }
+      .jsp-year__col--with .jsp-year__label {
+        color: var(--uw-blue-600);
+        border-bottom-color: var(--uw-blue-200);
+      }
+      .jsp-year__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(16px, 2vw, 22px);
+      }
+      .jsp-year__list li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 14px;
+        align-items: start;
+        font-size: 15.5px;
+        line-height: 1.5;
+      }
+      .jsp-year__list i {
+        flex-shrink: 0;
+        margin-top: 1px;
+        border-radius: 999px;
+        padding: 3px;
+      }
+      .jsp-year__col--without .jsp-year__list li { color: var(--uw-ink-500); }
+      .jsp-year__col--without .jsp-year__list i {
+        color: var(--uw-ink-400);
+        background: #fff;
+      }
+      .jsp-year__col--with .jsp-year__list li { color: var(--uw-ink-900); }
+      .jsp-year__col--with .jsp-year__list i {
+        color: #fff;
+        background: var(--uw-blue-500);
+      }
+      .jsp-year__cta { margin-top: clamp(36px, 4.5vw, 52px); }
+      @media (max-width: 760px) {
+        .jsp-year__grid { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body class="msp">
@@ -242,7 +449,39 @@
         </a>
         <nav class="msp-nav__links" aria-label="Primary">
           <a href="index.html">Home</a>
-          <a href="coaching.html">Coaching</a>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="coaching.html">Coaching <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="coaching.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Coaching Overview</span>
+                <span class="msp-nav__dd-meta">Step 1, Step 2 CK &amp; Step 3</span>
+              </a>
+              <a href="coaching-step1-crash-course.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Crash Course</span>
+                <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
+              </a>
+              <a href="coaching-step1-review.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Review Course</span>
+                <span class="msp-nav__dd-meta">10-day &middot; For review</span>
+              </a>
+              <a href="coaching-step1-mastery.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Mastery</span>
+                <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
+              </a>
+              <a href="coaching-step23-review.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 2/3 Review Course</span>
+                <span class="msp-nav__dd-meta">9-day &middot; For review</span>
+              </a>
+              <a href="coaching-step23-mastery.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 2/3 Mastery</span>
+                <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
+              </a>
+              <a href="coaching-tutoring.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">1:1 Tutoring</span>
+                <span class="msp-nav__dd-meta">Done-with-you</span>
+              </a>
+            </div>
+          </div>
           <a href="rotations.html">Rotations</a>
           <div class="msp-nav__item msp-nav__item--has-dd">
             <a href="research.html">Research <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
@@ -291,6 +530,18 @@
               <a href="match-loi.html" class="msp-nav__dd-link">
                 <span class="msp-nav__dd-name">Letter of Interest / Intent</span>
                 <span class="msp-nav__dd-meta">Strategic timing &amp; editing</span>
+              </a>
+              <a href="match-membership.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Match Membership</span>
+                <span class="msp-nav__dd-meta">DIY</span>
+              </a>
+              <a href="match-packages.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Match Packages</span>
+                <span class="msp-nav__dd-meta">Done-for-you</span>
+              </a>
+              <a href="match-ps3x.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Personal Statement</span>
+                <span class="msp-nav__dd-meta">PS3X</span>
               </a>
             </div>
           </div>
@@ -481,184 +732,6 @@
         </div>
       </section>
 
-      <!-- ============== 2. PRODUCTS ============== -->
-      <section
-        class="msp-section msp-products"
-        id="services"
-        aria-labelledby="servicesTitle"
-      >
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">What We Offer</span>
-            <h2 id="servicesTitle" class="msp-h2">
-              Our four research programs
-            </h2>
-            <p class="msp-sub">
-              From a $19 recorded foundation to a full 12-month publication
-              pathway. Choose the level that fits your timeline and goals.
-            </p>
-          </div>
-
-          <!--
-          <div class="msp-bento reveal">
-
-            <article
-              class="msp-bento__card msp-bento__card--hero"
-              style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.jpg');"
-            >
-              <div class="msp-bento__inner">
-                <span class="msp-bento__format">Live &middot; 12-month program</span>
-                <h3 class="msp-bento__name">Research Catalyst</h3>
-                <div class="msp-bento__price">$3,500</div>
-                <p class="msp-bento__desc">
-                  A fully guided 12-month pathway from zero to publication.
-                  Topic selection, study design, writing, and journal
-                  submission, all with your mentor.
-                </p>
-                <a class="btn btn--primary btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              </div>
-            </article>
-
-            <article class="msp-bento__card" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.jpg');">
-              <div class="msp-bento__inner">
-                <span class="msp-bento__format">Live</span>
-                <h3 class="msp-bento__name">Original Research</h3>
-                <div class="msp-bento__price">$499</div>
-                <p class="msp-bento__desc">Case report or original study with full mentor guidance through publication.</p>
-                <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              </div>
-            </article>
-
-            <article class="msp-bento__card" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.jpg');">
-              <div class="msp-bento__inner">
-                <span class="msp-bento__format">Live</span>
-                <h3 class="msp-bento__name">Review Paper / Abstract</h3>
-                <div class="msp-bento__price">$199</div>
-                <p class="msp-bento__desc">Guided review paper with mentor support. The fastest first publication for your CV.</p>
-                <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              </div>
-            </article>
-
-            <article class="msp-bento__card" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.jpg');">
-              <div class="msp-bento__inner">
-                <span class="msp-bento__format">Recorded &middot; Self-paced</span>
-                <h3 class="msp-bento__name">Research Masterclass</h3>
-                <div class="msp-bento__price">$19</div>
-                <p class="msp-bento__desc">Research fundamentals for medical graduates. The right starting point before working with a mentor.</p>
-                <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              </div>
-            </article>
-
-          </div>
-
-          <div class="msp-bento msp-bento--plain reveal">
-
-            <article class="msp-bento__card msp-bento__card--hero">
-              <div class="msp-bento__inner">
-                <span class="msp-bento__format">Live &middot; 12-month program</span>
-                <h3 class="msp-bento__name">Research Catalyst</h3>
-                <div class="msp-bento__price">$3,500</div>
-                <p class="msp-bento__desc">A fully guided 12-month pathway from zero to publication. Topic selection, study design, writing, and journal submission, all with your mentor.</p>
-                <a class="btn btn--primary btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              </div>
-            </article>
-
-            <article class="msp-bento__card">
-              <div class="msp-bento__inner">
-                <span class="msp-bento__format">Live</span>
-                <h3 class="msp-bento__name">Original Research</h3>
-                <div class="msp-bento__price">$499</div>
-                <p class="msp-bento__desc">Case report or original study with full mentor guidance through publication.</p>
-                <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              </div>
-            </article>
-
-            <article class="msp-bento__card">
-              <div class="msp-bento__inner">
-                <span class="msp-bento__format">Live</span>
-                <h3 class="msp-bento__name">Review Paper / Abstract</h3>
-                <div class="msp-bento__price">$199</div>
-                <p class="msp-bento__desc">Guided review paper with mentor support. The fastest first publication for your CV.</p>
-                <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              </div>
-            </article>
-
-            <article class="msp-bento__card">
-              <div class="msp-bento__inner">
-                <span class="msp-bento__format">Recorded &middot; Self-paced</span>
-                <h3 class="msp-bento__name">Research Masterclass</h3>
-                <div class="msp-bento__price">$19</div>
-                <p class="msp-bento__desc">Research fundamentals for medical graduates. The right starting point before working with a mentor.</p>
-                <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              </div>
-            </article>
-
-          </div>
-          -->
-
-          <!-- Option C: Alternating editorial rows -->
-          <div class="msp-sva-list">
-
-            <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash (1).jpg');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">01 &middot; Live &middot; 12-month program</span>
-                <h3 class="msp-sva-title">Research Catalyst</h3>
-                <div class="msp-sva-price">$3,500</div>
-                <p class="msp-sva-desc">A fully guided 12-month pathway from zero to publication. Topic selection, study design, writing, and journal submission, all with your mentor.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="research-catalyst.html" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.jpg');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">02 &middot; Live</span>
-                <h3 class="msp-sva-title">Original Research</h3>
-                <div class="msp-sva-price">$499</div>
-                <p class="msp-sva-desc">Case report or original study with full mentor guidance through publication. Ideal for adding a first-author credit to your CV.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="research-original.html" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/pexels-tara-winstead-7722791.jpg');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">03 &middot; Live</span>
-                <h3 class="msp-sva-title">Review Paper / Abstract</h3>
-                <div class="msp-sva-price">$199</div>
-                <p class="msp-sva-desc">A mentor-supported review paper or abstract: the fastest way to add a publication to your CV.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="research-review.html" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash (1).jpg');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">04 &middot; Recorded &middot; Self-paced</span>
-                <h3 class="msp-sva-title">Research Masterclass</h3>
-                <div class="msp-sva-price">$19</div>
-                <p class="msp-sva-desc">Research fundamentals for medical graduates. The right starting point before working with a mentor.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="research-masterclass.html" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </section>
-
       <!-- ============== 3. PROCESS ============== -->
       <section
         class="msp-section msp-process"
@@ -752,198 +825,104 @@
         </div>
       </section>
 
-      <!-- ============== 4. MENTORS ============== -->
+      <!-- ============== 4. STORY ============== -->
       <section
         class="msp-section msp-mentors"
         id="mentors"
-        aria-labelledby="mentorsTitle"
+        aria-labelledby="storyTitle"
       >
         <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Our experts</span>
-            <h2 id="mentorsTitle" class="msp-h2">
-              Physicians who publish. Now helping you do the same.
-            </h2>
+          <div class="jsp-story__inner">
+            <div class="jsp-story__aside reveal">
+              <div class="jsp-story__ava" aria-hidden="true"><span>K</span></div>
+              <p class="jsp-story__name">Kaushik Sreerama Reddy, MBBS</p>
+              <p class="jsp-story__role">Chief Scientific Officer, USMLE Wise &amp; CRIST &middot; Director of Operations &amp; Lead Investigator, MCTC &middot; Published author</p>
+            </div>
+            <div class="reveal">
+              <span class="msp-eyebrow">My story</span>
+              <h2 id="storyTitle" class="jsp-story__lede">Dear parent,</h2>
+              <div class="jsp-story__copy">
+                <p>I'm Kaushik. I came from India and built a career in US medicine, and I teach research this way because <strong>I had to learn it the hard way first.</strong></p>
+                <p>When I started, research felt like a closed door. The mentors were busy. The papers were impossible to read. Nobody explained how any of it actually worked.</p>
+                <p><strong>A young scientist doesn't need more tasks. They need someone to show them the real process.</strong></p>
+                <p>So I built the program I wish I'd had. Today I'm the chief scientific officer at USMLE Wise, and the director of operations and lead investigator with the Myositis Clinical Trials Consortium, an international research group centered at the University of Pittsburgh. I also lead the science on the CRIST team, with peer-reviewed papers of my own.</p>
+                <p>Every week, your child meets me and a small group on a live call. They own one real study. They present what they did, I push on it the way scientists push on each other, and they leave with a clear next step.</p>
+                <p>Then I watch it click. <strong>A student who couldn't get past the title of a paper in week one is writing one of their own by the end.</strong></p>
+                <p>The research they learn to do is the same kind I do myself. That's the part that carries, long after the application is filed.</p>
+                <p>I run this personally. Not a team, not an assistant. <strong>If your child wants this, I'll get them there.</strong></p>
+              </div>
+              <div class="jsp-story__cta">
+                <a
+                  class="btn btn--primary btn--lg"
+                  href="https://team.manikmadaan.com/guidance-call/book"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Book a free call with me</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="msp-mtr-list-e">
-
-            <article class="msp-mtr-e reveal">
-              <div class="msp-mtr-e__photo">
-                <img src="assets/Photos/Barakat%20Photo.jpeg" alt="Dr. Muhammad Ahmad Barakat" />
-              </div>
-              <div class="msp-mtr-e__body">
-                <div class="msp-mtr-e__header">
-                  <span class="msp-mtr-e__role">Research Mentor</span>
-                  <h3 class="msp-mtr-e__name">Muhammad Ahmad Barakat</h3>
-                  <span class="msp-mtr-e__prog">Medical Student, Caucasus International University</span>
-                </div>
-                <ul class="msp-mtr-e__creds">
-                  <li>6 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
-                  <li>160+ students guided to publication across SRA &amp; MEDMARK programs</li>
-                  <li>APA Psych SIG International Student Research Chair 2026&ndash;2027</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="msp-mtr-e reveal">
-              <div class="msp-mtr-e__photo">
-                <div class="msp-mtr-e__ava msp-mtr__ava--red">AP</div>
-              </div>
-              <div class="msp-mtr-e__body">
-                <div class="msp-mtr-e__header">
-                  <span class="msp-mtr-e__role">Internal Medicine &middot; Research Mentor</span>
-                  <h3 class="msp-mtr-e__name">Dr. Anaya Patel</h3>
-                  <span class="msp-mtr-e__prog">Research &amp; Publications Mentor</span>
-                </div>
-                <ul class="msp-mtr-e__creds">
-                  <li>6 published case reports &amp; reviews</li>
-                  <li>Step 2 CK: 258</li>
-                  <li>80+ students guided to publication</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="msp-mtr-e reveal">
-              <div class="msp-mtr-e__photo">
-                <div class="msp-mtr-e__ava msp-mtr__ava--green">DR</div>
-              </div>
-              <div class="msp-mtr-e__body">
-                <div class="msp-mtr-e__header">
-                  <span class="msp-mtr-e__role">Cardiology Research &middot; Research Mentor</span>
-                  <h3 class="msp-mtr-e__name">Dr. David Reyes</h3>
-                  <span class="msp-mtr-e__prog">Original Research Mentor</span>
-                </div>
-                <ul class="msp-mtr-e__creds">
-                  <li>4 original studies published</li>
-                  <li>Step 2 CK: 261</li>
-                  <li>60+ students mentored</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="msp-mtr-e reveal">
-              <div class="msp-mtr-e__photo">
-                <div class="msp-mtr-e__ava msp-mtr__ava--purple">M4</div>
-              </div>
-              <div class="msp-mtr-e__body">
-                <div class="msp-mtr-e__header">
-                  <span class="msp-mtr-e__role">[Specialty] &middot; Research Mentor</span>
-                  <h3 class="msp-mtr-e__name">Dr. [Fourth Mentor]</h3>
-                  <span class="msp-mtr-e__prog">Research Mentor</span>
-                </div>
-                <ul class="msp-mtr-e__creds">
-                  <li>[Credential 1]</li>
-                  <li>[Credential 2]</li>
-                  <li>[Credential 3]</li>
-                </ul>
-              </div>
-            </article>
-
-          </div>
-
-
         </div>
       </section>
 
-      <!-- ============== 5. PUBLISHED RESEARCH ============== -->
-      <section class="msp-section msp-pub-section" id="publications" aria-labelledby="pubTitle">
+      <!-- ============== 5. PROOF ============== -->
+      <section class="msp-section msp-pub-section" id="proof" aria-labelledby="proofTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">
-            <span class="msp-eyebrow">Published work</span>
-            <h2 id="pubTitle" class="msp-h2">Research we've helped bring to print.</h2>
-            <p class="msp-sub">A sample of publications from students in our programs.</p>
+            <span class="msp-eyebrow">Proof</span>
+            <h2 id="proofTitle" class="msp-h2">Real studies, not science-fair posters.</h2>
+            <p class="msp-sub">
+              These are live projects that practicing doctors care about. Your child contributes to one of them or models their own on it.
+            </p>
           </div>
 
-          <div class="msp-pub-stack">
+          <div class="jsp-proof__grid">
 
-            <article class="msp-pub-feat reveal">
-              <div class="msp-pub-feat__top">
-                <span class="msp-pub-chip msp-pub-chip--blue">Original Research</span>
-                <span class="msp-pub-feat__year">2024</span>
+            <article class="jsp-proof__card jsp-proof__card--feat reveal">
+              <div class="jsp-proof__head">
+                <span class="jsp-proof__tag">Dermatology · AI</span>
+                <h3 class="jsp-proof__q">Can a phone photo measure a rare skin disease?</h3>
               </div>
-              <h3 class="msp-pub-feat__title">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.
-              </h3>
-              <p class="msp-pub-feat__abstract">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <p>
+                Building a global image database and testing whether a smartphone picture can score disease severity as well as a dermatologist, across every skin tone.
               </p>
-              <div class="msp-pub-feat__byline">
-                <div class="msp-pub-feat__journal">Journal of General Internal Medicine</div>
-                <div class="msp-pub-feat__authors">
-                  Lorem I. Ipsum, Dolor S. Amet, Consectetur A.
-                  <span class="msp-pub-credit">USMLE Wise student · First author</span>
-                </div>
-              </div>
             </article>
 
-            <article class="msp-pub-feat reveal">
-              <div class="msp-pub-feat__top">
-                <span class="msp-pub-chip msp-pub-chip--blue">Case Report</span>
-                <span class="msp-pub-feat__year">2024</span>
-              </div>
-              <h3 class="msp-pub-feat__title">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
-              </h3>
-              <p class="msp-pub-feat__abstract">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <article class="jsp-proof__card reveal">
+              <span class="jsp-proof__tag">Public health · vaccine safety</span>
+              <h3 class="jsp-proof__q">Which children shouldn't get the oral polio vaccine?</h3>
+              <p>
+                A three-question screening tool for India's mass vaccination drives, tested on whether a parent or health worker actually understands it.
               </p>
-              <div class="msp-pub-feat__byline">
-                <div class="msp-pub-feat__journal">Cureus</div>
-                <div class="msp-pub-feat__authors">
-                  Duis A. Irure, Dolor R. Voluptate
-                  <span class="msp-pub-credit">USMLE Wise student · First author</span>
-                </div>
-              </div>
             </article>
 
-            <article class="msp-pub-feat reveal">
-              <div class="msp-pub-feat__top">
-                <span class="msp-pub-chip msp-pub-chip--blue">Review Article</span>
-                <span class="msp-pub-feat__year">2023</span>
-              </div>
-              <h3 class="msp-pub-feat__title">
-                Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.
-              </h3>
-              <p class="msp-pub-feat__abstract">
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.
+            <article class="jsp-proof__card reveal">
+              <span class="jsp-proof__tag">Engineering · muscle disease</span>
+              <h3 class="jsp-proof__q">Can a video measure muscle strength?</h3>
+              <p>
+                A phone-camera app that reads a simple sit-to-stand movement to track strength in patients with inflammatory muscle disease.
               </p>
-              <div class="msp-pub-feat__byline">
-                <div class="msp-pub-feat__journal">BMJ Open</div>
-                <div class="msp-pub-feat__authors">
-                  Excepteur S. Occaecat, Cupidatat N. Proident
-                  <span class="msp-pub-credit">USMLE Wise student · First author</span>
-                </div>
-              </div>
             </article>
 
-            <article class="msp-pub-feat reveal">
-              <div class="msp-pub-feat__top">
-                <span class="msp-pub-chip msp-pub-chip--blue">Original Research</span>
-                <span class="msp-pub-feat__year">2023</span>
-              </div>
-              <h3 class="msp-pub-feat__title">
-                At vero eos et accusamus et iusto odio dignissimos ducimus blanditiis praesentium.
-              </h3>
-              <p class="msp-pub-feat__abstract">
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+            <article class="jsp-proof__card reveal">
+              <span class="jsp-proof__tag">Clinical trial design</span>
+              <h3 class="jsp-proof__q">Does a health drink really beat weight-loss meds?</h3>
+              <p>
+                Designing a fair trial to find the honest answer, including how to run an experiment without fooling yourself.
               </p>
-              <div class="msp-pub-feat__byline">
-                <div class="msp-pub-feat__journal">American Journal of Medicine</div>
-                <div class="msp-pub-feat__authors">
-                  Vero E. Accusamus, Iusto O. Dignissimos
-                  <span class="msp-pub-credit">USMLE Wise student · First author</span>
-                </div>
-              </div>
+            </article>
+
+            <article class="jsp-proof__card reveal">
+              <span class="jsp-proof__tag">Medical writing · peer review</span>
+              <h3 class="jsp-proof__q">Real patient cases, written to journal standard.</h3>
+              <p>
+                Students take unusual cases and write them up to the same guidelines a journal like BMJ requires. It is one of the fastest routes to a first publication.
+              </p>
             </article>
 
           </div>
         </div>
       </section>
-
-      <!-- ============== 6. SOCIAL PROOF ============== -->
-      <!-- TODO: add 2–3 student testimonial quotes once copy is ready -->
-
-
 
       <!-- ============== HOW WE COMPARE ============== -->
       <section class="msp-section jsp-compare" aria-labelledby="cmpTitle">
@@ -1037,6 +1016,62 @@
         </div>
       </section>
 
+      <!-- ============== A YEAR FROM NOW ============== -->
+      <section class="msp-section jsp-year" aria-labelledby="yearTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">A year from now</span>
+            <h2 id="yearTitle" class="msp-h2">Your child spends the year either way.</h2>
+          </div>
+
+          <div class="jsp-year__grid">
+            <div class="jsp-year__col jsp-year__col--without reveal">
+              <h3 class="jsp-year__label">Without the program</h3>
+              <ul class="jsp-year__list">
+                <li>
+                  <i data-lucide="x" width="16" height="16"></i>
+                  <span>Another activity that fills a line and teaches nothing.</span>
+                </li>
+                <li>
+                  <i data-lucide="x" width="16" height="16"></i>
+                  <span>An application that blends in with thousands of others.</span>
+                </li>
+                <li>
+                  <i data-lucide="x" width="16" height="16"></i>
+                  <span>Still no idea how real research actually works.</span>
+                </li>
+                <li>
+                  <i data-lucide="x" width="16" height="16"></i>
+                  <span>Nothing they can point to and call their own.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="jsp-year__col jsp-year__col--with reveal">
+              <h3 class="jsp-year__label">With the program</h3>
+              <ul class="jsp-year__list">
+                <li>
+                  <i data-lucide="check" width="16" height="16"></i>
+                  <span>A real study, carried from first question to finished paper.</span>
+                </li>
+                <li>
+                  <i data-lucide="check" width="16" height="16"></i>
+                  <span>A published paper and abstracts with their name on them.</span>
+                </li>
+                <li>
+                  <i data-lucide="check" width="16" height="16"></i>
+                  <span>Skills they keep for college and a career in medicine.</span>
+                </li>
+                <li>
+                  <i data-lucide="check" width="16" height="16"></i>
+                  <span>An application built on proof, and a doctor's letter behind it.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ============== 6. FAQ ============== -->
       <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
         <div class="msp-wrap msp-faq__grid">
@@ -1047,7 +1082,6 @@
             </h2>
           </div>
           <div class="accordion reveal">
-            <p class="msp-eyebrow">The commitment</p>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 How much time does it take each week?
@@ -1060,45 +1094,43 @@
               <button class="accordion__head" type="button">
                 My child is already busy with school and activities. Can they manage it?
               </button>
-              <div class="accordion__body"></div>
+              <div class="accordion__body">Usually yes, because the weekly load is light. My most common advice to families is to cut activities that cause burnout, not add more. A child who is over-scheduled can't do deep work. Help them stay consistent and protect this time.</div>
             </div>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 What grade is this for?
               </button>
-              <div class="accordion__body"></div>
+              <div class="accordion__body">It's built for high schoolers, grades 9 through 12, including students aiming at BS/MD and premed. Motivated undergraduates fit too.</div>
             </div>
-            <p class="msp-eyebrow">The outcome</p>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 Will my child actually get published?
               </button>
-              <div class="accordion__body"></div>
+              <div class="accordion__body">That's the goal, and it usually takes six to eight months of consistent work. I won't fast-track it, because rushing doesn't teach anything. Results depend on your child's own effort, but the path is real and students have walked it.</div>
             </div>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 Who teaches it?
               </button>
-              <div class="accordion__body"></div>
+              <div class="accordion__body">I do, personally. I'm Kaushik. I'm the chief scientific officer at USMLE Wise, the director of operations and lead investigator with the Myositis Clinical Trials Consortium, and I lead the science on the CRIST team. Your child works with me directly, not a team or an assistant.</div>
             </div>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 Is it online?
               </button>
-              <div class="accordion__body"></div>
+              <div class="accordion__body">Yes. Weekly live calls your child joins from home, and every session is recorded so nothing is lost on a busy week.</div>
             </div>
-            <p class="msp-eyebrow">Getting started</p>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 What does it cost?
               </button>
-              <div class="accordion__body"></div>
+              <div class="accordion__body">We talk through it on a short call so I can recommend the right fit. You start with a one-month trial and a deposit, and the deposit comes back if it isn't right.</div>
             </div>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 How do we begin?
               </button>
-              <div class="accordion__body"></div>
+              <div class="accordion__body">Book a free call. I'll talk with you and your child about their goals and whether real research is the right use of their time right now. There's no pressure to enroll.</div>
             </div>
           </div>
         </div>
@@ -1168,15 +1200,38 @@
           </div>
           <nav class="msp-foot__nav" aria-label="Footer navigation">
             <div class="msp-foot__nav-group">
-              <span class="msp-foot__nav-label">Services</span>
-              <a href="coaching.html">Coaching</a>
-              <a href="rotations.html">Rotations</a>
-              <a href="research.html">Research</a>
-              <a href="match.html">Match</a>
+              <span class="msp-foot__nav-label">Coaching</span>
+              <a href="coaching.html">Coaching Overview</a>
+              <a href="coaching-step1-crash-course.html">Step 1 Crash Course</a>
+              <a href="coaching-step1-review.html">Step 1 Review Course</a>
+              <a href="coaching-step1-mastery.html">Step 1 Mastery</a>
+              <a href="coaching-step23-review.html">Step 2/3 Review Course</a>
+              <a href="coaching-step23-mastery.html">Step 2/3 Mastery</a>
+              <a href="coaching-tutoring.html">1:1 Tutoring</a>
             </div>
             <div class="msp-foot__nav-group">
-              <span class="msp-foot__nav-label">Company</span>
+              <span class="msp-foot__nav-label">Research</span>
+              <a href="research.html">Research Overview</a>
+              <a href="research-catalyst.html">Research Catalyst</a>
+              <a href="research-original.html">Original Research</a>
+              <a href="research-review.html">Review Paper &amp; Abstract</a>
+              <a href="research-masterclass.html">Research Masterclass</a>
+              <a href="research-junior-scientist.html">Junior Scientist Program</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Match</span>
+              <a href="match.html">Match Overview</a>
+              <a href="match-lor.html">LOR Editing</a>
+              <a href="match-eras-cv.html">ERAS CV 3X</a>
+              <a href="match-loi.html">Letter of Intent</a>
+              <a href="match-membership.html">Match Membership</a>
+              <a href="match-packages.html">Match Packages</a>
+              <a href="match-ps3x.html">Personal Statement</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Site</span>
               <a href="index.html">Home</a>
+              <a href="rotations.html">Rotations</a>
               <a href="testimonials.html">Stories</a>
               <a href="qa.html">FAQ</a>
             </div>
@@ -1200,6 +1255,14 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
+            </a>
+            <a href="#" class="msp-foot__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.79a4.85 4.85 0 01-1.02-.1z"/>
+              </svg>
+            </a>
+            <a href="#" class="msp-foot__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="youtube" width="18" height="18"></i>
             </a>
           </div>
           <small>&copy; 2026 USMLE Wise. All rights reserved.</small>
