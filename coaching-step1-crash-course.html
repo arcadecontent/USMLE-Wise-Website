@@ -285,6 +285,354 @@
         .cc-work--wide { grid-template-columns: 1fr; }
         .cc-work--wide h3, .cc-work--wide p { grid-column: 1; }
       }
+
+      /* ============== My story (founder letter) ============== */
+      .cc-story {
+        background: var(--uw-surface-sunk);
+        border-block: 1px solid var(--uw-border);
+      }
+      .cc-story__grid {
+        display: grid;
+        grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+        gap: clamp(40px, 6vw, 96px);
+        align-items: start;
+      }
+
+      /* --- Sticky identity card --- */
+      .cc-story__aside {
+        position: sticky;
+        top: 96px;
+        align-self: start;
+      }
+      .cc-story__photo {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: var(--r-xl);
+        background: var(--uw-blue-50);
+        box-shadow: var(--shadow-md);
+        display: block;
+      }
+      .cc-story__name {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 2.6vw, 32px);
+        font-weight: 600;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        color: var(--uw-ink-900);
+        margin: var(--space-4) 0 6px;
+      }
+      .cc-story__title {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: var(--uw-blue-600);
+        margin: 0;
+      }
+      .cc-story__creds {
+        list-style: none;
+        margin: var(--space-4) 0 0;
+        padding: var(--space-4) 0 0;
+        border-top: 1px solid var(--uw-border);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .cc-story__cred {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        line-height: 1.3;
+        color: var(--uw-ink-700);
+      }
+      .cc-story__cred i,
+      .cc-story__cred svg {
+        color: var(--uw-blue-500);
+        flex-shrink: 0;
+      }
+
+      /* --- Letter --- */
+      .cc-story__letter { max-width: 62ch; }
+      .cc-story__salutation {
+        font-family: var(--font-display);
+        font-size: clamp(20px, 2vw, 26px);
+        font-weight: 600;
+        color: var(--uw-ink-900);
+        margin: var(--space-3) 0 var(--space-5);
+      }
+      .cc-story__letter p {
+        font-family: var(--font-display);
+        font-size: clamp(16px, 1.3vw, 18px);
+        line-height: 1.85;
+        color: var(--uw-ink-700);
+        margin: 0 0 var(--space-4);
+      }
+      .cc-story__letter p strong {
+        color: var(--uw-ink-900);
+        font-weight: 600;
+      }
+      .cc-story__pull {
+        font-family: var(--font-display) !important;
+        font-size: clamp(20px, 2.2vw, 27px) !important;
+        line-height: 1.4 !important;
+        color: var(--uw-ink-900) !important;
+        margin: var(--space-6) 0 !important;
+        padding-left: clamp(18px, 2vw, 26px);
+        border-left: 3px solid var(--uw-blue-500);
+      }
+      .cc-story__sign {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: clamp(17px, 1.5vw, 19px);
+        color: var(--uw-ink-800);
+        margin: var(--space-6) 0 var(--space-5) !important;
+      }
+      .cc-story__cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        align-items: center;
+      }
+
+      /* ============== FAQ (multi-open accordion) ============== */
+      .cc-faq__grid {
+        max-width: 860px;
+        margin-inline: auto;
+        text-align: center;
+      }
+      .cc-faq__grid .msp-h2 { margin-inline: auto; }
+      .cc-faq__list {
+        margin-top: clamp(32px, 4vw, 44px);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        text-align: left;
+      }
+      .cc-faq__item {
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-md);
+        background: #fff;
+        overflow: hidden;
+        transition: border-color 0.2s ease;
+      }
+      .cc-faq__item.is-open { border-color: var(--uw-blue-200); }
+      .cc-faq__head {
+        position: relative;
+        width: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: clamp(15px, 1.4vw, 16px);
+        line-height: 1.45;
+        color: var(--uw-ink-900);
+        text-align: center;
+        padding: 24px 56px;
+      }
+      .cc-faq__head::after {
+        content: "+";
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22px;
+        line-height: 1;
+        color: var(--uw-ink-500);
+        transition: color 0.2s ease;
+      }
+      .cc-faq__item.is-open .cc-faq__head { color: var(--uw-blue-700); }
+      .cc-faq__item.is-open .cc-faq__head::after {
+        content: "\2212";
+        color: var(--uw-blue-600);
+      }
+      .cc-faq__body {
+        display: none;
+        padding: 0 56px 24px;
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--uw-ink-600);
+        text-align: center;
+      }
+      .cc-faq__item.is-open .cc-faq__body { display: block; }
+      @media (max-width: 640px) {
+        .cc-faq__head { padding: 18px 44px; font-size: 15px; }
+        .cc-faq__body { padding: 0 24px 20px; }
+      }
+
+      @media (max-width: 860px) {
+        .cc-story__grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-6);
+        }
+        .cc-story__aside {
+          position: static;
+          display: grid;
+          grid-template-columns: 110px 1fr;
+          gap: var(--space-4) var(--space-5);
+          align-items: center;
+        }
+        .cc-story__photo { aspect-ratio: 1; }
+        .cc-story__name { margin-top: 0; }
+        .cc-story__creds {
+          grid-column: 1 / -1;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px 22px;
+        }
+      }
+
+      /* ============== Final CTA — offer / value stack ============== */
+      .cc-offer {
+        max-width: 640px;
+        margin-inline: auto;
+        background: #08111f;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: clamp(20px, 2.4vw, 28px);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+      .cc-offer__head {
+        text-align: center;
+        padding: clamp(34px, 5vw, 52px) clamp(24px, 4vw, 52px) 0;
+      }
+      .cc-offer__head .msp-eyebrow { justify-content: center; }
+      .cc-offer__title {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: clamp(26px, 3.4vw, 38px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: #fff;
+        margin: var(--space-3) 0 0;
+      }
+      .cc-offer__body {
+        padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 52px)
+          clamp(32px, 4vw, 48px);
+      }
+
+      /* value stack */
+      .cc-offer__stack { list-style: none; margin: 0; padding: 0; }
+      .cc-offer__row {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .cc-offer__row-name {
+        flex: 1;
+        font-size: 15px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.78);
+      }
+      .cc-offer__row-price {
+        font-family: var(--font-mono);
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.5);
+        white-space: nowrap;
+      }
+      .cc-offer__row--total {
+        border-bottom: none;
+        margin-top: 4px;
+      }
+      .cc-offer__row--total .cc-offer__row-name {
+        font-weight: 600;
+        color: #fff;
+      }
+      .cc-offer__row--total .cc-offer__row-price {
+        font-size: 17px;
+        color: #fff;
+      }
+
+      /* price highlight */
+      .cc-offer__price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px 20px;
+        flex-wrap: wrap;
+        margin-top: var(--space-5);
+        padding: clamp(20px, 3vw, 28px);
+        background: rgba(126, 184, 247, 0.08);
+        border: 1px solid rgba(126, 184, 247, 0.22);
+        border-radius: var(--r-lg);
+      }
+      .cc-offer__price-label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .cc-offer__price-save {
+        display: inline-block;
+        margin-top: 8px;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #7eb8f7;
+        background: rgba(126, 184, 247, 0.12);
+        border-radius: var(--r-pill);
+        padding: 4px 10px;
+      }
+      .cc-offer__price-nums {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .cc-offer__price-was {
+        font-family: var(--font-mono);
+        font-size: clamp(18px, 2.2vw, 22px);
+        color: rgba(255, 255, 255, 0.35);
+        text-decoration: line-through;
+      }
+      .cc-offer__price-now {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: clamp(44px, 6.5vw, 60px);
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+        color: #fff;
+      }
+      .cc-offer__fine {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+        margin: var(--space-5) 0 0;
+      }
+      .cc-offer__cta {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--space-4);
+      }
+      .cc-offer__guarantee {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-top: var(--space-6);
+        padding-top: var(--space-5);
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .cc-offer__guarantee i,
+      .cc-offer__guarantee svg {
+        color: #7eb8f7;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .cc-offer__guarantee p {
+        margin: 0;
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .cc-offer__guarantee strong { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
     </style>
   </head>
   <body class="msp">
@@ -671,6 +1019,99 @@
         </div>
       </section>
 
+      <!-- ============== 4. MY STORY (FOUNDER LETTER) ============== -->
+      <section class="msp-section cc-story" id="my-story" aria-labelledby="storyTitle">
+        <div class="msp-wrap">
+          <div class="cc-story__grid">
+
+            <!-- Sticky identity card -->
+            <aside class="cc-story__aside reveal">
+              <!-- TODO: drop Manik's portrait at this path (vertical 4:5 crop works best) -->
+              <img
+                class="cc-story__photo"
+                src="assets/Photos/Manik Madaan.jpg"
+                alt="Dr. Manik Madaan, founder of USMLE Wise"
+              />
+              <h2 id="storyTitle" class="cc-story__name">Dr. Manik Madaan</h2>
+              <p class="cc-story__title">World&rsquo;s most-followed USMLE expert</p>
+              <ul class="cc-story__creds">
+                <li class="cc-story__cred">
+                  <i data-lucide="award" width="16" height="16"></i>
+                  260 on Step&nbsp;1 &middot; 271 on Step&nbsp;2
+                </li>
+                <li class="cc-story__cred">
+                  <i data-lucide="users" width="16" height="16"></i>
+                  700,000+ followers
+                </li>
+                <li class="cc-story__cred">
+                  <i data-lucide="graduation-cap" width="16" height="16"></i>
+                  17,000+ students taught
+                </li>
+              </ul>
+            </aside>
+
+            <!-- Letter -->
+            <div class="cc-story__letter reveal">
+              <span class="msp-eyebrow">My story</span>
+              <p class="cc-story__salutation">Dear future resident,</p>
+
+              <p>
+                I&rsquo;m Dr. Manik Madaan. I teach Step&nbsp;1 this way because I
+                had to learn it the hard way first.
+              </p>
+              <p>
+                When I was preparing, the content was completely overwhelming.
+                Resource stacked on resource. Every one of them labeled
+                &ldquo;high-yield.&rdquo; And not one of them telling me what
+                actually mattered.
+              </p>
+              <p>Then I sat all three USMLE exams, and it hit me.</p>
+
+              <p class="cc-story__pull">
+                Only about 20% of what&rsquo;s in the traditional resources
+                actually moves the needle. The other 80% is outdated fluff &mdash;
+                and all it does is slow you down.
+              </p>
+
+              <p>
+                Here&rsquo;s why that matters so much. Step&nbsp;1 hands you hard
+                questions, with very little time to answer them. So every minute
+                you spend digging for some low-yield fact is a minute you
+                <strong>don&rsquo;t</strong> have for the question right in front
+                of you.
+              </p>
+              <p>
+                So I built the ultimate resource I wish someone had handed me
+                &mdash; the <strong>USMLE Step&nbsp;1 Ultra High-Yield Crash
+                Course.</strong> Ten days. Only what the NBME actually tests. No
+                low-yield noise to sort through, just the 20% that gets you a
+                confident pass.
+              </p>
+              <p>
+                Then I watched it work. Students who were sure 10 days
+                couldn&rsquo;t be enough? They passed. People who&rsquo;d already
+                failed once, and were terrified to sit again? They passed too.
+              </p>
+              <p>
+                And since Step&nbsp;1 is pass/fail, a clean pass is the whole win.
+                <strong>Every week you save here goes straight into Step&nbsp;2
+                &mdash; the exam programs actually rank you on.</strong>
+              </p>
+
+              <p class="cc-story__sign">&mdash; Dr. Manik Madaan</p>
+
+              <div class="cc-story__cta">
+                <a
+                  class="btn btn--primary btn--lg"
+                  href="#enroll"
+                >Get Instant Access <i data-lucide="arrow-right" width="16" height="16"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <!-- ============== 4. WHY IT WORKS ============== -->
 
       <!-- ============== 4. WHY IT WORKS ============== -->
@@ -890,75 +1331,6 @@
       </section>
       -->
 
-      <!-- ============== 6. PROCESS ============== -->
-      <section
-        class="msp-section msp-process"
-        id="process"
-        aria-labelledby="processTitle"
-      >
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">How it works</span>
-            <h2 id="processTitle" class="msp-h2">
-              Four steps from your current profile to Match Day
-            </h2>
-          </div>
-          <ol class="msp-steps" aria-label="Process steps">
-            <li class="msp-step reveal">
-              <div class="msp-step__marker" aria-hidden="true"></div>
-              <div class="msp-step__content">
-                <span class="msp-step__label" aria-hidden="true">Step 01</span>
-                <span class="msp-step__ghost" aria-hidden="true">01</span>
-                <h3>Discovery &amp; assessment</h3>
-                <p>
-                  We review your scores, experience, specialty goals, and
-                  timeline. Your mentor then maps your competitiveness: which
-                  programs are realistic and what needs strengthening.
-                </p>
-              </div>
-            </li>
-            <li class="msp-step reveal">
-              <div class="msp-step__marker" aria-hidden="true"></div>
-              <div class="msp-step__content">
-                <span class="msp-step__label" aria-hidden="true">Step 02</span>
-                <span class="msp-step__ghost" aria-hidden="true">02</span>
-                <h3>CV building</h3>
-                <p>
-                  Your mentor works through your CV line by line: framing
-                  clinical experience, research, and activities in the language
-                  U.S. programs look for in IMG applicants.
-                </p>
-              </div>
-            </li>
-            <li class="msp-step reveal">
-              <div class="msp-step__marker" aria-hidden="true"></div>
-              <div class="msp-step__content">
-                <span class="msp-step__label" aria-hidden="true">Step 03</span>
-                <span class="msp-step__ghost" aria-hidden="true">03</span>
-                <h3>Match mentorship</h3>
-                <p>
-                  ERAS application, program list, interview preparation, and ROL
-                  strategy: built with your mentor and executed on a clear
-                  timeline.
-                </p>
-              </div>
-            </li>
-            <li class="msp-step reveal">
-              <div class="msp-step__marker" aria-hidden="true"></div>
-              <div class="msp-step__content">
-                <span class="msp-step__label" aria-hidden="true">Step 04</span>
-                <span class="msp-step__ghost" aria-hidden="true">04</span>
-                <h3>Match Day</h3>
-                <p>
-                  You match. We help with everything that follows: visa
-                  questions, program communications, and preparing for your
-                  first year.
-                </p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
 
       <!-- ============== 7. TESTIMONIALS ============== -->
       <section class="msp-stories" id="stories" aria-labelledby="storiesTitle">
@@ -1462,478 +1834,297 @@
         </div>
       </section>
 
-      <!-- ============== 9. PRICING ============== -->
-      <section
-        class="msp-section msp-pricing"
-        id="pricing"
-        aria-labelledby="pricingTitle"
-      >
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Pricing</span>
-            <h2 id="pricingTitle" class="msp-h2">
-              Choose your level of support
-            </h2>
-            <p class="msp-sub">
-              Every package starts with a free guidance call. No commitment
-              until you are ready.
-            </p>
-          </div>
-
-          <div class="msp-pricing__rows">
-            <!-- Tier 1 -->
-            <div class="msp-tier reveal">
-              <div class="msp-tier__info">
-                <span class="msp-tier__name">Essentials Starter™</span>
-                <div class="msp-tier__price">$4,999</div>
-                <p class="msp-tier__sub">
-                  Budget-conscious applicants with strong materials
-                </p>
-                <a
-                  class="btn btn--outline"
-                  href="https://team.manikmadaan.com/guidance-call/book"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Book a Guidance Call</a
-                >
-              </div>
-              <ul class="msp-tier__features">
-                <li>100% human editing, no AI</li>
-                <li>Physician advisor included</li>
-                <li>Personal statement (3 sessions + unlimited revisions)</li>
-                <li>ERAS CV with 1 revision</li>
-                <li>1 hour interview training</li>
-                <li>Group classes 2025–2026 included</li>
-                <li>Scramble support included</li>
-              </ul>
-            </div>
-
-            <!-- Tier 2 — featured -->
-            <div class="msp-tier msp-tier--featured reveal">
-              <div class="msp-tier__info">
-                <span class="msp-tier__badge">Most chosen</span>
-                <span class="msp-tier__name">USMLE Match Pro</span>
-                <div class="msp-tier__price">$7,999</div>
-                <p class="msp-tier__sub">
-                  Comprehensive support at an accessible price
-                </p>
-                <a
-                  class="btn btn--primary"
-                  href="https://team.manikmadaan.com/guidance-call/book"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Book a Guidance Call</a
-                >
-              </div>
-              <ul class="msp-tier__features">
-                <li>100% human editing, no AI</li>
-                <li>Physician advisor + weekly 1:1 mentor guidance</li>
-                <li>Personalized residency program list</li>
-                <li>Signaling strategy included</li>
-                <li>Personal statement (up to 3 specialties)</li>
-                <li>ERAS CV with 2 revisions</li>
-                <li>4 hours interview training</li>
-                <li>SOAP &amp; scramble support</li>
-                <li>Match Guarantee included</li>
-                <li>Research cohort access ($400 value)</li>
-              </ul>
-            </div>
-
-            <!-- Tier 3 -->
-            <div class="msp-tier reveal">
-              <div class="msp-tier__info">
-                <span class="msp-tier__name">USMLE Match Maximizer</span>
-                <div class="msp-tier__price">$9,999</div>
-                <p class="msp-tier__sub">
-                  Full end-to-end support for every step of the journey
-                </p>
-                <a
-                  class="btn btn--outline"
-                  href="https://team.manikmadaan.com/guidance-call/book"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Book a Guidance Call</a
-                >
-              </div>
-              <ul class="msp-tier__features">
-                <li>100% human editing, no AI</li>
-                <li>In-depth 3-hour profile assessment</li>
-                <li>Done-for-you signal applications</li>
-                <li>Personal statements for all signals</li>
-                <li>Unlimited ERAS CV revisions</li>
-                <li>3 Letters of Intent/Interest</li>
-                <li>Communication emails included</li>
-                <li>Exclusive networking access</li>
-                <li>Match Guarantee included</li>
-              </ul>
-            </div>
-
-            <!-- Tier 4 — Custom -->
-            <div class="msp-tier msp-tier--custom reveal">
-              <div class="msp-tier__info">
-                <span class="msp-tier__badge msp-tier__badge--custom"
-                  >Custom</span
-                >
-                <span class="msp-tier__name">Built Around You</span>
-                <div class="msp-tier__price msp-tier__price--custom">
-                  Let's talk
-                </div>
-                <p class="msp-tier__sub">
-                  Complex profiles, multi-specialty applications, or situations
-                  that don't fit a standard package. We scope it together.
-                </p>
-                <a
-                  class="btn btn--outline"
-                  href="mailto:hello@usmle-wise.com?subject=Custom%20Match%20Package%20Inquiry"
-                  >Contact Us</a
-                >
-              </div>
-              <ul class="msp-tier__features">
-                <li>Everything in Match Maximizer</li>
-                <li>Scoped to your specific situation and timeline</li>
-                <li>Price quoted after a free discovery call</li>
-                <li>No commitment until you agree on scope and price</li>
-                <li>Dedicated point of contact throughout</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Comparison table — desktop only -->
-          <div class="msp-compare" aria-label="Feature comparison">
-            <h3 class="msp-compare__title">Full feature comparison</h3>
-            <table class="msp-compare__table">
-              <thead>
-                <tr>
-                  <th class="msp-compare__feat-col" scope="col"></th>
-                  <th scope="col">
-                    <span class="msp-compare__tier-name"
-                      >Essentials Starter™</span
-                    >
-                    <span class="msp-compare__tier-price">$4,999</span>
-                  </th>
-                  <th class="msp-compare__col--featured" scope="col">
-                    <span class="msp-compare__tier-name">USMLE Match Pro</span>
-                    <span class="msp-compare__tier-price">$7,999</span>
-                  </th>
-                  <th scope="col">
-                    <span class="msp-compare__tier-name"
-                      >USMLE Match Maximizer</span
-                    >
-                    <span class="msp-compare__tier-price">$9,999</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>100% human editing, no AI</td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Physician advisor</td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Weekly 1:1 mentor guidance</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Profile assessment</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td>3-hour deep dive</td>
-                </tr>
-                <tr>
-                  <td>Personalized program list</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Signaling strategy</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Done-for-you signal applications</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Personal statement</td>
-                  <td>1 specialty</td>
-                  <td class="msp-compare__col--featured">
-                    Up to 3 specialties
-                  </td>
-                  <td>All signals</td>
-                </tr>
-                <tr>
-                  <td>ERAS CV revisions</td>
-                  <td>1 revision</td>
-                  <td class="msp-compare__col--featured">2 revisions</td>
-                  <td>Unlimited</td>
-                </tr>
-                <tr>
-                  <td>Letters of Intent/Interest</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td>3 letters</td>
-                </tr>
-                <tr>
-                  <td>Communication emails</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Interview training</td>
-                  <td>1 hour</td>
-                  <td class="msp-compare__col--featured">4 hours</td>
-                  <td>4 hours</td>
-                </tr>
-                <tr>
-                  <td>SOAP &amp; scramble support</td>
-                  <td>Scramble only</td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Networking access</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">Basic</td>
-                  <td>Exclusive</td>
-                </tr>
-                <tr>
-                  <td>Research cohort access</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-check" aria-label="Included">✓</span>
-                    <span class="msp-compare__note">($400 value)</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Match Guarantee</td>
-                  <td>
-                    <span class="msp-dash" aria-label="Not included">–</span>
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                  <td>
-                    <span class="msp-check" aria-label="Included">✓</span>
-                  </td>
-                </tr>
-                <tr class="msp-compare__cta-row">
-                  <td></td>
-                  <td>
-                    <a
-                      class="btn btn--outline btn--sm"
-                      href="https://team.manikmadaan.com/guidance-call/book"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Book a call</a
-                    >
-                  </td>
-                  <td class="msp-compare__col--featured">
-                    <a
-                      class="btn btn--primary btn--sm"
-                      href="https://team.manikmadaan.com/guidance-call/book"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Book a call</a
-                    >
-                  </td>
-                  <td>
-                    <a
-                      class="btn btn--outline btn--sm"
-                      href="https://team.manikmadaan.com/guidance-call/book"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Book a call</a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       <!-- ============== 10. FAQ ============== -->
       <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
-        <div class="msp-wrap msp-faq__grid">
+        <div class="msp-wrap cc-faq__grid">
           <div class="reveal">
-            <span class="msp-eyebrow">Common questions</span>
-            <h2 id="faqTitle" class="msp-h2">
-              Questions IMGs ask before starting
-            </h2>
-            <p class="msp-sub">
-              Still unsure? The guidance call is free and addresses these
-              directly.
-            </p>
-            <a
-              class="btn btn--outline msp-faq__cta"
-              href="https://team.manikmadaan.com/guidance-call/book"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Book a Free Guidance Call</a
-            >
+            <span class="msp-eyebrow">F.A.Q</span>
+            <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
           </div>
-          <div class="accordion reveal">
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                When should I start working with a match mentor?
+          <div class="cc-faq__list reveal">
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this live or self-paced?
               </button>
-              <div class="accordion__body">
-                Ideally 6 to 12 months before ERAS opens in September. That
-                gives time to address gaps, strengthen your application, and
-                prepare for interviews without rushing. If you are closer to the
-                cycle, we can still build an effective plan; the strategy just
-                looks different.
+              <div class="cc-faq__body">
+                It&rsquo;s 100% self-paced. Every lesson is pre-recorded, so you
+                start the minute you enroll, study on your own schedule, and
+                pause, rewind, or rewatch as often as you need. No set class
+                times, no waiting for a cohort to open.
               </div>
             </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                Can you help if my Step scores are below average?
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is a 10-day crash course really worth it for 2026?
               </button>
-              <div class="accordion__body">
-                Yes. A below-average score is one data point in a complete
-                profile. We help you identify programs where your overall
-                application is competitive, strengthen the parts you can
-                control, and write a personal statement that addresses your
-                timeline honestly and confidently.
+              <div class="cc-faq__body">
+                Yes. The 2026 blueprint rewards pattern recognition, ethics and
+                communication, biostats, and chart-style stems, and our 60 hours
+                go straight at what actually shows up. So you close the
+                highest-yield gaps fast and walk in confident.
               </div>
             </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                Do you help with specialty selection, or only applications?
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Can a crash course really move my readiness that much?
               </button>
-              <div class="accordion__body">
-                Both. Specialty selection is often where the Match is won or
-                lost. We assess your competitiveness across the specialties you
-                are considering and help you make a realistic decision before
-                committing to a program list.
+              <div class="cc-faq__body">
+                For most people, yes. Students routinely report 20 to 40 point
+                jumps on their practice NBMEs within two weeks, roughly twice the
+                progress of studying solo. Your results depend on where you start
+                and the work you put in.
               </div>
             </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                What if I do not match in the main cycle?
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this better for first-timers or retakers?
               </button>
-              <div class="accordion__body">
-                We walk through SOAP with you in real time. If you do not match,
-                we immediately pivot to scramble strategy: identifying open
-                positions in your specialty and helping you submit supplemental
-                applications quickly and correctly.
+              <div class="cc-faq__body">
+                Honestly, both. If it&rsquo;s your first time, you get a clean
+                high-yield map. And if you&rsquo;re retaking, it resets the usual
+                leak points, which are timing, reasoning, and ethics.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What do students actually walk away with?
+              </button>
+              <div class="cc-faq__body">
+                Faster reading, sharper elimination, fewer careless errors, and a
+                calmer test day.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Does it help with anxiety, timing, and decision-making?
+              </button>
+              <div class="cc-faq__body">
+                It does. We drill pacing and indentation so you finish on time,
+                and you practice a fixed decision tree for the tie-breaker items
+                that usually eat your clock.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What actually changed on Step 1 in 2026?
+              </button>
+              <div class="cc-faq__body">
+                A few things. Longer chart and SOAP-style stems with distracting
+                detail, more ethics and communication, immunology and micro up
+                while pure biochem is down, and pathophysiology over trivia.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How do you handle the long chart-style stems and SOAP notes?
+              </button>
+              <div class="cc-faq__body">
+                You&rsquo;ll use a three-pass read, route then extract then
+                decide. First pass for the route, second for the computable
+                items, third for elimination. Then a highlighting discipline that
+                locks onto orders and vitals.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Are ethics and communication covered with actual answers?
+              </button>
+              <div class="cc-faq__body">
+                Yes. You get plug-and-play language for consent, boundaries,
+                impaired colleagues, end-of-life, and error disclosure, plus when
+                and why each one is right.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do you really focus on the 20% that drives most of the result?
+              </button>
+              <div class="cc-faq__body">
+                Yes. Every lesson is audited against the patterns the NBME
+                favors, and if it isn&rsquo;t high-yield, it&rsquo;s out.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How does question-powered teaching work?
+              </button>
+              <div class="cc-faq__body">
+                We teach through NBME-style vignettes from minute one. You learn
+                the idea, solve a question, then take apart the logic and drill
+                the variations until it sticks.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What&rsquo;s the N+1 method?
+              </button>
+              <div class="cc-faq__body">
+                You never learn a topic just once. You stack a slightly harder
+                layer on top of what you just mastered, so recall stays active and
+                moves into long-term memory.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What frameworks do you teach for the tough items?
+              </button>
+              <div class="cc-faq__body">
+                The Elimination Blueprint, the Clue-net, and tie-breakers, plus
+                short contrast tables and break-the-tie clues like onset, the key
+                lab, and one physical finding.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How do you keep it from leaking back out of my head?
+              </button>
+              <div class="cc-faq__body">
+                Stacked repetition, mixed-topic mini-sets, and periodic refresh
+                prompts keep everything active, and you build your own one-page
+                frameworks as you work through the lessons.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Who teaches this, and what are their scores?
+              </button>
+              <div class="cc-faq__body">
+                Sessions are led by 270+ Step 2 scorers and experienced Step 1
+                instructors, coordinated by Dr. Manik Madaan (271 Step 2). The
+                team reverse-engineered NBME patterns across thousands of items.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do I get recordings and downloadable materials?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The whole course is on demand with lifetime access, plus the
+                USMLE Step 1 Rapid Review 2026 slides to keep.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do I need any other resources?
+              </button>
+              <div class="cc-faq__body">
+                Just your preferred QBank and a notebook. Keep the QBank you
+                already like, and use the course to decide what to actually
+                memorize and how to apply it under time.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What&rsquo;s the guarantee?
+              </button>
+              <div class="cc-faq__body">
+                Finish the sessions and the required drills, sit your exam, and if
+                you don&rsquo;t pass, you get a full refund within 14 days of your
+                score report.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this good for nontraditional students or a different background?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The course assumes varied backgrounds and centers on NBME
+                logic, not on any one set of course notes.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do you start with the points I can bank?
+              </button>
+              <div class="cc-faq__body">
+                Yes. We open with biostats and ethics to lock in the most
+                reliable points early.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Will this carry over to Step 2?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The N+1 method and the decision frameworks are built to carry
+                forward, so your Step 1 base becomes a launchpad and your Step 2
+                prep starts easier.
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============== 9. FINAL CTA ============== -->
+      <!-- ============== 9. FINAL CTA — OFFER ============== -->
       <section
         class="msp-section msp-cta-wrap"
-        id="book"
+        id="enroll"
         aria-labelledby="ctaTitle"
       >
         <div class="msp-wrap">
-          <div class="msp-cta-a reveal">
-            <div class="msp-cta-a__stat">
-              <div class="msp-cta-a__num">88<span>%</span></div>
-              <p class="msp-cta-a__stat-line">
-                Match rate across 300+ graduates
-              </p>
-              <p class="msp-cta-a__stat-sub">
-                10+ specialties &middot; 4.9 avg mentor rating
-              </p>
-            </div>
-            <div class="msp-cta-a__content">
-              <span class="msp-eyebrow msp-eyebrow--light">Ready to start</span>
-              <h2 id="ctaTitle" class="msp-h2 msp-h2--invert">
-                The Match is not a lottery.<br /><em>It is a strategy.</em>
+          <div class="cc-offer reveal">
+            <div class="cc-offer__head">
+              <span class="msp-eyebrow msp-eyebrow--light">Enroll today</span>
+              <h2 id="ctaTitle" class="cc-offer__title">
+                Everything you need to pass, in one place
               </h2>
-              <p class="msp-cta__sub">
-                Book a free 30-minute guidance call. We will review your
-                profile, answer your questions, and tell you exactly what the
-                next step is.
+            </div>
+
+            <div class="cc-offer__body">
+              <ul class="cc-offer__stack">
+                <li class="cc-offer__row">
+                  <span class="cc-offer__row-name">
+                    The 10-day, 60-hour Self-Paced Crash Course
+                  </span>
+                  <span class="cc-offer__row-price">$599</span>
+                </li>
+                <li class="cc-offer__row">
+                  <span class="cc-offer__row-name">
+                    Lifetime Access, Rewatch Anytime, including Future Updates
+                  </span>
+                  <span class="cc-offer__row-price">$300</span>
+                </li>
+                <li class="cc-offer__row">
+                  <span class="cc-offer__row-name">
+                    USMLE Step 1 Rapid Review 2026 Slides
+                  </span>
+                  <span class="cc-offer__row-price">$100</span>
+                </li>
+                <li class="cc-offer__row cc-offer__row--total">
+                  <span class="cc-offer__row-name">Total value</span>
+                  <span class="cc-offer__row-price">$999</span>
+                </li>
+              </ul>
+
+              <div class="cc-offer__price">
+                <div>
+                  <span class="cc-offer__price-label">Yours today</span>
+                  <span class="cc-offer__price-save">You save $800 &middot; 80% off</span>
+                </div>
+                <div class="cc-offer__price-nums">
+                  <span class="cc-offer__price-was">$999</span>
+                  <span class="cc-offer__price-now">$199</span>
+                </div>
+              </div>
+
+              <p class="cc-offer__fine">
+                $199, one time. You get instant access the moment you enroll, and
+                every lesson is yours for life.
               </p>
-              <a
-                class="btn btn--primary btn--xl"
-                href="mailto:arcadecontentsolutions@gmail.com?subject=Match%20Discovery%20Call"
-              >
-                Book Your Free Guidance Call
+
+              <!-- TODO: point href at the real checkout/enrollment URL -->
+              <a class="btn btn--primary btn--xl cc-offer__cta" href="#">
+                Get Access Now <i data-lucide="arrow-right" width="18" height="18"></i>
               </a>
-              <p class="msp-cta__trust">
-                No commitment. No sales pitch. Just a clear plan.
-              </p>
+
+              <div class="cc-offer__guarantee">
+                <i data-lucide="shield-check" width="22" height="22"></i>
+                <p>
+                  And the <strong>100% money-back guarantee</strong> is about as
+                  simple as it gets. You finish the course and if you don&rsquo;t
+                  pass, get a full refund. Zero risk. Pure results.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -2064,5 +2255,16 @@
         </div>
       </div>
     </footer>
+
+    <!-- FAQ: multi-open accordion (independent of match.js single-open) -->
+    <script>
+      document.querySelectorAll(".cc-faq__head").forEach(function (head) {
+        head.addEventListener("click", function () {
+          var item = head.parentElement;
+          var open = item.classList.toggle("is-open");
+          head.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      });
+    </script>
   </body>
 </html>
