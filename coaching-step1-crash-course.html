@@ -246,6 +246,84 @@
         .cc-lesson__hrs { grid-area: hrs; justify-self: start; }
       }
 
+      /* ============== Fits any stage of prep ============== */
+      .cc-stages {
+        background: var(--uw-ink-900);
+      }
+      .cc-stages__head {
+        max-width: 54ch;
+        margin-bottom: clamp(40px, 5vw, 64px);
+      }
+      .cc-stages__head .msp-eyebrow { color: rgba(255,255,255,.5); }
+      .cc-stages__head .msp-h2 { color: #fff; max-width: none; margin-bottom: var(--space-3); }
+      .cc-stages__sub {
+        font-size: clamp(16px, 1.35vw, 18px);
+        line-height: 1.65;
+        color: rgba(255,255,255,.6);
+        margin: 0;
+      }
+      .cc-stages__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(14px, 2vw, 24px);
+      }
+      .cc-stage {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        padding: clamp(28px, 3.2vw, 40px);
+        background: rgba(255,255,255,.04);
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: var(--r-xl);
+        transition: background .2s ease, border-color .2s ease;
+      }
+      .cc-stage:hover {
+        background: rgba(255,255,255,.07);
+        border-color: rgba(126,184,247,.25);
+      }
+      .cc-stage__label {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,.9);
+        background: rgba(126,184,247,.12);
+        border: 1px solid rgba(126,184,247,.2);
+        border-radius: var(--r-pill);
+        padding: 5px 12px;
+        align-self: flex-start;
+      }
+      .cc-stage__hook {
+        font-family: var(--font-display);
+        font-size: clamp(22px, 2.4vw, 30px);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -.02em;
+        color: #fff;
+        margin: 0;
+      }
+      .cc-stage__hook em {
+        font-style: normal;
+        color: #7eb8f7;
+      }
+      .cc-stage__desc {
+        font-size: clamp(14px, 1.15vw, 15.5px);
+        line-height: 1.7;
+        color: rgba(255,255,255,.58);
+        margin: 0;
+        flex: 1;
+      }
+      .cc-stages__cta {
+        display: flex;
+        justify-content: center;
+        margin-top: clamp(40px, 5vw, 60px);
+      }
+      @media (max-width: 760px) {
+        .cc-stages__grid { grid-template-columns: 1fr; }
+      }
+
       /* ============== Why this course works ============== */
       .cc-works__grid {
         display: grid;
@@ -907,118 +985,6 @@
         </div>
       </section>
 
-      <!-- ============== 2b. CURRICULUM ============== -->
-      <section class="msp-section cc-curriculum" aria-labelledby="curriculumTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Curriculum</span>
-            <h2 id="curriculumTitle" class="msp-h2">
-              10 days, 10 lessons in the order that builds.
-            </h2>
-            <p class="msp-sub">
-              About 60 hours of focused, high-yield teaching &mdash; sequenced so
-              each lesson builds on the last.
-            </p>
-          </div>
-
-          <ol class="cc-track">
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">01</span>
-              <h3 class="cc-lesson__title">Biochemistry and genetics</h3>
-              <span class="cc-lesson__hrs">5.5 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">02</span>
-              <h3 class="cc-lesson__title">Microbiology</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">03</span>
-              <h3 class="cc-lesson__title">Pathology, General Pharm and Immunology</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">04</span>
-              <h3 class="cc-lesson__title">Endocrinology and Renal</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">05</span>
-              <h3 class="cc-lesson__title">Biostats, Ethics and Cardiovascular</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">06</span>
-              <h3 class="cc-lesson__title">Respiratory and Psychiatry</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">07</span>
-              <h3 class="cc-lesson__title">Gastrointestinal</h3>
-              <span class="cc-lesson__hrs">8 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">08</span>
-              <h3 class="cc-lesson__title">Hematology and Reproductive</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">09</span>
-              <h3 class="cc-lesson__title">Musculoskeletal, Rheum, Derm</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
-            </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">10</span>
-              <h3 class="cc-lesson__title">Neurology</h3>
-              <span class="cc-lesson__hrs">4 hrs</span>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- ============== 3. WHY THIS COURSE WORKS ============== -->
-      <section class="msp-section" id="why-it-works" aria-labelledby="worksTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Why it works</span>
-            <h2 id="worksTitle" class="msp-h2">
-              Why this course works<br>(when others don&rsquo;t)
-            </h2>
-          </div>
-
-          <div class="cc-works__grid">
-            <div class="cc-work reveal">
-              <h3>10 days, 60 hours, zero fluff.</h3>
-              <p>Every session targets what the NBME tests most. If it&rsquo;s not high-yield, it&rsquo;s not in.</p>
-            </div>
-            <div class="cc-work reveal">
-              <h3>Rebuilt for the 2026 Step&nbsp;1 Syllabus.</h3>
-              <p>We rebuilt it line by line for the latest Step 1 updates &amp; trends.</p>
-            </div>
-            <div class="cc-work reveal">
-              <h3>Question-powered teaching.</h3>
-              <p>Integrated NBME-style vignettes from minute one, so you train your knowledge and your test-taking at the same time.</p>
-            </div>
-            <div class="cc-work reveal">
-              <h3>The N+1 method.</h3>
-              <p>We engineer retention, stacking each concept on the last so it sticks for good and bridges into Step&nbsp;2.</p>
-            </div>
-            <div class="cc-work reveal">
-              <h3>The frameworks high scorers use.</h3>
-              <p>A three-pass read (Route, Extract, Decide) for long chart stems, an elimination blueprint for coin-flip items, and plug-and-play ethics scripts.</p>
-            </div>
-            <div class="cc-work reveal">
-              <h3>Teachers who scored 270+ on Step&nbsp;2.</h3>
-              <p>You learn from doctors who beat this exam, sat it themselves, and reverse-engineered exactly how it&rsquo;s built.</p>
-            </div>
-            <div class="cc-work cc-work--wide reveal">
-              <h3>Go at your own pace.</h3>
-              <p>Start today and study anytime, and rewatch any lesson as many times as you need before exam day.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- ============== 4. MY STORY (FOUNDER LETTER) ============== -->
       <section class="msp-section cc-story" id="my-story" aria-labelledby="storyTitle">
         <div class="msp-wrap">
@@ -1026,10 +992,9 @@
 
             <!-- Sticky identity card -->
             <aside class="cc-story__aside reveal">
-              <!-- TODO: drop Manik's portrait at this path (vertical 4:5 crop works best) -->
               <img
                 class="cc-story__photo"
-                src="assets/Photos/Manik Madaan.jpg"
+                src="assets/Photos/Team Members/Manik.jpg"
                 alt="Dr. Manik Madaan, founder of USMLE Wise"
               />
               <h2 id="storyTitle" class="cc-story__name">Dr. Manik Madaan</h2>
@@ -1112,58 +1077,280 @@
         </div>
       </section>
 
-      <!-- ============== 4. WHY IT WORKS ============== -->
-
-      <!-- ============== 4. WHY IT WORKS ============== -->
-      <section class="msp-why-a" aria-labelledby="whyATitle">
+      <!-- ============== 8b. SCREENSHOT TESTIMONIALS ============== -->
+      <section
+        class="msp-section msp-shots"
+        id="student-messages"
+        aria-labelledby="shotsTitle"
+      >
         <div class="msp-wrap">
-          <div class="msp-why-a__head reveal">
-            <span class="msp-eyebrow">Why it works</span>
-            <h2 id="whyATitle" class="msp-h2">
-              Most IMG services stop at exam prep. We start where they stop.
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">From our students</span>
+            <h2 id="shotsTitle" class="msp-h2">
+              What students send us after exam day
             </h2>
           </div>
-          <div class="msp-why-a__img reveal">
-            <img
-              src="assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg"
-              alt="Physician mentors guiding IMG students through the U.S. residency match process"
-            />
+          <div class="msp-shots__grid">
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Anjali.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Ayra.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Bardia.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Hamna.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Nancy.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Okkes.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Praneet.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Rasmitha.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Ravindra.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Shiv.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/SidNath.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Sinmmer.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/Swathi.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="assets/Testimonials/Photos/Match/babitha.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
           </div>
-          <div class="msp-why-a__cols">
-            <div class="msp-wi reveal">
-              <h3>Mentors who lived the IMG match</h3>
-              <p>
-                Our mentors matched as IMGs into competitive U.S. programs. They
-                know which program directors value research, which overlook
-                clinical gaps, and how to frame a timeline that looks
-                unconventional on paper.
+        </div>
+      </section>
+
+      <!-- ============== 3. WHY THIS COURSE WORKS ============== -->
+      <section class="msp-section" id="why-it-works" aria-labelledby="worksTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Why it works</span>
+            <h2 id="worksTitle" class="msp-h2">
+              Why this course works<br>(when others don&rsquo;t)
+            </h2>
+          </div>
+
+          <div class="cc-works__grid">
+            <div class="cc-work reveal">
+              <h3>10 days, 60 hours, zero fluff.</h3>
+              <p>Every session targets what the NBME tests most. If it&rsquo;s not high-yield, it&rsquo;s not in.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>Rebuilt for the 2026 Step&nbsp;1 Syllabus.</h3>
+              <p>We rebuilt it line by line for the latest Step 1 updates &amp; trends.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>Question-powered teaching.</h3>
+              <p>Integrated NBME-style vignettes from minute one, so you train your knowledge and your test-taking at the same time.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>The N+1 method.</h3>
+              <p>We engineer retention, stacking each concept on the last so it sticks for good and bridges into Step&nbsp;2.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>The frameworks high scorers use.</h3>
+              <p>A three-pass read (Route, Extract, Decide) for long chart stems, an elimination blueprint for coin-flip items, and plug-and-play ethics scripts.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>Teachers who scored 270+ on Step&nbsp;2.</h3>
+              <p>You learn from doctors who beat this exam, sat it themselves, and reverse-engineered exactly how it&rsquo;s built.</p>
+            </div>
+            <div class="cc-work cc-work--wide reveal">
+              <h3>Go at your own pace.</h3>
+              <p>Start today and study anytime, and rewatch any lesson as many times as you need before exam day.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 2a. FITS ANY STAGE ============== -->
+      <section class="msp-section cc-stages" id="prep-stages" aria-labelledby="stagesTitle">
+        <div class="msp-wrap">
+          <div class="cc-stages__head reveal">
+            <span class="msp-eyebrow">Fits any stage of prep</span>
+            <h2 id="stagesTitle" class="msp-h2">
+              It fits any stage of prep,<br>and the way you use it just shifts.
+            </h2>
+            <p class="cc-stages__sub">
+              Whether you&rsquo;re just starting, somewhere in the middle, or days
+              away from exam day — this course slots in and works.
+            </p>
+          </div>
+
+          <div class="cc-stages__grid">
+            <div class="cc-stage reveal">
+              <span class="cc-stage__label">Early prep</span>
+              <h3 class="cc-stage__hook">Use it as your <em>map.</em></h3>
+              <p class="cc-stage__desc">
+                You see what&rsquo;s high-yield from day one, so when you open
+                UWorld, First Aid, or Anki, you know exactly where to focus and
+                what to skip.
               </p>
             </div>
-            <div class="msp-wi reveal">
-              <h3>100% human, no AI</h3>
-              <p>
-                Every personal statement, CV edit, and strategy decision is made
-                by a physician who knows your file. No templates, no generated
-                text, no shortcuts.
+            <div class="cc-stage reveal">
+              <span class="cc-stage__label">Mid-prep</span>
+              <h3 class="cc-stage__hook">Use it as your <em>cut.</em></h3>
+              <p class="cc-stage__desc">
+                Stop spreading thin across resources and concentrate on the 20%
+                that&rsquo;s actually moving the needle.
               </p>
             </div>
-            <div class="msp-wi reveal">
-              <h3>A team of specialists, not a generalist</h3>
-              <p>
-                Each part of your application is handled by a mentor who
-                specializes in that area: one for ERAS, one for interviews, one
-                for research, and so on. You get depth at every step.
-              </p>
-            </div>
-            <div class="msp-wi reveal">
-              <h3>Built around your profile, not a template</h3>
-              <p>
-                Your scores, gaps, research, and goals are different from every
-                other applicant. Every strategy we build starts from your
-                specific situation, not a one-size-fits-all checklist.
+            <div class="cc-stage reveal">
+              <span class="cc-stage__label">Final stretch</span>
+              <h3 class="cc-stage__hook">Use it as your <em>revision.</em></h3>
+              <p class="cc-stage__desc">
+                60 hours to consolidate what matters and walk in sharp.
               </p>
             </div>
           </div>
+
+          <div class="cc-stages__cta reveal">
+            <a class="btn btn--primary btn--lg" href="#enroll">
+              Get Instant Access <i data-lucide="arrow-right" width="16" height="16"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 2b. CURRICULUM ============== -->
+      <section class="msp-section cc-curriculum" aria-labelledby="curriculumTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Curriculum</span>
+            <h2 id="curriculumTitle" class="msp-h2">
+              10 days, 10 lessons in the order that builds.
+            </h2>
+            <p class="msp-sub">
+              About 60 hours of focused, high-yield teaching &mdash; sequenced so
+              each lesson builds on the last.
+            </p>
+          </div>
+
+          <ol class="cc-track">
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">01</span>
+              <h3 class="cc-lesson__title">Biochemistry and genetics</h3>
+              <span class="cc-lesson__hrs">5.5 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">02</span>
+              <h3 class="cc-lesson__title">Microbiology</h3>
+              <span class="cc-lesson__hrs">6 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">03</span>
+              <h3 class="cc-lesson__title">Pathology, General Pharm and Immunology</h3>
+              <span class="cc-lesson__hrs">6 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">04</span>
+              <h3 class="cc-lesson__title">Endocrinology and Renal</h3>
+              <span class="cc-lesson__hrs">6 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">05</span>
+              <h3 class="cc-lesson__title">Biostats, Ethics and Cardiovascular</h3>
+              <span class="cc-lesson__hrs">6 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">06</span>
+              <h3 class="cc-lesson__title">Respiratory and Psychiatry</h3>
+              <span class="cc-lesson__hrs">6 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">07</span>
+              <h3 class="cc-lesson__title">Gastrointestinal</h3>
+              <span class="cc-lesson__hrs">8 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">08</span>
+              <h3 class="cc-lesson__title">Hematology and Reproductive</h3>
+              <span class="cc-lesson__hrs">6 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">09</span>
+              <h3 class="cc-lesson__title">Musculoskeletal, Rheum, Derm</h3>
+              <span class="cc-lesson__hrs">6 hrs</span>
+            </li>
+            <li class="cc-lesson reveal">
+              <span class="cc-lesson__no">10</span>
+              <h3 class="cc-lesson__title">Neurology</h3>
+              <span class="cc-lesson__hrs">4 hrs</span>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -1717,122 +1904,6 @@
           ></iframe>
         </div>
       </div>
-
-      <!-- ============== 8b. SCREENSHOT TESTIMONIALS ============== -->
-      <section
-        class="msp-section msp-shots"
-        id="match-messages"
-        aria-labelledby="shotsTitle"
-      >
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Match Day messages</span>
-            <h2 id="shotsTitle" class="msp-h2">
-              What students send us on Match Day
-            </h2>
-          </div>
-          <div class="msp-shots__grid">
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Anjali.jpeg"
-                alt="Match Day message from Anjali"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Ayra.jpeg"
-                alt="Match Day message from Ayra"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Bardia.jpeg"
-                alt="Match Day message from Bardia"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Hamna.jpeg"
-                alt="Match Day message from Hamna"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Nancy.jpeg"
-                alt="Match Day message from Nancy"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Okkes.jpeg"
-                alt="Match Day message from Okkes"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Praneet.jpeg"
-                alt="Match Day message from Praneet"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Rasmitha.jpeg"
-                alt="Match Day message from Rasmitha"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Ravindra.jpeg"
-                alt="Match Day message from Ravindra"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Shiv.jpeg"
-                alt="Match Day message from Shiv"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/SidNath.jpeg"
-                alt="Match Day message from SidNath"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Sinmmer.jpeg"
-                alt="Match Day message from Sinmmer"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/Swathi.jpeg"
-                alt="Match Day message from Swathi"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="assets/Testimonials/Photos/Match/babitha.jpeg"
-                alt="Match Day message from Babitha"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- ============== 10. FAQ ============== -->
       <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
