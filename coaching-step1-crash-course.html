@@ -159,91 +159,87 @@
         .cc-stats { grid-template-columns: 1fr; }
       }
 
-      /* ============== Curriculum ============== */
-      .cc-track {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        max-width: 780px;
+      /* ============== Curriculum card grid ============== */
+      .cc-cur-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: 220px;
+        gap: clamp(10px, 1.4vw, 16px);
+        margin-top: clamp(36px, 5vw, 56px);
       }
-      .cc-track::before {
+      .cc-cur-card {
+        position: relative;
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        background-color: var(--uw-ink-900);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        list-style: none;
+      }
+      .cc-cur-card::before {
         content: "";
         position: absolute;
-        top: 36px;
-        bottom: 36px;
-        left: 27px;
-        width: 2px;
+        inset: 0;
         background: linear-gradient(
-          var(--uw-blue-200),
-          var(--uw-blue-100) 60%,
-          var(--uw-border)
+          to top,
+          rgba(8, 17, 31, 0.97) 0%,
+          rgba(8, 17, 31, 0.65) 50%,
+          rgba(8, 17, 31, 0.25) 100%
+        );
+        z-index: 0;
+      }
+      /* Darker overlay for cards without photos */
+      .cc-cur-card--no-photo::before {
+        background: linear-gradient(
+          160deg,
+          rgba(20, 35, 60, 0.6) 0%,
+          rgba(8, 17, 31, 0.95) 100%
         );
       }
-      .cc-lesson {
-        position: relative;
-        display: grid;
-        grid-template-columns: 56px 1fr auto;
-        align-items: center;
-        gap: clamp(16px, 2.4vw, 28px);
-        padding: var(--space-3) var(--space-4) var(--space-3) 0;
-        border-radius: var(--r-lg);
-        transition: background 0.2s ease;
-      }
-      .cc-lesson:hover { background: var(--uw-blue-50); }
-      .cc-lesson__no {
+      .cc-cur-card__inner {
         position: relative;
         z-index: 1;
-        width: 56px;
-        height: 56px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--uw-surface);
-        border: 1.5px solid var(--uw-blue-200);
-        color: var(--uw-blue-600);
+        padding: clamp(16px, 2vw, 22px);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .cc-cur-card__no {
         font-family: var(--font-mono);
-        font-size: 17px;
-        font-weight: 500;
-        letter-spacing: -0.02em;
-        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
       }
-      .cc-lesson:hover .cc-lesson__no {
-        background: var(--uw-blue-500);
-        border-color: var(--uw-blue-500);
-        color: #fff;
-      }
-      .cc-lesson__title {
-        font-size: clamp(16px, 1.4vw, 19px);
+      .cc-cur-card__title {
+        font-family: var(--font-sans);
+        font-size: clamp(13px, 1.1vw, 15px);
         font-weight: 600;
-        color: var(--uw-ink-900);
         line-height: 1.3;
+        color: #fff;
         margin: 0;
       }
-      .cc-lesson__hrs {
-        justify-self: end;
+      .cc-cur-card__hrs {
         font-family: var(--font-mono);
-        font-size: 13px;
+        font-size: 11px;
         font-weight: 500;
-        color: var(--uw-blue-600);
-        background: var(--uw-blue-50);
-        border: 1px solid var(--uw-blue-100);
-        border-radius: var(--r-pill);
-        padding: 6px 14px;
-        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.8);
+        align-self: flex-start;
+      }
+      @media (max-width: 900px) {
+        .cc-cur-grid {
+          grid-template-columns: repeat(3, 1fr);
+          grid-auto-rows: 180px;
+        }
       }
       @media (max-width: 560px) {
-        .cc-lesson {
-          grid-template-columns: 48px 1fr;
-          grid-template-areas:
-            "no title"
-            "no hrs";
-          row-gap: 6px;
+        .cc-cur-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 160px;
         }
-        .cc-track::before { left: 23px; }
-        .cc-lesson__no { width: 48px; height: 48px; font-size: 15px; grid-area: no; align-self: start; }
-        .cc-lesson__title { grid-area: title; }
-        .cc-lesson__hrs { grid-area: hrs; justify-self: start; }
       }
 
       /* ============== Fits any stage of prep ============== */
@@ -1299,56 +1295,76 @@
             </p>
           </div>
 
-          <ol class="cc-track">
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">01</span>
-              <h3 class="cc-lesson__title">Biochemistry and genetics</h3>
-              <span class="cc-lesson__hrs">5.5 hrs</span>
+          <ol class="cc-cur-grid">
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Genetics.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 01</span>
+                <h3 class="cc-cur-card__title">Biochemistry &amp; Genetics</h3>
+                <span class="cc-cur-card__hrs">5.5 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">02</span>
-              <h3 class="cc-lesson__title">Microbiology</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Microbiology.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 02</span>
+                <h3 class="cc-cur-card__title">Microbiology</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">03</span>
-              <h3 class="cc-lesson__title">Pathology, General Pharm and Immunology</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Pathology.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 03</span>
+                <h3 class="cc-cur-card__title">Pathology, General Pharm &amp; Immunology</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">04</span>
-              <h3 class="cc-lesson__title">Endocrinology and Renal</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/renal.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 04</span>
+                <h3 class="cc-cur-card__title">Endocrinology &amp; Renal</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">05</span>
-              <h3 class="cc-lesson__title">Biostats, Ethics and Cardiovascular</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Cardiovascular.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 05</span>
+                <h3 class="cc-cur-card__title">Biostats, Ethics &amp; Cardiovascular</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">06</span>
-              <h3 class="cc-lesson__title">Respiratory and Psychiatry</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/psychiatry.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 06</span>
+                <h3 class="cc-cur-card__title">Respiratory &amp; Psychiatry</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">07</span>
-              <h3 class="cc-lesson__title">Gastrointestinal</h3>
-              <span class="cc-lesson__hrs">8 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Gastro.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 07</span>
+                <h3 class="cc-cur-card__title">Gastrointestinal</h3>
+                <span class="cc-cur-card__hrs">8 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">08</span>
-              <h3 class="cc-lesson__title">Hematology and Reproductive</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/hematology.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 08</span>
+                <h3 class="cc-cur-card__title">Hematology &amp; Reproductive</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">09</span>
-              <h3 class="cc-lesson__title">Musculoskeletal, Rheum, Derm</h3>
-              <span class="cc-lesson__hrs">6 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Musculoskeletal.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 09</span>
+                <h3 class="cc-cur-card__title">Musculoskeletal, Rheum &amp; Derm</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
             </li>
-            <li class="cc-lesson reveal">
-              <span class="cc-lesson__no">10</span>
-              <h3 class="cc-lesson__title">Neurology</h3>
-              <span class="cc-lesson__hrs">4 hrs</span>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Neurology.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 10</span>
+                <h3 class="cc-cur-card__title">Neurology</h3>
+                <span class="cc-cur-card__hrs">4 hrs</span>
+              </div>
             </li>
           </ol>
         </div>
