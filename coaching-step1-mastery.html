@@ -24,18 +24,28 @@
     ></script>
     <script src="coaching.js" defer></script>
     <style>
-      .msp-soon { min-height: 66vh; display: grid; place-items: center; text-align: center; }
-      .msp-soon__inner { max-width: 640px; padding-block: clamp(48px, 8vw, 96px); }
-      .msp-soon__meta {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--uw-blue-600);
-        margin: 14px 0 0;
+      /* ---- page sections ---- */
+      .pg-about { background: var(--uw-surface-sunk); border-block: 1px solid var(--uw-border); }
+      .pg-feat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(20px, 3vw, 36px);
+        margin-top: clamp(40px, 5vw, 60px);
       }
-      .msp-soon__note { color: var(--uw-ink-600); font-size: 17px; margin: 22px 0 0; }
-      .msp-soon__cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+      .pg-feat { display: flex; flex-direction: column; gap: 10px; }
+      .pg-feat__icon {
+        width: 40px; height: 40px; border-radius: 10px;
+        background: var(--uw-blue-50); display: grid; place-items: center;
+        color: var(--uw-blue-600); flex-shrink: 0;
+      }
+      .pg-feat__title { font-size: 16px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
+      .pg-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
+      .pg-cta-dark { background: var(--uw-ink-900); padding-block: clamp(72px, 9vw, 120px); text-align: center; }
+      .pg-cta-dark .msp-h2 { color: #fff; }
+      .pg-cta-dark .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); }
+      .pg-cta-dark .msp-cta-row { justify-content: center; margin-top: clamp(28px, 4vw, 44px); }
+      @media (max-width: 640px) { .pg-feat-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 400px) { .pg-feat-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body class="msp">
@@ -66,13 +76,9 @@
                 <span class="msp-nav__dd-name">Step 1 Mastery</span>
                 <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
               </a>
-              <a href="coaching-step23-review.html" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Step 2/3 Review Course</span>
-                <span class="msp-nav__dd-meta">9-day &middot; For review</span>
-              </a>
               <a href="coaching-step23-mastery.html" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Step 2/3 Mastery</span>
-                <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
+                <span class="msp-nav__dd-name">NBME Style Coaching</span>
+                <span class="msp-nav__dd-meta">NBME &middot; Step 1 &amp; Step 2</span>
               </a>
               <a href="coaching-tutoring.html" class="msp-nav__dd-link">
                 <span class="msp-nav__dd-name">1:1 Tutoring</span>
@@ -157,18 +163,108 @@
     </header>
 
     <main>
-      <section class="msp-section msp-soon">
-        <div class="msp-wrap msp-soon__inner">
+    <section class="msp-hero" aria-labelledby="heroTitle">
+      <div class="msp-wrap msp-hero__grid">
+        <div class="msp-hero__copy reveal">
           <span class="msp-eyebrow">Coaching</span>
-          <h1 class="msp-h1">Step 1 Mastery</h1>
-          <p class="msp-soon__meta">6-month &middot; From the basics</p>
-          <p class="msp-soon__note">This page is coming soon.</p>
-          <div class="msp-soon__cta">
-            <a class="btn btn--primary btn--lg" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-            <a class="btn btn--outline btn--lg" href="coaching.html">Back to Coaching</a>
+          <h1 id="heroTitle" class="msp-h1">Master Step 1 from the ground up, in 6&nbsp;months.</h1>
+          <p class="msp-lede">A structured, live-mentored program for IMGs who want to go beyond memorisation and develop real, lasting clinical understanding — from biochemistry to neurology.</p>
+          <div class="msp-cta-row">
+            <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
+            <a class="btn btn--outline btn--xl" href="coaching.html">Back to Coaching</a>
           </div>
         </div>
-      </section>
+      </div>
+
+        <div class="msp-bar msp-wrap" aria-label="Track record">
+          <div class="msp-bar__inner">
+            <div class="msp-stat reveal"><b>500+</b><span>Students coached</span></div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal"><b>260+</b><span>Avg. mentor score</span></div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal"><b>Step 1 &ndash; 3</b><span>All USMLE steps covered</span></div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal"><b>IMG-focused</b><span>Built for international graduates</span></div>
+          </div>
+        </div>
+    </section>
+    <section class="msp-section pg-about" aria-labelledby="aboutTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">The program</span>
+          <h2 id="aboutTitle" class="msp-h2">Six months. Every subject. A mentor beside you the whole way.</h2>
+          <p class="msp-sub">Step 1 Mastery is a guided 6-month program that takes you through every high-yield subject in a deliberate, building sequence. Each week you cover new content in live sessions, receive feedback on practice, and get direct mentor access to clear blockers before they compound.</p>
+        </div>
+        <div class="pg-feat-grid">
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="calendar" width="20" height="20"></i></div>
+              <p class="pg-feat__title">Weekly live sessions</p>
+              <p class="pg-feat__body">Structured lectures covering one subject at a time, in the sequence that builds understanding fastest.</p>
+            </div>
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="user-check" width="20" height="20"></i></div>
+              <p class="pg-feat__title">Personal mentor</p>
+              <p class="pg-feat__body">A 260+ scorer assigned to your journey — available for questions, feedback, and accountability throughout.</p>
+            </div>
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="layers" width="20" height="20"></i></div>
+              <p class="pg-feat__title">Full curriculum coverage</p>
+              <p class="pg-feat__body">Every Step 1 subject from biochemistry and genetics through neurology, in a logical order that reinforces retention.</p>
+            </div>
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="message-circle" width="20" height="20"></i></div>
+              <p class="pg-feat__title">Live Q&amp;A</p>
+              <p class="pg-feat__body">Dedicated Q&amp;A time in every session. No question too basic, no concept glossed over.</p>
+            </div>
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="bar-chart-2" width="20" height="20"></i></div>
+              <p class="pg-feat__title">Progress tracking</p>
+              <p class="pg-feat__body">Regular check-ins and assessments so you always know where you stand and what to prioritise.</p>
+            </div>
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="users" width="20" height="20"></i></div>
+              <p class="pg-feat__title">Small cohorts</p>
+              <p class="pg-feat__body">Intentionally small groups so every student gets real attention — not a lecture hall experience.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="msp-section" aria-labelledby="whyTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Why USMLE Wise</span>
+          <h2 id="whyTitle" class="msp-h2">Mentors who have been through it. A system that actually works.</h2>
+        </div>
+        <div class="pg-feat-grid">
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="award" width="20" height="20"></i></div>
+              <p class="pg-feat__title">260+ scoring mentors</p>
+              <p class="pg-feat__body">Every mentor on our team is a physician who scored 260+ on the same exam you're preparing for. Their strategies are battle-tested.</p>
+            </div>
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="compass" width="20" height="20"></i></div>
+              <p class="pg-feat__title">Built for IMGs</p>
+              <p class="pg-feat__body">Everything — the curriculum sequence, the pacing, the advice — is designed specifically for international medical graduates.</p>
+            </div>
+            <div class="pg-feat reveal">
+              <div class="pg-feat__icon"><i data-lucide="target" width="20" height="20"></i></div>
+              <p class="pg-feat__title">Structure, not randomness</p>
+              <p class="pg-feat__body">Most Step 1 failures come from inefficient, scattered prep. Our program gives you a clear path and holds you to it.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-cta-dark" aria-labelledby="ctaTitle">
+      <div class="msp-wrap">
+        <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
+        <h2 id="ctaTitle" class="msp-h2">Ready to build a score you're proud of?</h2>
+        <p class="msp-sub">Book a free guidance call and we'll map out your Step 1 timeline, identify your gaps, and walk you through exactly how the Mastery program works.</p>
+        <div class="msp-cta-row">
+          <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
+          <a class="btn btn--outline btn--xl" style="border-color:rgba(255,255,255,.25);color:#fff;" href="https://web.whatsapp.com/send?phone=&amp;text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+        </div>
+      </div>
+    </section>
     </main>
 
     <!-- ============== FOOTER ============== -->
@@ -191,8 +287,7 @@
               <a href="coaching.html">Coaching Overview</a>
               <a href="coaching-step1-crash-course.html">Step 1 Crash Course</a>
               <a href="coaching-step1-mastery.html">Step 1 Mastery</a>
-              <a href="coaching-step23-review.html">Step 2/3 Review Course</a>
-              <a href="coaching-step23-mastery.html">Step 2/3 Mastery</a>
+              <a href="coaching-step23-mastery.html">NBME Style Coaching (Step 1 and Step 2)</a>
               <a href="coaching-tutoring.html">1:1 Tutoring</a>
             </div>
             <div class="msp-foot__nav-group">
