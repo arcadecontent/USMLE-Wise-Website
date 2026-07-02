@@ -56,24 +56,6 @@
     .ec-feat__title { font-size: 17px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
     .ec-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.7; margin: 0; }
 
-    .ec-stats { background: #08111f; padding-block: clamp(56px, 7vw, 96px); }
-    .ec-stats__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: clamp(20px, 3vw, 40px);
-      text-align: center;
-    }
-    .ec-stat { display: flex; flex-direction: column; gap: 8px; }
-    .ec-stat__num {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 600;
-      color: #fff;
-      line-height: 1;
-    }
-    .ec-stat__label { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.4; }
-    .ec-stat__sub { font-size: 12px; font-family: var(--font-mono); color: rgba(255,255,255,.35); letter-spacing: .06em; text-transform: uppercase; }
-
     /* contained CTA card */
     .ec-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
     .ec-cta-card {
@@ -99,10 +81,6 @@
 
     @media (max-width: 760px) {
       .ec-approach-grid { grid-template-columns: 1fr; }
-      .ec-stats__grid { grid-template-columns: 1fr 1fr; gap: clamp(24px,4vw,40px); }
-    }
-    @media (max-width: 440px) {
-      .ec-stats__grid { grid-template-columns: 1fr; }
     }
   </style>
   </head>
@@ -190,21 +168,13 @@
                 <span class="msp-nav__dd-name">ERAS CV 3X</span>
                 <span class="msp-nav__dd-meta">CV overhaul</span>
               </a>
-              <a href="match-loi.html" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Letter of Interest / Intent</span>
-                <span class="msp-nav__dd-meta">Strategic timing &amp; editing</span>
-              </a>
-              <a href="match-membership.html" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Match Membership</span>
-                <span class="msp-nav__dd-meta">DIY</span>
-              </a>
-              <a href="match-packages.html" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Match Packages</span>
-                <span class="msp-nav__dd-meta">Done-for-you</span>
-              </a>
               <a href="match-ps3x.html" class="msp-nav__dd-link">
                 <span class="msp-nav__dd-name">Personal Statement</span>
                 <span class="msp-nav__dd-meta">PS3X</span>
+              </a>
+              <a href="match-interview.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Interview Preparation</span>
+                <span class="msp-nav__dd-meta">Mock interviews &middot; Strategy</span>
               </a>
             </div>
           </div>
@@ -297,38 +267,6 @@
         </div>
       </section>
 
-      <!-- PROVEN RESULTS -->
-      <section class="ec-stats" aria-labelledby="statsTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal" style="margin-inline: auto; text-align: center;">
-            <span class="msp-eyebrow msp-eyebrow--light">Proven results</span>
-            <h2 id="statsTitle" class="msp-h2" style="color:#fff; margin-inline: auto;">We don't just talk about narrative transformation — our data reflects it.</h2>
-          </div>
-          <div class="ec-stats__grid">
-            <div class="ec-stat reveal">
-              <span class="ec-stat__num">88%</span>
-              <span class="ec-stat__label">Match rate among our applicants</span>
-              <span class="ec-stat__sub">Match Success</span>
-            </div>
-            <div class="ec-stat reveal">
-              <span class="ec-stat__num">80+</span>
-              <span class="ec-stat__label">ERAS CVs meticulously refined</span>
-              <span class="ec-stat__sub">Strategic Editing</span>
-            </div>
-            <div class="ec-stat reveal">
-              <span class="ec-stat__num">100+</span>
-              <span class="ec-stat__label">Applicants successfully mentored</span>
-              <span class="ec-stat__sub">Dedicated Guidance</span>
-            </div>
-            <div class="ec-stat reveal">
-              <span class="ec-stat__num">300+</span>
-              <span class="ec-stat__label">Mentorship sessions conducted</span>
-              <span class="ec-stat__sub">One-on-One Support</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- FINAL CTA -->
       <section class="ec-cta-wrap">
         <div class="msp-wrap">
@@ -383,9 +321,6 @@
               <a href="match.html">Match Overview</a>
               <a href="match-lor.html">LOR Editing</a>
               <a href="match-eras-cv.html">ERAS CV 3X</a>
-              <a href="match-loi.html">Letter of Intent</a>
-              <a href="match-membership.html">Match Membership</a>
-              <a href="match-packages.html">Match Packages</a>
               <a href="match-ps3x.html">Personal Statement</a>
             </div>
             <div class="msp-foot__nav-group">
