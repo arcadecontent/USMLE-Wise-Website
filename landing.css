@@ -397,51 +397,75 @@
 
 /* ---------- 3 · THE PROBLEM ---------- */
 .lpx-problem {
-  background:
-    radial-gradient(700px 500px at 100% 0%, var(--uw-blue-600), transparent 60%),
-    linear-gradient(180deg, var(--uw-blue-800), var(--uw-blue-900));
-  color: rgba(255,255,255,.82);
+  background: #fafaf9;
 }
-.lpx-problem__grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(40px, 6vw, 80px);
-  align-items: start;
+.lpx-problem__hd {
+  max-width: 58ch;
+  margin-bottom: clamp(40px, 6vw, 64px);
 }
 .lpx-prose {
   font-size: clamp(15.5px, 1.3vw, 18px);
   line-height: 1.7;
-  color: rgba(255,255,255,.74);
+  color: var(--uw-ink-600);
   max-width: 54ch;
   margin: 0 0 var(--space-5);
 }
 .lpx-prose--strong {
-  color: #fff;
+  color: var(--uw-ink-900);
   font-family: var(--font-display);
   font-size: clamp(18px, 1.8vw, 23px);
   line-height: 1.45;
   font-style: italic;
-  border-top: 1px solid rgba(255,255,255,.16);
+  border-top: 1px solid var(--uw-border);
   padding-top: var(--space-5);
   margin-top: var(--space-6);
 }
-.lpx-pains {
-  list-style: none; margin: 0; padding: 0;
-  display: flex; flex-direction: column; gap: 10px;
+.lpx-pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.4vw, 16px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.lpx-pains li {
-  display: flex; align-items: center; gap: 13px;
-  background: rgba(255,255,255,.055);
-  border: 1px solid rgba(255,255,255,.13);
-  border-radius: var(--r-md);
-  padding: 15px 18px;
-  font-size: 14.5px;
+.lpx-pain-card {
+  position: relative;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background-color: #0d1f38;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 4/3;
+}
+.lpx-pain-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 17, 31, 0.95) 0%,
+    rgba(8, 17, 31, 0.55) 55%,
+    rgba(8, 17, 31, 0.15) 100%
+  );
+}
+.lpx-pain-card__inner {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  z-index: 1;
+  padding: clamp(16px, 2vw, 24px);
+}
+.lpx-pain-card__txt {
+  font-size: clamp(13px, 1.1vw, 15.5px);
+  font-weight: 600;
+  line-height: 1.35;
   color: #fff;
+  margin: 0;
 }
-.lpx-pains svg { color: var(--uw-red-300); flex-shrink: 0; }
-
 @media (max-width: 820px) {
-  .lpx-problem__grid { grid-template-columns: 1fr; }
+  .lpx-pain-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .lpx-pain-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- 4 · THE SOLUTION ---------- */
