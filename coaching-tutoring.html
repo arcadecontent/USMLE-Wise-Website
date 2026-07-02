@@ -40,10 +40,31 @@
       }
       .pg-feat__title { font-size: 16px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
       .pg-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
-      .pg-cta-dark { background: var(--uw-ink-900); padding-block: clamp(72px, 9vw, 120px); text-align: center; }
-      .pg-cta-dark .msp-h2 { color: #fff; }
-      .pg-cta-dark .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); }
-      .pg-cta-dark .msp-cta-row { justify-content: center; margin-top: clamp(28px, 4vw, 44px); }
+      .pg-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
+      .pg-cta-card {
+        background: #08111f;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: clamp(20px, 2.4vw, 28px);
+        box-shadow: var(--shadow-lg);
+        padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
+        text-align: center;
+      }
+      .pg-cta-card .msp-eyebrow { display: block; text-align: center; }
+      .pg-cta-card .msp-h2 { color: #fff; text-align: center; max-width: 20ch; margin-inline: auto; margin-bottom: 0; }
+      .pg-cta-card .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); text-align: center; }
+      .pg-cta-card .msp-cta-row { justify-content: center; margin-inline: auto; margin-top: clamp(28px, 4vw, 44px); }
+      .pg-cta-card .btn--outline {
+        border-color: rgba(255,255,255,.4) !important;
+        color: #fff !important;
+        background: transparent !important;
+        transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+      }
+      .pg-cta-card .btn--outline:hover {
+        background: #fff !important;
+        border-color: #fff !important;
+        color: #08111f !important;
+        box-shadow: 0 8px 24px rgba(255,255,255,0.12) !important;
+      }
       @media (max-width: 640px) { .pg-feat-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 400px) { .pg-feat-grid { grid-template-columns: 1fr; } }
     </style>
@@ -163,108 +184,119 @@
     </header>
 
     <main>
+
+    <!-- HERO -->
     <section class="msp-hero" aria-labelledby="heroTitle">
       <div class="msp-wrap msp-hero__grid">
         <div class="msp-hero__copy reveal">
-          <span class="msp-eyebrow">Coaching</span>
-          <h1 id="heroTitle" class="msp-h1">USMLE prep built around your schedule, your weaknesses, your goals.</h1>
-          <p class="msp-lede">Personalised 1:1 tutoring sessions with a physician who has scored 260+. Done-with-you — you bring the questions, your mentor brings the framework.</p>
+          <span class="msp-eyebrow">Coaching &mdash; 1:1 Mentoring</span>
+          <h1 id="heroTitle" class="msp-h1">Personalised guidance every step of the&nbsp;way.</h1>
+          <p class="msp-lede">For students who want individualised support, our One-on-One Mentoring program offers tailored coaching throughout your entire preparation journey — so you never have to navigate it alone.</p>
           <div class="msp-cta-row">
             <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
             <a class="btn btn--outline btn--xl" href="coaching.html">Back to Coaching</a>
           </div>
         </div>
       </div>
-
-        <div class="msp-bar msp-wrap" aria-label="Track record">
-          <div class="msp-bar__inner">
-            <div class="msp-stat reveal"><b>500+</b><span>Students coached</span></div>
-            <div class="msp-divider" aria-hidden="true"></div>
-            <div class="msp-stat reveal"><b>260+</b><span>Avg. mentor score</span></div>
-            <div class="msp-divider" aria-hidden="true"></div>
-            <div class="msp-stat reveal"><b>Step 1 &ndash; 3</b><span>All USMLE steps covered</span></div>
-            <div class="msp-divider" aria-hidden="true"></div>
-            <div class="msp-stat reveal"><b>IMG-focused</b><span>Built for international graduates</span></div>
-          </div>
+      <div class="msp-bar msp-wrap" aria-label="Track record">
+        <div class="msp-bar__inner">
+          <div class="msp-stat reveal"><b>500+</b><span>Students coached</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b>260+</b><span>Avg. mentor score</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b>Step 1 &ndash; 3</b><span>All USMLE steps covered</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b>IMG-focused</b><span>Built for international graduates</span></div>
         </div>
+      </div>
     </section>
+
+    <!-- WHAT IT IS -->
     <section class="msp-section pg-about" aria-labelledby="aboutTitle">
       <div class="msp-wrap">
         <div class="msp-head reveal">
           <span class="msp-eyebrow">How it works</span>
-          <h2 id="aboutTitle" class="msp-h2">One mentor. One student. Every session is yours.</h2>
-          <p class="msp-sub">1:1 Tutoring is the most direct path to closing specific gaps in your USMLE preparation. You work with a dedicated mentor in focused sessions tailored to exactly what you need — whether that's a subject, a question style, a reasoning pattern, or a score plateau you can't break through.</p>
+          <h2 id="aboutTitle" class="msp-h2">One mentor. One student. A plan built entirely around you.</h2>
+          <p class="msp-sub">Your mentor works closely with you to design study timetables, track your progress, and provide the motivation you need when it matters most. With structured planning and continuous feedback, you stay on track and build confidence that compounds — all the way to exam day.</p>
         </div>
         <div class="pg-feat-grid">
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="user-check" width="20" height="20"></i></div>
-              <p class="pg-feat__title">Your dedicated mentor</p>
-              <p class="pg-feat__body">A physician mentor matched to your exam and your background — not a rotating tutor pool.</p>
-            </div>
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="calendar" width="20" height="20"></i></div>
-              <p class="pg-feat__title">Flexible scheduling</p>
-              <p class="pg-feat__body">Sessions scheduled around your availability. No fixed cohort timing.</p>
-            </div>
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="target" width="20" height="20"></i></div>
-              <p class="pg-feat__title">Targeted content</p>
-              <p class="pg-feat__body">Every session focused on what you actually need to work on — identified through your QBank data, previous scores, and direct conversation.</p>
-            </div>
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="message-circle" width="20" height="20"></i></div>
-              <p class="pg-feat__title">Real-time feedback</p>
-              <p class="pg-feat__body">Work through questions and cases with your mentor in the session — not just reviewing them after the fact.</p>
-            </div>
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="bar-chart-2" width="20" height="20"></i></div>
-              <p class="pg-feat__title">Score plateau support</p>
-              <p class="pg-feat__body">If you're stuck at a score and don't know why, a mentor can identify the pattern and help you break through.</p>
-            </div>
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="repeat" width="20" height="20"></i></div>
-              <p class="pg-feat__title">As many sessions as you need</p>
-              <p class="pg-feat__body">Book a single session or an ongoing block — structure it to fit your prep plan.</p>
-            </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="map" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Personalised roadmap</p>
+            <p class="pg-feat__body">Your mentor designs a study plan tailored to your schedule, your strengths, and your weaknesses — not a generic template handed to every student.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="bar-chart-2" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Accountability that sticks</p>
+            <p class="pg-feat__body">Weekly check-ins and progress tracking keep you on course, even when motivation dips. Your mentor notices before a bad week becomes a bad month.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="hand-helping" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Guidance at every stage</p>
+            <p class="pg-feat__body">From building your timetable to refining test strategies, your mentor is there to guide every step — not just the hard ones.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="refresh-cw" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Adaptive support</p>
+            <p class="pg-feat__body">Plans evolve as you do. Whether you need more practice questions, deeper theory, or help managing exam anxiety — your mentor adjusts.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="award" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Mentors who've done it themselves</p>
+            <p class="pg-feat__body">You're coached by doctors who have sat the same exams, scored high, and know exactly what separates a good prep from a great one.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="shield-check" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Confidence built daily</p>
+            <p class="pg-feat__body">With personalised guidance, you don't just prepare — you prepare with certainty, knowing you're never alone in the journey.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- WHY IT WORKS -->
     <section class="msp-section" aria-labelledby="whyTitle">
       <div class="msp-wrap">
         <div class="msp-head reveal">
-          <span class="msp-eyebrow">Why USMLE Wise</span>
-          <h2 id="whyTitle" class="msp-h2">The fastest way to close a gap is to work through it with someone who's already closed it.</h2>
+          <span class="msp-eyebrow">Why 1:1 mentoring works</span>
+          <h2 id="whyTitle" class="msp-h2">Generic prep plans fail most students. Yours won't.</h2>
+          <p class="msp-sub">The reason most IMGs struggle isn't lack of effort — it's lack of direction. A personalised mentor changes that by keeping your preparation deliberate, adaptive, and continuously pointed at the right goals.</p>
         </div>
         <div class="pg-feat-grid">
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="award" width="20" height="20"></i></div>
-              <p class="pg-feat__title">Physicians who scored 260+</p>
-              <p class="pg-feat__body">Our tutors are practicing physicians and residents who have scored at the top of the same exams you're preparing for.</p>
-            </div>
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="compass" width="20" height="20"></i></div>
-              <p class="pg-feat__title">IMG-specific understanding</p>
-              <p class="pg-feat__body">We understand the specific challenges IMGs face — OET pathways, time gaps, visa pressures — and we factor them into your sessions.</p>
-            </div>
-            <div class="pg-feat reveal">
-              <div class="pg-feat__icon"><i data-lucide="zap" width="20" height="20"></i></div>
-              <p class="pg-feat__title">No wasted time</p>
-              <p class="pg-feat__body">Sessions are dense by design. You'll leave every call with something concrete to implement before the next one.</p>
-            </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="user-check" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Someone in your corner</p>
+            <p class="pg-feat__body">USMLE preparation is long and often isolating. Having a mentor who knows your case and checks in regularly makes a measurable difference in consistency and outcomes.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="compass" width="20" height="20"></i></div>
+            <p class="pg-feat__title">IMG-specific understanding</p>
+            <p class="pg-feat__body">We understand the pressures IMGs face — time gaps, visa constraints, family responsibilities — and we build prep plans that work within your real life.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="zap" width="20" height="20"></i></div>
+            <p class="pg-feat__title">No wasted weeks</p>
+            <p class="pg-feat__body">Every session ends with a clear next step. You'll never leave a call wondering what to do — your mentor makes sure your prep is always moving forward.</p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="pg-cta-dark" aria-labelledby="ctaTitle">
+
+    <!-- FINAL CTA -->
+    <section class="pg-cta-wrap">
       <div class="msp-wrap">
-        <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
-        <h2 id="ctaTitle" class="msp-h2">Tell us where you're stuck. We'll help you get unstuck.</h2>
-        <p class="msp-sub">Book a free guidance call to discuss your exam, your current standing, and what 1:1 tutoring looks like for your situation.</p>
-        <div class="msp-cta-row">
-          <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
-          <a class="btn btn--outline btn--xl" style="border-color:rgba(255,255,255,.25);color:#fff;" href="https://web.whatsapp.com/send?phone=&amp;text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+        <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
+          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
+          <h2 id="ctaTitle" class="msp-h2">You don't have to figure this out alone.</h2>
+          <p class="msp-sub">Book a free guidance call and we'll match you with the right mentor for your exam, your timeline, and your goals.</p>
+          <div class="msp-cta-row">
+            <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
+            <a class="btn btn--outline btn--xl" href="https://web.whatsapp.com/send?phone=&amp;text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+          </div>
         </div>
       </div>
     </section>
+
     </main>
 
     <!-- ============== FOOTER ============== -->
