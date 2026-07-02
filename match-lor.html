@@ -43,10 +43,27 @@
       }
       .pg-feat__title { font-size: 16px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
       .pg-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
-      .pg-cta-dark { background: var(--uw-ink-900); padding-block: clamp(72px, 9vw, 120px); text-align: center; }
-      .pg-cta-dark .msp-h2 { color: #fff; }
-      .pg-cta-dark .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); }
-      .pg-cta-dark .msp-cta-row { justify-content: center; margin-top: clamp(28px, 4vw, 44px); }
+      .pg-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
+      .pg-cta-card {
+        background: #08111f;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: clamp(20px, 2.4vw, 28px);
+        box-shadow: var(--shadow-lg);
+        padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
+        text-align: center;
+      }
+      .pg-cta-card .msp-eyebrow { display: block; text-align: center; }
+      .pg-cta-card .msp-h2 { color: #fff; text-align: center; max-width: 22ch; margin-inline: auto; margin-bottom: 0; }
+      .pg-cta-card .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); text-align: center; }
+      .pg-cta-card .msp-cta-row { justify-content: center; margin-inline: auto; margin-top: clamp(28px,4vw,44px); }
+      .pg-cta-card .btn--outline {
+        border-color: rgba(255,255,255,.4) !important; color: #fff !important; background: transparent !important;
+        transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+      }
+      .pg-cta-card .btn--outline:hover {
+        background: #fff !important; border-color: #fff !important; color: #08111f !important;
+        box-shadow: 0 8px 24px rgba(255,255,255,0.12) !important;
+      }
       @media (max-width: 640px) { .pg-feat-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 400px) { .pg-feat-grid { grid-template-columns: 1fr; } }
     </style>
@@ -250,14 +267,16 @@
         </div>
       </div>
     </section>
-    <section class="pg-cta-dark" aria-labelledby="ctaTitle">
+    <section class="pg-cta-wrap">
       <div class="msp-wrap">
-        <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
-        <h2 id="ctaTitle" class="msp-h2">Your LORs can be stronger. Let's make them stronger.</h2>
-        <p class="msp-sub">Book a free guidance call or reach out directly to get started with LOR Editing before your deadline.</p>
-        <div class="msp-cta-row">
-          <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
-          <a class="btn btn--outline btn--xl" style="border-color:rgba(255,255,255,.25);color:#fff;" href="https://web.whatsapp.com/send?phone=&amp;text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+        <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
+          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
+          <h2 id="ctaTitle" class="msp-h2">Your LORs can be stronger. Let's make them stronger.</h2>
+          <p class="msp-sub">Book a free guidance call or reach out directly to get started with LOR Editing before your deadline.</p>
+          <div class="msp-cta-row">
+            <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
+            <a class="btn btn--outline btn--xl" href="https://web.whatsapp.com/send?phone=&amp;text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+          </div>
         </div>
       </div>
     </section>
