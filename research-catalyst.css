@@ -300,7 +300,7 @@
   font-family: var(--font-display);
   font-size: clamp(28px, 3.2vw, 42px);
   font-weight: 600;
-  color: var(--uw-ink-900);
+  color: var(--uw-blue-500);
   line-height: 1;
   letter-spacing: -0.02em;
 }

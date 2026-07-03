@@ -123,7 +123,43 @@
       });
     }
 
-    /* ---- 7. Anchor scroll with sticky-nav offset ---- */
+    /* ---- 7. Count-up animation for stat numbers ---- */
+    (function () {
+      var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+      if (!counters.length || reduce) return;
+
+      function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+      function runCounter(el) {
+        var target   = parseInt(el.getAttribute('data-count'), 10);
+        var suffix   = el.getAttribute('data-suffix') || '';
+        var comma    = el.hasAttribute('data-comma');
+        var duration = 1800;
+        var start    = null;
+
+        function fmt(n) { return comma ? n.toLocaleString() : String(n); }
+
+        function tick(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          el.textContent = fmt(Math.round(easeOutQuart(progress) * target)) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      var co = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          runCounter(entry.target);
+          co.unobserve(entry.target);
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(function (el) { co.observe(el); });
+    }());
+
+    /* ---- 8. Anchor scroll with sticky-nav offset ---- */
     var navH = 72;
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       link.addEventListener('click', function (e) {
