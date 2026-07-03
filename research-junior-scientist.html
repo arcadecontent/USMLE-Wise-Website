@@ -443,6 +443,145 @@
       @media (max-width: 760px) {
         .jsp-year__grid { grid-template-columns: 1fr; }
       }
+
+      /* ---- JSP: fellowship / pricing ---- */
+      .jsp-fellowship .msp-head { text-align: center; }
+      .jsp-fellowship .msp-h2 { margin-inline: auto; }
+      .jsp-fellowship .msp-sub { max-width: 62ch; margin-inline: auto; }
+
+      .jsp-fellow__pricing {
+        display: flex;
+        justify-content: center;
+        margin-top: clamp(40px, 5vw, 64px);
+      }
+      .jsp-fellow__card {
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        padding: clamp(32px, 4vw, 52px);
+        background: #fff;
+        max-width: 540px;
+        width: 100%;
+        box-shadow: var(--shadow-md);
+      }
+      .jsp-fellow__card-head {
+        margin-bottom: clamp(24px, 3vw, 36px);
+        padding-bottom: clamp(24px, 3vw, 36px);
+        border-bottom: 1px solid var(--uw-border);
+      }
+      .jsp-fellow__badge {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--uw-blue-600);
+        background: var(--uw-blue-50);
+        padding: 5px 11px;
+        border-radius: 999px;
+        margin-bottom: 20px;
+      }
+      .jsp-fellow__price {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .jsp-fellow__amount {
+        font-family: var(--font-display);
+        font-size: clamp(44px, 6vw, 64px);
+        font-weight: 700;
+        color: var(--uw-ink-900);
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .jsp-fellow__currency {
+        font-size: 14px;
+        color: var(--uw-ink-500);
+        font-family: var(--font-mono);
+      }
+      .jsp-fellow__tagline {
+        font-size: 16px;
+        color: var(--uw-ink-700);
+        margin: 0;
+        line-height: 1.45;
+      }
+      .jsp-fellow__features {
+        list-style: none;
+        margin: 0 0 clamp(24px, 3vw, 36px);
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .jsp-fellow__features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 15px;
+        color: var(--uw-ink-700);
+        line-height: 1.5;
+      }
+      .jsp-fellow__features li i {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: var(--uw-blue-500);
+      }
+      .jsp-fellow__cta {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      .jsp-fellow__note {
+        font-size: 13px;
+        color: var(--uw-ink-500);
+        text-align: center;
+        margin: 14px 0 0;
+        line-height: 1.55;
+      }
+      .jsp-fellow__panels {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2vw, 24px);
+        margin-top: clamp(40px, 5vw, 64px);
+      }
+      .jsp-fellow__panel {
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        padding: clamp(24px, 3vw, 36px);
+        background: #fff;
+      }
+      .jsp-fellow__panel--caution {
+        background: #fef9f0;
+        border-color: #f0d9a0;
+      }
+      .jsp-fellow__panel h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--uw-ink-900);
+        margin: 0 0 12px;
+        line-height: 1.35;
+      }
+      .jsp-fellow__panel p {
+        font-size: 14.5px;
+        color: var(--uw-ink-600);
+        line-height: 1.65;
+        margin: 0;
+      }
+      .jsp-fellow__trial {
+        max-width: 58ch;
+        margin: clamp(36px, 4.5vw, 52px) auto 0;
+        text-align: center;
+      }
+      .jsp-fellow__trial p {
+        font-size: 16px;
+        color: var(--uw-ink-600);
+        line-height: 1.65;
+        font-style: italic;
+        margin: 0;
+      }
+      @media (max-width: 860px) {
+        .jsp-fellow__panels { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body class="msp">
@@ -589,8 +728,8 @@
           <div class="msp-hero__frame-wrap">
             <div class="msp-hero__frame reveal">
               <img
-                src="assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.jpg"
-                alt="Physician in lab coat writing in a notebook"
+                src="assets/Photos/high school student.jpg"
+                alt="High school student doing research"
               />
             </div>
             <div class="msp-float-note" aria-hidden="true">
@@ -1121,6 +1260,63 @@
               </button>
               <div class="accordion__body">Book a free call. I'll talk with you and your child about their goals and whether real research is the right use of their time right now. There's no pressure to enroll.</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== THE FELLOWSHIP ============== -->
+      <section class="msp-section jsp-fellowship" aria-labelledby="fellowshipTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">The fellowship</span>
+            <h2 id="fellowshipTitle" class="msp-h2">One fee for a full year of mentored research.</h2>
+            <p class="msp-sub">The fee covers your child's place, training, and mentorship for the program year. It does not, and cannot, buy a publication or a byline, because those are earned and reviewed independently. You start with a one-month trial and a deposit that comes back if it is not the right fit.</p>
+          </div>
+
+          <div class="jsp-fellow__pricing reveal">
+            <div class="jsp-fellow__card">
+              <div class="jsp-fellow__card-head">
+                <span class="jsp-fellow__badge">CRIST Research Fellowship &middot; high school</span>
+                <div class="jsp-fellow__price">
+                  <span class="jsp-fellow__amount">$4,000</span>
+                  <span class="jsp-fellow__currency">USD &middot; full program</span>
+                </div>
+                <p class="jsp-fellow__tagline">A year-long, mentored place on a live study.</p>
+              </div>
+              <ul class="jsp-fellow__features">
+                <li><i data-lucide="check" width="16" height="16"></i> A real role on a physician-led global-health study</li>
+                <li><i data-lucide="check" width="16" height="16"></i> Weekly one-on-one and small-group mentorship</li>
+                <li><i data-lucide="check" width="16" height="16"></i> Training in interviewing, reading, writing, and presenting</li>
+                <li><i data-lucide="check" width="16" height="16"></i> A transparent, ICMJE-based path to authorship if earned</li>
+                <li><i data-lucide="check" width="16" height="16"></i> A signed Certificate of Contribution on completion</li>
+              </ul>
+              <a
+                class="btn btn--primary btn--lg jsp-fellow__cta"
+                href="https://team.manikmadaan.com/guidance-call/book"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Book a fit call</a>
+              <p class="jsp-fellow__note">Places are limited and offered after a fit conversation. Payment plans available on request.</p>
+            </div>
+          </div>
+
+          <div class="jsp-fellow__panels">
+            <div class="jsp-fellow__panel reveal">
+              <h3>What the fee buys</h3>
+              <p>A year of structured mentorship, training, and a genuine role on the study. It is tuition for the program, the way a serious research mentorship carries a fee.</p>
+            </div>
+            <div class="jsp-fellow__panel jsp-fellow__panel--caution reveal">
+              <h3>What it does not buy</h3>
+              <p>It does not buy a publication, a conference acceptance, or authorship. Those depend on your child's work meeting the ICMJE standard and on peer review. Anyone guaranteeing a byline for a fee is selling something that would harm your child, not help them.</p>
+            </div>
+            <div class="jsp-fellow__panel reveal">
+              <h3>Possible separate costs</h3>
+              <p>If your child presents at a meeting like IDWeek, registration and travel are separate and set by the organiser. Journal supplements such as OFID are open access. All are disclosed in advance and never a condition of authorship.</p>
+            </div>
+          </div>
+
+          <div class="jsp-fellow__trial reveal">
+            <p>Start with a one-month trial. If it is not the right fit for your child, your deposit comes back. We would rather your family choose the right thing than regret the wrong one.</p>
           </div>
         </div>
       </section>

@@ -123,7 +123,98 @@
       });
     }
 
-    /* ---- 7. Anchor scroll with sticky-nav offset ---- */
+    /* ---- 7. Sidebar filters ---- */
+    (function () {
+      /* Multi-select: each group holds an array of active values (OR within group, AND between groups) */
+      var activeFilters = { specialty: [], state: [], price: [], setting: [] };
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.rot-pg-card'));
+      var emptyEl   = document.getElementById('rotEmpty');
+      var resetBtn  = document.getElementById('rotReset');
+      var resetInline = document.getElementById('rotResetInline');
+      var countEl   = document.getElementById('rotFilterCount');
+      var toggleBtn = document.getElementById('rotFilterToggle');
+      var sidebar   = document.getElementById('rotSidebar');
+      if (!cards.length) return;
+
+      /* Scrim element for mobile drawer */
+      var scrim = document.createElement('div');
+      scrim.className = 'rot-sidebar-scrim';
+      document.body.appendChild(scrim);
+
+      function getTotalActive() {
+        return Object.keys(activeFilters).reduce(function (n, k) { return n + activeFilters[k].length; }, 0);
+      }
+
+      function applyFilters() {
+        var visible = 0;
+        cards.forEach(function (card) {
+          var show = Object.keys(activeFilters).every(function (key) {
+            var sel = activeFilters[key];
+            return sel.length === 0 || sel.indexOf(card.getAttribute('data-' + key)) !== -1;
+          });
+          card.classList.toggle('is-hidden', !show);
+          if (show) visible++;
+        });
+        if (emptyEl) emptyEl.hidden = visible > 0;
+
+        var total = getTotalActive();
+        if (resetBtn) resetBtn.classList.toggle('is-visible', total > 0);
+        if (countEl)  { countEl.textContent = total > 0 ? total : ''; countEl.hidden = total === 0; }
+      }
+
+      function resetAll() {
+        Object.keys(activeFilters).forEach(function (k) { activeFilters[k] = []; });
+        document.querySelectorAll('.rot-sidebar__opt').forEach(function (o) { o.classList.remove('is-active'); });
+        applyFilters();
+      }
+
+      function closeSidebar() {
+        if (!sidebar) return;
+        sidebar.classList.remove('is-open');
+        scrim.classList.remove('is-visible');
+        if (toggleBtn) { toggleBtn.setAttribute('aria-expanded', 'false'); toggleBtn.classList.remove('is-active'); }
+      }
+
+      /* Option click — toggle in/out of active array */
+      document.querySelectorAll('.rot-sidebar__opt').forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          var group = opt.getAttribute('data-filter');
+          var value = opt.getAttribute('data-value');
+          var arr = activeFilters[group];
+          var idx = arr.indexOf(value);
+          if (idx === -1) { arr.push(value); opt.classList.add('is-active'); }
+          else            { arr.splice(idx, 1); opt.classList.remove('is-active'); }
+          applyFilters();
+        });
+      });
+
+      /* Reset buttons */
+      if (resetBtn)    resetBtn.addEventListener('click', resetAll);
+      if (resetInline) resetInline.addEventListener('click', resetAll);
+
+      /* Accordion: group collapse/expand */
+      document.querySelectorAll('.rot-sidebar__gh').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var group = btn.parentElement;
+          var open = group.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open);
+        });
+      });
+
+      /* Mobile: drawer open/close */
+      if (toggleBtn && sidebar) {
+        toggleBtn.addEventListener('click', function () {
+          var opening = !sidebar.classList.contains('is-open');
+          sidebar.classList.toggle('is-open', opening);
+          scrim.classList.toggle('is-visible', opening);
+          toggleBtn.setAttribute('aria-expanded', opening);
+          toggleBtn.classList.toggle('is-active', opening);
+        });
+        scrim.addEventListener('click', closeSidebar);
+      }
+    }());
+
+    /* ---- 8. Anchor scroll with sticky-nav offset ---- */
     var navH = 72;
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       link.addEventListener('click', function (e) {
