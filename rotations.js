@@ -125,24 +125,48 @@
 
     /* ---- 7. Sidebar filters ---- */
     (function () {
-      /* Multi-select: each group holds an array of active values (OR within group, AND between groups) */
-      var activeFilters = { specialty: [], state: [], price: [], setting: [] };
+      var PRICE_MIN = 1000, PRICE_MAX = 5000;
+      var activeFilters = { specialty: [], state: [], setting: [] };
+      var priceMin = PRICE_MIN, priceMax = PRICE_MAX;
+
       var cards = Array.prototype.slice.call(document.querySelectorAll('.rot-pg-card'));
-      var emptyEl   = document.getElementById('rotEmpty');
-      var resetBtn  = document.getElementById('rotReset');
+      var emptyEl     = document.getElementById('rotEmpty');
+      var resetBtn    = document.getElementById('rotReset');
       var resetInline = document.getElementById('rotResetInline');
-      var countEl   = document.getElementById('rotFilterCount');
-      var toggleBtn = document.getElementById('rotFilterToggle');
-      var sidebar   = document.getElementById('rotSidebar');
+      var countEl     = document.getElementById('rotFilterCount');
+      var toggleBtn   = document.getElementById('rotFilterToggle');
+      var sidebar     = document.getElementById('rotSidebar');
+      var sliderMin   = document.getElementById('priceSliderMin');
+      var sliderMax   = document.getElementById('priceSliderMax');
+      var fillEl      = document.getElementById('priceFill');
+      var labelMin    = document.getElementById('priceMinLabel');
+      var labelMax    = document.getElementById('priceMaxLabel');
       if (!cards.length) return;
 
-      /* Scrim element for mobile drawer */
       var scrim = document.createElement('div');
       scrim.className = 'rot-sidebar-scrim';
       document.body.appendChild(scrim);
 
+      function parseCardPrice(card) {
+        var el = card.querySelector('.rot-pg-card__price');
+        if (!el) return NaN;
+        return parseInt(el.textContent.replace(/[^0-9]/g, ''), 10);
+      }
+
+      function updateSliderUI() {
+        if (!sliderMin || !sliderMax || !fillEl) return;
+        var leftPct  = (priceMin - PRICE_MIN) / (PRICE_MAX - PRICE_MIN) * 100;
+        var rightPct = (priceMax - PRICE_MIN) / (PRICE_MAX - PRICE_MIN) * 100;
+        fillEl.style.left  = leftPct + '%';
+        fillEl.style.right = (100 - rightPct) + '%';
+        if (labelMin) labelMin.textContent = '$' + priceMin.toLocaleString();
+        if (labelMax) labelMax.textContent = priceMax >= PRICE_MAX ? '$5,000+' : '$' + priceMax.toLocaleString();
+      }
+
       function getTotalActive() {
-        return Object.keys(activeFilters).reduce(function (n, k) { return n + activeFilters[k].length; }, 0);
+        var n = Object.keys(activeFilters).reduce(function (acc, k) { return acc + activeFilters[k].length; }, 0);
+        if (priceMin > PRICE_MIN || priceMax < PRICE_MAX) n++;
+        return n;
       }
 
       function applyFilters() {
@@ -152,11 +176,14 @@
             var sel = activeFilters[key];
             return sel.length === 0 || sel.indexOf(card.getAttribute('data-' + key)) !== -1;
           });
+          if (show) {
+            var p = parseCardPrice(card);
+            if (!isNaN(p)) show = p >= priceMin && p <= priceMax;
+          }
           card.classList.toggle('is-hidden', !show);
           if (show) visible++;
         });
         if (emptyEl) emptyEl.hidden = visible > 0;
-
         var total = getTotalActive();
         if (resetBtn) resetBtn.classList.toggle('is-visible', total > 0);
         if (countEl)  { countEl.textContent = total > 0 ? total : ''; countEl.hidden = total === 0; }
@@ -165,6 +192,10 @@
       function resetAll() {
         Object.keys(activeFilters).forEach(function (k) { activeFilters[k] = []; });
         document.querySelectorAll('.rot-sidebar__opt').forEach(function (o) { o.classList.remove('is-active'); });
+        priceMin = PRICE_MIN; priceMax = PRICE_MAX;
+        if (sliderMin) sliderMin.value = PRICE_MIN;
+        if (sliderMax) sliderMax.value = PRICE_MAX;
+        updateSliderUI();
         applyFilters();
       }
 
@@ -175,18 +206,40 @@
         if (toggleBtn) { toggleBtn.setAttribute('aria-expanded', 'false'); toggleBtn.classList.remove('is-active'); }
       }
 
-      /* Option click — toggle in/out of active array */
+      /* Option buttons (specialty, state, setting) */
       document.querySelectorAll('.rot-sidebar__opt').forEach(function (opt) {
         opt.addEventListener('click', function () {
           var group = opt.getAttribute('data-filter');
           var value = opt.getAttribute('data-value');
           var arr = activeFilters[group];
+          if (!arr) return;
           var idx = arr.indexOf(value);
           if (idx === -1) { arr.push(value); opt.classList.add('is-active'); }
           else            { arr.splice(idx, 1); opt.classList.remove('is-active'); }
           applyFilters();
         });
       });
+
+      /* Price sliders */
+      if (sliderMin) {
+        sliderMin.addEventListener('input', function () {
+          var val = parseInt(sliderMin.value, 10);
+          if (val >= priceMax) { val = priceMax - 50; sliderMin.value = val; }
+          priceMin = val;
+          updateSliderUI();
+          applyFilters();
+        });
+      }
+      if (sliderMax) {
+        sliderMax.addEventListener('input', function () {
+          var val = parseInt(sliderMax.value, 10);
+          if (val <= priceMin) { val = priceMin + 50; sliderMax.value = val; }
+          priceMax = val;
+          updateSliderUI();
+          applyFilters();
+        });
+      }
+      updateSliderUI();
 
       /* Reset buttons */
       if (resetBtn)    resetBtn.addEventListener('click', resetAll);

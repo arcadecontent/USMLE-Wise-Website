@@ -2395,6 +2395,86 @@
   background-size: 9px 7px;
 }
 
+/* Price range slider */
+.rot-price-slider {
+  display: none;
+  padding: 6px 16px 16px;
+}
+.rot-sidebar__group.is-open .rot-price-slider {
+  display: block;
+}
+.rot-price-slider__labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--uw-ink-700);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.rot-price-slider__track-wrap {
+  position: relative;
+  height: 4px;
+  margin: 10px 0 6px;
+}
+.rot-price-slider__track {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--uw-border);
+}
+.rot-price-slider__fill {
+  position: absolute;
+  top: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--uw-blue-500);
+  pointer-events: none;
+}
+.rot-price-slider__thumb {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  transform: translateY(-50%);
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+.rot-price-slider__thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--uw-blue-500);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+  z-index: 2;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.rot-price-slider__thumb::-moz-range-thumb {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--uw-blue-500);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  pointer-events: all;
+}
+.rot-price-slider__thumb:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px var(--uw-blue-100), 0 1px 4px rgba(0, 0, 0, 0.14);
+}
+
 /* Mobile: sidebar becomes a fixed drawer */
 @media (max-width: 900px) {
   .rot-browse-layout {

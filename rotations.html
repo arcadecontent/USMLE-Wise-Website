@@ -275,11 +275,20 @@
                   <span>Price</span>
                   <i data-lucide="chevron-down" width="14" height="14"></i>
                 </button>
-                <ul class="rot-sidebar__opts">
-                  <li><button class="rot-sidebar__opt" type="button" data-filter="price" data-value="under-3k">Under $3,000</button></li>
-                  <li><button class="rot-sidebar__opt" type="button" data-filter="price" data-value="3k-4k">$3,000–$4,000</button></li>
-                  <li><button class="rot-sidebar__opt" type="button" data-filter="price" data-value="over-4k">Over $4,000</button></li>
-                </ul>
+                <div class="rot-price-slider">
+                  <div class="rot-price-slider__labels">
+                    <span id="priceMinLabel">$1,000</span>
+                    <span id="priceMaxLabel">$5,000+</span>
+                  </div>
+                  <div class="rot-price-slider__track-wrap">
+                    <div class="rot-price-slider__track"></div>
+                    <div class="rot-price-slider__fill" id="priceFill"></div>
+                    <input type="range" id="priceSliderMin" class="rot-price-slider__thumb"
+                           min="1000" max="5000" step="50" value="1000" aria-label="Minimum price">
+                    <input type="range" id="priceSliderMax" class="rot-price-slider__thumb"
+                           min="1000" max="5000" step="50" value="5000" aria-label="Maximum price">
+                  </div>
+                </div>
               </div>
 
               <div class="rot-sidebar__group is-open">
