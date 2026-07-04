@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    USMLE Wise — Match Service page behavior
    Nav state, accordion, scroll-reveal, anchor offset.
    ============================================================ */
@@ -143,3 +143,45 @@
 
   });
 })();
+
+/* ---- Count-up animation ---- */
+(function () {
+  var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+  if (!counters.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+  function runCounter(el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var comma  = el.hasAttribute('data-comma');
+    var dec    = el.hasAttribute('data-decimal') ? parseInt(el.getAttribute('data-decimal'), 10) : 0;
+    var start  = null;
+
+    function fmt(n) {
+      if (dec > 0) return n.toFixed(dec);
+      return comma ? Math.round(n).toLocaleString() : String(Math.round(n));
+    }
+
+    function tick(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / 1800, 1);
+      el.textContent = fmt(easeOutQuart(p) * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting || e.target.hasAttribute('data-counted')) return;
+      e.target.setAttribute('data-counted', '');
+      runCounter(e.target);
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(function (el) { io.observe(el); });
+}());
