@@ -4,10 +4,10 @@ $pageDescription = "4-week inpatient and outpatient Internal Medicine elective a
 $canonical = "https://usmlewise.com/rotations/new-york";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

@@ -4,10 +4,10 @@ $pageDescription = "Build the academic profile your residency application needs.
 $canonical = "https://usmlewise.com/research/junior-scientist";
 $bodyClass = "msp";
 $stylesheets = [
-    "/research.css"
+    "/assets/css/research.css"
 ];
 $scripts = [
-    "/research.js"
+    "/assets/js/research.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

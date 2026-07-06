@@ -4,10 +4,10 @@ $pageDescription = "Complete ERAS CV overhaul for IMG residency applicants. Stre
 $canonical = "https://usmlewise.com/match/eras-cv";
 $bodyClass = "msp";
 $stylesheets = [
-    "/match.css"
+    "/assets/css/match.css"
 ];
 $scripts = [
-    "/match.js"
+    "/assets/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

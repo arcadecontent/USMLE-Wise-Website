@@ -22,7 +22,7 @@
 <?php if (!empty($scripts)) foreach ($scripts as $js): ?>
 <script src="<?php echo $js; ?>" defer></script>
 <?php endforeach; ?>
-<script src="/mobile-nav.js" defer></script>
+<script src="/assets/js/mobile-nav.js" defer></script>
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : ''; ?>">
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/nav.php'; ?>

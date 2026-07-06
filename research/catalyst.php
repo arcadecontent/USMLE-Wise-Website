@@ -4,10 +4,10 @@ $pageDescription = "A dedicated 12-month research mentorship for IMG applicants.
 $canonical = "https://usmlewise.com/research/catalyst";
 $bodyClass = "msp";
 $stylesheets = [
-    "/research-catalyst.css"
+    "/assets/css/research-catalyst.css"
 ];
 $scripts = [
-    "/research-catalyst.js"
+    "/assets/js/research-catalyst.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

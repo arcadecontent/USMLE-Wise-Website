@@ -4,10 +4,10 @@ $pageDescription = "Strategic timing and editing of Letters of Interest and Lett
 $canonical = "https://usmlewise.com/match/personal-statement";
 $bodyClass = "msp";
 $stylesheets = [
-    "/match.css"
+    "/assets/css/match.css"
 ];
 $scripts = [
-    "/match.js"
+    "/assets/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

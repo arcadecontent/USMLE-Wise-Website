@@ -4,10 +4,10 @@ $pageDescription = "Privacy Policy for USMLE Wise — how we collect, use, and p
 $canonical = "https://usmlewise.com/privacy-policy";
 $bodyClass = "msp";
 $stylesheets = [
-    "/match.css"
+    "/assets/css/match.css"
 ];
 $scripts = [
-    "/match.js"
+    "/assets/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

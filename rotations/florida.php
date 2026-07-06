@@ -4,10 +4,10 @@ $pageDescription = "4-week hospitalist rotation at AdventHealth Kissimmee (affil
 $canonical = "https://usmlewise.com/rotations/florida";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

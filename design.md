@@ -25,16 +25,18 @@
 Every page loads in this order:
 
 ```html
-<link rel="stylesheet" href="assets/usmle-design-system/styles.css" />
-<link rel="stylesheet" href="{page}.css" />   <!-- optional second sheet -->
-<script src="mobile-nav.js" defer></script>   <!-- all pages -->
+<link rel="stylesheet" href="/assets/usmle-design-system/styles.css" />
+<link rel="stylesheet" href="/assets/css/{page}.css" />   <!-- optional second sheet -->
+<script src="/assets/js/mobile-nav.js" defer></script>   <!-- all pages -->
 ```
+
+Page CSS lives in `assets/css/` and page JS in `assets/js/`. The design-system foundation stays under `assets/usmle-design-system/`.
 
 | Layer | File | Responsibility |
 |-------|------|----------------|
 | Foundation | `assets/usmle-design-system/styles.css` | Tokens, reset, buttons, cards, nav dropdown, mobile drawer, doc-site components |
-| Page | `landing.css`, `match.css`, etc. | Page layout, sections, vertical-specific components |
-| Behavior | `mobile-nav.js`, page `*.js` | Drawer injection, scroll reveals, filters, accordions |
+| Page | `assets/css/landing.css`, `assets/css/match.css`, etc. | Page layout, sections, vertical-specific components |
+| Behavior | `assets/js/mobile-nav.js`, page `assets/js/*.js` | Drawer injection, scroll reveals, filters, accordions |
 
 **Rule:** Use design tokens (`var(--uw-*)`) in page CSS. Never hardcode hex in page stylesheets.
 

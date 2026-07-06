@@ -4,10 +4,10 @@ $pageDescription = "Mock interviews, peer buddy sessions, and a 1,200+ question 
 $canonical = "https://usmlewise.com/match/interview-prep";
 $bodyClass = "msp";
 $stylesheets = [
-    "/match.css"
+    "/assets/css/match.css"
 ];
 $scripts = [
-    "/match.js"
+    "/assets/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

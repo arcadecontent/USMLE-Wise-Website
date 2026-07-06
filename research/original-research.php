@@ -4,11 +4,11 @@ $pageDescription = "Full mentor guidance through a single case report or origina
 $canonical = "https://usmlewise.com/research/original-research";
 $bodyClass = "msp";
 $stylesheets = [
-    "/research-catalyst.css",
-    "/research-program.css"
+    "/assets/css/research-catalyst.css",
+    "/assets/css/research-program.css"
 ];
 $scripts = [
-    "/research-catalyst.js"
+    "/assets/js/research-catalyst.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

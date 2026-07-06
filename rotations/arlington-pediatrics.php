@@ -4,10 +4,10 @@ $pageDescription = "4-week pediatrics rotation with Medical Director in Arlingto
 $canonical = "https://usmlewise.com/rotations/arlington-pediatrics";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

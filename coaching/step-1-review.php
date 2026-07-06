@@ -4,10 +4,10 @@ $pageDescription = "USMLE Step 1 Review Course. Coming soon.";
 $canonical = "https://usmlewise.com/coaching/step-1-review";
 $bodyClass = "msp";
 $stylesheets = [
-    "/coaching.css"
+    "/assets/css/coaching.css"
 ];
 $scripts = [
-    "/coaching.js"
+    "/assets/js/coaching.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

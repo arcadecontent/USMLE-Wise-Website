@@ -4,10 +4,10 @@ $pageDescription = "4-week inpatient Internal Medicine Sub-Internship at South T
 $canonical = "https://usmlewise.com/rotations/south-texas";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

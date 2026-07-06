@@ -4,10 +4,10 @@ $pageDescription = "4-week child and adolescent psychiatry rotation with Physici
 $canonical = "https://usmlewise.com/rotations/flourish-psychiatry";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

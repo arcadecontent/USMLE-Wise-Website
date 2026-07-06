@@ -4,11 +4,11 @@ $pageDescription = "How Dr. Ahmed A. went from zero USCE and one failed cycle to
 $canonical = "https://usmlewise.com/case-studies/ahmed";
 $bodyClass = "msp";
 $stylesheets = [
-    "/testimonials.css",
-    "/case-study.css"
+    "/assets/css/testimonials.css",
+    "/assets/css/case-study.css"
 ];
 $scripts = [
-    "/testimonials.js"
+    "/assets/js/testimonials.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

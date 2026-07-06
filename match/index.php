@@ -4,10 +4,10 @@ $pageDescription = "End-to-end residency Match support for IMGs: ERAS applicatio
 $canonical = "https://usmlewise.com/match";
 $bodyClass = "msp";
 $stylesheets = [
-    "/match.css"
+    "/assets/css/match.css"
 ];
 $scripts = [
-    "/match.js"
+    "/assets/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

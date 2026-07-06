@@ -4,10 +4,10 @@ $pageDescription = "USMLE 1:1 Tutoring. Coming soon.";
 $canonical = "https://usmlewise.com/coaching/tutoring";
 $bodyClass = "msp";
 $stylesheets = [
-    "/coaching.css"
+    "/assets/css/coaching.css"
 ];
 $scripts = [
-    "/coaching.js"
+    "/assets/js/coaching.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

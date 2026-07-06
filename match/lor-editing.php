@@ -4,10 +4,10 @@ $pageDescription = "Strategic editing and review of Letters of Recommendation fo
 $canonical = "https://usmlewise.com/match/lor-editing";
 $bodyClass = "msp";
 $stylesheets = [
-    "/match.css"
+    "/assets/css/match.css"
 ];
 $scripts = [
-    "/match.js"
+    "/assets/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

@@ -4,10 +4,10 @@ $pageDescription = "4-week psychiatry rotation with Associate Professor at UNC C
 $canonical = "https://usmlewise.com/rotations/unc-psychiatry";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

@@ -4,10 +4,10 @@ $pageDescription = "USMLE Step 1 Crash Course by USMLE Wise — a focused 10-day
 $canonical = "https://usmlewise.com/coaching/step-1-crash-course";
 $bodyClass = "msp";
 $stylesheets = [
-    "/match.css"
+    "/assets/css/match.css"
 ];
 $scripts = [
-    "/match.js"
+    "/assets/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

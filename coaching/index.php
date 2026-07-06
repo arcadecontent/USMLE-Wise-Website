@@ -4,10 +4,10 @@ $pageDescription = "Live and recorded USMLE coaching for Step 1, Step 2 CK, and 
 $canonical = "https://usmlewise.com/coaching";
 $bodyClass = "msp";
 $stylesheets = [
-    "/coaching.css"
+    "/assets/css/coaching.css"
 ];
 $scripts = [
-    "/coaching.js"
+    "/assets/js/coaching.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

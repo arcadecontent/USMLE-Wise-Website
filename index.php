@@ -4,12 +4,12 @@ $pageDescription = "From USMLE prep to ERAS applications and interview coaching,
 $canonical = "https://usmlewise.com/";
 $bodyClass = "lpx";
 $stylesheets = [
-    "/landing.css",
-    "/match.css"
+    "/assets/css/landing.css",
+    "/assets/css/match.css"
 ];
 $scripts = [
-    "/landing.js",
-    "/match.js"
+    "/assets/js/landing.js",
+    "/assets/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

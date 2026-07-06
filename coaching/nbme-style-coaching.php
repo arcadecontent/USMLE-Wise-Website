@@ -4,10 +4,10 @@ $pageDescription = "USMLE NBME Style Coaching (Step 1 and Step 2). Coming soon."
 $canonical = "https://usmlewise.com/coaching/nbme-style-coaching";
 $bodyClass = "msp";
 $stylesheets = [
-    "/coaching.css"
+    "/assets/css/coaching.css"
 ];
 $scripts = [
-    "/coaching.js"
+    "/assets/js/coaching.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

@@ -4,10 +4,10 @@ $pageDescription = "Answers to every question IMGs ask about USMLE prep programs
 $canonical = "https://usmlewise.com/faq";
 $bodyClass = "msp";
 $stylesheets = [
-    "/qa.css"
+    "/assets/css/qa.css"
 ];
 $scripts = [
-    "/qa.js"
+    "/assets/js/qa.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

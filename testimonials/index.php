@@ -4,10 +4,10 @@ $pageDescription = "Real results from real IMGs. Read how USMLE Wise students ma
 $canonical = "https://usmlewise.com/testimonials";
 $bodyClass = "msp";
 $stylesheets = [
-    "/testimonials.css"
+    "/assets/css/testimonials.css"
 ];
 $scripts = [
-    "/testimonials.js"
+    "/assets/js/testimonials.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

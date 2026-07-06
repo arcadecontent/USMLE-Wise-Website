@@ -4,10 +4,10 @@ $pageDescription = "4-week hands-on pediatrics rotation with Faculty at Mercy Ho
 $canonical = "https://usmlewise.com/rotations/mercy-pediatrics";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

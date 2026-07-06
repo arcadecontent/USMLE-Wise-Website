@@ -4,10 +4,10 @@ $pageDescription = "U.S. clinical rotation placements for IMGs: gain hands-on ex
 $canonical = "https://usmlewise.com/rotations";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

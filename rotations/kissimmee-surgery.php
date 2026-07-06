@@ -4,10 +4,10 @@ $pageDescription = "4-week hands-on General Surgery rotation in Kissimmee, FL. M
 $canonical = "https://usmlewise.com/rotations/kissimmee-surgery";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>

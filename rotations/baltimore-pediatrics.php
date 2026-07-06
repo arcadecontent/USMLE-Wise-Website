@@ -4,10 +4,10 @@ $pageDescription = "4-week pediatrics externship in Baltimore, Maryland. 20+ yea
 $canonical = "https://usmlewise.com/rotations/baltimore-pediatrics";
 $bodyClass = "msp";
 $stylesheets = [
-    "/rotations.css"
+    "/assets/css/rotations.css"
 ];
 $scripts = [
-    "/rotations.js"
+    "/assets/js/rotations.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
