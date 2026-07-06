@@ -17,11 +17,15 @@ jobs:
           script: |
             cd /home/usmlewise/htdocs/usmlewise.com
             dploy deploy main
-            # Verify mobile nav CSS actually landed (dploy can skip paths with spaces)
-            if ! grep -q 'mob-nav-drawer' assets/usmle-design-system/styles.css; then
-              echo "styles.css stale — forcing git sync"
-              git fetch origin main
-              git checkout main
-              git reset --hard origin/main
+            # dploy deploys into releases/ and symlinks current/ — verify there
+            STYLES="current/assets/usmle-design-system/styles.css"
+            if [ ! -f "$STYLES" ]; then
+              echo "ERROR: $STYLES not found after deploy"
+              ls -la current/assets/ 2>/dev/null || ls -la current/ 2>/dev/null
+              exit 1
             fi
-            grep -q 'mob-nav-drawer' assets/usmle-design-system/styles.css || exit 1
+            if ! grep -q 'mob-nav-drawer' "$STYLES"; then
+              echo "ERROR: mobile nav CSS missing from $STYLES"
+              exit 1
+            fi
+            echo "Verified mobile nav CSS in $STYLES"
