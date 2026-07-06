@@ -17,3 +17,11 @@ jobs:
           script: |
             cd /home/usmlewise/htdocs/usmlewise.com
             dploy deploy main
+            # Verify mobile nav CSS actually landed (dploy can skip paths with spaces)
+            if ! grep -q 'mob-nav-drawer' assets/usmle-design-system/styles.css; then
+              echo "styles.css stale — forcing git sync"
+              git fetch origin main
+              git checkout main
+              git reset --hard origin/main
+            fi
+            grep -q 'mob-nav-drawer' assets/usmle-design-system/styles.css || exit 1
