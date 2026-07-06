@@ -1,0 +1,2071 @@
+<?php
+$pageTitle = "Step 1 Crash Course | USMLE Wise";
+$pageDescription = "USMLE Step 1 Crash Course by USMLE Wise — a focused 10-day recorded program to help IMGs review high-yield content and prepare efficiently for Step 1.";
+$canonical = "https://usmlewise.com/coaching/step-1-crash-course";
+$bodyClass = "msp";
+$stylesheets = [
+    "/match.css"
+];
+$scripts = [
+    "/match.js"
+];
+include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
+?>
+<style>
+      /* ============== The real problem ============== */
+      .cc-problem {
+        background: var(--uw-surface-sunk);
+        border-block: 1px solid var(--uw-border);
+      }
+      .cc-problem__cols {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: clamp(32px, 5vw, 72px);
+        align-items: start;
+        margin-top: var(--space-4);
+      }
+      .cc-problem__head {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(26px, 3.4vw, 44px);
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        color: var(--uw-ink-900);
+        margin: 0;
+        max-width: 18ch;
+      }
+      @media (max-width: 820px) {
+        .cc-problem__cols {
+          grid-template-columns: 1fr;
+          gap: var(--space-6);
+        }
+        .cc-problem__head { max-width: 22ch; }
+      }
+      .cc-problem__head em { font-style: normal; color: var(--uw-red-600); }
+      .cc-problem__body {
+        font-size: clamp(16px, 1.45vw, 19px);
+        line-height: 1.72;
+        color: var(--uw-ink-600);
+        margin: 0;
+      }
+      .cc-problem__body strong { color: var(--uw-ink-800); font-weight: 600; }
+
+      .cc-problem__turn {
+        display: flex;
+        align-items: baseline;
+        gap: var(--space-4);
+        margin: clamp(48px, 6vw, 80px) 0 clamp(28px, 3.5vw, 44px);
+        padding-left: var(--space-5);
+        border-left: 3px solid var(--uw-red-500);
+        max-width: 46ch;
+      }
+      .cc-problem__turn p {
+        font-family: var(--font-display);
+        font-size: clamp(19px, 2vw, 26px);
+        line-height: 1.38;
+        color: var(--uw-ink-900);
+        margin: 0;
+      }
+
+      .cc-fail-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2vw, 24px);
+      }
+      .cc-fail {
+        position: relative;
+        background: var(--uw-surface);
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        padding: clamp(26px, 2.8vw, 38px);
+        overflow: hidden;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .cc-fail::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 3px;
+        background: var(--uw-red-500);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      .cc-fail:hover {
+        border-color: var(--uw-border-strong);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+      .cc-fail:hover::before { opacity: 1; }
+      .cc-fail__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var(--space-5);
+      }
+      .cc-fail__no {
+        font-family: var(--font-mono);
+        font-size: clamp(34px, 4vw, 46px);
+        font-weight: 500;
+        line-height: 1;
+        color: var(--uw-red-500);
+        letter-spacing: -0.02em;
+      }
+      .cc-fail__icon {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: var(--r-lg);
+        background: var(--uw-red-50);
+        color: var(--uw-red-600);
+        flex-shrink: 0;
+      }
+      .cc-fail p {
+        font-size: clamp(15px, 1.2vw, 16.5px);
+        line-height: 1.6;
+        color: var(--uw-ink-700);
+        margin: 0;
+      }
+
+      @media (max-width: 860px) {
+        .cc-fail-grid { grid-template-columns: 1fr; }
+      }
+
+      /* ============== Stats grid (3 x 2) ============== */
+      .cc-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(24px, 4vw, 48px) var(--space-4);
+      }
+      @media (max-width: 760px) {
+        .cc-stats { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 440px) {
+        .cc-stats { grid-template-columns: 1fr; }
+      }
+
+      /* ============== Curriculum card grid ============== */
+      .cc-cur-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: 240px;
+        gap: clamp(10px, 1.4vw, 16px);
+        margin-top: clamp(36px, 5vw, 56px);
+      }
+      .cc-cur-card {
+        position: relative;
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        background-color: var(--uw-ink-900);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        list-style: none;
+      }
+      .cc-cur-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(8, 17, 31, 0.97) 0%,
+          rgba(8, 17, 31, 0.65) 50%,
+          rgba(8, 17, 31, 0.25) 100%
+        );
+        z-index: 0;
+      }
+      /* Darker overlay for cards without photos */
+      .cc-cur-card--no-photo::before {
+        background: linear-gradient(
+          160deg,
+          rgba(20, 35, 60, 0.6) 0%,
+          rgba(8, 17, 31, 0.95) 100%
+        );
+      }
+      .cc-cur-card__inner {
+        position: relative;
+        z-index: 1;
+        padding: clamp(16px, 2vw, 22px);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .cc-cur-card__no {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .cc-cur-card__title {
+        font-family: var(--font-sans);
+        font-size: clamp(13px, 1.1vw, 15px);
+        font-weight: 600;
+        line-height: 1.3;
+        color: #fff;
+        margin: 0;
+      }
+      .cc-cur-card__hrs {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.8);
+        align-self: flex-start;
+      }
+      @media (max-width: 900px) {
+        .cc-cur-grid {
+          grid-template-columns: repeat(3, 1fr);
+          grid-auto-rows: 180px;
+        }
+      }
+      @media (max-width: 560px) {
+        .cc-cur-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 160px;
+        }
+      }
+
+      /* ============== Fits any stage of prep ============== */
+      .cc-stages {
+        background: var(--uw-ink-900);
+      }
+      .cc-stages__head {
+        max-width: 54ch;
+        margin-bottom: clamp(40px, 5vw, 64px);
+      }
+      .cc-stages__head .msp-eyebrow { color: rgba(255,255,255,.5); }
+      .cc-stages__head .msp-h2 { color: #fff; max-width: none; margin-bottom: var(--space-3); }
+      .cc-stages__sub {
+        font-size: clamp(16px, 1.35vw, 18px);
+        line-height: 1.65;
+        color: rgba(255,255,255,.6);
+        margin: 0;
+      }
+      .cc-stages__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(14px, 2vw, 24px);
+      }
+      .cc-stage {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        padding: clamp(28px, 3.2vw, 40px);
+        background: rgba(255,255,255,.04);
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: var(--r-xl);
+        transition: background .2s ease, border-color .2s ease;
+      }
+      .cc-stage:hover {
+        background: rgba(255,255,255,.07);
+        border-color: rgba(126,184,247,.25);
+      }
+      .cc-stage__label {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,.9);
+        background: rgba(126,184,247,.12);
+        border: 1px solid rgba(126,184,247,.2);
+        border-radius: var(--r-pill);
+        padding: 5px 12px;
+        align-self: flex-start;
+      }
+      .cc-stage__hook {
+        font-family: var(--font-display);
+        font-size: clamp(22px, 2.4vw, 30px);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -.02em;
+        color: #fff;
+        margin: 0;
+      }
+      .cc-stage__hook em {
+        font-style: normal;
+        color: #7eb8f7;
+      }
+      .cc-stage__desc {
+        font-size: clamp(14px, 1.15vw, 15.5px);
+        line-height: 1.7;
+        color: rgba(255,255,255,.58);
+        margin: 0;
+        flex: 1;
+      }
+      .cc-stages__cta {
+        display: flex;
+        justify-content: center;
+        margin-top: clamp(40px, 5vw, 60px);
+      }
+      @media (max-width: 760px) {
+        .cc-stages__grid { grid-template-columns: 1fr; }
+      }
+
+      /* ============== Why this course works ============== */
+      .cc-works__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(20px, 3vw, 32px);
+        margin-top: clamp(32px, 4vw, 56px);
+      }
+      .cc-work {
+        padding-top: clamp(20px, 2.5vw, 28px);
+        border-top: 2px solid var(--uw-blue-200);
+      }
+      .cc-work h3 {
+        font-family: var(--font-sans);
+        font-size: clamp(15px, 1.35vw, 18px);
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--uw-ink-900);
+        margin: 0 0 10px;
+      }
+      .cc-work p {
+        font-size: clamp(14px, 1.15vw, 16px);
+        line-height: 1.7;
+        color: var(--uw-ink-600);
+        margin: 0;
+      }
+      .cc-work--wide {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(16px, 2vw, 28px);
+        align-items: start;
+      }
+      .cc-work--wide h3 { grid-column: 1; }
+      .cc-work--wide p { grid-column: 2; margin-top: 4px; }
+      @media (max-width: 720px) {
+        .cc-works__grid { grid-template-columns: 1fr; }
+        .cc-work--wide { grid-template-columns: 1fr; }
+        .cc-work--wide h3, .cc-work--wide p { grid-column: 1; }
+      }
+
+      /* ============== My story (founder letter) ============== */
+      .cc-story {
+        background: var(--uw-surface-sunk);
+        border-block: 1px solid var(--uw-border);
+      }
+      .cc-story__grid {
+        display: grid;
+        grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+        gap: clamp(40px, 6vw, 96px);
+        align-items: start;
+      }
+
+      /* --- Sticky identity card --- */
+      .cc-story__aside {
+        position: sticky;
+        top: 96px;
+        align-self: start;
+      }
+      .cc-story__photo {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: var(--r-xl);
+        background: var(--uw-blue-50);
+        box-shadow: var(--shadow-md);
+        display: block;
+      }
+      .cc-story__name {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 2.6vw, 32px);
+        font-weight: 600;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        color: var(--uw-ink-900);
+        margin: var(--space-4) 0 6px;
+      }
+      .cc-story__title {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: var(--uw-blue-600);
+        margin: 0;
+      }
+      .cc-story__creds {
+        list-style: none;
+        margin: var(--space-4) 0 0;
+        padding: var(--space-4) 0 0;
+        border-top: 1px solid var(--uw-border);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .cc-story__cred {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        line-height: 1.3;
+        color: var(--uw-ink-700);
+      }
+      .cc-story__cred i,
+      .cc-story__cred svg {
+        color: var(--uw-blue-500);
+        flex-shrink: 0;
+      }
+
+      /* --- Letter --- */
+      .cc-story__letter { max-width: 62ch; }
+      .cc-story__salutation {
+        font-family: var(--font-display);
+        font-size: clamp(20px, 2vw, 26px);
+        font-weight: 600;
+        color: var(--uw-ink-900);
+        margin: var(--space-3) 0 var(--space-5);
+      }
+      .cc-story__letter p {
+        font-family: var(--font-display);
+        font-size: clamp(16px, 1.3vw, 18px);
+        line-height: 1.85;
+        color: var(--uw-ink-700);
+        margin: 0 0 var(--space-4);
+      }
+      .cc-story__letter p strong {
+        color: var(--uw-ink-900);
+        font-weight: 600;
+      }
+      .cc-story__pull {
+        font-family: var(--font-display) !important;
+        font-size: clamp(20px, 2.2vw, 27px) !important;
+        line-height: 1.4 !important;
+        color: var(--uw-ink-900) !important;
+        margin: var(--space-6) 0 !important;
+        padding-left: clamp(18px, 2vw, 26px);
+        border-left: 3px solid var(--uw-blue-500);
+      }
+      .cc-story__sign {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: clamp(17px, 1.5vw, 19px);
+        color: var(--uw-ink-800);
+        margin: var(--space-6) 0 var(--space-5) !important;
+      }
+      .cc-story__cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        align-items: center;
+      }
+
+      /* ============== FAQ (multi-open accordion) ============== */
+      .cc-faq__grid {
+        max-width: 860px;
+        margin-inline: auto;
+        text-align: center;
+      }
+      .cc-faq__grid .msp-h2 { margin-inline: auto; }
+      .cc-faq__list {
+        margin-top: clamp(32px, 4vw, 44px);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        text-align: left;
+      }
+      .cc-faq__item {
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-md);
+        background: #fff;
+        overflow: hidden;
+        transition: border-color 0.2s ease;
+      }
+      .cc-faq__item.is-open { border-color: var(--uw-blue-200); }
+      .cc-faq__head {
+        position: relative;
+        width: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: clamp(15px, 1.4vw, 16px);
+        line-height: 1.45;
+        color: var(--uw-ink-900);
+        text-align: center;
+        padding: 24px 56px;
+      }
+      .cc-faq__head::after {
+        content: "+";
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22px;
+        line-height: 1;
+        color: var(--uw-ink-500);
+        transition: color 0.2s ease;
+      }
+      .cc-faq__item.is-open .cc-faq__head { color: var(--uw-blue-700); }
+      .cc-faq__item.is-open .cc-faq__head::after {
+        content: "\2212";
+        color: var(--uw-blue-600);
+      }
+      .cc-faq__body {
+        display: none;
+        padding: 0 56px 24px;
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--uw-ink-600);
+        text-align: center;
+      }
+      .cc-faq__item.is-open .cc-faq__body { display: block; }
+      @media (max-width: 640px) {
+        .cc-faq__head { padding: 18px 44px; font-size: 15px; }
+        .cc-faq__body { padding: 0 24px 20px; }
+      }
+
+      @media (max-width: 860px) {
+        .cc-story__grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-6);
+        }
+        .cc-story__aside {
+          position: static;
+          display: grid;
+          grid-template-columns: 110px 1fr;
+          gap: var(--space-4) var(--space-5);
+          align-items: center;
+        }
+        .cc-story__photo { aspect-ratio: 1; }
+        .cc-story__name { margin-top: 0; }
+        .cc-story__creds {
+          grid-column: 1 / -1;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px 22px;
+        }
+      }
+
+      /* ============== Final CTA — offer / value stack ============== */
+      .cc-offer {
+        max-width: 640px;
+        margin-inline: auto;
+        background: #08111f;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: clamp(20px, 2.4vw, 28px);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+      .cc-offer__head {
+        text-align: center;
+        padding: clamp(34px, 5vw, 52px) clamp(24px, 4vw, 52px) 0;
+      }
+      .cc-offer__head .msp-eyebrow { justify-content: center; }
+      .cc-offer__title {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: clamp(26px, 3.4vw, 38px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: #fff;
+        margin: var(--space-3) 0 0;
+      }
+      .cc-offer__body {
+        padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 52px)
+          clamp(32px, 4vw, 48px);
+      }
+
+      /* value stack */
+      .cc-offer__stack { list-style: none; margin: 0; padding: 0; }
+      .cc-offer__row {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .cc-offer__row-name {
+        flex: 1;
+        font-size: 15px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.78);
+      }
+      .cc-offer__row-price {
+        font-family: var(--font-mono);
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.5);
+        white-space: nowrap;
+      }
+      .cc-offer__row--total {
+        border-bottom: none;
+        margin-top: 4px;
+      }
+      .cc-offer__row--total .cc-offer__row-name {
+        font-weight: 600;
+        color: #fff;
+      }
+      .cc-offer__row--total .cc-offer__row-price {
+        font-size: 17px;
+        color: #fff;
+      }
+
+      /* price highlight */
+      .cc-offer__price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px 20px;
+        flex-wrap: wrap;
+        margin-top: var(--space-5);
+        padding: clamp(20px, 3vw, 28px);
+        background: rgba(126, 184, 247, 0.08);
+        border: 1px solid rgba(126, 184, 247, 0.22);
+        border-radius: var(--r-lg);
+      }
+      .cc-offer__price-label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .cc-offer__price-save {
+        display: inline-block;
+        margin-top: 8px;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #7eb8f7;
+        background: rgba(126, 184, 247, 0.12);
+        border-radius: var(--r-pill);
+        padding: 4px 10px;
+      }
+      .cc-offer__price-nums {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .cc-offer__price-was {
+        font-family: var(--font-mono);
+        font-size: clamp(18px, 2.2vw, 22px);
+        color: rgba(255, 255, 255, 0.35);
+        text-decoration: line-through;
+      }
+      .cc-offer__price-now {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: clamp(44px, 6.5vw, 60px);
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+        color: #fff;
+      }
+      .cc-offer__fine {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+        margin: var(--space-5) 0 0;
+      }
+      .cc-offer__cta {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--space-4);
+      }
+      .cc-offer__guarantee {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-top: var(--space-6);
+        padding-top: var(--space-5);
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .cc-offer__guarantee i,
+      .cc-offer__guarantee svg {
+        color: #7eb8f7;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .cc-offer__guarantee p {
+        margin: 0;
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .cc-offer__guarantee strong { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
+    </style>
+
+<main>
+      <!-- ============== 1. HERO ============== -->
+      <section class="msp-hero" aria-labelledby="heroTitle">
+        <div class="msp-wrap msp-hero__grid">
+          <div class="msp-hero__copy reveal">
+            <h1 id="heroTitle" class="msp-h1">
+              Pass USMLE Step 1 on your first and only attempt,
+              <span class="msp-h1__accent">in 10 focused days.</span>
+            </h1>
+            <p class="msp-lede">
+              You'll learn straight from a team of 270+ Step 2 scorers, with everything rebuilt for the Updated 2026 Step 1 Syllabus. And if you finish the course but still don't pass, you get your money back.
+            </p>
+            <div class="msp-cta-row">
+              <a
+                class="btn btn--primary btn--xl"
+                href="https://team.manikmadaan.com/guidance-call/book"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Book A Free Guidance Call</a
+              >
+              <!-- Replace phone= with your WhatsApp number (country code, no + or spaces) -->
+              <a
+                class="btn btn--outline btn--xl"
+                href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20regarding%20Match%20Package%20%2F%20USMLE%20Wise"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Text Us on WhatsApp
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="msp-bar msp-wrap" aria-label="Track record">
+          <div class="cc-stats">
+            <div class="msp-stat reveal">
+              <b data-count="99.3" data-suffix="%" data-decimal="1">99.3%</b>
+              <span>Pass rate</span>
+            </div>
+            <div class="msp-stat reveal">
+              <b data-count="17000" data-suffix="+" data-comma>17,000+</b>
+              <span>Students trained</span>
+            </div>
+            <div class="msp-stat reveal">
+              <b data-count="270" data-suffix="+">270+</b>
+              <span>Instructor USMLE Step 2 score</span>
+            </div>
+            <div class="msp-stat reveal">
+              <b>20&ndash;40</b>
+              <span>Point jumps on practice NBMEs</span>
+            </div>
+            <div class="msp-stat reveal">
+              <b data-count="100" data-suffix="%">100%</b>
+              <span>Pass guarantee</span>
+            </div>
+            <div class="msp-stat reveal">
+              <b>2x</b>
+              <span>Faster score gains vs. months of self-study</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 2. THE REAL PROBLEM ============== -->
+      <section class="msp-section cc-problem" aria-labelledby="problemTitle">
+        <div class="msp-wrap">
+          <div class="cc-problem__lead reveal">
+            <span class="msp-eyebrow">The real problem</span>
+            <div class="cc-problem__cols">
+              <h2 id="problemTitle" class="cc-problem__head">
+                Every year, brilliant med students fail Step 1 &mdash;
+                <em>and it's usually not because they didn't work hard.</em>
+              </h2>
+              <p class="cc-problem__body">
+                They grind through UWorld, memorize First Aid cover to cover, and
+                drown in Anki decks and random PDFs. Then test day comes.
+                <strong>They can't recall the facts they crammed for weeks.</strong>
+                The look-alike answer choices blur into each other. And biostats
+                and ethics quietly take the points they can't afford to lose.
+              </p>
+            </div>
+          </div>
+
+          <div class="cc-problem__turn reveal">
+            <p>
+              So what's actually going wrong? Honestly, it usually comes down to
+              three things.
+            </p>
+          </div>
+
+          <div class="cc-fail-grid">
+            <div class="cc-fail reveal">
+              <div class="cc-fail__top">
+                <span class="cc-fail__no">01</span>
+                <span class="cc-fail__icon" aria-hidden="true">
+                  <i data-lucide="crosshair" width="20" height="20"></i>
+                </span>
+              </div>
+              <p>
+                They've poured hundreds of hours into low-yield material while
+                missing what the NBME really tests.
+              </p>
+            </div>
+
+            <div class="cc-fail reveal">
+              <div class="cc-fail__top">
+                <span class="cc-fail__no">02</span>
+                <span class="cc-fail__icon" aria-hidden="true">
+                  <i data-lucide="timer" width="20" height="20"></i>
+                </span>
+              </div>
+              <p>
+                They've memorized everything but never learned the test-taking
+                tactics, the elimination skills, or the pacing that gets you
+                through a block on time.
+              </p>
+            </div>
+
+            <div class="cc-fail reveal">
+              <div class="cc-fail__top">
+                <span class="cc-fail__no">03</span>
+                <span class="cc-fail__icon" aria-hidden="true">
+                  <i data-lucide="calendar-x" width="20" height="20"></i>
+                </span>
+              </div>
+              <p>
+                And the resources they're studying from are old, so they don't
+                reflect the latest 2026 NBME Step 1 trends.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 4. MY STORY (FOUNDER LETTER) ============== -->
+      <section class="msp-section cc-story" id="my-story" aria-labelledby="storyTitle">
+        <div class="msp-wrap">
+          <div class="cc-story__grid">
+
+            <!-- Sticky identity card -->
+            <aside class="cc-story__aside reveal">
+              <img
+                class="cc-story__photo"
+                src="/assets/photos/team-members/manik.jpg"
+                alt="Dr. Manik Madaan, founder of USMLE Wise"
+              />
+              <h2 id="storyTitle" class="cc-story__name">Dr. Manik Madaan</h2>
+              <p class="cc-story__title">World&rsquo;s most-followed USMLE expert</p>
+              <ul class="cc-story__creds">
+                <li class="cc-story__cred">
+                  <i data-lucide="award" width="16" height="16"></i>
+                  260 on Step&nbsp;1 &middot; 271 on Step&nbsp;2
+                </li>
+                <li class="cc-story__cred">
+                  <i data-lucide="users" width="16" height="16"></i>
+                  700,000+ followers
+                </li>
+                <li class="cc-story__cred">
+                  <i data-lucide="graduation-cap" width="16" height="16"></i>
+                  17,000+ students taught
+                </li>
+              </ul>
+            </aside>
+
+            <!-- Letter -->
+            <div class="cc-story__letter reveal">
+              <span class="msp-eyebrow">My story</span>
+              <p class="cc-story__salutation">Dear future resident,</p>
+
+              <p>
+                I&rsquo;m Dr. Manik Madaan. I teach Step&nbsp;1 this way because I
+                had to learn it the hard way first.
+              </p>
+              <p>
+                When I was preparing, the content was completely overwhelming.
+                Resource stacked on resource. Every one of them labeled
+                &ldquo;high-yield.&rdquo; And not one of them telling me what
+                actually mattered.
+              </p>
+              <p>Then I sat all three USMLE exams, and it hit me.</p>
+
+              <p class="cc-story__pull">
+                Only about 20% of what&rsquo;s in the traditional resources
+                actually moves the needle. The other 80% is outdated fluff &mdash;
+                and all it does is slow you down.
+              </p>
+
+              <p>
+                Here&rsquo;s why that matters so much. Step&nbsp;1 hands you hard
+                questions, with very little time to answer them. So every minute
+                you spend digging for some low-yield fact is a minute you
+                <strong>don&rsquo;t</strong> have for the question right in front
+                of you.
+              </p>
+              <p>
+                So I built the ultimate resource I wish someone had handed me
+                &mdash; the <strong>USMLE Step&nbsp;1 Ultra High-Yield Crash
+                Course.</strong> Ten days. Only what the NBME actually tests. No
+                low-yield noise to sort through, just the 20% that gets you a
+                confident pass.
+              </p>
+              <p>
+                Then I watched it work. Students who were sure 10 days
+                couldn&rsquo;t be enough? They passed. People who&rsquo;d already
+                failed once, and were terrified to sit again? They passed too.
+              </p>
+              <p>
+                And since Step&nbsp;1 is pass/fail, a clean pass is the whole win.
+                <strong>Every week you save here goes straight into Step&nbsp;2
+                &mdash; the exam programs actually rank you on.</strong>
+              </p>
+
+              <p class="cc-story__sign">&mdash; Dr. Manik Madaan</p>
+
+              <div class="cc-story__cta">
+                <a
+                  class="btn btn--primary btn--lg"
+                  href="#enroll"
+                >Get Instant Access <i data-lucide="arrow-right" width="16" height="16"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 8b. SCREENSHOT TESTIMONIALS ============== -->
+      <section
+        class="msp-section msp-shots"
+        id="student-messages"
+        aria-labelledby="shotsTitle"
+      >
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">From our students</span>
+            <h2 id="shotsTitle" class="msp-h2">
+              What students send us after exam day
+            </h2>
+          </div>
+          <div class="msp-shots__grid">
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/anjali.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/ayra.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/bardia.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/hamna.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/nancy.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/okkes.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/praneet.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/rasmitha.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/ravindra.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/shiv.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/sidnath.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/sinmmer.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/swathi.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/babitha.jpeg"
+                alt="Student result message"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 3. WHY THIS COURSE WORKS ============== -->
+      <section class="msp-section" id="why-it-works" aria-labelledby="worksTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Why it works</span>
+            <h2 id="worksTitle" class="msp-h2">
+              Why this course works<br>(when others don&rsquo;t)
+            </h2>
+          </div>
+
+          <div class="cc-works__grid">
+            <div class="cc-work reveal">
+              <h3>10 days, 60 hours, zero fluff.</h3>
+              <p>Every session targets what the NBME tests most. If it&rsquo;s not high-yield, it&rsquo;s not in.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>Rebuilt for the 2026 Step&nbsp;1 Syllabus.</h3>
+              <p>We rebuilt it line by line for the latest Step 1 updates &amp; trends.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>Question-powered teaching.</h3>
+              <p>Integrated NBME-style vignettes from minute one, so you train your knowledge and your test-taking at the same time.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>The N+1 method.</h3>
+              <p>We engineer retention, stacking each concept on the last so it sticks for good and bridges into Step&nbsp;2.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>The frameworks high scorers use.</h3>
+              <p>A three-pass read (Route, Extract, Decide) for long chart stems, an elimination blueprint for coin-flip items, and plug-and-play ethics scripts.</p>
+            </div>
+            <div class="cc-work reveal">
+              <h3>Teachers who scored 270+ on Step&nbsp;2.</h3>
+              <p>You learn from doctors who beat this exam, sat it themselves, and reverse-engineered exactly how it&rsquo;s built.</p>
+            </div>
+            <div class="cc-work cc-work--wide reveal">
+              <h3>Go at your own pace.</h3>
+              <p>Start today and study anytime, and rewatch any lesson as many times as you need before exam day.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 2a. FITS ANY STAGE ============== -->
+      <section class="msp-section cc-stages" id="prep-stages" aria-labelledby="stagesTitle">
+        <div class="msp-wrap">
+          <div class="cc-stages__head reveal">
+            <span class="msp-eyebrow">Fits any stage of prep</span>
+            <h2 id="stagesTitle" class="msp-h2">
+              It fits any stage of prep,<br>and the way you use it just shifts.
+            </h2>
+            <p class="cc-stages__sub">
+              Whether you&rsquo;re just starting, somewhere in the middle, or days
+              away from exam day — this course slots in and works.
+            </p>
+          </div>
+
+          <div class="cc-stages__grid">
+            <div class="cc-stage reveal">
+              <span class="cc-stage__label">Early prep</span>
+              <h3 class="cc-stage__hook">Use it as your <em>map.</em></h3>
+              <p class="cc-stage__desc">
+                You see what&rsquo;s high-yield from day one, so when you open
+                UWorld, First Aid, or Anki, you know exactly where to focus and
+                what to skip.
+              </p>
+            </div>
+            <div class="cc-stage reveal">
+              <span class="cc-stage__label">Mid-prep</span>
+              <h3 class="cc-stage__hook">Use it as your <em>cut.</em></h3>
+              <p class="cc-stage__desc">
+                Stop spreading thin across resources and concentrate on the 20%
+                that&rsquo;s actually moving the needle.
+              </p>
+            </div>
+            <div class="cc-stage reveal">
+              <span class="cc-stage__label">Final stretch</span>
+              <h3 class="cc-stage__hook">Use it as your <em>revision.</em></h3>
+              <p class="cc-stage__desc">
+                60 hours to consolidate what matters and walk in sharp.
+              </p>
+            </div>
+          </div>
+
+          <div class="cc-stages__cta reveal">
+            <a class="btn btn--primary btn--lg" href="#enroll">
+              Get Instant Access <i data-lucide="arrow-right" width="16" height="16"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 2b. CURRICULUM ============== -->
+      <section class="msp-section cc-curriculum" aria-labelledby="curriculumTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Curriculum</span>
+            <h2 id="curriculumTitle" class="msp-h2">
+              10 days, 10 lessons in the order that builds.
+            </h2>
+            <p class="msp-sub">
+              About 60 hours of focused, high-yield teaching &mdash; sequenced so
+              each lesson builds on the last.
+            </p>
+          </div>
+
+          <ol class="cc-cur-grid">
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Genetics.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 01</span>
+                <h3 class="cc-cur-card__title">Biochemistry &amp; Genetics</h3>
+                <span class="cc-cur-card__hrs">5.5 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Microbiology.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 02</span>
+                <h3 class="cc-cur-card__title">Microbiology</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Pathology.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 03</span>
+                <h3 class="cc-cur-card__title">Pathology, General Pharm &amp; Immunology</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/renal.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 04</span>
+                <h3 class="cc-cur-card__title">Endocrinology &amp; Renal</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Cardiovascular.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 05</span>
+                <h3 class="cc-cur-card__title">Biostats, Ethics &amp; Cardiovascular</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/psychiatry.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 06</span>
+                <h3 class="cc-cur-card__title">Respiratory &amp; Psychiatry</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Gastro.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 07</span>
+                <h3 class="cc-cur-card__title">Gastrointestinal</h3>
+                <span class="cc-cur-card__hrs">8 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/hematology.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 08</span>
+                <h3 class="cc-cur-card__title">Hematology &amp; Reproductive</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Musculoskeletal.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 09</span>
+                <h3 class="cc-cur-card__title">Musculoskeletal, Rheum &amp; Derm</h3>
+                <span class="cc-cur-card__hrs">6 hrs</span>
+              </div>
+            </li>
+            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Neurology.jpg');">
+              <div class="cc-cur-card__inner">
+                <span class="cc-cur-card__no">Day 10</span>
+                <h3 class="cc-cur-card__title">Neurology</h3>
+                <span class="cc-cur-card__hrs">4 hrs</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!--
+      <div class="msp-opt-divider" aria-hidden="true"><span>Option B</span></div>
+
+      <section class="msp-why-b" aria-labelledby="whyBTitle">
+        <div class="msp-opt-tag" aria-hidden="true">Option B</div>
+        <div class="msp-wrap">
+          <div class="msp-why-b__top">
+            <div class="msp-why-b__text reveal">
+              <span class="msp-eyebrow">Why it works</span>
+              <h2 id="whyBTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
+            </div>
+            <div class="msp-why-b__img reveal">
+              <img src="/assets/photos/national-cancer-institute-nfvdkihxylu-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" />
+            </div>
+          </div>
+          <div class="msp-why-b__cols">
+            <div class="msp-wi reveal">
+              <h3>Mentors who lived the IMG match</h3>
+              <p>Our mentors matched as IMGs into competitive U.S. programs. They know which program directors value research, which overlook clinical gaps, and how to frame a timeline that looks unconventional on paper.</p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>100% human, no AI</h3>
+              <p>Every personal statement, CV edit, and strategy decision is made by a physician who knows your file. No templates, no generated text, no shortcuts.</p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>One mentor, one plan, start to finish</h3>
+              <p>No handoffs between services. Your mentor builds the strategy and sees it through: ERAS, interviews, ROL, and beyond Match Day.</p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>Built for IMG profiles specifically</h3>
+              <p>ECFMG, J-1 vs H-1B, clinical gaps, international transcripts: we address what AMG-focused services ignore entirely.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="msp-opt-divider" aria-hidden="true"><span>Option C</span></div>
+
+      <section class="msp-why-c" aria-labelledby="whyCTitle">
+        <div class="msp-opt-tag" aria-hidden="true">Option C</div>
+        <div class="msp-wrap">
+          <div class="msp-why-c__head reveal">
+            <span class="msp-eyebrow">Why it works</span>
+            <h2 id="whyCTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
+          </div>
+          <div class="msp-why-c__img reveal">
+            <img src="/assets/photos/national-cancer-institute-nfvdkihxylu-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" />
+          </div>
+          <div class="msp-why-c__cols">
+            <div class="msp-wib reveal">
+              <h3>Mentors who lived the IMG match</h3>
+              <p>Our mentors matched as IMGs into competitive U.S. programs. They know which program directors value research, which overlook clinical gaps, and how to frame a timeline that looks unconventional on paper.</p>
+            </div>
+            <div class="msp-wib reveal">
+              <h3>100% human, no AI</h3>
+              <p>Every personal statement, CV edit, and strategy decision is made by a physician who knows your file. No templates, no generated text, no shortcuts.</p>
+            </div>
+            <div class="msp-wib reveal">
+              <h3>One mentor, one plan, start to finish</h3>
+              <p>No handoffs between services. Your mentor builds the strategy and sees it through: ERAS, interviews, ROL, and beyond Match Day.</p>
+            </div>
+            <div class="msp-wib reveal">
+              <h3>Built for IMG profiles specifically</h3>
+              <p>ECFMG, J-1 vs H-1B, clinical gaps, international transcripts: we address what AMG-focused services ignore entirely.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- ============== 5. MENTORS ============== -->
+      <!--
+      <section
+        class="msp-section msp-mentors"
+        id="mentors"
+        aria-labelledby="mentorsTitle"
+      >
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Your mentors</span>
+            <h2 id="mentorsTitle" class="msp-h2">
+              Physicians who matched. Now helping you do the same.
+            </h2>
+          </div>
+          <div class="msp-mentors__strip">
+            <article class="msp-mentor reveal">
+              <div class="msp-mentor__ava msp-mentor__ava--blue">DR</div>
+              <div class="msp-mentor__info">
+                <h3>Dr. David Reyes</h3>
+                <span class="msp-mentor__spec">Internal Medicine</span>
+                <span class="msp-mentor__prog">Johns Hopkins · PGY-3</span>
+                <ul class="msp-mentor__creds">
+                  <li>
+                    <i data-lucide="trending-up" width="13" height="13"></i>
+                    Step 2 CK: 261
+                  </li>
+                  <li>
+                    <i data-lucide="file-text" width="13" height="13"></i> 4
+                    peer-reviewed publications
+                  </li>
+                  <li>
+                    <i data-lucide="users" width="13" height="13"></i> 60+ IMGs
+                    mentored
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="msp-mentor reveal">
+              <div class="msp-mentor__ava msp-mentor__ava--red">AP</div>
+              <div class="msp-mentor__info">
+                <h3>Dr. Anaya Patel</h3>
+                <span class="msp-mentor__spec">Psychiatry</span>
+                <span class="msp-mentor__prog">NYU Langone · PGY-2</span>
+                <ul class="msp-mentor__creds">
+                  <li>
+                    <i data-lucide="trending-up" width="13" height="13"></i>
+                    Step 2 CK: 254
+                  </li>
+                  <li>
+                    <i data-lucide="star" width="13" height="13"></i> ERAS
+                    personal statement specialist
+                  </li>
+                  <li>
+                    <i data-lucide="users" width="13" height="13"></i> 80+ IMGs
+                    mentored
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="msp-mentor reveal">
+              <div class="msp-mentor__ava msp-mentor__ava--green">MC</div>
+              <div class="msp-mentor__info">
+                <h3>Dr. Marco Cruz</h3>
+                <span class="msp-mentor__spec">Family Medicine</span>
+                <span class="msp-mentor__prog">UCSF · PGY-2</span>
+                <ul class="msp-mentor__creds">
+                  <li>
+                    <i data-lucide="trending-up" width="13" height="13"></i>
+                    Step 2 CK: 249
+                  </li>
+                  <li>
+                    <i data-lucide="map-pin" width="13" height="13"></i> IMG
+                    match specialist, West Coast programs
+                  </li>
+                  <li>
+                    <i data-lucide="users" width="13" height="13"></i> 45+ IMGs
+                    mentored
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="msp-mentors__foot reveal">
+            <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" class="btn btn--outline"
+              >Work with a mentor
+              <i data-lucide="arrow-right" class="ic-arrow"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+      -->
+
+
+      <!-- ============== 7. TESTIMONIALS ============== -->
+      <section class="msp-stories" id="stories" aria-labelledby="storiesTitle">
+        <div class="msp-wrap">
+          <div class="msp-stories__head reveal">
+            <span class="msp-eyebrow msp-eyebrow--light">Success stories</span>
+            <h2 id="storiesTitle" class="msp-h2 msp-h2--invert">
+              Real journeys from IMG to residency
+            </h2>
+          </div>
+
+          <!-- Carousel -->
+          <div class="msp-carousel" aria-label="Student testimonials">
+            <!-- Slide 1: Rana A. -->
+            <div
+              class="msp-slide is-active"
+              role="group"
+              aria-label="Story 1 of 5"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="F8E7lTvGKRU"
+                aria-label="Watch Rana's match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg"
+                  alt="Rana shares how she matched Internal Medicine at a top-20 program without U.S. clinical experience"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched University of Illinois, Peoria
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p>
+                    I knew I wasn't a natural speaker and needed help making my
+                    answers stand out. Dr. Madan's course and our one-on-one
+                    sessions gave me the tools to personalize my responses for
+                    each interviewer. I walked into every interview with a
+                    confidence I simply didn't have before.
+                  </p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Lakshitha</span>
+                      <span>University of Illinois, Peoria</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Slide 2: Dr. Shreya Sriram -->
+            <div
+              class="msp-slide"
+              role="group"
+              aria-label="Story 2 of 5"
+              aria-hidden="true"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="O4Gns55Brh0"
+                aria-label="Watch Dr. Shreya Sriram's match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg"
+                  alt="Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched SIU Carbondale &middot; Family Medicine
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p>
+                    I didn't match in the main cycle, didn't match in SOAP, and
+                    was financially stretched. But I kept applying every day on
+                    Dr. Madan's advice. I flew across the country for an
+                    in-person interview at a remote program just to show my
+                    commitment. That persistence, and having the right guidance,
+                    is what got me here.
+                  </p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Shreya Sriram</span>
+                      <span>SIU Carbondale &middot; Family Medicine</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Slide 3: Dr. Hamit C. -->
+            <div
+              class="msp-slide"
+              role="group"
+              aria-label="Story 3 of 5"
+              aria-hidden="true"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="ZynxmljOZDA"
+                aria-label="Watch Dr. Hamit C.'s match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg"
+                  alt="Dr. Hamit C. shares how he matched at UPMC, PA"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched UPMC &middot; Pennsylvania
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p>
+                    I had everything ready: personal statement, LORs, a solid
+                    program list. But I knew those only get you the interview.
+                    I've seen applicants with 11 interviews who still didn't
+                    match. Dr. Madan's course prepares you for the dynamic,
+                    unexpected side of residency interviews, not just the
+                    rehearsed answers.
+                  </p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Hamit C.</span>
+                      <span>UPMC &middot; Pennsylvania</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Slide 4: Dr. Yash -->
+            <div
+              class="msp-slide"
+              role="group"
+              aria-label="Story 4 of 5"
+              aria-hidden="true"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="IEphKQwawzA"
+                aria-label="Watch Dr. Yash's match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg"
+                  alt="Dr. Yash shares how he matched in Los Angeles"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched Los Angeles &middot; California
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p>
+                    This was my first time applying and I had no idea what to
+                    expect from the interview process. I came to Dr. Madan with
+                    so many questions, and he answered every single one with
+                    patience. That guidance made all the difference when it
+                    mattered most.
+                  </p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Yash</span>
+                      <span>Los Angeles &middot; California</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Slide 5: Dr. Srishti Shankar -->
+            <div
+              class="msp-slide"
+              role="group"
+              aria-label="Story 5 of 5"
+              aria-hidden="true"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="2pGb5xiKzdw"
+                aria-label="Watch Dr. Srishti Shankar's match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg"
+                  alt="Dr. Srishti Shankar shares how she matched at St. Vincent, MA"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched St. Vincent &middot; Massachusetts
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p></p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Srishti Shankar</span>
+                      <span>St. Vincent &middot; Massachusetts</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel nav -->
+          <div class="msp-carousel__nav">
+            <button
+              class="msp-carousel__btn"
+              id="prevSlide"
+              aria-label="Previous story"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path
+                  d="M11 3.5L6 9l5 5.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <span class="msp-carousel__count" id="slideCount" aria-live="polite"
+              >1 / 5</span
+            >
+            <button
+              class="msp-carousel__btn"
+              id="nextSlide"
+              aria-label="Next story"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path
+                  d="M7 3.5L12 9l-5 5.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video lightbox -->
+      <div
+        class="msp-lightbox"
+        id="mspLightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Student testimonial video"
+        hidden
+      >
+        <button class="msp-lightbox__close" aria-label="Close video">
+          &times;
+        </button>
+        <div class="msp-lightbox__frame">
+          <iframe
+            id="mspLightboxIframe"
+            src=""
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            frameborder="0"
+            title="Student testimonial video"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- ============== 10. FAQ ============== -->
+      <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
+        <div class="msp-wrap cc-faq__grid">
+          <div class="reveal">
+            <span class="msp-eyebrow">F.A.Q</span>
+            <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
+          </div>
+          <div class="cc-faq__list reveal">
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this live or self-paced?
+              </button>
+              <div class="cc-faq__body">
+                It&rsquo;s 100% self-paced. Every lesson is pre-recorded, so you
+                start the minute you enroll, study on your own schedule, and
+                pause, rewind, or rewatch as often as you need. No set class
+                times, no waiting for a cohort to open.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is a 10-day crash course really worth it for 2026?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The 2026 blueprint rewards pattern recognition, ethics and
+                communication, biostats, and chart-style stems, and our 60 hours
+                go straight at what actually shows up. So you close the
+                highest-yield gaps fast and walk in confident.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Can a crash course really move my readiness that much?
+              </button>
+              <div class="cc-faq__body">
+                For most people, yes. Students routinely report 20 to 40 point
+                jumps on their practice NBMEs within two weeks, roughly twice the
+                progress of studying solo. Your results depend on where you start
+                and the work you put in.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this better for first-timers or retakers?
+              </button>
+              <div class="cc-faq__body">
+                Honestly, both. If it&rsquo;s your first time, you get a clean
+                high-yield map. And if you&rsquo;re retaking, it resets the usual
+                leak points, which are timing, reasoning, and ethics.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What do students actually walk away with?
+              </button>
+              <div class="cc-faq__body">
+                Faster reading, sharper elimination, fewer careless errors, and a
+                calmer test day.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Does it help with anxiety, timing, and decision-making?
+              </button>
+              <div class="cc-faq__body">
+                It does. We drill pacing and indentation so you finish on time,
+                and you practice a fixed decision tree for the tie-breaker items
+                that usually eat your clock.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What actually changed on Step 1 in 2026?
+              </button>
+              <div class="cc-faq__body">
+                A few things. Longer chart and SOAP-style stems with distracting
+                detail, more ethics and communication, immunology and micro up
+                while pure biochem is down, and pathophysiology over trivia.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How do you handle the long chart-style stems and SOAP notes?
+              </button>
+              <div class="cc-faq__body">
+                You&rsquo;ll use a three-pass read, route then extract then
+                decide. First pass for the route, second for the computable
+                items, third for elimination. Then a highlighting discipline that
+                locks onto orders and vitals.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Are ethics and communication covered with actual answers?
+              </button>
+              <div class="cc-faq__body">
+                Yes. You get plug-and-play language for consent, boundaries,
+                impaired colleagues, end-of-life, and error disclosure, plus when
+                and why each one is right.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do you really focus on the 20% that drives most of the result?
+              </button>
+              <div class="cc-faq__body">
+                Yes. Every lesson is audited against the patterns the NBME
+                favors, and if it isn&rsquo;t high-yield, it&rsquo;s out.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How does question-powered teaching work?
+              </button>
+              <div class="cc-faq__body">
+                We teach through NBME-style vignettes from minute one. You learn
+                the idea, solve a question, then take apart the logic and drill
+                the variations until it sticks.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What&rsquo;s the N+1 method?
+              </button>
+              <div class="cc-faq__body">
+                You never learn a topic just once. You stack a slightly harder
+                layer on top of what you just mastered, so recall stays active and
+                moves into long-term memory.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What frameworks do you teach for the tough items?
+              </button>
+              <div class="cc-faq__body">
+                The Elimination Blueprint, the Clue-net, and tie-breakers, plus
+                short contrast tables and break-the-tie clues like onset, the key
+                lab, and one physical finding.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How do you keep it from leaking back out of my head?
+              </button>
+              <div class="cc-faq__body">
+                Stacked repetition, mixed-topic mini-sets, and periodic refresh
+                prompts keep everything active, and you build your own one-page
+                frameworks as you work through the lessons.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Who teaches this, and what are their scores?
+              </button>
+              <div class="cc-faq__body">
+                Sessions are led by 270+ Step 2 scorers and experienced Step 1
+                instructors, coordinated by Dr. Manik Madaan (271 Step 2). The
+                team reverse-engineered NBME patterns across thousands of items.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do I get recordings and downloadable materials?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The whole course is on demand with lifetime access, plus the
+                USMLE Step 1 Rapid Review 2026 slides to keep.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do I need any other resources?
+              </button>
+              <div class="cc-faq__body">
+                Just your preferred QBank and a notebook. Keep the QBank you
+                already like, and use the course to decide what to actually
+                memorize and how to apply it under time.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What&rsquo;s the guarantee?
+              </button>
+              <div class="cc-faq__body">
+                Finish the sessions and the required drills, sit your exam, and if
+                you don&rsquo;t pass, you get a full refund within 14 days of your
+                score report.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this good for nontraditional students or a different background?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The course assumes varied backgrounds and centers on NBME
+                logic, not on any one set of course notes.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do you start with the points I can bank?
+              </button>
+              <div class="cc-faq__body">
+                Yes. We open with biostats and ethics to lock in the most
+                reliable points early.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Will this carry over to Step 2?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The N+1 method and the decision frameworks are built to carry
+                forward, so your Step 1 base becomes a launchpad and your Step 2
+                prep starts easier.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 9. FINAL CTA — OFFER ============== -->
+      <section
+        class="msp-section msp-cta-wrap"
+        id="enroll"
+        aria-labelledby="ctaTitle"
+      >
+        <div class="msp-wrap">
+          <div class="cc-offer reveal">
+            <div class="cc-offer__head">
+              <span class="msp-eyebrow msp-eyebrow--light">Enroll today</span>
+              <h2 id="ctaTitle" class="cc-offer__title">
+                Everything you need to pass, in one place
+              </h2>
+            </div>
+
+            <div class="cc-offer__body">
+              <ul class="cc-offer__stack">
+                <li class="cc-offer__row">
+                  <span class="cc-offer__row-name">
+                    The 10-day, 60-hour Self-Paced Crash Course
+                  </span>
+                  <span class="cc-offer__row-price">$599</span>
+                </li>
+                <li class="cc-offer__row">
+                  <span class="cc-offer__row-name">
+                    Lifetime Access, Rewatch Anytime, including Future Updates
+                  </span>
+                  <span class="cc-offer__row-price">$300</span>
+                </li>
+                <li class="cc-offer__row">
+                  <span class="cc-offer__row-name">
+                    USMLE Step 1 Rapid Review 2026 Slides
+                  </span>
+                  <span class="cc-offer__row-price">$100</span>
+                </li>
+                <li class="cc-offer__row cc-offer__row--total">
+                  <span class="cc-offer__row-name">Total value</span>
+                  <span class="cc-offer__row-price">$999</span>
+                </li>
+              </ul>
+
+              <div class="cc-offer__price">
+                <div>
+                  <span class="cc-offer__price-label">Yours today</span>
+                  <span class="cc-offer__price-save">You save $800 &middot; 80% off</span>
+                </div>
+                <div class="cc-offer__price-nums">
+                  <span class="cc-offer__price-was">$999</span>
+                  <span class="cc-offer__price-now">$199</span>
+                </div>
+              </div>
+
+              <p class="cc-offer__fine">
+                $199, one time. You get instant access the moment you enroll, and
+                every lesson is yours for life.
+              </p>
+
+              <!-- TODO: point href at the real checkout/enrollment URL -->
+              <a class="btn btn--primary btn--xl cc-offer__cta" href="#">
+                Get Access Now <i data-lucide="arrow-right" width="18" height="18"></i>
+              </a>
+
+              <div class="cc-offer__guarantee">
+                <i data-lucide="shield-check" width="22" height="22"></i>
+                <p>
+                  And the <strong>100% money-back guarantee</strong> is about as
+                  simple as it gets. You finish the course and if you don&rsquo;t
+                  pass, get a full refund. Zero risk. Pure results.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============== FOOTER ============== -->
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>

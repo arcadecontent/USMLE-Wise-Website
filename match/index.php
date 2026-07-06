@@ -1,0 +1,1473 @@
+<?php
+$pageTitle = "Residency Match Service | USMLE Wise";
+$pageDescription = "End-to-end residency Match support for IMGs: ERAS application, program selection, rank order strategy, and interview preparation with mentors who have matched into competitive U.S. specialties.";
+$canonical = "https://usmlewise.com/match";
+$bodyClass = "msp";
+$stylesheets = [
+    "/match.css"
+];
+$scripts = [
+    "/match.js"
+];
+include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
+?>
+<main>
+      <!-- ============== 1. HERO ============== -->
+      <section class="msp-hero" aria-labelledby="heroTitle">
+        <div class="msp-wrap msp-hero__grid">
+          <div class="msp-hero__copy reveal">
+            <h1 id="heroTitle" class="msp-h1">
+              Match Into A
+              <span class="msp-h1__accent">U.S. Residency</span> With A Clear
+              Plan
+            </h1>
+            <p class="msp-lede">
+              Expert support for your USMLE exams, ERAS application, interview
+              prep, research, and U.S. clinical rotations.
+            </p>
+            <div class="msp-cta-row">
+              <a
+                class="btn btn--primary btn--xl"
+                href="https://team.manikmadaan.com/guidance-call/book"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Book A Free Guidance Call</a
+              >
+              <!-- Replace phone= with your WhatsApp number (country code, no + or spaces) -->
+              <a
+                class="btn btn--outline btn--xl"
+                href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20regarding%20Match%20Package%20%2F%20USMLE%20Wise"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Text Us on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="msp-hero__frame-wrap">
+            <div class="msp-hero__frame reveal">
+              <img
+                src="/assets/photos/fotos-ccdmi3dfnio-unsplash.jpg"
+                alt="IMG physician working with a residency mentor"
+              />
+            </div>
+            <div class="msp-float-note" aria-hidden="true">
+              <span class="msp-float-note__num">88<small>%</small></span>
+              <span class="msp-float-note__label">Match rate</span>
+              <span class="msp-float-note__sub"
+                >300+ graduates &middot; 4.9 rating</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="msp-bar msp-wrap" aria-label="Track record">
+          <div class="msp-bar__inner">
+            <div class="msp-stat reveal">
+              <b data-count="300" data-suffix="+">300+</b>
+              <span>Graduates matched</span>
+            </div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal">
+              <b data-count="10" data-suffix="+">10+</b>
+              <span>Specialties successfully matched</span>
+            </div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal">
+              <b data-count="4.9" data-decimal="1">4.9</b>
+              <span>Average mentor rating</span>
+            </div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal">
+              <b data-count="16" data-suffix="+">16+</b>
+              <span>Countries represented</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 3. WHAT'S INCLUDED ============== -->
+      <section
+        class="msp-section msp-services"
+        id="services"
+        aria-labelledby="servicesTitle"
+      >
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">What's included</span>
+            <h2 id="servicesTitle" class="msp-h2">End-to-end Match support</h2>
+            <p class="msp-sub">
+              Every component of the Match cycle, covered. Each one delivered by
+              a mentor who has been through it.
+            </p>
+          </div>
+
+          <div class="msp-services__grid">
+            <div class="msp-svc reveal">
+              <span class="msp-svc__no">01</span>
+              <div>
+                <h3>Application Timeline Management</h3>
+                <p>
+                  ERAS opens in September. Deadlines are unforgiving. We map
+                  your entire cycle from preparation through Match Day so
+                  nothing falls through the gaps.
+                </p>
+              </div>
+            </div>
+            <div class="msp-svc reveal">
+              <span class="msp-svc__no">02</span>
+              <div>
+                <h3>ERAS Application Build</h3>
+                <p>
+                  Your personal statement, CV, work and activities section, and
+                  MSPE review: written and refined with your mentor until it
+                  reflects the strongest version of your profile.
+                </p>
+              </div>
+            </div>
+            <div class="msp-svc reveal">
+              <span class="msp-svc__no">03</span>
+              <div>
+                <h3>Program Selection</h3>
+                <p>
+                  We analyze your scores, clinical experience, research, and
+                  geographic priorities to build a program list calibrated to
+                  your actual competitiveness, not a generic spreadsheet. We
+                  also guide you on where to assign your signals for maximum
+                  impact.
+                </p>
+              </div>
+            </div>
+            <div class="msp-svc reveal">
+              <span class="msp-svc__no">04</span>
+              <div>
+                <h3>Personal Statement</h3>
+                <p>
+                  A compelling personal statement written with your mentor,
+                  shaped around your unique story, motivations, and the
+                  specialty you are applying to.
+                </p>
+              </div>
+            </div>
+            <div class="msp-svc reveal">
+              <span class="msp-svc__no">05</span>
+              <div>
+                <h3>Interview Preparation</h3>
+                <p>
+                  Mock interviews with direct feedback on framing, delivery, and
+                  program-specific questions, using a proprietary framework
+                  developed by Dr. Manik Madaan. We focus on the questions that
+                  trip IMG applicants most often.
+                </p>
+              </div>
+            </div>
+            <div class="msp-svc reveal">
+              <span class="msp-svc__no">06</span>
+              <div>
+                <h3>Rank Order List Strategy</h3>
+                <p>
+                  Your ROL is the last decision before Match Day. We help you
+                  rank strategically based on your priorities, program signals,
+                  and Match data, not guesswork.
+                </p>
+              </div>
+            </div>
+            <div class="msp-svc reveal">
+              <span class="msp-svc__no">07</span>
+              <div>
+                <h3>Networking</h3>
+                <p>
+                  Introductions, outreach strategies, and guidance on building
+                  genuine connections with program directors and residents before
+                  and during the application cycle.
+                </p>
+              </div>
+            </div>
+            <div class="msp-svc reveal">
+              <span class="msp-svc__no">08</span>
+              <div>
+                <h3>Post-Match Guidance</h3>
+                <p>
+                  Scramble strategy if needed, contract review, visa questions,
+                  and first-year preparation. The support does not stop when the
+                  match results arrive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 4. WHY IT WORKS ============== -->
+
+      <!-- ============== 4. WHY IT WORKS ============== -->
+      <section class="msp-why-a" aria-labelledby="whyATitle">
+        <div class="msp-wrap">
+          <div class="msp-why-a__head reveal">
+            <span class="msp-eyebrow">Why it works</span>
+            <h2 id="whyATitle" class="msp-h2">
+              Most IMG services stop at exam prep. We start where they stop.
+            </h2>
+          </div>
+          <div class="msp-why-a__img reveal">
+            <img
+              src="/assets/photos/national-cancer-institute-nfvdkihxylu-unsplash.jpg"
+              alt="Physician mentors guiding IMG students through the U.S. residency match process"
+            />
+          </div>
+          <div class="msp-why-a__cols">
+            <div class="msp-wi reveal">
+              <h3>Mentors who lived the IMG match</h3>
+              <p>
+                Our mentors matched as IMGs into competitive U.S. programs. They
+                know which program directors value research, which overlook
+                clinical gaps, and how to frame a timeline that looks
+                unconventional on paper.
+              </p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>100% human, no AI</h3>
+              <p>
+                Every personal statement, CV edit, and strategy decision is made
+                by a physician who knows your file. No templates, no generated
+                text, no shortcuts.
+              </p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>A team of specialists, not a generalist</h3>
+              <p>
+                Each part of your application is handled by a mentor who
+                specializes in that area: one for ERAS, one for interviews, one
+                for research, and so on. You get depth at every step.
+              </p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>Built around your profile, not a template</h3>
+              <p>
+                Your scores, gaps, research, and goals are different from every
+                other applicant. Every strategy we build starts from your
+                specific situation, not a one-size-fits-all checklist.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--
+      <div class="msp-opt-divider" aria-hidden="true"><span>Option B</span></div>
+
+      <section class="msp-why-b" aria-labelledby="whyBTitle">
+        <div class="msp-opt-tag" aria-hidden="true">Option B</div>
+        <div class="msp-wrap">
+          <div class="msp-why-b__top">
+            <div class="msp-why-b__text reveal">
+              <span class="msp-eyebrow">Why it works</span>
+              <h2 id="whyBTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
+            </div>
+            <div class="msp-why-b__img reveal">
+              <img src="/assets/photos/national-cancer-institute-nfvdkihxylu-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" />
+            </div>
+          </div>
+          <div class="msp-why-b__cols">
+            <div class="msp-wi reveal">
+              <h3>Mentors who lived the IMG match</h3>
+              <p>Our mentors matched as IMGs into competitive U.S. programs. They know which program directors value research, which overlook clinical gaps, and how to frame a timeline that looks unconventional on paper.</p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>100% human, no AI</h3>
+              <p>Every personal statement, CV edit, and strategy decision is made by a physician who knows your file. No templates, no generated text, no shortcuts.</p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>One mentor, one plan, start to finish</h3>
+              <p>No handoffs between services. Your mentor builds the strategy and sees it through: ERAS, interviews, ROL, and beyond Match Day.</p>
+            </div>
+            <div class="msp-wi reveal">
+              <h3>Built for IMG profiles specifically</h3>
+              <p>ECFMG, J-1 vs H-1B, clinical gaps, international transcripts: we address what AMG-focused services ignore entirely.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="msp-opt-divider" aria-hidden="true"><span>Option C</span></div>
+
+      <section class="msp-why-c" aria-labelledby="whyCTitle">
+        <div class="msp-opt-tag" aria-hidden="true">Option C</div>
+        <div class="msp-wrap">
+          <div class="msp-why-c__head reveal">
+            <span class="msp-eyebrow">Why it works</span>
+            <h2 id="whyCTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
+          </div>
+          <div class="msp-why-c__img reveal">
+            <img src="/assets/photos/national-cancer-institute-nfvdkihxylu-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" />
+          </div>
+          <div class="msp-why-c__cols">
+            <div class="msp-wib reveal">
+              <h3>Mentors who lived the IMG match</h3>
+              <p>Our mentors matched as IMGs into competitive U.S. programs. They know which program directors value research, which overlook clinical gaps, and how to frame a timeline that looks unconventional on paper.</p>
+            </div>
+            <div class="msp-wib reveal">
+              <h3>100% human, no AI</h3>
+              <p>Every personal statement, CV edit, and strategy decision is made by a physician who knows your file. No templates, no generated text, no shortcuts.</p>
+            </div>
+            <div class="msp-wib reveal">
+              <h3>One mentor, one plan, start to finish</h3>
+              <p>No handoffs between services. Your mentor builds the strategy and sees it through: ERAS, interviews, ROL, and beyond Match Day.</p>
+            </div>
+            <div class="msp-wib reveal">
+              <h3>Built for IMG profiles specifically</h3>
+              <p>ECFMG, J-1 vs H-1B, clinical gaps, international transcripts: we address what AMG-focused services ignore entirely.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- ============== 5. MENTORS ============== -->
+      <!--
+      <section
+        class="msp-section msp-mentors"
+        id="mentors"
+        aria-labelledby="mentorsTitle"
+      >
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Your mentors</span>
+            <h2 id="mentorsTitle" class="msp-h2">
+              Physicians who matched. Now helping you do the same.
+            </h2>
+          </div>
+          <div class="msp-mentors__strip">
+            <article class="msp-mentor reveal">
+              <div class="msp-mentor__ava msp-mentor__ava--blue">DR</div>
+              <div class="msp-mentor__info">
+                <h3>Dr. David Reyes</h3>
+                <span class="msp-mentor__spec">Internal Medicine</span>
+                <span class="msp-mentor__prog">Johns Hopkins · PGY-3</span>
+                <ul class="msp-mentor__creds">
+                  <li>
+                    <i data-lucide="trending-up" width="13" height="13"></i>
+                    Step 2 CK: 261
+                  </li>
+                  <li>
+                    <i data-lucide="file-text" width="13" height="13"></i> 4
+                    peer-reviewed publications
+                  </li>
+                  <li>
+                    <i data-lucide="users" width="13" height="13"></i> 60+ IMGs
+                    mentored
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="msp-mentor reveal">
+              <div class="msp-mentor__ava msp-mentor__ava--red">AP</div>
+              <div class="msp-mentor__info">
+                <h3>Dr. Anaya Patel</h3>
+                <span class="msp-mentor__spec">Psychiatry</span>
+                <span class="msp-mentor__prog">NYU Langone · PGY-2</span>
+                <ul class="msp-mentor__creds">
+                  <li>
+                    <i data-lucide="trending-up" width="13" height="13"></i>
+                    Step 2 CK: 254
+                  </li>
+                  <li>
+                    <i data-lucide="star" width="13" height="13"></i> ERAS
+                    personal statement specialist
+                  </li>
+                  <li>
+                    <i data-lucide="users" width="13" height="13"></i> 80+ IMGs
+                    mentored
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="msp-mentor reveal">
+              <div class="msp-mentor__ava msp-mentor__ava--green">MC</div>
+              <div class="msp-mentor__info">
+                <h3>Dr. Marco Cruz</h3>
+                <span class="msp-mentor__spec">Family Medicine</span>
+                <span class="msp-mentor__prog">UCSF · PGY-2</span>
+                <ul class="msp-mentor__creds">
+                  <li>
+                    <i data-lucide="trending-up" width="13" height="13"></i>
+                    Step 2 CK: 249
+                  </li>
+                  <li>
+                    <i data-lucide="map-pin" width="13" height="13"></i> IMG
+                    match specialist, West Coast programs
+                  </li>
+                  <li>
+                    <i data-lucide="users" width="13" height="13"></i> 45+ IMGs
+                    mentored
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="msp-mentors__foot reveal">
+            <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" class="btn btn--outline"
+              >Work with a mentor
+              <i data-lucide="arrow-right" class="ic-arrow"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- ============== 6. PROCESS ============== -->
+      <section
+        class="msp-section msp-process"
+        id="process"
+        aria-labelledby="processTitle"
+      >
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">How it works</span>
+            <h2 id="processTitle" class="msp-h2">
+              Four steps from your current profile to Match Day
+            </h2>
+          </div>
+          <ol class="msp-steps" aria-label="Process steps">
+            <li class="msp-step reveal">
+              <div class="msp-step__marker" aria-hidden="true"></div>
+              <div class="msp-step__content">
+                <span class="msp-step__label" aria-hidden="true">Step 01</span>
+                <span class="msp-step__ghost" aria-hidden="true">01</span>
+                <h3>Discovery &amp; assessment</h3>
+                <p>
+                  We review your scores, experience, specialty goals, and
+                  timeline. Your mentor then maps your competitiveness: which
+                  programs are realistic and what needs strengthening.
+                </p>
+              </div>
+            </li>
+            <li class="msp-step reveal">
+              <div class="msp-step__marker" aria-hidden="true"></div>
+              <div class="msp-step__content">
+                <span class="msp-step__label" aria-hidden="true">Step 02</span>
+                <span class="msp-step__ghost" aria-hidden="true">02</span>
+                <h3>CV building</h3>
+                <p>
+                  Your mentor works through your CV line by line: framing
+                  clinical experience, research, and activities in the language
+                  U.S. programs look for in IMG applicants.
+                </p>
+              </div>
+            </li>
+            <li class="msp-step reveal">
+              <div class="msp-step__marker" aria-hidden="true"></div>
+              <div class="msp-step__content">
+                <span class="msp-step__label" aria-hidden="true">Step 03</span>
+                <span class="msp-step__ghost" aria-hidden="true">03</span>
+                <h3>Match mentorship</h3>
+                <p>
+                  ERAS application, program list, interview preparation, and ROL
+                  strategy: built with your mentor and executed on a clear
+                  timeline.
+                </p>
+              </div>
+            </li>
+            <li class="msp-step reveal">
+              <div class="msp-step__marker" aria-hidden="true"></div>
+              <div class="msp-step__content">
+                <span class="msp-step__label" aria-hidden="true">Step 04</span>
+                <span class="msp-step__ghost" aria-hidden="true">04</span>
+                <h3>Match Day</h3>
+                <p>
+                  You match. We help with everything that follows: visa
+                  questions, program communications, and preparing for your
+                  first year.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============== 7. TESTIMONIALS ============== -->
+      <section class="msp-stories" id="stories" aria-labelledby="storiesTitle">
+        <div class="msp-wrap">
+          <div class="msp-stories__head reveal">
+            <span class="msp-eyebrow msp-eyebrow--light">Success stories</span>
+            <h2 id="storiesTitle" class="msp-h2 msp-h2--invert">
+              Real journeys from IMG to residency
+            </h2>
+          </div>
+
+          <!-- Carousel -->
+          <div class="msp-carousel" aria-label="Student testimonials">
+            <!-- Slide 1: Rana A. -->
+            <div
+              class="msp-slide is-active"
+              role="group"
+              aria-label="Story 1 of 5"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="F8E7lTvGKRU"
+                aria-label="Watch Rana's match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg"
+                  alt="Rana shares how she matched Internal Medicine at a top-20 program without U.S. clinical experience"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched University of Illinois, Peoria
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p>
+                    I knew I wasn't a natural speaker and needed help making my
+                    answers stand out. Dr. Madan's course and our one-on-one
+                    sessions gave me the tools to personalize my responses for
+                    each interviewer. I walked into every interview with a
+                    confidence I simply didn't have before.
+                  </p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Lakshitha</span>
+                      <span>University of Illinois, Peoria</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Slide 2: Dr. Shreya Sriram -->
+            <div
+              class="msp-slide"
+              role="group"
+              aria-label="Story 2 of 5"
+              aria-hidden="true"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="O4Gns55Brh0"
+                aria-label="Watch Dr. Shreya Sriram's match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg"
+                  alt="Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched SIU Carbondale &middot; Family Medicine
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p>
+                    I didn't match in the main cycle, didn't match in SOAP, and
+                    was financially stretched. But I kept applying every day on
+                    Dr. Madan's advice. I flew across the country for an
+                    in-person interview at a remote program just to show my
+                    commitment. That persistence, and having the right guidance,
+                    is what got me here.
+                  </p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Shreya Sriram</span>
+                      <span>SIU Carbondale &middot; Family Medicine</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Slide 3: Dr. Hamit C. -->
+            <div
+              class="msp-slide"
+              role="group"
+              aria-label="Story 3 of 5"
+              aria-hidden="true"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="ZynxmljOZDA"
+                aria-label="Watch Dr. Hamit C.'s match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg"
+                  alt="Dr. Hamit C. shares how he matched at UPMC, PA"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched UPMC &middot; Pennsylvania
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p>
+                    I had everything ready: personal statement, LORs, a solid
+                    program list. But I knew those only get you the interview.
+                    I've seen applicants with 11 interviews who still didn't
+                    match. Dr. Madan's course prepares you for the dynamic,
+                    unexpected side of residency interviews, not just the
+                    rehearsed answers.
+                  </p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Hamit C.</span>
+                      <span>UPMC &middot; Pennsylvania</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Slide 4: Dr. Yash -->
+            <div
+              class="msp-slide"
+              role="group"
+              aria-label="Story 4 of 5"
+              aria-hidden="true"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="IEphKQwawzA"
+                aria-label="Watch Dr. Yash's match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg"
+                  alt="Dr. Yash shares how he matched in Los Angeles"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched Los Angeles &middot; California
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p>
+                    This was my first time applying and I had no idea what to
+                    expect from the interview process. I came to Dr. Madan with
+                    so many questions, and he answered every single one with
+                    patience. That guidance made all the difference when it
+                    mattered most.
+                  </p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Yash</span>
+                      <span>Los Angeles &middot; California</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Slide 5: Dr. Srishti Shankar -->
+            <div
+              class="msp-slide"
+              role="group"
+              aria-label="Story 5 of 5"
+              aria-hidden="true"
+            >
+              <button
+                class="msp-video-trigger"
+                data-ytid="2pGb5xiKzdw"
+                aria-label="Watch Dr. Srishti Shankar's match story video"
+              >
+                <img
+                  src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg"
+                  alt="Dr. Srishti Shankar shares how she matched at St. Vincent, MA"
+                  class="msp-video-trigger__thumb"
+                />
+                <span class="msp-video-trigger__play" aria-hidden="true">
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="36"
+                      fill="rgba(255,255,255,0.12)"
+                    />
+                    <circle
+                      cx="36"
+                      cy="36"
+                      r="30"
+                      fill="rgba(255,255,255,0.92)"
+                    />
+                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
+                  </svg>
+                </span>
+              </button>
+              <div class="msp-slide__content">
+                <p class="msp-story-feature__outcome">
+                  Matched St. Vincent &middot; Massachusetts
+                </p>
+                <blockquote class="msp-story-feature__quote">
+                  <p></p>
+                  <footer class="msp-story-feature__attr">
+                    <cite class="msp-story-feature__cite">
+                      <span>Dr. Srishti Shankar</span>
+                      <span>St. Vincent &middot; Massachusetts</span>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel nav -->
+          <div class="msp-carousel__nav">
+            <button
+              class="msp-carousel__btn"
+              id="prevSlide"
+              aria-label="Previous story"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path
+                  d="M11 3.5L6 9l5 5.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <span class="msp-carousel__count" id="slideCount" aria-live="polite"
+              >1 / 5</span
+            >
+            <button
+              class="msp-carousel__btn"
+              id="nextSlide"
+              aria-label="Next story"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path
+                  d="M7 3.5L12 9l-5 5.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video lightbox -->
+      <div
+        class="msp-lightbox"
+        id="mspLightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Student testimonial video"
+        hidden
+      >
+        <button class="msp-lightbox__close" aria-label="Close video">
+          &times;
+        </button>
+        <div class="msp-lightbox__frame">
+          <iframe
+            id="mspLightboxIframe"
+            src=""
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            frameborder="0"
+            title="Student testimonial video"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- ============== 8b. SCREENSHOT TESTIMONIALS ============== -->
+      <section
+        class="msp-section msp-shots"
+        id="match-messages"
+        aria-labelledby="shotsTitle"
+      >
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Match Day messages</span>
+            <h2 id="shotsTitle" class="msp-h2">
+              What students send us on Match Day
+            </h2>
+          </div>
+          <div class="msp-shots__grid">
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/anjali.jpeg"
+                alt="Match Day message from Anjali"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/ayra.jpeg"
+                alt="Match Day message from Ayra"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/bardia.jpeg"
+                alt="Match Day message from Bardia"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/hamna.jpeg"
+                alt="Match Day message from Hamna"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/nancy.jpeg"
+                alt="Match Day message from Nancy"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/okkes.jpeg"
+                alt="Match Day message from Okkes"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/praneet.jpeg"
+                alt="Match Day message from Praneet"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/rasmitha.jpeg"
+                alt="Match Day message from Rasmitha"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/ravindra.jpeg"
+                alt="Match Day message from Ravindra"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/shiv.jpeg"
+                alt="Match Day message from Shiv"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/sidnath.jpeg"
+                alt="Match Day message from SidNath"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/sinmmer.jpeg"
+                alt="Match Day message from Sinmmer"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/swathi.jpeg"
+                alt="Match Day message from Swathi"
+                loading="lazy"
+              />
+            </div>
+            <div class="msp-shot-card reveal">
+              <img
+                src="/assets/testimonials/photos/match/babitha.jpeg"
+                alt="Match Day message from Babitha"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 9. PRICING ============== -->
+      <section
+        class="msp-section msp-pricing"
+        id="pricing"
+        aria-labelledby="pricingTitle"
+      >
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Pricing</span>
+            <h2 id="pricingTitle" class="msp-h2">
+              Choose your level of support
+            </h2>
+            <p class="msp-sub">
+              Every package starts with a free guidance call. No commitment
+              until you are ready.
+            </p>
+          </div>
+
+          <div class="msp-pricing__rows">
+            <!-- Tier 1 -->
+            <div class="msp-tier reveal">
+              <div class="msp-tier__info">
+                <span class="msp-tier__name">Essentials Starter™</span>
+                <div class="msp-tier__price">$4,999</div>
+                <p class="msp-tier__sub">
+                  Budget-conscious applicants with strong materials
+                </p>
+                <a
+                  class="btn btn--outline"
+                  href="https://team.manikmadaan.com/guidance-call/book"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Book a Guidance Call</a
+                >
+              </div>
+              <ul class="msp-tier__features">
+                <li>100% human editing, no AI</li>
+                <li>Physician advisor included</li>
+                <li>Personal statement (3 sessions + unlimited revisions)</li>
+                <li>ERAS CV with 1 revision</li>
+                <li>1 hour interview training</li>
+                <li>Group classes 2025–2026 included</li>
+                <li>Scramble support included</li>
+              </ul>
+            </div>
+
+            <!-- Tier 2 — featured -->
+            <div class="msp-tier msp-tier--featured reveal">
+              <div class="msp-tier__info">
+                <span class="msp-tier__badge">Most chosen</span>
+                <span class="msp-tier__name">USMLE Match Pro</span>
+                <div class="msp-tier__price">$7,999</div>
+                <p class="msp-tier__sub">
+                  Comprehensive support at an accessible price
+                </p>
+                <a
+                  class="btn btn--primary"
+                  href="https://team.manikmadaan.com/guidance-call/book"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Book a Guidance Call</a
+                >
+              </div>
+              <ul class="msp-tier__features">
+                <li>100% human editing, no AI</li>
+                <li>Physician advisor + weekly 1:1 mentor guidance</li>
+                <li>Personalized residency program list</li>
+                <li>Signaling strategy included</li>
+                <li>Personal statement (up to 3 specialties)</li>
+                <li>ERAS CV with 2 revisions</li>
+                <li>4 hours interview training</li>
+                <li>SOAP &amp; scramble support</li>
+                <li>Match Guarantee included</li>
+                <li>Research cohort access ($400 value)</li>
+              </ul>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="msp-tier reveal">
+              <div class="msp-tier__info">
+                <span class="msp-tier__name">USMLE Match Maximizer</span>
+                <div class="msp-tier__price">$9,999</div>
+                <p class="msp-tier__sub">
+                  Full end-to-end support for every step of the journey
+                </p>
+                <a
+                  class="btn btn--outline"
+                  href="https://team.manikmadaan.com/guidance-call/book"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Book a Guidance Call</a
+                >
+              </div>
+              <ul class="msp-tier__features">
+                <li>100% human editing, no AI</li>
+                <li>In-depth 3-hour profile assessment</li>
+                <li>Done-for-you signal applications</li>
+                <li>Personal statements for all signals</li>
+                <li>Unlimited ERAS CV revisions</li>
+                <li>3 Letters of Intent/Interest</li>
+                <li>Communication emails included</li>
+                <li>Exclusive networking access</li>
+                <li>Match Guarantee included</li>
+              </ul>
+            </div>
+
+            <!-- Tier 4 — Custom -->
+            <div class="msp-tier msp-tier--custom reveal">
+              <div class="msp-tier__info">
+                <span class="msp-tier__badge msp-tier__badge--custom"
+                  >Custom</span
+                >
+                <span class="msp-tier__name">Built Around You</span>
+                <div class="msp-tier__price msp-tier__price--custom">
+                  Let's talk
+                </div>
+                <p class="msp-tier__sub">
+                  Complex profiles, multi-specialty applications, or situations
+                  that don't fit a standard package. We scope it together.
+                </p>
+                <a
+                  class="btn btn--outline"
+                  href="mailto:hello@usmle-wise.com?subject=Custom%20Match%20Package%20Inquiry"
+                  >Contact Us</a
+                >
+              </div>
+              <ul class="msp-tier__features">
+                <li>Everything in Match Maximizer</li>
+                <li>Scoped to your specific situation and timeline</li>
+                <li>Price quoted after a free discovery call</li>
+                <li>No commitment until you agree on scope and price</li>
+                <li>Dedicated point of contact throughout</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Comparison table — desktop only -->
+          <div class="msp-compare" aria-label="Feature comparison">
+            <h3 class="msp-compare__title">Full feature comparison</h3>
+            <table class="msp-compare__table">
+              <thead>
+                <tr>
+                  <th class="msp-compare__feat-col" scope="col"></th>
+                  <th scope="col">
+                    <span class="msp-compare__tier-name"
+                      >Essentials Starter™</span
+                    >
+                    <span class="msp-compare__tier-price">$4,999</span>
+                  </th>
+                  <th class="msp-compare__col--featured" scope="col">
+                    <span class="msp-compare__tier-name">USMLE Match Pro</span>
+                    <span class="msp-compare__tier-price">$7,999</span>
+                  </th>
+                  <th scope="col">
+                    <span class="msp-compare__tier-name"
+                      >USMLE Match Maximizer</span
+                    >
+                    <span class="msp-compare__tier-price">$9,999</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>100% human editing, no AI</td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Physician advisor</td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Weekly 1:1 mentor guidance</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Profile assessment</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td>3-hour deep dive</td>
+                </tr>
+                <tr>
+                  <td>Personalized program list</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Signaling strategy</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Done-for-you signal applications</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Personal statement</td>
+                  <td>1 specialty</td>
+                  <td class="msp-compare__col--featured">
+                    Up to 3 specialties
+                  </td>
+                  <td>All signals</td>
+                </tr>
+                <tr>
+                  <td>ERAS CV revisions</td>
+                  <td>1 revision</td>
+                  <td class="msp-compare__col--featured">2 revisions</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <td>Letters of Intent/Interest</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td>3 letters</td>
+                </tr>
+                <tr>
+                  <td>Communication emails</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Interview training</td>
+                  <td>1 hour</td>
+                  <td class="msp-compare__col--featured">4 hours</td>
+                  <td>4 hours</td>
+                </tr>
+                <tr>
+                  <td>SOAP &amp; scramble support</td>
+                  <td>Scramble only</td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Networking access</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">Basic</td>
+                  <td>Exclusive</td>
+                </tr>
+                <tr>
+                  <td>Research cohort access</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-check" aria-label="Included">✓</span>
+                    <span class="msp-compare__note">($400 value)</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Match Guarantee</td>
+                  <td>
+                    <span class="msp-dash" aria-label="Not included">–</span>
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                  <td>
+                    <span class="msp-check" aria-label="Included">✓</span>
+                  </td>
+                </tr>
+                <tr class="msp-compare__cta-row">
+                  <td></td>
+                  <td>
+                    <a
+                      class="btn btn--outline btn--sm"
+                      href="https://team.manikmadaan.com/guidance-call/book"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Book a call</a
+                    >
+                  </td>
+                  <td class="msp-compare__col--featured">
+                    <a
+                      class="btn btn--primary btn--sm"
+                      href="https://team.manikmadaan.com/guidance-call/book"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Book a call</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      class="btn btn--outline btn--sm"
+                      href="https://team.manikmadaan.com/guidance-call/book"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Book a call</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 10. FAQ ============== -->
+      <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
+        <div class="msp-wrap msp-faq__grid">
+          <div class="reveal">
+            <span class="msp-eyebrow">Common questions</span>
+            <h2 id="faqTitle" class="msp-h2">
+              Questions IMGs ask before starting
+            </h2>
+            <p class="msp-sub">
+              Still unsure? The guidance call is free and addresses these
+              directly.
+            </p>
+            <a
+              class="btn btn--outline msp-faq__cta"
+              href="https://team.manikmadaan.com/guidance-call/book"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Book a Free Guidance Call</a
+            >
+          </div>
+          <div class="accordion reveal">
+            <div class="accordion__item">
+              <button class="accordion__head" type="button">
+                When should I start working with a match mentor?
+              </button>
+              <div class="accordion__body">
+                Ideally 6 to 12 months before ERAS opens in September. That
+                gives time to address gaps, strengthen your application, and
+                prepare for interviews without rushing. If you are closer to the
+                cycle, we can still build an effective plan; the strategy just
+                looks different.
+              </div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__head" type="button">
+                Can you help if my Step scores are below average?
+              </button>
+              <div class="accordion__body">
+                Yes. A below-average score is one data point in a complete
+                profile. We help you identify programs where your overall
+                application is competitive, strengthen the parts you can
+                control, and write a personal statement that addresses your
+                timeline honestly and confidently.
+              </div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__head" type="button">
+                Do you help with specialty selection, or only applications?
+              </button>
+              <div class="accordion__body">
+                Both. Specialty selection is often where the Match is won or
+                lost. We assess your competitiveness across the specialties you
+                are considering and help you make a realistic decision before
+                committing to a program list.
+              </div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__head" type="button">
+                What if I do not match in the main cycle?
+              </button>
+              <div class="accordion__body">
+                We walk through SOAP with you in real time. If you do not match,
+                we immediately pivot to scramble strategy: identifying open
+                positions in your specialty and helping you submit supplemental
+                applications quickly and correctly.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 9. FINAL CTA ============== -->
+      <section
+        class="msp-section msp-cta-wrap"
+        id="book"
+        aria-labelledby="ctaTitle"
+      >
+        <div class="msp-wrap">
+          <div class="msp-cta-a reveal">
+            <div class="msp-cta-a__stat">
+              <div class="msp-cta-a__num">88<span>%</span></div>
+              <p class="msp-cta-a__stat-line">
+                Match rate across 300+ graduates
+              </p>
+              <p class="msp-cta-a__stat-sub">
+                10+ specialties &middot; 4.9 avg mentor rating
+              </p>
+            </div>
+            <div class="msp-cta-a__content">
+              <span class="msp-eyebrow msp-eyebrow--light">Ready to start</span>
+              <h2 id="ctaTitle" class="msp-h2 msp-h2--invert">
+                The Match is not a lottery.<br /><em>It is a strategy.</em>
+              </h2>
+              <p class="msp-cta__sub">
+                Book a free 30-minute guidance call. We will review your
+                profile, answer your questions, and tell you exactly what the
+                next step is.
+              </p>
+              <a
+                class="btn btn--primary btn--xl"
+                href="mailto:arcadecontentsolutions@gmail.com?subject=Match%20Discovery%20Call"
+              >
+                Book Your Free Guidance Call
+              </a>
+              <p class="msp-cta__trust">
+                No commitment. No sales pitch. Just a clear plan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============== FOOTER ============== -->
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>
