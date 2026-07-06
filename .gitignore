@@ -1,0 +1,12 @@
+# Internal working docs (not part of the website)
+/product.md
+/PRODUCT.md
+/design.md
+/memory.md
+
+# AI agent / skill tooling and editor state
+/skills-lock.json
+/.agents/
+/.impeccable/
+/.claude/
+/.vscode/
