@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . '/routes.php';
+
 $pageTitle = "USMLE Wise — Match Into a U.S. Residency";
 $pageDescription = "From USMLE prep to ERAS applications and interview coaching, USMLE Wise helps international medical graduates navigate the entire Match process with expert mentorship and step-by-step support.";
 $canonical = "https://usmlewise.com/";
