@@ -29,6 +29,71 @@ RewriteRule ^qa\.html$ /qa [R=301,L]
 RewriteRule ^policy\.html$ /policy [R=301,L]
 RewriteRule ^case-study-ahmed\.html$ /case-study-ahmed [R=301,L]
 
+# --- 1b. 301 redirects: legacy WordPress (old site) URLs -> new pages ---
+# NOTE: where an old slug is identical to a new slug (research-catalyst,
+# clinical-rotations) only the trailing-slash form is redirected, otherwise
+# the clean URL would 301 to itself and loop.
+
+# Coaching
+RewriteRule ^crash-course/?$ /coaching-step1-crash-course [R=301,L]
+RewriteRule ^crash-course-step-1/?$ /coaching-step1-crash-course [R=301,L]
+RewriteRule ^step-1-high-yield-crash-course/?$ /coaching-step1-crash-course [R=301,L]
+RewriteRule ^step-1-course/?$ /coaching-step1-mastery [R=301,L]
+RewriteRule ^usmle-step-2-crash-course/?$ /coaching-step23-mastery [R=301,L]
+RewriteRule ^usmle-step-exam-readiness/?$ /coaching [R=301,L]
+RewriteRule ^usmle-exam-n-1-coaching/?$ /coaching [R=301,L]
+RewriteRule ^usmlewise-60-minute-strategy-session/?$ /coaching [R=301,L]
+RewriteRule ^book-your-free-stratergy-call/?$ /coaching [R=301,L]
+RewriteRule ^guidance-call/?$ /coaching [R=301,L]
+RewriteRule ^usmlewise-hybrid-mentorship-program/?$ /coaching [R=301,L]
+RewriteRule ^(eb-all-courses|eb-courses|eb-my-courses|eb-single-course|my-courses-new)/?$ /coaching [R=301,L]
+
+# Research
+RewriteRule ^research-catalyst/$ /research-catalyst [R=301,L]
+RewriteRule ^usmle-xponential-catalyst/?$ /research-catalyst [R=301,L]
+RewriteRule ^usmle-xponential-catalyst-premium-package/?$ /research-catalyst [R=301,L]
+RewriteRule ^xponential-advantage/?$ /research-catalyst [R=301,L]
+RewriteRule ^rc-level-1/?$ /research-catalyst [R=301,L]
+RewriteRule ^acc-research/?$ /research [R=301,L]
+RewriteRule ^research-programs/?$ /research [R=301,L]
+RewriteRule ^research-course/?$ /research-masterclass [R=301,L]
+RewriteRule ^cdc-wonder-masterclass/?$ /research-masterclass [R=301,L]
+RewriteRule ^guided-research-program/?$ /research-junior-scientist [R=301,L]
+RewriteRule ^letter-to-editor-series/?$ /research-review [R=301,L]
+RewriteRule ^fastrack-narrative/?$ /research-review [R=301,L]
+RewriteRule ^ma/?$ /research-review [R=301,L]
+RewriteRule ^(polio-project|post-webinar-polio|research-webinar-polio)/?$ /research [R=301,L]
+
+# Match
+RewriteRule ^match-package/?$ /match [R=301,L]
+RewriteRule ^lor/?$ /match-lor [R=301,L]
+RewriteRule ^eras-cv/?$ /match-eras-cv [R=301,L]
+RewriteRule ^eras-cv-feedback/?$ /match-eras-cv [R=301,L]
+RewriteRule ^personal-statement/?$ /match-ps3x [R=301,L]
+RewriteRule ^ps3x-masterclass/?$ /match-ps3x [R=301,L]
+RewriteRule ^ps-masterclass/?$ /match-ps3x [R=301,L]
+RewriteRule ^ps-chechlist/?$ /match-ps3x [R=301,L]
+RewriteRule ^(interview-preparation|interview-prep-2|interview-buddy|interview-prep-post-webinar|buddy)/?$ /match-interview [R=301,L]
+
+# Rotations
+RewriteRule ^clinical-rotations/$ /clinical-rotations [R=301,L]
+RewriteRule ^available-rotations/?$ /clinical-rotations [R=301,L]
+
+# Social proof
+RewriteRule ^clients/?$ /testimonials [R=301,L]
+RewriteRule ^clients-2/?$ /testimonials [R=301,L]
+
+# Legal
+RewriteRule ^cookie-policy/?$ /policy [R=301,L]
+RewriteRule ^privacy-policy-2/?$ /policy [R=301,L]
+RewriteRule ^terms-of-service/?$ /policy [R=301,L]
+
+# Marketing / account / tools / webinars / confirmations -> home
+RewriteRule ^(about|blog-home|free-resources|services-offered|contact|csv-converter|track-your-usmle-study-progress-daily|divine-intervention|draft-29|user-account|user-account-new)/?$ / [R=301,L]
+RewriteRule ^(medical-school-webinar|webinar|webinar-2|webinars|step-2-webinar|step-2-webinar-dr-manik)/?$ / [R=301,L]
+RewriteRule ^(unsubscribe|unsubscribe-2|thank-you-for-purchase)/?$ / [R=301,L]
+RewriteRule ^payment-confirmation.*$ / [R=301,L]
+
 # --- 2. Serve extensionless URLs from matching .php file ---
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f

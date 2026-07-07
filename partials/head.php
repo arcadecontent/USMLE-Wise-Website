@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Google Search Console verification (replace content with the token from Search Console → Settings → Ownership verification → HTML tag) -->
+<meta name="google-site-verification" content="REPLACE_WITH_YOUR_GSC_TOKEN" />
+<!-- Google tag (gtag.js) — GA4, migrated from old site -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MMVZ5WKY2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1MMVZ5WKY2');
+</script>
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>" />
 <link rel="canonical" href="<?php echo $canonical; ?>" />
