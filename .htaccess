@@ -94,6 +94,48 @@ RewriteRule ^(medical-school-webinar|webinar|webinar-2|webinars|step-2-webinar|s
 RewriteRule ^(unsubscribe|unsubscribe-2|thank-you-for-purchase)/?$ / [R=301,L]
 RewriteRule ^payment-confirmation.*$ / [R=301,L]
 
+# --- 1c. Additional legacy WordPress pages (from full DB audit) ---
+# Coaching
+RewriteRule ^step-1-crash-course/?$ /coaching-step1-crash-course [R=301,L]
+RewriteRule ^(crash-course-test|manik-test-crash-course)/?$ /coaching-step1-crash-course [R=301,L]
+RewriteRule ^step-2-crash-course/?$ /coaching-step23-mastery [R=301,L]
+RewriteRule ^(usmle-mastery|usmle-step-1-mastery)/?$ /coaching-step1-mastery [R=301,L]
+RewriteRule ^(online-courses|online-courses-2|enroll)/?$ /coaching [R=301,L]
+
+# Research
+RewriteRule ^junior-scientist-program/?$ /research-junior-scientist [R=301,L]
+RewriteRule ^(beginner-research|research-workshop-beginner)/?$ /research-masterclass [R=301,L]
+RewriteRule ^narrative-review-cohort-1/?$ /research-review [R=301,L]
+RewriteRule ^(rapid-research|rapid-research-for-the-match|rapid-research-masterclass|match-worthy-research|crist-project|polio-project-2|signature-scholar-program|webinar-research)/?$ /research [R=301,L]
+
+# Match
+RewriteRule ^(cv-building|webinar-how-to-craft-a-match-worthy-cv)/?$ /match-eras-cv [R=301,L]
+RewriteRule ^(soap-support|match-membership|match-membership-2|membership-match)/?$ /match [R=301,L]
+RewriteRule ^observers-edge/?$ /clinical-rotations [R=301,L]
+
+# Social proof / legal
+RewriteRule ^case-report-dr-kaushik/?$ /testimonials [R=301,L]
+RewriteRule ^refund_returns/?$ /policy [R=301,L]
+
+# WooCommerce/system, webinars, tools, internal -> home
+RewriteRule ^(about-us|home|services)/?$ / [R=301,L]
+RewriteRule ^(cart|checkout|my-account|shop)/?$ / [R=301,L]
+RewriteRule ^(clinical-trial-portal|fda-assistant|fsmb-guide|fsmbguide|us-visa|visa-masterclass)/?$ / [R=301,L]
+RewriteRule ^(past-webinars|post|post-payment-webinar|masterclass-2026-webinar|webinar-guide-call|social-media-internship|team-tasks|testing|whatsapp)/?$ / [R=301,L]
+
+# --- 1d. WooCommerce product URLs -> closest new service (catch-all last) ---
+RewriteRule ^product/(.*crash-course.*|.*step-1.*)/?$ /coaching-step1-crash-course [R=301,L]
+RewriteRule ^product/(.*nbme.*|.*coaching.*)/?$ /coaching [R=301,L]
+RewriteRule ^product/.*eras-cv.*/?$ /match-eras-cv [R=301,L]
+RewriteRule ^product/.*lor.*/?$ /match-lor [R=301,L]
+RewriteRule ^product/(.*personal-statement.*|psx3|.*ps3x.*|.*psx.*)/?$ /match-ps3x [R=301,L]
+RewriteRule ^product/(.*interview.*|.*iv-prep.*)/?$ /match-interview [R=301,L]
+RewriteRule ^product/.*catalyst.*/?$ /research-catalyst [R=301,L]
+RewriteRule ^product/(.*meta-analysis.*|.*narrative.*|.*review.*|.*abstract.*|.*research.*|.*systematic.*|.*scholar.*)/?$ /research [R=301,L]
+RewriteRule ^product/(.*rotation.*|.*usce.*)/?$ /clinical-rotations [R=301,L]
+RewriteRule ^product/.*match.*/?$ /match [R=301,L]
+RewriteRule ^product/ / [R=301,L]
+
 # --- 2. Serve extensionless URLs from matching .php file ---
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
