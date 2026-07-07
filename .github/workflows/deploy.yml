@@ -29,9 +29,12 @@ jobs:
               exit 1
             fi
             echo "Verified mobile nav CSS in $STYLES"
+<<<<<<< HEAD
+=======
             INDEX="current/index.php"
             if [ ! -f "$INDEX" ]; then
               echo "ERROR: index.php not found after deploy"
               exit 1
             fi
             echo "Verified index.php exists at $INDEX"
+>>>>>>> 0c391f96dffe430725f4460a529a71d52a426537

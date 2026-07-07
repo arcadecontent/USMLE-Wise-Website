@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interview Preparation | USMLE Wise</title>
+    <meta
+      name="description"
+      content="Mock interviews, peer buddy sessions, and a 1,200+ question bank to prepare IMG residency applicants for ranking season."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/usmle-design-system/assets/emblem.svg"
+    />
+    <link rel="stylesheet" href="assets/usmle-design-system/styles.css" />
+    <link rel="stylesheet" href="match.css" />
+    <script
+      src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+    <script src="match.js" defer></script>
+    <style>
+      /* ---- page sections ---- */
+      .pg-about { background: var(--uw-surface-sunk); border-block: 1px solid var(--uw-border); }
+      .pg-feat-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(20px, 3vw, 36px);
+        margin-top: clamp(40px, 5vw, 60px);
+      }
+      .pg-feat {
+        display: flex; flex-direction: column; gap: 10px;
+        border: 1px solid var(--uw-border);
+        border-radius: clamp(14px, 1.8vw, 20px);
+        padding: clamp(24px, 3vw, 36px);
+      }
+      .pg-feat__icon {
+        width: 40px; height: 40px; border-radius: 10px;
+        background: var(--uw-blue-50); display: grid; place-items: center;
+        color: var(--uw-blue-600); flex-shrink: 0;
+      }
+      .pg-feat__title { font-size: 16px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
+      .pg-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
+      /* authenticity section */
+      .ip-auth {
+        background: var(--uw-surface-sunk); border-block: 1px solid var(--uw-border);
+      }
+      .ip-auth-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 80px);
+        align-items: center;
+      }
+      .ip-auth-badge {
+        background: #08111f;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: clamp(16px, 2vw, 24px);
+        padding: clamp(32px, 4vw, 52px);
+        display: flex; flex-direction: column; gap: 20px;
+      }
+      .ip-auth-badge__item {
+        display: flex; gap: 14px; align-items: flex-start;
+      }
+      .ip-auth-badge__icon {
+        width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0;
+        background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
+        display: grid; place-items: center; color: rgba(255,255,255,.7);
+      }
+      .ip-auth-badge__text { font-size: 15px; color: rgba(255,255,255,.75); line-height: 1.6; margin: 0; padding-top: 6px; }
+      /* CTA card */
+      .pg-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
+      .pg-cta-card {
+        background: #08111f;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: clamp(20px, 2.4vw, 28px);
+        box-shadow: var(--shadow-lg);
+        padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
+        text-align: center;
+      }
+      .pg-cta-card .msp-eyebrow { display: block; text-align: center; }
+      .pg-cta-card .msp-h2 { color: #fff; text-align: center; max-width: 22ch; margin-inline: auto; margin-bottom: 0; }
+      .pg-cta-card .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); text-align: center; }
+      .pg-cta-card .msp-cta-row { justify-content: center; margin-inline: auto; margin-top: clamp(28px,4vw,44px); }
+      .pg-cta-card .btn--outline {
+        border-color: rgba(255,255,255,.4) !important; color: #fff !important; background: transparent !important;
+        transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+      }
+      .pg-cta-card .btn--outline:hover {
+        background: #fff !important; border-color: #fff !important; color: #08111f !important;
+        box-shadow: 0 8px 24px rgba(255,255,255,0.12) !important;
+      }
+      @media (max-width: 768px) { .ip-auth-inner { grid-template-columns: 1fr; } }
+      @media (max-width: 640px) { .pg-feat-grid { grid-template-columns: 1fr; } }
+    </style>
+  <script src="mobile-nav.js" defer></script>
+  </head>
+  <body class="msp">
+
+    <!-- ============== NAV ============== -->
+    <header class="msp-nav" id="mspNav">
+      <div class="msp-wrap msp-nav__inner">
+        <a class="msp-brand" href="index.html" aria-label="USMLE Wise home">
+          <img
+            src="assets/usmle-design-system/assets/Logo Horizontal.svg"
+            alt="USMLE Wise"
+            height="36"
+          />
+        </a>
+        <nav class="msp-nav__links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="coaching.html">Coaching <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="coaching.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Coaching Overview</span>
+                <span class="msp-nav__dd-meta">Step 1, Step 2 CK &amp; Step 3</span>
+              </a>
+              <a href="coaching-step1-crash-course.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Crash Course</span>
+                <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
+              </a>
+              <a href="coaching-step1-mastery.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Mastery</span>
+                <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
+              </a>
+              <a href="coaching-step23-mastery.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">NBME Style Coaching</span>
+                <span class="msp-nav__dd-meta">NBME &middot; Step 1 &amp; Step 2</span>
+              </a>
+              <a href="coaching-tutoring.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">1:1 Tutoring</span>
+                <span class="msp-nav__dd-meta">Done-with-you</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="rotations.html">Rotations <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="rotations.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Rotations Overview</span>
+                <span class="msp-nav__dd-meta">Placements, LORs &amp; USCE</span>
+              </a>
+              <a href="clinical-rotations.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Clinical Rotations</span>
+                <span class="msp-nav__dd-meta">Browse all placements</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="research.html">Research <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="research.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Overview</span>
+                <span class="msp-nav__dd-meta">All programs &amp; services</span>
+              </a>
+              <a href="research-catalyst.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Catalyst</span>
+                <span class="msp-nav__dd-meta">Flagship &middot; 12-month program</span>
+              </a>
+              <a href="research-original.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Original Research</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+              <a href="research-review.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Review Paper &amp; Abstract</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+              <a href="research-masterclass.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Masterclass</span>
+                <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
+              </a>
+              <a href="research-junior-scientist.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Junior Scientist Program</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="match.html">Match <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="match.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Match Overview</span>
+                <span class="msp-nav__dd-meta">End-to-end residency support</span>
+              </a>
+              <a href="match-lor.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">LOR Editing</span>
+                <span class="msp-nav__dd-meta">Letters of Recommendation</span>
+              </a>
+              <a href="match-eras-cv.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">ERAS CV</span>
+                <span class="msp-nav__dd-meta">CV overhaul</span>
+              </a>
+              <a href="match-ps3x.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Personal Statement</span>
+                <span class="msp-nav__dd-meta">PS3X</span>
+              </a>
+              <a href="match-interview.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Interview Preparation</span>
+                <span class="msp-nav__dd-meta">Mock interviews &middot; Strategy</span>
+              </a>
+            </div>
+          </div>
+          <a href="testimonials.html">Stories</a>
+          <a href="qa.html">FAQ</a>
+        </nav>
+        <a
+          class="btn btn--primary msp-nav__cta"
+          href="https://team.manikmadaan.com/guidance-call/book"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Book a Guidance Call</a
+        >
+      </div>
+    </header>
+
+    <main>
+
+    <!-- HERO -->
+    <section class="msp-hero" aria-labelledby="heroTitle">
+      <div class="msp-wrap msp-hero__grid">
+        <div class="msp-hero__copy reveal">
+                    <h1 id="heroTitle" class="msp-h1">Your CV gets you in the door. Your interview skills make you&nbsp;stay.</h1>
+          <p class="msp-lede">Getting an interview invite is only half the battle. How you show up in that room — or on that screen — determines where you match. We prepare you to walk in confident, composed, and completely yourself.</p>
+          <div class="msp-cta-row">
+            <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
+            <a class="btn btn--outline btn--xl" href="match.html">Back to Match</a>
+          </div>
+        </div>
+      </div>
+      <div class="msp-bar msp-wrap" aria-label="Track record">
+        <div class="msp-bar__inner">
+          <div class="msp-stat reveal"><b data-count="300" data-suffix="+">300+</b><span>Graduates matched</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b data-count="10" data-suffix="+">10+</b><span>Specialties successfully matched</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b data-count="4.9" data-decimal="1">4.9</b><span>Average mentor rating</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b data-count="16" data-suffix="+">16+</b><span>Countries represented</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM FRAMING -->
+    <section class="msp-section pg-about" aria-labelledby="problemTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">The problem</span>
+          <h2 id="problemTitle" class="msp-h2">Paper credentials don't speak for themselves in the room.</h2>
+          <p class="msp-sub">Most IMG applicants arrive at interviews having spent months on their application — and almost no time on the interview itself. The gap between how strong your application looks and how confidently you perform live can cost you a rank. You need more than knowledge of your own CV; you need the ability to articulate your journey, handle curveball questions, and connect authentically with Program Directors under pressure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 SERVICE FEATURES -->
+    <section class="msp-section" aria-labelledby="featuresTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">What we offer</span>
+          <h2 id="featuresTitle" class="msp-h2">Everything you need to own the interview season.</h2>
+          <p class="msp-sub">Our interview preparation program is built around four pillars — each one targeting a specific gap we've seen hold back IMG applicants across five match cycles.</p>
+        </div>
+        <div class="pg-feat-grid">
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="video" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Specialty-specific mock interviews</p>
+            <p class="pg-feat__body">Simulated interviews tailored to your target specialty, run by mentors with firsthand knowledge of what programs in that field actually look for. You get feedback on content, delivery, body language, and pacing — not generic interview tips.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="users" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Peer buddy sessions</p>
+            <p class="pg-feat__body">Practice with peers who are also in the thick of interview season. These structured peer-to-peer sessions build the repetition and comfort you need to show up relaxed on the real day — because the more you rehearse, the less it feels like performing.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="database" width="20" height="20"></i></div>
+            <p class="pg-feat__title">1,200+ question bank</p>
+            <p class="pg-feat__body">Five match cycles of real interview questions, organized by specialty, question type, and difficulty. From classic openers like "Tell me about yourself" to deeply specialty-specific clinical scenarios — you'll have seen it before it ever comes up in a real interview.</p>
+          </div>
+          <div class="pg-feat reveal">
+            <div class="pg-feat__icon"><i data-lucide="compass" width="20" height="20"></i></div>
+            <p class="pg-feat__title">Behavioral &amp; communication strategy</p>
+            <p class="pg-feat__body">We teach you how to structure answers, navigate sensitive questions about your IMG background, and tell your story in a way that is memorable and honest. No rehearsed monologues. No cookie-cutter STAR frameworks that make every answer sound the same.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTHENTICITY SECTION -->
+    <section class="msp-section ip-auth" aria-labelledby="authTitle">
+      <div class="msp-wrap">
+        <div class="ip-auth-inner">
+          <div class="msp-head reveal" style="text-align: left;">
+            <span class="msp-eyebrow">Our philosophy</span>
+            <h2 id="authTitle" class="msp-h2" style="max-width: 18ch;">Authenticity, not templates.</h2>
+            <p class="msp-sub">The best interviews don't feel like performances. Program Directors are not looking for the most polished candidate — they're looking for someone they can work with, trust, and train. We help you show up as your most confident, genuine self, with the tools to handle anything the interview throws at you.</p>
+          </div>
+          <div class="ip-auth-badge reveal">
+            <div class="ip-auth-badge__item">
+              <div class="ip-auth-badge__icon"><i data-lucide="shield-check" width="16" height="16"></i></div>
+              <p class="ip-auth-badge__text">No generic scripts — every answer is crafted around your actual background and story.</p>
+            </div>
+            <div class="ip-auth-badge__item">
+              <div class="ip-auth-badge__icon"><i data-lucide="target" width="16" height="16"></i></div>
+              <p class="ip-auth-badge__text">Specialty-aware prep so you speak the language of the field you're entering.</p>
+            </div>
+            <div class="ip-auth-badge__item">
+              <div class="ip-auth-badge__icon"><i data-lucide="refresh-cw" width="16" height="16"></i></div>
+              <p class="ip-auth-badge__text">Iterative practice until your responses feel natural, not rehearsed.</p>
+            </div>
+            <div class="ip-auth-badge__item">
+              <div class="ip-auth-badge__icon"><i data-lucide="heart" width="16" height="16"></i></div>
+              <p class="ip-auth-badge__text">IMG-centered strategy that turns your international background into an asset, not a liability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="pg-cta-wrap">
+      <div class="msp-wrap">
+        <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
+          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
+          <h2 id="ctaTitle" class="msp-h2">Approach ranking season with absolute confidence.</h2>
+          <p class="msp-sub">Book a free guidance call and we'll map out exactly what your interview preparation should look like — based on your specialty, your timeline, and where you need the most work.</p>
+          <div class="msp-cta-row">
+            <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
+            <a class="btn btn--outline btn--xl" href="https://web.whatsapp.com/send?phone=&amp;text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="msp-foot">
+      <div class="msp-wrap">
+        <div class="msp-foot__top">
+          <div class="msp-foot__brand-col">
+            <a class="msp-brand" href="index.html" aria-label="USMLE Wise home">
+              <img
+                src="assets/usmle-design-system/assets/Logo Horizontal Dark.svg"
+                alt="USMLE Wise"
+                height="36"
+              />
+            </a>
+            <p>Guiding international medical graduates from USMLE to Match Day.</p>
+          </div>
+          <nav class="msp-foot__nav" aria-label="Footer navigation">
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Coaching</span>
+              <a href="coaching.html">Coaching Overview</a>
+              <a href="coaching-step1-crash-course.html">Step 1 Crash Course</a>
+              <a href="coaching-step1-mastery.html">Step 1 Mastery</a>
+              <a href="coaching-step23-mastery.html">NBME Style Coaching (Step 1 and Step 2)</a>
+              <a href="coaching-tutoring.html">1:1 Tutoring</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Research</span>
+              <a href="research.html">Research Overview</a>
+              <a href="research-catalyst.html">Research Catalyst</a>
+              <a href="research-original.html">Original Research</a>
+              <a href="research-review.html">Review Paper &amp; Abstract</a>
+              <a href="research-masterclass.html">Research Masterclass</a>
+              <a href="research-junior-scientist.html">Junior Scientist Program</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Match</span>
+              <a href="match.html">Match Overview</a>
+              <a href="match-lor.html">LOR Editing</a>
+              <a href="match-eras-cv.html">ERAS CV</a>
+              <a href="match-ps3x.html">Personal Statement</a>
+              <a href="match-interview.html">Interview Preparation</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Site</span>
+              <a href="index.html">Home</a>
+              <a href="rotations.html">Rotations</a>
+              <a href="testimonials.html">Stories</a>
+              <a href="qa.html">FAQ</a>
+              <a href="policy.html">Privacy Policy</a>
+            </div>
+          </nav>
+        </div>
+        <div class="msp-foot__bottom">
+          <div class="msp-foot__social">
+            <a href="https://www.instagram.com/usmle_wise/" class="msp-foot__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="instagram" width="18" height="18"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61579260924818" class="msp-foot__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="facebook" width="18" height="18"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/usmle-wise/" class="msp-foot__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="linkedin" width="18" height="18"></i>
+            </a>
+            <a href="mailto:hello@usmle-wise.com" class="msp-foot__social-link" aria-label="Email us">
+              <i data-lucide="mail" width="18" height="18"></i>
+            </a>
+            <a href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" class="msp-foot__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@usmle_wise" class="msp-foot__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.79a4.85 4.85 0 01-1.02-.1z"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@usmlewise" class="msp-foot__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="youtube" width="18" height="18"></i>
+            </a>
+          </div>
+          <small>&copy; 2026 USMLE Wise. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

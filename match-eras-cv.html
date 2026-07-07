@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ERAS CV &mdash; CV Overhaul | USMLE Wise</title>
+    <meta
+      name="description"
+      content="Complete ERAS CV overhaul for IMG residency applicants. Strengthen your application narrative and presentation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/usmle-design-system/assets/emblem.svg"
+    />
+    <link rel="stylesheet" href="assets/usmle-design-system/styles.css" />
+    <link rel="stylesheet" href="match.css" />
+    <script
+      src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+    <script src="match.js" defer></script>
+  <style>
+    /* ---- ERAS CV page ---- */
+    .ec-problem { background: var(--uw-surface-sunk); border-block: 1px solid var(--uw-border); }
+    .ec-problem__body { max-width: 72ch; }
+    .ec-problem__body p { font-size: clamp(16px, 1.4vw, 18px); color: var(--uw-ink-700); line-height: 1.75; margin: 0 0 var(--space-4); }
+    .ec-problem__body p:last-child { margin-bottom: 0; }
+
+    .ec-approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 3vw, 40px);
+      margin-top: clamp(44px, 5vw, 64px);
+    }
+    .ec-feat {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--uw-surface-sunk);
+      border: 1px solid var(--uw-border);
+      border-radius: var(--r-xl);
+      padding: clamp(24px, 3vw, 36px);
+    }
+    .ec-feat__icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--uw-blue-50); display: grid; place-items: center;
+      color: var(--uw-blue-600); flex-shrink: 0;
+    }
+    .ec-feat__title { font-size: 17px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
+    .ec-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.7; margin: 0; }
+
+    /* contained CTA card */
+    .ec-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
+    .ec-cta-card {
+      background: #08111f;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: clamp(20px, 2.4vw, 28px);
+      box-shadow: var(--shadow-lg);
+      padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
+      text-align: center;
+    }
+    .ec-cta-card .msp-eyebrow { display: block; text-align: center; }
+    .ec-cta-card .msp-h2 { color: #fff; text-align: center; max-width: 22ch; margin-inline: auto; margin-bottom: 0; }
+    .ec-cta-card .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); text-align: center; }
+    .ec-cta-card .msp-cta-row { justify-content: center; margin-inline: auto; margin-top: clamp(28px,4vw,44px); }
+    .ec-cta-card .btn--outline {
+      border-color: rgba(255,255,255,.4) !important; color: #fff !important; background: transparent !important;
+      transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .ec-cta-card .btn--outline:hover {
+      background: #fff !important; border-color: #fff !important; color: #08111f !important;
+      box-shadow: 0 8px 24px rgba(255,255,255,0.12) !important;
+    }
+
+    @media (max-width: 760px) {
+      .ec-approach-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script src="mobile-nav.js" defer></script>
+  </head>
+  <body class="msp">
+
+    <!-- ============== NAV ============== -->
+    <header class="msp-nav" id="mspNav">
+      <div class="msp-wrap msp-nav__inner">
+        <a class="msp-brand" href="index.html" aria-label="USMLE Wise home">
+          <img
+            src="assets/usmle-design-system/assets/Logo Horizontal.svg"
+            alt="USMLE Wise"
+            height="36"
+          />
+        </a>
+        <nav class="msp-nav__links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="coaching.html">Coaching <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="coaching.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Coaching Overview</span>
+                <span class="msp-nav__dd-meta">Step 1, Step 2 CK &amp; Step 3</span>
+              </a>
+              <a href="coaching-step1-crash-course.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Crash Course</span>
+                <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
+              </a>
+              <a href="coaching-step1-mastery.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Mastery</span>
+                <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
+              </a>
+              <a href="coaching-step23-mastery.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">NBME Style Coaching</span>
+                <span class="msp-nav__dd-meta">NBME &middot; Step 1 &amp; Step 2</span>
+              </a>
+              <a href="coaching-tutoring.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">1:1 Tutoring</span>
+                <span class="msp-nav__dd-meta">Done-with-you</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="rotations.html">Rotations <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="rotations.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Rotations Overview</span>
+                <span class="msp-nav__dd-meta">Placements, LORs &amp; USCE</span>
+              </a>
+              <a href="clinical-rotations.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Clinical Rotations</span>
+                <span class="msp-nav__dd-meta">Browse all placements</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="research.html">Research <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="research.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Overview</span>
+                <span class="msp-nav__dd-meta">All programs &amp; services</span>
+              </a>
+              <a href="research-catalyst.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Catalyst</span>
+                <span class="msp-nav__dd-meta">Flagship &middot; 12-month program</span>
+              </a>
+              <a href="research-original.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Original Research</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+              <a href="research-review.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Review Paper &amp; Abstract</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+              <a href="research-masterclass.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Masterclass</span>
+                <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
+              </a>
+              <a href="research-junior-scientist.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Junior Scientist Program</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="match.html">Match <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="match.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Match Overview</span>
+                <span class="msp-nav__dd-meta">End-to-end residency support</span>
+              </a>
+              <a href="match-lor.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">LOR Editing</span>
+                <span class="msp-nav__dd-meta">Letters of Recommendation</span>
+              </a>
+              <a href="match-eras-cv.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">ERAS CV</span>
+                <span class="msp-nav__dd-meta">CV overhaul</span>
+              </a>
+              <a href="match-ps3x.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Personal Statement</span>
+                <span class="msp-nav__dd-meta">PS3X</span>
+              </a>
+              <a href="match-interview.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Interview Preparation</span>
+                <span class="msp-nav__dd-meta">Mock interviews &middot; Strategy</span>
+              </a>
+            </div>
+          </div>
+          <a href="testimonials.html">Stories</a>
+          <a href="qa.html">FAQ</a>
+        </nav>
+        <a
+          class="btn btn--primary msp-nav__cta"
+          href="https://team.manikmadaan.com/guidance-call/book"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Book a Guidance Call</a
+        >
+      </div>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="msp-hero" aria-labelledby="heroTitle">
+        <div class="msp-wrap msp-hero__grid">
+          <div class="msp-hero__copy reveal">
+                        <h1 id="heroTitle" class="msp-h1">Your ERAS CV isn't a résumé. It's your case for belonging.</h1>
+            <p class="msp-lede">We look past the rigid bullet points to help you build a structured, high-impact narrative that proves you belong in your top-choice residency program.</p>
+            <div class="msp-cta-row">
+              <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
+              <a class="btn btn--outline btn--xl" href="match.html">Back to Match</a>
+            </div>
+          </div>
+        </div>
+        <div class="msp-bar msp-wrap" aria-label="Track record">
+          <div class="msp-bar__inner">
+            <div class="msp-stat reveal"><b data-count="300" data-suffix="+">300+</b><span>Graduates matched</span></div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal"><b data-count="10" data-suffix="+">10+</b><span>Specialties successfully matched</span></div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal"><b data-count="4.9" data-decimal="1">4.9</b><span>Average mentor rating</span></div>
+            <div class="msp-divider" aria-hidden="true"></div>
+            <div class="msp-stat reveal"><b data-count="16" data-suffix="+">16+</b><span>Countries represented</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM FRAMING -->
+      <section class="msp-section ec-problem" aria-labelledby="problemTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">The real problem</span>
+            <h2 id="problemTitle" class="msp-h2">The most crucial — and most misunderstood — document in your application.</h2>
+          </div>
+          <div class="ec-problem__body reveal">
+            <p>Many applicants treat the ERAS CV as a standard resume or a dry list of academic achievements. In reality, it is a comprehensive compilation of your entire professional journey. It shouldn't just state where you went and what you did — it must seamlessly connect your achievements to demonstrate the exact trajectory of who you are as a physician.</p>
+            <p>A poorly formatted or generic CV risks burying your greatest achievements beneath a wall of undifferentiated bullet points. Programme directors reviewing hundreds of applications will move on quickly. The window to make an impression is narrow, and most CVs waste it.</p>
+            <p>At USMLE Wise, we work with you to break down your experiences piece by piece, reconstruct them with precision, and present a professional profile that commands attention.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR APPROACH -->
+      <section class="msp-section" aria-labelledby="approachTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Our approach</span>
+            <h2 id="approachTitle" class="msp-h2">Every entry, rebuilt with strategic intent.</h2>
+            <p class="msp-sub">We don't hand you a template. We work through your CV with you, line by line, until every experience carries strategic weight.</p>
+          </div>
+          <div class="ec-approach-grid">
+            <div class="ec-feat reveal">
+              <div class="ec-feat__icon"><i data-lucide="user-check" width="22" height="22"></i></div>
+              <p class="ec-feat__title">1-on-1 dedicated mentorship</p>
+              <p class="ec-feat__body">You work one-on-one with an experienced mentor who understands the specific landscape of the residency match. Together you analyse your clinical, research, and volunteer experiences to ensure every entry carries strategic weight — no generic templates, no computerised checklists.</p>
+            </div>
+            <div class="ec-feat reveal">
+              <div class="ec-feat__icon"><i data-lucide="trending-up" width="22" height="22"></i></div>
+              <p class="ec-feat__title">Strategic impact — making achievements stand out</p>
+              <p class="ec-feat__body">Every rotation, research project, and volunteer experience has hidden depth. We don't just list your duties; we elevate them. By reframing passive tasks into high-impact accomplishments, we ensure your hard work looks distinctly impressive, highly relevant, and uniquely compelling to competitive programs.</p>
+            </div>
+            <div class="ec-feat reveal">
+              <div class="ec-feat__icon"><i data-lucide="edit-3" width="22" height="22"></i></div>
+              <p class="ec-feat__title">Meticulous, respectful revisions</p>
+              <p class="ec-feat__body">Your medical journey matters, and we treat it as such. Every update, edit, and revision is handled with the utmost respect and attention to detail. We do not rush the process or cut corners — we polish every line until it perfectly reflects your professional identity.</p>
+            </div>
+            <div class="ec-feat reveal">
+              <div class="ec-feat__icon"><i data-lucide="git-branch" width="22" height="22"></i></div>
+              <p class="ec-feat__title">A journey, not just a list</p>
+              <p class="ec-feat__body">Every description, hobby, and publication in your ERAS application should serve a purpose. We help you connect the dots of your career so far, turning isolated bullet points into a cohesive story of growth, resilience, and readiness for residency.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="ec-cta-wrap">
+        <div class="msp-wrap">
+          <div class="ec-cta-card reveal" aria-labelledby="ctaTitle">
+            <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
+            <h2 id="ctaTitle" class="msp-h2">Your CV should open doors, not close them.</h2>
+            <p class="msp-sub">Book a free guidance call and we'll walk through your current CV, identify what's holding it back, and map out exactly how the ERAS CV process works.</p>
+            <div class="msp-cta-row">
+              <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
+              <a class="btn btn--outline btn--xl" href="https://web.whatsapp.com/send?phone=&amp;text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="msp-foot">
+      <div class="msp-wrap">
+        <div class="msp-foot__top">
+          <div class="msp-foot__brand-col">
+            <a class="msp-brand" href="index.html" aria-label="USMLE Wise home">
+              <img
+                src="assets/usmle-design-system/assets/Logo Horizontal Dark.svg"
+                alt="USMLE Wise"
+                height="36"
+              />
+            </a>
+            <p>Guiding international medical graduates from USMLE to Match Day.</p>
+          </div>
+          <nav class="msp-foot__nav" aria-label="Footer navigation">
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Coaching</span>
+              <a href="coaching.html">Coaching Overview</a>
+              <a href="coaching-step1-crash-course.html">Step 1 Crash Course</a>
+              <a href="coaching-step1-mastery.html">Step 1 Mastery</a>
+              <a href="coaching-step23-mastery.html">NBME Style Coaching (Step 1 and Step 2)</a>
+              <a href="coaching-tutoring.html">1:1 Tutoring</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Research</span>
+              <a href="research.html">Research Overview</a>
+              <a href="research-catalyst.html">Research Catalyst</a>
+              <a href="research-original.html">Original Research</a>
+              <a href="research-review.html">Review Paper &amp; Abstract</a>
+              <a href="research-masterclass.html">Research Masterclass</a>
+              <a href="research-junior-scientist.html">Junior Scientist Program</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Match</span>
+              <a href="match.html">Match Overview</a>
+              <a href="match-lor.html">LOR Editing</a>
+              <a href="match-eras-cv.html">ERAS CV</a>
+              <a href="match-ps3x.html">Personal Statement</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Site</span>
+              <a href="index.html">Home</a>
+              <a href="rotations.html">Rotations</a>
+              <a href="testimonials.html">Stories</a>
+              <a href="qa.html">FAQ</a>
+              <a href="policy.html">Privacy Policy</a>
+            </div>
+          </nav>
+        </div>
+        <div class="msp-foot__bottom">
+          <div class="msp-foot__social">
+            <a href="https://www.instagram.com/usmle_wise/" class="msp-foot__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="instagram" width="18" height="18"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61579260924818" class="msp-foot__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="facebook" width="18" height="18"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/usmle-wise/" class="msp-foot__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="linkedin" width="18" height="18"></i>
+            </a>
+            <a href="mailto:hello@usmle-wise.com" class="msp-foot__social-link" aria-label="Email us">
+              <i data-lucide="mail" width="18" height="18"></i>
+            </a>
+            <a href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" class="msp-foot__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@usmle_wise" class="msp-foot__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.79a4.85 4.85 0 01-1.02-.1z"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@usmlewise" class="msp-foot__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="youtube" width="18" height="18"></i>
+            </a>
+          </div>
+          <small>&copy; 2026 USMLE Wise. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

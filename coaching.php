@@ -1,3 +1,154 @@
+<<<<<<< HEAD:coaching.html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>USMLE Exam Coaching | USMLE Wise</title>
+    <meta
+      name="description"
+      content="Live and recorded USMLE coaching for Step 1, Step 2 CK, and Step 3. Work one-on-one with mentors who scored 260-plus and know exactly what it takes to pass."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/usmle-design-system/assets/emblem.svg"
+    />
+    <link rel="stylesheet" href="assets/usmle-design-system/styles.css" />
+    <link rel="stylesheet" href="coaching.css" />
+    <script
+      src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+    <script src="coaching.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  </head>
+  <body class="msp">
+    <!-- ============== NAV ============== -->
+    <header class="msp-nav" id="mspNav">
+      <div class="msp-wrap msp-nav__inner">
+        <a class="msp-brand" href="index.html" aria-label="USMLE Wise home">
+          <img
+            src="assets/usmle-design-system/assets/Logo Horizontal.svg"
+            alt="USMLE Wise"
+            height="36"
+          />
+        </a>
+        <nav class="msp-nav__links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="coaching.html">Coaching <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="coaching.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Coaching Overview</span>
+                <span class="msp-nav__dd-meta">Step 1, Step 2 CK &amp; Step 3</span>
+              </a>
+              <a href="coaching-step1-crash-course.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Crash Course</span>
+                <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
+              </a>
+              <a href="coaching-step1-mastery.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Step 1 Mastery</span>
+                <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
+              </a>
+              <a href="coaching-step23-mastery.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">NBME Style Coaching</span>
+                <span class="msp-nav__dd-meta">NBME &middot; Step 1 &amp; Step 2</span>
+              </a>
+              <a href="coaching-tutoring.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">1:1 Tutoring</span>
+                <span class="msp-nav__dd-meta">Done-with-you</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="rotations.html">Rotations <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="rotations.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Rotations Overview</span>
+                <span class="msp-nav__dd-meta">Placements, LORs &amp; USCE</span>
+              </a>
+              <a href="clinical-rotations.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Clinical Rotations</span>
+                <span class="msp-nav__dd-meta">Browse all placements</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="research.html">Research <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="research.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Overview</span>
+                <span class="msp-nav__dd-meta">All programs &amp; services</span>
+              </a>
+              <a href="research-catalyst.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Catalyst</span>
+                <span class="msp-nav__dd-meta">Flagship &middot; 12-month program</span>
+              </a>
+              <a href="research-original.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Original Research</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+              <a href="research-review.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Review Paper &amp; Abstract</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+              <a href="research-masterclass.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Masterclass</span>
+                <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
+              </a>
+              <a href="research-junior-scientist.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Junior Scientist Program</span>
+                <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+              </a>
+            </div>
+          </div>
+          <div class="msp-nav__item msp-nav__item--has-dd">
+            <a href="match.html">Match <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+            <div class="msp-nav__dropdown">
+              <a href="match.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Match Overview</span>
+                <span class="msp-nav__dd-meta">End-to-end residency support</span>
+              </a>
+              <a href="match-lor.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">LOR Editing</span>
+                <span class="msp-nav__dd-meta">Letters of Recommendation</span>
+              </a>
+              <a href="match-eras-cv.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">ERAS CV</span>
+                <span class="msp-nav__dd-meta">CV overhaul</span>
+              </a>
+              <a href="match-ps3x.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Personal Statement</span>
+                <span class="msp-nav__dd-meta">PS3X</span>
+              </a>
+              <a href="match-interview.html" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Interview Preparation</span>
+                <span class="msp-nav__dd-meta">Mock interviews &middot; Strategy</span>
+              </a>
+            </div>
+          </div>
+          <a href="testimonials.html">Stories</a>
+          <a href="qa.html">FAQ</a>
+        </nav>
+        <a
+          class="btn btn--primary msp-nav__cta"
+          href="https://team.manikmadaan.com/guidance-call/book"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Book a Guidance Call</a
+        >
+      </div>
+    </header>
+
+    <main>
+=======
 <?php
 $pageTitle = "USMLE Exam Coaching | USMLE Wise";
 $pageDescription = "Live and recorded USMLE coaching for Step 1, Step 2 CK, and Step 3. Work one-on-one with mentors who scored 260-plus and know exactly what it takes to pass.";
@@ -12,6 +163,7 @@ $scripts = [
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
 <main>
+>>>>>>> 0c391f96dffe430725f4460a529a71d52a426537:coaching/index.php
       <!-- ============== 1. HERO ============== -->
       <section class="msp-hero" aria-labelledby="heroTitle">
         <div class="msp-wrap msp-hero__grid">
@@ -1281,5 +1433,117 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </main>
 
     <!-- ============== FOOTER ============== -->
+<<<<<<< HEAD:coaching.html
+    <footer class="msp-foot">
+      <div class="msp-wrap">
+        <div class="msp-foot__top">
+          <div class="msp-foot__brand-col">
+            <a class="msp-brand" href="index.html" aria-label="USMLE Wise home">
+              <img
+                src="assets/usmle-design-system/assets/Logo Horizontal Dark.svg"
+                alt="USMLE Wise"
+                height="36"
+              />
+            </a>
+            <p>Guiding international medical graduates from USMLE to Match Day.</p>
+          </div>
+          <nav class="msp-foot__nav" aria-label="Footer navigation">
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Coaching</span>
+              <a href="coaching.html">Coaching Overview</a>
+              <a href="coaching-step1-crash-course.html">Step 1 Crash Course</a>
+              <a href="coaching-step1-mastery.html">Step 1 Mastery</a>
+              <a href="coaching-step23-mastery.html">NBME Style Coaching (Step 1 and Step 2)</a>
+              <a href="coaching-tutoring.html">1:1 Tutoring</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Research</span>
+              <a href="research.html">Research Overview</a>
+              <a href="research-catalyst.html">Research Catalyst</a>
+              <a href="research-original.html">Original Research</a>
+              <a href="research-review.html">Review Paper &amp; Abstract</a>
+              <a href="research-masterclass.html">Research Masterclass</a>
+              <a href="research-junior-scientist.html">Junior Scientist Program</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Match</span>
+              <a href="match.html">Match Overview</a>
+              <a href="match-lor.html">LOR Editing</a>
+              <a href="match-eras-cv.html">ERAS CV</a>
+              <a href="match-ps3x.html">Personal Statement</a>
+            </div>
+            <div class="msp-foot__nav-group">
+              <span class="msp-foot__nav-label">Site</span>
+              <a href="index.html">Home</a>
+              <a href="rotations.html">Rotations</a>
+              <a href="testimonials.html">Stories</a>
+              <a href="qa.html">FAQ</a>
+            </div>
+          </nav>
+        </div>
+        <div class="msp-foot__bottom">
+          <div class="msp-foot__social">
+            <a
+              href="https://www.instagram.com/usmle_wise/"
+              class="msp-foot__social-link"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i data-lucide="instagram" width="18" height="18"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61579260924818"
+              class="msp-foot__social-link"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i data-lucide="facebook" width="18" height="18"></i>
+            </a>
+            <a
+              href="#"
+              class="msp-foot__social-link"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i data-lucide="linkedin" width="18" height="18"></i>
+            </a>
+            <a
+              href="mailto:hello@usmle-wise.com"
+              class="msp-foot__social-link"
+              aria-label="Email us"
+            >
+              <i data-lucide="mail" width="18" height="18"></i>
+            </a>
+            <a
+              href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20for%20USMLEWise"
+              class="msp-foot__social-link"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@usmle_wise" class="msp-foot__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.79a4.85 4.85 0 01-1.02-.1z"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@usmlewise" class="msp-foot__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="youtube" width="18" height="18"></i>
+            </a>
+          </div>
+          <small>&copy; 2026 USMLE Wise. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+=======
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>
+>>>>>>> 0c391f96dffe430725f4460a529a71d52a426537:coaching/index.php
