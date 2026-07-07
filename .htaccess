@@ -1,0 +1,41 @@
+RewriteEngine On
+Options -MultiViews
+DirectoryIndex index.php
+
+# --- 1. 301 redirects: legacy .html URLs -> new clean URLs (preserve SEO) ---
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^coaching\.html$ /coaching [R=301,L]
+RewriteRule ^coaching-step1-crash-course\.html$ /coaching/step-1-crash-course [R=301,L]
+RewriteRule ^coaching-step1-mastery\.html$ /coaching/step-1-mastery [R=301,L]
+RewriteRule ^coaching-step1-review\.html$ /coaching/step-1-review [R=301,L]
+RewriteRule ^coaching-step23-mastery\.html$ /coaching/nbme-style-coaching [R=301,L]
+RewriteRule ^coaching-tutoring\.html$ /coaching/tutoring [R=301,L]
+RewriteRule ^match\.html$ /match [R=301,L]
+RewriteRule ^match-lor\.html$ /match/lor-editing [R=301,L]
+RewriteRule ^match-eras-cv\.html$ /match/eras-cv [R=301,L]
+RewriteRule ^match-ps3x\.html$ /match/personal-statement [R=301,L]
+RewriteRule ^match-interview\.html$ /match/interview-prep [R=301,L]
+RewriteRule ^research\.html$ /research [R=301,L]
+RewriteRule ^research-catalyst\.html$ /research/catalyst [R=301,L]
+RewriteRule ^research-original\.html$ /research/original-research [R=301,L]
+RewriteRule ^research-review\.html$ /research/review-paper [R=301,L]
+RewriteRule ^research-masterclass\.html$ /research/masterclass [R=301,L]
+RewriteRule ^research-junior-scientist\.html$ /research/junior-scientist [R=301,L]
+RewriteRule ^rotations\.html$ /rotations [R=301,L]
+RewriteRule ^clinical-rotations\.html$ /rotations/browse [R=301,L]
+RewriteRule ^rotation-(.+)\.html$ /rotations/$1 [R=301,L]
+RewriteRule ^testimonials\.html$ /testimonials [R=301,L]
+RewriteRule ^qa\.html$ /faq [R=301,L]
+RewriteRule ^policy\.html$ /privacy-policy [R=301,L]
+RewriteRule ^case-study-ahmed\.html$ /case-studies/ahmed [R=301,L]
+
+# --- 2. Serve extensionless URLs from matching .php file ---
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+# --- 3. If someone requests the raw .php, 301 to the clean URL ---
+RewriteCond %{THE_REQUEST} \s/(.+?)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+ErrorDocument 404 /404.php
