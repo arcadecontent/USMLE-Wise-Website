@@ -99,6 +99,7 @@
         </div>
       </div>
       <a href="/testimonials">Stories</a>
+      <a href="/blog">Blog</a>
       <a href="/qa">FAQ</a>
     </nav>
     <a class="btn btn--primary msp-nav__cta" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>

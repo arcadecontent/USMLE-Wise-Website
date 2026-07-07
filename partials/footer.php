@@ -40,6 +40,7 @@
           <a href="/">Home</a>
           <a href="/rotations">Rotations</a>
           <a href="/testimonials">Stories</a>
+          <a href="/blog">Blog</a>
           <a href="/qa">FAQ</a>
           <a href="/policy">Privacy Policy</a>
         </div>
