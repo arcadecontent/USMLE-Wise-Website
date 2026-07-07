@@ -36,12 +36,15 @@ jobs:
             fi
             echo "Verified index.php exists at $INDEX"
             # Purge CloudPanel Varnish cache so the new release is served
-            # immediately (default lifetime is 7 days). Best effort: try the
-            # CLI first, then a direct PURGE with the site cache tag.
+            # immediately (default lifetime is 7 days). Try every mechanism;
+            # each is best-effort and logged.
             if command -v clpctl >/dev/null 2>&1; then
-              clpctl varnish-cache:purge && echo "Varnish cache purged via clpctl" || echo "WARN: clpctl purge failed"
+              clpctl varnish-cache:purge --purge=all \
+                && echo "Varnish purged via clpctl" || echo "WARN: clpctl purge failed"
             else
-              curl -s -o /dev/null -X PURGE -H 'X-Cache-Tags: f2eb' 127.0.0.1:6081 \
-                && echo "Varnish cache purged via PURGE request" \
-                || echo "WARN: Varnish purge request failed"
+              echo "clpctl not available"
             fi
+            curl -s -o /dev/null -w "PURGE by tag -> HTTP %{http_code}\n" \
+              -X PURGE -H 'X-Cache-Tags: f2eb' http://127.0.0.1:6081 || true
+            curl -s -o /dev/null -w "PURGE by host -> HTTP %{http_code}\n" \
+              -X PURGE -H 'Host: usmlewise.com' http://127.0.0.1:6081 || true
