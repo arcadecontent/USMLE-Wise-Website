@@ -4,12 +4,12 @@ $pageDescription = "From USMLE prep to ERAS applications and interview coaching,
 $canonical = "https://usmlewise.com/";
 $bodyClass = "lpx";
 $stylesheets = [
-    "/assets/css/landing.css",
-    "/assets/css/match.css"
+    "/styles/landing.css",
+    "/styles/match.css"
 ];
 $scripts = [
-    "/assets/js/landing.js",
-    "/assets/js/match.js"
+    "/js/landing.js",
+    "/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -47,7 +47,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <div class="msp-hero__frame-wrap">
         <div class="msp-hero__frame reveal">
           <img
-            src="/assets/photos/fotos-ccdmi3dfnio-unsplash.jpg"
+            src="/assets/Photos/fotos-CCDMI3dfnIo-unsplash.jpg"
             alt="IMG physician preparing for U.S. residency"
           />
         </div>
@@ -476,20 +476,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h2 id="shotsTitle" class="msp-h2">What students send us on Match Day</h2>
       </div>
       <div class="msp-shots__grid">
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/anjali.jpeg" alt="Match Day message from Anjali" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/ayra.jpeg" alt="Match Day message from Ayra" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/bardia.jpeg" alt="Match Day message from Bardia" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/hamna.jpeg" alt="Match Day message from Hamna" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/nancy.jpeg" alt="Match Day message from Nancy" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/okkes.jpeg" alt="Match Day message from Okkes" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/praneet.jpeg" alt="Match Day message from Praneet" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/rasmitha.jpeg" alt="Match Day message from Rasmitha" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/ravindra.jpeg" alt="Match Day message from Ravindra" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/shiv.jpeg" alt="Match Day message from Shiv" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/sidnath.jpeg" alt="Match Day message from SidNath" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/sinmmer.jpeg" alt="Match Day message from Sinmmer" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/swathi.jpeg" alt="Match Day message from Swathi" loading="lazy" /></div>
-        <div class="msp-shot-card reveal"><img src="/assets/testimonials/photos/match/babitha.jpeg" alt="Match Day message from Babitha" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Anjali.jpeg" alt="Match Day message from Anjali" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Ayra.jpeg" alt="Match Day message from Ayra" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Bardia.jpeg" alt="Match Day message from Bardia" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Hamna.jpeg" alt="Match Day message from Hamna" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Nancy.jpeg" alt="Match Day message from Nancy" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Okkes.jpeg" alt="Match Day message from Okkes" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Praneet.jpeg" alt="Match Day message from Praneet" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Rasmitha.jpeg" alt="Match Day message from Rasmitha" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Ravindra.jpeg" alt="Match Day message from Ravindra" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Shiv.jpeg" alt="Match Day message from Shiv" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/SidNath.jpeg" alt="Match Day message from SidNath" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Sinmmer.jpeg" alt="Match Day message from Sinmmer" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/Swathi.jpeg" alt="Match Day message from Swathi" loading="lazy" /></div>
+        <div class="msp-shot-card reveal"><img src="/assets/Testimonials/Photos/Match/babitha.jpeg" alt="Match Day message from Babitha" loading="lazy" /></div>
       </div>
     </div>
   </section>

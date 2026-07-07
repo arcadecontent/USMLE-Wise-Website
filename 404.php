@@ -13,7 +13,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <p class="msp-lede" style="margin-inline: auto;">The page you requested does not exist or may have moved.</p>
     <div class="msp-cta-row" style="justify-content: center; margin-inline: auto;">
       <a class="btn btn--primary" href="/">Back to Home</a>
-      <a class="btn btn--outline" href="/faq">FAQ</a>
+      <a class="btn btn--outline" href="/qa">FAQ</a>
     </div>
   </div>
 </section>

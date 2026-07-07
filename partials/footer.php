@@ -5,7 +5,7 @@
     <div class="msp-foot__top">
       <div class="msp-foot__brand-col">
         <a class="msp-brand" href="/" aria-label="USMLE Wise home">
-          <img src="/assets/usmle-design-system/assets/logo-horizontal-dark.svg" alt="USMLE Wise" height="36" />
+          <img src="/assets/usmle-design-system/assets/Logo-Horizontal-Dark.svg" alt="USMLE Wise" height="36" />
         </a>
         <p>Guiding international medical graduates from USMLE to Match Day.</p>
       </div>
@@ -13,35 +13,35 @@
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Coaching</span>
           <a href="/coaching">Coaching Overview</a>
-          <a href="/coaching/step-1-crash-course">Step 1 Crash Course</a>
-          <a href="/coaching/step-1-mastery">Step 1 Mastery</a>
-          <a href="/coaching/nbme-style-coaching">NBME Style Coaching (Step 1 and Step 2)</a>
-          <a href="/coaching/tutoring">1:1 Tutoring</a>
+          <a href="/coaching-step1-crash-course">Step 1 Crash Course</a>
+          <a href="/coaching-step1-mastery">Step 1 Mastery</a>
+          <a href="/coaching-step23-mastery">NBME Style Coaching (Step 1 and Step 2)</a>
+          <a href="/coaching-tutoring">1:1 Tutoring</a>
         </div>
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Research</span>
           <a href="/research">Research Overview</a>
-          <a href="/research/catalyst">Research Catalyst</a>
-          <a href="/research/original-research">Original Research</a>
-          <a href="/research/review-paper">Review Paper &amp; Abstract</a>
-          <a href="/research/masterclass">Research Masterclass</a>
-          <a href="/research/junior-scientist">Junior Scientist Program</a>
+          <a href="/research-catalyst">Research Catalyst</a>
+          <a href="/research-original">Original Research</a>
+          <a href="/research-review">Review Paper &amp; Abstract</a>
+          <a href="/research-masterclass">Research Masterclass</a>
+          <a href="/research-junior-scientist">Junior Scientist Program</a>
         </div>
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Match</span>
           <a href="/match">Match Overview</a>
-          <a href="/match/lor-editing">LOR Editing</a>
-          <a href="/match/eras-cv">ERAS CV</a>
-          <a href="/match/personal-statement">Personal Statement</a>
-          <a href="/match/interview-prep">Interview Preparation</a>
+          <a href="/match-lor">LOR Editing</a>
+          <a href="/match-eras-cv">ERAS CV</a>
+          <a href="/match-ps3x">Personal Statement</a>
+          <a href="/match-interview">Interview Preparation</a>
         </div>
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Site</span>
           <a href="/">Home</a>
           <a href="/rotations">Rotations</a>
           <a href="/testimonials">Stories</a>
-          <a href="/faq">FAQ</a>
-          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/qa">FAQ</a>
+          <a href="/policy">Privacy Policy</a>
         </div>
       </nav>
     </div>

@@ -18,7 +18,7 @@ if (is_dir($path) && is_file($path . '/index.php')) {
     return true;
 }
 
-// Extensionless .php mapping: /coaching/step-1-crash-course -> coaching/step-1-crash-course.php
+// Extensionless .php mapping: /coaching-step1-crash-course -> coaching/step-1-crash-course.php
 $phpPath = $root . $uri . '.php';
 if (is_file($phpPath)) {
     require $phpPath;
