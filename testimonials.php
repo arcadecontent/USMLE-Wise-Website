@@ -362,49 +362,49 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(5).png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.39.28\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.28-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.39.59\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.59-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.40.14\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.14-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.40.20\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.20-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.40.25\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.25-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.40.36\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.36-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.40.47\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.47-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.41.02\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.02-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.41.13\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.13-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.41.25\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.25-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.41.37\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.37-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-02-20 at 11.41.47\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.47-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-03-09 at 12.49.26\342\200\257AM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-03-09-at-12.49.26-AM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-05-11 at 6.35.12\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-11-at-6.35.12-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
-              <img src="/"assets/Testimonials/Photos/Coaching/Screenshot 2026-05-13 at 10.30.35\342\200\257PM.png"" alt="Coaching testimonial" loading="lazy" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-13-at-10.30.35-PM.png" alt="Coaching testimonial" loading="lazy" />
             </div>
             <div class="tsm-screenshot reveal">
               <img src="/assets/Testimonials/Photos/Coaching/Screenshot-Apr-14-2026-from-WhatsApp.jpg" alt="Coaching testimonial" loading="lazy" />
