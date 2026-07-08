@@ -622,7 +622,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
 
         <div class="msp-bar msp-wrap" aria-label="Track record">
-          <div class="js-stats">
+          <div class="msp-bar__inner">
             <div class="msp-stat reveal">
               <b data-count="32" data-suffix="+">32+</b>
               <span>Weekly sessions run</span>

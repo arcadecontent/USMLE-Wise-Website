@@ -112,32 +112,32 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </p>
       </div>
       <ol class="lpx-pain-grid reveal">
-        <li class="lpx-pain-card" data-bg="url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp')">
+        <li class="lpx-pain-card" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp')">
           <div class="lpx-pain-card__inner">
             <p class="lpx-pain-card__txt">Unsure how to build a strong residency application</p>
           </div>
         </li>
-        <li class="lpx-pain-card" data-bg="url('assets/Photos/calendar.webp')">
+        <li class="lpx-pain-card" style="background-image: url('assets/Photos/calendar.webp')">
           <div class="lpx-pain-card__inner">
             <p class="lpx-pain-card__txt">Confused about ERAS timelines and requirements</p>
           </div>
         </li>
-        <li class="lpx-pain-card" data-bg="url('assets/Photos/frustrated.webp')">
+        <li class="lpx-pain-card" style="background-image: url('assets/Photos/frustrated.webp')">
           <div class="lpx-pain-card__inner">
             <p class="lpx-pain-card__txt">Struggling to improve USMLE scores</p>
           </div>
         </li>
-        <li class="lpx-pain-card" data-bg="url('assets/Photos/mentorship.webp')">
+        <li class="lpx-pain-card" style="background-image: url('assets/Photos/mentorship.webp')">
           <div class="lpx-pain-card__inner">
             <p class="lpx-pain-card__txt">No mentorship or accountability</p>
           </div>
         </li>
-        <li class="lpx-pain-card" data-bg="url('assets/Photos/money.webp')">
+        <li class="lpx-pain-card" style="background-image: url('assets/Photos/money.webp')">
           <div class="lpx-pain-card__inner">
             <p class="lpx-pain-card__txt">Wasting money on the wrong resources</p>
           </div>
         </li>
-        <li class="lpx-pain-card" data-bg="url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')">
+        <li class="lpx-pain-card" style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')">
           <div class="lpx-pain-card__inner">
             <p class="lpx-pain-card__txt">Fear of not matching after years of effort</p>
           </div>
@@ -214,7 +214,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <section class="lpx-svc-a" aria-label="Services">
     <div class="lpx-wrap">
     <article class="lpx-sva-row reveal">
-      <div class="lpx-sva-img" data-bg="url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')"></div>
+      <div class="lpx-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')"></div>
       <div class="lpx-sva-body">
         <span class="lpx-sva-eyebrow">01 &middot; Exam Prep</span>
         <h3 class="lpx-sva-title">USMLE Exam Preparation</h3>
@@ -226,7 +226,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </article>
     <article class="lpx-sva-row lpx-sva-row--flip reveal">
-      <div class="lpx-sva-img" data-bg="url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')"></div>
+      <div class="lpx-sva-img" style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')"></div>
       <div class="lpx-sva-body">
         <span class="lpx-sva-eyebrow">02 &middot; Residency Match</span>
         <h3 class="lpx-sva-title">Residency Match Mentorship</h3>
@@ -239,7 +239,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </article>
 
     <article class="lpx-sva-row reveal">
-      <div class="lpx-sva-img" data-bg="url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp')"></div>
+      <div class="lpx-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp')"></div>
       <div class="lpx-sva-body">
         <span class="lpx-sva-eyebrow">05 &middot; Clinical</span>
         <h3 class="lpx-sva-title">Clinical Rotations</h3>
@@ -251,7 +251,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </article>
     <article class="lpx-sva-row lpx-sva-row--flip reveal">
-      <div class="lpx-sva-img" data-bg="url('assets/Photos/researcher-in-lab-computer.webp')"></div>
+      <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp')"></div>
       <div class="lpx-sva-body">
         <span class="lpx-sva-eyebrow">06 &middot; Research</span>
         <h3 class="lpx-sva-title">Research Guidance</h3>
@@ -284,7 +284,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </div>
         </article>
 
-        <article class="lpx-svb-card reveal" data-bg="url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')">
+        <article class="lpx-svb-card reveal" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')">
           <div class="lpx-svb-card__inner">
             <span class="lpx-svb-eyebrow">01 &middot; Exam Prep</span>
             <h3 class="lpx-svb-title">USMLE Exam Preparation</h3>

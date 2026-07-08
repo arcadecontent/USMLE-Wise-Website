@@ -144,7 +144,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article
               class="msp-bento__card msp-bento__card--hero"
-              data-bg="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp');"
+              style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp');"
             >
               <div class="msp-bento__inner">
                 <span class="msp-bento__format">Live &middot; 12-month program</span>
@@ -159,7 +159,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
-            <article class="msp-bento__card" data-bg="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp');">
+            <article class="msp-bento__card" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp');">
               <div class="msp-bento__inner">
                 <span class="msp-bento__format">Live</span>
                 <h3 class="msp-bento__name">Original Research</h3>
@@ -169,7 +169,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
-            <article class="msp-bento__card" data-bg="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp');">
+            <article class="msp-bento__card" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp');">
               <div class="msp-bento__inner">
                 <span class="msp-bento__format">Live</span>
                 <h3 class="msp-bento__name">Review Paper / Abstract</h3>
@@ -179,7 +179,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
-            <article class="msp-bento__card" data-bg="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');">
+            <article class="msp-bento__card" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');">
               <div class="msp-bento__inner">
                 <span class="msp-bento__format">Recorded &middot; Self-paced</span>
                 <h3 class="msp-bento__name">Research Masterclass</h3>
@@ -240,7 +240,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-sva-list">
 
             <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" data-bg="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">01 &middot; Live &middot; 12-month program</span>
                 <h3 class="msp-sva-title">Research Catalyst</h3>
@@ -254,7 +254,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" data-bg="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">02 &middot; Live</span>
                 <h3 class="msp-sva-title">Original Research</h3>
@@ -268,7 +268,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" data-bg="background-image: url('assets/Photos/pexels-tara-winstead-7722791.webp');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/pexels-tara-winstead-7722791.webp');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">03 &middot; Live</span>
                 <h3 class="msp-sva-title">Review Paper / Abstract</h3>
@@ -282,7 +282,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" data-bg="background-image: url('assets/Photos/researcher-in-lab-computer.webp'); background-position: right center;"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp'); background-position: right center;"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">04 &middot; Recorded &middot; Self-paced</span>
                 <h3 class="msp-sva-title">Research Masterclass</h3>

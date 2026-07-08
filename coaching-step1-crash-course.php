@@ -729,7 +729,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
 
         <div class="msp-bar msp-wrap" aria-label="Track record">
-          <div class="cc-stats">
+          <div class="msp-bar__inner">
             <div class="msp-stat reveal">
               <b data-count="99.3" data-suffix="%" data-decimal="1">99.3%</b>
               <span>Pass rate</span>

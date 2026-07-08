@@ -103,7 +103,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-sva-list">
 
             <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" data-bg="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">01 &middot; Recorded</span>
                 <h3 class="msp-sva-title">Crash Course</h3>
@@ -117,7 +117,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" data-bg="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">02 &middot; Live</span>
                 <h3 class="msp-sva-title">Mastery with First Aid</h3>
@@ -131,7 +131,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" data-bg="background-image: url('assets/Photos/kaitlyn-baker-vZJdYl5JVXY-unsplash.webp');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/kaitlyn-baker-vZJdYl5JVXY-unsplash.webp');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">03 &middot; Live</span>
                 <h3 class="msp-sva-title">NBME Live Coaching</h3>
