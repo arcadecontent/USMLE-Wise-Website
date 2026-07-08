@@ -997,7 +997,7 @@
   background: rgba(255,255,255,.08);
 }
 .msp-foot__top {
-  display: flex;
+  display: flex; flex-wrap: wrap;
   justify-content: space-between;
   gap: clamp(32px, 5vw, 64px);
   padding-bottom: clamp(28px, 4vw, 40px);
@@ -1011,7 +1011,7 @@
   max-width: 300px;
 }
 .msp-foot__nav {
-  display: flex;
+  display: flex; flex-wrap: wrap;
   gap: clamp(32px, 4vw, 56px);
   flex-shrink: 0;
 }
