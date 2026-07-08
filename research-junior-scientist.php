@@ -606,9 +606,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
           <div class="msp-hero__frame-wrap">
             <div class="msp-hero__frame reveal">
-              <img
-                src="/assets/Photos/high-school-student.jpg"
-                alt="High school student doing research" loading="lazy" decoding="async" />
+              <picture>
+                <source srcset="/assets/Photos/high-school-student.webp" type="image/webp">
+                <img src="/assets/Photos/high-school-student.jpg" alt="High school student doing research" loading="lazy" decoding="async" />
+              </picture>
             </div>
             <div class="msp-float-note" aria-hidden="true">
               <span class="msp-float-note__num">95<small>%</small></span>

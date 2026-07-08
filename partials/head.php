@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 <?php if (!empty($preloadImage)): ?>
-<link rel="preload" as="image" href="<?php echo $preloadImage; ?>" fetchpriority="high" />
+<link rel="preload" as="image" href="<?php echo $preloadImage; ?>" type="image/webp" fetchpriority="high" />
 <?php endif; ?>
 <link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
 <link rel="stylesheet" href="/assets/usmle-design-system/styles.css" />

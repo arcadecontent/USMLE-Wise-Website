@@ -45,9 +45,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
           <div class="msp-hero__frame-wrap">
             <div class="msp-hero__frame reveal">
-              <img
-                src="/assets/Photos/fotos-CCDMI3dfnIo-unsplash.jpg"
-                alt="IMG physicians celebrating Match Day" fetchpriority="high" decoding="async" />
+              <picture>
+                <source srcset="/assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp" type="image/webp">
+                <img src="/assets/Photos/fotos-CCDMI3dfnIo-unsplash.jpg" alt="IMG physicians celebrating Match Day" fetchpriority="high" decoding="async" />
+              </picture>
             </div>
             <div class="msp-float-note" aria-hidden="true">
               <span class="msp-float-note__num">300<small>+</small></span>

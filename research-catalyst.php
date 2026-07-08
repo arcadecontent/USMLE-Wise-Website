@@ -145,7 +145,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="rc-learn reveal">
             <span class="rc-sec-label">What You Learn</span>
             <div class="rc-learn-cards">
-              <div class="rc-learn-card" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg')">
+              <div class="rc-learn-card" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')">
                 <div class="rc-learn-card__body">
                   <div class="rc-learn-card__icon"><i data-lucide="flask-conical" width="18" height="18"></i></div>
                   <h3 class="rc-learn-card__head">Research Fundamentals</h3>
@@ -157,7 +157,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   </ul>
                 </div>
               </div>
-              <div class="rc-learn-card" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.jpg')">
+              <div class="rc-learn-card" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp')">
                 <div class="rc-learn-card__body">
                   <div class="rc-learn-card__icon"><i data-lucide="pen-line" width="18" height="18"></i></div>
                   <h3 class="rc-learn-card__head">Scientific Writing</h3>
@@ -168,7 +168,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   </ul>
                 </div>
               </div>
-              <div class="rc-learn-card" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.jpg')">
+              <div class="rc-learn-card" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp')">
                 <div class="rc-learn-card__body">
                   <div class="rc-learn-card__icon"><i data-lucide="send" width="18" height="18"></i></div>
                   <h3 class="rc-learn-card__head">Publication Process</h3>

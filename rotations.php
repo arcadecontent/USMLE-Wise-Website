@@ -47,9 +47,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
           <div class="msp-hero__frame-wrap">
             <div class="msp-hero__frame reveal">
-              <img
-                src="/assets/Photos/team-young-specialist-doctors-vertical-crop.jpg"
-                alt="IMG physician gaining U.S. clinical experience during a rotation" fetchpriority="high" decoding="async" />
+              <picture>
+                <source srcset="/assets/Photos/team-young-specialist-doctors-vertical-crop.webp" type="image/webp">
+                <img src="/assets/Photos/team-young-specialist-doctors-vertical-crop.jpg" alt="IMG physician gaining U.S. clinical experience during a rotation" fetchpriority="high" decoding="async" />
+              </picture>
             </div>
             <div class="msp-float-note" aria-hidden="true">
               <span class="msp-float-note__num">88<small>%</small></span>

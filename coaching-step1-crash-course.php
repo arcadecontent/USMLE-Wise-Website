@@ -1229,7 +1229,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <h2 id="whyBTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
             </div>
             <div class="msp-why-b__img reveal">
-              <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" loading="lazy" decoding="async" />
+              <picture>
+                <source srcset="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp" type="image/webp">
+                <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </div>
           <div class="msp-why-b__cols">
@@ -1263,7 +1266,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <h2 id="whyCTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
           </div>
           <div class="msp-why-c__img reveal">
-            <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" loading="lazy" decoding="async" />
+            <picture>
+              <source srcset="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp" type="image/webp">
+              <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" loading="lazy" decoding="async" />
+            </picture>
           </div>
           <div class="msp-why-c__cols">
             <div class="msp-wib reveal">
