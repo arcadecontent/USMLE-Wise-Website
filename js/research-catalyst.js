@@ -102,6 +102,23 @@
       counters.forEach(function (el) { co.observe(el); });
     }());
 
+    /* ---- Lazy-load background images (data-bg) ---- */
+    var bgEls = Array.prototype.slice.call(document.querySelectorAll('[data-bg]'));
+    if (bgEls.length) {
+      if ('IntersectionObserver' in window) {
+        var bgIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.style.backgroundImage = entry.target.getAttribute('data-bg');
+            bgIo.unobserve(entry.target);
+          });
+        }, { rootMargin: '200px 0px' });
+        bgEls.forEach(function (el) { bgIo.observe(el); });
+      } else {
+        bgEls.forEach(function (el) { el.style.backgroundImage = el.getAttribute('data-bg'); });
+      }
+    }
+
     /* ---- Anchor scroll with sticky-nav offset ---- */
     var navH = 72;
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
