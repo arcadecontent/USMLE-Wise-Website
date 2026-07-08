@@ -867,7 +867,7 @@
   .msp-slide { grid-template-columns: 1fr; }
 }
 
-/* ---------- 8b · SCREENSHOT TESTIMONIALS ---------- */
+/* ---------- 8b · SCREENSHOT TESTIMONIALS GRID ---------- */
 .msp-shots__grid {
   column-count: 4;
   column-gap: clamp(12px, 1.5vw, 20px);
@@ -887,6 +887,90 @@
 @media (max-width: 960px) { .msp-shots__grid { column-count: 3; } }
 @media (max-width: 640px) { .msp-shots__grid { column-count: 2; } }
 @media (max-width: 380px) { .msp-shots__grid { column-count: 1; } }
+
+/* ---------- 8b · SCREENSHOT TESTIMONIALS TICKER ---------- */
+.cc-ticker {
+  overflow: hidden;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  /* fade edges */
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+.cc-ticker__track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: cc-ticker-scroll 80s linear infinite;
+}
+.cc-ticker__track:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cc-ticker__track { animation: none; }
+}
+@keyframes cc-ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.cc-ticker__track img {
+  height: 320px;
+  width: auto;
+  border-radius: var(--r-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+  display: block;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.cc-ticker__track img:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  transform: scale(1.02);
+}
+
+/* Image lightbox */
+.cc-img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.cc-img-lightbox[hidden] { display: none; }
+.cc-img-lightbox__inner {
+  position: relative;
+  max-width: min(640px, 100%);
+  max-height: 90vh;
+}
+.cc-img-lightbox__inner img {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--r-xl);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+.cc-img-lightbox__close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #111;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* ---------- 8 · PRICING ---------- */
 .msp-pricing__rows {

@@ -228,19 +228,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       }
 
       /* ============== Fits any stage of prep ============== */
-      .cc-stages {
-        background: var(--uw-ink-900);
-      }
       .cc-stages__head {
         max-width: 54ch;
         margin-bottom: clamp(40px, 5vw, 64px);
       }
-      .cc-stages__head .msp-eyebrow { color: rgba(255,255,255,.5); }
-      .cc-stages__head .msp-h2 { color: #fff; max-width: none; margin-bottom: var(--space-3); }
+      .cc-stages__head .msp-h2 { max-width: none; margin-bottom: var(--space-3); }
       .cc-stages__sub {
         font-size: clamp(16px, 1.35vw, 18px);
         line-height: 1.65;
-        color: rgba(255,255,255,.6);
+        color: var(--uw-ink-600);
         margin: 0;
       }
       .cc-stages__grid {
@@ -253,14 +249,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         flex-direction: column;
         gap: var(--space-4);
         padding: clamp(28px, 3.2vw, 40px);
-        background: rgba(255,255,255,.04);
-        border: 1px solid rgba(255,255,255,.08);
+        background: var(--uw-blue-50);
+        border: 1px solid var(--uw-blue-200);
         border-radius: var(--r-xl);
         transition: background .2s ease, border-color .2s ease;
       }
       .cc-stage:hover {
-        background: rgba(255,255,255,.07);
-        border-color: rgba(126,184,247,.25);
+        background: #e8f1fd;
+        border-color: #7eb8f7;
       }
       .cc-stage__label {
         display: inline-block;
@@ -269,9 +265,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         font-weight: 500;
         letter-spacing: .06em;
         text-transform: uppercase;
-        color: rgba(255,255,255,.9);
-        background: rgba(126,184,247,.12);
-        border: 1px solid rgba(126,184,247,.2);
+        color: var(--uw-blue-700, #1a5fa8);
+        background: rgba(126,184,247,.18);
+        border: 1px solid var(--uw-blue-200);
         border-radius: var(--r-pill);
         padding: 5px 12px;
         align-self: flex-start;
@@ -282,17 +278,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         font-weight: 600;
         line-height: 1.1;
         letter-spacing: -.02em;
-        color: #fff;
+        color: var(--uw-ink-900);
         margin: 0;
       }
       .cc-stage__hook em {
         font-style: normal;
-        color: #7eb8f7;
+        color: var(--uw-blue-600, #2271c3);
       }
       .cc-stage__desc {
         font-size: clamp(14px, 1.15vw, 15.5px);
         line-height: 1.7;
-        color: rgba(255,255,255,.58);
+        color: var(--uw-ink-600);
         margin: 0;
         flex: 1;
       }
@@ -308,13 +304,43 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       /* ============== Why this course works ============== */
       .cc-works__grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(20px, 3vw, 32px);
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2vw, 24px);
         margin-top: clamp(32px, 4vw, 56px);
       }
       .cc-work {
-        padding-top: clamp(20px, 2.5vw, 28px);
-        border-top: 2px solid var(--uw-blue-200);
+        position: relative;
+        background: var(--uw-surface);
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        padding: clamp(24px, 2.6vw, 34px);
+        overflow: hidden;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .cc-work::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 3px;
+        background: var(--uw-blue-500);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      .cc-work:hover {
+        border-color: var(--uw-border-strong);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+      .cc-work:hover::before { opacity: 1; }
+      .cc-work__icon {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border-radius: var(--r-lg);
+        background: var(--uw-blue-50);
+        color: var(--uw-blue-500);
+        margin-bottom: var(--space-5);
       }
       .cc-work h3 {
         font-family: var(--font-sans);
@@ -330,19 +356,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         color: var(--uw-ink-600);
         margin: 0;
       }
+      /* Wide card — closes the section */
       .cc-work--wide {
         grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(16px, 2vw, 28px);
-        align-items: start;
+        display: flex;
+        align-items: center;
+        gap: clamp(20px, 3vw, 40px);
       }
-      .cc-work--wide h3 { grid-column: 1; }
-      .cc-work--wide p { grid-column: 2; margin-top: 4px; }
-      @media (max-width: 720px) {
+      .cc-work--wide .cc-work__icon {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+      }
+      .cc-work--wide h3 { margin: 0 0 6px; }
+      .cc-works__cta {
+        display: flex;
+        justify-content: center;
+        margin-top: clamp(32px, 4vw, 48px);
+      }
+      @media (max-width: 860px) {
+        .cc-works__grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 560px) {
         .cc-works__grid { grid-template-columns: 1fr; }
-        .cc-work--wide { grid-template-columns: 1fr; }
-        .cc-work--wide h3, .cc-work--wide p { grid-column: 1; }
+        .cc-work--wide { flex-direction: column; align-items: flex-start; }
       }
 
       /* ============== My story (founder letter) ============== */
@@ -517,6 +555,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         text-align: center;
       }
       .cc-faq__item.is-open .cc-faq__body { display: block; }
+      .cc-faq__group-label {
+        font-family: var(--font-mono);
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--uw-blue-500);
+        padding: 8px 0 4px;
+        margin-top: 12px;
+      }
+      .cc-faq__group-label:first-child { margin-top: 0; }
       @media (max-width: 640px) {
         .cc-faq__head { padding: 18px 44px; font-size: 15px; }
         .cc-faq__body { padding: 0 24px 20px; }
@@ -692,6 +741,534 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         color: rgba(255, 255, 255, 0.55);
       }
       .cc-offer__guarantee strong { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
+
+      /* ============== Final closing CTA ============== */
+      .cc-closing {
+        background: var(--uw-blue-700);
+        text-align: center;
+        width: 100vw;
+        margin-inline: calc(50% - 50vw);
+        padding-inline: clamp(20px, 5vw, 56px);
+      }
+      .cc-closing__body {
+        max-width: 640px;
+        margin-inline: auto;
+      }
+      .cc-closing__copy {
+        font-size: clamp(17px, 1.6vw, 21px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0 0 clamp(28px, 3.5vw, 40px);
+      }
+
+      /* ============== Contact section ============== */
+      .cc-contact {
+        border-top: 1px solid var(--uw-border);
+      }
+      .cc-contact__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(48px, 7vw, 96px);
+        align-items: start;
+      }
+      .cc-contact__intro {
+        position: sticky;
+        top: 96px;
+      }
+      .cc-contact__lead {
+        font-size: clamp(15px, 1.3vw, 17px);
+        line-height: 1.7;
+        color: var(--uw-ink-600);
+        margin: 0 0 clamp(24px, 3vw, 36px);
+      }
+      .cc-contact__wa {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 24px;
+        border-radius: var(--r-lg);
+        background: #25d366;
+        color: #fff;
+        font-family: var(--font-sans);
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s, transform 0.15s;
+      }
+      .cc-contact__wa:hover { background: #1ebe5a; transform: translateY(-1px); }
+      .cc-contact__or {
+        display: block;
+        margin-top: clamp(20px, 2.5vw, 28px);
+        font-size: 14px;
+        color: var(--uw-ink-400);
+      }
+      /* Form card */
+      .cc-contact__card {
+        background: var(--uw-surface);
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        padding: clamp(28px, 3.5vw, 48px);
+      }
+      .cc-field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 480px) {
+        .cc-field-row { grid-template-columns: 1fr; }
+      }
+      /* Form */
+      .cc-contact__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .cc-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .cc-field label {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--uw-ink-700);
+      }
+      .cc-field input,
+      .cc-field select,
+      .cc-field textarea {
+        width: 100%;
+        padding: 11px 14px;
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-lg);
+        background: var(--uw-surface);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        color: var(--uw-ink-900);
+        transition: border-color 0.2s, box-shadow 0.2s;
+        box-sizing: border-box;
+      }
+      .cc-field input::placeholder,
+      .cc-field textarea::placeholder { color: var(--uw-ink-400); }
+      .cc-field input:focus,
+      .cc-field select:focus,
+      .cc-field textarea:focus {
+        outline: none;
+        border-color: var(--uw-blue-500);
+        box-shadow: 0 0 0 3px var(--uw-blue-50);
+      }
+      .cc-field textarea { resize: vertical; min-height: 130px; }
+      .cc-field select { appearance: none; cursor: pointer; }
+      .cc-captcha {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--uw-ink-600);
+      }
+      .cc-captcha input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--uw-blue-500);
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      @media (max-width: 720px) {
+        .cc-contact__grid { grid-template-columns: 1fr; }
+        .cc-contact__intro { position: static; }
+      }
+
+      /* ============== How we compare ============== */
+      .cc-compare__table {
+        margin-top: clamp(32px, 4vw, 56px);
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+      }
+      .cc-compare__row {
+        display: grid;
+        grid-template-columns: 0.9fr 1.35fr 1.25fr;
+        border-bottom: 1px solid var(--uw-border);
+      }
+      .cc-compare__row:last-child { border-bottom: none; }
+      .cc-compare__row > div {
+        padding: clamp(16px, 1.9vw, 22px) clamp(15px, 1.8vw, 24px);
+      }
+      .cc-compare__feature {
+        display: flex;
+        align-items: center;
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: clamp(13.5px, 1.15vw, 15.5px);
+        color: var(--uw-ink-900);
+        background: var(--uw-surface-sunk);
+      }
+      .cc-compare__ours,
+      .cc-compare__theirs {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: clamp(13px, 1.05vw, 14.5px);
+        line-height: 1.55;
+      }
+      .cc-compare__ours {
+        background: var(--uw-blue-50);
+        color: var(--uw-ink-800);
+      }
+      .cc-compare__theirs { color: var(--uw-ink-500); }
+      .cc-compare__ico { flex-shrink: 0; margin-top: 1px; }
+      .cc-compare__ours .cc-compare__ico { color: var(--uw-blue-500); }
+      .cc-compare__theirs .cc-compare__ico { color: var(--uw-ink-400); }
+
+      /* Header row */
+      .cc-compare__row--head > div {
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: clamp(13px, 1.1vw, 15px);
+        line-height: 1.35;
+      }
+      .cc-compare__row--head .cc-compare__ours {
+        background: var(--uw-blue-100);
+        color: var(--uw-blue-600);
+      }
+      .cc-compare__row--head .cc-compare__theirs {
+        background: var(--uw-surface-sunk);
+        color: var(--uw-ink-600);
+      }
+
+      .cc-compare__cta {
+        display: flex;
+        justify-content: center;
+        margin-top: clamp(32px, 4vw, 48px);
+      }
+
+      @media (max-width: 760px) {
+        .cc-compare__row { grid-template-columns: 1fr; }
+        .cc-compare__row--head { display: none; }
+        .cc-compare__feature {
+          background: var(--uw-surface-sunk);
+          color: var(--uw-ink-900);
+          border-bottom: 1px solid var(--uw-border);
+        }
+        .cc-compare__ours,
+        .cc-compare__theirs { flex-wrap: wrap; }
+        .cc-compare__ours::before,
+        .cc-compare__theirs::before {
+          content: attr(data-label);
+          flex-basis: 100%;
+          font-family: var(--font-mono);
+          font-size: 10.5px;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-weight: 600;
+          margin-bottom: 6px;
+        }
+        .cc-compare__ours::before { color: var(--uw-blue-500); }
+        .cc-compare__theirs::before { color: var(--uw-ink-500); }
+      }
+
+      /* ============== Scrollable testimonial grid ============== */
+      .cc-tscroll {
+        border-block: 1px solid var(--uw-border);
+      }
+      .cc-tscroll__viewport {
+        max-height: 560px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: var(--uw-border) transparent;
+      }
+      .cc-tscroll__viewport::-webkit-scrollbar { width: 4px; }
+      .cc-tscroll__viewport::-webkit-scrollbar-track { background: transparent; }
+      .cc-tscroll__viewport::-webkit-scrollbar-thumb {
+        background: var(--uw-border);
+        border-radius: 2px;
+      }
+      .cc-tscroll__track {
+        column-count: 3;
+        column-gap: 12px;
+        padding-bottom: 4px;
+      }
+      .cc-tscroll__track img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--r-lg);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.2s, transform 0.2s;
+        cursor: pointer;
+        margin-bottom: 12px;
+        break-inside: avoid;
+      }
+      .cc-tscroll__track img:hover {
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+        transform: scale(1.02);
+      }
+      @media (max-width: 600px) {
+        .cc-tscroll__track { column-count: 2; }
+      }
+
+      /* ============== 10 days from now ============== */
+      .cc-flip {
+        background: var(--uw-surface-sunk);
+        border-block: 1px solid var(--uw-border);
+      }
+      .cc-flip__intro {
+        text-align: center;
+        margin-bottom: clamp(40px, 5vw, 60px);
+      }
+      .cc-flip__eyebrow {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--uw-ink-400);
+        margin: 0 0 18px;
+      }
+      .cc-flip__headline {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 3.8vw, 46px);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -.02em;
+        color: var(--uw-ink-900);
+        margin: 0;
+      }
+      .cc-flip__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(12px, 2vw, 18px);
+        margin-bottom: clamp(40px, 5vw, 56px);
+      }
+      .cc-flip__col {
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        background: var(--uw-surface);
+      }
+      .cc-flip__col--without {
+        border: 1px solid var(--uw-red-200, #f5c0b8);
+      }
+      .cc-flip__col--with {
+        border: 1px solid var(--uw-blue-200);
+      }
+      .cc-flip__col-head {
+        padding: clamp(14px, 1.8vw, 20px) clamp(20px, 2.5vw, 28px);
+        border-bottom: 1px solid var(--uw-border);
+      }
+      .cc-flip__label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      .cc-flip__col--without .cc-flip__label { color: var(--uw-red-600); }
+      .cc-flip__col--with .cc-flip__label { color: var(--uw-blue-500); }
+      .cc-flip__items {
+        list-style: none;
+        margin: 0;
+        padding: clamp(4px, 1vw, 8px) clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 28px);
+      }
+      .cc-flip__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: clamp(12px, 1.5vw, 16px) 0;
+        border-bottom: 1px solid var(--uw-border);
+        font-size: clamp(14px, 1.25vw, 16px);
+        line-height: 1.55;
+        color: var(--uw-ink-600);
+      }
+      .cc-flip__item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        font-weight: 600;
+        color: var(--uw-ink-900);
+      }
+      .cc-flip__col--without .cc-flip__item:last-child { color: var(--uw-ink-500); font-weight: 400; }
+      .cc-flip__icon {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .cc-flip__col--without .cc-flip__icon { color: var(--uw-red-500); }
+      .cc-flip__col--with .cc-flip__icon { color: var(--uw-blue-500); }
+      .cc-flip__cta {
+        display: flex;
+        justify-content: center;
+      }
+      @media (max-width: 600px) {
+        .cc-flip__grid { grid-template-columns: 1fr; }
+      }
+
+      /* ============== Video testimonials (bento) ============== */
+      .cc-vids__head {
+        text-align: center;
+        margin-bottom: clamp(36px, 5vw, 56px);
+      }
+      .cc-vids__head .msp-eyebrow { justify-content: center; }
+      .cc-vids__head .msp-h2 { margin-inline: auto; }
+      .cc-vids__grid {
+        display: grid;
+        grid-template-columns: 1fr 1.58fr;
+        grid-template-rows: 1fr 1fr;
+        gap: clamp(10px, 1.4vw, 16px);
+      }
+      .cc-vt {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: var(--r-xl);
+        background: #0d1b2e;
+        aspect-ratio: 16 / 9;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .cc-vt--tall {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        aspect-ratio: 9 / 16;
+      }
+      .cc-vt__thumb {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .6s ease, filter .3s ease;
+      }
+      .cc-vt:hover .cc-vt__thumb,
+      .cc-vt:focus-visible .cc-vt__thumb { transform: scale(1.04); filter: brightness(.9); }
+      .cc-vt__overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        background: linear-gradient(180deg, rgba(8,17,31,.12), rgba(8,17,31,.45));
+        transition: background .3s ease;
+      }
+      .cc-vt:hover .cc-vt__overlay,
+      .cc-vt:focus-visible .cc-vt__overlay { background: linear-gradient(180deg, rgba(8,17,31,.24), rgba(8,17,31,.55)); }
+      .cc-vt__play {
+        display: grid;
+        place-items: center;
+        width: clamp(56px, 6vw, 74px);
+        height: clamp(56px, 6vw, 74px);
+        border-radius: 50%;
+        background: rgba(255,255,255,.18);
+        border: 1px solid rgba(255,255,255,.55);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        transition: transform .2s ease, background .2s ease;
+      }
+      .cc-vt:hover .cc-vt__play,
+      .cc-vt:focus-visible .cc-vt__play { transform: scale(1.08); background: rgba(255,255,255,.3); }
+      .cc-vt__play svg { margin-left: 3px; }
+      .cc-vt__label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: #fff;
+        text-shadow: 0 1px 6px rgba(0,0,0,.45);
+      }
+      .cc-vt:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 3px; }
+      .cc-vt.is-playing { background: #000; cursor: default; }
+      .cc-vt.is-playing .cc-vt__thumb,
+      .cc-vt.is-playing .cc-vt__overlay { display: none; }
+      .cc-vt iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      @media (max-width: 620px) {
+        .cc-vids__grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+        .cc-vt--tall {
+          grid-column: 1;
+          grid-row: auto;
+          max-width: 300px;
+          margin-inline: auto;
+        }
+      }
+      /* ============== Hero — single centered column ============== */
+      .msp-hero__grid {
+        display: block;
+        max-width: 780px;
+        margin-inline: auto;
+        text-align: center;
+      }
+      .msp-hero__copy {
+        display: block;
+      }
+      .msp-hero__copy .msp-lede {
+        max-width: 60ch;
+        margin-inline: auto;
+      }
+      .msp-hero__copy .msp-cta-row {
+        max-width: none;
+        justify-content: center;
+      }
+
+      /* ============== Hero cover image ============== */
+      .cc-hero-cover {
+        position: relative;
+        margin-block: clamp(24px, 3vw, 36px);
+        margin-inline: auto;
+        max-width: 620px;
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+      }
+      .cc-hero-cover__img {
+        width: 100%;
+        display: block;
+        height: auto;
+      }
+      .cc-hero-badge {
+        position: absolute;
+        right: clamp(12px, 3%, 22px);
+        bottom: clamp(12px, 3%, 22px);
+        width: clamp(72px, 15%, 104px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1;
+        font-family: var(--font-sans);
+      }
+      .cc-hero-badge__pct {
+        color: var(--uw-red-600);
+        font-weight: 800;
+        font-size: clamp(15px, 3.2vw, 22px);
+        letter-spacing: -0.02em;
+      }
+      .cc-hero-badge__pass,
+      .cc-hero-badge__grt {
+        color: var(--uw-ink-700);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: clamp(6px, 1.3vw, 8px);
+        margin-top: 2px;
+      }
+
     </style>
 
 <main>
@@ -703,26 +1280,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               Pass USMLE Step 1 on your first and only attempt,
               <span class="msp-h1__accent">in 10 focused days.</span>
             </h1>
+
             <p class="msp-lede">
               You'll learn straight from a team of 270+ Step 2 scorers, with everything rebuilt for the Updated 2026 Step 1 Syllabus. And if you finish the course but still don't pass, you get your money back.
             </p>
+
+            <div class="cc-hero-cover reveal">
+              <picture>
+                <source srcset="/assets/Photos/program-covers/step1-crash-course-cover.webp" type="image/webp">
+                <img src="/assets/Photos/program-covers/Step%201%20Crash%20Course%20Image.jpg" alt="USMLE Step 1 Crash Course program cover" class="cc-hero-cover__img">
+              </picture>
+              <span class="cc-hero-badge" aria-label="100% Pass Guarantee">
+                <b class="cc-hero-badge__pct">100%</b>
+                <span class="cc-hero-badge__pass">Pass</span>
+                <span class="cc-hero-badge__grt">Guarantee</span>
+              </span>
+            </div>
             <div class="msp-cta-row">
               <a
                 class="btn btn--primary btn--xl"
-                href="https://team.manikmadaan.com/guidance-call/book"
+                href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Book A Free Guidance Call</a
+                >Enroll Now</a
               >
-              <!-- Replace phone= with your WhatsApp number (country code, no + or spaces) -->
-              <a
-                class="btn btn--outline btn--xl"
-                href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20regarding%20Match%20Package%20%2F%20USMLE%20Wise"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Text Us on WhatsApp
-              </a>
             </div>
           </div>
 
@@ -807,9 +1388,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 </span>
               </div>
               <p>
-                They've memorized everything but never learned the test-taking
-                tactics, the elimination skills, or the pacing that gets you
-                through a block on time.
+                They've memorized everything but never learned the test taking
+                skills that help you rule out the wrong answers to reach the
+                right ones in time.
               </p>
             </div>
 
@@ -821,8 +1402,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 </span>
               </div>
               <p>
-                And the resources they're studying from are old, so they don't
-                reflect the latest 2026 NBME Step 1 trends.
+                And the resources they're studying from were built for the old
+                Step 1, before the post-2022 surge in ethics, nutrition,
+                biostatistics, and the longer second-order vignettes the
+                current NBME favors.
               </p>
             </div>
           </div>
@@ -911,7 +1494,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="cc-story__cta">
                 <a
                   class="btn btn--primary btn--lg"
-                  href="#enroll"
+                  href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >Get Instant Access <i data-lucide="arrow-right" width="16" height="16"></i></a>
               </div>
             </div>
@@ -933,108 +1518,69 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               What students send us after exam day
             </h2>
           </div>
-          <div class="msp-shots__grid">
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Anjali.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Ayra.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Bardia.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Hamna.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Nancy.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Okkes.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Praneet.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Rasmitha.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Ravindra.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Shiv.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/SidNath.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Sinmmer.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/Swathi.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
-            </div>
-            <div class="msp-shot-card reveal">
-              <img
-                src="/assets/Testimonials/Photos/Match/babitha.jpeg"
-                alt="Student result message"
-                loading="lazy"
-              />
+          <div class="cc-ticker" aria-hidden="true">
+            <div class="cc-ticker__track">
+              <img src="/assets/Testimonials/Photos/Coaching/Ishaan-Singh.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(1).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(2).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(3).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(4).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(5).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.28-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.59-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.14-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.20-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.25-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.36-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.47-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.02-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.13-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.25-PM.png" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.37-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.47-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-03-09-at-12.49.26-AM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-11-at-6.35.12-PM.png" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-13-at-10.30.35-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-Apr-14-2026-from-WhatsApp.jpg" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image-Nov-19-2025.jpeg" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image.jpeg" alt="" />
+              <!-- duplicate set for seamless loop -->
+              <img src="/assets/Testimonials/Photos/Coaching/Ishaan-Singh.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(1).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(2).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(3).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(4).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(5).webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.28-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.59-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.14-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.20-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.25-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.36-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.47-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.02-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.13-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.25-PM.png" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.37-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.47-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-03-09-at-12.49.26-AM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-11-at-6.35.12-PM.png" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-13-at-10.30.35-PM.webp" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-Apr-14-2026-from-WhatsApp.jpg" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image-Nov-19-2025.jpeg" alt="" />
+              <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image.jpeg" alt="" />
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Image lightbox for testimonial screenshots -->
+      <div class="cc-img-lightbox" id="ccImgLightbox" role="dialog" aria-modal="true" aria-label="Testimonial screenshot" hidden>
+        <div class="cc-img-lightbox__inner">
+          <button class="cc-img-lightbox__close" id="ccImgLightboxClose" aria-label="Close">&times;</button>
+          <img id="ccImgLightboxImg" src="" alt="Student testimonial screenshot" />
+        </div>
+      </div>
 
       <!-- ============== 3. WHY THIS COURSE WORKS ============== -->
       <section class="msp-section" id="why-it-works" aria-labelledby="worksTitle">
@@ -1048,33 +1594,62 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
           <div class="cc-works__grid">
             <div class="cc-work reveal">
+              <span class="cc-work__icon" aria-hidden="true">
+                <i data-lucide="zap" width="22" height="22"></i>
+              </span>
               <h3>10 days, 60 hours, zero fluff.</h3>
               <p>Every session targets what the NBME tests most. If it&rsquo;s not high-yield, it&rsquo;s not in.</p>
             </div>
             <div class="cc-work reveal">
+              <span class="cc-work__icon" aria-hidden="true">
+                <i data-lucide="refresh-cw" width="22" height="22"></i>
+              </span>
               <h3>Rebuilt for the 2026 Step&nbsp;1 Syllabus.</h3>
               <p>We rebuilt it line by line for the latest Step 1 updates &amp; trends.</p>
             </div>
             <div class="cc-work reveal">
+              <span class="cc-work__icon" aria-hidden="true">
+                <i data-lucide="list-checks" width="22" height="22"></i>
+              </span>
               <h3>Question-powered teaching.</h3>
               <p>Integrated NBME-style vignettes from minute one, so you train your knowledge and your test-taking at the same time.</p>
             </div>
             <div class="cc-work reveal">
+              <span class="cc-work__icon" aria-hidden="true">
+                <i data-lucide="layers" width="22" height="22"></i>
+              </span>
               <h3>The N+1 method.</h3>
               <p>We engineer retention, stacking each concept on the last so it sticks for good and bridges into Step&nbsp;2.</p>
             </div>
             <div class="cc-work reveal">
+              <span class="cc-work__icon" aria-hidden="true">
+                <i data-lucide="target" width="22" height="22"></i>
+              </span>
               <h3>The frameworks high scorers use.</h3>
               <p>A three-pass read (Route, Extract, Decide) for long chart stems, an elimination blueprint for coin-flip items, and plug-and-play ethics scripts.</p>
             </div>
             <div class="cc-work reveal">
+              <span class="cc-work__icon" aria-hidden="true">
+                <i data-lucide="award" width="22" height="22"></i>
+              </span>
               <h3>Teachers who scored 270+ on Step&nbsp;2.</h3>
               <p>You learn from doctors who beat this exam, sat it themselves, and reverse-engineered exactly how it&rsquo;s built.</p>
             </div>
             <div class="cc-work cc-work--wide reveal">
-              <h3>Go at your own pace.</h3>
-              <p>Start today and study anytime, and rewatch any lesson as many times as you need before exam day.</p>
+              <span class="cc-work__icon" aria-hidden="true">
+                <i data-lucide="play" width="26" height="26"></i>
+              </span>
+              <div>
+                <h3>Go at your own pace.</h3>
+                <p>Start today and study anytime, and rewatch any lesson as many times as you need before exam day.</p>
+              </div>
             </div>
+          </div>
+
+          <div class="cc-works__cta reveal">
+            <a class="btn btn--primary btn--lg" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
+              Enroll Now <i data-lucide="arrow-right" width="16" height="16"></i>
+            </a>
           </div>
         </div>
       </section>
@@ -1121,7 +1696,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </div>
 
           <div class="cc-stages__cta reveal">
-            <a class="btn btn--primary btn--lg" href="#enroll">
+            <a class="btn btn--primary btn--lg" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
               Get Instant Access <i data-lucide="arrow-right" width="16" height="16"></i>
             </a>
           </div>
@@ -1388,607 +1963,178 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       -->
 
 
-      <!-- ============== 7. TESTIMONIALS ============== -->
-      <section class="msp-stories" id="stories" aria-labelledby="storiesTitle">
+      <!-- ============== 7. VIDEO TESTIMONIALS ============== -->
+      <section class="msp-section cc-vids" id="stories" aria-labelledby="vidsTitle">
         <div class="msp-wrap">
-          <div class="msp-stories__head reveal">
-            <span class="msp-eyebrow msp-eyebrow--light">Success stories</span>
-            <h2 id="storiesTitle" class="msp-h2 msp-h2--invert">
-              Real journeys from IMG to residency
+          <div class="cc-vids__head reveal">
+            <span class="msp-eyebrow">Watch their stories</span>
+            <h2 id="vidsTitle" class="msp-h2">Hear it from students who passed.</h2>
+          </div>
+
+          <div class="cc-vids__grid reveal">
+            <div class="cc-vt cc-vt--tall" data-ytid="pcQuFkFmnAE" role="button" tabindex="0" aria-label="Play student testimonial video">
+              <img class="cc-vt__thumb" src="https://img.youtube.com/vi/pcQuFkFmnAE/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="cc-vt__overlay" aria-hidden="true">
+                <span class="cc-vt__play">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+                <span class="cc-vt__label">Tap to play</span>
+              </span>
+            </div>
+            <div class="cc-vt" data-ytid="yljBSeYYx6s" role="button" tabindex="0" aria-label="Play student testimonial video">
+              <img class="cc-vt__thumb" src="https://img.youtube.com/vi/yljBSeYYx6s/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="cc-vt__overlay" aria-hidden="true">
+                <span class="cc-vt__play">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+                <span class="cc-vt__label">Tap to play</span>
+              </span>
+            </div>
+            <div class="cc-vt" data-ytid="5qnypeUipdE" role="button" tabindex="0" aria-label="Play student testimonial video">
+              <img class="cc-vt__thumb" src="https://img.youtube.com/vi/5qnypeUipdE/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="cc-vt__overlay" aria-hidden="true">
+                <span class="cc-vt__play">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+                <span class="cc-vt__label">Tap to play</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- ============== 9b. HOW WE COMPARE ============== -->
+      <section class="msp-section cc-compare" id="how-we-compare" aria-labelledby="compareTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">How we compare</span>
+            <h2 id="compareTitle" class="msp-h2">
+              Side by side, here&rsquo;s what actually sets this apart.
             </h2>
           </div>
 
-          <!-- Carousel -->
-          <div class="msp-carousel" aria-label="Student testimonials">
-            <!-- Slide 1: Rana A. -->
-            <div
-              class="msp-slide is-active"
-              role="group"
-              aria-label="Story 1 of 5"
-            >
-              <button
-                class="msp-video-trigger"
-                data-ytid="F8E7lTvGKRU"
-                aria-label="Watch Rana's match story video"
-              >
-                <img
-                  src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg"
-                  alt="Rana shares how she matched Internal Medicine at a top-20 program without U.S. clinical experience"
-                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
-                </span>
-              </button>
-              <div class="msp-slide__content">
-                <p class="msp-story-feature__outcome">
-                  Matched University of Illinois, Peoria
-                </p>
-                <blockquote class="msp-story-feature__quote">
-                  <p>
-                    I knew I wasn't a natural speaker and needed help making my
-                    answers stand out. Dr. Madan's course and our one-on-one
-                    sessions gave me the tools to personalize my responses for
-                    each interviewer. I walked into every interview with a
-                    confidence I simply didn't have before.
-                  </p>
-                  <footer class="msp-story-feature__attr">
-                    <cite class="msp-story-feature__cite">
-                      <span>Dr. Lakshitha</span>
-                      <span>University of Illinois, Peoria</span>
-                    </cite>
-                  </footer>
-                </blockquote>
+          <div class="cc-compare__table reveal" role="table" aria-label="How our crash course compares to other crash courses">
+            <div class="cc-compare__row cc-compare__row--head" role="row">
+              <div class="cc-compare__feature" role="columnheader">Feature</div>
+              <div class="cc-compare__ours" role="columnheader">Our 10-day Step&nbsp;1 crash course</div>
+              <div class="cc-compare__theirs" role="columnheader">Other crash courses</div>
+            </div>
+
+            <div class="cc-compare__row" role="row">
+              <div class="cc-compare__feature" role="cell">2026 alignment</div>
+              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
+                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
+                <span>Rebuilt line by line for the new 2026 Step&nbsp;1 syllabus, with the nutrition and ethics surge covered in depth.</span>
+              </div>
+              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
+                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
+                <span>Often reuses older decks with partial 2026 updates.</span>
               </div>
             </div>
 
-            <!-- Slide 2: Dr. Shreya Sriram -->
-            <div
-              class="msp-slide"
-              role="group"
-              aria-label="Story 2 of 5"
-              aria-hidden="true"
-            >
-              <button
-                class="msp-video-trigger"
-                data-ytid="O4Gns55Brh0"
-                aria-label="Watch Dr. Shreya Sriram's match story video"
-              >
-                <img
-                  src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg"
-                  alt="Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale"
-                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
-                </span>
-              </button>
-              <div class="msp-slide__content">
-                <p class="msp-story-feature__outcome">
-                  Matched SIU Carbondale &middot; Family Medicine
-                </p>
-                <blockquote class="msp-story-feature__quote">
-                  <p>
-                    I didn't match in the main cycle, didn't match in SOAP, and
-                    was financially stretched. But I kept applying every day on
-                    Dr. Madan's advice. I flew across the country for an
-                    in-person interview at a remote program just to show my
-                    commitment. That persistence, and having the right guidance,
-                    is what got me here.
-                  </p>
-                  <footer class="msp-story-feature__attr">
-                    <cite class="msp-story-feature__cite">
-                      <span>Dr. Shreya Sriram</span>
-                      <span>SIU Carbondale &middot; Family Medicine</span>
-                    </cite>
-                  </footer>
-                </blockquote>
+            <div class="cc-compare__row" role="row">
+              <div class="cc-compare__feature" role="cell">Focus</div>
+              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
+                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
+                <span>60 hours, zero fluff &mdash; only what the NBME repeatedly tests.</span>
+              </div>
+              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
+                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
+                <span>Broad sweep, mixed yield, time dilution.</span>
               </div>
             </div>
 
-            <!-- Slide 3: Dr. Hamit C. -->
-            <div
-              class="msp-slide"
-              role="group"
-              aria-label="Story 3 of 5"
-              aria-hidden="true"
-            >
-              <button
-                class="msp-video-trigger"
-                data-ytid="ZynxmljOZDA"
-                aria-label="Watch Dr. Hamit C.'s match story video"
-              >
-                <img
-                  src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg"
-                  alt="Dr. Hamit C. shares how he matched at UPMC, PA"
-                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
-                </span>
-              </button>
-              <div class="msp-slide__content">
-                <p class="msp-story-feature__outcome">
-                  Matched UPMC &middot; Pennsylvania
-                </p>
-                <blockquote class="msp-story-feature__quote">
-                  <p>
-                    I had everything ready: personal statement, LORs, a solid
-                    program list. But I knew those only get you the interview.
-                    I've seen applicants with 11 interviews who still didn't
-                    match. Dr. Madan's course prepares you for the dynamic,
-                    unexpected side of residency interviews, not just the
-                    rehearsed answers.
-                  </p>
-                  <footer class="msp-story-feature__attr">
-                    <cite class="msp-story-feature__cite">
-                      <span>Dr. Hamit C.</span>
-                      <span>UPMC &middot; Pennsylvania</span>
-                    </cite>
-                  </footer>
-                </blockquote>
+            <div class="cc-compare__row" role="row">
+              <div class="cc-compare__feature" role="cell">Teaching engine</div>
+              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
+                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
+                <span>Question-powered. NBME-style vignettes train knowledge and test-taking together.</span>
+              </div>
+              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
+                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
+                <span>Lecture-heavy, QBank left for homework.</span>
               </div>
             </div>
 
-            <!-- Slide 4: Dr. Yash -->
-            <div
-              class="msp-slide"
-              role="group"
-              aria-label="Story 4 of 5"
-              aria-hidden="true"
-            >
-              <button
-                class="msp-video-trigger"
-                data-ytid="IEphKQwawzA"
-                aria-label="Watch Dr. Yash's match story video"
-              >
-                <img
-                  src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg"
-                  alt="Dr. Yash shares how he matched in Los Angeles"
-                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
-                </span>
-              </button>
-              <div class="msp-slide__content">
-                <p class="msp-story-feature__outcome">
-                  Matched Los Angeles &middot; California
-                </p>
-                <blockquote class="msp-story-feature__quote">
-                  <p>
-                    This was my first time applying and I had no idea what to
-                    expect from the interview process. I came to Dr. Madan with
-                    so many questions, and he answered every single one with
-                    patience. That guidance made all the difference when it
-                    mattered most.
-                  </p>
-                  <footer class="msp-story-feature__attr">
-                    <cite class="msp-story-feature__cite">
-                      <span>Dr. Yash</span>
-                      <span>Los Angeles &middot; California</span>
-                    </cite>
-                  </footer>
-                </blockquote>
+            <div class="cc-compare__row" role="row">
+              <div class="cc-compare__feature" role="cell">Instructors</div>
+              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
+                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
+                <span>270+ Step&nbsp;2 scorers who reverse-engineered the patterns.</span>
+              </div>
+              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
+                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
+                <span>Limited experience and credentials.</span>
               </div>
             </div>
 
-            <!-- Slide 5: Dr. Srishti Shankar -->
-            <div
-              class="msp-slide"
-              role="group"
-              aria-label="Story 5 of 5"
-              aria-hidden="true"
-            >
-              <button
-                class="msp-video-trigger"
-                data-ytid="2pGb5xiKzdw"
-                aria-label="Watch Dr. Srishti Shankar's match story video"
-              >
-                <img
-                  src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg"
-                  alt="Dr. Srishti Shankar shares how she matched at St. Vincent, MA"
-                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
-                </span>
-              </button>
-              <div class="msp-slide__content">
-                <p class="msp-story-feature__outcome">
-                  Matched St. Vincent &middot; Massachusetts
-                </p>
-                <blockquote class="msp-story-feature__quote">
-                  <p></p>
-                  <footer class="msp-story-feature__attr">
-                    <cite class="msp-story-feature__cite">
-                      <span>Dr. Srishti Shankar</span>
-                      <span>St. Vincent &middot; Massachusetts</span>
-                    </cite>
-                  </footer>
-                </blockquote>
+            <div class="cc-compare__row" role="row">
+              <div class="cc-compare__feature" role="cell">Accountability</div>
+              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
+                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
+                <span>Built-in daily question drills that make you apply each lesson.</span>
+              </div>
+              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
+                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
+                <span>Passive watching, little pressure to execute.</span>
+              </div>
+            </div>
+
+            <div class="cc-compare__row" role="row">
+              <div class="cc-compare__feature" role="cell">Pass guarantee</div>
+              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
+                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
+                <span>Finish the course and drills &mdash; don&rsquo;t pass, full refund.</span>
+              </div>
+              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
+                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
+                <span>No guarantee, or store credit only.</span>
+              </div>
+            </div>
+
+            <div class="cc-compare__row" role="row">
+              <div class="cc-compare__feature" role="cell">Reported outcomes</div>
+              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
+                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
+                <span>20 to 40 point jumps on practice NBMEs &mdash; roughly 2&times; faster score gain than solo study.</span>
+              </div>
+              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
+                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
+                <span>Modest gains over months.</span>
+              </div>
+            </div>
+
+            <div class="cc-compare__row" role="row">
+              <div class="cc-compare__feature" role="cell">Step&nbsp;2 bridge</div>
+              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
+                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
+                <span>N+1 consolidation leaves you with a ready Step&nbsp;2 launchpad.</span>
+              </div>
+              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
+                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
+                <span>No structured bridge beyond Step&nbsp;1.</span>
               </div>
             </div>
           </div>
 
-          <!-- Carousel nav -->
-          <div class="msp-carousel__nav">
-            <button
-              class="msp-carousel__btn"
-              id="prevSlide"
-              aria-label="Previous story"
-            >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path
-                  d="M11 3.5L6 9l5 5.5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <span class="msp-carousel__count" id="slideCount" aria-live="polite"
-              >1 / 5</span
-            >
-            <button
-              class="msp-carousel__btn"
-              id="nextSlide"
-              aria-label="Next story"
-            >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path
-                  d="M7 3.5L12 9l-5 5.5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
+          <div class="cc-compare__cta reveal">
+            <a class="btn btn--primary btn--lg" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
+              Enroll Now <i data-lucide="arrow-right" width="16" height="16"></i>
+            </a>
           </div>
         </div>
       </section>
 
-      <!-- Video lightbox -->
-      <div
-        class="msp-lightbox"
-        id="mspLightbox"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Student testimonial video"
-        hidden
-      >
-        <button class="msp-lightbox__close" aria-label="Close video">
-          &times;
-        </button>
-        <div class="msp-lightbox__frame">
-          <iframe
-            id="mspLightboxIframe"
-            src=""
-            allow="autoplay; fullscreen"
-            allowfullscreen
-            frameborder="0"
-            title="Student testimonial video"
-          ></iframe>
-        </div>
-      </div>
-
-      <!-- ============== 10. FAQ ============== -->
-      <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
-        <div class="msp-wrap cc-faq__grid">
-          <div class="reveal">
-            <span class="msp-eyebrow">F.A.Q</span>
-            <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
-          </div>
-          <div class="cc-faq__list reveal">
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Is this live or self-paced?
-              </button>
-              <div class="cc-faq__body">
-                It&rsquo;s 100% self-paced. Every lesson is pre-recorded, so you
-                start the minute you enroll, study on your own schedule, and
-                pause, rewind, or rewatch as often as you need. No set class
-                times, no waiting for a cohort to open.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Is a 10-day crash course really worth it for 2026?
-              </button>
-              <div class="cc-faq__body">
-                Yes. The 2026 blueprint rewards pattern recognition, ethics and
-                communication, biostats, and chart-style stems, and our 60 hours
-                go straight at what actually shows up. So you close the
-                highest-yield gaps fast and walk in confident.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Can a crash course really move my readiness that much?
-              </button>
-              <div class="cc-faq__body">
-                For most people, yes. Students routinely report 20 to 40 point
-                jumps on their practice NBMEs within two weeks, roughly twice the
-                progress of studying solo. Your results depend on where you start
-                and the work you put in.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Is this better for first-timers or retakers?
-              </button>
-              <div class="cc-faq__body">
-                Honestly, both. If it&rsquo;s your first time, you get a clean
-                high-yield map. And if you&rsquo;re retaking, it resets the usual
-                leak points, which are timing, reasoning, and ethics.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What do students actually walk away with?
-              </button>
-              <div class="cc-faq__body">
-                Faster reading, sharper elimination, fewer careless errors, and a
-                calmer test day.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Does it help with anxiety, timing, and decision-making?
-              </button>
-              <div class="cc-faq__body">
-                It does. We drill pacing and indentation so you finish on time,
-                and you practice a fixed decision tree for the tie-breaker items
-                that usually eat your clock.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What actually changed on Step 1 in 2026?
-              </button>
-              <div class="cc-faq__body">
-                A few things. Longer chart and SOAP-style stems with distracting
-                detail, more ethics and communication, immunology and micro up
-                while pure biochem is down, and pathophysiology over trivia.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                How do you handle the long chart-style stems and SOAP notes?
-              </button>
-              <div class="cc-faq__body">
-                You&rsquo;ll use a three-pass read, route then extract then
-                decide. First pass for the route, second for the computable
-                items, third for elimination. Then a highlighting discipline that
-                locks onto orders and vitals.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Are ethics and communication covered with actual answers?
-              </button>
-              <div class="cc-faq__body">
-                Yes. You get plug-and-play language for consent, boundaries,
-                impaired colleagues, end-of-life, and error disclosure, plus when
-                and why each one is right.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Do you really focus on the 20% that drives most of the result?
-              </button>
-              <div class="cc-faq__body">
-                Yes. Every lesson is audited against the patterns the NBME
-                favors, and if it isn&rsquo;t high-yield, it&rsquo;s out.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                How does question-powered teaching work?
-              </button>
-              <div class="cc-faq__body">
-                We teach through NBME-style vignettes from minute one. You learn
-                the idea, solve a question, then take apart the logic and drill
-                the variations until it sticks.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What&rsquo;s the N+1 method?
-              </button>
-              <div class="cc-faq__body">
-                You never learn a topic just once. You stack a slightly harder
-                layer on top of what you just mastered, so recall stays active and
-                moves into long-term memory.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What frameworks do you teach for the tough items?
-              </button>
-              <div class="cc-faq__body">
-                The Elimination Blueprint, the Clue-net, and tie-breakers, plus
-                short contrast tables and break-the-tie clues like onset, the key
-                lab, and one physical finding.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                How do you keep it from leaking back out of my head?
-              </button>
-              <div class="cc-faq__body">
-                Stacked repetition, mixed-topic mini-sets, and periodic refresh
-                prompts keep everything active, and you build your own one-page
-                frameworks as you work through the lessons.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Who teaches this, and what are their scores?
-              </button>
-              <div class="cc-faq__body">
-                Sessions are led by 270+ Step 2 scorers and experienced Step 1
-                instructors, coordinated by Dr. Manik Madaan (271 Step 2). The
-                team reverse-engineered NBME patterns across thousands of items.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Do I get recordings and downloadable materials?
-              </button>
-              <div class="cc-faq__body">
-                Yes. The whole course is on demand with lifetime access, plus the
-                USMLE Step 1 Rapid Review 2026 slides to keep.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Do I need any other resources?
-              </button>
-              <div class="cc-faq__body">
-                Just your preferred QBank and a notebook. Keep the QBank you
-                already like, and use the course to decide what to actually
-                memorize and how to apply it under time.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What&rsquo;s the guarantee?
-              </button>
-              <div class="cc-faq__body">
-                Finish the sessions and the required drills, sit your exam, and if
-                you don&rsquo;t pass, you get a full refund within 14 days of your
-                score report.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Is this good for nontraditional students or a different background?
-              </button>
-              <div class="cc-faq__body">
-                Yes. The course assumes varied backgrounds and centers on NBME
-                logic, not on any one set of course notes.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Do you start with the points I can bank?
-              </button>
-              <div class="cc-faq__body">
-                Yes. We open with biostats and ethics to lock in the most
-                reliable points early.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Will this carry over to Step 2?
-              </button>
-              <div class="cc-faq__body">
-                Yes. The N+1 method and the decision frameworks are built to carry
-                forward, so your Step 1 base becomes a launchpad and your Step 2
-                prep starts easier.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- ============== 9. FINAL CTA — OFFER ============== -->
       <section
@@ -2047,8 +2193,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 every lesson is yours for life.
               </p>
 
-              <!-- TODO: point href at the real checkout/enrollment URL -->
-              <a class="btn btn--primary btn--xl cc-offer__cta" href="#">
+              <a class="btn btn--primary btn--xl cc-offer__cta" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
                 Get Access Now <i data-lucide="arrow-right" width="18" height="18"></i>
               </a>
 
@@ -2064,7 +2209,471 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </div>
         </div>
       </section>
+
+
+      <!-- ============== 8d. SCROLLABLE TESTIMONIAL GRID ============== -->
+      <section class="msp-section cc-tscroll" aria-label="Student testimonials">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">In their own words</span>
+            <h2 class="msp-h2">We'll let the students talk.</h2>
+            <p class="msp-sub">Sent to us after results day. Scroll to read them all.</p>
+          </div>
+          <div class="cc-tscroll__viewport reveal">
+          <div class="cc-tscroll__track">
+            <img src="/assets/Testimonials/Photos/Coaching/Ishaan-Singh.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(1).webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(2).webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(3).webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(4).webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(5).webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.28-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.59-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.14-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.20-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.25-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.36-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.47-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.02-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.13-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.25-PM.png" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.37-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.47-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-03-09-at-12.49.26-AM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-11-at-6.35.12-PM.png" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-13-at-10.30.35-PM.webp" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-Apr-14-2026-from-WhatsApp.jpg" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image-Nov-19-2025.jpeg" alt="Student testimonial" loading="lazy" />
+            <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image.jpeg" alt="Student testimonial" loading="lazy" />
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 8c. 10 DAYS FROM NOW ============== -->
+      <section class="msp-section cc-flip" aria-labelledby="flipTitle">
+        <div class="msp-wrap">
+          <div class="cc-flip__intro reveal">
+            <p class="cc-flip__eyebrow">10 days from now</p>
+            <h2 id="flipTitle" class="cc-flip__headline">
+              You're going to spend them either way.
+            </h2>
+          </div>
+
+          <div class="cc-flip__grid reveal">
+            <div class="cc-flip__col cc-flip__col--without">
+              <div class="cc-flip__col-head">
+                <span class="cc-flip__label">Without this course</span>
+              </div>
+              <ul class="cc-flip__items">
+                <li class="cc-flip__item">
+                  <i data-lucide="x" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
+                  Still grinding broad, still unsure what actually matters.
+                </li>
+                <li class="cc-flip__item">
+                  <i data-lucide="x" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
+                  Another weekend lost to low-yield material that won't show up.
+                </li>
+                <li class="cc-flip__item">
+                  <i data-lucide="x" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
+                  That same quiet worry every time you open a practice block.
+                </li>
+                <li class="cc-flip__item">
+                  <i data-lucide="x" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
+                  Walking in hoping you studied the right things.
+                </li>
+              </ul>
+            </div>
+
+            <div class="cc-flip__col cc-flip__col--with">
+              <div class="cc-flip__col-head">
+                <span class="cc-flip__label">With this course</span>
+              </div>
+              <ul class="cc-flip__items">
+                <li class="cc-flip__item">
+                  <i data-lucide="check" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
+                  Studying with a map, clear on exactly what to focus on and what to skip.
+                </li>
+                <li class="cc-flip__item">
+                  <i data-lucide="check" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
+                  60 hours spent only on what the NBME actually tests.
+                </li>
+                <li class="cc-flip__item">
+                  <i data-lucide="check" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
+                  A calm, drilled routine for pacing, elimination, and the tough items.
+                </li>
+                <li class="cc-flip__item">
+                  <i data-lucide="check" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
+                  Walking in knowing what's coming, and passing.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cc-flip__cta reveal">
+            <a
+              class="btn btn--primary btn--xl"
+              href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Instant Access
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 10. FAQ ============== -->
+      <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
+        <div class="msp-wrap cc-faq__grid">
+          <div class="reveal">
+            <span class="msp-eyebrow">F.A.Q</span>
+            <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
+          </div>
+          <div class="cc-faq__list reveal">
+            <p class="cc-faq__group-label">Format and access</p>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this live or self-paced?
+              </button>
+              <div class="cc-faq__body">
+                It&rsquo;s 100% self-paced. Every lesson is pre-recorded, so you
+                start the minute you enroll, study on your own schedule, and
+                pause, rewind, or rewatch as often as you need. No set class
+                times, no waiting for a cohort to open.
+              </div>
+            </div>
+            <p class="cc-faq__group-label">Fit and outcomes</p>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is a 10-day crash course really worth it for 2026?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The 2026 blueprint rewards pattern recognition, ethics and
+                communication, biostats, and chart-style stems, and our 60 hours
+                go straight at what actually shows up. So you close the
+                highest-yield gaps fast and walk in confident.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Can a crash course really move my readiness that much?
+              </button>
+              <div class="cc-faq__body">
+                For most people, yes. Students routinely report 20 to 40 point
+                jumps on their practice NBMEs within two weeks, roughly twice the
+                progress of studying solo. Your results depend on where you start
+                and the work you put in.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this better for first-timers or retakers?
+              </button>
+              <div class="cc-faq__body">
+                Honestly, both. If it&rsquo;s your first time, you get a clean
+                high-yield map. And if you&rsquo;re retaking, it resets the usual
+                leak points, which are timing, reasoning, and ethics.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What do students actually walk away with?
+              </button>
+              <div class="cc-faq__body">
+                Faster reading, sharper elimination, fewer careless errors, and a
+                calmer test day.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Does it help with anxiety, timing, and decision-making?
+              </button>
+              <div class="cc-faq__body">
+                It does. We drill pacing and indentation so you finish on time,
+                and you practice a fixed decision tree for the tie-breaker items
+                that usually eat your clock.
+              </div>
+            </div>
+            <p class="cc-faq__group-label">What changed in 2026, and how we handle it</p>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What actually changed on Step 1 in 2026?
+              </button>
+              <div class="cc-faq__body">
+                A few things. Longer chart and SOAP-style stems with distracting
+                detail, more ethics and communication, immunology and micro up
+                while pure biochem is down, and pathophysiology over trivia.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How do you handle the long chart-style stems and SOAP notes?
+              </button>
+              <div class="cc-faq__body">
+                You&rsquo;ll use a three-pass read, route then extract then
+                decide. First pass for the route, second for the computable
+                items, third for elimination. Then a highlighting discipline that
+                locks onto orders and vitals.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Are ethics and communication covered with actual answers?
+              </button>
+              <div class="cc-faq__body">
+                Yes. You get plug-and-play language for consent, boundaries,
+                impaired colleagues, end-of-life, and error disclosure, plus when
+                and why each one is right.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do you really focus on the 20% that drives most of the result?
+              </button>
+              <div class="cc-faq__body">
+                Yes. Every lesson is audited against the patterns the NBME
+                favors, and if it isn&rsquo;t high-yield, it&rsquo;s out.
+              </div>
+            </div>
+            <p class="cc-faq__group-label">Teaching engine and method</p>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How does question-powered teaching work?
+              </button>
+              <div class="cc-faq__body">
+                We teach through NBME-style vignettes from minute one. You learn
+                the idea, solve a question, then take apart the logic and drill
+                the variations until it sticks.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What&rsquo;s the N+1 method?
+              </button>
+              <div class="cc-faq__body">
+                You never learn a topic just once. You stack a slightly harder
+                layer on top of what you just mastered, so recall stays active and
+                moves into long-term memory.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What frameworks do you teach for the tough items?
+              </button>
+              <div class="cc-faq__body">
+                The Elimination Blueprint, the Clue-net, and tie-breakers, plus
+                short contrast tables and break-the-tie clues like onset, the key
+                lab, and one physical finding.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                How do you keep it from leaking back out of my head?
+              </button>
+              <div class="cc-faq__body">
+                Stacked repetition, mixed-topic mini-sets, and periodic refresh
+                prompts keep everything active, and you build your own one-page
+                frameworks as you work through the lessons.
+              </div>
+            </div>
+            <p class="cc-faq__group-label">Instructors, materials, and access</p>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Who teaches this, and what are their scores?
+              </button>
+              <div class="cc-faq__body">
+                Sessions are led by 270+ Step 2 scorers and experienced Step 1
+                instructors, coordinated by Dr. Manik Madaan (271 Step 2). The
+                team reverse-engineered NBME patterns across thousands of items.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do I get recordings and downloadable materials?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The whole course is on demand with lifetime access, plus the
+                USMLE Step 1 Rapid Review 2026 slides to keep.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do I need any other resources?
+              </button>
+              <div class="cc-faq__body">
+                Just your preferred QBank and a notebook. Keep the QBank you
+                already like, and use the course to decide what to actually
+                memorize and how to apply it under time.
+              </div>
+            </div>
+            <p class="cc-faq__group-label">Logistics</p>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                What&rsquo;s the guarantee?
+              </button>
+              <div class="cc-faq__body">
+                Finish the sessions and the required drills, sit your exam, and if
+                you don&rsquo;t pass, you get a full refund within 14 days of your
+                score report.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Is this good for nontraditional students or a different background?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The course assumes varied backgrounds and centers on NBME
+                logic, not on any one set of course notes.
+              </div>
+            </div>
+            <p class="cc-faq__group-label">Beyond Step 1</p>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Do you start with the points I can bank?
+              </button>
+              <div class="cc-faq__body">
+                Yes. We open with biostats and ethics to lock in the most
+                reliable points early.
+              </div>
+            </div>
+            <div class="cc-faq__item">
+              <button class="cc-faq__head" type="button" aria-expanded="false">
+                Will this carry over to Step 2?
+              </button>
+              <div class="cc-faq__body">
+                Yes. The N+1 method and the decision frameworks are built to carry
+                forward, so your Step 1 base becomes a launchpad and your Step 2
+                prep starts easier.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- Video testimonials: click-to-load (no iframe until played) -->
+    <script>
+      (function () {
+        document.querySelectorAll('.cc-vt').forEach(function (el) {
+          function play() {
+            if (el.classList.contains('is-playing')) return;
+            var id = el.getAttribute('data-ytid');
+            if (!id) return;
+            var iframe = document.createElement('iframe');
+            iframe.src =
+              'https://www.youtube-nocookie.com/embed/' +
+              id +
+              '?autoplay=1&rel=0';
+            iframe.title = 'Student testimonial';
+            iframe.setAttribute(
+              'allow',
+              'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            );
+            iframe.setAttribute('allowfullscreen', '');
+            el.appendChild(iframe);
+            el.classList.add('is-playing');
+            el.removeAttribute('role');
+            el.removeAttribute('tabindex');
+          }
+          el.addEventListener('click', play);
+          el.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              play();
+            }
+          });
+        });
+      })();
+    </script>
+
+    <!-- ============== CLOSING CTA ============== -->
+    <section class="msp-section cc-closing">
+      <div class="msp-wrap">
+        <div class="cc-closing__body reveal">
+          <p class="cc-closing__copy">
+            The 2026 Step&nbsp;1 format is already live. Every week spent on old prep
+            is a week training for an exam that no longer exists. The sooner you align
+            to the current blueprint, the more of your study time actually counts.
+          </p>
+          <a class="btn btn--primary btn--xl" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
+            Enroll Now <i data-lucide="arrow-right" width="16" height="16"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CONTACT ============== -->
+    <section class="msp-section cc-contact" id="contact" aria-labelledby="contactTitle">
+      <div class="msp-wrap">
+        <div class="cc-contact__grid">
+
+          <!-- Left: intro -->
+          <div class="cc-contact__intro reveal">
+            <span class="msp-eyebrow">Contact</span>
+            <h2 id="contactTitle" class="msp-h2">Not sure what the right next step is?</h2>
+            <p class="cc-contact__lead">
+              Speak directly with our team and get clear guidance on your exams,
+              applications, or match strategy.
+            </p>
+            <a
+              class="cc-contact__wa"
+              href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20for%20USMLEWise"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.882l6.206-1.448A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.214-3.681.859.925-3.583-.234-.369A9.818 9.818 0 1112 21.818z"/>
+              </svg>
+              Chat on WhatsApp
+            </a>
+            <span class="cc-contact__or">Prefer email? Send us a message.</span>
+          </div>
+
+          <!-- Right: form -->
+          <div class="cc-contact__card reveal">
+          <form class="cc-contact__form" action="#" method="post" novalidate>
+            <div class="cc-field-row">
+              <div class="cc-field">
+                <label for="cc-name">Full name</label>
+                <input type="text" id="cc-name" name="name" placeholder="Your name" autocomplete="name" required />
+              </div>
+              <div class="cc-field">
+                <label for="cc-email">Email</label>
+                <input type="email" id="cc-email" name="email" placeholder="you@email.com" autocomplete="email" required />
+              </div>
+            </div>
+            <div class="cc-field">
+              <label for="cc-subject">Subject</label>
+              <select id="cc-subject" name="subject" required>
+                <option value="" disabled selected>What&rsquo;s this about?</option>
+                <option>Step 1 crash course</option>
+                <option>USMLE Step 2 / Step 3</option>
+                <option>Residency match strategy</option>
+                <option>Research opportunities</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="cc-field">
+              <label for="cc-message">Message</label>
+              <textarea id="cc-message" name="message" placeholder="Tell us where you are in your prep&hellip;" required></textarea>
+            </div>
+            <label class="cc-captcha">
+              <input type="checkbox" name="not_robot" required />
+              I&rsquo;m not a robot
+            </label>
+            <div>
+              <button type="submit" class="btn btn--primary btn--lg">
+                Send message <i data-lucide="send" width="16" height="16"></i>
+              </button>
+            </div>
+          </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <!-- ============== FOOTER ============== -->
 

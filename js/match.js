@@ -123,7 +123,33 @@
       });
     }
 
-    /* ---- 7. Anchor scroll with sticky-nav offset ---- */
+    /* ---- 7. Screenshot lightbox (ticker + scroll grid) ---- */
+    var imgLightbox = document.getElementById('ccImgLightbox');
+    var imgLightboxImg = document.getElementById('ccImgLightboxImg');
+    var imgLightboxClose = document.getElementById('ccImgLightboxClose');
+    if (imgLightbox && imgLightboxImg) {
+      function openImgLightbox(src) {
+        imgLightboxImg.src = src;
+        imgLightbox.removeAttribute('hidden');
+        imgLightbox.focus();
+      }
+      function closeImgLightbox() {
+        imgLightbox.setAttribute('hidden', '');
+        imgLightboxImg.src = '';
+      }
+      document.querySelectorAll('.cc-ticker__track img, .cc-tscroll__track img').forEach(function (img) {
+        img.addEventListener('click', function () { openImgLightbox(img.src); });
+      });
+      if (imgLightboxClose) imgLightboxClose.addEventListener('click', closeImgLightbox);
+      imgLightbox.addEventListener('click', function (e) {
+        if (e.target === imgLightbox) closeImgLightbox();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !imgLightbox.hasAttribute('hidden')) closeImgLightbox();
+      });
+    }
+
+    /* ---- 8. Anchor scroll with sticky-nav offset ---- */
     var navH = 72;
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       link.addEventListener('click', function (e) {
