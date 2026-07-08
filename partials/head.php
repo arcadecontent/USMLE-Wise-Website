@@ -26,15 +26,24 @@
 <link rel="preload" as="image" href="<?php echo $preloadImage; ?>" type="image/webp" fetchpriority="high" />
 <?php endif; ?>
 <link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
-<link rel="stylesheet" href="/assets/usmle-design-system/styles.css" />
+<?php
+// Append the file's last-modified time as ?v= so browsers/CDNs fetch a fresh
+// copy whenever a CSS/JS file changes, instead of serving a stale cached one.
+function asset_url($path) {
+    $file = $_SERVER['DOCUMENT_ROOT'] . $path;
+    $ver = is_file($file) ? filemtime($file) : null;
+    return $ver ? $path . '?v=' . $ver : $path;
+}
+?>
+<link rel="stylesheet" href="<?php echo asset_url('/assets/usmle-design-system/styles.css'); ?>" />
 <?php if (!empty($stylesheets)) foreach ($stylesheets as $css): ?>
-<link rel="stylesheet" href="<?php echo $css; ?>" />
+<link rel="stylesheet" href="<?php echo asset_url($css); ?>" />
 <?php endforeach; ?>
 <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
 <?php if (!empty($scripts)) foreach ($scripts as $js): ?>
-<script src="<?php echo $js; ?>" defer></script>
+<script src="<?php echo asset_url($js); ?>" defer></script>
 <?php endforeach; ?>
-<script src="/js/mobile-nav.js" defer></script>
+<script src="<?php echo asset_url('/js/mobile-nav.js'); ?>" defer></script>
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : ''; ?>">
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/nav.php'; ?>
