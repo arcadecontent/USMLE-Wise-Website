@@ -48,8 +48,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="msp-hero__frame reveal">
               <img
                 src="/assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.jpg"
-                alt="Physician in lab coat writing in a notebook"
-              />
+                alt="Physician in lab coat writing in a notebook" fetchpriority="high" decoding="async" />
             </div>
             <div class="msp-float-note" aria-hidden="true">
               <span class="msp-float-note__num">95<small>%</small></span>
@@ -240,7 +239,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-sva-list">
 
             <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash (1).jpg');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).jpg');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">01 &middot; Live &middot; 12-month program</span>
                 <h3 class="msp-sva-title">Research Catalyst</h3>
@@ -282,7 +281,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/researcher in lab computer.jpg'); background-position: right center;"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.jpg'); background-position: right center;"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">04 &middot; Recorded &middot; Self-paced</span>
                 <h3 class="msp-sva-title">Research Masterclass</h3>
@@ -397,7 +396,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
-                <img src="/assets/Photos/Team-Members/Barakat-Photo.jpeg" alt="Muhammad Ahmad Barakat" />
+                <img src="/assets/Photos/Team-Members/Barakat-Photo.jpeg" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
               </div>
               <div class="msp-mtr-e__body">
                 <div class="msp-mtr-e__header">
@@ -415,7 +414,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
-                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.png" alt="Kaushik Sreeram" />
+                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreeram" loading="lazy" decoding="async" />
               </div>
               <div class="msp-mtr-e__body">
                 <div class="msp-mtr-e__header">
@@ -433,7 +432,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
-                <img src="/assets/Photos/Team-Members/Meghana.jpeg" alt="Meghana" />
+                <img src="/assets/Photos/Team-Members/Meghana.jpeg" alt="Meghana" loading="lazy" decoding="async" />
               </div>
               <div class="msp-mtr-e__body">
                 <div class="msp-mtr-e__header">
@@ -451,7 +450,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
-                <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani" />
+                <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani" loading="lazy" decoding="async" />
               </div>
               <div class="msp-mtr-e__body">
                 <div class="msp-mtr-e__header">

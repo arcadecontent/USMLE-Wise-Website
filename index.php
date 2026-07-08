@@ -13,6 +13,7 @@ $scripts = [
     "/js/landing.js",
     "/js/match.js"
 ];
+$preloadImage = "/assets/Photos/fotos-CCDMI3dfnIo-unsplash.jpg";
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
 <!-- ============== 1 · HERO ============== -->
@@ -51,6 +52,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <img
             src="/assets/Photos/fotos-CCDMI3dfnIo-unsplash.jpg"
             alt="IMG physician preparing for U.S. residency"
+            width="1920"
+            height="1446"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
         <div class="msp-float-note" aria-hidden="true">
@@ -243,7 +248,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </article>
     <article class="lpx-sva-row lpx-sva-row--flip reveal">
-      <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher in lab computer.jpg')"></div>
+      <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.jpg')"></div>
       <div class="lpx-sva-body">
         <span class="lpx-sva-eyebrow">06 &middot; Research</span>
         <h3 class="lpx-sva-title">Research Guidance</h3>
@@ -346,7 +351,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <div class="msp-carousel" aria-label="Student testimonials">
         <div class="msp-slide is-active" role="group" aria-label="Story 1 of 5">
           <button class="msp-video-trigger" data-ytid="F8E7lTvGKRU" aria-label="Watch Rana's match story video">
-            <img src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg" alt="Rana shares how she matched Internal Medicine at a top-20 program" class="msp-video-trigger__thumb" />
+            <img src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg" alt="Rana shares how she matched Internal Medicine at a top-20 program" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
             <span class="msp-video-trigger__play" aria-hidden="true">
               <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
             </span>
@@ -367,7 +372,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
         <div class="msp-slide" role="group" aria-label="Story 2 of 5" aria-hidden="true">
           <button class="msp-video-trigger" data-ytid="O4Gns55Brh0" aria-label="Watch Dr. Shreya Sriram's match story video">
-            <img src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg" alt="Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale" class="msp-video-trigger__thumb" />
+            <img src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg" alt="Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
             <span class="msp-video-trigger__play" aria-hidden="true">
               <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
             </span>
@@ -388,7 +393,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
         <div class="msp-slide" role="group" aria-label="Story 3 of 5" aria-hidden="true">
           <button class="msp-video-trigger" data-ytid="ZynxmljOZDA" aria-label="Watch Dr. Hamit C.'s match story video">
-            <img src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg" alt="Dr. Hamit C. shares how he matched at UPMC, PA" class="msp-video-trigger__thumb" />
+            <img src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg" alt="Dr. Hamit C. shares how he matched at UPMC, PA" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
             <span class="msp-video-trigger__play" aria-hidden="true">
               <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
             </span>
@@ -409,7 +414,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
         <div class="msp-slide" role="group" aria-label="Story 4 of 5" aria-hidden="true">
           <button class="msp-video-trigger" data-ytid="IEphKQwawzA" aria-label="Watch Dr. Yash's match story video">
-            <img src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg" alt="Dr. Yash shares how he matched in Los Angeles" class="msp-video-trigger__thumb" />
+            <img src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg" alt="Dr. Yash shares how he matched in Los Angeles" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
             <span class="msp-video-trigger__play" aria-hidden="true">
               <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
             </span>
@@ -430,7 +435,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
         <div class="msp-slide" role="group" aria-label="Story 5 of 5" aria-hidden="true">
           <button class="msp-video-trigger" data-ytid="2pGb5xiKzdw" aria-label="Watch Dr. Srishti Shankar's match story video">
-            <img src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg" alt="Dr. Srishti Shankar shares how she matched at St. Vincent, MA" class="msp-video-trigger__thumb" />
+            <img src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg" alt="Dr. Srishti Shankar shares how she matched at St. Vincent, MA" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
             <span class="msp-video-trigger__play" aria-hidden="true">
               <svg width="72" height="72" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
             </span>
@@ -514,7 +519,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </ul>
         </div>
         <div class="lpx-comp lpx-comp--us reveal">
-          <h3><img src="/assets/usmle-design-system/assets/emblem.svg" alt="" width="22" height="22" /> USMLE Wise</h3>
+          <h3><img src="/assets/usmle-design-system/assets/emblem.svg" alt="" width="22" height="22" loading="lazy" decoding="async" /> USMLE Wise</h3>
           <ul>
             <li><i data-lucide="check" width="17" height="17"></i> Personalized IMG strategy</li>
             <li><i data-lucide="check" width="17" height="17"></i> Dedicated mentorship</li>

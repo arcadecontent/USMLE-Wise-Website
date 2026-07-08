@@ -839,8 +839,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <img
                 class="cc-story__photo"
                 src="/assets/Photos/Team-Members/Manik.jpg"
-                alt="Dr. Manik Madaan, founder of USMLE Wise"
-              />
+                alt="Dr. Manik Madaan, founder of USMLE Wise" loading="lazy" decoding="async" />
               <h2 id="storyTitle" class="cc-story__name">Dr. Manik Madaan</h2>
               <p class="cc-story__title">World&rsquo;s most-followed USMLE expert</p>
               <ul class="cc-story__creds">
@@ -1230,7 +1229,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <h2 id="whyBTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
             </div>
             <div class="msp-why-b__img reveal">
-              <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" />
+              <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="msp-why-b__cols">
@@ -1264,7 +1263,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <h2 id="whyCTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
           </div>
           <div class="msp-why-c__img reveal">
-            <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" />
+            <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" loading="lazy" decoding="async" />
           </div>
           <div class="msp-why-c__cols">
             <div class="msp-wib reveal">
@@ -1409,8 +1408,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <img
                   src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg"
                   alt="Rana shares how she matched Internal Medicine at a top-20 program without U.S. clinical experience"
-                  class="msp-video-trigger__thumb"
-                />
+                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
                 <span class="msp-video-trigger__play" aria-hidden="true">
                   <svg
                     width="72"
@@ -1472,8 +1470,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <img
                   src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg"
                   alt="Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale"
-                  class="msp-video-trigger__thumb"
-                />
+                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
                 <span class="msp-video-trigger__play" aria-hidden="true">
                   <svg
                     width="72"
@@ -1536,8 +1533,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <img
                   src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg"
                   alt="Dr. Hamit C. shares how he matched at UPMC, PA"
-                  class="msp-video-trigger__thumb"
-                />
+                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
                 <span class="msp-video-trigger__play" aria-hidden="true">
                   <svg
                     width="72"
@@ -1600,8 +1596,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <img
                   src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg"
                   alt="Dr. Yash shares how he matched in Los Angeles"
-                  class="msp-video-trigger__thumb"
-                />
+                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
                 <span class="msp-video-trigger__play" aria-hidden="true">
                   <svg
                     width="72"
@@ -1663,8 +1658,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <img
                   src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg"
                   alt="Dr. Srishti Shankar shares how she matched at St. Vincent, MA"
-                  class="msp-video-trigger__thumb"
-                />
+                  class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
                 <span class="msp-video-trigger__play" aria-hidden="true">
                   <svg
                     width="72"

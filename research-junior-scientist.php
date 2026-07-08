@@ -608,8 +608,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="msp-hero__frame reveal">
               <img
                 src="/assets/Photos/high-school-student.jpg"
-                alt="High school student doing research"
-              />
+                alt="High school student doing research" loading="lazy" decoding="async" />
             </div>
             <div class="msp-float-note" aria-hidden="true">
               <span class="msp-float-note__num">95<small>%</small></span>
@@ -840,7 +839,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="jsp-story__inner">
             <div class="jsp-story__aside reveal">
               <div class="jsp-story__ava">
-                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.png" alt="Kaushik Sreerama Reddy" />
+                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreerama Reddy" loading="lazy" decoding="async" />
               </div>
               <p class="jsp-story__name">Kaushik Sreerama Reddy, MBBS</p>
               <p class="jsp-story__role">Chief Scientific Officer, USMLE Wise &amp; CRIST &middot; Director of Operations &amp; Lead Investigator, MCTC &middot; Published author</p>

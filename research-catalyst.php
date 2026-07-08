@@ -345,7 +345,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="rc-mtr reveal">
               <div class="rc-mtr__photo">
-                <img src="/assets/Photos/Team-Members/Barakat-Photo.jpeg" alt="Muhammad Ahmad Barakat" />
+                <img src="/assets/Photos/Team-Members/Barakat-Photo.jpeg" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
               </div>
               <div class="rc-mtr__body">
                 <div class="rc-mtr__header">
