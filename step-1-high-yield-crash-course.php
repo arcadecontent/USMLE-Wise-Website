@@ -2675,6 +2675,42 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </section>
 
+    <!-- ============== STICKY MOBILE CTA BAR (mobile only) ============== -->
+    <style>
+      .cc-mobilebar { display: none; }
+      @media (max-width: 760px) {
+        body { padding-bottom: 76px; }
+        .cc-mobilebar {
+          display: flex;
+          position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+          align-items: center; justify-content: space-between; gap: 14px;
+          padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+          background: rgba(255, 255, 255, .94);
+          backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+          border-top: 1px solid var(--uw-border);
+          box-shadow: 0 -8px 26px rgba(15, 18, 51, .12);
+        }
+        .cc-mobilebar__price { line-height: 1.12; }
+        .cc-mobilebar__price-row { display: flex; align-items: baseline; gap: 8px; }
+        .cc-mobilebar__price-row s { font-size: 14px; color: var(--uw-ink-400); text-decoration-thickness: 1.5px; }
+        .cc-mobilebar__now { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--uw-ink-900); }
+        .cc-mobilebar__badge { font-size: 11px; font-family: var(--font-mono); letter-spacing: .04em; color: var(--uw-success-700); background: var(--uw-success-50); padding: 2px 7px; border-radius: 999px; }
+        .cc-mobilebar__sub { font-size: 11.5px; color: var(--uw-ink-500); margin-top: 1px; }
+        .cc-mobilebar__cta { flex: none; }
+      }
+    </style>
+    <div class="cc-mobilebar" id="ccBar">
+      <div class="cc-mobilebar__price">
+        <div class="cc-mobilebar__price-row">
+          <s>$999</s>
+          <span class="cc-mobilebar__now">$199</span>
+          <span class="cc-mobilebar__badge">80% off</span>
+        </div>
+        <div class="cc-mobilebar__sub">One time &middot; Lifetime access</div>
+      </div>
+      <a href="#enroll" class="btn btn--primary btn--lg cc-mobilebar__cta">Enroll Now</a>
+    </div>
+
     <!-- ============== FOOTER ============== -->
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>
