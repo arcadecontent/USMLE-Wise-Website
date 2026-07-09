@@ -36,18 +36,32 @@ jobs:
             fi
             echo "Verified index.php exists at $INDEX"
             # Purge CloudPanel Varnish cache so the new release is served
-            # immediately (default lifetime is 7 days). Try every mechanism;
-            # each is best-effort and logged.
+            # immediately (default lifetime is 7 days). Each mechanism is
+            # best-effort, but we VERIFY the result below and fail the deploy
+            # if the cache is still stale -- a silently stale cache serves the
+            # previous release's HTML (old links, wrong slugs) for days.
             if command -v clpctl >/dev/null 2>&1; then
               clpctl varnish-cache:purge --purge=all \
                 && echo "Varnish purged via clpctl" || echo "WARN: clpctl purge failed"
             else
-              echo "clpctl not available"
+              echo "WARN: clpctl not available"
             fi
             curl -s -o /dev/null -w "PURGE by tag -> HTTP %{http_code}\n" \
               -X PURGE -H 'X-Cache-Tags: f2eb' http://127.0.0.1:6081 || true
             curl -s -o /dev/null -w "PURGE by host -> HTTP %{http_code}\n" \
               -X PURGE -H 'Host: usmlewise.com' http://127.0.0.1:6081 || true
+            # Verify the purge took effect: a freshly purged page reports a low
+            # x-cache-age (Varnish repopulates at age 0 on the next request). If
+            # it is still high, none of the purges worked -- fail loudly.
+            age=$(curl -s -D - -o /dev/null https://usmlewise.com/ \
+              | awk 'tolower($1)=="x-cache-age:"{gsub(/\r/,"",$2); print $2}')
+            case "$age" in ''|*[!0-9]*) age="" ;; esac
+            echo "Post-purge x-cache-age: ${age:-<none>}"
+            if [ -n "$age" ] && [ "$age" -gt 120 ]; then
+              echo "ERROR: Varnish still serving stale cache (x-cache-age=${age}s) after purge"
+              exit 1
+            fi
+            echo "Varnish cache verified fresh (x-cache-age=${age:-n/a})"
 
       - name: Purge Cloudflare cache
         if: success()
