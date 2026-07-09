@@ -13,7 +13,7 @@
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Coaching</span>
           <a href="/coaching">Coaching Overview</a>
-          <a href="/coaching-step1-crash-course">Step 1 Crash Course</a>
+          <a href="/step-1-high-yield-crash-course">Step 1 High Yield Crash Course</a>
           <a href="/coaching-step1-mastery">Step 1 Mastery</a>
           <a href="/coaching-step23-mastery">NBME Style Coaching (Step 1 and Step 2)</a>
           <a href="/coaching-tutoring">1:1 Tutoring</a>

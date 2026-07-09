@@ -1,7 +1,7 @@
 <?php
-$pageTitle = "Step 1 Crash Course | USMLE Wise";
-$pageDescription = "USMLE Step 1 Crash Course by USMLE Wise — a focused 10-day recorded program to help IMGs review high-yield content and prepare efficiently for Step 1.";
-$canonical = "https://usmlewise.com/coaching-step1-crash-course";
+$pageTitle = "Step 1 High Yield Crash Course | USMLE Wise";
+$pageDescription = "USMLE Step 1 High Yield Crash Course by USMLE Wise — a focused 10-day recorded program to help IMGs review high-yield content and prepare efficiently for Step 1.";
+$canonical = "https://usmlewise.com/step-1-high-yield-crash-course";
 $bodyClass = "msp";
 $stylesheets = [
     "/styles/match.css"

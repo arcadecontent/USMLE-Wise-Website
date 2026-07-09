@@ -48,3 +48,26 @@ jobs:
               -X PURGE -H 'X-Cache-Tags: f2eb' http://127.0.0.1:6081 || true
             curl -s -o /dev/null -w "PURGE by host -> HTTP %{http_code}\n" \
               -X PURGE -H 'Host: usmlewise.com' http://127.0.0.1:6081 || true
+
+      - name: Purge Cloudflare cache
+        if: success()
+        env:
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${CLOUDFLARE_ZONE_ID}" ] || [ -z "${CLOUDFLARE_API_TOKEN}" ]; then
+            echo "::warning::Set CLOUDFLARE_ZONE_ID and CLOUDFLARE_API_TOKEN repo secrets to enable Cloudflare purge"
+            exit 0
+          fi
+          http_code=$(curl -sS -o /tmp/cf-purge.json -w "%{http_code}" -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}')
+          cat /tmp/cf-purge.json
+          if [ "$http_code" != "200" ] || ! grep -q '"success"[[:space:]]*:[[:space:]]*true' /tmp/cf-purge.json; then
+            echo "::error::Cloudflare cache purge failed (HTTP ${http_code})"
+            exit 1
+          fi
+          echo "Cloudflare cache purged successfully"

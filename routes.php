@@ -53,8 +53,9 @@
     // Legacy URLs -> new pages. Keys are old slugs (no leading/trailing slash).
     $legacy = [
         // Nested/alternate slugs from the previous static-site era
-        'coaching/step-1-crash-course'  => '/coaching-step1-crash-course',
-        'coaching-step-1-crash-course'  => '/coaching-step1-crash-course',
+        'coaching/step-1-crash-course'  => '/step-1-high-yield-crash-course',
+        'coaching-step-1-crash-course'  => '/step-1-high-yield-crash-course',
+        'coaching-step1-crash-course'   => '/step-1-high-yield-crash-course',
         'coaching/step-1-mastery'       => '/coaching-step1-mastery',
         'coaching-step-1-mastery'       => '/coaching-step1-mastery',
         'coaching/step-1-review'        => '/coaching-step1-review',
@@ -82,12 +83,11 @@
         'privacy-policy'                => '/policy',
 
         // Old WordPress site — coaching
-        'crash-course'                    => '/coaching-step1-crash-course',
-        'crash-course-step-1'             => '/coaching-step1-crash-course',
-        'step-1-crash-course'             => '/coaching-step1-crash-course',
-        'step-1-high-yield-crash-course'  => '/coaching-step1-crash-course',
-        'crash-course-test'               => '/coaching-step1-crash-course',
-        'manik-test-crash-course'         => '/coaching-step1-crash-course',
+        'crash-course'                    => '/step-1-high-yield-crash-course',
+        'crash-course-step-1'             => '/step-1-high-yield-crash-course',
+        'step-1-crash-course'             => '/step-1-high-yield-crash-course',
+        'crash-course-test'               => '/step-1-high-yield-crash-course',
+        'manik-test-crash-course'         => '/step-1-high-yield-crash-course',
         'step-1-course'                   => '/coaching-step1-mastery',
         'usmle-mastery'                   => '/coaching-step1-mastery',
         'usmle-step-1-mastery'            => '/coaching-step1-mastery',
@@ -207,7 +207,7 @@
     if (strpos($slug, 'product/') === 0) {
         $p = substr($slug, strlen('product/'));
         $productMap = [
-            '/coaching-step1-crash-course' => ['crash-course', 'step-1'],
+            '/step-1-high-yield-crash-course' => ['crash-course', 'step-1'],
             '/coaching'                    => ['nbme', 'coaching'],
             '/match-eras-cv'               => ['eras-cv'],
             '/match-lor'                   => ['lor'],

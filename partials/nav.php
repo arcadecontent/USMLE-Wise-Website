@@ -13,8 +13,8 @@
             <span class="msp-nav__dd-name">Coaching Overview</span>
             <span class="msp-nav__dd-meta">Step 1, Step 2 CK &amp; Step 3</span>
           </a>
-          <a href="/coaching-step1-crash-course" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 1 Crash Course</span>
+          <a href="/step-1-high-yield-crash-course" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Step 1 High Yield Crash Course</span>
             <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
           </a>
           <a href="/coaching-step1-mastery" class="msp-nav__dd-link">
