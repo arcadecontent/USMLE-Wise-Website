@@ -1,2716 +1,872 @@
 <?php
-$pageTitle = "Step 1 High Yield Crash Course | USMLE Wise";
-$pageDescription = "USMLE Step 1 High Yield Crash Course by USMLE Wise — a focused 10-day recorded program to help IMGs review high-yield content and prepare efficiently for Step 1.";
-$canonical = "https://usmlewise.com/step-1-high-yield-crash-course";
-$bodyClass = "msp";
-$stylesheets = [
-    "/styles/match.css"
-];
-$scripts = [
-    "/js/match.js"
-];
-include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
-?>
+$styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/styles.css') ?: '1';
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Google tag (gtag.js) — GA4, migrated from old site -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MMVZ5WKY2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1MMVZ5WKY2');
+</script>
+<title>Step 1 High Yield Crash Course | USMLE Wise</title>
+<meta name="description" content="USMLE Step 1 High Yield Crash Course by USMLE Wise — a focused 10-day recorded program to help IMGs review high-yield content and prepare efficiently for Step 1." />
+<link rel="canonical" href="https://usmlewise.com/step-1-high-yield-crash-course" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Step 1 High Yield Crash Course | USMLE Wise" />
+<meta property="og:description" content="Pass USMLE Step 1 on your first and only attempt, in 10 focused days." />
+<meta property="og:url" content="https://usmlewise.com/step-1-high-yield-crash-course" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+<link rel="preload" as="image" href="/assets/step1-crash-course/step1-crash-course-image.jpg" fetchpriority="high" />
+<link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
+<link rel="stylesheet" href="/assets/usmle-design-system/styles.css?v=<?php echo $styles_v; ?>" />
 <style>
-      /* ============== The real problem ============== */
-      .cc-problem {
-        background: var(--uw-surface-sunk);
-        border-block: 1px solid var(--uw-border);
-      }
-      .cc-problem__cols {
-        display: grid;
-        grid-template-columns: 1.1fr 1fr;
-        gap: clamp(32px, 5vw, 72px);
-        align-items: start;
-        margin-top: var(--space-4);
-      }
-      .cc-problem__head {
-        font-family: var(--font-display);
-        font-weight: 400;
-        font-size: clamp(26px, 3.4vw, 44px);
-        line-height: 1.14;
-        letter-spacing: -0.02em;
-        color: var(--uw-ink-900);
-        margin: 0;
-        max-width: 18ch;
-      }
-      @media (max-width: 820px) {
-        .cc-problem__cols {
-          grid-template-columns: 1fr;
-          gap: var(--space-6);
-        }
-        .cc-problem__head { max-width: 22ch; }
-      }
-      .cc-problem__head em { font-style: normal; color: var(--uw-red-600); }
-      .cc-problem__body {
-        font-size: clamp(16px, 1.45vw, 19px);
-        line-height: 1.72;
-        color: var(--uw-ink-600);
-        margin: 0;
-      }
-      .cc-problem__body strong { color: var(--uw-ink-800); font-weight: 600; }
 
-      .cc-problem__turn {
-        display: flex;
-        align-items: baseline;
-        gap: var(--space-4);
-        margin: clamp(48px, 6vw, 80px) 0 clamp(28px, 3.5vw, 44px);
-        padding-left: var(--space-5);
-        border-left: 3px solid var(--uw-red-500);
-        max-width: 46ch;
-      }
-      .cc-problem__turn p {
-        font-family: var(--font-display);
-        font-size: clamp(19px, 2vw, 26px);
-        line-height: 1.38;
-        color: var(--uw-ink-900);
-        margin: 0;
-      }
+  .cc { font-family: var(--font-sans); color: var(--uw-ink-800); background: var(--uw-surface); -webkit-font-smoothing: antialiased; }
+  .cc em { font-style: italic; color: var(--uw-red-500); }
+  .cc a { color: inherit; text-decoration: none; }
+  .cc img { max-width: 100%; }
+  .cc ::selection { background: var(--uw-blue-100); }
+  .cc .dot-tex { background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px); background-size: 18px 18px; }
+  .cc { overflow-x: hidden; }
+  .cc-mobilebar { display: none; }
+  @media (max-width: 1024px) {
+    .cc-results { grid-template-columns: repeat(3,1fr) !important; }
+  }
+  @media (max-width: 880px) {
+    .cc-hero, .cc-story, .cc-contact, .cc-2, .cc-curric, .cc-duality { grid-template-columns: 1fr !important; }
+    .cc-3 { grid-template-columns: repeat(2,1fr) !important; }
+    .cc-wa { columns: 2 !important; }
+    .cc-nav-links { display: none !important; }
+    .cc-story-photo { position: static !important; max-width: 420px; }
+    .cc { padding-bottom: 78px; }
+    .cc-mobilebar { display: flex !important; }
+  }
+  @media (max-width: 560px) {
+    .cc-3 { grid-template-columns: 1fr !important; }
+    .cc-results { grid-template-columns: repeat(2,1fr) !important; }
+    .cc-wa { columns: 1 !important; }
+    .cc-formrow { grid-template-columns: 1fr !important; }
+    .cc-hero { gap: 26px !important; }
+    .cc-hide-sm { display: none !important; }
+  }
+  @keyframes cc-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .cc-marquee-track { display: flex; gap: 18px; width: max-content; animation: cc-marquee 60s linear infinite; }
+  .cc-marquee-mask:hover .cc-marquee-track { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) { .cc-marquee-track { animation: none; } }
+  @media (max-width: 700px) { .cc-marquee-track { animation-duration: 42s; } }
+  .cc-wall { scrollbar-width: thin; scrollbar-color: var(--uw-blue-300) var(--uw-blue-50); }
+  .cc-wall::-webkit-scrollbar { width: 11px; }
+  .cc-wall::-webkit-scrollbar-track { background: var(--uw-blue-50); border-radius: 999px; }
+  .cc-wall::-webkit-scrollbar-thumb { background: var(--uw-blue-300); border-radius: 999px; border: 2px solid var(--uw-blue-50); }
+  .cc-wall::-webkit-scrollbar-thumb:hover { background: var(--uw-blue-500); }
+  @media (max-width: 880px) { .cc-wall-grid { columns: 2 !important; } }
+  @media (max-width: 560px) { .cc-wall-grid { columns: 1 !important; } }
+  .cc-videos { display: grid; grid-template-columns: 0.92fr 1.4fr; gap: 18px; align-items: stretch; }
+  @media (max-width: 820px) { .cc-videos { grid-template-columns: 1fr !important; } .cc-short-wrap { max-width: 340px; margin: 0 auto; } }
+  .cc-cmp-cards { display: none; }
+  @media (max-width: 760px) {
+    .cc-cmp-table { display: none !important; }
+    .cc-cmp-cards { display: flex !important; }
+  }
 
-      .cc-fail-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: clamp(16px, 2vw, 24px);
-      }
-      .cc-fail {
-        position: relative;
-        background: var(--uw-surface);
-        border: 1px solid var(--uw-border);
-        border-radius: var(--r-xl);
-        padding: clamp(26px, 2.8vw, 38px);
-        overflow: hidden;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-      }
-      .cc-fail::before {
-        content: "";
-        position: absolute;
-        inset: 0 auto 0 0;
-        width: 3px;
-        background: var(--uw-red-500);
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-      .cc-fail:hover {
-        border-color: var(--uw-border-strong);
-        box-shadow: var(--shadow-md);
-        transform: translateY(-2px);
-      }
-      .cc-fail:hover::before { opacity: 1; }
-      .cc-fail__top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: var(--space-5);
-      }
-      .cc-fail__no {
-        font-family: var(--font-mono);
-        font-size: clamp(34px, 4vw, 46px);
-        font-weight: 500;
-        line-height: 1;
-        color: var(--uw-red-500);
-        letter-spacing: -0.02em;
-      }
-      .cc-fail__icon {
-        display: grid;
-        place-items: center;
-        width: 40px;
-        height: 40px;
-        border-radius: var(--r-lg);
-        background: var(--uw-red-50);
-        color: var(--uw-red-600);
-        flex-shrink: 0;
-      }
-      .cc-fail p {
-        font-size: clamp(15px, 1.2vw, 16.5px);
-        line-height: 1.6;
-        color: var(--uw-ink-700);
-        margin: 0;
-      }
+.ccx-h1:hover { transform:translateY(-3px);box-shadow:var(--shadow-md) }
+.ccx-h2:hover { background:var(--uw-red-600) }
+.ccx-f1:focus { border-color:var(--uw-blue-400);box-shadow:0 0 0 3px var(--uw-blue-100) }
+.cc-faq-btn:hover { background: var(--uw-ink-75); }
+</style>
+</head>
+<body>
+<div class="cc">
 
-      @media (max-width: 860px) {
-        .cc-fail-grid { grid-template-columns: 1fr; }
-      }
+  <!-- announcement -->
+  <div style="background:var(--uw-blue-900);color:#fff;text-align:center;font-size:13px;letter-spacing:.01em;padding:9px 16px">
+    <span style="opacity:.7">Today —</span>&nbsp; <s style="opacity:.5">$999</s> <b style="color:var(--uw-success-300)">$199</b> <span style="opacity:.7">one time. Lifetime access.</span>
+  </div>
 
-      /* ============== Stats grid (3 x 2) ============== */
-      .cc-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: clamp(24px, 4vw, 48px) var(--space-4);
-      }
-      @media (max-width: 760px) {
-        .cc-stats { grid-template-columns: repeat(2, 1fr); }
-      }
-      @media (max-width: 440px) {
-        .cc-stats { grid-template-columns: 1fr; }
-      }
+  <!-- nav -->
+  <nav style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px clamp(20px,5vw,48px);border-bottom:1px solid var(--uw-border);position:sticky;top:0;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);z-index:40">
+    <a href="#top" style="display:flex;align-items:center"><img src="/assets/usmle-design-system/assets/Logo-Horizontal.svg" alt="USMLE Wise" style="height:30px;display:block"></a>
+    <div class="cc-nav-links" style="display:flex;gap:2px;align-items:center;font-size:13.5px;color:var(--uw-ink-700)">
+      <a href="#curriculum" style="padding:8px 12px;border-radius:6px">Curriculum</a>
+      <a href="#why" style="padding:8px 12px;border-radius:6px">Why it works</a>
+      <a href="#compare" style="padding:8px 12px;border-radius:6px">Compare</a>
+      <a href="#faq" style="padding:8px 12px;border-radius:6px">FAQ</a>
+    </div>
+    <a href="#offer" class="cc-hide-sm"><span class="btn btn--primary btn--sm">Enroll Now</span></a>
+  </nav>
 
-      /* ============== Curriculum card grid ============== */
-      .cc-cur-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-auto-rows: 240px;
-        gap: clamp(10px, 1.4vw, 16px);
-        margin-top: clamp(36px, 5vw, 56px);
-      }
-      .cc-cur-card {
-        position: relative;
-        border-radius: var(--r-xl);
-        overflow: hidden;
-        background-color: var(--uw-ink-900);
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        list-style: none;
-      }
-      .cc-cur-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to top,
-          rgba(8, 17, 31, 0.97) 0%,
-          rgba(8, 17, 31, 0.65) 50%,
-          rgba(8, 17, 31, 0.25) 100%
-        );
-        z-index: 0;
-      }
-      /* Darker overlay for cards without photos */
-      .cc-cur-card--no-photo::before {
-        background: linear-gradient(
-          160deg,
-          rgba(20, 35, 60, 0.6) 0%,
-          rgba(8, 17, 31, 0.95) 100%
-        );
-      }
-      .cc-cur-card__inner {
-        position: relative;
-        z-index: 1;
-        padding: clamp(16px, 2vw, 22px);
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      .cc-cur-card__no {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.85);
-      }
-      .cc-cur-card__title {
-        font-family: var(--font-sans);
-        font-size: clamp(13px, 1.1vw, 15px);
-        font-weight: 600;
-        line-height: 1.3;
-        color: #fff;
-        margin: 0;
-      }
-      .cc-cur-card__hrs {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.8);
-        align-self: flex-start;
-      }
-      @media (max-width: 900px) {
-        .cc-cur-grid {
-          grid-template-columns: repeat(3, 1fr);
-          grid-auto-rows: 180px;
-        }
-      }
-      @media (max-width: 560px) {
-        .cc-cur-grid {
-          grid-template-columns: repeat(2, 1fr);
-          grid-auto-rows: 160px;
-        }
-      }
+  <!-- HERO -->
+  
 
-      /* ============== Fits any stage of prep ============== */
-      .cc-stages__head {
-        max-width: 54ch;
-        margin-bottom: clamp(40px, 5vw, 64px);
-      }
-      .cc-stages__head .msp-h2 { max-width: none; margin-bottom: var(--space-3); }
-      .cc-stages__sub {
-        font-size: clamp(16px, 1.35vw, 18px);
-        line-height: 1.65;
-        color: var(--uw-ink-600);
-        margin: 0;
-      }
-      .cc-stages__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: clamp(14px, 2vw, 24px);
-      }
-      .cc-stage {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-4);
-        padding: clamp(28px, 3.2vw, 40px);
-        background: var(--uw-blue-50);
-        border: 1px solid var(--uw-blue-200);
-        border-radius: var(--r-xl);
-        transition: background .2s ease, border-color .2s ease;
-      }
-      .cc-stage:hover {
-        background: #e8f1fd;
-        border-color: #7eb8f7;
-      }
-      .cc-stage__label {
-        display: inline-block;
-        font-family: var(--font-mono);
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: .06em;
-        text-transform: uppercase;
-        color: var(--uw-blue-700, #1a5fa8);
-        background: rgba(126,184,247,.18);
-        border: 1px solid var(--uw-blue-200);
-        border-radius: var(--r-pill);
-        padding: 5px 12px;
-        align-self: flex-start;
-      }
-      .cc-stage__hook {
-        font-family: var(--font-display);
-        font-size: clamp(22px, 2.4vw, 30px);
-        font-weight: 600;
-        line-height: 1.1;
-        letter-spacing: -.02em;
-        color: var(--uw-ink-900);
-        margin: 0;
-      }
-      .cc-stage__hook em {
-        font-style: normal;
-        color: var(--uw-blue-600, #2271c3);
-      }
-      .cc-stage__desc {
-        font-size: clamp(14px, 1.15vw, 15.5px);
-        line-height: 1.7;
-        color: var(--uw-ink-600);
-        margin: 0;
-        flex: 1;
-      }
-      .cc-stages__cta {
-        display: flex;
-        justify-content: center;
-        margin-top: clamp(40px, 5vw, 60px);
-      }
-      @media (max-width: 760px) {
-        .cc-stages__grid { grid-template-columns: 1fr; }
-      }
+  <!-- RESULTS BAR -->
+  <header id="top" style="position:relative;overflow:hidden;background:radial-gradient(1000px 520px at 88% -8%, var(--uw-blue-50), transparent), var(--uw-surface)">
+    <section class="cc-hero" style="max-width:920px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(44px,6vw,84px) clamp(20px,5vw,48px)">
+      
 
-      /* ============== Why this course works ============== */
-      .cc-works__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: clamp(16px, 2vw, 24px);
-        margin-top: clamp(32px, 4vw, 56px);
-      }
-      .cc-work {
-        position: relative;
-        background: var(--uw-surface);
-        border: 1px solid var(--uw-border);
-        border-radius: var(--r-xl);
-        padding: clamp(24px, 2.6vw, 34px);
-        overflow: hidden;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-      }
-      .cc-work::before {
-        content: "";
-        position: absolute;
-        inset: 0 auto 0 0;
-        width: 3px;
-        background: var(--uw-blue-500);
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-      .cc-work:hover {
-        border-color: var(--uw-border-strong);
-        box-shadow: var(--shadow-md);
-        transform: translateY(-2px);
-      }
-      .cc-work:hover::before { opacity: 1; }
-      .cc-work__icon {
-        display: grid;
-        place-items: center;
-        width: 44px;
-        height: 44px;
-        border-radius: var(--r-lg);
-        background: var(--uw-blue-50);
-        color: var(--uw-blue-500);
-        margin-bottom: var(--space-5);
-      }
-      .cc-work h3 {
-        font-family: var(--font-sans);
-        font-size: clamp(15px, 1.35vw, 18px);
-        font-weight: 600;
-        line-height: 1.35;
-        color: var(--uw-ink-900);
-        margin: 0 0 10px;
-      }
-      .cc-work p {
-        font-size: clamp(14px, 1.15vw, 16px);
-        line-height: 1.7;
-        color: var(--uw-ink-600);
-        margin: 0;
-      }
-      /* Wide card — closes the section */
-      .cc-work--wide {
-        grid-column: 1 / -1;
-        display: flex;
-        align-items: center;
-        gap: clamp(20px, 3vw, 40px);
-      }
-      .cc-work--wide .cc-work__icon {
-        margin-bottom: 0;
-        flex-shrink: 0;
-        width: 52px;
-        height: 52px;
-      }
-      .cc-work--wide h3 { margin: 0 0 6px; }
-      .cc-works__cta {
-        display: flex;
-        justify-content: center;
-        margin-top: clamp(32px, 4vw, 48px);
-      }
-      @media (max-width: 860px) {
-        .cc-works__grid { grid-template-columns: 1fr 1fr; }
-      }
-      @media (max-width: 560px) {
-        .cc-works__grid { grid-template-columns: 1fr; }
-        .cc-work--wide { flex-direction: column; align-items: flex-start; }
-      }
+      <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(34px,4.8vw,62px);line-height:1.05;letter-spacing:-0.025em;margin:0;color:var(--uw-ink-900);max-width:18ch">Pass USMLE Step&nbsp;1 on your first and only attempt, in <em>10 focused days</em>.</h1>
 
-      /* ============== My story (founder letter) ============== */
-      .cc-story {
-        background: var(--uw-surface-sunk);
-        border-block: 1px solid var(--uw-border);
-      }
-      .cc-story__grid {
-        display: grid;
-        grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
-        gap: clamp(40px, 6vw, 96px);
-        align-items: start;
-      }
+      <p style="font-size:clamp(17px,1.55vw,20px);line-height:1.6;color:var(--uw-ink-600);max-width:58ch;margin:22px auto 0">You'll learn straight from a team of 270+ Step&nbsp;2 scorers, with everything rebuilt for the Updated 2026 Step&nbsp;1 Syllabus. And if you finish the course but still don't pass, you get your money back.</p>
 
-      /* --- Sticky identity card --- */
-      .cc-story__aside {
-        position: sticky;
-        top: 96px;
-        align-self: start;
-      }
-      .cc-story__photo {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-        object-position: top center;
-        border-radius: var(--r-xl);
-        background: var(--uw-blue-50);
-        box-shadow: var(--shadow-md);
-        display: block;
-      }
-      .cc-story__name {
-        font-family: var(--font-display);
-        font-size: clamp(24px, 2.6vw, 32px);
-        font-weight: 600;
-        line-height: 1.08;
-        letter-spacing: -0.02em;
-        color: var(--uw-ink-900);
-        margin: var(--space-4) 0 6px;
-      }
-      .cc-story__title {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 1.4;
-        color: var(--uw-blue-600);
-        margin: 0;
-      }
-      .cc-story__creds {
-        list-style: none;
-        margin: var(--space-4) 0 0;
-        padding: var(--space-4) 0 0;
-        border-top: 1px solid var(--uw-border);
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .cc-story__cred {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-family: var(--font-mono);
-        font-size: 12.5px;
-        line-height: 1.3;
-        color: var(--uw-ink-700);
-      }
-      .cc-story__cred i,
-      .cc-story__cred svg {
-        color: var(--uw-blue-500);
-        flex-shrink: 0;
-      }
-
-      /* --- Letter --- */
-      .cc-story__letter { max-width: 62ch; }
-      .cc-story__salutation {
-        font-family: var(--font-display);
-        font-size: clamp(20px, 2vw, 26px);
-        font-weight: 600;
-        color: var(--uw-ink-900);
-        margin: var(--space-3) 0 var(--space-5);
-      }
-      .cc-story__letter p {
-        font-family: var(--font-display);
-        font-size: clamp(16px, 1.3vw, 18px);
-        line-height: 1.85;
-        color: var(--uw-ink-700);
-        margin: 0 0 var(--space-4);
-      }
-      .cc-story__letter p strong {
-        color: var(--uw-ink-900);
-        font-weight: 600;
-      }
-      .cc-story__pull {
-        font-family: var(--font-display) !important;
-        font-size: clamp(20px, 2.2vw, 27px) !important;
-        line-height: 1.4 !important;
-        color: var(--uw-ink-900) !important;
-        margin: var(--space-6) 0 !important;
-        padding-left: clamp(18px, 2vw, 26px);
-        border-left: 3px solid var(--uw-blue-500);
-      }
-      .cc-story__sign {
-        font-family: var(--font-display);
-        font-style: italic;
-        font-size: clamp(17px, 1.5vw, 19px);
-        color: var(--uw-ink-800);
-        margin: var(--space-6) 0 var(--space-5) !important;
-      }
-      .cc-story__cta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-3);
-        align-items: center;
-      }
-
-      /* ============== FAQ (multi-open accordion) ============== */
-      .cc-faq__grid {
-        max-width: 860px;
-        margin-inline: auto;
-        text-align: center;
-      }
-      .cc-faq__grid .msp-h2 { margin-inline: auto; }
-      .cc-faq__list {
-        margin-top: clamp(32px, 4vw, 44px);
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        text-align: left;
-      }
-      .cc-faq__item {
-        border: 1px solid var(--uw-border);
-        border-radius: var(--r-md);
-        background: #fff;
-        overflow: hidden;
-        transition: border-color 0.2s ease;
-      }
-      .cc-faq__item.is-open { border-color: var(--uw-blue-200); }
-      .cc-faq__head {
-        position: relative;
-        width: 100%;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: var(--font-sans);
-        font-weight: 600;
-        font-size: clamp(15px, 1.4vw, 16px);
-        line-height: 1.45;
-        color: var(--uw-ink-900);
-        text-align: center;
-        padding: 24px 56px;
-      }
-      .cc-faq__head::after {
-        content: "+";
-        position: absolute;
-        right: 24px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 22px;
-        line-height: 1;
-        color: var(--uw-ink-500);
-        transition: color 0.2s ease;
-      }
-      .cc-faq__item.is-open .cc-faq__head { color: var(--uw-blue-700); }
-      .cc-faq__item.is-open .cc-faq__head::after {
-        content: "\2212";
-        color: var(--uw-blue-600);
-      }
-      .cc-faq__body {
-        display: none;
-        padding: 0 56px 24px;
-        font-size: 15px;
-        line-height: 1.65;
-        color: var(--uw-ink-600);
-        text-align: center;
-      }
-      .cc-faq__item.is-open .cc-faq__body { display: block; }
-      .cc-faq__group-label {
-        font-family: var(--font-mono);
-        font-size: 10.5px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--uw-blue-500);
-        padding: 8px 0 4px;
-        margin-top: 12px;
-      }
-      .cc-faq__group-label:first-child { margin-top: 0; }
-      @media (max-width: 640px) {
-        .cc-faq__head { padding: 18px 44px; font-size: 15px; }
-        .cc-faq__body { padding: 0 24px 20px; }
-      }
-
-      @media (max-width: 860px) {
-        .cc-story__grid {
-          grid-template-columns: 1fr;
-          gap: var(--space-6);
-        }
-        .cc-story__aside {
-          position: static;
-          display: grid;
-          grid-template-columns: 110px 1fr;
-          gap: var(--space-4) var(--space-5);
-          align-items: center;
-        }
-        .cc-story__photo { aspect-ratio: 1; }
-        .cc-story__name { margin-top: 0; }
-        .cc-story__creds {
-          grid-column: 1 / -1;
-          flex-direction: row;
-          flex-wrap: wrap;
-          gap: 10px 22px;
-        }
-      }
-
-      /* ============== Final CTA — offer / value stack ============== */
-      .cc-offer {
-        max-width: 640px;
-        margin-inline: auto;
-        background: #08111f;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: clamp(20px, 2.4vw, 28px);
-        overflow: hidden;
-        box-shadow: var(--shadow-lg);
-      }
-      .cc-offer__head {
-        text-align: center;
-        padding: clamp(34px, 5vw, 52px) clamp(24px, 4vw, 52px) 0;
-      }
-      .cc-offer__head .msp-eyebrow { justify-content: center; }
-      .cc-offer__title {
-        font-family: var(--font-display);
-        font-weight: 600;
-        font-size: clamp(26px, 3.4vw, 38px);
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        color: #fff;
-        margin: var(--space-3) 0 0;
-      }
-      .cc-offer__body {
-        padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 52px)
-          clamp(32px, 4vw, 48px);
-      }
-
-      /* value stack */
-      .cc-offer__stack { list-style: none; margin: 0; padding: 0; }
-      .cc-offer__row {
-        display: flex;
-        align-items: baseline;
-        gap: 16px;
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      }
-      .cc-offer__row-name {
-        flex: 1;
-        font-size: 15px;
-        line-height: 1.5;
-        color: rgba(255, 255, 255, 0.78);
-      }
-      .cc-offer__row-price {
-        font-family: var(--font-mono);
-        font-size: 15px;
-        color: rgba(255, 255, 255, 0.5);
-        white-space: nowrap;
-      }
-      .cc-offer__row--total {
-        border-bottom: none;
-        margin-top: 4px;
-      }
-      .cc-offer__row--total .cc-offer__row-name {
-        font-weight: 600;
-        color: #fff;
-      }
-      .cc-offer__row--total .cc-offer__row-price {
-        font-size: 17px;
-        color: #fff;
-      }
-
-      /* price highlight */
-      .cc-offer__price {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px 20px;
-        flex-wrap: wrap;
-        margin-top: var(--space-5);
-        padding: clamp(20px, 3vw, 28px);
-        background: rgba(126, 184, 247, 0.08);
-        border: 1px solid rgba(126, 184, 247, 0.22);
-        border-radius: var(--r-lg);
-      }
-      .cc-offer__price-label {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: rgba(255, 255, 255, 0.5);
-      }
-      .cc-offer__price-save {
-        display: inline-block;
-        margin-top: 8px;
-        font-family: var(--font-mono);
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.04em;
-        color: #7eb8f7;
-        background: rgba(126, 184, 247, 0.12);
-        border-radius: var(--r-pill);
-        padding: 4px 10px;
-      }
-      .cc-offer__price-nums {
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
-      }
-      .cc-offer__price-was {
-        font-family: var(--font-mono);
-        font-size: clamp(18px, 2.2vw, 22px);
-        color: rgba(255, 255, 255, 0.35);
-        text-decoration: line-through;
-      }
-      .cc-offer__price-now {
-        font-family: var(--font-display);
-        font-weight: 600;
-        font-size: clamp(44px, 6.5vw, 60px);
-        line-height: 0.9;
-        letter-spacing: -0.03em;
-        color: #fff;
-      }
-      .cc-offer__fine {
-        font-size: 14px;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.6);
-        text-align: center;
-        margin: var(--space-5) 0 0;
-      }
-      .cc-offer__cta {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        margin-top: var(--space-4);
-      }
-      .cc-offer__guarantee {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-        margin-top: var(--space-6);
-        padding-top: var(--space-5);
-        border-top: 1px solid rgba(255, 255, 255, 0.07);
-      }
-      .cc-offer__guarantee i,
-      .cc-offer__guarantee svg {
-        color: #7eb8f7;
-        flex-shrink: 0;
-        margin-top: 1px;
-      }
-      .cc-offer__guarantee p {
-        margin: 0;
-        font-size: 13.5px;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.55);
-      }
-      .cc-offer__guarantee strong { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
-
-      /* ============== Final closing CTA ============== */
-      .cc-closing {
-        background: var(--uw-blue-700);
-        text-align: center;
-        width: 100vw;
-        margin-inline: calc(50% - 50vw);
-        padding-inline: clamp(20px, 5vw, 56px);
-      }
-      .cc-closing__body {
-        max-width: 640px;
-        margin-inline: auto;
-      }
-      .cc-closing__copy {
-        font-size: clamp(17px, 1.6vw, 21px);
-        line-height: 1.65;
-        color: rgba(255, 255, 255, 0.8);
-        margin: 0 0 clamp(28px, 3.5vw, 40px);
-      }
-
-      /* ============== Contact section ============== */
-      .cc-contact {
-        border-top: 1px solid var(--uw-border);
-      }
-      .cc-contact__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(48px, 7vw, 96px);
-        align-items: start;
-      }
-      .cc-contact__intro {
-        position: sticky;
-        top: 96px;
-      }
-      .cc-contact__lead {
-        font-size: clamp(15px, 1.3vw, 17px);
-        line-height: 1.7;
-        color: var(--uw-ink-600);
-        margin: 0 0 clamp(24px, 3vw, 36px);
-      }
-      .cc-contact__wa {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 14px 24px;
-        border-radius: var(--r-lg);
-        background: #25d366;
-        color: #fff;
-        font-family: var(--font-sans);
-        font-size: 15px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: background 0.2s, transform 0.15s;
-      }
-      .cc-contact__wa:hover { background: #1ebe5a; transform: translateY(-1px); }
-      .cc-contact__or {
-        display: block;
-        margin-top: clamp(20px, 2.5vw, 28px);
-        font-size: 14px;
-        color: var(--uw-ink-400);
-      }
-      /* Form card */
-      .cc-contact__card {
-        background: var(--uw-surface);
-        border: 1px solid var(--uw-border);
-        border-radius: var(--r-xl);
-        padding: clamp(28px, 3.5vw, 48px);
-      }
-      .cc-field-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-      @media (max-width: 480px) {
-        .cc-field-row { grid-template-columns: 1fr; }
-      }
-      /* Form */
-      .cc-contact__form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-      .cc-field {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .cc-field label {
-        font-size: 13.5px;
-        font-weight: 500;
-        color: var(--uw-ink-700);
-      }
-      .cc-field input,
-      .cc-field select,
-      .cc-field textarea {
-        width: 100%;
-        padding: 11px 14px;
-        border: 1px solid var(--uw-border);
-        border-radius: var(--r-lg);
-        background: var(--uw-surface);
-        font-family: var(--font-sans);
-        font-size: 15px;
-        color: var(--uw-ink-900);
-        transition: border-color 0.2s, box-shadow 0.2s;
-        box-sizing: border-box;
-      }
-      .cc-field input::placeholder,
-      .cc-field textarea::placeholder { color: var(--uw-ink-400); }
-      .cc-field input:focus,
-      .cc-field select:focus,
-      .cc-field textarea:focus {
-        outline: none;
-        border-color: var(--uw-blue-500);
-        box-shadow: 0 0 0 3px var(--uw-blue-50);
-      }
-      .cc-field textarea { resize: vertical; min-height: 130px; }
-      .cc-field select { appearance: none; cursor: pointer; }
-      .cc-captcha {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        color: var(--uw-ink-600);
-      }
-      .cc-captcha input[type="checkbox"] {
-        width: 18px;
-        height: 18px;
-        accent-color: var(--uw-blue-500);
-        cursor: pointer;
-        flex-shrink: 0;
-      }
-      @media (max-width: 720px) {
-        .cc-contact__grid { grid-template-columns: 1fr; }
-        .cc-contact__intro { position: static; }
-      }
-
-      /* ============== How we compare ============== */
-      .cc-compare__table {
-        margin-top: clamp(32px, 4vw, 56px);
-        border: 1px solid var(--uw-border);
-        border-radius: var(--r-xl);
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
-      }
-      .cc-compare__row {
-        display: grid;
-        grid-template-columns: 0.9fr 1.35fr 1.25fr;
-        border-bottom: 1px solid var(--uw-border);
-      }
-      .cc-compare__row:last-child { border-bottom: none; }
-      .cc-compare__row > div {
-        padding: clamp(16px, 1.9vw, 22px) clamp(15px, 1.8vw, 24px);
-      }
-      .cc-compare__feature {
-        display: flex;
-        align-items: center;
-        font-family: var(--font-sans);
-        font-weight: 600;
-        font-size: clamp(13.5px, 1.15vw, 15.5px);
-        color: var(--uw-ink-900);
-        background: var(--uw-surface-sunk);
-      }
-      .cc-compare__ours,
-      .cc-compare__theirs {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        font-size: clamp(13px, 1.05vw, 14.5px);
-        line-height: 1.55;
-      }
-      .cc-compare__ours {
-        background: var(--uw-blue-50);
-        color: var(--uw-ink-800);
-      }
-      .cc-compare__theirs { color: var(--uw-ink-500); }
-      .cc-compare__ico { flex-shrink: 0; margin-top: 1px; }
-      .cc-compare__ours .cc-compare__ico { color: var(--uw-blue-500); }
-      .cc-compare__theirs .cc-compare__ico { color: var(--uw-ink-400); }
-
-      /* Header row */
-      .cc-compare__row--head > div {
-        font-family: var(--font-sans);
-        font-weight: 600;
-        font-size: clamp(13px, 1.1vw, 15px);
-        line-height: 1.35;
-      }
-      .cc-compare__row--head .cc-compare__ours {
-        background: var(--uw-blue-100);
-        color: var(--uw-blue-600);
-      }
-      .cc-compare__row--head .cc-compare__theirs {
-        background: var(--uw-surface-sunk);
-        color: var(--uw-ink-600);
-      }
-
-      .cc-compare__cta {
-        display: flex;
-        justify-content: center;
-        margin-top: clamp(32px, 4vw, 48px);
-      }
-
-      @media (max-width: 760px) {
-        .cc-compare__row { grid-template-columns: 1fr; }
-        .cc-compare__row--head { display: none; }
-        .cc-compare__feature {
-          background: var(--uw-surface-sunk);
-          color: var(--uw-ink-900);
-          border-bottom: 1px solid var(--uw-border);
-        }
-        .cc-compare__ours,
-        .cc-compare__theirs { flex-wrap: wrap; }
-        .cc-compare__ours::before,
-        .cc-compare__theirs::before {
-          content: attr(data-label);
-          flex-basis: 100%;
-          font-family: var(--font-mono);
-          font-size: 10.5px;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          font-weight: 600;
-          margin-bottom: 6px;
-        }
-        .cc-compare__ours::before { color: var(--uw-blue-500); }
-        .cc-compare__theirs::before { color: var(--uw-ink-500); }
-      }
-
-      /* ============== Scrollable testimonial grid ============== */
-      .cc-tscroll {
-        border-block: 1px solid var(--uw-border);
-      }
-      .cc-tscroll__viewport {
-        max-height: 560px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: var(--uw-border) transparent;
-      }
-      .cc-tscroll__viewport::-webkit-scrollbar { width: 4px; }
-      .cc-tscroll__viewport::-webkit-scrollbar-track { background: transparent; }
-      .cc-tscroll__viewport::-webkit-scrollbar-thumb {
-        background: var(--uw-border);
-        border-radius: 2px;
-      }
-      .cc-tscroll__track {
-        column-count: 3;
-        column-gap: 12px;
-        padding-bottom: 4px;
-      }
-      .cc-tscroll__track img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: var(--r-lg);
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-        transition: box-shadow 0.2s, transform 0.2s;
-        cursor: pointer;
-        margin-bottom: 12px;
-        break-inside: avoid;
-      }
-      .cc-tscroll__track img:hover {
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
-        transform: scale(1.02);
-      }
-      @media (max-width: 600px) {
-        .cc-tscroll__track { column-count: 2; }
-      }
-
-      /* ============== 10 days from now ============== */
-      .cc-flip {
-        background: var(--uw-surface-sunk);
-        border-block: 1px solid var(--uw-border);
-      }
-      .cc-flip__intro {
-        text-align: center;
-        margin-bottom: clamp(40px, 5vw, 60px);
-      }
-      .cc-flip__eyebrow {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        color: var(--uw-ink-400);
-        margin: 0 0 18px;
-      }
-      .cc-flip__headline {
-        font-family: var(--font-display);
-        font-size: clamp(28px, 3.8vw, 46px);
-        font-weight: 600;
-        line-height: 1.1;
-        letter-spacing: -.02em;
-        color: var(--uw-ink-900);
-        margin: 0;
-      }
-      .cc-flip__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(12px, 2vw, 18px);
-        margin-bottom: clamp(40px, 5vw, 56px);
-      }
-      .cc-flip__col {
-        border-radius: var(--r-xl);
-        overflow: hidden;
-        background: var(--uw-surface);
-      }
-      .cc-flip__col--without {
-        border: 1px solid var(--uw-red-200, #f5c0b8);
-      }
-      .cc-flip__col--with {
-        border: 1px solid var(--uw-blue-200);
-      }
-      .cc-flip__col-head {
-        padding: clamp(14px, 1.8vw, 20px) clamp(20px, 2.5vw, 28px);
-        border-bottom: 1px solid var(--uw-border);
-      }
-      .cc-flip__label {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        font-weight: 500;
-      }
-      .cc-flip__col--without .cc-flip__label { color: var(--uw-red-600); }
-      .cc-flip__col--with .cc-flip__label { color: var(--uw-blue-500); }
-      .cc-flip__items {
-        list-style: none;
-        margin: 0;
-        padding: clamp(4px, 1vw, 8px) clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 28px);
-      }
-      .cc-flip__item {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        padding: clamp(12px, 1.5vw, 16px) 0;
-        border-bottom: 1px solid var(--uw-border);
-        font-size: clamp(14px, 1.25vw, 16px);
-        line-height: 1.55;
-        color: var(--uw-ink-600);
-      }
-      .cc-flip__item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-        font-weight: 600;
-        color: var(--uw-ink-900);
-      }
-      .cc-flip__col--without .cc-flip__item:last-child { color: var(--uw-ink-500); font-weight: 400; }
-      .cc-flip__icon {
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-      .cc-flip__col--without .cc-flip__icon { color: var(--uw-red-500); }
-      .cc-flip__col--with .cc-flip__icon { color: var(--uw-blue-500); }
-      .cc-flip__cta {
-        display: flex;
-        justify-content: center;
-      }
-      @media (max-width: 600px) {
-        .cc-flip__grid { grid-template-columns: 1fr; }
-      }
-
-      /* ============== Video testimonials (bento) ============== */
-      .cc-vids__head {
-        text-align: center;
-        margin-bottom: clamp(36px, 5vw, 56px);
-      }
-      .cc-vids__head .msp-eyebrow { justify-content: center; }
-      .cc-vids__head .msp-h2 { margin-inline: auto; }
-      .cc-vids__grid {
-        display: grid;
-        grid-template-columns: 1fr 1.58fr;
-        grid-template-rows: 1fr 1fr;
-        gap: clamp(10px, 1.4vw, 16px);
-      }
-      .cc-vt {
-        position: relative;
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-        overflow: hidden;
-        border-radius: var(--r-xl);
-        background: #0d1b2e;
-        aspect-ratio: 16 / 9;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .cc-vt--tall {
-        grid-column: 1;
-        grid-row: 1 / span 2;
-        aspect-ratio: 9 / 16;
-      }
-      .cc-vt__thumb {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform .6s ease, filter .3s ease;
-      }
-      .cc-vt:hover .cc-vt__thumb,
-      .cc-vt:focus-visible .cc-vt__thumb { transform: scale(1.04); filter: brightness(.9); }
-      .cc-vt__overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        background: linear-gradient(180deg, rgba(8,17,31,.12), rgba(8,17,31,.45));
-        transition: background .3s ease;
-      }
-      .cc-vt:hover .cc-vt__overlay,
-      .cc-vt:focus-visible .cc-vt__overlay { background: linear-gradient(180deg, rgba(8,17,31,.24), rgba(8,17,31,.55)); }
-      .cc-vt__play {
-        display: grid;
-        place-items: center;
-        width: clamp(56px, 6vw, 74px);
-        height: clamp(56px, 6vw, 74px);
-        border-radius: 50%;
-        background: rgba(255,255,255,.18);
-        border: 1px solid rgba(255,255,255,.55);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        transition: transform .2s ease, background .2s ease;
-      }
-      .cc-vt:hover .cc-vt__play,
-      .cc-vt:focus-visible .cc-vt__play { transform: scale(1.08); background: rgba(255,255,255,.3); }
-      .cc-vt__play svg { margin-left: 3px; }
-      .cc-vt__label {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        color: #fff;
-        text-shadow: 0 1px 6px rgba(0,0,0,.45);
-      }
-      .cc-vt:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 3px; }
-      .cc-vt.is-playing { background: #000; cursor: default; }
-      .cc-vt.is-playing .cc-vt__thumb,
-      .cc-vt.is-playing .cc-vt__overlay { display: none; }
-      .cc-vt iframe {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-      @media (max-width: 620px) {
-        .cc-vids__grid {
-          grid-template-columns: 1fr;
-          grid-template-rows: auto;
-        }
-        .cc-vt--tall {
-          grid-column: 1;
-          grid-row: auto;
-          max-width: 300px;
-          margin-inline: auto;
-        }
-      }
-      /* ============== Hero — single centered column ============== */
-      .msp-hero__grid {
-        display: block;
-        max-width: 780px;
-        margin-inline: auto;
-        text-align: center;
-      }
-      .msp-hero__copy {
-        display: block;
-      }
-      .msp-hero__copy .msp-lede {
-        max-width: 60ch;
-        margin-inline: auto;
-      }
-      .msp-hero__copy .msp-cta-row {
-        max-width: none;
-        justify-content: center;
-      }
-
-      /* ============== Hero cover image ============== */
-      .cc-hero-cover {
-        position: relative;
-        margin-block: clamp(24px, 3vw, 36px);
-        margin-inline: auto;
-        max-width: 620px;
-        border-radius: var(--r-xl);
-        overflow: hidden;
-        box-shadow: var(--shadow-md);
-      }
-      .cc-hero-cover__img {
-        width: 100%;
-        display: block;
-        height: auto;
-      }
-      .cc-hero-badge {
-        position: absolute;
-        right: clamp(12px, 3%, 22px);
-        bottom: clamp(12px, 3%, 22px);
-        width: clamp(72px, 15%, 104px);
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: #fff;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        line-height: 1;
-        font-family: var(--font-sans);
-      }
-      .cc-hero-badge__pct {
-        color: var(--uw-red-600);
-        font-weight: 800;
-        font-size: clamp(15px, 3.2vw, 22px);
-        letter-spacing: -0.02em;
-      }
-      .cc-hero-badge__pass,
-      .cc-hero-badge__grt {
-        color: var(--uw-ink-700);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-size: clamp(6px, 1.3vw, 8px);
-        margin-top: 2px;
-      }
-
-    </style>
-
-<main>
-      <!-- ============== 1. HERO ============== -->
-      <section class="msp-hero" aria-labelledby="heroTitle">
-        <div class="msp-wrap msp-hero__grid">
-          <div class="msp-hero__copy reveal">
-            <h1 id="heroTitle" class="msp-h1">
-              Pass USMLE Step 1 on your first and only attempt,
-              <span class="msp-h1__accent">in 10 focused days.</span>
-            </h1>
-
-            <p class="msp-lede">
-              You'll learn straight from a team of 270+ Step 2 scorers, with everything rebuilt for the Updated 2026 Step 1 Syllabus. And if you finish the course but still don't pass, you get your money back.
-            </p>
-
-            <div class="cc-hero-cover reveal">
-              <picture>
-                <source srcset="/assets/Photos/program-covers/step1-crash-course-cover.webp" type="image/webp">
-                <img src="/assets/Photos/program-covers/Step%201%20Crash%20Course%20Image.jpg" alt="USMLE Step 1 Crash Course program cover" class="cc-hero-cover__img">
-              </picture>
-              <span class="cc-hero-badge" aria-label="100% Pass Guarantee">
-                <b class="cc-hero-badge__pct">100%</b>
-                <span class="cc-hero-badge__pass">Pass</span>
-                <span class="cc-hero-badge__grt">Guarantee</span>
-              </span>
-            </div>
-            <div class="msp-cta-row">
-              <a
-                class="btn btn--primary btn--xl"
-                href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Enroll Now</a
-              >
-            </div>
+      <!-- VSL video -->
+      <div style="position:relative;width:100%;max-width:720px;margin:clamp(34px,4vw,48px) auto 0">
+        <a href="#offer" style="display:block;position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-xl);aspect-ratio:16/9;border:1px solid var(--uw-border)">
+          <img src="/assets/step1-crash-course/step1-crash-course-image.jpg" alt="USMLE Step 1 Ultra High-Yield Crash Course" style="width:100%;height:100%;object-fit:cover;display:block">
+          <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,18,51,0) 45%,rgba(15,18,51,.4))"></span>
+        </a>
+        <div style="position:absolute;right:-12px;bottom:-16px;width:94px;height:94px;border-radius:50%;background:var(--uw-surface);box-shadow:var(--shadow-lg);display:grid;place-items:center;text-align:center;border:1px solid var(--uw-border);transform:rotate(-8deg)">
+          <div style="line-height:1.1">
+            <div style="font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--uw-red-500)">100%</div>
+            <div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-mono);color:var(--uw-ink-600)">Pass<br>guarantee</div>
           </div>
-
-        </div>
-
-        <div class="msp-bar msp-wrap" aria-label="Track record">
-          <div class="msp-bar__inner">
-            <div class="msp-stat reveal">
-              <b data-count="99.3" data-suffix="%" data-decimal="1">99.3%</b>
-              <span>Pass rate</span>
-            </div>
-            <div class="msp-stat reveal">
-              <b data-count="17000" data-suffix="+" data-comma>17,000+</b>
-              <span>Students trained</span>
-            </div>
-            <div class="msp-stat reveal">
-              <b data-count="270" data-suffix="+">270+</b>
-              <span>Instructor USMLE Step 2 score</span>
-            </div>
-            <div class="msp-stat reveal">
-              <b>20&ndash;40</b>
-              <span>Point jumps on practice NBMEs</span>
-            </div>
-            <div class="msp-stat reveal">
-              <b data-count="100" data-suffix="%">100%</b>
-              <span>Pass guarantee</span>
-            </div>
-            <div class="msp-stat reveal">
-              <b>2x</b>
-              <span>Faster score gains vs. months of self-study</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== 2. THE REAL PROBLEM ============== -->
-      <section class="msp-section cc-problem" aria-labelledby="problemTitle">
-        <div class="msp-wrap">
-          <div class="cc-problem__lead reveal">
-            <span class="msp-eyebrow">The real problem</span>
-            <div class="cc-problem__cols">
-              <h2 id="problemTitle" class="cc-problem__head">
-                Every year, brilliant med students fail Step 1 &mdash;
-                <em>and it's usually not because they didn't work hard.</em>
-              </h2>
-              <p class="cc-problem__body">
-                They grind through UWorld, memorize First Aid cover to cover, and
-                drown in Anki decks and random PDFs. Then test day comes.
-                <strong>They can't recall the facts they crammed for weeks.</strong>
-                The look-alike answer choices blur into each other. And biostats
-                and ethics quietly take the points they can't afford to lose.
-              </p>
-            </div>
-          </div>
-
-          <div class="cc-problem__turn reveal">
-            <p>
-              So what's actually going wrong? Honestly, it usually comes down to
-              three things.
-            </p>
-          </div>
-
-          <div class="cc-fail-grid">
-            <div class="cc-fail reveal">
-              <div class="cc-fail__top">
-                <span class="cc-fail__no">01</span>
-                <span class="cc-fail__icon" aria-hidden="true">
-                  <i data-lucide="crosshair" width="20" height="20"></i>
-                </span>
-              </div>
-              <p>
-                They've poured hundreds of hours into low-yield material while
-                missing what the NBME really tests.
-              </p>
-            </div>
-
-            <div class="cc-fail reveal">
-              <div class="cc-fail__top">
-                <span class="cc-fail__no">02</span>
-                <span class="cc-fail__icon" aria-hidden="true">
-                  <i data-lucide="timer" width="20" height="20"></i>
-                </span>
-              </div>
-              <p>
-                They've memorized everything but never learned the test taking
-                skills that help you rule out the wrong answers to reach the
-                right ones in time.
-              </p>
-            </div>
-
-            <div class="cc-fail reveal">
-              <div class="cc-fail__top">
-                <span class="cc-fail__no">03</span>
-                <span class="cc-fail__icon" aria-hidden="true">
-                  <i data-lucide="calendar-x" width="20" height="20"></i>
-                </span>
-              </div>
-              <p>
-                And the resources they're studying from were built for the old
-                Step 1, before the post-2022 surge in ethics, nutrition,
-                biostatistics, and the longer second-order vignettes the
-                current NBME favors.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== 4. MY STORY (FOUNDER LETTER) ============== -->
-      <section class="msp-section cc-story" id="my-story" aria-labelledby="storyTitle">
-        <div class="msp-wrap">
-          <div class="cc-story__grid">
-
-            <!-- Sticky identity card -->
-            <aside class="cc-story__aside reveal">
-              <img
-                class="cc-story__photo"
-                src="/assets/Photos/Team-Members/Manik.jpg"
-                alt="Dr. Manik Madaan, founder of USMLE Wise" loading="lazy" decoding="async" />
-              <h2 id="storyTitle" class="cc-story__name">Dr. Manik Madaan</h2>
-              <p class="cc-story__title">World&rsquo;s most-followed USMLE expert</p>
-              <ul class="cc-story__creds">
-                <li class="cc-story__cred">
-                  <i data-lucide="award" width="16" height="16"></i>
-                  260 on Step&nbsp;1 &middot; 271 on Step&nbsp;2
-                </li>
-                <li class="cc-story__cred">
-                  <i data-lucide="users" width="16" height="16"></i>
-                  700,000+ followers
-                </li>
-                <li class="cc-story__cred">
-                  <i data-lucide="graduation-cap" width="16" height="16"></i>
-                  17,000+ students taught
-                </li>
-              </ul>
-            </aside>
-
-            <!-- Letter -->
-            <div class="cc-story__letter reveal">
-              <span class="msp-eyebrow">My story</span>
-              <p class="cc-story__salutation">Dear future resident,</p>
-
-              <p>
-                I&rsquo;m Dr. Manik Madaan. I teach Step&nbsp;1 this way because I
-                had to learn it the hard way first.
-              </p>
-              <p>
-                When I was preparing, the content was completely overwhelming.
-                Resource stacked on resource. Every one of them labeled
-                &ldquo;high-yield.&rdquo; And not one of them telling me what
-                actually mattered.
-              </p>
-              <p>Then I sat all three USMLE exams, and it hit me.</p>
-
-              <p class="cc-story__pull">
-                Only about 20% of what&rsquo;s in the traditional resources
-                actually moves the needle. The other 80% is outdated fluff &mdash;
-                and all it does is slow you down.
-              </p>
-
-              <p>
-                Here&rsquo;s why that matters so much. Step&nbsp;1 hands you hard
-                questions, with very little time to answer them. So every minute
-                you spend digging for some low-yield fact is a minute you
-                <strong>don&rsquo;t</strong> have for the question right in front
-                of you.
-              </p>
-              <p>
-                So I built the ultimate resource I wish someone had handed me
-                &mdash; the <strong>USMLE Step&nbsp;1 Ultra High-Yield Crash
-                Course.</strong> Ten days. Only what the NBME actually tests. No
-                low-yield noise to sort through, just the 20% that gets you a
-                confident pass.
-              </p>
-              <p>
-                Then I watched it work. Students who were sure 10 days
-                couldn&rsquo;t be enough? They passed. People who&rsquo;d already
-                failed once, and were terrified to sit again? They passed too.
-              </p>
-              <p>
-                And since Step&nbsp;1 is pass/fail, a clean pass is the whole win.
-                <strong>Every week you save here goes straight into Step&nbsp;2
-                &mdash; the exam programs actually rank you on.</strong>
-              </p>
-
-              <p class="cc-story__sign">&mdash; Dr. Manik Madaan</p>
-
-              <div class="cc-story__cta">
-                <a
-                  class="btn btn--primary btn--lg"
-                  href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >Get Instant Access <i data-lucide="arrow-right" width="16" height="16"></i></a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== 8b. SCREENSHOT TESTIMONIALS ============== -->
-      <section
-        class="msp-section msp-shots"
-        id="student-messages"
-        aria-labelledby="shotsTitle"
-      >
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">From our students</span>
-            <h2 id="shotsTitle" class="msp-h2">
-              What students send us after exam day
-            </h2>
-          </div>
-          <div class="cc-ticker" aria-hidden="true">
-            <div class="cc-ticker__track">
-              <img src="/assets/Testimonials/Photos/Coaching/Ishaan-Singh.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(1).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(2).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(3).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(4).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(5).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.28-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.59-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.14-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.20-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.25-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.36-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.47-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.02-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.13-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.25-PM.png" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.37-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.47-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-03-09-at-12.49.26-AM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-11-at-6.35.12-PM.png" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-13-at-10.30.35-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-Apr-14-2026-from-WhatsApp.jpg" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image-Nov-19-2025.jpeg" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image.jpeg" alt="" />
-              <!-- duplicate set for seamless loop -->
-              <img src="/assets/Testimonials/Photos/Coaching/Ishaan-Singh.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(1).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(2).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(3).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(4).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(5).webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.28-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.59-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.14-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.20-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.25-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.36-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.47-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.02-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.13-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.25-PM.png" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.37-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.47-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-03-09-at-12.49.26-AM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-11-at-6.35.12-PM.png" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-13-at-10.30.35-PM.webp" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/Screenshot-Apr-14-2026-from-WhatsApp.jpg" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image-Nov-19-2025.jpeg" alt="" />
-              <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image.jpeg" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Image lightbox for testimonial screenshots -->
-      <div class="cc-img-lightbox" id="ccImgLightbox" role="dialog" aria-modal="true" aria-label="Testimonial screenshot" hidden>
-        <div class="cc-img-lightbox__inner">
-          <button class="cc-img-lightbox__close" id="ccImgLightboxClose" aria-label="Close">&times;</button>
-          <img id="ccImgLightboxImg" src="" alt="Student testimonial screenshot" />
         </div>
       </div>
 
-      <!-- ============== 3. WHY THIS COURSE WORKS ============== -->
-      <section class="msp-section" id="why-it-works" aria-labelledby="worksTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Why it works</span>
-            <h2 id="worksTitle" class="msp-h2">
-              Why this course works<br>(when others don&rsquo;t)
-            </h2>
-          </div>
+      <!-- price + CTA -->
+      <div style="display:flex;align-items:baseline;justify-content:center;gap:12px;margin:clamp(38px,4.5vw,52px) 0 6px">
+        <s style="font-family:var(--font-display);font-size:30px;color:var(--uw-ink-400);text-decoration-thickness:2px">$999</s>
+        <span style="font-family:var(--font-display);font-size:clamp(46px,6vw,60px);font-weight:600;line-height:.9;color:var(--uw-ink-900)">$199</span>
+      </div>
+      <div style="font-size:13px;line-height:1.4;color:var(--uw-ink-500);margin-bottom:24px">One time · Lifetime access</div>
 
-          <div class="cc-works__grid">
-            <div class="cc-work reveal">
-              <span class="cc-work__icon" aria-hidden="true">
-                <i data-lucide="zap" width="22" height="22"></i>
-              </span>
-              <h3>10 days, 60 hours, zero fluff.</h3>
-              <p>Every session targets what the NBME tests most. If it&rsquo;s not high-yield, it&rsquo;s not in.</p>
-            </div>
-            <div class="cc-work reveal">
-              <span class="cc-work__icon" aria-hidden="true">
-                <i data-lucide="refresh-cw" width="22" height="22"></i>
-              </span>
-              <h3>Rebuilt for the 2026 Step&nbsp;1 Syllabus.</h3>
-              <p>We rebuilt it line by line for the latest Step 1 updates &amp; trends.</p>
-            </div>
-            <div class="cc-work reveal">
-              <span class="cc-work__icon" aria-hidden="true">
-                <i data-lucide="list-checks" width="22" height="22"></i>
-              </span>
-              <h3>Question-powered teaching.</h3>
-              <p>Integrated NBME-style vignettes from minute one, so you train your knowledge and your test-taking at the same time.</p>
-            </div>
-            <div class="cc-work reveal">
-              <span class="cc-work__icon" aria-hidden="true">
-                <i data-lucide="layers" width="22" height="22"></i>
-              </span>
-              <h3>The N+1 method.</h3>
-              <p>We engineer retention, stacking each concept on the last so it sticks for good and bridges into Step&nbsp;2.</p>
-            </div>
-            <div class="cc-work reveal">
-              <span class="cc-work__icon" aria-hidden="true">
-                <i data-lucide="target" width="22" height="22"></i>
-              </span>
-              <h3>The frameworks high scorers use.</h3>
-              <p>A three-pass read (Route, Extract, Decide) for long chart stems, an elimination blueprint for coin-flip items, and plug-and-play ethics scripts.</p>
-            </div>
-            <div class="cc-work reveal">
-              <span class="cc-work__icon" aria-hidden="true">
-                <i data-lucide="award" width="22" height="22"></i>
-              </span>
-              <h3>Teachers who scored 270+ on Step&nbsp;2.</h3>
-              <p>You learn from doctors who beat this exam, sat it themselves, and reverse-engineered exactly how it&rsquo;s built.</p>
-            </div>
-            <div class="cc-work cc-work--wide reveal">
-              <span class="cc-work__icon" aria-hidden="true">
-                <i data-lucide="play" width="26" height="26"></i>
-              </span>
-              <div>
-                <h3>Go at your own pace.</h3>
-                <p>Start today and study anytime, and rewatch any lesson as many times as you need before exam day.</p>
-              </div>
-            </div>
-          </div>
+      <a href="#offer"><span class="btn btn--primary btn--xl">Enroll Now</span></a>
+    </section>
+  </header><section style="background:var(--uw-blue-700);color:#fff;position:relative;overflow:hidden">
+    <div class="dot-tex" style="position:absolute;inset:0;opacity:.8"></div>
+    <div class="cc-results" style="position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:clamp(36px,4vw,52px) clamp(20px,5vw,48px);display:grid;grid-template-columns:repeat(6,1fr);gap:32px 24px">
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1;color:var(--uw-success-300)">99.3%</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Pass rate</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">17,000+</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Students trained</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">270+</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Instructor USMLE Step 2 score</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">20–40</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Point jumps on practice NBMEs</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1;color:var(--uw-success-300)">100%</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Pass guarantee</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">2x</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Faster score gains vs. months of self-study</div></div>
+    </div>
+  </section>
 
-          <div class="cc-works__cta reveal">
-            <a class="btn btn--primary btn--lg" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
-              Enroll Now <i data-lucide="arrow-right" width="16" height="16"></i>
-            </a>
+  <!-- PROBLEM -->
+  <section style="background:var(--uw-surface);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px;text-align:center">The real problem</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0 auto 24px;color:var(--uw-ink-900);max-width:26ch;text-align:center">Every year, brilliant med students fail Step&nbsp;1, and it's usually not because they didn't work hard.</h2>
+      
+      <p style="max-width:64ch;margin:0 auto;font-size:17px;line-height:1.65;color:var(--uw-ink-600);text-align:center">They grind through UWorld, memorize First Aid cover to cover, and drown in Anki decks and random PDFs.&nbsp;Then test day comes. They can't recall the facts they crammed for weeks. The look-alike answer choices blur into each other. And biostats and ethics quietly take the points they can't afford to lose.</p><p style="max-width:48ch;margin:18px auto 0;font-size:17px;line-height:1.6;color:var(--uw-ink-800);font-weight:500;text-align:center">So what's actually going wrong? Honestly, it usually comes down to three things.</p>
+      <div class="cc-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px">
+        <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:24px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:38px;height:38px;border-radius:var(--r-md);background:var(--uw-red-50);color:var(--uw-red-500);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span><span style="font-family:var(--font-display);font-size:26px;color:var(--uw-red-300);line-height:1">01</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-700)">They've poured hundreds of hours into low-yield material while missing what the NBME really tests.</p>
+        </div>
+        <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:24px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:38px;height:38px;border-radius:var(--r-md);background:var(--uw-red-50);color:var(--uw-red-500);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span><span style="font-family:var(--font-display);font-size:26px;color:var(--uw-red-300);line-height:1">02</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-700)">They've memorized everything but never learned the test-taking tactics, the elimination skills, or the pacing that gets you through a block on time.</p>
+        </div>
+        <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:24px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:38px;height:38px;border-radius:var(--r-md);background:var(--uw-red-50);color:var(--uw-red-500);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M21 12A9 9 0 0 0 6 5.3L3 8"></path><path d="M21 22v-6h-6"></path><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"></path></svg></span><span style="font-family:var(--font-display);font-size:26px;color:var(--uw-red-300);line-height:1">03</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-700)">And the resources they're studying from are old, so they don't reflect the latest 2026 NBME Step 1 trends</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section style="background:var(--uw-bg);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div class="cc-story" style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(32px,5vw,64px);align-items:start">
+      <div class="cc-story-photo" style="position:sticky;top:88px">
+        <div style="position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--uw-border)">
+          <img src="/assets/step1-crash-course/step1-crash-course-picture.jpg" alt="Dr. Manik Madaan" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover">
+        </div>
+        <div style="margin-top:16px">
+          <div style="font-family:var(--font-display);font-size:19px;font-weight:600;color:var(--uw-ink-900)">Dr. Manik Madaan</div>
+          <div style="font-size:13px;color:var(--uw-ink-500);margin-top:2px">260 on Step 1, 271 on Step 2 · 700,000+ followers · 17,000+ students taught</div>
+          <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-family:var(--font-mono);letter-spacing:.04em;background:var(--uw-blue-50);color:var(--uw-blue-600);padding:5px 11px;border-radius:999px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"></path></svg>World's most-followed USMLE expert</span>
           </div>
         </div>
-      </section>
-
-      <!-- ============== 2a. FITS ANY STAGE ============== -->
-      <section class="msp-section cc-stages" id="prep-stages" aria-labelledby="stagesTitle">
-        <div class="msp-wrap">
-          <div class="cc-stages__head reveal">
-            <span class="msp-eyebrow">Fits any stage of prep</span>
-            <h2 id="stagesTitle" class="msp-h2">
-              It fits any stage of prep,<br>and the way you use it just shifts.
-            </h2>
-            <p class="cc-stages__sub">
-              Whether you&rsquo;re just starting, somewhere in the middle, or days
-              away from exam day — this course slots in and works.
-            </p>
-          </div>
-
-          <div class="cc-stages__grid">
-            <div class="cc-stage reveal">
-              <span class="cc-stage__label">Early prep</span>
-              <h3 class="cc-stage__hook">Use it as your <em>map.</em></h3>
-              <p class="cc-stage__desc">
-                You see what&rsquo;s high-yield from day one, so when you open
-                UWorld, First Aid, or Anki, you know exactly where to focus and
-                what to skip.
-              </p>
-            </div>
-            <div class="cc-stage reveal">
-              <span class="cc-stage__label">Mid-prep</span>
-              <h3 class="cc-stage__hook">Use it as your <em>cut.</em></h3>
-              <p class="cc-stage__desc">
-                Stop spreading thin across resources and concentrate on the 20%
-                that&rsquo;s actually moving the needle.
-              </p>
-            </div>
-            <div class="cc-stage reveal">
-              <span class="cc-stage__label">Final stretch</span>
-              <h3 class="cc-stage__hook">Use it as your <em>revision.</em></h3>
-              <p class="cc-stage__desc">
-                60 hours to consolidate what matters and walk in sharp.
-              </p>
-            </div>
-          </div>
-
-          <div class="cc-stages__cta reveal">
-            <a class="btn btn--primary btn--lg" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
-              Get Instant Access <i data-lucide="arrow-right" width="16" height="16"></i>
-            </a>
-          </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">My story</div>
+        <p style="font-family:var(--font-display);font-size:clamp(20px,2.2vw,26px);line-height:1.4;color:var(--uw-ink-900);margin:0 0 22px;letter-spacing:-0.01em">Dear future resident,</p>
+        <div style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-700);max-width:54ch">
+          <p style="margin:0 0 20px">I'm Dr. Manik Madaan. I teach Step&nbsp;1 this way because <strong style="color:var(--uw-ink-900);font-weight:600">I had to learn it the hard way first.</strong></p>
+          <p style="margin:0 0 20px">When I was preparing, the content was <strong style="color:var(--uw-ink-900);font-weight:600">completely overwhelming.</strong></p>
+          <p style="margin:0 0 20px">Resource stacked on resource. Every one of them labeled “high-yield.” And <strong style="color:var(--uw-ink-900);font-weight:600">not one of them telling me what actually mattered.</strong></p>
+          <p style="margin:0 0 20px">Then I sat all three USMLE exams, and <strong style="color:var(--uw-ink-900);font-weight:600">it hit me.</strong></p>
+          <p style="font-family:var(--font-display);font-weight:600;font-size:clamp(21px,2.3vw,27px);line-height:1.28;letter-spacing:-0.01em;color:var(--uw-blue-700);margin:26px 0 24px;max-width:28ch">Only about 20% of what’s in the traditional resources actually moves the needle.</p>
+          <p style="margin:0 0 20px"><strong style="color:var(--uw-ink-900);font-weight:600">The other 80% is outdated fluff.</strong> And all it does is slow you down.</p>
+          <p style="margin:0 0 20px">Here’s why that matters so much.</p>
+          <p style="margin:0 0 20px">Step&nbsp;1 hands you hard questions, with very little time to answer them.</p>
+          <p style="margin:0 0 20px">So every minute you spend digging for some low-yield fact is <strong style="color:var(--uw-ink-900);font-weight:600">a minute you don’t have for the question right in front of you.</strong></p>
+          <p style="margin:0 0 20px">So I built the ultimate resource I wish someone had handed me, <strong style="color:var(--uw-ink-900);font-weight:600">the USMLE Step&nbsp;1 Ultra High-Yield Crash Course.</strong></p>
+          <p style="margin:0 0 20px"><strong style="color:var(--uw-ink-900);font-weight:600">Ten days.</strong> Only what the NBME actually tests.</p>
+          <p style="margin:0 0 20px">No low-yield noise to sort through, just <strong style="color:var(--uw-ink-900);font-weight:600">the 20% that gets you a confident pass.</strong></p>
+          <p style="margin:0 0 20px"><strong style="color:var(--uw-ink-900);font-weight:600">Then I watched it work.</strong></p>
+          <p style="margin:0 0 20px">Students who were sure 10 days couldn't be enough? <strong style="color:var(--uw-ink-900);font-weight:600">They passed.</strong></p>
+          <p style="margin:0 0 20px">People who'd already failed once, and were terrified to sit again? <strong style="color:var(--uw-ink-900);font-weight:600">They passed too.</strong></p>
+          <p style="margin:0 0 20px">And since Step&nbsp;1 is pass/fail, <strong style="color:var(--uw-ink-900);font-weight:600">a clean pass is the whole win.</strong></p>
+          <p style="margin:0">Every week you save here goes straight into Step&nbsp;2, which is the exam programs actually rank you on.</p>
         </div>
-      </section>
+        
+        <div style="margin-top:28px"><a href="#offer"><span class="btn btn--primary btn--lg">Get Instant Access</span></a></div>
+      </div>
+    </div>
+  </section>
 
-      <!-- ============== 2b. CURRICULUM ============== -->
-      <section class="msp-section cc-curriculum" aria-labelledby="curriculumTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Curriculum</span>
-            <h2 id="curriculumTitle" class="msp-h2">
-              10 days, 10 lessons in the order that builds.
-            </h2>
-            <p class="msp-sub">
-              About 60 hours of focused, high-yield teaching &mdash; sequenced so
-              each lesson builds on the last.
-            </p>
-          </div>
+  <!-- TESTIMONIALS row 2 -->
+  <section style="background:var(--uw-surface);padding:clamp(48px,6vw,80px) 0;border-top:1px solid var(--uw-border);overflow:hidden">
+    <div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px) 38px;text-align:center">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">From our students</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(26px,3.2vw,40px);letter-spacing:-0.02em;margin:0 auto 8px;color:var(--uw-ink-900);max-width:22ch">Hear what our students are saying.</h2>
+      <p style="margin:10px auto 0;max-width:50ch;font-size:15.5px;line-height:1.6;color:var(--uw-ink-500)">Messages from students the week they found out they passed. Hover to pause.</p>
+    </div>
+    <div class="cc-marquee-mask" style="position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)">
+        <div class="cc-marquee-track"><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t01.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t02.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t03.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t04.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t05.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t06.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t07.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t08.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t09.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t10.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t11.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t12.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t13.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t14.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t15.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t16.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t17.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t18.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t19.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t20.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t21.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t22.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t01.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t02.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t03.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t04.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t05.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t06.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t07.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t08.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t09.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t10.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t11.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t12.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t13.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t14.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t15.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t16.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t17.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t18.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t19.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t20.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t21.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div><div style="flex:0 0 auto;height:340px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t22.webp" alt="Student testimonial screenshot" style="height:340px;width:auto;display:block"></div></div>
+      </div>
+  </section>
 
-          <ol class="cc-cur-grid">
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Genetics.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 01</span>
-                <h3 class="cc-cur-card__title">Biochemistry &amp; Genetics</h3>
-                <span class="cc-cur-card__hrs">5.5 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Microbiology.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 02</span>
-                <h3 class="cc-cur-card__title">Microbiology</h3>
-                <span class="cc-cur-card__hrs">6 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Pathology.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 03</span>
-                <h3 class="cc-cur-card__title">Pathology, General Pharm &amp; Immunology</h3>
-                <span class="cc-cur-card__hrs">6 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/renal.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 04</span>
-                <h3 class="cc-cur-card__title">Endocrinology &amp; Renal</h3>
-                <span class="cc-cur-card__hrs">6 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Cardiovascular.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 05</span>
-                <h3 class="cc-cur-card__title">Biostats, Ethics &amp; Cardiovascular</h3>
-                <span class="cc-cur-card__hrs">6 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/psychiatry.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 06</span>
-                <h3 class="cc-cur-card__title">Respiratory &amp; Psychiatry</h3>
-                <span class="cc-cur-card__hrs">6 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Gastro.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 07</span>
-                <h3 class="cc-cur-card__title">Gastrointestinal</h3>
-                <span class="cc-cur-card__hrs">8 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/hematology.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 08</span>
-                <h3 class="cc-cur-card__title">Hematology &amp; Reproductive</h3>
-                <span class="cc-cur-card__hrs">6 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Musculoskeletal.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 09</span>
-                <h3 class="cc-cur-card__title">Musculoskeletal, Rheum &amp; Derm</h3>
-                <span class="cc-cur-card__hrs">6 hrs</span>
-              </div>
-            </li>
-            <li class="cc-cur-card reveal" style="background-image: url('assets/Photos/Subjects/Neurology.jpg');">
-              <div class="cc-cur-card__inner">
-                <span class="cc-cur-card__no">Day 10</span>
-                <h3 class="cc-cur-card__title">Neurology</h3>
-                <span class="cc-cur-card__hrs">4 hrs</span>
-              </div>
-            </li>
-          </ol>
+  <!-- WHY IT WORKS -->
+  <section id="why" style="background:var(--uw-bg);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px);border-top:1px solid var(--uw-border)">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px;text-align:center">Why this course works</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.02em;margin:0 0 36px;color:var(--uw-ink-900);text-align:center">(when others don't)</h2>
+      <div class="cc-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+        <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;transition:transform var(--dur-med) var(--ease-out),box-shadow var(--dur-med)" class="ccx-h1">
+          <div style="width:42px;height:42px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+          <h4 style="margin:0 0 8px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">10 days, 60 hours, zero fluff.</h4>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:var(--uw-ink-600)">Every session targets what the NBME tests most. If it's not high-yield, it's not in.</p>
         </div>
-      </section>
-
-      <!--
-      <div class="msp-opt-divider" aria-hidden="true"><span>Option B</span></div>
-
-      <section class="msp-why-b" aria-labelledby="whyBTitle">
-        <div class="msp-opt-tag" aria-hidden="true">Option B</div>
-        <div class="msp-wrap">
-          <div class="msp-why-b__top">
-            <div class="msp-why-b__text reveal">
-              <span class="msp-eyebrow">Why it works</span>
-              <h2 id="whyBTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
-            </div>
-            <div class="msp-why-b__img reveal">
-              <picture>
-                <source srcset="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp" type="image/webp">
-                <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-          </div>
-          <div class="msp-why-b__cols">
-            <div class="msp-wi reveal">
-              <h3>Mentors who lived the IMG match</h3>
-              <p>Our mentors matched as IMGs into competitive U.S. programs. They know which program directors value research, which overlook clinical gaps, and how to frame a timeline that looks unconventional on paper.</p>
-            </div>
-            <div class="msp-wi reveal">
-              <h3>100% human, no AI</h3>
-              <p>Every personal statement, CV edit, and strategy decision is made by a physician who knows your file. No templates, no generated text, no shortcuts.</p>
-            </div>
-            <div class="msp-wi reveal">
-              <h3>One mentor, one plan, start to finish</h3>
-              <p>No handoffs between services. Your mentor builds the strategy and sees it through: ERAS, interviews, ROL, and beyond Match Day.</p>
-            </div>
-            <div class="msp-wi reveal">
-              <h3>Built for IMG profiles specifically</h3>
-              <p>ECFMG, J-1 vs H-1B, clinical gaps, international transcripts: we address what AMG-focused services ignore entirely.</p>
-            </div>
-          </div>
+        <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;transition:transform var(--dur-med) var(--ease-out),box-shadow var(--dur-med)" class="ccx-h1">
+          <div style="width:42px;height:42px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M21 12A9 9 0 0 0 6 5.3L3 8"></path><path d="M21 22v-6h-6"></path><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"></path></svg></div>
+          <h4 style="margin:0 0 8px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Rebuilt for the 2026 Step 1 Syllabus.</h4>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:var(--uw-ink-600)">We rebuilt it line by line for the latest Step 1 updates &amp; trends.</p>
         </div>
-      </section>
-
-      <div class="msp-opt-divider" aria-hidden="true"><span>Option C</span></div>
-
-      <section class="msp-why-c" aria-labelledby="whyCTitle">
-        <div class="msp-opt-tag" aria-hidden="true">Option C</div>
-        <div class="msp-wrap">
-          <div class="msp-why-c__head reveal">
-            <span class="msp-eyebrow">Why it works</span>
-            <h2 id="whyCTitle" class="msp-h2">Most IMG services stop at exam prep. We start where they stop.</h2>
-          </div>
-          <div class="msp-why-c__img reveal">
-            <picture>
-              <source srcset="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp" type="image/webp">
-              <img src="/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" alt="Physician mentors guiding IMG students through the U.S. residency match process" loading="lazy" decoding="async" />
-            </picture>
-          </div>
-          <div class="msp-why-c__cols">
-            <div class="msp-wib reveal">
-              <h3>Mentors who lived the IMG match</h3>
-              <p>Our mentors matched as IMGs into competitive U.S. programs. They know which program directors value research, which overlook clinical gaps, and how to frame a timeline that looks unconventional on paper.</p>
-            </div>
-            <div class="msp-wib reveal">
-              <h3>100% human, no AI</h3>
-              <p>Every personal statement, CV edit, and strategy decision is made by a physician who knows your file. No templates, no generated text, no shortcuts.</p>
-            </div>
-            <div class="msp-wib reveal">
-              <h3>One mentor, one plan, start to finish</h3>
-              <p>No handoffs between services. Your mentor builds the strategy and sees it through: ERAS, interviews, ROL, and beyond Match Day.</p>
-            </div>
-            <div class="msp-wib reveal">
-              <h3>Built for IMG profiles specifically</h3>
-              <p>ECFMG, J-1 vs H-1B, clinical gaps, international transcripts: we address what AMG-focused services ignore entirely.</p>
-            </div>
-          </div>
+        <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;transition:transform var(--dur-med) var(--ease-out),box-shadow var(--dur-med)" class="ccx-h1">
+          <div style="width:42px;height:42px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path><circle cx="12" cy="12" r="10"></circle></svg></div>
+          <h4 style="margin:0 0 8px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Question-powered teaching.</h4>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:var(--uw-ink-600)">Integrated NBME-style vignettes from minute one, so you train your knowledge and your test-taking at the same time.</p>
         </div>
-      </section>
-      -->
-
-      <!-- ============== 5. MENTORS ============== -->
-      <!--
-      <section
-        class="msp-section msp-mentors"
-        id="mentors"
-        aria-labelledby="mentorsTitle"
-      >
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Your mentors</span>
-            <h2 id="mentorsTitle" class="msp-h2">
-              Physicians who matched. Now helping you do the same.
-            </h2>
-          </div>
-          <div class="msp-mentors__strip">
-            <article class="msp-mentor reveal">
-              <div class="msp-mentor__ava msp-mentor__ava--blue">DR</div>
-              <div class="msp-mentor__info">
-                <h3>Dr. David Reyes</h3>
-                <span class="msp-mentor__spec">Internal Medicine</span>
-                <span class="msp-mentor__prog">Johns Hopkins · PGY-3</span>
-                <ul class="msp-mentor__creds">
-                  <li>
-                    <i data-lucide="trending-up" width="13" height="13"></i>
-                    Step 2 CK: 261
-                  </li>
-                  <li>
-                    <i data-lucide="file-text" width="13" height="13"></i> 4
-                    peer-reviewed publications
-                  </li>
-                  <li>
-                    <i data-lucide="users" width="13" height="13"></i> 60+ IMGs
-                    mentored
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="msp-mentor reveal">
-              <div class="msp-mentor__ava msp-mentor__ava--red">AP</div>
-              <div class="msp-mentor__info">
-                <h3>Dr. Anaya Patel</h3>
-                <span class="msp-mentor__spec">Psychiatry</span>
-                <span class="msp-mentor__prog">NYU Langone · PGY-2</span>
-                <ul class="msp-mentor__creds">
-                  <li>
-                    <i data-lucide="trending-up" width="13" height="13"></i>
-                    Step 2 CK: 254
-                  </li>
-                  <li>
-                    <i data-lucide="star" width="13" height="13"></i> ERAS
-                    personal statement specialist
-                  </li>
-                  <li>
-                    <i data-lucide="users" width="13" height="13"></i> 80+ IMGs
-                    mentored
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="msp-mentor reveal">
-              <div class="msp-mentor__ava msp-mentor__ava--green">MC</div>
-              <div class="msp-mentor__info">
-                <h3>Dr. Marco Cruz</h3>
-                <span class="msp-mentor__spec">Family Medicine</span>
-                <span class="msp-mentor__prog">UCSF · PGY-2</span>
-                <ul class="msp-mentor__creds">
-                  <li>
-                    <i data-lucide="trending-up" width="13" height="13"></i>
-                    Step 2 CK: 249
-                  </li>
-                  <li>
-                    <i data-lucide="map-pin" width="13" height="13"></i> IMG
-                    match specialist, West Coast programs
-                  </li>
-                  <li>
-                    <i data-lucide="users" width="13" height="13"></i> 45+ IMGs
-                    mentored
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </div>
-          <div class="msp-mentors__foot reveal">
-            <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" class="btn btn--outline"
-              >Work with a mentor
-              <i data-lucide="arrow-right" class="ic-arrow"></i
-            ></a>
-          </div>
+        <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;transition:transform var(--dur-med) var(--ease-out),box-shadow var(--dur-med)" class="ccx-h1">
+          <div style="width:42px;height:42px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
+          <h4 style="margin:0 0 8px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">The N+1 method.</h4>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:var(--uw-ink-600)">We engineer retention, stacking each concept on the last so it sticks for good and bridges into Step 2.</p>
         </div>
-      </section>
-      -->
-
-
-      <!-- ============== 7. VIDEO TESTIMONIALS ============== -->
-      <section class="msp-section cc-vids" id="stories" aria-labelledby="vidsTitle">
-        <div class="msp-wrap">
-          <div class="cc-vids__head reveal">
-            <span class="msp-eyebrow">Watch their stories</span>
-            <h2 id="vidsTitle" class="msp-h2">Hear it from students who passed.</h2>
-          </div>
-
-          <div class="cc-vids__grid reveal">
-            <div class="cc-vt cc-vt--tall" data-ytid="pcQuFkFmnAE" role="button" tabindex="0" aria-label="Play student testimonial video">
-              <img class="cc-vt__thumb" src="https://img.youtube.com/vi/pcQuFkFmnAE/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
-              <span class="cc-vt__overlay" aria-hidden="true">
-                <span class="cc-vt__play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </span>
-                <span class="cc-vt__label">Tap to play</span>
-              </span>
-            </div>
-            <div class="cc-vt" data-ytid="yljBSeYYx6s" role="button" tabindex="0" aria-label="Play student testimonial video">
-              <img class="cc-vt__thumb" src="https://img.youtube.com/vi/yljBSeYYx6s/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
-              <span class="cc-vt__overlay" aria-hidden="true">
-                <span class="cc-vt__play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </span>
-                <span class="cc-vt__label">Tap to play</span>
-              </span>
-            </div>
-            <div class="cc-vt" data-ytid="5qnypeUipdE" role="button" tabindex="0" aria-label="Play student testimonial video">
-              <img class="cc-vt__thumb" src="https://img.youtube.com/vi/5qnypeUipdE/maxresdefault.jpg" alt="" loading="lazy" decoding="async" />
-              <span class="cc-vt__overlay" aria-hidden="true">
-                <span class="cc-vt__play">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </span>
-                <span class="cc-vt__label">Tap to play</span>
-              </span>
-            </div>
-          </div>
+        <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;transition:transform var(--dur-med) var(--ease-out),box-shadow var(--dur-med)" class="ccx-h1">
+          <div style="width:42px;height:42px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></div>
+          <h4 style="margin:0 0 8px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">The frameworks high scorers use.</h4>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:var(--uw-ink-600)">A three-pass read (Route, Extract, Decide) for long chart stems, an elimination blueprint for coin-flip items, and plug-and-play ethics scripts.</p>
         </div>
-      </section>
-
-
-
-
-
-      <!-- ============== 9b. HOW WE COMPARE ============== -->
-      <section class="msp-section cc-compare" id="how-we-compare" aria-labelledby="compareTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">How we compare</span>
-            <h2 id="compareTitle" class="msp-h2">
-              Side by side, here&rsquo;s what actually sets this apart.
-            </h2>
-          </div>
-
-          <div class="cc-compare__table reveal" role="table" aria-label="How our crash course compares to other crash courses">
-            <div class="cc-compare__row cc-compare__row--head" role="row">
-              <div class="cc-compare__feature" role="columnheader">Feature</div>
-              <div class="cc-compare__ours" role="columnheader">Our 10-day Step&nbsp;1 crash course</div>
-              <div class="cc-compare__theirs" role="columnheader">Other crash courses</div>
-            </div>
-
-            <div class="cc-compare__row" role="row">
-              <div class="cc-compare__feature" role="cell">2026 alignment</div>
-              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
-                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
-                <span>Rebuilt line by line for the new 2026 Step&nbsp;1 syllabus, with the nutrition and ethics surge covered in depth.</span>
-              </div>
-              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
-                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
-                <span>Often reuses older decks with partial 2026 updates.</span>
-              </div>
-            </div>
-
-            <div class="cc-compare__row" role="row">
-              <div class="cc-compare__feature" role="cell">Focus</div>
-              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
-                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
-                <span>60 hours, zero fluff &mdash; only what the NBME repeatedly tests.</span>
-              </div>
-              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
-                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
-                <span>Broad sweep, mixed yield, time dilution.</span>
-              </div>
-            </div>
-
-            <div class="cc-compare__row" role="row">
-              <div class="cc-compare__feature" role="cell">Teaching engine</div>
-              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
-                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
-                <span>Question-powered. NBME-style vignettes train knowledge and test-taking together.</span>
-              </div>
-              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
-                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
-                <span>Lecture-heavy, QBank left for homework.</span>
-              </div>
-            </div>
-
-            <div class="cc-compare__row" role="row">
-              <div class="cc-compare__feature" role="cell">Instructors</div>
-              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
-                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
-                <span>270+ Step&nbsp;2 scorers who reverse-engineered the patterns.</span>
-              </div>
-              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
-                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
-                <span>Limited experience and credentials.</span>
-              </div>
-            </div>
-
-            <div class="cc-compare__row" role="row">
-              <div class="cc-compare__feature" role="cell">Accountability</div>
-              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
-                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
-                <span>Built-in daily question drills that make you apply each lesson.</span>
-              </div>
-              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
-                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
-                <span>Passive watching, little pressure to execute.</span>
-              </div>
-            </div>
-
-            <div class="cc-compare__row" role="row">
-              <div class="cc-compare__feature" role="cell">Pass guarantee</div>
-              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
-                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
-                <span>Finish the course and drills &mdash; don&rsquo;t pass, full refund.</span>
-              </div>
-              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
-                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
-                <span>No guarantee, or store credit only.</span>
-              </div>
-            </div>
-
-            <div class="cc-compare__row" role="row">
-              <div class="cc-compare__feature" role="cell">Reported outcomes</div>
-              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
-                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
-                <span>20 to 40 point jumps on practice NBMEs &mdash; roughly 2&times; faster score gain than solo study.</span>
-              </div>
-              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
-                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
-                <span>Modest gains over months.</span>
-              </div>
-            </div>
-
-            <div class="cc-compare__row" role="row">
-              <div class="cc-compare__feature" role="cell">Step&nbsp;2 bridge</div>
-              <div class="cc-compare__ours" data-label="Our crash course" role="cell">
-                <i class="cc-compare__ico" data-lucide="check" width="18" height="18"></i>
-                <span>N+1 consolidation leaves you with a ready Step&nbsp;2 launchpad.</span>
-              </div>
-              <div class="cc-compare__theirs" data-label="Other courses" role="cell">
-                <i class="cc-compare__ico" data-lucide="x" width="18" height="18"></i>
-                <span>No structured bridge beyond Step&nbsp;1.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cc-compare__cta reveal">
-            <a class="btn btn--primary btn--lg" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
-              Enroll Now <i data-lucide="arrow-right" width="16" height="16"></i>
-            </a>
-          </div>
+        <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;transition:transform var(--dur-med) var(--ease-out),box-shadow var(--dur-med)" class="ccx-h1">
+          <div style="width:42px;height:42px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></div>
+          <h4 style="margin:0 0 8px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Teachers who scored 270+ on Step 2.</h4>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:var(--uw-ink-600)">You learn from doctors who beat this exam, sat it themselves, and reverse-engineered exactly how it's built.</p>
         </div>
-      </section>
+      </div>
+      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:30px 26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-top:18px">
+        <div style="width:42px;height:42px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;flex:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg></div>
+        <div style="max-width:46ch"><h4 style="margin:0 0 4px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Go at your own pace.</h4><p style="margin:0;font-size:14px;line-height:1.6;color:var(--uw-ink-600)">Start today and study anytime, and rewatch any lesson as many times as you need before exam day.</p></div>
+      </div>
+      <div style="margin-top:28px;text-align:center"><a href="#offer"><span class="btn btn--primary btn--lg">Enroll Now</span></a></div>
+    </div>
+  </section>
 
-
-      <!-- ============== 9. FINAL CTA — OFFER ============== -->
-      <section
-        class="msp-section msp-cta-wrap"
-        id="enroll"
-        aria-labelledby="ctaTitle"
-      >
-        <div class="msp-wrap">
-          <div class="cc-offer reveal">
-            <div class="cc-offer__head">
-              <span class="msp-eyebrow msp-eyebrow--light">Enroll today</span>
-              <h2 id="ctaTitle" class="cc-offer__title">
-                Everything you need to pass, in one place
-              </h2>
-            </div>
-
-            <div class="cc-offer__body">
-              <ul class="cc-offer__stack">
-                <li class="cc-offer__row">
-                  <span class="cc-offer__row-name">
-                    The 10-day, 60-hour Self-Paced Crash Course
-                  </span>
-                  <span class="cc-offer__row-price">$599</span>
-                </li>
-                <li class="cc-offer__row">
-                  <span class="cc-offer__row-name">
-                    Lifetime Access, Rewatch Anytime, including Future Updates
-                  </span>
-                  <span class="cc-offer__row-price">$300</span>
-                </li>
-                <li class="cc-offer__row">
-                  <span class="cc-offer__row-name">
-                    USMLE Step 1 Rapid Review 2026 Slides
-                  </span>
-                  <span class="cc-offer__row-price">$100</span>
-                </li>
-                <li class="cc-offer__row cc-offer__row--total">
-                  <span class="cc-offer__row-name">Total value</span>
-                  <span class="cc-offer__row-price">$999</span>
-                </li>
-              </ul>
-
-              <div class="cc-offer__price">
-                <div>
-                  <span class="cc-offer__price-label">Yours today</span>
-                  <span class="cc-offer__price-save">You save $800 &middot; 80% off</span>
-                </div>
-                <div class="cc-offer__price-nums">
-                  <span class="cc-offer__price-was">$999</span>
-                  <span class="cc-offer__price-now">$199</span>
-                </div>
-              </div>
-
-              <p class="cc-offer__fine">
-                $199, one time. You get instant access the moment you enroll, and
-                every lesson is yours for life.
-              </p>
-
-              <a class="btn btn--primary btn--xl cc-offer__cta" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
-                Get Access Now <i data-lucide="arrow-right" width="18" height="18"></i>
-              </a>
-
-              <div class="cc-offer__guarantee">
-                <i data-lucide="shield-check" width="22" height="22"></i>
-                <p>
-                  And the <strong>100% money-back guarantee</strong> is about as
-                  simple as it gets. You finish the course and if you don&rsquo;t
-                  pass, get a full refund. Zero risk. Pure results.
-                </p>
-              </div>
-            </div>
-          </div>
+  <!-- STAGES -->
+  <section style="background:var(--uw-surface);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px);border-top:1px solid var(--uw-border)">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px;text-align:center">Fits any stage of prep</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.02em;margin:0 auto 36px;color:var(--uw-ink-900);max-width:26ch;text-align:center">It fits any stage of prep, and the way you use it just shifts.</h2>
+      <div class="cc-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <div style="border-top:3px solid var(--uw-blue-500);background:var(--uw-bg);border-radius:0 0 var(--r-lg) var(--r-lg);padding:26px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="width:34px;height:34px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-600);display:grid;place-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg></span><span style="font-size:12px;font-family:var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--uw-blue-600)">Early prep: your map</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--uw-ink-700)">Use it as your map. You see what's high-yield from day one, so when you open UWorld, First Aid, or Anki, you know exactly where to focus and what to skip.</p>
         </div>
-      </section>
-
-
-      <!-- ============== 8d. SCROLLABLE TESTIMONIAL GRID ============== -->
-      <section class="msp-section cc-tscroll" aria-label="Student testimonials">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">In their own words</span>
-            <h2 class="msp-h2">We'll let the students talk.</h2>
-            <p class="msp-sub">Sent to us after results day. Scroll to read them all.</p>
-          </div>
-          <div class="cc-tscroll__viewport reveal">
-          <div class="cc-tscroll__track">
-            <img src="/assets/Testimonials/Photos/Coaching/Ishaan-Singh.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(1).webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(2).webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(3).webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(4).webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Mail-from-Manik-Madaan-(5).webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.28-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.39.59-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.14-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.20-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.25-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.36-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.40.47-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.02-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.13-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.25-PM.png" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.37-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-02-20-at-11.41.47-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-03-09-at-12.49.26-AM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-11-at-6.35.12-PM.png" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-2026-05-13-at-10.30.35-PM.webp" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/Screenshot-Apr-14-2026-from-WhatsApp.jpg" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image-Nov-19-2025.jpeg" alt="Student testimonial" loading="lazy" />
-            <img src="/assets/Testimonials/Photos/Coaching/WhatsApp-Image.jpeg" alt="Student testimonial" loading="lazy" />
-          </div>
-          </div>
+        <div style="border-top:3px solid var(--uw-blue-500);background:var(--uw-bg);border-radius:0 0 var(--r-lg) var(--r-lg);padding:26px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="width:34px;height:34px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-600);display:grid;place-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg></span><span style="font-size:12px;font-family:var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--uw-blue-600)">Mid-prep: your cut</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--uw-ink-700)">Use it as your cut. Stop spreading thin across resources and concentrate on the 20% that's actually moving the needle.</p>
         </div>
-      </section>
-
-      <!-- ============== 8c. 10 DAYS FROM NOW ============== -->
-      <section class="msp-section cc-flip" aria-labelledby="flipTitle">
-        <div class="msp-wrap">
-          <div class="cc-flip__intro reveal">
-            <p class="cc-flip__eyebrow">10 days from now</p>
-            <h2 id="flipTitle" class="cc-flip__headline">
-              You're going to spend them either way.
-            </h2>
-          </div>
-
-          <div class="cc-flip__grid reveal">
-            <div class="cc-flip__col cc-flip__col--without">
-              <div class="cc-flip__col-head">
-                <span class="cc-flip__label">Without this course</span>
-              </div>
-              <ul class="cc-flip__items">
-                <li class="cc-flip__item">
-                  <i data-lucide="x" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
-                  Still grinding broad, still unsure what actually matters.
-                </li>
-                <li class="cc-flip__item">
-                  <i data-lucide="x" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
-                  Another weekend lost to low-yield material that won't show up.
-                </li>
-                <li class="cc-flip__item">
-                  <i data-lucide="x" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
-                  That same quiet worry every time you open a practice block.
-                </li>
-                <li class="cc-flip__item">
-                  <i data-lucide="x" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
-                  Walking in hoping you studied the right things.
-                </li>
-              </ul>
-            </div>
-
-            <div class="cc-flip__col cc-flip__col--with">
-              <div class="cc-flip__col-head">
-                <span class="cc-flip__label">With this course</span>
-              </div>
-              <ul class="cc-flip__items">
-                <li class="cc-flip__item">
-                  <i data-lucide="check" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
-                  Studying with a map, clear on exactly what to focus on and what to skip.
-                </li>
-                <li class="cc-flip__item">
-                  <i data-lucide="check" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
-                  60 hours spent only on what the NBME actually tests.
-                </li>
-                <li class="cc-flip__item">
-                  <i data-lucide="check" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
-                  A calm, drilled routine for pacing, elimination, and the tough items.
-                </li>
-                <li class="cc-flip__item">
-                  <i data-lucide="check" class="cc-flip__icon" width="16" height="16" aria-hidden="true"></i>
-                  Walking in knowing what's coming, and passing.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cc-flip__cta reveal">
-            <a
-              class="btn btn--primary btn--xl"
-              href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Instant Access
-            </a>
-          </div>
+        <div style="border-top:3px solid var(--uw-blue-500);background:var(--uw-bg);border-radius:0 0 var(--r-lg) var(--r-lg);padding:26px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="width:34px;height:34px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-600);display:grid;place-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg></span><span style="font-size:12px;font-family:var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--uw-blue-600)">Final stretch: your revision</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--uw-ink-700)">Use it as your high-yield revision. 60 hours to consolidate what matters and walk in sharp.</p>
         </div>
-      </section>
+      </div>
+      <div style="margin-top:40px;text-align:center"><a href="#offer"><span class="btn btn--primary btn--lg">Get Instant Access</span></a></div>
+    </div>
+  </section>
 
-      <!-- ============== 10. FAQ ============== -->
-      <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
-        <div class="msp-wrap cc-faq__grid">
-          <div class="reveal">
-            <span class="msp-eyebrow">F.A.Q</span>
-            <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
-          </div>
-          <div class="cc-faq__list reveal">
-            <p class="cc-faq__group-label">Format and access</p>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Is this live or self-paced?
-              </button>
-              <div class="cc-faq__body">
-                It&rsquo;s 100% self-paced. Every lesson is pre-recorded, so you
-                start the minute you enroll, study on your own schedule, and
-                pause, rewind, or rewatch as often as you need. No set class
-                times, no waiting for a cohort to open.
-              </div>
-            </div>
-            <p class="cc-faq__group-label">Fit and outcomes</p>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Is a 10-day crash course really worth it for 2026?
-              </button>
-              <div class="cc-faq__body">
-                Yes. The 2026 blueprint rewards pattern recognition, ethics and
-                communication, biostats, and chart-style stems, and our 60 hours
-                go straight at what actually shows up. So you close the
-                highest-yield gaps fast and walk in confident.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Can a crash course really move my readiness that much?
-              </button>
-              <div class="cc-faq__body">
-                For most people, yes. Students routinely report 20 to 40 point
-                jumps on their practice NBMEs within two weeks, roughly twice the
-                progress of studying solo. Your results depend on where you start
-                and the work you put in.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Is this better for first-timers or retakers?
-              </button>
-              <div class="cc-faq__body">
-                Honestly, both. If it&rsquo;s your first time, you get a clean
-                high-yield map. And if you&rsquo;re retaking, it resets the usual
-                leak points, which are timing, reasoning, and ethics.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What do students actually walk away with?
-              </button>
-              <div class="cc-faq__body">
-                Faster reading, sharper elimination, fewer careless errors, and a
-                calmer test day.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Does it help with anxiety, timing, and decision-making?
-              </button>
-              <div class="cc-faq__body">
-                It does. We drill pacing and indentation so you finish on time,
-                and you practice a fixed decision tree for the tie-breaker items
-                that usually eat your clock.
-              </div>
-            </div>
-            <p class="cc-faq__group-label">What changed in 2026, and how we handle it</p>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What actually changed on Step 1 in 2026?
-              </button>
-              <div class="cc-faq__body">
-                A few things. Longer chart and SOAP-style stems with distracting
-                detail, more ethics and communication, immunology and micro up
-                while pure biochem is down, and pathophysiology over trivia.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                How do you handle the long chart-style stems and SOAP notes?
-              </button>
-              <div class="cc-faq__body">
-                You&rsquo;ll use a three-pass read, route then extract then
-                decide. First pass for the route, second for the computable
-                items, third for elimination. Then a highlighting discipline that
-                locks onto orders and vitals.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Are ethics and communication covered with actual answers?
-              </button>
-              <div class="cc-faq__body">
-                Yes. You get plug-and-play language for consent, boundaries,
-                impaired colleagues, end-of-life, and error disclosure, plus when
-                and why each one is right.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Do you really focus on the 20% that drives most of the result?
-              </button>
-              <div class="cc-faq__body">
-                Yes. Every lesson is audited against the patterns the NBME
-                favors, and if it isn&rsquo;t high-yield, it&rsquo;s out.
-              </div>
-            </div>
-            <p class="cc-faq__group-label">Teaching engine and method</p>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                How does question-powered teaching work?
-              </button>
-              <div class="cc-faq__body">
-                We teach through NBME-style vignettes from minute one. You learn
-                the idea, solve a question, then take apart the logic and drill
-                the variations until it sticks.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What&rsquo;s the N+1 method?
-              </button>
-              <div class="cc-faq__body">
-                You never learn a topic just once. You stack a slightly harder
-                layer on top of what you just mastered, so recall stays active and
-                moves into long-term memory.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What frameworks do you teach for the tough items?
-              </button>
-              <div class="cc-faq__body">
-                The Elimination Blueprint, the Clue-net, and tie-breakers, plus
-                short contrast tables and break-the-tie clues like onset, the key
-                lab, and one physical finding.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                How do you keep it from leaking back out of my head?
-              </button>
-              <div class="cc-faq__body">
-                Stacked repetition, mixed-topic mini-sets, and periodic refresh
-                prompts keep everything active, and you build your own one-page
-                frameworks as you work through the lessons.
-              </div>
-            </div>
-            <p class="cc-faq__group-label">Instructors, materials, and access</p>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Who teaches this, and what are their scores?
-              </button>
-              <div class="cc-faq__body">
-                Sessions are led by 270+ Step 2 scorers and experienced Step 1
-                instructors, coordinated by Dr. Manik Madaan (271 Step 2). The
-                team reverse-engineered NBME patterns across thousands of items.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Do I get recordings and downloadable materials?
-              </button>
-              <div class="cc-faq__body">
-                Yes. The whole course is on demand with lifetime access, plus the
-                USMLE Step 1 Rapid Review 2026 slides to keep.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Do I need any other resources?
-              </button>
-              <div class="cc-faq__body">
-                Just your preferred QBank and a notebook. Keep the QBank you
-                already like, and use the course to decide what to actually
-                memorize and how to apply it under time.
-              </div>
-            </div>
-            <p class="cc-faq__group-label">Logistics</p>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                What&rsquo;s the guarantee?
-              </button>
-              <div class="cc-faq__body">
-                Finish the sessions and the required drills, sit your exam, and if
-                you don&rsquo;t pass, you get a full refund within 14 days of your
-                score report.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Is this good for nontraditional students or a different background?
-              </button>
-              <div class="cc-faq__body">
-                Yes. The course assumes varied backgrounds and centers on NBME
-                logic, not on any one set of course notes.
-              </div>
-            </div>
-            <p class="cc-faq__group-label">Beyond Step 1</p>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Do you start with the points I can bank?
-              </button>
-              <div class="cc-faq__body">
-                Yes. We open with biostats and ethics to lock in the most
-                reliable points early.
-              </div>
-            </div>
-            <div class="cc-faq__item">
-              <button class="cc-faq__head" type="button" aria-expanded="false">
-                Will this carry over to Step 2?
-              </button>
-              <div class="cc-faq__body">
-                Yes. The N+1 method and the decision frameworks are built to carry
-                forward, so your Step 1 base becomes a launchpad and your Step 2
-                prep starts easier.
-              </div>
-            </div>
-          </div>
+  <!-- CURRICULUM -->
+  <section id="curriculum" style="background:var(--uw-blue-800);color:#fff;position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div class="dot-tex" style="position:absolute;inset:0;opacity:.7"></div>
+    <div style="position:relative;z-index:1;max-width:1080px;margin:0 auto">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-300);margin-bottom:14px;text-align:center">Curriculum</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.02em;margin:0 0 36px;color:#fff;text-align:center">10 days, 10 lessons in the order that builds.</h2>
+      <div class="cc-curric" style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px">
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">01</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0 0-14h-1"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></svg></span><span style="font-size:15.5px;flex:1">Biochemistry and genetics</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">5.5 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">02</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span><span style="font-size:15.5px;flex:1">Microbiology</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">6 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">03</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg></span><span style="font-size:15.5px;flex:1">Pathology, General Pharm and Immunology</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">6 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">04</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5h0c-1.4 0-2.5-1.1-2.5-2.5V2"></path><path d="M8.5 2h7"></path><path d="M14.5 16h-5"></path></svg></span><span style="font-size:15.5px;flex:1">Endocrinology and Renal</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">6 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">05</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 2 1.88 1.88"></path><path d="M14.12 3.88 16 2"></path><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"></path><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"></path><path d="M12 20v-9"></path><path d="M6.53 9C4.6 8.8 3 7.1 3 5"></path><path d="M6 13H2"></path><path d="M3 21c0-2.1 1.7-3.9 3.8-4"></path><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"></path><path d="M22 13h-4"></path><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"></path></svg></span><span style="font-size:15.5px;flex:1">Biostats, Ethics and Cardiovascular</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">6 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">06</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path></svg></span><span style="font-size:15.5px;flex:1">Respiratory and Psychiatry</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">6 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">07</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"></path></svg></span><span style="font-size:15.5px;flex:1">Gastrointestinal</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">8 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">08</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span><span style="font-size:15.5px;flex:1">Hematology and Reproductive</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">6 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">09</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span style="font-size:15.5px;flex:1">Musculoskeletal, Rheum, Derm</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">6 hrs</span></div>
+        <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:14px 18px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300);min-width:28px">10</span><span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span><span style="font-size:15.5px;flex:1">Neurology</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.03em;color:var(--uw-success-300);flex:none">4 hrs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO REVIEWS -->
+  <section style="background:var(--uw-bg);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="display:flex;justify-content:center;align-items:center;gap:9px;font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>Watch their stories</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.02em;margin:0 auto 8px;color:var(--uw-ink-900);text-align:center;max-width:22ch">Hear it from students who passed.</h2>
+      <p style="text-align:center;max-width:54ch;margin:0 auto 40px;font-size:16px;line-height:1.6;color:var(--uw-ink-500)">Tap to play</p>
+      <div class="cc-videos">
+        <div class="cc-short-wrap" style="display:flex">
+          <a href="https://www.youtube.com/shorts/pcQuFkFmnAE" target="_blank" rel="noopener" data-video="short" style="position:relative;width:100%;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:9/16;cursor:pointer;display:block;text-decoration:none">
+              <img src="https://i.ytimg.com/vi/pcQuFkFmnAE/oardefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42))"></div>
+              <div style="position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.4);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-400)"></span>Short</div>
+              <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
+          </a>
         </div>
-      </section>
-    </main>
-
-    <!-- Video testimonials: click-to-load (no iframe until played) -->
-    <script>
-      (function () {
-        document.querySelectorAll('.cc-vt').forEach(function (el) {
-          function play() {
-            if (el.classList.contains('is-playing')) return;
-            var id = el.getAttribute('data-ytid');
-            if (!id) return;
-            var iframe = document.createElement('iframe');
-            iframe.src =
-              'https://www.youtube-nocookie.com/embed/' +
-              id +
-              '?autoplay=1&rel=0';
-            iframe.title = 'Student testimonial';
-            iframe.setAttribute(
-              'allow',
-              'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            );
-            iframe.setAttribute('allowfullscreen', '');
-            el.appendChild(iframe);
-            el.classList.add('is-playing');
-            el.removeAttribute('role');
-            el.removeAttribute('tabindex');
-          }
-          el.addEventListener('click', play);
-          el.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              play();
-            }
-          });
-        });
-      })();
-    </script>
-
-    <!-- ============== CLOSING CTA ============== -->
-    <section class="msp-section cc-closing">
-      <div class="msp-wrap">
-        <div class="cc-closing__body reveal">
-          <p class="cc-closing__copy">
-            The 2026 Step&nbsp;1 format is already live. Every week spent on old prep
-            is a week training for an exam that no longer exists. The sooner you align
-            to the current blueprint, the more of your study time actually counts.
-          </p>
-          <a class="btn btn--primary btn--xl" href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer">
-            Enroll Now <i data-lucide="arrow-right" width="16" height="16"></i>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <a href="https://www.youtube.com/watch?v=5qnypeUipdE" target="_blank" rel="noopener" data-video="va" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block;text-decoration:none">
+              <img src="https://i.ytimg.com/vi/5qnypeUipdE/hqdefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.34))"></div>
+              <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
+          </a>
+          <a href="https://www.youtube.com/watch?v=yljBSeYYx6s" target="_blank" rel="noopener" data-video="vb" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block;text-decoration:none">
+              <img src="https://i.ytimg.com/vi/yljBSeYYx6s/hqdefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.34))"></div>
+              <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
           </a>
         </div>
       </div>
-    </section>
-
-    <!-- ============== CONTACT ============== -->
-    <section class="msp-section cc-contact" id="contact" aria-labelledby="contactTitle">
-      <div class="msp-wrap">
-        <div class="cc-contact__grid">
-
-          <!-- Left: intro -->
-          <div class="cc-contact__intro reveal">
-            <span class="msp-eyebrow">Contact</span>
-            <h2 id="contactTitle" class="msp-h2">Not sure what the right next step is?</h2>
-            <p class="cc-contact__lead">
-              Speak directly with our team and get clear guidance on your exams,
-              applications, or match strategy.
-            </p>
-            <a
-              class="cc-contact__wa"
-              href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20for%20USMLEWise"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.882l6.206-1.448A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.214-3.681.859.925-3.583-.234-.369A9.818 9.818 0 1112 21.818z"/>
-              </svg>
-              Chat on WhatsApp
-            </a>
-            <span class="cc-contact__or">Prefer email? Send us a message.</span>
-          </div>
-
-          <!-- Right: form -->
-          <div class="cc-contact__card reveal">
-          <form class="cc-contact__form" action="#" method="post" novalidate>
-            <div class="cc-field-row">
-              <div class="cc-field">
-                <label for="cc-name">Full name</label>
-                <input type="text" id="cc-name" name="name" placeholder="Your name" autocomplete="name" required />
-              </div>
-              <div class="cc-field">
-                <label for="cc-email">Email</label>
-                <input type="email" id="cc-email" name="email" placeholder="you@email.com" autocomplete="email" required />
-              </div>
-            </div>
-            <div class="cc-field">
-              <label for="cc-subject">Subject</label>
-              <select id="cc-subject" name="subject" required>
-                <option value="" disabled selected>What&rsquo;s this about?</option>
-                <option>Step 1 crash course</option>
-                <option>USMLE Step 2 / Step 3</option>
-                <option>Residency match strategy</option>
-                <option>Research opportunities</option>
-                <option>Something else</option>
-              </select>
-            </div>
-            <div class="cc-field">
-              <label for="cc-message">Message</label>
-              <textarea id="cc-message" name="message" placeholder="Tell us where you are in your prep&hellip;" required></textarea>
-            </div>
-            <label class="cc-captcha">
-              <input type="checkbox" name="not_robot" required />
-              I&rsquo;m not a robot
-            </label>
-            <div>
-              <button type="submit" class="btn btn--primary btn--lg">
-                Send message <i data-lucide="send" width="16" height="16"></i>
-              </button>
-            </div>
-          </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== STICKY MOBILE CTA BAR (mobile only) ============== -->
-    <style>
-      .cc-mobilebar { display: none; }
-      @media (max-width: 760px) {
-        body { padding-bottom: 76px; }
-        .cc-mobilebar {
-          display: flex;
-          position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
-          align-items: center; justify-content: space-between; gap: 14px;
-          padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
-          background: rgba(255, 255, 255, .94);
-          backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-          border-top: 1px solid var(--uw-border);
-          box-shadow: 0 -8px 26px rgba(15, 18, 51, .12);
-        }
-        .cc-mobilebar__price { line-height: 1.12; }
-        .cc-mobilebar__price-row { display: flex; align-items: baseline; gap: 8px; }
-        .cc-mobilebar__price-row s { font-size: 14px; color: var(--uw-ink-400); text-decoration-thickness: 1.5px; }
-        .cc-mobilebar__now { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--uw-ink-900); }
-        .cc-mobilebar__badge { font-size: 11px; font-family: var(--font-mono); letter-spacing: .04em; color: var(--uw-success-700); background: var(--uw-success-50); padding: 2px 7px; border-radius: 999px; }
-        .cc-mobilebar__sub { font-size: 11.5px; color: var(--uw-ink-500); margin-top: 1px; }
-        .cc-mobilebar__cta { flex: none; }
-      }
-    </style>
-    <div class="cc-mobilebar" id="ccBar">
-      <div class="cc-mobilebar__price">
-        <div class="cc-mobilebar__price-row">
-          <s>$999</s>
-          <span class="cc-mobilebar__now">$199</span>
-          <span class="cc-mobilebar__badge">80% off</span>
-        </div>
-        <div class="cc-mobilebar__sub">One time &middot; Lifetime access</div>
-      </div>
-      <a href="#enroll" class="btn btn--primary btn--lg cc-mobilebar__cta">Enroll Now</a>
     </div>
+  </section>
 
-    <!-- ============== FOOTER ============== -->
+  <!-- COMPARE -->
+  <section id="compare" style="background:var(--uw-surface);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px;text-align:center">How we compare</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.02em;margin:0 0 36px;color:var(--uw-ink-900);text-align:center">Side by side, here's what actually sets this apart.</h2>
+      <div class="cc-cmp-table" style="overflow-x:auto;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
+        <table style="width:100%;border-collapse:collapse;min-width:680px;font-size:14px">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:18px 20px;background:var(--uw-bg);color:var(--uw-ink-500);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--uw-border);width:24%">Feature</th>
+              <th style="text-align:left;padding:18px 20px;background:var(--uw-blue-500);color:#fff;border-bottom:1px solid var(--uw-border);width:42%"><b style="font-size:15px;font-weight:600">Our 10-day Step 1 crash course</b></th>
+              <th style="text-align:left;padding:18px 20px;background:var(--uw-bg);color:var(--uw-ink-600);font-weight:600;border-bottom:1px solid var(--uw-border)">Other crash courses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:16px 20px;font-weight:600;color:var(--uw-ink-900);border-bottom:1px solid var(--uw-border);vertical-align:top">2026 alignment</td>
+              <td style="padding:16px 20px;color:var(--uw-ink-800);background:var(--uw-blue-50);border-bottom:1px solid var(--uw-border);vertical-align:top"><div style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Rebuilt line by line for the new 2026 step 1 updated syllabus with nutrition and ethics surge covered in depth</span></div></td>
+              <td style="padding:16px 20px;color:var(--uw-ink-500);border-bottom:1px solid var(--uw-border);vertical-align:top">Often reuses older decks with partial 2026 updates</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:600;color:var(--uw-ink-900);border-bottom:1px solid var(--uw-border);vertical-align:top">Focus</td>
+              <td style="padding:16px 20px;color:var(--uw-ink-800);background:var(--uw-blue-50);border-bottom:1px solid var(--uw-border);vertical-align:top"><div style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span>60 hours, zero fluff, only what the NBME repeatedly tests</span></div></td>
+              <td style="padding:16px 20px;color:var(--uw-ink-500);border-bottom:1px solid var(--uw-border);vertical-align:top">Broad sweep, mixed yield, time dilution</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:600;color:var(--uw-ink-900);border-bottom:1px solid var(--uw-border);vertical-align:top">Teaching engine</td>
+              <td style="padding:16px 20px;color:var(--uw-ink-800);background:var(--uw-blue-50);border-bottom:1px solid var(--uw-border);vertical-align:top"><div style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Question-powered. NBME-style vignettes train knowledge and test-taking together</span></div></td>
+              <td style="padding:16px 20px;color:var(--uw-ink-500);border-bottom:1px solid var(--uw-border);vertical-align:top">Lecture-heavy, QBank left for homework</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:600;color:var(--uw-ink-900);border-bottom:1px solid var(--uw-border);vertical-align:top">Instructors</td>
+              <td style="padding:16px 20px;color:var(--uw-ink-800);background:var(--uw-blue-50);border-bottom:1px solid var(--uw-border);vertical-align:top"><div style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span>270+ Step 2 scorers who reverse-engineered the patterns</span></div></td>
+              <td style="padding:16px 20px;color:var(--uw-ink-500);border-bottom:1px solid var(--uw-border);vertical-align:top">Limited experience and credentials</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:600;color:var(--uw-ink-900);border-bottom:1px solid var(--uw-border);vertical-align:top">Accountability</td>
+              <td style="padding:16px 20px;color:var(--uw-ink-800);background:var(--uw-blue-50);border-bottom:1px solid var(--uw-border);vertical-align:top"><div style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Built-in daily question drills that make you apply each lesson</span></div></td>
+              <td style="padding:16px 20px;color:var(--uw-ink-500);border-bottom:1px solid var(--uw-border);vertical-align:top">Passive watching, little pressure to execute</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:600;color:var(--uw-ink-900);border-bottom:1px solid var(--uw-border);vertical-align:top">Pass guarantee</td>
+              <td style="padding:16px 20px;color:var(--uw-ink-800);background:var(--uw-blue-50);border-bottom:1px solid var(--uw-border);vertical-align:top"><div style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span><b style="color:var(--uw-success-700)">Finish the course and drills, don't pass, full refund</b></span></div></td>
+              <td style="padding:16px 20px;color:var(--uw-ink-500);border-bottom:1px solid var(--uw-border);vertical-align:top">No guarantee, or store credit only</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:600;color:var(--uw-ink-900);border-bottom:1px solid var(--uw-border);vertical-align:top">Reported outcomes</td>
+              <td style="padding:16px 20px;color:var(--uw-ink-800);background:var(--uw-blue-50);border-bottom:1px solid var(--uw-border);vertical-align:top"><div style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span>20 to 40 point jumps on practice NBMEs, roughly 2x faster score gain than solo study</span></div></td>
+              <td style="padding:16px 20px;color:var(--uw-ink-500);border-bottom:1px solid var(--uw-border);vertical-align:top">Modest gains over months</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:600;color:var(--uw-ink-900);vertical-align:top">Step 2 bridge</td>
+              <td style="padding:16px 20px;color:var(--uw-ink-800);background:var(--uw-blue-50);vertical-align:top"><div style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span>N+1 consolidation leaves you with a ready Step 2 launchpad</span></div></td>
+              <td style="padding:16px 20px;color:var(--uw-ink-500);vertical-align:top">No structured bridge beyond Step 1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cc-cmp-cards" style="flex-direction:column;gap:16px">
+        
+            <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);padding:22px 22px 24px">
+              <h3 style="font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2;margin:0 0 16px;color:var(--uw-ink-900)">2026 alignment</h3>
+              <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:5px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>
+                <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500);font-weight:700">Us</div>
+              </div>
+              <p style="margin:0 0 18px;padding-left:26px;font-size:15px;line-height:1.5;color:var(--uw-ink-900)">Rebuilt line by line for the new 2026 step 1 updated syllabus with nutrition and ethics surge covered in depth</p>
+              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-ink-400);font-weight:700;margin-bottom:5px">Others</div>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:var(--uw-ink-500);font-style:italic">Often reuses older decks with partial 2026 updates</p>
+            </div>
+            <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);padding:22px 22px 24px">
+              <h3 style="font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2;margin:0 0 16px;color:var(--uw-ink-900)">Focus</h3>
+              <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:5px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>
+                <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500);font-weight:700">Us</div>
+              </div>
+              <p style="margin:0 0 18px;padding-left:26px;font-size:15px;line-height:1.5;color:var(--uw-ink-900)">60 hours, zero fluff, only what the NBME repeatedly tests</p>
+              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-ink-400);font-weight:700;margin-bottom:5px">Others</div>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:var(--uw-ink-500);font-style:italic">Broad sweep, mixed yield, time dilution</p>
+            </div>
+            <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);padding:22px 22px 24px">
+              <h3 style="font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2;margin:0 0 16px;color:var(--uw-ink-900)">Teaching engine</h3>
+              <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:5px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>
+                <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500);font-weight:700">Us</div>
+              </div>
+              <p style="margin:0 0 18px;padding-left:26px;font-size:15px;line-height:1.5;color:var(--uw-ink-900)">Question-powered. NBME-style vignettes train knowledge and test-taking together</p>
+              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-ink-400);font-weight:700;margin-bottom:5px">Others</div>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:var(--uw-ink-500);font-style:italic">Lecture-heavy, QBank left for homework</p>
+            </div>
+            <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);padding:22px 22px 24px">
+              <h3 style="font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2;margin:0 0 16px;color:var(--uw-ink-900)">Instructors</h3>
+              <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:5px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>
+                <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500);font-weight:700">Us</div>
+              </div>
+              <p style="margin:0 0 18px;padding-left:26px;font-size:15px;line-height:1.5;color:var(--uw-ink-900)">270+ Step 2 scorers who reverse-engineered the patterns</p>
+              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-ink-400);font-weight:700;margin-bottom:5px">Others</div>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:var(--uw-ink-500);font-style:italic">Limited experience and credentials</p>
+            </div>
+            <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);padding:22px 22px 24px">
+              <h3 style="font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2;margin:0 0 16px;color:var(--uw-ink-900)">Accountability</h3>
+              <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:5px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>
+                <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500);font-weight:700">Us</div>
+              </div>
+              <p style="margin:0 0 18px;padding-left:26px;font-size:15px;line-height:1.5;color:var(--uw-ink-900)">Built-in daily question drills that make you apply each lesson</p>
+              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-ink-400);font-weight:700;margin-bottom:5px">Others</div>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:var(--uw-ink-500);font-style:italic">Passive watching, little pressure to execute</p>
+            </div>
+            <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);padding:22px 22px 24px">
+              <h3 style="font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2;margin:0 0 16px;color:var(--uw-ink-900)">Pass guarantee</h3>
+              <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:5px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>
+                <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500);font-weight:700">Us</div>
+              </div>
+              <p style="margin:0 0 18px;padding-left:26px;font-size:15px;line-height:1.5;color:var(--uw-ink-900)">Finish the course and drills, don't pass, full refund</p>
+              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-ink-400);font-weight:700;margin-bottom:5px">Others</div>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:var(--uw-ink-500);font-style:italic">No guarantee, or store credit only</p>
+            </div>
+            <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);padding:22px 22px 24px">
+              <h3 style="font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2;margin:0 0 16px;color:var(--uw-ink-900)">Reported outcomes</h3>
+              <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:5px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>
+                <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500);font-weight:700">Us</div>
+              </div>
+              <p style="margin:0 0 18px;padding-left:26px;font-size:15px;line-height:1.5;color:var(--uw-ink-900)">20 to 40 point jumps on practice NBMEs, roughly 2x faster score gain than solo study</p>
+              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-ink-400);font-weight:700;margin-bottom:5px">Others</div>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:var(--uw-ink-500);font-style:italic">Modest gains over months</p>
+            </div>
+            <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);padding:22px 22px 24px">
+              <h3 style="font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-0.01em;line-height:1.2;margin:0 0 16px;color:var(--uw-ink-900)">Step 2 bridge</h3>
+              <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:5px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>
+                <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500);font-weight:700">Us</div>
+              </div>
+              <p style="margin:0 0 18px;padding-left:26px;font-size:15px;line-height:1.5;color:var(--uw-ink-900)">N+1 consolidation leaves you with a ready Step 2 launchpad</p>
+              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-ink-400);font-weight:700;margin-bottom:5px">Others</div>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:var(--uw-ink-500);font-style:italic">No structured bridge beyond Step 1</p>
+            </div>
+      </div>
+      <div style="margin-top:40px;text-align:center"><a href="#offer"><span class="btn btn--primary btn--lg">Enroll Now</span></a></div>
+    </div>
+  </section>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>
+  <!-- OFFER -->
+  <section id="offer" style="background:var(--uw-bg);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div style="max-width:760px;margin:0 auto;text-align:center">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">Offer &amp; guarantee</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.02em;margin:0 0 32px;color:var(--uw-ink-900)">Here's everything you get when you enroll today:</h2>
+      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);overflow:hidden;text-align:left">
+        <div style="padding:clamp(24px,4vw,36px)">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--uw-border)"><span style="display:flex;align-items:center;gap:11px;font-size:15px;color:var(--uw-ink-800)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-blue-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 17V7l8 5-8 5z" fill="var(--uw-blue-500)" stroke="none"></path></svg>The 10-day, 60-hour Self-Paced Crash Course</span><span style="font-family:var(--font-mono);color:var(--uw-ink-500);white-space:nowrap">$599</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--uw-border)"><span style="display:flex;align-items:center;gap:11px;font-size:15px;color:var(--uw-ink-800)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-blue-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l2.5 2.5"></path></svg>Lifetime Access, Rewatch Anytime, including Future Updates</span><span style="font-family:var(--font-mono);color:var(--uw-ink-500);white-space:nowrap">$300</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0"><span style="display:flex;align-items:center;gap:11px;font-size:15px;color:var(--uw-ink-800)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-blue-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>USMLE Step 1 Rapid Review 2026 Slides</span><span style="font-family:var(--font-mono);color:var(--uw-ink-500);white-space:nowrap">$100</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0 0;border-top:2px solid var(--uw-ink-900);margin-top:6px"><span style="font-size:15px;font-weight:600;color:var(--uw-ink-900)">Total value</span><s style="font-family:var(--font-display);font-size:24px;color:var(--uw-ink-400)">$999</s></div>
+        </div>
+        <div style="background:var(--uw-blue-500);color:#fff;padding:clamp(24px,4vw,36px);position:relative;overflow:hidden">
+          <div class="dot-tex" style="position:absolute;inset:0"></div>
+          <div style="position:relative;z-index:1;text-align:center">
+            <div style="font-size:13px;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-mono);margin-bottom:8px">Yours today</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:6px"><s style="font-family:var(--font-display);font-size:30px;color:rgba(255,255,255,.5)">$999</s><span style="font-family:var(--font-display);font-size:clamp(52px,8vw,72px);font-weight:600;line-height:.9">$199</span></div>
+            <div style="font-size:13.5px;color:rgba(255,255,255,.75);margin-bottom:24px">$199, one time. You get instant access the moment you enroll, and every lesson is yours for life.</div>
+            <a href="https://nas.com/checkout-global?communityId=678e896792ccbd5774869190&communityCode=USMLE_UPDATES_2&requestor=whatsappSignup&linkClicked=https%3A%2F%2Fnas.com%2Fportal%2Fdigital-files%2Fmanage%3Fid%3D692684e1c205076c86d084c4&sourceInfoType=folder&sourceInfoOrigin=692684e1c205076c86d084c4" target="_blank" rel="noopener noreferrer"><span class="btn btn--primary btn--xl">Get Access Now</span></a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;text-align:left;background:var(--uw-success-50);border:1px solid var(--uw-success-300);border-radius:var(--r-lg);padding:20px 22px;margin-top:24px">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        <p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--uw-ink-700)">And the 100% money back guarantee is about as simple as it gets. You finish the course and&nbsp;<span style="color: rgb(32, 34, 43); font-size: 15px;">if you don't pass, get a full refund. Zero risk. Pure results.</span></p><div><br></div><p></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL WALL -->
+  <section style="background:var(--uw-bg);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px;text-align:center">In their own words</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(26px,3.2vw,40px);letter-spacing:-0.02em;margin:0 auto 8px;color:var(--uw-ink-900);text-align:center;max-width:24ch">We'll let the students talk.</h2>
+      <p style="text-align:center;max-width:54ch;margin:0 auto 32px;font-size:16px;line-height:1.6;color:var(--uw-ink-500)">Sent to us after results day. Scroll to read them all.</p>
+      <div class="cc-wall" style="max-height:660px;overflow-y:scroll;padding:20px 22px;border:1px solid var(--uw-border);border-radius:var(--r-xl);background:var(--uw-surface);box-shadow:var(--shadow-sm) inset">
+        <div class="cc-wall-grid" style="columns:3;column-gap:14px">
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t01.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t02.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t03.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t04.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t05.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t06.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t07.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t08.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t09.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t10.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t11.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t12.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t13.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t14.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t15.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t16.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t17.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t18.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t19.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t20.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t21.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+          <div style="break-inside:avoid;margin-bottom:14px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);background:var(--uw-surface)"><img src="/assets/step1-crash-course/testimonials/t22.webp" alt="Student testimonial screenshot" loading="lazy" style="width:100%;display:block"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 DAYS FROM NOW -->
+  <section style="background:var(--uw-surface);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px;text-align:center">10 days from now</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.4vw,44px);letter-spacing:-0.02em;margin:0 0 clamp(34px,4vw,52px);color:var(--uw-ink-900);text-align:center">You're going to spend them either way.</h2>
+      <div class="cc-duality" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px)">
+        <div style="background:var(--uw-red-50);border:1px solid var(--uw-red-100);border-radius:var(--r-lg);padding:clamp(24px,3vw,34px)">
+          <div style="font-size:17px;font-weight:600;color:var(--uw-red-600);margin-bottom:20px">Without this course</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
+            <li style="display:flex;gap:12px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="font-size:15px;line-height:1.5;color:var(--uw-ink-700)">Still grinding broad, still unsure what actually matters.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="font-size:15px;line-height:1.5;color:var(--uw-ink-700)">Another weekend lost to low-yield material that won't show up.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="font-size:15px;line-height:1.5;color:var(--uw-ink-700)">That same quiet worry every time you open a practice block.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="font-size:15px;line-height:1.5;color:var(--uw-ink-700)">Walking in hoping you studied the right things.</span></li>
+          </ul>
+        </div>
+        <div style="background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-lg);padding:clamp(24px,3vw,34px)">
+          <div style="font-size:17px;font-weight:600;color:var(--uw-blue-700);margin-bottom:20px">With this course</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
+            <li style="display:flex;gap:12px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15px;line-height:1.5;color:var(--uw-ink-700)">Studying with a map, clear on exactly what to focus on and what to skip.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15px;line-height:1.5;color:var(--uw-ink-700)">60 hours spent only on what the NBME actually tests.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15px;line-height:1.5;color:var(--uw-ink-700)">A calm, drilled routine for pacing, elimination, and the tough items.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15px;line-height:1.5;color:var(--uw-ink-700)">Walking in knowing what's coming, and passing.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:clamp(32px,4vw,44px)">
+        <a href="#offer"><span class="btn btn--primary btn--xl">Get Instant Access</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--uw-bg);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+    <div style="max-width:840px;margin:0 auto">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px;text-align:center">Questions, answered</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.4vw,44px);letter-spacing:-0.02em;margin:0 0 clamp(34px,4vw,52px);color:var(--uw-ink-900);text-align:center">Frequently asked questions</h2>
+      <div style="margin-bottom:34px">
+          <div style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:13px">Format and access</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Is this live or self-paced?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">It's 100% self-paced. Every lesson is pre-recorded, so you start the minute you enroll, study on your own schedule, and pause, rewind, or rewatch as often as you need. No set class times, no waiting for a cohort to open.</div>
+              </div>
+          </div>
+        </div>
+      <div style="margin-bottom:34px">
+          <div style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:13px">Fit and outcomes</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn is-open" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Is a 10-day crash course really worth it for 2026?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">&ndash;</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch">Yes. The 2026 blueprint rewards pattern recognition, ethics and communication, biostats, and chart-style stems, and our 60 hours go straight at what actually shows up. So you close the highest-yield gaps fast and walk in confident.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Can a crash course really move my readiness that much?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">For most people, yes. Students routinely report 20 to 40 point jumps on their practice NBMEs within two weeks, roughly twice the progress of studying solo. Your results depend on where you start and the work you put in.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Is this better for first-timers or retakers?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Honestly, both. If it's your first time, you get a clean high-yield map. And if you're retaking, it resets the usual leak points, which are timing, reasoning, and ethics.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">What do students actually walk away with?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Faster reading, sharper elimination, fewer careless errors, and a calmer test day.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Does it help with anxiety, timing, and decision-making?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">It does. We drill pacing and indentation so you finish on time, and you practice a fixed decision tree for the tie-breaker items that usually eat your clock.</div>
+              </div>
+          </div>
+        </div>
+      <div style="margin-bottom:34px">
+          <div style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:13px">What changed in 2026, and how we handle it</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">What actually changed on Step 1 in 2026?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">A few things. Longer chart and SOAP-style stems with distracting detail, more ethics and communication, immunology and micro up while pure biochem is down, and pathophysiology over trivia.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">How do you handle the long chart-style stems and SOAP notes?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">You'll use a three-pass read, route then extract then decide. First pass for the route, second for the computable items, third for elimination. Then a highlighting discipline that locks onto orders and vitals.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Are ethics and communication covered with actual answers?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Yes. You get plug-and-play language for consent, boundaries, impaired colleagues, end-of-life, and error disclosure, plus when and why each one is right.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Do you really focus on the 20% that drives most of the result?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Yes. Every lesson is audited against the patterns the NBME favors, and if it isn't high-yield, it's out.</div>
+              </div>
+          </div>
+        </div>
+      <div style="margin-bottom:34px">
+          <div style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:13px">Teaching engine and method</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">How does question-powered teaching work?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">We teach through NBME-style vignettes from minute one. You learn the idea, solve a question, then take apart the logic and drill the variations until it sticks.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">What's the N+1 method?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">You never learn a topic just once. You stack a slightly harder layer on top of what you just mastered, so recall stays active and moves into long-term memory.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">What frameworks do you teach for the tough items?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">The Elimination Blueprint, the Clue-net, and tie-breakers, plus short contrast tables and break-the-tie clues like onset, the key lab, and one physical finding.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">How do you keep it from leaking back out of my head?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Stacked repetition, mixed-topic mini-sets, and periodic refresh prompts keep everything active, and you build your own one-page frameworks as you work through the lessons.</div>
+              </div>
+          </div>
+        </div>
+      <div style="margin-bottom:34px">
+          <div style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:13px">Instructors, materials, and access</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Who teaches this, and what are their scores?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Sessions are led by 270+ Step 2 scorers and experienced Step 1 instructors, coordinated by Dr. Manik Madaan (271 Step 2). The team reverse-engineered NBME patterns across thousands of items.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Do I get recordings and downloadable materials?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Yes. The whole course is on demand with lifetime access, plus the USMLE Step 1 Rapid Review 2026 slides to keep.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Do I need any other resources?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Just your preferred QBank and a notebook. Keep the QBank you already like, and use the course to decide what to actually memorize and how to apply it under time.</div>
+              </div>
+          </div>
+        </div>
+      <div style="margin-bottom:34px">
+          <div style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:13px">Logistics</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">What's the guarantee?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Finish the sessions and the required drills, sit your exam, and if you don't pass, you get a full refund within 14 days of your score report.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Is this good for nontraditional students or a different background?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Yes. The course assumes varied backgrounds and centers on NBME logic, not on any one set of course notes.</div>
+              </div>
+          </div>
+        </div>
+      <div style="margin-bottom:34px">
+          <div style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:13px">Beyond Step 1</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Do you start with the points I can bank?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Yes. We open with biostats and ethics to lock in the most reliable points early.</div>
+              </div><div style="border:1px solid var(--uw-border);border-radius:var(--r-md);background:var(--uw-surface);overflow:hidden">
+                <button type="button" class="cc-faq-btn" style="all:unset;box-sizing:border-box;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:17px 20px;cursor:pointer">
+                  <span style="font-size:15.5px;font-weight:500;color:var(--uw-ink-900);line-height:1.45">Will this carry over to Step 2?</span>
+                  <span class="cc-faq-sign" style="flex:none;font-family:var(--font-display);font-size:22px;line-height:1;color:var(--uw-blue-500);width:22px;text-align:center;margin-top:1px">+</span>
+                </button>
+                <div class="cc-faq-a" style="padding:0 20px 18px;font-size:14.5px;line-height:1.62;color:var(--uw-ink-600);max-width:66ch;display:none">Yes. The N+1 method and the decision frameworks are built to carry forward, so your Step 1 base becomes a launchpad and your Step 2 prep starts easier.</div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- URGENCY -->
+  <section style="background:var(--uw-blue-800);color:#fff;position:relative;overflow:hidden;padding:clamp(56px,7vw,88px) clamp(20px,5vw,48px)">
+    <div class="dot-tex" style="position:absolute;inset:0;opacity:.6"></div>
+    <div style="position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center">
+      <p style="font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.7vw,32px);line-height:1.4;letter-spacing:-0.015em;margin:0">The 2026 Step 1 format is already live. Every week spent on old prep is a week training for an exam that <span style="font-style:italic;color:var(--uw-blue-100)">no longer exists.</span> The sooner you align to the current blueprint, the more of your study time actually counts.</p>
+      <div style="display:flex;justify-content:center;margin-top:clamp(28px,3.5vw,40px)">
+        <a href="#offer"><span class="btn btn--primary btn--xl">Enroll Now</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background:var(--uw-surface);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px);border-top:1px solid var(--uw-border)">
+    <div class="cc-contact" style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,64px);align-items:start">
+      <div>
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">Contact</div>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(26px,3.2vw,40px);letter-spacing:-0.02em;margin:0 0 14px;color:var(--uw-ink-900)">Not sure what the right next step is?</h2>
+        <p style="font-size:15.5px;line-height:1.6;color:var(--uw-ink-600);max-width:42ch;margin:0 0 8px">Speak directly with our team and get clear guidance on your exams, applications, or match strategy.</p>
+        <p style="font-size:15.5px;line-height:1.6;color:var(--uw-ink-600);max-width:42ch;margin:0 0 24px">Prefer email? Send us a message.</p>
+        <a href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:600;font-size:15px;padding:13px 22px;border-radius:var(--r-md);box-shadow:var(--shadow-sm)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"></path></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:clamp(24px,4vw,32px)">
+        <div id="ccSent" style="display:none">
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:24px 0">
+            <span style="width:52px;height:52px;border-radius:50%;background:var(--uw-success-50);display:grid;place-items:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+            <div><div style="font-family:var(--font-display);font-size:22px;color:var(--uw-ink-900)">Message sent.</div><p style="margin:6px 0 0;font-size:14px;color:var(--uw-ink-600)">Our team will get back to you shortly.</p></div>
+          </div>
+        </div>
+        <div id="ccFormWrap">
+          <form id="ccContactForm" style="display:flex;flex-direction:column;gap:16px">
+            <div class="cc-formrow" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+              <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Full name<input required="" type="text" placeholder="Your name" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
+              <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Email<input required="" type="email" placeholder="you@email.com" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
+            </div>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Subject<input type="text" placeholder="What's this about?" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Message<textarea required="" rows="4" placeholder="Tell us where you are in your prep…" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none;resize:vertical" class="ccx-f1"></textarea></label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--uw-ink-700);cursor:pointer"><input required="" type="checkbox" style="width:17px;height:17px;accent-color:var(--uw-blue-500)">I'm not a robot</label>
+            <button type="submit" style="all:unset;box-sizing:border-box;text-align:center;background:var(--uw-red-500);color:#fff;font-weight:500;font-size:15px;padding:14px;border-radius:var(--r-md);cursor:pointer;transition:background var(--dur-fast)" class="ccx-h2">Send message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--uw-blue-900);color:rgba(255,255,255,.7);padding:clamp(40px,5vw,56px) clamp(20px,5vw,48px)">
+    <div style="max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <img src="/assets/usmle-design-system/assets/Logo-Horizontal-Dark.svg" alt="USMLE Wise" style="height:30px">
+        <span style="font-size:12.5px;max-width:40ch;line-height:1.5">USMLE Step 1 Ultra High-Yield Crash Course — 10 days, 60 hours, zero fluff.</span>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,.5)">© 2026 USMLE Wise. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA BAR -->
+  <div class="cc-mobilebar" id="ccBar" style="position:fixed;left:0;right:0;bottom:0;z-index:50;align-items:center;justify-content:space-between;gap:14px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--uw-border);box-shadow:0 -8px 26px rgba(15,18,51,.12)">
+    <div style="line-height:1.12">
+      <div style="display:flex;align-items:baseline;gap:8px">
+        <s style="font-size:14px;color:var(--uw-ink-400);text-decoration-thickness:1.5px">$999</s>
+        <span style="font-family:var(--font-display);font-size:26px;font-weight:600;color:var(--uw-ink-900)">$199</span>
+        <span style="font-size:11px;font-family:var(--font-mono);letter-spacing:.04em;color:var(--uw-success-700);background:var(--uw-success-50);padding:2px 7px;border-radius:999px">80% off</span>
+      </div>
+      <div style="font-size:11.5px;color:var(--uw-ink-500);margin-top:1px">One time · Lifetime access</div>
+    </div>
+    <a href="#offer" style="flex:none"><span class="btn btn--primary btn--lg">Enroll Now</span></a>
+  </div>
+
+
+</div>
+<script>
+(function () {
+  // FAQ accordion — one open at a time, +/– sign
+  var btns = document.querySelectorAll('.cc-faq-btn');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var wasOpen = btn.classList.contains('is-open');
+      btns.forEach(function (b) {
+        b.classList.remove('is-open');
+        b.querySelector('.cc-faq-sign').innerHTML = '+';
+        var a = b.parentElement.querySelector('.cc-faq-a');
+        if (a) a.style.display = 'none';
+      });
+      if (!wasOpen) {
+        btn.classList.add('is-open');
+        btn.querySelector('.cc-faq-sign').innerHTML = '\u2013';
+        var ans = btn.parentElement.querySelector('.cc-faq-a');
+        if (ans) ans.style.display = '';
+      }
+    });
+  });
+  // Contact form — client-side sent state (matches template behavior)
+  var form = document.getElementById('ccContactForm');
+  if (form) form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('ccFormWrap').style.display = 'none';
+    document.getElementById('ccSent').style.display = '';
+  });
+})();
+</script>
+</body>
+</html>
