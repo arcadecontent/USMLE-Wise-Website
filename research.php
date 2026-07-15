@@ -420,17 +420,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-mtr-e__body">
                 <div class="msp-mtr-e__header">
                   <span class="msp-mtr-e__role">Research Mentor</span>
-                  <h3 class="msp-mtr-e__name">Kaushik Sreeram</h3>
-                  <span class="msp-mtr-e__prog">Research &amp; Publications Mentor</span>
+                  <h3 class="msp-mtr-e__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
+                  <span class="msp-mtr-e__prog">Chief Scientific Officer &amp; CRIST Project Lead · USMLE Wise Research</span>
                 </div>
                 <ul class="msp-mtr-e__creds">
-                  <li>Placeholder credential — please update</li>
-                  <li>Placeholder credential — please update</li>
-                  <li>Placeholder credential — please update</li>
+                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
+                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
+                  <li>Study Lead, MyPACER Study</li>
                 </ul>
               </div>
             </article>
 
+            <?php /* Meghana card — commented out until ready
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
                 <img src="/assets/Photos/Team-Members/Meghana.jpeg" alt="Meghana" loading="lazy" decoding="async" />
@@ -448,15 +449,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 </ul>
               </div>
             </article>
+            */ ?>
 
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
-                <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani" loading="lazy" decoding="async" />
+                <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani Ravipati" loading="lazy" decoding="async" />
               </div>
               <div class="msp-mtr-e__body">
                 <div class="msp-mtr-e__header">
                   <span class="msp-mtr-e__role">Research Mentor</span>
-                  <h3 class="msp-mtr-e__name">Shivani</h3>
+                  <h3 class="msp-mtr-e__name">Shivani Ravipati</h3>
                   <span class="msp-mtr-e__prog">Research &amp; Publications Mentor</span>
                 </div>
                 <ul class="msp-mtr-e__creds">
@@ -474,6 +476,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </section>
 
       <!-- ============== 5. PUBLISHED RESEARCH ============== -->
+      <?php /* Published work section — commented out until ready */ ?>
+      <?php if (false): ?>
       <section class="msp-section msp-pub-section" id="publications" aria-labelledby="pubTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">
@@ -567,6 +571,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </div>
         </div>
       </section>
+      <?php endif; ?>
 
       <!-- ============== 6. SOCIAL PROOF ============== -->
       <!-- TODO: add 2–3 student testimonial quotes once copy is ready -->

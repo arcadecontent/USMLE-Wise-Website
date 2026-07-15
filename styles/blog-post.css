@@ -1,0 +1,88 @@
+/* ============================================================
+   USMLE Wise — Single blog article (/blog/<slug>)
+   Layered on top of blog.css, which supplies the msp chrome,
+   shared meta bits, and the .blog-cta panel.
+   ============================================================ */
+
+.post { padding-top: clamp(28px, 4vw, 48px); }
+
+/* ---------- HERO ---------- */
+.post-hero { padding-block: clamp(28px, 5vw, 56px) clamp(24px, 3vw, 40px); }
+.post-hero__inner { max-width: 760px; margin-inline: auto; text-align: center; }
+
+.post-hero__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(30px, 4.4vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--uw-ink-900);
+  margin: 0 0 var(--space-4);
+}
+
+.post-hero__meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--uw-ink-500);
+}
+
+/* ---------- COVER (optional) ---------- */
+.post-cover {
+  max-width: 900px;
+  margin: 0 auto clamp(16px, 3vw, 32px);
+  aspect-ratio: 16 / 7;
+  border-radius: var(--r-xl);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- BODY ---------- */
+.post-body {
+  max-width: 720px;
+  margin-inline: auto;
+  padding-bottom: clamp(48px, 7vw, 96px);
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--uw-ink-800);
+}
+
+.post-body h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(23px, 2.4vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--uw-ink-900);
+  margin: clamp(32px, 4vw, 52px) 0 var(--space-4);
+}
+
+.post-body p { margin: 0 0 var(--space-5); }
+
+.post-body a {
+  color: var(--uw-blue-600);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.post-body a:hover { color: var(--uw-blue-800); }
+
+.post-body strong { color: var(--uw-ink-900); font-weight: 600; }
+
+.post-body ul,
+.post-body ol {
+  margin: 0 0 var(--space-6);
+  padding-left: 1.4em;
+}
+.post-body li { margin-bottom: var(--space-3); padding-left: 4px; }
+.post-body li::marker { color: var(--uw-blue-500); }
+
+.post-body blockquote {
+  margin: clamp(24px, 3vw, 36px) 0;
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  border-left: 3px solid var(--uw-blue-400);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--uw-ink-700);
+}

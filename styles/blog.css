@@ -216,6 +216,13 @@
   background: rgba(255,255,255,.16);
   border-color: rgba(255,255,255,.4);
 }
+
+/* Category-coloured pill tags */
+.blog-cover--usmle .blog-cover__tag     { background: var(--uw-blue-600);    border-color: transparent; }
+.blog-cover--match .blog-cover__tag     { background: #dc2626;               border-color: transparent; }
+.blog-cover--research .blog-cover__tag  { background: #0d9488;               border-color: transparent; }
+.blog-cover--rotations .blog-cover__tag { background: #16a34a;               border-color: transparent; }
+.blog-cover--img-life .blog-cover__tag  { background: #d97706;               border-color: transparent; }
 .blog-featured__body {
   display: flex;
   flex-direction: column;

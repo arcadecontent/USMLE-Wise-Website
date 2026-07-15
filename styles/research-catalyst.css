@@ -507,7 +507,6 @@
   gap: 16px;
   padding-left: clamp(24px, 3vw, 40px);
   border-left: 1px solid var(--uw-border);
-  white-space: nowrap;
 }
 .rc-receive__num {
   font-family: var(--font-display);

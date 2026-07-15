@@ -200,6 +200,18 @@
     if (strpos($slug, 'payment-confirmation') === 0) {
         $redirect('/');
     }
+    if (strpos($slug, 'blog/') === 0) {
+        $rest = substr($slug, strlen('blog/'));
+        if ($rest !== '' && preg_match('/\A[a-z0-9-]+\z/', $rest)) {
+            // Canonicalize (.html/.php suffix or trailing slash), then serve.
+            if ($hadExtension || $reqPath !== '/blog/' . $rest) {
+                $redirect('/blog/' . $rest);
+            }
+            require __DIR__ . '/blog-post.php';
+            exit;
+        }
+        $redirect('/blog');
+    }
     if (strpos($slug, 'rotations/') === 0) {
         $rest = substr($slug, strlen('rotations/'));
         $redirect($isPage('rotation-' . $rest) ? '/rotation-' . $rest : '/clinical-rotations');

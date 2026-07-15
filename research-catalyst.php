@@ -407,13 +407,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="rc-mtr__body">
                 <div class="rc-mtr__header">
                   <span class="rc-mtr__role">Research Mentor</span>
-                  <h3 class="rc-mtr__name">Dr. Kaushik Sreeram</h3>
-                  <span class="rc-mtr__prog">Research &amp; Publications Mentor</span>
+                  <h3 class="rc-mtr__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
+                  <span class="rc-mtr__prog">Chief Scientific Officer &amp; CRIST Project Lead · USMLE Wise Research</span>
                 </div>
                 <ul class="rc-mtr__creds">
-                  <li>[Credential to be filled in]</li>
-                  <li>[Credential to be filled in]</li>
-                  <li>[Credential to be filled in]</li>
+                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
+                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
+                  <li>Study Lead, MyPACER Study</li>
                 </ul>
               </div>
             </article>

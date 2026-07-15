@@ -221,7 +221,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p class="lpx-sva-desc">Structured strategies from high-scoring mentors who have been through the process. Build the score your application needs.</p>
         <div class="lpx-sva-ctas">
           <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="#" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          <a href="/coaching" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
         </div>
       </div>
     </article>
@@ -246,7 +246,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p class="lpx-sva-desc">Gain real U.S. clinical experience and the LORs that strengthen your residency application meaningfully.</p>
         <div class="lpx-sva-ctas">
           <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="#" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          <a href="/rotations" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
         </div>
       </div>
     </article>
@@ -258,7 +258,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p class="lpx-sva-desc">Build your academic profile with mentored research and publication support tailored to your target specialty.</p>
         <div class="lpx-sva-ctas">
           <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="#" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          <a href="/research" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
         </div>
       </div>
     </article>
