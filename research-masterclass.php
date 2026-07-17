@@ -43,17 +43,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-bar msp-wrap" aria-label="Track record">
           <div class="msp-bar__inner">
             <div class="msp-stat reveal">
-              <b data-count="1000" data-suffix="+" data-comma>1,000+</b>
+              <b data-count="250" data-suffix="+">250+</b>
               <span>Students &amp; professionals guided</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="500" data-suffix="+">500+</b>
+              <b data-count="75" data-suffix="+">75+</b>
               <span>Publications &amp; presentations</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="750" data-suffix="+">750+</b>
+              <b data-count="150" data-suffix="+">150+</b>
               <span>Research projects mentored</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>

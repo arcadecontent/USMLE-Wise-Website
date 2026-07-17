@@ -35,7 +35,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               >
               <a
                 class="btn btn--outline btn--xl"
-                href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20about%20Research%20Guidance%20%2F%20USMLE%20Wise"
+                href="https://web.whatsapp.com/send?phone=19192015700&text=Hey%2C%20I%20have%20questions%20about%20Research%20Guidance%20%2F%20USMLE%20Wise"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -64,17 +64,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-bar msp-wrap" aria-label="Track record">
           <div class="msp-bar__inner">
             <div class="msp-stat reveal">
-              <b data-count="1000" data-suffix="+" data-comma>1,000+</b>
+              <b data-count="250" data-suffix="+">250+</b>
               <span>Students &amp; professionals guided</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="500" data-suffix="+">500+</b>
+              <b data-count="75" data-suffix="+">75+</b>
               <span>Publications &amp; presentations</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="750" data-suffix="+">750+</b>
+              <b data-count="150" data-suffix="+">150+</b>
               <span>Research projects mentored</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
@@ -172,9 +172,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <article class="msp-bento__card" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp');">
               <div class="msp-bento__inner">
                 <span class="msp-bento__format">Live</span>
-                <h3 class="msp-bento__name">Review Paper / Abstract</h3>
+                <h3 class="msp-bento__name">Systematic Review / Meta-Analysis</h3>
                 <div class="msp-bento__price">$199</div>
-                <p class="msp-bento__desc">Guided review paper with mentor support. The fastest first publication for your CV.</p>
+                <p class="msp-bento__desc">Mentor-guided systematic review or meta-analysis. A credible, rigorous first publication for your CV.</p>
                 <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
               </div>
             </article>
@@ -216,9 +216,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <article class="msp-bento__card">
               <div class="msp-bento__inner">
                 <span class="msp-bento__format">Live</span>
-                <h3 class="msp-bento__name">Review Paper / Abstract</h3>
+                <h3 class="msp-bento__name">Systematic Review / Meta-Analysis</h3>
                 <div class="msp-bento__price">$199</div>
-                <p class="msp-bento__desc">Guided review paper with mentor support. The fastest first publication for your CV.</p>
+                <p class="msp-bento__desc">Mentor-guided systematic review or meta-analysis. A credible, rigorous first publication for your CV.</p>
                 <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Call</a>
               </div>
             </article>
@@ -271,9 +271,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-sva-img" style="background-image: url('assets/Photos/pexels-tara-winstead-7722791.webp');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">03 &middot; Live</span>
-                <h3 class="msp-sva-title">Review Paper / Abstract</h3>
+                <h3 class="msp-sva-title">Systematic Review / Meta-Analysis</h3>
                 <div class="msp-sva-price">$199</div>
-                <p class="msp-sva-desc">A mentor-supported review paper or abstract: the fastest way to add a publication to your CV.</p>
+                <p class="msp-sva-desc">A mentor-guided systematic review or meta-analysis: a rigorous, credible first publication for your CV.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
                   <a href="/research-review" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
@@ -338,8 +338,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="msp-step-b">
               <div class="msp-step-b__content msp-step-b__content--l">
                 <span class="msp-step-b__label">Stage 03</span>
-                <h3>Training &amp; Development</h3>
-                <p>Learn the fundamentals of research methodology, literature review, scientific writing, and publication ethics.</p>
+                <h3>Project Execution</h3>
+                <p>Work alongside mentors to conduct research, analyze data, and contribute meaningfully to the project.</p>
               </div>
               <div class="msp-step-b__node"><span class="msp-step-b__dot"></span></div>
               <div class="msp-step-b__content msp-step-b__content--r"></div>
@@ -350,29 +350,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-step-b__node"><span class="msp-step-b__dot"></span></div>
               <div class="msp-step-b__content msp-step-b__content--r">
                 <span class="msp-step-b__label">Stage 04</span>
-                <h3>Project Execution</h3>
-                <p>Work alongside mentors to conduct research, analyze data, and contribute meaningfully to the project.</p>
+                <h3>Manuscript Preparation</h3>
+                <p>Develop a publication-ready manuscript with structured writing, revisions, and mentor feedback.</p>
               </div>
             </div>
 
             <div class="msp-step-b">
               <div class="msp-step-b__content msp-step-b__content--l">
                 <span class="msp-step-b__label">Stage 05</span>
-                <h3>Manuscript Preparation</h3>
-                <p>Develop a publication-ready manuscript with structured writing, revisions, and mentor feedback.</p>
-              </div>
-              <div class="msp-step-b__node"><span class="msp-step-b__dot"></span></div>
-              <div class="msp-step-b__content msp-step-b__content--r"></div>
-            </div>
-
-            <div class="msp-step-b">
-              <div class="msp-step-b__content msp-step-b__content--l"></div>
-              <div class="msp-step-b__node"><span class="msp-step-b__dot"></span></div>
-              <div class="msp-step-b__content msp-step-b__content--r">
-                <span class="msp-step-b__label">Stage 06</span>
                 <h3>Submission &amp; Publication</h3>
                 <p>Receive guidance through journal selection, submission, reviewer responses, and the publication process.</p>
               </div>
+              <div class="msp-step-b__node"><span class="msp-step-b__dot"></span></div>
+              <div class="msp-step-b__content msp-step-b__content--r"></div>
             </div>
 
           </div>
@@ -397,6 +387,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
+                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreeram" loading="lazy" decoding="async" />
+              </div>
+              <div class="msp-mtr-e__body">
+                <div class="msp-mtr-e__header">
+                  <span class="msp-mtr-e__role">Research Head</span>
+                  <h3 class="msp-mtr-e__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
+                  <span class="msp-mtr-e__prog">Chief Scientific Officer &amp; CRIST Project Lead · USMLE Wise Research</span>
+                </div>
+                <ul class="msp-mtr-e__creds">
+                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
+                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
+                  <li>Study Lead, MyPACER Study</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="msp-mtr-e reveal">
+              <div class="msp-mtr-e__photo">
                 <img src="/assets/Photos/Team-Members/Barakat-Photo.jpeg" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
               </div>
               <div class="msp-mtr-e__body">
@@ -408,25 +416,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <ul class="msp-mtr-e__creds">
                   <li>6 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
                   <li>160+ students guided to publication across SRA &amp; MEDMARK programs</li>
-                  <li>APA Psych SIG International Student Research Chair 2026&ndash;2027</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="msp-mtr-e reveal">
-              <div class="msp-mtr-e__photo">
-                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreeram" loading="lazy" decoding="async" />
-              </div>
-              <div class="msp-mtr-e__body">
-                <div class="msp-mtr-e__header">
-                  <span class="msp-mtr-e__role">Research Mentor</span>
-                  <h3 class="msp-mtr-e__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
-                  <span class="msp-mtr-e__prog">Chief Scientific Officer &amp; CRIST Project Lead · USMLE Wise Research</span>
-                </div>
-                <ul class="msp-mtr-e__creds">
-                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
-                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
-                  <li>Study Lead, MyPACER Study</li>
+                  <li>APA PsychSIGN International Student Liaison Research Chair 2026&ndash;2027</li>
                 </ul>
               </div>
             </article>
@@ -590,10 +580,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="accordion reveal">
             <div class="accordion__item">
               <button class="accordion__head" type="button">
-                What is the difference between a review paper and original research?
+                What is the difference between a systematic review and original research?
               </button>
               <div class="accordion__body">
-                A review paper analyzes existing literature, while original research involves generating or analyzing new data.
+                A systematic review or meta-analysis synthesizes existing literature using a rigorous, pre-defined methodology, while original research involves generating or analyzing new data. Both are peer-reviewed and valued by residency programs.
               </div>
             </div>
             <div class="accordion__item">
@@ -601,7 +591,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 Which option is best for beginners?
               </button>
               <div class="accordion__body">
-                Review papers are often an excellent starting point for first-time researchers.
+                Systematic reviews and meta-analyses are often the best starting point for first-time researchers — they don't require you to collect new data, but they carry strong academic credibility when done rigorously.
               </div>
             </div>
             <div class="accordion__item">
@@ -641,12 +631,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-wrap">
           <div class="msp-cta-a reveal">
             <div class="msp-cta-a__stat">
-              <div class="msp-cta-a__num">750<span>+</span></div>
+              <div class="msp-cta-a__num">150<span>+</span></div>
               <p class="msp-cta-a__stat-line">
                 Research projects mentored
               </p>
               <p class="msp-cta-a__stat-sub">
-                500+ publications &middot; 1,000+ students guided
+                75+ publications &middot; 250+ students guided
               </p>
             </div>
             <div class="msp-cta-a__content">

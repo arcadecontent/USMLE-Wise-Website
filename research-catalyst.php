@@ -33,17 +33,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-bar msp-wrap" aria-label="Track record">
           <div class="msp-bar__inner">
             <div class="msp-stat reveal">
-              <b data-count="1000" data-suffix="+" data-comma>1,000+</b>
+              <b data-count="250" data-suffix="+">250+</b>
               <span>Students &amp; professionals guided</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="500" data-suffix="+">500+</b>
+              <b data-count="75" data-suffix="+">75+</b>
               <span>Publications &amp; presentations</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="750" data-suffix="+">750+</b>
+              <b data-count="150" data-suffix="+">150+</b>
               <span>Research projects mentored</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
@@ -198,7 +198,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <span class="rc-receive__num">4</span>
                 <div>
                   <span class="rc-receive__stat-label">Publications targeted</span>
-                  <span class="rc-receive__stat-sub">One of each type: case report, narrative review, retrospective study, prospective study</span>
+                  <span class="rc-receive__stat-sub">Systematic reviews, meta-analyses, and conference abstracts — case reports included where a suitable case is available</span>
                 </div>
               </div>
             </div>
@@ -210,31 +210,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rc-pub-types__grid">
               <div class="rc-pub-type rc-pub-type--blue">
                 <div class="rc-pub-type__icon-wrap">
-                  <i data-lucide="file-text" width="18" height="18"></i>
+                  <i data-lucide="list-checks" width="18" height="18"></i>
                 </div>
-                <h3 class="rc-pub-type__head">Case Reports</h3>
-                <p>The fastest route to publication. You identify an interesting case, learn to write it up, and get a strong CV line that shows clinical curiosity.</p>
+                <h3 class="rc-pub-type__head">Systematic Reviews</h3>
+                <p>Synthesize the existing evidence on a focused clinical question using a rigorous, pre-defined methodology. High credibility — and no new data collection required.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--emerald">
                 <div class="rc-pub-type__icon-wrap">
-                  <i data-lucide="scroll" width="18" height="18"></i>
+                  <i data-lucide="bar-chart-2" width="18" height="18"></i>
                 </div>
-                <h3 class="rc-pub-type__head">Narrative Reviews</h3>
-                <p>Develop expertise in a niche topic by synthesizing existing literature into a comprehensive review that positions you as a knowledgeable applicant.</p>
+                <h3 class="rc-pub-type__head">Meta-Analyses</h3>
+                <p>Pool data from multiple studies to produce a statistically combined result. Among the most cited publication types in medicine and a strong signal to residency programs.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--violet">
                 <div class="rc-pub-type__icon-wrap">
-                  <i data-lucide="database" width="18" height="18"></i>
+                  <i data-lucide="presentation" width="18" height="18"></i>
                 </div>
-                <h3 class="rc-pub-type__head">Retrospective Studies</h3>
-                <p>Learn study design and data analysis by working with existing datasets. A foundational skill that academic programs actively look for.</p>
+                <h3 class="rc-pub-type__head">Conference Abstracts</h3>
+                <p>Submit structured summaries of your work to medical conferences for poster or oral presentation. A fast, high-visibility addition to your academic record.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--amber">
                 <div class="rc-pub-type__icon-wrap">
-                  <i data-lucide="flask-conical" width="18" height="18"></i>
+                  <i data-lucide="file-text" width="18" height="18"></i>
                 </div>
-                <h3 class="rc-pub-type__head">Prospective Studies</h3>
-                <p>Participate in a study from the ground up. Your mentor guides design, IRB process, data collection, and analysis in real time.</p>
+                <h3 class="rc-pub-type__head">Case Reports</h3>
+                <p>Document and publish a compelling clinical case with full mentor support. Included where a suitable case is available — a strong CV line that shows clinical curiosity.</p>
               </div>
             </div>
           </div>
@@ -265,7 +265,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-wrap">
           <div class="msp-head reveal">
             <span class="msp-eyebrow">How it works</span>
-            <h2 id="processTitle" class="msp-h2">Six stages from assessment to publication.</h2>
+            <h2 id="processTitle" class="msp-h2">Five stages from assessment to publication.</h2>
           </div>
 
           <div class="rc-steps">
@@ -293,8 +293,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rc-step">
               <div class="rc-step__content rc-step__content--l">
                 <span class="rc-step__label">Stage 03</span>
-                <h3>Training &amp; Development</h3>
-                <p>You learn research methodology, literature review, scientific writing, and publication ethics with your mentor.</p>
+                <h3>Project Execution</h3>
+                <p>Work alongside mentors to conduct research, analyze data, and contribute meaningfully to the project.</p>
               </div>
               <div class="rc-step__node"><span class="rc-step__dot"></span></div>
               <div class="rc-step__content rc-step__content--r"></div>
@@ -305,29 +305,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="rc-step__node"><span class="rc-step__dot"></span></div>
               <div class="rc-step__content rc-step__content--r">
                 <span class="rc-step__label">Stage 04</span>
-                <h3>Project Execution</h3>
-                <p>You conduct the research alongside your mentor &mdash; gathering data, analyzing results, and building the manuscript foundation.</p>
+                <h3>Manuscript Preparation</h3>
+                <p>Develop a publication-ready manuscript with structured writing, revisions, and mentor feedback.</p>
               </div>
             </div>
 
             <div class="rc-step">
               <div class="rc-step__content rc-step__content--l">
                 <span class="rc-step__label">Stage 05</span>
-                <h3>Manuscript Preparation</h3>
-                <p>Your mentor guides you through drafting, revising, and finalizing a publication-ready manuscript.</p>
+                <h3>Submission &amp; Publication</h3>
+                <p>Receive guidance through journal selection, submission, reviewer responses, and the publication process.</p>
               </div>
               <div class="rc-step__node"><span class="rc-step__dot"></span></div>
               <div class="rc-step__content rc-step__content--r"></div>
-            </div>
-
-            <div class="rc-step">
-              <div class="rc-step__content rc-step__content--l"></div>
-              <div class="rc-step__node"><span class="rc-step__dot"></span></div>
-              <div class="rc-step__content rc-step__content--r">
-                <span class="rc-step__label">Stage 06</span>
-                <h3>Submission &amp; Publication</h3>
-                <p>We select the right journals, guide you through submission, and support you through reviewer responses until your work is published.</p>
-              </div>
             </div>
 
           </div>
@@ -345,6 +335,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="rc-mtr reveal">
               <div class="rc-mtr__photo">
+                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreeram" loading="lazy" decoding="async" />
+              </div>
+              <div class="rc-mtr__body">
+                <div class="rc-mtr__header">
+                  <span class="rc-mtr__role">Research Head</span>
+                  <h3 class="rc-mtr__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
+                  <span class="rc-mtr__prog">Chief Scientific Officer &amp; CRIST Project Lead · USMLE Wise Research</span>
+                </div>
+                <ul class="rc-mtr__creds">
+                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
+                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
+                  <li>Study Lead, MyPACER Study</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="rc-mtr reveal">
+              <div class="rc-mtr__photo">
                 <img src="/assets/Photos/Team-Members/Barakat-Photo.jpeg" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
               </div>
               <div class="rc-mtr__body">
@@ -356,64 +364,45 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <ul class="rc-mtr__creds">
                   <li>6 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
                   <li>160+ students guided to publication across SRA &amp; MEDMARK programs</li>
-                  <li>APA Psych SIG International Student Research Chair 2026&ndash;2027</li>
+                  <li>APA PsychSIGN International Student Liaison Research Chair 2026&ndash;2027</li>
                 </ul>
               </div>
             </article>
 
+            <?php /* Meghana card — commented out until ready
             <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo rc-mtr__photo--indigo">
-                <span class="rc-mtr__ini">ED</span>
-                <span class="rc-mtr__coming">Photo coming</span>
+              <div class="rc-mtr__photo">
+                <img src="/assets/Photos/Team-Members/Meghana.jpeg" alt="Meghana" loading="lazy" decoding="async" />
               </div>
               <div class="rc-mtr__body">
                 <div class="rc-mtr__header">
                   <span class="rc-mtr__role">Research Mentor</span>
-                  <h3 class="rc-mtr__name">Dr. Eduardo Dourado</h3>
+                  <h3 class="rc-mtr__name">Meghana</h3>
                   <span class="rc-mtr__prog">Research &amp; Publications Mentor</span>
                 </div>
                 <ul class="rc-mtr__creds">
-                  <li>[Credential to be filled in]</li>
-                  <li>[Credential to be filled in]</li>
-                  <li>[Credential to be filled in]</li>
+                  <li>Placeholder credential — please update</li>
+                  <li>Placeholder credential — please update</li>
+                  <li>Placeholder credential — please update</li>
                 </ul>
               </div>
             </article>
+            */ ?>
 
             <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo rc-mtr__photo--teal">
-                <span class="rc-mtr__ini">NF</span>
-                <span class="rc-mtr__coming">Photo coming</span>
+              <div class="rc-mtr__photo">
+                <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani Ravipati" loading="lazy" decoding="async" />
               </div>
               <div class="rc-mtr__body">
                 <div class="rc-mtr__header">
                   <span class="rc-mtr__role">Research Mentor</span>
-                  <h3 class="rc-mtr__name">Dr. Nima Fattahi</h3>
+                  <h3 class="rc-mtr__name">Shivani Ravipati</h3>
                   <span class="rc-mtr__prog">Research &amp; Publications Mentor</span>
                 </div>
                 <ul class="rc-mtr__creds">
-                  <li>[Credential to be filled in]</li>
-                  <li>[Credential to be filled in]</li>
-                  <li>[Credential to be filled in]</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo rc-mtr__photo--violet">
-                <span class="rc-mtr__ini">KS</span>
-                <span class="rc-mtr__coming">Photo coming</span>
-              </div>
-              <div class="rc-mtr__body">
-                <div class="rc-mtr__header">
-                  <span class="rc-mtr__role">Research Mentor</span>
-                  <h3 class="rc-mtr__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
-                  <span class="rc-mtr__prog">Chief Scientific Officer &amp; CRIST Project Lead · USMLE Wise Research</span>
-                </div>
-                <ul class="rc-mtr__creds">
-                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
-                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
-                  <li>Study Lead, MyPACER Study</li>
+                  <li>5 first-author publications &middot; 1 AHA poster presentation &middot; 8+ co-authored papers</li>
+                  <li>IRB-approved clinical trial lead for PRP research</li>
+                  <li>Actively guiding IMGs through research, steps and ERAS applications</li>
                 </ul>
               </div>
             </article>
@@ -445,7 +434,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 What kind of publications will I have at the end?
               </button>
               <div class="accordion__body">
-                We target a mix of publication types depending on your specialty and timeline: original research papers, case reports, review articles, abstracts, and conference presentations. The goal is four publication-quality outputs across the 12 months.
+                We primarily target systematic reviews, meta-analyses, and conference abstracts. Case reports are included where a student has a suitable case available. The goal is four publication-quality outputs across the 12 months.
               </div>
             </div>
             <div class="accordion__item">

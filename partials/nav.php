@@ -60,7 +60,7 @@
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
           </a>
           <a href="/research-review" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Review Paper &amp; Abstract</span>
+            <span class="msp-nav__dd-name">Systematic Review / Meta-Analysis</span>
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
           </a>
           <a href="/research-masterclass" class="msp-nav__dd-link">

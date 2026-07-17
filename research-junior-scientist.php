@@ -595,7 +595,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               >
               <a
                 class="btn btn--outline btn--xl"
-                href="https://web.whatsapp.com/send?phone=&text=Hey%2C%20I%20have%20questions%20about%20Research%20Guidance%20%2F%20USMLE%20Wise"
+                href="https://web.whatsapp.com/send?phone=19192015700&text=Hey%2C%20I%20have%20questions%20about%20Research%20Guidance%20%2F%20USMLE%20Wise"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -1230,7 +1230,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 </a>
                 <a
                   class="btn btn--xl btn--wa"
-                  href="https://web.whatsapp.com/send?phone=&text=Hi%2C%20I%20have%20questions%20about%20the%20Junior%20Scientist%20Program"
+                  href="https://web.whatsapp.com/send?phone=19192015700&text=Hi%2C%20I%20have%20questions%20about%20the%20Junior%20Scientist%20Program"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -43,17 +43,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-bar msp-wrap" aria-label="Track record">
           <div class="msp-bar__inner">
             <div class="msp-stat reveal">
-              <b data-count="1000" data-suffix="+" data-comma>1,000+</b>
+              <b data-count="250" data-suffix="+">250+</b>
               <span>Students &amp; professionals guided</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="500" data-suffix="+">500+</b>
+              <b data-count="75" data-suffix="+">75+</b>
               <span>Publications &amp; presentations</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="750" data-suffix="+">750+</b>
+              <b data-count="150" data-suffix="+">150+</b>
               <span>Research projects mentored</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
@@ -93,7 +93,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rp-include reveal">
               <div class="rp-include__icon"><i data-lucide="shield-check" width="18" height="18"></i></div>
               <h3 class="rp-include__head">IRB &amp; Ethics Guidance</h3>
-              <p>Navigate institutional review requirements without guessing your way through compliance. Your mentor knows the process.</p>
+              <p>Ethics and compliance guidance tailored to your situation. If formal IRB access isn't available through your institution, your mentor will design the project around it from the start.</p>
             </div>
 
             <div class="rp-include reveal">
@@ -166,7 +166,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 How long does this typically take?
               </button>
               <div class="accordion__body">
-                Timelines vary by project, but most case reports and original studies are submission-ready within 2&ndash;4 months of sustained effort. Your mentor will set a realistic milestone schedule in your first session, paced around your USMLE prep and rotations.
+                Timelines vary by project, but most case reports and original studies are submission-ready within 2&ndash;4 months of sustained effort — excluding IRB waiting time and data collection, which depend on your institution and study type. Your mentor will set a realistic milestone schedule in your first session, paced around your USMLE prep and rotations.
               </div>
             </div>
             <div class="accordion__item">
@@ -177,15 +177,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 Most projects result in a case report or original study (observational, retrospective, or prospective depending on your access). Your mentor will help you choose the type that best fits your timeline, specialty goals, and the data available to you.
               </div>
             </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                Do I need a case or dataset ready to start?
-              </button>
-              <div class="accordion__body">
-                No. If you have an interesting case or dataset idea, we start from there. If you don't, your mentor will help you identify a feasible project based on your clinical background, specialty interest, and what's realistically accessible.
-              </div>
-            </div>
-            <div class="accordion__item">
+<div class="accordion__item">
               <button class="accordion__head" type="button">
                 What does "first-author credit targeted" mean?
               </button>

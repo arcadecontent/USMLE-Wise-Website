@@ -1,6 +1,6 @@
 <?php
-$pageTitle = "Review Paper &amp; Abstract — Fast-track Publication Mentorship | USMLE Wise";
-$pageDescription = "A mentor-supported review paper or abstract. The fastest credible path to a first-author CV line before your residency application. $199 — Live, mentored.";
+$pageTitle = "Systematic Review &amp; Meta-Analysis — Fast-track Publication Mentorship | USMLE Wise";
+$pageDescription = "A mentor-guided systematic review or meta-analysis. A rigorous, credible first-author publication for your residency application. $199 — Live, mentored.";
 $canonical = "https://usmlewise.com/research-review";
 $bodyClass = "msp";
 $stylesheets = [
@@ -20,8 +20,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-hero__copy reveal">
             <h1 id="heroTitle" class="msp-h1">Add a publication<br><span class="msp-h1__accent">to your CV.</span></h1>
             <p class="msp-lede">
-              A mentor-supported review paper or abstract. The fastest credible path
-              to a first-author CV line before your residency application.
+              A mentor-guided systematic review or meta-analysis. A rigorous,
+              credible first-author publication before your residency application.
             </p>
             <div class="msp-cta-row">
               <a
@@ -43,17 +43,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-bar msp-wrap" aria-label="Track record">
           <div class="msp-bar__inner">
             <div class="msp-stat reveal">
-              <b data-count="1000" data-suffix="+" data-comma>1,000+</b>
+              <b data-count="250" data-suffix="+">250+</b>
               <span>Students &amp; professionals guided</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="500" data-suffix="+">500+</b>
+              <b data-count="75" data-suffix="+">75+</b>
               <span>Publications &amp; presentations</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="750" data-suffix="+">750+</b>
+              <b data-count="150" data-suffix="+">150+</b>
               <span>Research projects mentored</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
@@ -126,9 +126,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <span class="msp-eyebrow">Best for</span>
               <h2 id="forWhomTitle" class="msp-h2">For applicants who need a quick, credible publication.</h2>
               <p class="msp-lede">
-                Review papers and conference abstracts are some of the most accessible
-                entry points in academic medicine. With the right topic and a mentor in
-                your corner, you can go from idea to submission in a matter of weeks.
+                Systematic reviews and meta-analyses are among the most credible and
+                accessible entry points in academic medicine. With the right topic and a
+                mentor in your corner, you can go from idea to submission in a matter of weeks.
               </p>
             </div>
             <ol class="rc-for-whom__list">
@@ -163,10 +163,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="accordion rc-faq__accordion reveal">
             <div class="accordion__item">
               <button class="accordion__head" type="button">
-                What's the difference between a review paper and an abstract?
+                What's the difference between a systematic review and a meta-analysis?
               </button>
               <div class="accordion__body">
-                A review paper is a full manuscript synthesizing existing literature, submitted to a peer-reviewed journal. An abstract is a shorter summary typically submitted to a conference for a poster or oral presentation. Your mentor will recommend the better fit based on your timeline and goals during your first session.
+                A systematic review uses a rigorous, pre-defined methodology to identify and critically appraise all relevant studies on a question. A meta-analysis goes a step further by statistically pooling data from those studies to produce a combined result. Your mentor will recommend which is more feasible based on the available literature in your target specialty.
               </div>
             </div>
             <div class="accordion__item">
@@ -174,7 +174,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 How quickly can I have something submitted?
               </button>
               <div class="accordion__body">
-                Most abstracts can be submission-ready within 3&ndash;5 weeks. Full review papers typically take 6&ndash;10 weeks depending on the topic and your availability. Your mentor will set a realistic schedule at kickoff and adjust if your availability changes.
+                Systematic reviews typically take 6&ndash;10 weeks from topic selection to submission-ready manuscript, depending on the scope and your availability. Your mentor will set a realistic schedule at kickoff and adjust if your availability changes.
               </div>
             </div>
             <div class="accordion__item">
