@@ -1,5 +1,7 @@
 </main>
 
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/contact-form.php'; ?>
+
 <footer class="msp-foot">
   <div class="msp-wrap">
     <div class="msp-foot__top">
