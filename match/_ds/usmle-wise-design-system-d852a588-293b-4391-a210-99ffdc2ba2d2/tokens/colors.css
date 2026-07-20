@@ -1,0 +1,103 @@
+/* ============================================================
+   USMLE Wise — Color tokens
+   Three anchors: USMLE Blue (#2C3386), Wise Red (#E32124), White.
+   Everything else is a tint/shade or a calm neutral.
+   ============================================================ */
+:root {
+  /* ---- Brand: USMLE Blue (primary — trust, stability, intelligence) ---- */
+  --uw-blue-50:  #eef0fa;
+  --uw-blue-100: #d8ddf2;
+  --uw-blue-200: #b0b9e4;
+  --uw-blue-300: #818dd0;
+  --uw-blue-400: #5260b5;
+  --uw-blue-500: #2c3386;   /* PRIMARY brand */
+  --uw-blue-600: #262c75;
+  --uw-blue-700: #1f2461;
+  --uw-blue-800: #181c4d;
+  --uw-blue-900: #0f1233;
+
+  /* ---- Brand: Wise Red (accent — energy, action, momentum) ---- */
+  --uw-red-50:  #fdecec;
+  --uw-red-100: #fad3d3;
+  --uw-red-200: #f4a5a6;
+  --uw-red-300: #ec7273;
+  --uw-red-400: #e94849;
+  --uw-red-500: #e32124;   /* ACCENT brand */
+  --uw-red-600: #c61b1e;
+  --uw-red-700: #a01517;
+  --uw-red-800: #790f11;
+
+  /* ---- Neutral Ink — warm-cool, for type, borders, surfaces ---- */
+  --uw-ink-50:  #fafafb;
+  --uw-ink-75:  #f5f5f7;
+  --uw-ink-100: #ececef;
+  --uw-ink-200: #dcdce2;
+  --uw-ink-300: #c2c3cb;
+  --uw-ink-400: #9a9ca8;
+  --uw-ink-500: #6d7080;
+  --uw-ink-600: #4a4d5c;
+  --uw-ink-700: #32343f;
+  --uw-ink-800: #20222b;
+  --uw-ink-900: #14151c;
+
+  /* ---- Semantic ---- */
+  --uw-success-50:  #e6f5ee;
+  --uw-success-300: #6fe0a3;   /* bright: text/icons on dark blue surfaces */
+  --uw-success-400: #4fc78a;   /* mid:   fills on dark blue surfaces */
+  --uw-success-500: #2f8a5a;
+  --uw-success-700: #1d5e3c;
+  --uw-warning-50:  #fef5e3;
+  --uw-warning-500: #c98a14;
+  --uw-warning-700: #8a5e0a;
+  --uw-info-50:     #e8effb;
+  --uw-info-500:    #3a5fc0;
+  --uw-info-700:    #25448f;
+
+  /* Danger — destructive/error states. DISTINCT from Wise Red (CTAs). */
+  --uw-danger-50:   #fef2f2;
+  --uw-danger-100:  #fee2e2;
+  --uw-danger-500:  #b91c1c;
+  --uw-danger-700:  #7f1d1d;
+
+  /* ---- Surfaces ---- */
+  --uw-bg:            #fafaf9;
+  --uw-surface:       #ffffff;
+  --uw-surface-sunk:  #f4f4f3;
+  --uw-border:        #e6e6e2;
+  --uw-border-strong: #d4d4cf;
+
+  /* ---- Semantic aliases ---- */
+  --text-strong:  var(--uw-ink-900);
+  --text-body:    var(--uw-ink-800);
+  --text-muted:   var(--uw-ink-500);
+  --text-on-dark: #ffffff;
+  --link:         var(--uw-blue-600);
+  --link-hover:   var(--uw-blue-500);
+  --surface-page: var(--uw-bg);
+  --surface-card: var(--uw-surface);
+  --cta:          var(--uw-red-500);
+  --cta-hover:    var(--uw-red-600);
+  --accent:       var(--uw-blue-500);
+}
+
+/* ---------- DARK MODE ---------- */
+[data-theme="dark"] {
+  --uw-bg:            #12131a;
+  --uw-surface:       #1b1c27;
+  --uw-surface-sunk:  #0e0f17;
+  --uw-border:        rgba(255,255,255,0.08);
+  --uw-border-strong: rgba(255,255,255,0.14);
+
+  /* Ink scale inverts: 900 is now near-white */
+  --uw-ink-900: #ecedf5;
+  --uw-ink-800: #d0d2de;
+  --uw-ink-700: #acafc0;
+  --uw-ink-600: #878a9a;
+  --uw-ink-500: #636676;
+  --uw-ink-400: #474a58;
+  --uw-ink-300: #333542;
+  --uw-ink-200: #272934;
+  --uw-ink-100: #1e2030;
+  --uw-ink-75:  #191b28;
+  --uw-ink-50:  #141624;
+}

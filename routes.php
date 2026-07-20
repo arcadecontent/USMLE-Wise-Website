@@ -70,6 +70,7 @@
         'match/interview-prep'          => '/match-interview',
         'match-interview-prep'          => '/match-interview',
         'match/eras-cv'                 => '/match-eras-cv',
+        'match-2'                        => '/match',
         'research/catalyst'             => '/research-catalyst',
         'research/original-research'    => '/research-original',
         'research-original-research'    => '/research-original',
