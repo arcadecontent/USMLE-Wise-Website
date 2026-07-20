@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<base href="/match/">
+<base href="/match-media/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/assets/usmle-design-system/styles.css">
 <link rel="stylesheet" href="/styles/match.css">
