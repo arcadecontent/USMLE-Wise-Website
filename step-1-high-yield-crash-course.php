@@ -834,15 +834,19 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
           </div>
         </div>
         <div id="ccFormWrap">
-          <form id="ccContactForm" style="display:flex;flex-direction:column;gap:16px">
+          <form id="ccContactForm" novalidate style="display:flex;flex-direction:column;gap:16px">
             <div class="cc-formrow" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-              <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Full name<input required="" type="text" placeholder="Your name" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
-              <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Email<input required="" type="email" placeholder="you@email.com" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
+              <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Full name<input name="name" required="" maxlength="200" type="text" placeholder="Your name" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
+              <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Email<input name="email" required="" maxlength="200" type="email" placeholder="you@email.com" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
             </div>
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Subject<input type="text" placeholder="What's this about?" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Message<textarea required="" rows="4" placeholder="Tell us where you are in your prep…" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none;resize:vertical" class="ccx-f1"></textarea></label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--uw-ink-700);cursor:pointer"><input required="" type="checkbox" style="width:17px;height:17px;accent-color:var(--uw-blue-500)">I'm not a robot</label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Subject<input name="subject" maxlength="200" type="text" placeholder="What's this about?" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none" class="ccx-f1"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700);font-weight:500">Message<textarea name="message" required="" maxlength="5000" rows="4" placeholder="Tell us where you are in your prep…" style="font-family:var(--font-sans);font-size:14px;padding:11px 13px;border:1px solid var(--uw-border-strong);border-radius:var(--r-md);background:var(--uw-surface);color:var(--uw-ink-900);outline:none;resize:vertical" class="ccx-f1"></textarea></label>
+            <!-- Honeypot: keep hidden and empty. Do not remove. -->
+            <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <!-- Cloudflare Turnstile — replace data-sitekey with your real site key (or set TURNSTILE_SITE_KEY env var). -->
+            <div class="cf-turnstile" data-sitekey="<?php echo htmlspecialchars(getenv('TURNSTILE_SITE_KEY') ?: '0x4AAAAAAD6jImzHI3FyAiUO', ENT_QUOTES); ?>"></div>
             <button type="submit" style="all:unset;box-sizing:border-box;text-align:center;background:var(--uw-red-500);color:#fff;font-weight:500;font-size:15px;padding:14px;border-radius:var(--r-md);cursor:pointer;transition:background var(--dur-fast)" class="ccx-h2">Send message</button>
+            <p id="ccError" role="status" aria-live="polite" style="display:none;margin:0;font-size:13.5px;color:var(--uw-red-600,#c0392b)"></p>
           </form>
         </div>
       </div>
@@ -896,14 +900,49 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
       }
     });
   });
-  // Contact form — client-side sent state (matches template behavior)
+  // Contact form — submit to WiseCRM intake with Turnstile + honeypot.
   var form = document.getElementById('ccContactForm');
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
-    document.getElementById('ccFormWrap').style.display = 'none';
-    document.getElementById('ccSent').style.display = '';
+    var errEl = document.getElementById('ccError');
+    var btn = form.querySelector('[type="submit"]');
+    function fail(msg) { if (errEl) { errEl.textContent = msg; errEl.style.display = ''; } }
+    if (errEl) errEl.style.display = 'none';
+
+    var tokenEl = form.querySelector('[name="cf-turnstile-response"]');
+    var payload = {
+      name: (form.querySelector('[name="name"]') || {}).value || '',
+      email: (form.querySelector('[name="email"]') || {}).value || '',
+      subject: (form.querySelector('[name="subject"]') || {}).value || '',
+      message: (form.querySelector('[name="message"]') || {}).value || '',
+      website: (form.querySelector('[name="website"]') || {}).value || '',
+      source_page: window.location.href,
+      'cf-turnstile-response': tokenEl ? tokenEl.value : ''
+    };
+    if (!payload.name || !payload.email || !payload.message) {
+      fail('Please add your name, email, and a message.');
+      return;
+    }
+    if (btn) btn.disabled = true;
+    fetch('https://team.manikmadaan.com/api/web-form/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (res.ok && res.j.success) {
+          document.getElementById('ccFormWrap').style.display = 'none';
+          document.getElementById('ccSent').style.display = '';
+        } else {
+          fail((res.j && res.j.error) || 'Something went wrong. Please try again.');
+        }
+      })
+      .catch(function () { fail('Network error. Please try again.'); })
+      .finally(function () { if (btn) btn.disabled = false; });
   });
 })();
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
