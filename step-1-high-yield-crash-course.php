@@ -844,7 +844,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
             <!-- Honeypot: keep hidden and empty. Do not remove. -->
             <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
             <!-- Cloudflare Turnstile — replace data-sitekey with your real site key (or set TURNSTILE_SITE_KEY env var). -->
-            <div class="cf-turnstile" data-sitekey="<?php echo htmlspecialchars(getenv('TURNSTILE_SITE_KEY') ?: '1x00000000000000000000AA', ENT_QUOTES); ?>"></div>
+            <div class="cf-turnstile" data-sitekey="<?php echo htmlspecialchars(getenv('TURNSTILE_SITE_KEY') ?: '0x4AAAAAAD6jImzHI3FyAiUO', ENT_QUOTES); ?>"></div>
             <button type="submit" style="all:unset;box-sizing:border-box;text-align:center;background:var(--uw-red-500);color:#fff;font-weight:500;font-size:15px;padding:14px;border-radius:var(--r-md);cursor:pointer;transition:background var(--dur-fast)" class="ccx-h2">Send message</button>
             <p id="ccError" role="status" aria-live="polite" style="display:none;margin:0;font-size:13.5px;color:var(--uw-red-600,#c0392b)"></p>
           </form>

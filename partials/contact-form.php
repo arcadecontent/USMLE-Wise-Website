@@ -10,7 +10,7 @@
  * fallback below. The default is Cloudflare's TEST key (always passes) so the
  * widget renders during setup — REPLACE it with your real site key for live use.
  */
-$uw_turnstile_site_key = getenv('TURNSTILE_SITE_KEY') ?: '1x00000000000000000000AA';
+$uw_turnstile_site_key = getenv('TURNSTILE_SITE_KEY') ?: '0x4AAAAAAD6jImzHI3FyAiUO';
 // Print the scoped styles only once per page even if the partial is included twice.
 $uw_contact_styles_printed = isset($uw_contact_styles_printed) ? $uw_contact_styles_printed : false;
 ?>
