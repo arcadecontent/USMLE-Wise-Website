@@ -1213,3 +1213,45 @@
   .msp-sva-row--flip .msp-sva-img { order: 0; }
   .msp-sva-row--flip .msp-sva-body { order: 0; }
 }
+
+/* Video lightbox (shared with match page) */
+.msp-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 48px);
+}
+.msp-lightbox[hidden] { display: none; }
+.msp-lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.msp-lightbox__close:hover { background: rgba(255,255,255,0.2); }
+.msp-lightbox__frame {
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+}
+.msp-lightbox__frame iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--r-lg);
+}
