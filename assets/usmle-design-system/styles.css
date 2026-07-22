@@ -2000,3 +2000,11 @@ svg.lucide {
   text-align: center;
   display: flex;
 }
+
+/* Footer social icons hover in brand red. Needs to out-specify the generic
+   `a:not(.btn):hover` blue (light) and its dark-mode counterpart, so both the
+   `a.` prefix and the dark selector are spelled out and placed last. */
+a.msp-foot__social-link:hover,
+[data-theme="dark"] a.msp-foot__social-link:hover {
+  color: var(--uw-red-500);
+}

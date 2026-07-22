@@ -60,7 +60,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <main>
       <div class="msp-policy">
         <h1>Privacy Policy</h1>
-        <p class="msp-policy__meta">Last updated: June 2026</p>
+        <p class="msp-policy__meta">Last updated: July 2026</p>
 
         <p>USMLE Wise (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website usmle-wise.com and provides coaching, research, and residency match services to international medical graduates. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
 
@@ -94,7 +94,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </ul>
 
         <h2>4. Cookies</h2>
-        <p>Our website does not use tracking or advertising cookies. We may use session-level browser storage for basic site functionality. No personal data is stored in cookies.</p>
+        <p>We use Google Analytics to understand aggregate site traffic, which sets cookies on your device. We do not use advertising or retargeting cookies, and we do not set any first-party tracking cookies of our own. No personal data is stored in cookies. See our <a href="/cookie-policy">Cookie Policy</a> for full detail and how to manage cookies.</p>
 
         <h2>5. Data Retention</h2>
         <p>We retain your information for as long as necessary to provide our services and fulfill the purposes described in this policy. If you request deletion of your data, we will remove it within a reasonable timeframe, except where retention is required by law.</p>

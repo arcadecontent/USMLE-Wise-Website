@@ -165,10 +165,9 @@
         'clients'                         => '/testimonials',
         'clients-2'                       => '/testimonials',
         'case-report-dr-kaushik'          => '/testimonials',
-        'cookie-policy'                   => '/policy',
         'privacy-policy-2'                => '/policy',
-        'terms-of-service'                => '/policy',
-        'refund_returns'                  => '/policy',
+        'terms-of-service'                => '/terms',
+        'refund_returns'                  => '/refund-policy',
 
         // Old WordPress site — everything else lands on home
         'about'                => '/', 'about-us'            => '/',

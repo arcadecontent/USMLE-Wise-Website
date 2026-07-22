@@ -27,6 +27,16 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
 <link rel="preload" as="image" href="/assets/step1-crash-course/step1-crash-course-image.jpg" fetchpriority="high" />
 <link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
 <link rel="stylesheet" href="/assets/usmle-design-system/styles.css?v=<?php echo $styles_v; ?>" />
+<link rel="stylesheet" href="/styles/match.css?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/styles/match.css') ?: '1'; ?>" />
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
+});
+</script>
+<script src="/js/mobile-nav.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/mobile-nav.js') ?: '1'; ?>" defer></script>
 <style>
 
   .cc { font-family: var(--font-sans); color: var(--uw-ink-800); background: var(--uw-surface); -webkit-font-smoothing: antialiased; }
@@ -44,7 +54,6 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
     .cc-hero, .cc-story, .cc-contact, .cc-2, .cc-curric, .cc-duality { grid-template-columns: 1fr !important; }
     .cc-3 { grid-template-columns: repeat(2,1fr) !important; }
     .cc-wa { columns: 2 !important; }
-    .cc-nav-links { display: none !important; }
     .cc-story-photo { position: static !important; max-width: 420px; }
     .cc { padding-bottom: 78px; }
     .cc-mobilebar { display: flex !important; }
@@ -55,7 +64,6 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
     .cc-wa { columns: 1 !important; }
     .cc-formrow { grid-template-columns: 1fr !important; }
     .cc-hero { gap: 26px !important; }
-    .cc-hide-sm { display: none !important; }
   }
   @keyframes cc-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .cc-marquee-track { display: flex; gap: 18px; width: max-content; animation: cc-marquee 60s linear infinite; }
@@ -81,33 +89,26 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
 .ccx-h2:hover { background:var(--uw-red-600) }
 .ccx-f1:focus { border-color:var(--uw-blue-400);box-shadow:0 0 0 3px var(--uw-blue-100) }
 .cc-faq-btn:hover { background: var(--uw-ink-75); }
+/* Frosted-glass header (matches the home page's scrolled state) — this page has no scroll-based toggle, so it's always on */
+.msp-nav { background: rgba(252,252,251,.9); -webkit-backdrop-filter: saturate(180%) blur(12px); backdrop-filter: saturate(180%) blur(12px); border-bottom-color: var(--uw-border); box-shadow: var(--shadow-sm); }
 </style>
 </head>
 <body>
+
+<!-- announcement -->
+<div style="background:var(--uw-blue-900);color:#fff;text-align:center;font-size:13px;letter-spacing:.01em;padding:9px 16px">
+  <span style="opacity:.7">Today —</span>&nbsp; <s style="opacity:.5">$999</s> <b style="color:var(--uw-success-300)">$199</b> <span style="opacity:.7">one time. Lifetime access.</span>
+</div>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/nav.php'; ?>
+
 <div class="cc">
-
-  <!-- announcement -->
-  <div style="background:var(--uw-blue-900);color:#fff;text-align:center;font-size:13px;letter-spacing:.01em;padding:9px 16px">
-    <span style="opacity:.7">Today —</span>&nbsp; <s style="opacity:.5">$999</s> <b style="color:var(--uw-success-300)">$199</b> <span style="opacity:.7">one time. Lifetime access.</span>
-  </div>
-
-  <!-- nav -->
-  <nav style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px clamp(20px,5vw,48px);border-bottom:1px solid var(--uw-border);position:sticky;top:0;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);z-index:40">
-    <a href="#top" style="display:flex;align-items:center"><img src="/assets/usmle-design-system/assets/Logo-Horizontal.svg" alt="USMLE Wise" style="height:30px;display:block"></a>
-    <div class="cc-nav-links" style="display:flex;gap:2px;align-items:center;font-size:13.5px;color:var(--uw-ink-700)">
-      <a href="#curriculum" style="padding:8px 12px;border-radius:6px">Curriculum</a>
-      <a href="#why" style="padding:8px 12px;border-radius:6px">Why it works</a>
-      <a href="#compare" style="padding:8px 12px;border-radius:6px">Compare</a>
-      <a href="#faq" style="padding:8px 12px;border-radius:6px">FAQ</a>
-    </div>
-    <a href="#offer" class="cc-hide-sm"><span class="btn btn--primary btn--sm">Enroll Now</span></a>
-  </nav>
 
   <!-- HERO -->
   
 
   <!-- RESULTS BAR -->
-  <header id="top" style="position:relative;overflow:hidden;background:radial-gradient(1000px 520px at 88% -8%, var(--uw-blue-50), transparent), var(--uw-surface)">
+  <header style="position:relative;overflow:hidden;background:radial-gradient(1000px 520px at 88% -8%, var(--uw-blue-50), transparent), var(--uw-surface)">
     <section class="cc-hero" style="max-width:920px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(44px,6vw,84px) clamp(20px,5vw,48px)">
       
 
@@ -853,17 +854,6 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer style="background:var(--uw-blue-900);color:rgba(255,255,255,.7);padding:clamp(40px,5vw,56px) clamp(20px,5vw,48px)">
-    <div style="max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <img src="/assets/usmle-design-system/assets/Logo-Horizontal-Dark.svg" alt="USMLE Wise" style="height:30px">
-        <span style="font-size:12.5px;max-width:40ch;line-height:1.5">USMLE Step 1 Ultra High-Yield Crash Course — 10 days, 60 hours, zero fluff.</span>
-      </div>
-      <div style="font-size:12px;color:rgba(255,255,255,.5)">© 2026 USMLE Wise. All rights reserved.</div>
-    </div>
-  </footer>
-
   <!-- STICKY MOBILE CTA BAR -->
   <div class="cc-mobilebar" id="ccBar" style="position:fixed;left:0;right:0;bottom:0;z-index:50;align-items:center;justify-content:space-between;gap:14px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--uw-border);box-shadow:0 -8px 26px rgba(15,18,51,.12)">
     <div style="line-height:1.12">
@@ -944,5 +934,4 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
 })();
 </script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-</body>
-</html>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>

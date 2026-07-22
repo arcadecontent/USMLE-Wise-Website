@@ -1,0 +1,87 @@
+.msp-policy {
+  max-width: 720px;
+  margin-inline: auto;
+  padding-block: clamp(48px, 8vw, 96px);
+  padding-inline: 24px;
+}
+.msp-policy h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-family: var(--font-display);
+  color: var(--uw-ink-900);
+  margin: 0 0 8px;
+}
+.msp-policy__meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+  margin: 0 0 48px;
+}
+.msp-policy h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  margin: 40px 0 12px;
+}
+.msp-policy h3 {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  margin: 24px 0 8px;
+}
+.msp-policy p,
+.msp-policy li {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--uw-ink-700);
+}
+.msp-policy ul {
+  padding-left: 20px;
+  margin: 12px 0;
+}
+.msp-policy li { margin-bottom: 6px; }
+.msp-policy a { color: var(--uw-blue-600); text-decoration: underline; }
+.msp-policy hr {
+  border: none;
+  border-top: 1px solid var(--uw-border);
+  margin: 48px 0;
+}
+.msp-policy__intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--uw-ink-600);
+  margin: 0 0 32px;
+}
+
+/* Legal hub page — link cards */
+.msp-legal-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+.msp-legal-card {
+  display: block;
+  padding: 20px 22px;
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-lg);
+  background: var(--uw-surface);
+  text-decoration: none !important;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.msp-legal-card:hover {
+  border-color: var(--uw-blue-300);
+  box-shadow: var(--shadow-sm);
+}
+.msp-legal-card h2 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+}
+.msp-legal-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--uw-ink-600);
+}

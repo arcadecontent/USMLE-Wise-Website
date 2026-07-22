@@ -42,7 +42,7 @@
           <a href="/testimonials">Stories</a>
           <a href="/blog">Blog</a>
           <a href="/qa">FAQ</a>
-          <a href="/policy">Privacy Policy</a>
+          <a href="/legal">Legal &amp; Policies</a>
         </div>
       </nav>
     </div>

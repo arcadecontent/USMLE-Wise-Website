@@ -665,7 +665,7 @@
 
 /* ---------- 7 · STORIES ---------- */
 .msp-stories {
-  background: #fff;
+  background: #0d1b2e;
   padding-top: clamp(56px, 8vw, 100px);
   padding-bottom: clamp(40px, 5vw, 64px);
 }
