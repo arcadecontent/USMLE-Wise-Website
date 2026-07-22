@@ -77,6 +77,55 @@
       if (img.complete && img.naturalWidth === 0) fixThumb(img);
     });
 
+    /* ---- 4b. Testimonial carousel ---- */
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.msp-slide'));
+    var countEl = document.getElementById('slideCount');
+    var current = 0;
+
+    function goToSlide(n) {
+      slides[current].classList.remove('is-active');
+      slides[current].setAttribute('aria-hidden', 'true');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('is-active');
+      slides[current].removeAttribute('aria-hidden');
+      if (countEl) countEl.textContent = (current + 1) + ' / ' + slides.length;
+    }
+
+    var prevBtn = document.getElementById('prevSlide');
+    var nextBtn = document.getElementById('nextSlide');
+    if (slides.length) {
+      if (prevBtn) prevBtn.addEventListener('click', function () { goToSlide(current - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { goToSlide(current + 1); });
+    }
+
+    /* ---- 4c. Video lightbox ---- */
+    var lightbox = document.getElementById('mspLightbox');
+    var lbIframe = document.getElementById('mspLightboxIframe');
+    if (lightbox && lbIframe) {
+      function openLightbox(ytid) {
+        lbIframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        lbIframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
+        lightbox.removeAttribute('hidden');
+        lightbox.focus();
+      }
+      function closeLightbox() {
+        lbIframe.src = '';
+        lightbox.setAttribute('hidden', '');
+      }
+      document.querySelectorAll('.msp-video-trigger').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openLightbox(btn.dataset.ytid);
+        });
+      });
+      lightbox.querySelector('.msp-lightbox__close').addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) closeLightbox();
+      });
+    }
+
     /* ---- 5. Anchor scroll with sticky-nav offset ---- */
     var navH = 72;
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
