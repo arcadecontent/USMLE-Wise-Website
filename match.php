@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <base href="/match-media/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
 <link rel="stylesheet" href="/assets/usmle-design-system/styles.css">
 <link rel="stylesheet" href="/styles/match.css">
 <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
