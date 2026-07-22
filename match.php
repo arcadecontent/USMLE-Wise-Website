@@ -948,7 +948,7 @@ class Component extends DCLogic {
         const w = e.currentTarget.closest("[data-vid]");
         if (!w) return;
         const id = w.getAttribute("data-vid");
-        w.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="USMLE Wise match story" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe>';
+        w.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="USMLE Wise match story" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe>';
       },
       onSubmit: (e) => {
         e.preventDefault();

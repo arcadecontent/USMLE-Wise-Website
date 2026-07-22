@@ -101,6 +101,7 @@
     var lbIframe = document.getElementById('mspLightboxIframe');
     if (lightbox && lbIframe) {
       function openLightbox(ytid) {
+        lbIframe.referrerPolicy = 'strict-origin-when-cross-origin';
         lbIframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
         lightbox.removeAttribute('hidden');
         lightbox.focus();

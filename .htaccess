@@ -25,3 +25,9 @@ ExpiresByType font/woff2 "access plus 1 year"
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
+
+# YouTube embeds fail with error 153 when no referrer is sent; the hosting
+# default of "same-origin" strips it on cross-origin requests.
+<IfModule mod_headers.c>
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

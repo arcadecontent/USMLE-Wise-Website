@@ -44,9 +44,6 @@ function asset_url($path) {
 <script src="<?php echo asset_url($js); ?>" defer></script>
 <?php endforeach; ?>
 <script src="<?php echo asset_url('/js/mobile-nav.js'); ?>" defer></script>
-<!-- Contact form → WiseCRM: Cloudflare Turnstile CAPTCHA + shared submit handler -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-<script src="<?php echo asset_url('/js/contact-form.js'); ?>" defer></script>
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : ''; ?>">
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/nav.php'; ?>
