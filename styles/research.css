@@ -1735,12 +1735,12 @@
 .msp-mtr-e {
   display: grid;
   grid-template-columns: clamp(180px, 20vw, 260px) 1fr;
+  background: var(--uw-ink-75);
   border: 1px solid var(--uw-border);
   border-radius: var(--r-xl);
   overflow: hidden;
   min-height: 200px;
 }
-.msp-mtr-e:nth-child(even) { background: var(--uw-ink-75); }
 .msp-mtr-e__photo {
   background: var(--uw-ink-100);
   border-right: 1px solid var(--uw-border);
@@ -1832,7 +1832,7 @@
 }
 @media (max-width: 600px) {
   .msp-mtr-e { grid-template-columns: 1fr; }
-  .msp-mtr-e__photo { min-height: 140px; border-right: none; border-bottom: 1px solid var(--uw-border); }
+  .msp-mtr-e__photo { min-height: 280px; border-right: none; border-bottom: 1px solid var(--uw-border); }
   .msp-mtr-e__creds { grid-template-columns: 1fr; }
 }
 

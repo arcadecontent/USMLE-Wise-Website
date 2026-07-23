@@ -885,6 +885,7 @@
 
 @media (max-width: 820px) {
   .msp-compare { display: none; }
+  .cch-compare { display: none; }
 }
 
 /* ---------- 9 · FAQ ---------- */
@@ -1394,6 +1395,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.38);
+}
 
 @media (max-width: 820px) {
   .msp-slide { grid-template-columns: 1fr; }

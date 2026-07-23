@@ -617,11 +617,18 @@
 }
 @media (max-width: 640px) {
   .rc-step { grid-template-columns: 36px 1fr; }
-  .rc-step__content--l { display: none; }
-  .rc-step__content--r { text-align: left; padding-left: var(--space-5); }
-  .rc-step:nth-child(even) .rc-step__content--l { display: none; }
-  .rc-step:nth-child(even) .rc-step__content--r { display: flex; }
-  .rc-step__node { grid-column: 1; }
+  .rc-step__node { grid-column: 1; grid-row: 1; }
+  .rc-step__content--l,
+  .rc-step__content--r {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    padding-left: var(--space-5);
+  }
+  .rc-step__content--l .rc-step__label { align-self: flex-start; }
+  .rc-step__content--l p { margin-left: 0; }
+  .rc-step__content--l:empty,
+  .rc-step__content--r:empty { display: none; }
 }
 
 /* ---- MENTORS ---- */
@@ -629,12 +636,12 @@
 .rc-mtr {
   display: grid;
   grid-template-columns: clamp(180px, 20vw, 260px) 1fr;
+  background: var(--uw-ink-75);
   border: 1px solid var(--uw-border);
   border-radius: var(--r-xl);
   overflow: hidden;
   min-height: 200px;
 }
-.rc-mtr:nth-child(even) { background: var(--uw-ink-75); }
 .rc-mtr__photo {
   background: var(--uw-ink-100);
   border-right: 1px solid var(--uw-border);
@@ -740,8 +747,11 @@
   top: -1px;
 }
 @media (max-width: 820px) {
+  .rc-mtr__creds { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
   .rc-mtr { grid-template-columns: 1fr; min-height: auto; }
-  .rc-mtr__photo { height: 200px; border-right: none; border-bottom: 1px solid var(--uw-border); }
+  .rc-mtr__photo { min-height: 280px; border-right: none; border-bottom: 1px solid var(--uw-border); }
   .rc-mtr__creds { grid-template-columns: 1fr; }
 }
 
