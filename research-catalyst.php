@@ -244,7 +244,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rc-payment__inner">
               <div>
                 <span class="rc-sec-label">Investment</span>
-                <div class="rc-payment__price">$3,500</div>
+                <div class="rc-payment__price">$4,500</div>
                 <p class="rc-payment__note">$1,500 to enroll. The remaining balance is due after a 6-week trial period &mdash; enough time to confirm the program is the right fit before you commit to the full year.</p>
               </div>
               <a

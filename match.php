@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <!-- Maximizer (left) -->
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:30px 26px;text-align:left;display:flex;flex-direction:column">
         <div style="font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--uw-ink-700)">USMLE Match Maximizer</div>
-        <div style="font-family:var(--font-display);font-size:40px;color:var(--uw-ink-900);margin:8px 0 2px;letter-spacing:-0.02em">$5,999</div>
+        <div style="font-family:var(--font-display);font-size:40px;color:var(--uw-ink-900);margin:8px 0 2px;letter-spacing:-0.02em">$6,999</div>
         <div style="font-size:13.5px;color:var(--uw-ink-500);min-height:52px">Best for reapplicants, applicants with red flags, or an older year of graduation.</div>
         <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-400);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--uw-border)">What's included</div>
         <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px;flex:1">
@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div style="font-weight:600;font-size:14px;letter-spacing:.02em;color:#fff">USMLE Match Pro</div>
             <span style="background:var(--uw-red-500);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:999px">Most popular</span>
           </div>
-          <div style="font-family:var(--font-display);font-size:40px;color:#fff;margin:8px 0 2px;letter-spacing:-0.02em">$3,499</div>
+          <div style="font-family:var(--font-display);font-size:40px;color:#fff;margin:8px 0 2px;letter-spacing:-0.02em">$3,999</div>
           <div style="font-size:13.5px;color:rgba(255,255,255,.72);min-height:52px">Best for most applicants who want their whole strategy handled.</div>
           <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2)">What's included</div>
           <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px;flex:1">
@@ -509,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <!-- Essentials (right) -->
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:30px 26px;text-align:left;display:flex;flex-direction:column">
         <div style="font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--uw-ink-700)">Essentials Starter</div>
-        <div style="font-family:var(--font-display);font-size:40px;color:var(--uw-ink-900);margin:8px 0 2px;letter-spacing:-0.02em">$1,499</div>
+        <div style="font-family:var(--font-display);font-size:40px;color:var(--uw-ink-900);margin:8px 0 2px;letter-spacing:-0.02em">$1,749</div>
         <div style="font-size:13.5px;color:var(--uw-ink-500);min-height:52px">Best for a strong applicant who mainly needs sharp documents.</div>
         <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-400);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--uw-border)">What's included</div>
         <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px;flex:1">

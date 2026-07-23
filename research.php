@@ -244,7 +244,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">01 &middot; Live &middot; 12-month program</span>
                 <h3 class="msp-sva-title">Research Catalyst</h3>
-                <div class="msp-sva-price">$3,500</div>
+                <div class="msp-sva-price">$4,500</div>
                 <p class="msp-sva-desc">A fully guided 12-month pathway from zero to publication. Topic selection, study design, writing, and journal submission, all with your mentor.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
@@ -258,7 +258,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">02 &middot; Live</span>
                 <h3 class="msp-sva-title">Original Research</h3>
-                <div class="msp-sva-price">$499</div>
+                <div class="msp-sva-price">$699</div>
                 <p class="msp-sva-desc">Case report or original study with full mentor guidance through publication. Ideal for adding a first-author credit to your CV.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>

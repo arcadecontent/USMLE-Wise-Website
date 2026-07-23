@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Original Research — Single Publication Mentorship | USMLE Wise";
-$pageDescription = "Full mentor guidance through a single case report or original study, from concept to accepted publication. $499 — Live, mentored.";
+$pageDescription = "Full mentor guidance through a single case report or original study, from concept to accepted publication. $699 — Live, mentored.";
 $canonical = "https://usmlewise.com/research-original";
 $bodyClass = "msp";
 $stylesheets = [
