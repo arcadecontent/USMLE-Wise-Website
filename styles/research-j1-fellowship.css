@@ -1,0 +1,49 @@
+/* ============================================================
+   USMLE Wise — J-1 Research Fellowship Placement page
+   Page-specific additions on top of research-catalyst.css
+   ============================================================ */
+
+/* ---- 4-card "What's Included" grid (2x2 instead of Catalyst's 3-up) ---- */
+.rc-learn-cards--j1 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 720px) {
+  .rc-learn-cards--j1 { grid-template-columns: 1fr; }
+}
+
+/* Plain cards — no photo background, so drop the dark-overlay/white-text
+   treatment .rc-learn-card normally uses and style it like a standard
+   bordered card instead. */
+.rc-learn-cards--j1 .rc-learn-card {
+  background-color: var(--uw-surface);
+  border: 1px solid var(--uw-border);
+  min-height: auto;
+  justify-content: flex-start;
+}
+.rc-learn-cards--j1 .rc-learn-card::before { content: none; }
+.rc-learn-cards--j1 .rc-learn-card__icon {
+  background: var(--uw-blue-50);
+  border-color: oklch(88% 0.08 255);
+  color: var(--uw-blue-600);
+}
+.rc-learn-cards--j1 .rc-learn-card__head { color: var(--uw-ink-900); }
+.rc-learn-cards--j1 .rc-learn-card__list li { color: var(--uw-ink-600); }
+.rc-learn-cards--j1 .rc-learn-card__list li::before { color: var(--uw-blue-400); }
+
+/* ---- CONTAINED FINAL CTA (boxed card instead of Catalyst's full-bleed band) ---- */
+.j1-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
+.j1-cta-card {
+  background: #08111f;
+  border-radius: clamp(20px, 2.4vw, 28px);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
+  text-align: center;
+  align-items: center;
+  margin-inline: auto;
+  max-width: 900px;
+}
+.j1-cta-card .rc-cta__sub { margin-inline: auto; }
+.j1-cta-card .rc-cta__actions { justify-content: center; }
+.j1-cta-card .btn--outline-light:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #08111f;
+}

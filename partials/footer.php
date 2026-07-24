@@ -26,6 +26,7 @@
           <a href="/research-review">Systematic Review / Meta-Analysis</a>
           <a href="/research-masterclass">Research Masterclass</a>
           <a href="/research-junior-scientist">Junior Scientist Program</a>
+          <a href="/research-j1-fellowship">J-1 Research Fellowship Placement</a>
         </div>
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Match</span>

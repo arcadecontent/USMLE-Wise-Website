@@ -71,6 +71,10 @@
             <span class="msp-nav__dd-name">Junior Scientist Program</span>
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
           </a>
+          <a href="/research-j1-fellowship" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">J-1 Research Fellowship Placement</span>
+            <span class="msp-nav__dd-meta">12-month &middot; Placement service</span>
+          </a>
         </div>
       </div>
       <div class="msp-nav__item msp-nav__item--has-dd">

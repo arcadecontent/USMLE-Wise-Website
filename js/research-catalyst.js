@@ -75,6 +75,7 @@
 
       function runCounter(el) {
         var target   = parseInt(el.getAttribute('data-count'), 10);
+        var prefix   = el.getAttribute('data-prefix') || '';
         var suffix   = el.getAttribute('data-suffix') || '';
         var comma    = el.hasAttribute('data-comma');
         var duration = 1800;
@@ -85,7 +86,7 @@
         function tick(ts) {
           if (!start) start = ts;
           var progress = Math.min((ts - start) / duration, 1);
-          el.textContent = fmt(Math.round(easeOutQuart(progress) * target)) + suffix;
+          el.textContent = prefix + fmt(Math.round(easeOutQuart(progress) * target)) + suffix;
           if (progress < 1) requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);

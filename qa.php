@@ -437,8 +437,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               >
               <a
                 class="btn btn--outline"
-                href="mailto:hello@usmle-wise.com?subject=Question%20for%20USMLEWise"
-                >Email Us</a
+                href="https://web.whatsapp.com/send?phone=19192015700&text=Hey%2C%20I%20have%20questions%20for%20USMLEWise"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Text Us on WhatsApp</a
               >
             </div>
           </div>

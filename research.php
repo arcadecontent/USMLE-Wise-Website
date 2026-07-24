@@ -131,7 +131,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-head reveal">
             <span class="msp-eyebrow">What We Offer</span>
             <h2 id="servicesTitle" class="msp-h2">
-              Our four research programs
+              Our five research programs
             </h2>
             <p class="msp-sub">
               From a $19 recorded foundation to a full 12-month publication
@@ -291,6 +291,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
                   <a href="/research-masterclass" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="msp-sva-row reveal">
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');"></div>
+              <div class="msp-sva-body">
+                <span class="msp-sva-eyebrow">05 &middot; Placement Service &middot; 12-month fellowship</span>
+                <h3 class="msp-sva-title">J-1 Research Fellowship Placement</h3>
+                <div class="msp-sva-price">$20,000</div>
+                <p class="msp-sva-desc">End-to-end placement support for a 12-month J-1 research fellowship &mdash; institution matching, application guidance, visa documentation assistance, and relocation support.</p>
+                <div class="msp-sva-ctas">
+                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                  <a href="/research-j1-fellowship" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
                 </div>
               </div>
             </article>
