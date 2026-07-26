@@ -53,6 +53,9 @@
       send('enroll_click', { m: (a.textContent || '').trim().slice(0, 80) });
     } else if (href.indexOf('nas.com/checkout') !== -1) {
       send('checkout_click', { m: (a.textContent || '').trim().slice(0, 80) });
+    } else if (href.indexOf('guidance-call') !== -1) {
+      var loc = a.closest('header') ? 'header' : (a.closest('footer') ? 'footer' : 'body');
+      send('guidance_click', { m: loc + ': ' + (a.textContent || '').trim().slice(0, 60) });
     }
   }, true);
 

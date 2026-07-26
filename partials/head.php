@@ -44,6 +44,7 @@ function asset_url($path) {
 <script src="<?php echo asset_url($js); ?>" defer></script>
 <?php endforeach; ?>
 <script src="<?php echo asset_url('/js/mobile-nav.js'); ?>" defer></script>
+<script src="<?php echo asset_url('/js/uw-track.js'); ?>" defer></script>
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : ''; ?>">
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/nav.php'; ?>

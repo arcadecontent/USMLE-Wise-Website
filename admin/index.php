@@ -77,6 +77,7 @@ if ($authed) {
         COUNT(DISTINCT CASE WHEN event = 'pageview' THEN sid END) AS sessions,
         SUM(event = 'enroll_click') AS enroll,
         SUM(event = 'checkout_click') AS checkout,
+        SUM(event = 'guidance_click') AS guidance,
         SUM(CASE WHEN event = 'time' THEN dur ELSE 0 END) AS secs,
         COUNT(DISTINCT CASE WHEN event = 'time' THEN sid END) AS timed_sessions
         FROM events WHERE $where")->fetch(PDO::FETCH_ASSOC);
@@ -86,6 +87,7 @@ if ($authed) {
         COUNT(DISTINCT CASE WHEN event = 'pageview' THEN vid END) AS uniques,
         SUM(event = 'enroll_click') AS enroll,
         SUM(event = 'checkout_click') AS checkout,
+        SUM(event = 'guidance_click') AS guidance,
         SUM(CASE WHEN event = 'time' THEN dur ELSE 0 END) AS secs,
         COUNT(DISTINCT CASE WHEN event = 'time' THEN sid END) AS timed_sessions
         FROM events WHERE $where
@@ -94,6 +96,24 @@ if ($authed) {
     $referrers = $q("SELECT ref, COUNT(*) AS n FROM events
         WHERE $where AND event = 'pageview' AND ref != ''
         GROUP BY ref ORDER BY n DESC LIMIT 10")->fetchAll(PDO::FETCH_ASSOC);
+
+    // Cross-page tables use only the time filter, so "which page" is
+    // answerable even while a single page is selected above.
+    $byPage = $pdo->prepare("SELECT page,
+        SUM(event = 'pageview') AS views,
+        SUM(event = 'guidance_click') AS guidance,
+        SUM(event = 'enroll_click') AS enroll,
+        SUM(event = 'checkout_click') AS checkout
+        FROM events WHERE ts >= ?
+        GROUP BY page ORDER BY views DESC LIMIT 25");
+    $byPage->execute([$since]);
+    $byPage = $byPage->fetchAll(PDO::FETCH_ASSOC);
+
+    $guidanceSpots = $pdo->prepare("SELECT page, meta, COUNT(*) AS n
+        FROM events WHERE ts >= ? AND event = 'guidance_click'
+        GROUP BY page, meta ORDER BY n DESC LIMIT 25");
+    $guidanceSpots->execute([$since]);
+    $guidanceSpots = $guidanceSpots->fetchAll(PDO::FETCH_ASSOC);
 
     $views = (int) ($totals['views'] ?? 0);
     $enroll = (int) ($totals['enroll'] ?? 0);
@@ -209,6 +229,8 @@ a.logout { color:var(--ink2); font-size:13px; }
       <div class="s"><?= $ctr ?>% of views</div></div>
     <div class="card"><div class="k">Checkout clicks</div><div class="v"><?= number_format($checkout) ?></div>
       <div class="s"><?= $checkoutCtr ?>% of views</div></div>
+    <div class="card"><div class="k">Guidance call clicks</div><div class="v"><?= number_format((int) $totals['guidance']) ?></div>
+      <div class="s"><?= $views ? round((int) $totals['guidance'] / $views * 100, 1) : 0 ?>% of views</div></div>
     <div class="card"><div class="k">Avg time on page</div><div class="v"><?= $fmtTime($avgTime) ?></div>
       <div class="s">per session</div></div>
   </div>
@@ -233,7 +255,7 @@ a.logout { color:var(--ink2); font-size:13px; }
   <div class="panel">
     <h2>Daily breakdown</h2>
     <table>
-      <tr><th>Date</th><th>Views</th><th>Uniques</th><th>Enroll clicks</th><th>Checkout clicks</th><th>Avg time</th></tr>
+      <tr><th>Date</th><th>Views</th><th>Uniques</th><th>Enroll clicks</th><th>Checkout clicks</th><th>Guidance clicks</th><th>Avg time</th></tr>
       <?php foreach (array_reverse($daily) as $d):
           $dAvg = $d['timed_sessions'] ? (int) round($d['secs'] / $d['timed_sessions']) : 0; ?>
       <tr>
@@ -242,10 +264,43 @@ a.logout { color:var(--ink2); font-size:13px; }
         <td><?= (int) $d['uniques'] ?></td>
         <td><?= (int) $d['enroll'] ?></td>
         <td><?= (int) $d['checkout'] ?></td>
+        <td><?= (int) $d['guidance'] ?></td>
         <td><?= $fmtTime($dAvg) ?></td>
       </tr>
       <?php endforeach; ?>
-      <?php if (!$daily): ?><tr><td colspan="6" class="muted">No data yet</td></tr><?php endif; ?>
+      <?php if (!$daily): ?><tr><td colspan="7" class="muted">No data yet</td></tr><?php endif; ?>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>Activity by page <span class="muted" style="font-weight:400;font-size:12px">(all pages, last <?= $days ?> days)</span></h2>
+    <table>
+      <tr><th>Page</th><th>Views</th><th>Guidance clicks</th><th>Enroll clicks</th><th>Checkout clicks</th></tr>
+      <?php foreach ($byPage as $r): ?>
+      <tr>
+        <td style="max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><?= h($r['page']) ?></td>
+        <td><?= (int) $r['views'] ?></td>
+        <td><?= (int) $r['guidance'] ?></td>
+        <td><?= (int) $r['enroll'] ?></td>
+        <td><?= (int) $r['checkout'] ?></td>
+      </tr>
+      <?php endforeach; ?>
+      <?php if (!$byPage): ?><tr><td colspan="5" class="muted">No data yet</td></tr><?php endif; ?>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>Guidance call clicks by placement <span class="muted" style="font-weight:400;font-size:12px">(all pages, last <?= $days ?> days)</span></h2>
+    <table>
+      <tr><th>Page</th><th>Button (header / footer / body)</th><th>Clicks</th></tr>
+      <?php foreach ($guidanceSpots as $r): ?>
+      <tr>
+        <td style="max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><?= h($r['page']) ?></td>
+        <td><?= h($r['meta']) ?></td>
+        <td><?= (int) $r['n'] ?></td>
+      </tr>
+      <?php endforeach; ?>
+      <?php if (!$guidanceSpots): ?><tr><td colspan="3" class="muted">No guidance call clicks yet</td></tr><?php endif; ?>
     </table>
   </div>
 

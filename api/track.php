@@ -19,7 +19,7 @@ if (!is_array($data)) {
     exit;
 }
 
-$allowed = ['pageview', 'enroll_click', 'checkout_click', 'time'];
+$allowed = ['pageview', 'enroll_click', 'checkout_click', 'guidance_click', 'time'];
 $event = $data['e'] ?? '';
 if (!in_array($event, $allowed, true)) {
     http_response_code(400);
