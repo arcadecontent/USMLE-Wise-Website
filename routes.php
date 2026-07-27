@@ -35,10 +35,21 @@
         $redirect('/');
     }
 
-    $isPage = function (string $s): bool {
-        return preg_match('/\A[a-z0-9-]+\z/', $s) === 1
-            && !in_array($s, ['index', 'router', 'routes', '404'], true)
-            && is_file(__DIR__ . '/' . $s . '.php');
+    $pageFile = function (string $s): ?string {
+        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404'], true)) {
+            return null;
+        }
+        if (is_file(__DIR__ . '/' . $s . '.php')) {
+            return __DIR__ . '/' . $s . '.php';
+        }
+        // Pages that live in their own directory (e.g. /match-landing/index.php).
+        if (is_file(__DIR__ . '/' . $s . '/index.php')) {
+            return __DIR__ . '/' . $s . '/index.php';
+        }
+        return null;
+    };
+    $isPage = function (string $s) use ($pageFile): bool {
+        return $pageFile($s) !== null;
     };
 
     // Existing page: canonicalize (.html/.php suffix or trailing slash) or serve.
@@ -46,7 +57,7 @@
         if ($hadExtension || $reqPath !== '/' . $slug) {
             $redirect('/' . $slug);
         }
-        require __DIR__ . '/' . $slug . '.php';
+        require $pageFile($slug);
         exit;
     }
 
