@@ -156,7 +156,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <p class="msp-sub">Book a free guidance call and we'll map out your Step 1 timeline, identify your gaps, and walk you through exactly how the Mastery program works.</p>
           <div class="msp-cta-row">
             <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
-            <a class="btn btn--outline btn--xl" href="https://web.whatsapp.com/send?phone=19192015700&amp;text=Hey%2C%20I%20have%20questions%20for%20USMLEWise" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+            <a class="btn btn--outline btn--xl" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
           </div>
         </div>
       </div>

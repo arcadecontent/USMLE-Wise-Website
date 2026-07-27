@@ -24,7 +24,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Call</a>
               <a
                 class="btn btn--outline btn--xl"
-                href="https://web.whatsapp.com/send?phone=19192015700&text=Hey%2C%20I%20have%20questions%20about%20the%20J-1%20Research%20Fellowship%20Placement"
+                href="https://wa.me/19192015700"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -286,7 +286,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               >
               <a
                 class="btn--outline-light btn--lg"
-                href="https://web.whatsapp.com/send?phone=19192015700&text=Hey%2C%20I%20have%20questions%20about%20the%20J-1%20Research%20Fellowship%20Placement"
+                href="https://wa.me/19192015700"
                 target="_blank"
                 rel="noopener noreferrer"
               >

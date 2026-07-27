@@ -437,7 +437,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               >
               <a
                 class="btn btn--outline"
-                href="https://web.whatsapp.com/send?phone=19192015700&text=Hey%2C%20I%20have%20questions%20for%20USMLEWise"
+                href="https://wa.me/19192015700"
                 target="_blank"
                 rel="noopener noreferrer"
                 >Text Us on WhatsApp</a
