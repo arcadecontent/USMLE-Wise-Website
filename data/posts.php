@@ -77,12 +77,7 @@ $blogPosts = [
             <p>This framework has helped IMGs match into everything from Internal Medicine to Neurosurgery. It's simple, repeatable, and gives you room to be yourself.</p>
 
             <h3>Paragraph 1: The Hook</h3>
-            <p>Drop the reader into a specific scene that reveals how you think. Use:</p>
-            <ul>
-              <li>A patient interaction that shifted your worldview</li>
-              <li>A specific failure that sparked your growth</li>
-              <li>A personal metaphor or visual memory</li>
-            </ul>
+            <p>Use one of the anchors above — a patient interaction, a specific failure, or a cultural story — but treat it as a scene, not a summary. Drop the reader into a single specific moment: what did you see, hear, or feel? One vivid scene does more work than three vague sentences about your journey.</p>
 
             <h3>Paragraphs 2–3: Your Journey and Identity</h3>
             <p>Tell the reader:</p>

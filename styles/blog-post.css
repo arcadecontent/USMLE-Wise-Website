@@ -58,6 +58,19 @@
   margin: clamp(32px, 4vw, 52px) 0 var(--space-4);
 }
 
+/* Subheads sit one step below the display-font h2 — sans semibold, matching
+   how h3-level titles are set elsewhere on the site. Without this they fall
+   back to the browser default and clash with the h2 above them. */
+.post-body h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--uw-ink-900);
+  margin: clamp(26px, 3.2vw, 38px) 0 var(--space-3);
+}
+
 .post-body p { margin: 0 0 var(--space-5); }
 
 .post-body a {
@@ -76,6 +89,62 @@
 }
 .post-body li { margin-bottom: var(--space-3); padding-left: 4px; }
 .post-body li::marker { color: var(--uw-blue-500); }
+
+/* ---------- TABLES ---------- */
+/* Article bodies are authored as bare HTML, so these are element selectors.
+   `border-collapse: separate` (not collapse) is required for the rounded
+   corners to render; the corner radii are repeated on the edge cells so the
+   header/zebra fills follow the curve even where overflow clipping on a
+   table box isn't honoured. */
+.post-body table {
+  width: 100%;
+  margin: clamp(26px, 3.2vw, 38px) 0 var(--space-6);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-lg);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.post-body thead th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--uw-blue-700);
+  background: var(--uw-blue-50);
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--uw-blue-200);
+}
+
+.post-body tbody td {
+  padding: 13px 16px;
+  vertical-align: top;
+  color: var(--uw-ink-700);
+  border-bottom: 1px solid var(--uw-border);
+}
+.post-body tbody tr:last-child td { border-bottom: none; }
+.post-body tbody tr:nth-child(even) td { background: var(--uw-surface-sunk); }
+
+/* The row-label column carries the most weight. */
+.post-body tbody td:first-child { font-weight: 600; color: var(--uw-ink-900); }
+
+.post-body thead th:first-child { border-top-left-radius: var(--r-lg); }
+.post-body thead th:last-child { border-top-right-radius: var(--r-lg); }
+.post-body tbody tr:last-child td:first-child { border-bottom-left-radius: var(--r-lg); }
+.post-body tbody tr:last-child td:last-child { border-bottom-right-radius: var(--r-lg); }
+
+/* The 4-column tables (specialty scores, weekly schedule) can't compress to a
+   phone width — let them scroll in their own box instead of crushing the text. */
+@media (max-width: 620px) {
+  .post-body table { display: block; overflow-x: auto; font-size: 14.5px; }
+  .post-body thead th,
+  .post-body tbody td { padding: 11px 13px; }
+}
 
 .post-body blockquote {
   margin: clamp(24px, 3vw, 36px) 0;
