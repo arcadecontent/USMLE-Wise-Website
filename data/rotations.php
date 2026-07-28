@@ -14,10 +14,14 @@
 
 function usmlewise_rotations_payload(): array
 {
+    static $memo = null;
+    if ($memo !== null) {
+        return $memo;
+    }
+
     $apiUrl       = 'https://team.manikmadaan.com/api/public/rotations';
     $cacheFile    = sys_get_temp_dir() . '/usmlewise_rotations_cache.json';
-    $cacheTtl     = 60;          // seconds; Varnish is the real page cache
-    $maxBytes     = 524288;      // 512 KB safety cap
+    $maxBytes     = 1048576;     // 1 MB safety cap
     $fallbackFile = __DIR__ . '/rotations-fallback.json';
 
     $isValid = static function ($decoded): bool {
@@ -28,20 +32,10 @@ function usmlewise_rotations_payload(): array
             && is_array($decoded['filters']);
     };
 
-    // 1. Disk cache (fresh → done; stale → keep as fallback for step 2).
-    $cached = null;
-    if (is_readable($cacheFile)) {
-        $raw = @file_get_contents($cacheFile);
-        $decoded = is_string($raw) ? json_decode($raw, true) : null;
-        if ($isValid($decoded)) {
-            $cached = $decoded;
-            if (time() - (int) @filemtime($cacheFile) < $cacheTtl) {
-                return $cached;
-            }
-        }
-    }
-
-    // 2. Fetch from the CRM with tight timeouts.
+    // 1. Fetch fresh from the CRM. Varnish caches the rendered page for days
+    //    and the CRM purges it on every edit, so a render must never reuse a
+    //    possibly-stale disk copy — the disk cache exists only as a fallback
+    //    for when the CRM is unreachable.
     $context = stream_context_create([
         'http' => [
             'method'        => 'GET',
@@ -56,21 +50,41 @@ function usmlewise_rotations_payload(): array
         if ($isValid($decoded)) {
             @file_put_contents($cacheFile . '.tmp', $body, LOCK_EX);
             @rename($cacheFile . '.tmp', $cacheFile);
-            return $decoded;
+            return $memo = $decoded;
         }
     }
 
-    // 3. CRM unreachable/invalid: serve the stale copy (and back off retries).
-    if ($cached !== null) {
-        @touch($cacheFile);
-        return $cached;
+    // 2. CRM unreachable/invalid: serve the last good copy.
+    if (is_readable($cacheFile)) {
+        $raw = @file_get_contents($cacheFile);
+        $decoded = is_string($raw) ? json_decode($raw, true) : null;
+        if ($isValid($decoded)) {
+            return $memo = $decoded;
+        }
     }
 
-    // 4. Committed snapshot.
+    // 3. Committed snapshot.
     $raw = @file_get_contents($fallbackFile);
     $decoded = is_string($raw) ? json_decode($raw, true) : null;
     if ($isValid($decoded)) {
-        return $decoded;
+        return $memo = $decoded;
     }
-    return ['rotations' => [], 'filters' => ['specialties' => [], 'states' => [], 'settings' => []]];
+    return $memo = ['rotations' => [], 'filters' => ['specialties' => [], 'states' => [], 'settings' => []]];
+}
+
+/**
+ * Find one rotation (with its position-derived number) by detail-page slug.
+ */
+function usmlewise_find_rotation_by_slug(string $slug): ?array
+{
+    $payload = usmlewise_rotations_payload();
+    $position = 0;
+    foreach ($payload['rotations'] as $entry) {
+        $position++;
+        if (($entry['slug'] ?? '') === $slug) {
+            $entry['position'] = $position;
+            return $entry;
+        }
+    }
+    return null;
 }
