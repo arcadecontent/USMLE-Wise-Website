@@ -36,7 +36,7 @@
     }
 
     $pageFile = function (string $s): ?string {
-        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404'], true)) {
+        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail'], true)) {
             return null;
         }
         if (is_file(__DIR__ . '/' . $s . '.php')) {
@@ -51,6 +51,22 @@
     $isPage = function (string $s) use ($pageFile): bool {
         return $pageFile($s) !== null;
     };
+
+    // Rotation detail pages render from CRM data when the CRM has content for
+    // the slug (managed at team.manikmadaan.com/admin/rotations); the static
+    // rotation-*.php files remain as a fallback.
+    if (strpos($slug, 'rotation-') === 0 && preg_match('/\A[a-z0-9-]+\z/', $slug) === 1) {
+        require_once __DIR__ . '/data/rotations.php';
+        $rotationEntry = usmlewise_find_rotation_by_slug(substr($slug, strlen('rotation-')));
+        if ($rotationEntry !== null && !empty($rotationEntry['detail'])) {
+            if ($hadExtension || $reqPath !== '/' . $slug) {
+                $redirect('/' . $slug);
+            }
+            require __DIR__ . '/rotation-detail.php';
+            exit;
+        }
+        $rotationEntry = null; // fall through to the static page, if any
+    }
 
     // Existing page: canonicalize (.html/.php suffix or trailing slash) or serve.
     if ($isPage($slug)) {

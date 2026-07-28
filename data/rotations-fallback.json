@@ -1,6 +1,76 @@
 {
   "rotations": [
     {
+      "detail": {
+        "page_title": "Internal Medicine Sub-Internship — South Texas | USMLE Wise",
+        "page_description": "4-week inpatient Internal Medicine Sub-Internship at South Texas Health System in McAllen, TX. Monthly starts, max 3 students, LOR on hospital letterhead.",
+        "number_text": "Rotation 01",
+        "top_specialty_text": "Internal Medicine",
+        "heading": "Internal Medicine\nSub-Internship",
+        "hospital_line": "South Texas Health System — DHR Health & Cornerstone Regional Medical Center",
+        "setting_badge": "Inpatient Sub-I · 4 Weeks · Active IM Residency Environment",
+        "price_text": "$3,500",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "4",
+            "label": "Weeks"
+          },
+          {
+            "value": "3",
+            "label": "Max students"
+          },
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "4-week intensive inpatient experience at a respected South Texas institution with an active IM Residency Program.",
+              "Work directly under an experienced internist affiliated with South Texas Health System."
+            ]
+          },
+          {
+            "label": "What you will gain",
+            "items": [
+              "Hands-on experience in a busy inpatient setting.",
+              "Active participation in daily rounds & treatment planning.",
+              "Manage patient care from admission to discharge.",
+              "Development of skills in initial assessments & management plans.",
+              "Present patient cases directly to the attending physician.",
+              "Maximum exposure with only 3 students per rotation."
+            ]
+          },
+          {
+            "label": "Additional benefits",
+            "items": [
+              "Prestigious teaching environment with residency exposure.",
+              "Strong CV & Match application booster.",
+              "Guidance for nearby accommodation available."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized, highly detailed LoR on official hospital letterhead upon successful completion, highlighting clinical performance & contributions.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Inpatient Sub-Internship",
+          "Active IM Residency",
+          "LoR Included",
+          "Max 3 Students",
+          "4 Weeks"
+        ]
+      },
       "slug": "south-texas",
       "title": "Internal Medicine Sub-Internship",
       "hospital": "South Texas Health System",
@@ -20,6 +90,69 @@
       "detail_url": "/rotation-south-texas"
     },
     {
+      "detail": {
+        "page_title": "Internal Medicine Elective — New York | USMLE Wise",
+        "page_description": "4-week inpatient and outpatient Internal Medicine elective at St. Luke's Cornwall Hospital in Newburgh, NY. Housing included, max 2 students, LOR on hospital letterhead.",
+        "number_text": "Rotation 02",
+        "top_specialty_text": "Internal Medicine",
+        "heading": "Elective\nin New York",
+        "hospital_line": "St. Luke's Cornwall Hospital Affiliated Campus",
+        "setting_badge": "4-Week Inpatient + Outpatient Experience",
+        "price_text": "$4,150",
+        "deposit_line": "Rotation + Housing · $500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "4",
+            "label": "Weeks"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "Housing",
+            "label": "Included"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Experienced internist affiliated with St. Luke's Cornwall Hospital.",
+              "IMG-friendly hospital with a residency program; mentor has prior rotators who matched.",
+              "<strong>Setting:</strong> 4 weeks of combined inpatient + outpatient exposure.",
+              "Supportive learning environment committed to resident-level readiness.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "What's included",
+            "items": [
+              "<strong>Housing included</strong> — dorm accommodation close to the hospital.",
+              "Occasional lunch provided by mentor.",
+              "Occasional pick-up & drop-off support."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Highly customized LoR on hospital letterhead upon successful completion, reflecting performance and contributions.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Inpatient + Outpatient",
+          "Housing Included",
+          "LoR Included",
+          "IMG-Friendly",
+          "Max 2 Students",
+          "4 Weeks"
+        ]
+      },
       "slug": "new-york",
       "title": "Elective in New York",
       "hospital": "St. Luke's Cornwall Hospital",
@@ -39,6 +172,64 @@
       "detail_url": "/rotation-new-york"
     },
     {
+      "detail": {
+        "page_title": "IM with the Chair of Medicine — Tennessee | USMLE Wise",
+        "page_description": "4-week inpatient Internal Medicine rotation with the Chair of Medicine at Highpoint Health St. Thomas Hospital in Winchester, TN. Monthly starts, max 4 students.",
+        "number_text": "Rotation 03",
+        "top_specialty_text": "Internal Medicine",
+        "heading": "IM Hands-on with\nthe Chair of Medicine",
+        "hospital_line": "Highpoint Health St. Thomas Hospital",
+        "setting_badge": "100% Inpatient Hospital Rounds + Rehab Center (On Campus)",
+        "price_text": "$2,700",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "4",
+            "label": "Max students"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Chair of Medicine, Highpoint Health St. Thomas Hospital.",
+              "<strong>Setting:</strong> 100% inpatient hospital rounds and rehab center on the hospital campus.",
+              "Comprehensive insights into patient care across acute and extended-care settings.",
+              "Exposure to U.S. medical students during their core rotations.",
+              "In-depth discussions on conditions, diagnostic reasoning, and treatment planning.",
+              "<strong>Max students:</strong> 4."
+            ]
+          },
+          {
+            "label": "Exclusive perks",
+            "items": [
+              "Free hospital lunches & desserts.",
+              "Housing and local transportation available <em>(additional cost)</em>."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on hospital letterhead upon successful completion, reflecting your performance and contributions.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Inpatient",
+          "Rehab Center",
+          "Chair of Medicine",
+          "LoR Included",
+          "Max 4 Students"
+        ]
+      },
       "slug": "tennessee",
       "title": "IM with the Chair of Medicine",
       "hospital": "Highpoint Health St. Thomas Hospital",
@@ -58,6 +249,67 @@
       "detail_url": "/rotation-tennessee"
     },
     {
+      "detail": {
+        "page_title": "Hospitalist Rotation — AdventHealth Kissimmee | USMLE Wise",
+        "page_description": "4-week hospitalist rotation at AdventHealth Kissimmee (affiliated with AdventHealth Orlando) in Florida. 7-on/7-off schedule, max 4 students, LOR on hospital letterhead.",
+        "number_text": "Rotation 04",
+        "top_specialty_text": "Hospitalist",
+        "heading": "AdventHealth\nKissimmee Campus",
+        "hospital_line": "Affiliated with AdventHealth Orlando",
+        "setting_badge": "Hospitalist Rotation · 100% Inpatient",
+        "price_text": "$2,425",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "4",
+            "label": "Max students"
+          },
+          {
+            "value": "7-on / 7-off",
+            "label": "Schedule"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Hospitalist at AdventHealth Kissimmee.",
+              "Comprehensive 100% inpatient hospitalist experience mentored by a renowned internist.",
+              "Focused on history taking & development of nuanced care plans.",
+              "<strong>Max students:</strong> 4."
+            ]
+          },
+          {
+            "label": "Schedule breakdown",
+            "items": [
+              "Hosting hospitalist works a <em>7 days on / 7 days off</em> model.",
+              "During “on” weeks, expect ~5–6 hours of clinical exposure daily.",
+              "“Off” weeks are used for self-study, assigned readings, and preparation of brief presentations."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on official hospital letterhead upon successful completion, reflecting your performance and contributions.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Inpatient",
+          "Hospitalist",
+          "LoR Included",
+          "Max 4 Students",
+          "7-on / 7-off"
+        ]
+      },
       "slug": "florida",
       "title": "AdventHealth Kissimmee Campus",
       "hospital": "Affiliated with AdventHealth Orlando",
@@ -77,6 +329,70 @@
       "detail_url": "/rotation-florida"
     },
     {
+      "detail": {
+        "page_title": "General Surgery — Larkin Community Hospital, Miami | USMLE Wise",
+        "page_description": "4-week hands-on General Surgery rotation at Larkin Community Hospital and Hialeah Hospital in Miami, FL. Inpatient, surgical centers, OR observation, LOR on hospital letterhead.",
+        "number_text": "General Surgery",
+        "top_specialty_text": "ACGME-Accredited Site",
+        "heading": "General Surgery at\nLarkin Community Hospital",
+        "hospital_line": "Larkin Community Hospital & Hialeah Hospital — Miami, Florida",
+        "setting_badge": "Inpatient + Surgical Centers · 4 Weeks · OR Observation",
+        "price_text": "$3,400",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "4",
+            "label": "Weeks"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "ACGME",
+            "label": "Accredited site"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "Hands-on General Surgery rotation with a General Surgeon affiliated with Larkin Community Hospital and Hialeah Hospital.",
+              "Follow top-tier surgeons and round alongside high-calibre Caribbean students in a true inpatient surgical environment.",
+              "Exposure includes both inpatient settings and surgical centers.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "What you will gain",
+            "items": [
+              "Hands-on surgical experience across inpatient and outpatient surgical centers.",
+              "Opportunity to observe in the OR.",
+              "Networking opportunities at an ACGME-accredited General Surgery program — a genuine advantage for your application.",
+              "Exposure to a competitive clinical environment alongside Caribbean students enrolled in accredited programs."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Upon successful completion of the rotation, you will receive a personalized LoR based on your performance on official hospital letterhead.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "General Surgery",
+          "Inpatient",
+          "Surgical Centers",
+          "OR Observation",
+          "ACGME Site",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "miami-surgery",
       "title": "General Surgery at Larkin Community Hospital",
       "hospital": "Larkin Community Hospital + Hialeah Hospital",
@@ -96,6 +412,69 @@
       "detail_url": "/rotation-miami-surgery"
     },
     {
+      "detail": {
+        "page_title": "General Surgery — Wright Center Faculty, Silver Spring MD | USMLE Wise",
+        "page_description": "4-week General Surgery rotation with a board-certified surgeon at the Wright Center in Silver Spring, MD. Clinic, lab skills, OR observation, and didactic sessions.",
+        "number_text": "General Surgery",
+        "top_specialty_text": "Wright Center Faculty",
+        "heading": "General Surgery\nwith Wright Center Faculty",
+        "hospital_line": "Wright Center for Graduate Medical Education — Washington DC Area",
+        "setting_badge": "Clinic + Lab Skills + OR Observation · 4 Weeks",
+        "price_text": "$2,500",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "4",
+            "label": "Weeks"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "20+",
+            "label": "Years experience"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "A clinically enriching rotation under the tutelage of a board-certified General Surgeon with over 20 years of experience, currently serving at the Wright Center.",
+              "Designed to offer comprehensive hands-on experience across the full breadth of General Surgery — from initial patient consultations to execution of surgical procedures.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "What you will experience",
+            "items": [
+              "Direct patient care within the office setting: interviews, physical examinations, and minor procedures.",
+              "Laboratory sessions focusing on essential surgical skills — basic suturing, knot tying, and in-office ultrasound (USG) techniques.",
+              "Observation of a variety of general surgical operations, gaining insight into operative techniques and patient management.",
+              "Didactic sessions covering a comprehensive range of general surgical principles."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Upon successful completion, you will receive a personalized LoR on clinic letterhead, highlighting the faculty designation of the surgeon. The substantive content of the letter and the reputation of the author substantially outweigh the letterhead itself.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "General Surgery",
+          "Clinic Setting",
+          "Lab Skills",
+          "OR Observation",
+          "Didactic Sessions",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "maryland-surgery",
       "title": "General Surgery — Wright Center Faculty",
       "hospital": "Wright Center for Graduate Medical Education",
@@ -115,6 +494,71 @@
       "detail_url": "/rotation-maryland-surgery"
     },
     {
+      "detail": {
+        "page_title": "General Surgery — Kissimmee, Florida | USMLE Wise",
+        "page_description": "4-week hands-on General Surgery rotation in Kissimmee, FL. Mon–Fri 9am–5pm. Pre/post-op evaluations, surgical procedures, wound care, OR observation, LOR on clinic letterhead.",
+        "number_text": "General Surgery",
+        "top_specialty_text": "Mon–Fri · 9am–5pm EST",
+        "heading": "General Surgery\nKissimmee, Florida",
+        "hospital_line": "Clinic-Based, Kissimmee, Florida",
+        "setting_badge": "Clinic + Surgical Procedures · 4 Weeks · OR Observation",
+        "price_text": "$3,200",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "4",
+            "label": "Weeks"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "Mon–Fri",
+            "label": "9am–5pm EST"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "Comprehensive, hands-on experience in the dynamic field of general surgery.",
+              "Typically Monday through Friday, 9am–5pm EST.",
+              "Students will gain essential surgical skills and expand their clinical knowledge.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "What you will gain",
+            "items": [
+              "Conduct pre-operative and post-operative patient evaluations.",
+              "Assist in surgical procedures and manage wound care in a clinic setting.",
+              "Engage in case discussions, peer collaboration, and mentorship from experienced surgical faculty.",
+              "Participate in surgical rounds, suturing techniques, and wound care management to build essential procedural skills.",
+              "OR exposure — observation only."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Upon successful completion of the rotation, you will receive a personalized LoR based on your performance on clinic letterhead.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "General Surgery",
+          "Clinic Setting",
+          "Surgical Procedures",
+          "Wound Care",
+          "OR Observation",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "kissimmee-surgery",
       "title": "General Surgery — Kissimmee",
       "hospital": "Clinic-Based, Kissimmee, Florida",
@@ -134,6 +578,77 @@
       "detail_url": "/rotation-kissimmee-surgery"
     },
     {
+      "detail": {
+        "page_title": "General Surgery — Baptist Health, Fort Smith AR | USMLE Wise",
+        "page_description": "4-week hands-on General Surgery rotation at Baptist Health Fort Smith, Arkansas. Colonoscopy, mastectomy, colorectal surgery, 50%+ hospital time, LOR on hospital letterhead.",
+        "number_text": "General Surgery",
+        "top_specialty_text": "Baptist Health — Fort Smith",
+        "heading": "General Surgery at\nBaptist Health Fort Smith",
+        "hospital_line": "Baptist Health — Fort Smith, Arkansas",
+        "setting_badge": "Inpatient + OR Observation · 4 Weeks · 50%+ Hospital Time",
+        "price_text": "$2,500",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "4",
+            "label": "Weeks"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "50%+",
+            "label": "Hospital time"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "Comprehensive, hands-on General Surgery rotation under the guidance of a highly skilled surgeon with expertise across a wide range of conditions.",
+              "Designed for international medical students and graduates seeking immersive clinical exposure and active participation in surgical care.",
+              "More than 50% of rotation time spent at Baptist Health — Fort Smith hospital.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "Case exposure",
+            "items": [
+              "Colonoscopy and endoscopic procedures.",
+              "Mastectomy and breast surgery.",
+              "Surgical removal of the colon and colorectal procedures.",
+              "A range of general surgical conditions and presentations."
+            ]
+          },
+          {
+            "label": "OR experience",
+            "items": [
+              "Opportunity to observe surgeries directly in the OR.",
+              "Direct involvement in surgical care provides excellent learning, helping you understand surgical techniques and the dynamics of the OR."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Upon successful completion of the rotation, you will receive a personalized LoR based on your performance on official hospital letterhead.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "General Surgery",
+          "Inpatient",
+          "OR Observation",
+          "Colonoscopy",
+          "Colorectal",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "arkansas-surgery",
       "title": "General Surgery at Baptist Health",
       "hospital": "Baptist Health — Fort Smith",
@@ -153,6 +668,69 @@
       "detail_url": "/rotation-arkansas-surgery"
     },
     {
+      "detail": {
+        "page_title": "General Surgery — Former Program Director, Englewood NJ | USMLE Wise",
+        "page_description": "4-week General Surgery rotation with a former Program Director and Hackensack faculty in Englewood, NJ. Bergen New Bridge Medical Center, clinic + outpatient surgical center, LOR included.",
+        "number_text": "General Surgery",
+        "top_specialty_text": "Former Program Director · Hackensack Faculty",
+        "heading": "General Surgery with a\nFormer Program Director",
+        "hospital_line": "Bergen New Bridge Medical Center & Hudson Regional Hospital — Englewood, New Jersey",
+        "setting_badge": "Clinic + Outpatient Surgical Center · 4 Weeks · 20+ Years Experience",
+        "price_text": "$1,996",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "4",
+            "label": "Weeks"
+          },
+          {
+            "value": "20+",
+            "label": "Years experience"
+          },
+          {
+            "value": "Former PD",
+            "label": "Hackensack faculty"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "An exceptional General Surgery rotation under the mentorship of a distinguished faculty member and former Program Director with over 20 years of surgical expertise.",
+              "Affiliated with Bergen New Bridge Medical Center and Hudson Regional Hospital.",
+              "Faculty designation as a Hackensack residency program faculty member significantly enriches the credibility and impact of the LoR."
+            ]
+          },
+          {
+            "label": "Weekly schedule",
+            "items": [
+              "<strong>Monday &amp; Tuesday:</strong> Direct patient care in the clinic — actively engage with a variety of cases and refine your diagnostic and procedural skills.",
+              "<strong>Wednesday &amp; Thursday:</strong> Student-led didactic sessions — reinforce learning and sharpen your presentation skills.",
+              "<strong>Friday:</strong> Physician-led discussions — guided clinical teaching from your mentor.",
+              "<strong>Throughout the week:</strong> Surgical procedures scheduled at a modern outpatient surgical center with opportunities to observe in the OR."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Upon successful completion, you will receive a personalized LoR on clinic letterhead, including the physician's prestigious designations. The detailed endorsement from a former Program Director is a powerful asset in your residency application, highlighting your hands-on experience and knowledge in General Surgery.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "General Surgery",
+          "Former Program Director",
+          "Hackensack Faculty",
+          "Clinic + Surgical Center",
+          "Didactic Sessions",
+          "OR Observation",
+          "LoR Included"
+        ]
+      },
       "slug": "new-jersey-surgery",
       "title": "General Surgery — Former Program Director",
       "hospital": "Bergen New Bridge Medical Center + Hudson Regional Hospital",
@@ -172,6 +750,67 @@
       "detail_url": "/rotation-new-jersey-surgery"
     },
     {
+      "detail": {
+        "page_title": "Psychiatry Rotation — Flourish Mental Health, Houston TX | USMLE Wise",
+        "page_description": "4-week child and adolescent psychiatry rotation with Physician at Flourish Mental Health in Houston, Texas. Mon–Fri 9am–7pm, max 1 student, LOR on clinic letterhead.",
+        "number_text": "Rotation 10",
+        "top_specialty_text": "Psychiatry",
+        "heading": "Flourish Mental Health\nHouston, Texas",
+        "hospital_line": "Physician with Flourish Mental Health",
+        "setting_badge": "Psychiatry Rotation · Child & Adolescent Focus",
+        "price_text": "$2,800",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "1",
+            "label": "Max students"
+          },
+          {
+            "value": "Mon–Fri",
+            "label": "9 am – 7 pm"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Physician with Flourish Mental Health.",
+              "Broad experience in a variety of psychiatric cases with a child and adolescent psychiatrist.",
+              "Preceptor has a strong educational background and expertise in <strong>autism</strong>.",
+              "<strong>Max students:</strong> 1 (one-on-one mentorship)."
+            ]
+          },
+          {
+            "label": "Schedule breakdown",
+            "items": [
+              "Full clinic schedule Monday through Friday, 9:00 am to 7:00 pm.",
+              "Exposure to child, adolescent, and autism-spectrum cases throughout the rotation."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Psychiatry",
+          "Child & Adolescent",
+          "Autism Expertise",
+          "LoR Included",
+          "Max 1 Student"
+        ]
+      },
       "slug": "flourish-psychiatry",
       "title": "Psychiatry — Child & Adolescent Focus",
       "hospital": "Physician with Flourish Mental Health",
@@ -191,6 +830,68 @@
       "detail_url": "/rotation-flourish-psychiatry"
     },
     {
+      "detail": {
+        "page_title": "Psychiatry Rotation — Ramapo Ridge Psychiatric Hospital, Wayne NJ | USMLE Wise",
+        "page_description": "4-week adult psychiatry rotation with Department Head at Ramapo Ridge Psychiatric Hospital in Wayne, New Jersey. 30 hrs/week outpatient, geriatric subspecialty, max 1 student, LOR included.",
+        "number_text": "Rotation 11",
+        "top_specialty_text": "Psychiatry",
+        "heading": "Ramapo Ridge\nPsychiatric Hospital",
+        "hospital_line": "Department Head, Ramapo Ridge Psychiatric Hospital",
+        "setting_badge": "Psychiatry Rotation · Adult & Geriatric Subspecialty",
+        "price_text": "$3,400",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "1",
+            "label": "Max students"
+          },
+          {
+            "value": "30 hrs/wk",
+            "label": "Min 3 days/week"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Department Head at Ramapo Ridge Psychiatric Hospital.",
+              "Hands-on experience in the preceptor's outpatient clinic seeing a variety of psychiatric cases.",
+              "Preceptor has extensive experience in <strong>adult psychiatry</strong> with a subspecialty in <strong>geriatric psychiatry</strong> and substance use disorders.",
+              "<strong>Max students:</strong> 1 (one-on-one mentorship)."
+            ]
+          },
+          {
+            "label": "Schedule breakdown",
+            "items": [
+              "Minimum of <strong>3 days per week</strong> in the outpatient clinic.",
+              "At least <strong>30 hours per week</strong> of direct outpatient exposure."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Psychiatry",
+          "Adult Psychiatry",
+          "Geriatric Subspecialty",
+          "Substance Use",
+          "LoR Included",
+          "Max 1 Student"
+        ]
+      },
       "slug": "ramapo-ridge-psychiatry",
       "title": "Psychiatry — Department Head",
       "hospital": "Ramapo Ridge Psychiatric Hospital",
@@ -210,6 +911,68 @@
       "detail_url": "/rotation-ramapo-ridge-psychiatry"
     },
     {
+      "detail": {
+        "page_title": "Psychiatry Rotation — UNC Chapel Hill, North Carolina | USMLE Wise",
+        "page_description": "4-week psychiatry rotation with Associate Professor at UNC Chapel Hill Dept of Psychiatry. Emergency psychiatry, addiction, precision medicine. Max 3 students, LOR on clinic letterhead.",
+        "number_text": "Rotation 12",
+        "top_specialty_text": "Psychiatry",
+        "heading": "University of North Carolina\nDept. of Psychiatry",
+        "hospital_line": "Medical School Associate Professor, UNC Chapel Hill",
+        "setting_badge": "Psychiatry Rotation · Emergency, Addiction & Precision Medicine",
+        "price_text": "$1,800",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "3",
+            "label": "Max students"
+          },
+          {
+            "value": "Mon–Fri",
+            "label": "9:00 am – 4:30 pm"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Medical School Associate Professor, UNC Chapel Hill Dept. of Psychiatry.",
+              "Valuable clinical experience among a <strong>diverse patient population</strong>, including emergency psychiatry, addiction, precision medicine, and ecopsychology.",
+              "Preceptor spent over <strong>20 years as Clinical Director</strong> of UNC's counseling and psychological services.",
+              "<strong>Max students:</strong> 3."
+            ]
+          },
+          {
+            "label": "Schedule breakdown",
+            "items": [
+              "Clinic hours Monday through Friday, <strong>9:00 am to 4:30 pm</strong>.",
+              "Exposure across multiple psychiatry subspecialties within a single rotation."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Psychiatry",
+          "Emergency Psychiatry",
+          "Addiction",
+          "Precision Medicine",
+          "LoR Included",
+          "Max 3 Students"
+        ]
+      },
       "slug": "unc-psychiatry",
       "title": "Psychiatry — UNC Associate Professor",
       "hospital": "University of North Carolina, Dept. of Psychiatry",
@@ -229,6 +992,70 @@
       "detail_url": "/rotation-unc-psychiatry"
     },
     {
+      "detail": {
+        "page_title": "Psychiatry Rotation — Medical Director, Mequon Wisconsin | USMLE Wise",
+        "page_description": "4-week psychiatry rotation with Psychiatry Medical Director in Mequon, Wisconsin. Telehealth, clinic, ADHD, EMR. Former UW-Madison Assistant Professor. Max 2 students, LOR included.",
+        "number_text": "Rotation 13",
+        "top_specialty_text": "Psychiatry",
+        "heading": "Psychiatry Medical Director\nMequon, Wisconsin",
+        "hospital_line": "Private Clinic, Mequon, Wisconsin",
+        "setting_badge": "Psychiatry Rotation · Telehealth + Clinic",
+        "price_text": "$1,800",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "Fmr. UW-Madison",
+            "label": "Asst. Professor"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Psychiatry Medical Director, Mequon, Wisconsin.",
+              "Well-rounded experience covering <strong>telehealth, clinic, program and business development, patient care, EMR use</strong>, and lectures on ADHD.",
+              "Before opening his clinic, preceptor served as <strong>Assistant Professor of Psychiatry</strong> at the University of Wisconsin-Madison School of Medicine and Public Health.",
+              "Also maintained roles as a <strong>Medical Advisor for a medical program for 6 years</strong>.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "What to expect",
+            "items": [
+              "Exposure to both in-person clinic visits and telehealth sessions.",
+              "Lectures on ADHD and other psychiatric conditions.",
+              "EMR training and practical clinical documentation experience."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Telehealth",
+          "Psychiatry",
+          "ADHD",
+          "EMR Training",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "wisconsin-psychiatry",
       "title": "Psychiatry — Medical Director",
       "hospital": "Private Clinic, Mequon, Wisconsin",
@@ -248,6 +1075,69 @@
       "detail_url": "/rotation-wisconsin-psychiatry"
     },
     {
+      "detail": {
+        "page_title": "Psychiatry Rotation — Medical Director, Houston Texas | USMLE Wise",
+        "page_description": "4-week psychiatry rotation with Psychiatry Medical Director in Houston, Texas. 30 years experience, all ages including children and adolescents. Max 2 students, LOR included.",
+        "number_text": "Rotation 14",
+        "top_specialty_text": "Psychiatry",
+        "heading": "Psychiatry Medical Director\nHouston, Texas",
+        "hospital_line": "Psychiatry Medical Director, Houston",
+        "setting_badge": "Psychiatry Rotation · All Ages — 30 Years Experience",
+        "price_text": "$2,000",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "30 Years",
+            "label": "Clinical Experience"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Psychiatry Medical Director with 30 years of clinical experience.",
+              "Exposure to patients of <strong>all ages</strong>, including children, adolescents, and adults.",
+              "Preceptor has been part of the medical staff at the <strong>University of Houston</strong>, providing psychiatric evaluations and case management for graduate students.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "What to expect",
+            "items": [
+              "Diverse caseload spanning child, adolescent, and adult psychiatric presentations.",
+              "Direct mentorship from a psychiatrist with three decades of clinical experience.",
+              "Experience with university health setting and case management principles."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Psychiatry",
+          "All Ages",
+          "Child & Adolescent",
+          "30 Years Experience",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "houston-psychiatry",
       "title": "Psychiatry — 30 Years Experience",
       "hospital": "Psychiatry Medical Director, Houston",
@@ -267,6 +1157,68 @@
       "detail_url": "/rotation-houston-psychiatry"
     },
     {
+      "detail": {
+        "page_title": "Pediatrics Rotation — St. Joseph University Medical Center, Clifton NJ | USMLE Wise",
+        "page_description": "4-week pediatrics rotation with Residency Program Faculty at St. Joseph University Medical Center in Clifton, New Jersey. 30 hrs/week outpatient, max 1 student, LOR on hospital letterhead.",
+        "number_text": "Rotation 15",
+        "top_specialty_text": "Pediatrics",
+        "heading": "St. Joseph University\nMedical Center",
+        "hospital_line": "Faculty of Residency Program — St. Joseph University Medical Center",
+        "setting_badge": "Pediatrics Rotation · Outpatient & Limited Inpatient",
+        "price_text": "$3,500",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "1",
+            "label": "Max students"
+          },
+          {
+            "value": "30 hrs/wk",
+            "label": "Min 3 days/week"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Faculty of Residency Program affiliated with St. Joseph University Medical Center.",
+              "Hands-on experience seeing a <strong>variety of pediatric cases</strong> in an outpatient setting.",
+              "Minimum of <strong>3 days per week</strong> with at least <strong>30 hours per week</strong> of outpatient exposure.",
+              "Limited inpatient experience is possible but not guaranteed.",
+              "<strong>Max students:</strong> 1 (one-on-one mentorship)."
+            ]
+          },
+          {
+            "label": "Schedule breakdown",
+            "items": [
+              "Primarily outpatient clinic; inpatient exposure at preceptor's discretion.",
+              "Exposure to a wide variety of general pediatric presentations."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on hospital letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Pediatrics",
+          "Residency Faculty",
+          "Limited Inpatient Possible",
+          "LoR Included",
+          "Max 1 Student"
+        ]
+      },
       "slug": "st-joseph-pediatrics",
       "title": "Pediatrics — Residency Faculty",
       "hospital": "St. Joseph University Medical Center",
@@ -286,6 +1238,67 @@
       "detail_url": "/rotation-st-joseph-pediatrics"
     },
     {
+      "detail": {
+        "page_title": "Pediatrics Rotation — Medical Director, Jersey City NJ | USMLE Wise",
+        "page_description": "4-week pediatrics rotation with board-certified Pediatrician in Jersey City, New Jersey. Busy outpatient clinic, Mon–Fri with extended Wednesdays, literature discussions, LOR included.",
+        "number_text": "Rotation 16",
+        "top_specialty_text": "Pediatrics",
+        "heading": "Pediatrics Medical Director\nJersey City, New Jersey",
+        "hospital_line": "Board-Certified Pediatrician, Jersey City",
+        "setting_badge": "Pediatrics Rotation · Busy Outpatient Clinic",
+        "price_text": "$2,000",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "Mon–Fri",
+            "label": "8:30 am – 4:30 pm"
+          },
+          {
+            "value": "Wed",
+            "label": "9:00 am – 7:00 pm"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Board-certified Pediatrician at a busy outpatient clinic in Jersey City.",
+              "Typical schedule is <strong>8:30 am to 4:30 pm Monday–Friday</strong>; Wednesdays extended to <strong>9:00 am – 7:00 pm</strong>.",
+              "After approximately one week (at the preceptor's discretion), learners may conduct <strong>histories independently</strong> and then present the case.",
+              "Regular <strong>literature discussions</strong> throughout the rotation on relevant pediatric topics."
+            ]
+          },
+          {
+            "label": "What to expect",
+            "items": [
+              "High-volume clinical exposure from day one.",
+              "Gradual progression toward independent patient workup as comfort increases.",
+              "Evidence-based learning integrated into daily clinic activities."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Pediatrics",
+          "Board-Certified",
+          "Literature Discussions",
+          "LoR Included"
+        ]
+      },
       "slug": "jersey-city-pediatrics",
       "title": "Pediatrics — Medical Director",
       "hospital": "Board-Certified Pediatrician, Jersey City",
@@ -305,6 +1318,68 @@
       "detail_url": "/rotation-jersey-city-pediatrics"
     },
     {
+      "detail": {
+        "page_title": "Pediatrics Rotation — Medical Director, Arlington Virginia | USMLE Wise",
+        "page_description": "4-week pediatrics rotation with Medical Director in Arlington, Virginia. Independent patient encounters, physical exams, EMR training, management plans. LOR on clinic letterhead.",
+        "number_text": "Rotation 17",
+        "top_specialty_text": "Pediatrics",
+        "heading": "Pediatrics Medical Director\nArlington, Virginia",
+        "hospital_line": "Private Clinic, Arlington, Virginia",
+        "setting_badge": "Pediatrics Rotation · Independent Patient Encounters & EMR",
+        "price_text": "$2,000",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "Independent",
+            "label": "Patient encounters"
+          },
+          {
+            "value": "EMR",
+            "label": "Full access & training"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Pediatrics Medical Director, Arlington, Virginia.",
+              "Excellent hands-on experience designed to show how <strong>pediatric care is managed in the USA</strong>.",
+              "Learn to <strong>see patients independently</strong>, conduct physical examinations, and present patients to the preceptor.",
+              "Propose <strong>management plans</strong> and become proficient with the <strong>EMR system</strong>."
+            ]
+          },
+          {
+            "label": "What to expect",
+            "items": [
+              "Progressive clinical autonomy with direct preceptor feedback.",
+              "Hands-on EMR documentation from the start of the rotation.",
+              "Practical exposure to US outpatient pediatric workflows."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Pediatrics",
+          "Independent Encounters",
+          "EMR Training",
+          "Physical Examinations",
+          "LoR Included"
+        ]
+      },
       "slug": "arlington-pediatrics",
       "title": "Pediatrics — Medical Director",
       "hospital": "Private Clinic, Arlington, Virginia",
@@ -324,6 +1399,70 @@
       "detail_url": "/rotation-arlington-pediatrics"
     },
     {
+      "detail": {
+        "page_title": "Pediatrics Rotation — Mercy Hospital Faculty, Miami Florida | USMLE Wise",
+        "page_description": "4-week hands-on pediatrics rotation with Faculty at Mercy Hospital in Miami, Florida. Clinic and inpatient rounding, EMR access, starts first Monday of month. LOR on hospital letterhead.",
+        "number_text": "Rotation 18",
+        "top_specialty_text": "Pediatrics",
+        "heading": "Mercy Hospital\nMiami, Florida",
+        "hospital_line": "Faculty with Mercy Hospital",
+        "setting_badge": "Pediatrics Rotation · Clinic + Hospital Rounding",
+        "price_text": "$3,200",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "1st Monday",
+            "label": "of each month"
+          },
+          {
+            "value": "Clinic + Hospital",
+            "label": "Setting"
+          },
+          {
+            "value": "EMR",
+            "label": "Full access"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Faculty affiliated with Mercy Hospital, Miami, Florida.",
+              "Round side by side with peers in both <strong>clinic and hospital settings</strong>.",
+              "Full <strong>EMR access</strong> to hone documentation skills throughout the rotation.",
+              "Documents must be submitted <strong>28 days prior</strong> to your start date.",
+              "Rotations start on the <strong>first Monday of each month</strong>."
+            ]
+          },
+          {
+            "label": "What to expect",
+            "items": [
+              "Exposure to a broad range of pediatric cases across both inpatient and outpatient settings.",
+              "Practical EMR training with real patient documentation.",
+              "Collaborative learning environment with other clinical students."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on hospital letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID",
+          "<em>All documents due 28 days before start date</em>"
+        ],
+        "tags": [
+          "Inpatient + Outpatient",
+          "Pediatrics",
+          "Hospital Rounding",
+          "EMR Access",
+          "Starts 1st Monday",
+          "LoR Included"
+        ]
+      },
       "slug": "mercy-pediatrics",
       "title": "Pediatrics — Mercy Hospital Faculty",
       "hospital": "Mercy Hospital, Miami",
@@ -343,6 +1482,68 @@
       "detail_url": "/rotation-mercy-pediatrics"
     },
     {
+      "detail": {
+        "page_title": "Pediatrics Rotation — 20+ Years Experience, Baltimore Maryland | USMLE Wise",
+        "page_description": "4-week pediatrics externship in Baltimore, Maryland. 20+ years experience attending, 10-15 patients/day, well child, sick child, pre-op consults, EMR access, max 1 student, LOR included.",
+        "number_text": "Rotation 19",
+        "top_specialty_text": "Pediatrics",
+        "heading": "Pediatrics Externship\nBaltimore, Maryland",
+        "hospital_line": "Outpatient Clinic — Attending with 20+ Years Experience",
+        "setting_badge": "Pediatrics Externship · Full Hands-On & EMR Access",
+        "price_text": "$1,600",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "1",
+            "label": "Max students"
+          },
+          {
+            "value": "10–15",
+            "label": "Patients per day"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Attending physician with <strong>20+ years of experience</strong> at a high-volume outpatient pediatric clinic in Baltimore.",
+              "Full <strong>hands-on</strong> experience with <strong>EMR access</strong> from day one.",
+              "See <strong>10–15 patients per day</strong> including well child visits, sick child visits, and pre-operative consults.",
+              "Case discussions with <strong>differential diagnosis</strong> and detailed discussion of developmental milestones.",
+              "<strong>Max students:</strong> 1 per month."
+            ]
+          },
+          {
+            "label": "Schedule breakdown",
+            "items": [
+              "Monday through Friday, <strong>9:00 am – 6:00 pm</strong>.",
+              "High patient volume provides broad exposure to common and complex pediatric presentations."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Fully personalized LoR based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Most updated CV"
+        ],
+        "tags": [
+          "Outpatient",
+          "Pediatrics",
+          "20+ Years Experience",
+          "EMR Access",
+          "Well Child & Sick Child",
+          "Pre-Op Consults",
+          "LoR Included",
+          "Max 1 Student"
+        ]
+      },
       "slug": "baltimore-pediatrics",
       "title": "Pediatrics — 20+ Years Experience",
       "hospital": "Outpatient Clinic, Baltimore, Maryland",
@@ -362,6 +1563,68 @@
       "detail_url": "/rotation-baltimore-pediatrics"
     },
     {
+      "detail": {
+        "page_title": "Family Medicine Rotation — Englewood Hospital, New Jersey | USMLE Wise",
+        "page_description": "4-week family medicine rotation with Chief of Family Practice at Englewood Hospital, NJ. Board-certified in FM, Geriatrics & Palliative Medicine. Clinic, living facilities, nursing homes. Max 2 students.",
+        "number_text": "Rotation 20",
+        "top_specialty_text": "Family Medicine",
+        "heading": "Englewood Hospital\nand Medical Center",
+        "hospital_line": "Chief of Family Practice — Englewood Hospital",
+        "setting_badge": "Family Medicine · Clinic, Living Facilities & Nursing Homes",
+        "price_text": "$1,996",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "Mon–Fri",
+            "label": "9 am – 5 pm"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Chief of Family Practice at Englewood Hospital and Medical Center.",
+              "Preceptor is board-certified in <strong>Family Medicine, Geriatric Medicine, and Hospice and Palliative Medicine</strong>.",
+              "Comprehensive exposure across multiple care settings: <strong>outpatient clinic, living facilities, and nursing homes</strong>.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "Schedule breakdown",
+            "items": [
+              "Full-time schedule Monday through Friday, <strong>9:00 am to 5:00 pm</strong>.",
+              "Rotations across outpatient clinic, assisted living facilities, and nursing home visits."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Family Medicine",
+          "Geriatric Medicine",
+          "Palliative Care",
+          "Nursing Homes",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "englewood-family-medicine",
       "title": "Family Medicine — Chief of Family Practice",
       "hospital": "Englewood Hospital and Medical Center",
@@ -381,6 +1644,71 @@
       "detail_url": "/rotation-englewood-family-medicine"
     },
     {
+      "detail": {
+        "page_title": "Family Medicine Rotation — Oakbend Medical Center, Richmond TX | USMLE Wise",
+        "page_description": "4-week family medicine rotation with IMG physician at Oakbend Medical Center, Richmond Texas. Up to 20 patients/day, daily or 3 days/week, hands-on procedures, max 2 students.",
+        "number_text": "Rotation 21",
+        "top_specialty_text": "Family Medicine",
+        "heading": "Oakbend Medical Center\nRichmond, Texas",
+        "hospital_line": "Family Medicine Physician — Former IMG",
+        "setting_badge": "Family Medicine · Outpatient Clinic — High Volume",
+        "price_text": "$1,675",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "Up to 20",
+            "label": "Patients per day"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Family Medicine physician affiliated with Oakbend Medical Center, Richmond, TX.",
+              "Direct patient engagement seeing <strong>up to 20 patients per day</strong> during a full 9-hour schedule.",
+              "Flexible scheduling: available <strong>daily or three days per week</strong> to fit your timeline.",
+              "Involvement ranges from <strong>observation to active participation in procedures</strong> based on demonstrated skills.",
+              "Preceptor was himself an IMG and understands the unique path to US residency match.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "Why this rotation",
+            "items": [
+              "Mentorship from a physician who navigated the IMG journey firsthand.",
+              "High patient volume ensures broad clinical exposure in a short period.",
+              "Flexible scheduling accommodates students with varying availability."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on clinic letterhead upon successful completion, based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Family Medicine",
+          "IMG Mentor",
+          "High Volume",
+          "Flexible Schedule",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "richmond-family-medicine",
       "title": "Family Medicine — IMG Physician Mentor",
       "hospital": "Oakbend Medical Center",
@@ -400,6 +1728,70 @@
       "detail_url": "/rotation-richmond-family-medicine"
     },
     {
+      "detail": {
+        "page_title": "Family Medicine Rotation — Georgetown Associate Professor, Alexandria VA | USMLE Wise",
+        "page_description": "4-week family medicine rotation with Associate Professor at Georgetown University School of Medicine, Alexandria VA. Inova Alexandria Hospital. 39 years experience, 5 professorships. Max 4 students.",
+        "number_text": "Rotation 22",
+        "top_specialty_text": "Family Medicine",
+        "heading": "Inova Alexandria Hospital\nAlexandria, Virginia",
+        "hospital_line": "Associate Professor — Georgetown University School of Medicine",
+        "setting_badge": "Family Medicine · FM, Internal Medicine & Geriatrics",
+        "price_text": "$2,500",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "4",
+            "label": "Max students"
+          },
+          {
+            "value": "39 Years",
+            "label": "Active practice"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Associate Professor, Georgetown University School of Medicine, affiliated with Inova Alexandria Hospital.",
+              "Specializes in <strong>Family Medicine, Internal Medicine, and Geriatric Medicine</strong>.",
+              "<strong>39 years</strong> of active medical practice; currently holds <strong>five medical school clinical professorships</strong>.",
+              "Longstanding position as Assistant Clinical Professor of Family Medicine at <strong>Georgetown University School of Medicine</strong>.",
+              "Hands-on experience evaluating patients in an office clinic setting.",
+              "<strong>Max students:</strong> 4."
+            ]
+          },
+          {
+            "label": "What to expect",
+            "items": [
+              "Direct patient evaluation in an outpatient office clinic.",
+              "Mentorship from one of the most credentialed educators on the roster."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR on the physician's personal letterhead, highlighting prestigious academic affiliations and professorships — a powerful endorsement for your residency application.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Family Medicine",
+          "Georgetown Professor",
+          "Internal Medicine",
+          "Geriatric Medicine",
+          "LoR Included",
+          "Max 4 Students"
+        ]
+      },
       "slug": "alexandria-family-medicine",
       "title": "Family Medicine — Georgetown Associate Prof.",
       "hospital": "Inova Alexandria Hospital",
@@ -419,6 +1811,69 @@
       "detail_url": "/rotation-alexandria-family-medicine"
     },
     {
+      "detail": {
+        "page_title": "Family Medicine Rotation — Mount Sinai Affiliated, New York City | USMLE Wise",
+        "page_description": "4-week family medicine rotation with Mount Sinai visiting attending physician in New York City. Two outpatient clinics, Mon–Fri 9am–5pm, board-certified, max 2 students, LOR included.",
+        "number_text": "Rotation 23",
+        "top_specialty_text": "Family Medicine",
+        "heading": "Family Medicine\nNew York City",
+        "hospital_line": "Visiting Attending Physician with Mount Sinai Hospital",
+        "setting_badge": "Family Medicine · Two Outpatient Clinics, NYC",
+        "price_text": "$2,900",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "Mon–Fri",
+            "label": "9:00 am – 5:00 pm"
+          }
+        ],
+        "sections": [
+          {
+            "label": "About the rotation",
+            "items": [
+              "<strong>Rotation with:</strong> Board-certified Family Medicine physician, Visiting Attending Physician with Mount Sinai Hospital.",
+              "Immersive rotation in the heart of New York City, split across <strong>two dynamic clinics</strong>.",
+              "Experience the <strong>full spectrum of primary care</strong> in a high-volume, diverse patient environment.",
+              "Full-time schedule Monday to Friday, <strong>9:00 am to 5:00 pm</strong>.",
+              "<strong>Max students:</strong> 2."
+            ]
+          },
+          {
+            "label": "What to expect",
+            "items": [
+              "Rich patient interaction and hands-on learning across two clinic sites.",
+              "Exposure to the diversity of primary care presentations seen in a major US city."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Personalized LoR from the supervising physician who holds the title of Visiting Attending Physician with Mount Sinai Hospital — a powerful endorsement for your residency application.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Outpatient",
+          "Family Medicine",
+          "Mount Sinai Affiliated",
+          "Board-Certified",
+          "Two Clinics",
+          "LoR Included",
+          "Max 2 Students"
+        ]
+      },
       "slug": "new-york-family-medicine",
       "title": "Family Medicine — Mount Sinai Affiliated",
       "hospital": "Two Clinics, New York City",
@@ -438,6 +1893,76 @@
       "detail_url": "/rotation-new-york-family-medicine"
     },
     {
+      "detail": {
+        "page_title": "Family Medicine Rotation — Larkin Community Hospital Program Director, Hialeah FL | USMLE Wise",
+        "page_description": "4-week family medicine rotation with Program Director at Larkin Community Hospital, Hialeah Florida. Inpatient, outpatient, telemedicine, didactics, EMR. Max 6 students. LOR on hospital letterhead.",
+        "number_text": "Rotation 24",
+        "top_specialty_text": "Family Medicine",
+        "heading": "Larkin Community Hospital\nHialeah, Florida",
+        "hospital_line": "Family Medicine Program Director — Larkin Community Hospital",
+        "setting_badge": "Family Medicine · Inpatient + Outpatient + Telemedicine",
+        "price_text": "$4,196",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "Monthly",
+            "label": "Starts"
+          },
+          {
+            "value": "6",
+            "label": "Max students"
+          },
+          {
+            "value": "Inpatient",
+            "label": "+ Outpatient + Telehealth"
+          }
+        ],
+        "sections": [
+          {
+            "label": "Outpatient experience",
+            "items": [
+              "Telemedicine exposure combined with in-person site visits.",
+              "Scheduled <strong>2–3 times per week, 6:30 am to ~12:00 pm</strong>.",
+              "Hands-on practice writing notes, interpreting labs, and performing physical examinations.",
+              "Students are expected to provide their own transport to on-site visits."
+            ]
+          },
+          {
+            "label": "Inpatient experience",
+            "items": [
+              "Evaluate patients firsthand with EMR access.",
+              "See <strong>1–3 patients per day</strong> in 6-hour blocks.",
+              "Flexible start times: <strong>6:30 am, 1:00 pm, or 7:00 pm</strong>."
+            ]
+          },
+          {
+            "label": "Didactics",
+            "items": [
+              "Online didactic sessions every <strong>Thursday 4:00–5:00 pm</strong> and <strong>Friday 12:00–5:00 pm</strong>.",
+              "Designed to deepen understanding and enhance clinical reasoning."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "Hospital-based LoR on hospital letterhead based on your performance throughout the rotation.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID"
+        ],
+        "tags": [
+          "Inpatient + Outpatient",
+          "Family Medicine",
+          "Telemedicine",
+          "EMR Access",
+          "Online Didactics",
+          "LoR Included",
+          "Max 6 Students"
+        ]
+      },
       "slug": "larkin-family-medicine",
       "title": "Family Medicine — Larkin Program Director",
       "hospital": "Larkin Community Hospital",
@@ -457,6 +1982,69 @@
       "detail_url": "/rotation-larkin-family-medicine"
     },
     {
+      "detail": {
+        "page_title": "Family Medicine Rotation — Keralty Hospital Faculty, Miami FL | USMLE Wise",
+        "page_description": "4-week family medicine rotation with faculty at Keralty Hospital, Miami Florida. Inpatient + outpatient, EMR access, Step 1 required. Max 2 students. Conditional LOR on hospital letterhead.",
+        "number_text": "Rotation 25",
+        "top_specialty_text": "Family Medicine",
+        "heading": "Keralty Hospital\nMiami, Florida",
+        "hospital_line": "Family Medicine Faculty — Keralty Hospital",
+        "setting_badge": "Family Medicine · Inpatient + Outpatient",
+        "price_text": "$3,800",
+        "deposit_line": "$500 deposit applied toward total · Balance due before start",
+        "cta_href": "https://team.manikmadaan.com/guidance-call/book",
+        "cta_label": "Book a Call",
+        "stats": [
+          {
+            "value": "1st Monday",
+            "label": "Monthly start"
+          },
+          {
+            "value": "2",
+            "label": "Max students"
+          },
+          {
+            "value": "Inpatient",
+            "label": "+ Outpatient"
+          }
+        ],
+        "sections": [
+          {
+            "label": "Clinical experience",
+            "items": [
+              "Hands-on inpatient experience working directly alongside residents and faculty at Keralty Hospital.",
+              "Outpatient clinic exposure complementing the hospital-based component.",
+              "Full <strong>EMR access</strong> throughout the rotation.",
+              "Documents must be submitted <strong>28 days prior</strong> to your start date."
+            ]
+          },
+          {
+            "label": "Eligibility",
+            "items": [
+              "<strong>USMLE Step 1</strong> required before enrolling.",
+              "Rotation starts on the <strong>first Monday of each month</strong>.",
+              "Maximum of <strong>2 students</strong> per rotation cycle."
+            ]
+          }
+        ],
+        "lor_label": "Letter of recommendation",
+        "lor_text": "If you perform well throughout the rotation, you have a chance to earn a LOR on hospital letterhead — and potentially an interview opportunity.",
+        "docs_label": "Required documents",
+        "required_documents": [
+          "Updated CV",
+          "AAMC Standardized Immunization Records",
+          "Medical School Transcript or ID",
+          "USMLE Step 1 score report"
+        ],
+        "tags": [
+          "Inpatient + Outpatient",
+          "Family Medicine",
+          "EMR Access",
+          "Step 1 Required",
+          "Max 2 Students",
+          "Conditional LOR"
+        ]
+      },
       "slug": "keralty-family-medicine",
       "title": "Family Medicine — Keralty Hospital Faculty",
       "hospital": "Keralty Hospital, Miami",
