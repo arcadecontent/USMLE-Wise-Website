@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/styles/match.css">
 <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
 <script src="/js/mobile-nav.js" defer></script>
-<script src="/js/uw-track.js" defer></script>
+<script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   if (window.lucide && typeof window.lucide.createIcons === 'function') {

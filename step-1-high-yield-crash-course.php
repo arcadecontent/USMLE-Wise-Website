@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <script src="/js/mobile-nav.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/mobile-nav.js') ?: '1'; ?>" defer></script>
-<script src="/js/uw-track.js" defer></script>
+<script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
 <style>
 
   .cc { font-family: var(--font-sans); color: var(--uw-ink-800); background: var(--uw-surface); -webkit-font-smoothing: antialiased; }
