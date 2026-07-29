@@ -43,6 +43,14 @@ function uw_analytics_db(): PDO
     $pdo->exec('CREATE INDEX IF NOT EXISTS idx_events_ts ON events (ts)');
     $pdo->exec('CREATE INDEX IF NOT EXISTS idx_events_event_ts ON events (event, ts)');
     $pdo->exec('CREATE INDEX IF NOT EXISTS idx_events_page_ts ON events (page, ts)');
+
+    // Migrate older databases: add UTM columns if absent.
+    $cols = $pdo->query('PRAGMA table_info(events)')->fetchAll(PDO::FETCH_COLUMN, 1);
+    foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $c) {
+        if (!in_array($c, $cols, true)) {
+            $pdo->exec("ALTER TABLE events ADD COLUMN $c TEXT NOT NULL DEFAULT ''");
+        }
+    }
     return $pdo;
 }
 

@@ -55,11 +55,14 @@ if ($event === 'time') {
 
 require __DIR__ . '/analytics-common.php';
 
+$utm = is_array($data['u'] ?? null) ? $data['u'] : [];
+
 try {
     $pdo = uw_analytics_db();
     $stmt = $pdo->prepare(
-        'INSERT INTO events (ts, event, page, vid, sid, dur, ref, meta, ua)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        'INSERT INTO events (ts, event, page, vid, sid, dur, ref, meta, ua,
+             utm_source, utm_medium, utm_campaign, utm_content, utm_term)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     );
     $stmt->execute([
         time(),
@@ -71,6 +74,11 @@ try {
         $clean($data['r'] ?? '', 300),
         $clean($data['m'] ?? '', 80),
         $ua,
+        $clean($utm['source'] ?? '', 100),
+        $clean($utm['medium'] ?? '', 100),
+        $clean($utm['campaign'] ?? '', 100),
+        $clean($utm['content'] ?? '', 100),
+        $clean($utm['term'] ?? '', 100),
     ]);
 } catch (Throwable $e) {
     error_log('uw-track: ' . $e->getMessage());

@@ -25,8 +25,25 @@
   var sid = stored(sessionStorage, 'uw_sid');
   var page = location.pathname;
 
+  /* UTM capture — first touch wins for the session, so every event in
+     the session (clicks, time) stays attributed to the campaign. */
+  var utm = null;
+  try {
+    var qs = new URLSearchParams(location.search);
+    var u = {};
+    ['source', 'medium', 'campaign', 'content', 'term'].forEach(function (k) {
+      var v = qs.get('utm_' + k);
+      if (v) u[k] = v.slice(0, 100);
+    });
+    if (u.source && !sessionStorage.getItem('uw_utm')) {
+      sessionStorage.setItem('uw_utm', JSON.stringify(u));
+    }
+    utm = JSON.parse(sessionStorage.getItem('uw_utm') || 'null');
+  } catch (e) { /* no UTM support, fine */ }
+
   function send(event, extra) {
     var payload = { e: event, p: page, v: vid, s: sid };
+    if (utm) payload.u = utm;
     if (extra) for (var k in extra) payload[k] = extra[k];
     var body = JSON.stringify(payload);
     try {

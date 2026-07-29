@@ -115,6 +115,26 @@ if ($authed) {
     $guidanceSpots->execute([$since]);
     $guidanceSpots = $guidanceSpots->fetchAll(PDO::FETCH_ASSOC);
 
+    $campaigns = $q("SELECT utm_source, utm_medium, utm_campaign,
+        SUM(event = 'pageview') AS views,
+        COUNT(DISTINCT CASE WHEN event = 'pageview' THEN vid END) AS uniques,
+        SUM(event = 'enroll_click') AS enroll,
+        SUM(event = 'checkout_click') AS checkout,
+        SUM(event = 'guidance_click') AS guidance,
+        SUM(CASE WHEN event = 'time' THEN dur ELSE 0 END) AS secs,
+        COUNT(DISTINCT CASE WHEN event = 'time' THEN sid END) AS timed_sessions
+        FROM events WHERE $where AND utm_source != ''
+        GROUP BY utm_source, utm_medium, utm_campaign
+        ORDER BY views DESC LIMIT 25")->fetchAll(PDO::FETCH_ASSOC);
+
+    $ads = $q("SELECT utm_campaign, utm_content,
+        SUM(event = 'pageview') AS views,
+        SUM(event = 'enroll_click') AS enroll,
+        SUM(event = 'checkout_click') AS checkout
+        FROM events WHERE $where AND utm_content != ''
+        GROUP BY utm_campaign, utm_content
+        ORDER BY views DESC LIMIT 25")->fetchAll(PDO::FETCH_ASSOC);
+
     $views = (int) ($totals['views'] ?? 0);
     $enroll = (int) ($totals['enroll'] ?? 0);
     $checkout = (int) ($totals['checkout'] ?? 0);
@@ -271,6 +291,46 @@ a.logout { color:var(--ink2); font-size:13px; }
       <?php if (!$daily): ?><tr><td colspan="7" class="muted">No data yet</td></tr><?php endif; ?>
     </table>
   </div>
+
+  <div class="panel">
+    <h2>Campaigns (UTM)</h2>
+    <table>
+      <tr><th>Source</th><th>Medium</th><th>Campaign</th><th>Views</th><th>Uniques</th><th>Enroll</th><th>Checkout</th><th>Guidance</th><th>Avg time</th></tr>
+      <?php foreach ($campaigns as $c):
+          $cAvg = $c['timed_sessions'] ? (int) round($c['secs'] / $c['timed_sessions']) : 0; ?>
+      <tr>
+        <td><?= h($c['utm_source']) ?></td>
+        <td><?= h($c['utm_medium']) ?></td>
+        <td style="max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><?= h($c['utm_campaign']) ?></td>
+        <td><?= (int) $c['views'] ?></td>
+        <td><?= (int) $c['uniques'] ?></td>
+        <td><?= (int) $c['enroll'] ?></td>
+        <td><?= (int) $c['checkout'] ?></td>
+        <td><?= (int) $c['guidance'] ?></td>
+        <td><?= $fmtTime($cAvg) ?></td>
+      </tr>
+      <?php endforeach; ?>
+      <?php if (!$campaigns): ?><tr><td colspan="9" class="muted">No campaign traffic yet — appears when visitors arrive via utm_ links</td></tr><?php endif; ?>
+    </table>
+  </div>
+
+  <?php if ($ads): ?>
+  <div class="panel">
+    <h2>Ads (utm_content)</h2>
+    <table>
+      <tr><th>Campaign</th><th>Ad</th><th>Views</th><th>Enroll</th><th>Checkout</th></tr>
+      <?php foreach ($ads as $a): ?>
+      <tr>
+        <td style="max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><?= h($a['utm_campaign']) ?></td>
+        <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><?= h($a['utm_content']) ?></td>
+        <td><?= (int) $a['views'] ?></td>
+        <td><?= (int) $a['enroll'] ?></td>
+        <td><?= (int) $a['checkout'] ?></td>
+      </tr>
+      <?php endforeach; ?>
+    </table>
+  </div>
+  <?php endif; ?>
 
   <div class="panel">
     <h2>Activity by page <span class="muted" style="font-weight:400;font-size:12px">(all pages, last <?= $days ?> days)</span></h2>
