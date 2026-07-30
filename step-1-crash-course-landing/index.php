@@ -15,11 +15,13 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
 </script>
 <title>Step 1 High Yield Crash Course | USMLE Wise</title>
 <meta name="description" content="USMLE Step 1 High Yield Crash Course by USMLE Wise — a focused 10-day recorded program to help IMGs review high-yield content and prepare efficiently for Step 1." />
-<link rel="canonical" href="https://usmlewise.com/step-1-high-yield-crash-course" />
+<!-- Standalone ad/campaign landing page: kept out of the sitemap and out of the
+     index so it doesn't compete with /step-1-high-yield-crash-course in search. -->
+<meta name="robots" content="noindex, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Step 1 High Yield Crash Course | USMLE Wise" />
 <meta property="og:description" content="Pass USMLE Step 1 on your first and only attempt, in 10 focused days." />
-<meta property="og:url" content="https://usmlewise.com/step-1-high-yield-crash-course" />
+<meta property="og:url" content="https://usmlewise.com/step-1-crash-course-landing" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -92,6 +94,13 @@ document.addEventListener('DOMContentLoaded', function () {
 .cc-faq-btn:hover { background: var(--uw-ink-75); }
 /* Frosted-glass header (matches the home page's scrolled state) — this page has no scroll-based toggle, so it's always on */
 .msp-nav { background: rgba(252,252,251,.9); -webkit-backdrop-filter: saturate(180%) blur(12px); backdrop-filter: saturate(180%) blur(12px); border-bottom-color: var(--uw-border); box-shadow: var(--shadow-sm); }
+/* Standalone landing page: fewer footer nav columns than the site-wide footer
+   this was copied from, so space-between leaves a large gap. */
+.msp-foot__top { justify-content: flex-start; gap: clamp(48px, 8vw, 120px); }
+/* WhatsApp header CTA. Also covers the mobile drawer copy — mobile-nav.js clones
+   .msp-nav__cta into the drawer foot, which stretches any .btn to full width. */
+.cc-wa-btn { background: #25D366; color: #fff; font-weight: 600; box-shadow: var(--shadow-sm); }
+.cc-wa-btn:hover, .cc-wa-btn:focus-visible { background: #1EBE5A; color: #fff; box-shadow: var(--shadow-md); }
 </style>
 </head>
 <body>
@@ -101,9 +110,27 @@ document.addEventListener('DOMContentLoaded', function () {
   <span style="opacity:.7">Today —</span>&nbsp; <s style="opacity:.5">$999</s> <b style="color:var(--uw-success-300)">$199</b> <span style="opacity:.7">one time. Lifetime access.</span>
 </div>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/nav.php'; ?>
+<!-- ============== MINIMAL LANDING HEADER (in-page section links only — standalone page) ============== -->
+<header class="msp-nav" id="mspNav">
+  <div class="msp-wrap msp-nav__inner">
+    <span class="msp-brand" aria-label="USMLE Wise">
+      <img src="/assets/usmle-design-system/assets/Logo-Horizontal.svg" alt="USMLE Wise" height="36" />
+    </span>
+    <nav class="msp-nav__links" aria-label="Page sections">
+      <a href="#why">Why It Works</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#offer">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn msp-nav__cta cc-wa-btn" href="https://wa.me/19192015700?text=I%20am%20interested%20in%20step%201%20crash%20course%20free%20preview" target="_blank" rel="noopener noreferrer">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"></path></svg>
+      Request a Free Preview
+    </a>
+  </div>
+</header>
 
-<div class="cc">
+<main id="top" class="cc">
 
   <!-- HERO -->
   
@@ -321,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </section>
 
   <!-- VIDEO REVIEWS -->
-  <section style="background:var(--uw-bg);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+  <section id="reviews" style="background:var(--uw-bg);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
     <div style="max-width:1080px;margin:0 auto">
       <div style="display:flex;justify-content:center;align-items:center;gap:9px;font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>Watch their stories</div>
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.02em;margin:0 auto 8px;color:var(--uw-ink-900);text-align:center;max-width:22ch">Hear it from students who passed.</h2>
@@ -873,7 +900,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 
 
-</div>
+</main>
 <script>
 (function () {
   // FAQ accordion — one open at a time, +/– sign
@@ -939,4 +966,69 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 </script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>
+
+<!-- ============== STANDALONE FOOTER (in-page links + legal only) ============== -->
+<footer class="msp-foot">
+  <div class="msp-wrap">
+    <div class="msp-foot__top">
+      <div class="msp-foot__brand-col">
+        <span class="msp-brand" aria-label="USMLE Wise">
+          <img src="/assets/usmle-design-system/assets/Logo-Horizontal-Dark.svg" alt="USMLE Wise" height="36" />
+        </span>
+        <p>Guiding international medical graduates from USMLE to Match Day.</p>
+      </div>
+      <nav class="msp-foot__nav" aria-label="Footer navigation">
+        <div class="msp-foot__nav-group">
+          <span class="msp-foot__nav-label">This Page</span>
+          <a href="#why">Why It Works</a>
+          <a href="#curriculum">Curriculum</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#compare">How We Compare</a>
+        </div>
+        <div class="msp-foot__nav-group">
+          <span class="msp-foot__nav-label">&nbsp;</span>
+          <a href="#offer">Pricing &amp; Guarantee</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="msp-foot__nav-group">
+          <span class="msp-foot__nav-label">Legal</span>
+          <a href="/legal">Legal &amp; Policies</a>
+        </div>
+      </nav>
+    </div>
+    <div class="msp-foot__bottom">
+      <div class="msp-foot__social">
+        <a href="https://www.instagram.com/usmle_wise/" class="msp-foot__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="instagram" width="18" height="18"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61579260924818" class="msp-foot__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="facebook" width="18" height="18"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/usmle-wise/" class="msp-foot__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="linkedin" width="18" height="18"></i>
+        </a>
+        <a href="mailto:hello@usmle-wise.com" class="msp-foot__social-link" aria-label="Email us">
+          <i data-lucide="mail" width="18" height="18"></i>
+        </a>
+        <a href="https://wa.me/19192015700" class="msp-foot__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@usmle_wise" class="msp-foot__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.79a4.85 4.85 0 01-1.02-.1z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@usmlewise" class="msp-foot__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="youtube" width="18" height="18"></i>
+        </a>
+      </div>
+      <small>&copy; 2026 USMLE Wise. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
