@@ -2,7 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<base href="/match-media/">
+<!-- Deliberately no base element pointing at /match-media/: it also rebased bare
+     "#section" links to /match-media/#section, which 404s. The few assets that
+     relied on it are referenced with full /match-media/... paths instead. -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
 <link rel="stylesheet" href="/assets/usmle-design-system/styles.css">
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
-<script src="./support.js"></script>
+<script src="/match-media/support.js"></script>
 </head>
 <body>
 <!-- ============== MINIMAL LANDING HEADER (in-page section links only — standalone page) ============== -->
@@ -46,13 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/fonts.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/colors.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/typography.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/spacing.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/base.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/styles.css">
-<script src="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/_ds_bundle.js"></script>
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/fonts.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/colors.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/typography.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/spacing.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/base.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/styles.css">
+<script src="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/_ds_bundle.js"></script>
 <style>
   body{margin:0}
   .mp{font-family:var(--font-sans);color:var(--uw-ink-800);background:var(--uw-surface);overflow-x:hidden}
@@ -738,7 +740,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px">
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px">
-        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-manik" shape="rounded" radius="8" placeholder="Drop or click to upload Dr. Madaan's photo" hint-size="100%,100%"><img src="./profile-pic-mrebpmf0.jpeg" alt="profile-pic" style="max-width: 100%; height: auto; display: block; object-fit: cover"></x-import></div>
+        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-manik" shape="rounded" radius="8" placeholder="Drop or click to upload Dr. Madaan's photo" hint-size="100%,100%"><img src="/match-media/profile-pic-mrebpmf0.jpeg" alt="profile-pic" style="max-width: 100%; height: auto; display: block; object-fit: cover"></x-import></div>
         <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:10px">Contributor</div>
         <h3 style="font-family:var(--font-display);font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-0.01em;margin:0 0 12px;color:var(--uw-ink-900)"><b>Dr. Manik Madaan</b></h3>
         <p style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-700);margin:0">The world's most-followed USMLE and Match expert, and a doctor in the U.S. <br>Served 4 Years In Residency Selection Committee</p>
