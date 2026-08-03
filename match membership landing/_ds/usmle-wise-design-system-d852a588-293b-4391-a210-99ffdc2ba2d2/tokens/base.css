@@ -1,0 +1,29 @@
+/* ============================================================
+   USMLE Wise — Base / globals
+   Element-level defaults that consumers inherit.
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: var(--uw-ink-800);
+  background: var(--uw-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11";
+}
+
+img, svg { max-width: 100%; display: block; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); }
+
+::selection { background: var(--uw-blue-100); color: var(--uw-blue-800); }
+
+/* Display serif headings feel human; sans for functional UI text. */
+h1, h2, h3 { letter-spacing: var(--tracking-tight); color: var(--uw-ink-900); }
