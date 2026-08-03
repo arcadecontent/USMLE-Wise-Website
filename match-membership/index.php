@@ -47,6 +47,15 @@
     .uw-marquee span { font-size: 16px !important; }
     .uw-nav-note { display: none !important; }
   }
+  .uw-video-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .uw-video-modal[hidden] { display: none; }
+  .uw-video-modal__backdrop { position: absolute; inset: 0; background: rgba(10, 12, 20, .82); }
+  .uw-video-modal__dialog { position: relative; width: 100%; max-width: 900px; }
+  .uw-video-modal__frame { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+  .uw-video-modal__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .uw-video-modal__close { position: absolute; top: -44px; right: 0; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; display: grid; place-items: center; }
+  .uw-video-modal__close:hover { background: rgba(255,255,255,.26); }
+  .uw-video-card:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 2px; }
 </style>
 </helmet>
 <div class="uw" style="font-family:var(--font-sans);color:var(--uw-ink-800);background:var(--uw-bg);-webkit-font-smoothing:antialiased">
@@ -451,7 +460,7 @@
       <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:60ch;margin:20px 0 0;text-wrap:pretty">Old grads, low scores, second attempts, prestigious programs — every path to the Match, told by the doctors who walked it.</p>
 
       <div class="uw-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;width:100%;text-align:left">
-        <a href="https://www.youtube.com/watch?v=WDrpqKmLwLs" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        <div class="uw-video-card" data-video-id="WDrpqKmLwLs" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/WDrpqKmLwLs/hqdefault.jpg" alt="Ali — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -460,8 +469,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Super old-grad match</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Ali <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=Ea1pD2xY0_s" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="Ea1pD2xY0_s" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/Ea1pD2xY0_s/hqdefault.jpg" alt="Hamna — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -470,8 +479,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Super old-grad match</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Hamna <span style="font-weight:400;color:var(--uw-ink-500)">· FM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=lmjpF2nrXOU" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="lmjpF2nrXOU" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/lmjpF2nrXOU/hqdefault.jpg" alt="SOAP match — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -480,8 +489,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Super old-grad match</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">SOAP match <span style="font-weight:400;color:var(--uw-ink-500)">· SOAP</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=O4Gns55Brh0" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="O4Gns55Brh0" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/O4Gns55Brh0/hqdefault.jpg" alt="Shreya — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -490,8 +499,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Old grad · Post-SOAP</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Shreya <span style="font-weight:400;color:var(--uw-ink-500)">· FM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=bz_R34QsKjk" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="bz_R34QsKjk" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/bz_R34QsKjk/hqdefault.jpg" alt="Dr. Yash — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -500,8 +509,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Old grad · Post-SOAP</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Dr. Yash <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=64yfSkj4M_8" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="64yfSkj4M_8" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/64yfSkj4M_8/hqdefault.jpg" alt="Nathan — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -510,8 +519,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Old grad · 5+ years since graduation</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Nathan <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=HSsrZERcvbI" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="HSsrZERcvbI" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/HSsrZERcvbI/hqdefault.jpg" alt="Anjali — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -520,8 +529,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Matched with low scores · 218 on Step 2</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Anjali <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=F8E7lTvGKRU" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="F8E7lTvGKRU" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/F8E7lTvGKRU/hqdefault.jpg" alt="Lakshita — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -530,8 +539,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Matched with low scores · 221 on Step 2</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Lakshita <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=LKF0UYfXyE0" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="LKF0UYfXyE0" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/LKF0UYfXyE0/hqdefault.jpg" alt="UK graduate — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -540,8 +549,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">International grad</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">UK graduate <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=8S2q-5Pb87k" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="8S2q-5Pb87k" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/8S2q-5Pb87k/hqdefault.jpg" alt="Pavani — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -550,8 +559,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Matched with a Step 2 attempt</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Pavani <span style="font-weight:400;color:var(--uw-ink-500)">· FM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=izwBvdQgVc8" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="izwBvdQgVc8" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/izwBvdQgVc8/hqdefault.jpg" alt="Dyan — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -560,8 +569,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Prestigious match · Albert Einstein</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Dyan <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=2pGb5xiKzdw" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="2pGb5xiKzdw" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/2pGb5xiKzdw/hqdefault.jpg" alt="Dr. Srusti — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -570,8 +579,8 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Stellar match · Saint Vincent</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Dr. Srusti <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=ZynxmljOZDA" target="_blank" rel="noopener" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit">
+        </div>
+        <div class="uw-video-card" data-video-id="ZynxmljOZDA" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/ZynxmljOZDA/hqdefault.jpg" alt="Hamit — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
@@ -580,7 +589,7 @@
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Prestigious match · UPMC</div>
             <div style="margin-top:8px;font-size:15px;font-weight:600;color:var(--uw-ink-900)">Hamit <span style="font-weight:400;color:var(--uw-ink-500)">· IM</span></div>
           </div>
-        </a>
+        </div>
       </div>
 
 
@@ -672,6 +681,18 @@
 </div>
 
 </x-dc>
+<!-- Kept outside <x-dc>: the dc-runtime reconciles that whole subtree as
+     React (see the onclick note below), and it drops the plain boolean
+     `hidden` attribute in the process — the modal rendered permanently
+     visible, blocking every click on the page underneath it. Plain HTML
+     out here is untouched by that runtime. -->
+<div id="uwVideoModal" class="uw-video-modal" style="display:none">
+  <div class="uw-video-modal__backdrop" data-video-close></div>
+  <div class="uw-video-modal__dialog" role="dialog" aria-modal="true" aria-label="Match story video">
+    <button type="button" class="uw-video-modal__close" data-video-close aria-label="Close video">&times;</button>
+    <div class="uw-video-modal__frame"></div>
+  </div>
+</div>
 <script>
 (function () {
   // Delegated on document, not attached to the wrapper divs directly: each
@@ -685,6 +706,7 @@
   // forwards it verbatim as the React onClick prop, and React throws —
   // invariant #231 — because that prop must be a function, not a string.)
   document.addEventListener('click', function (e) {
+    var videoCard = e.target.closest('[data-video-id]');
     if (e.target.closest('[data-cta="pricing"]')) {
       var target = document.getElementById('pricing');
       if (!target) return;
@@ -692,8 +714,36 @@
       window.scrollTo({ top: y, behavior: 'smooth' });
     } else if (e.target.closest('[data-cta="checkout"]')) {
       window.open('https://buy.stripe.com/dRm5kEbXk9vfeJiewAes02v', '_blank', 'noopener');
+    } else if (videoCard) {
+      openVideoModal(videoCard.getAttribute('data-video-id'));
+    } else if (e.target.closest('[data-video-close]')) {
+      closeVideoModal();
     }
   });
+  // Cards are focusable (role="button" tabindex="0") for keyboard use — Enter/Space "click" them.
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeVideoModal(); return; }
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.closest('[data-video-id]')) {
+      e.preventDefault();
+      openVideoModal(e.target.closest('[data-video-id]').getAttribute('data-video-id'));
+    }
+  });
+
+  var videoModal = document.getElementById('uwVideoModal');
+  var videoFrame = videoModal ? videoModal.querySelector('.uw-video-modal__frame') : null;
+  function openVideoModal(id) {
+    if (!videoModal || !videoFrame || !id) return;
+    videoFrame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+      '?autoplay=1&rel=0" title="Match story video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    videoModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideoModal() {
+    if (!videoModal || !videoFrame || videoModal.style.display === 'none') return;
+    videoModal.style.display = 'none';
+    videoFrame.innerHTML = ''; // drop the iframe so playback actually stops
+    document.body.style.overflow = '';
+  }
 
   var els = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
   if (!els.length) return;
