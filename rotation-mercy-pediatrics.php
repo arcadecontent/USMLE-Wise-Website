@@ -123,9 +123,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <p class="msp-cta__sub">
                 Book a free guidance call. We will match you to the right rotation type, site, and timeline for your application and reserve your spot.
               </p>
-              <a class="btn btn--primary btn--xl" href="mailto:arcadecontentsolutions@gmail.com?subject=Clinical%20Rotation%20Inquiry">
+              <!--email_off--><a class="btn btn--primary btn--xl" href="mailto:support@usmlewise.com?subject=Clinical%20Rotation%20Inquiry">
                 Reserve Your Spot
-              </a>
+              </a><!--/email_off-->
               <p class="msp-cta__trust">No commitment. No sales pitch. Just a clear plan.</p>
             </div>
           </div>
