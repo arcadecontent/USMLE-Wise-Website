@@ -43,7 +43,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
 
         <hr />
-        <p style="font-size:14px; color: var(--uw-ink-500);">Questions about any of these documents? Email <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a>.</p>
+        <p style="font-size:14px; color: var(--uw-ink-500);">Questions about any of these documents? Email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off-->.</p>
       </div>
     </main>
 

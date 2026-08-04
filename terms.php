@@ -36,7 +36,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </ul>
 
         <h2>4. Guarantees &amp; Refunds</h2>
-        <p>Several of our programs include a specific guarantee (for example, the Crash Course pass guarantee, the Match packages&rsquo; first-session guarantee, or a program trial period). The exact terms, eligibility conditions, and how to request a refund are set out in full in our <a href="/refund-policy">Refund &amp; Guarantee Policy</a>, which forms part of these Terms. Where a program has no published guarantee, refund requests are reviewed case by case &mdash; contact us at <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a>.</p>
+        <p>Several of our programs include a specific guarantee (for example, the Crash Course pass guarantee, the Match packages&rsquo; first-session guarantee, or a program trial period). The exact terms, eligibility conditions, and how to request a refund are set out in full in our <a href="/refund-policy">Refund &amp; Guarantee Policy</a>, which forms part of these Terms. Where a program has no published guarantee, refund requests are reviewed case by case &mdash; contact us at <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off-->.</p>
 
         <h2>5. No Guarantee of Outcome</h2>
         <p>Except for the specific, narrowly defined guarantees described in our Refund &amp; Guarantee Policy, we do not guarantee that you will pass any exam, match into any residency program, or achieve any particular research or academic outcome. Outcomes depend on factors outside our control, including your own effort, prior preparation, and decisions made by third-party institutions (exam boards, residency programs, journals, and clinical sites). See our <a href="/disclaimer">Disclaimer</a> for more detail.</p>
@@ -81,7 +81,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h2>16. Contact Us</h2>
         <p>Questions about these Terms? Reach out:</p>
         <ul>
-          <li>Email: <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a></li>
+          <li>Email: <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--></li>
           <li>Website: <a href="/">usmlewise.com</a></li>
         </ul>
 

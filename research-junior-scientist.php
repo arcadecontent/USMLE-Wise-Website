@@ -1240,7 +1240,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
               <p class="msp-cta__trust">
                 No pressure to enroll. Prefer email?
-                <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a>
+                <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off-->
               </p>
             </div>
           </div>

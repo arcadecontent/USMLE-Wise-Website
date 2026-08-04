@@ -113,7 +113,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li>Request deletion of your data</li>
           <li>Withdraw consent for communications at any time</li>
         </ul>
-        <p>To exercise any of these rights, contact us at <a href="mailto:hello@usmle-wise.com">hello@usmle-wise.com</a>.</p>
+        <p>To exercise any of these rights, contact us at <!--email_off--><a href="mailto:hello@usmle-wise.com">hello@usmle-wise.com</a><!--/email_off-->.</p>
 
         <h2>9. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page. Continued use of our website after any changes constitutes acceptance of the updated policy.</p>
@@ -121,7 +121,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h2>10. Contact Us</h2>
         <p>If you have questions or concerns about this Privacy Policy or how your data is handled, please reach out:</p>
         <ul>
-          <li>Email: <a href="mailto:hello@usmle-wise.com">hello@usmle-wise.com</a></li>
+          <li>Email: <!--email_off--><a href="mailto:hello@usmle-wise.com">hello@usmle-wise.com</a><!--/email_off--></li>
           <li>Website: <a href="/">usmle-wise.com</a></li>
         </ul>
 
