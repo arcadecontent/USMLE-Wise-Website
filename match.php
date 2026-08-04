@@ -908,7 +908,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div style="display:flex;justify-content:center;margin-bottom:14px">
         <a href="https://wa.me/19192015700" target="_blank" rel="noopener" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="secondary" size="lg" hint-size="220px,52px">Chat on WhatsApp</x-import></a>
       </div>
-      <div style="font-size:13.5px;color:var(--uw-ink-500);margin-bottom:34px">Prefer email? Write to <!--email_off--><a href="mailto:hello@usmle-wise.com" style="color:var(--uw-red-500);font-weight:600;text-decoration:none">hello@usmle-wise.com</a><!--/email_off--> or send us a message below.</div>
+      <div style="font-size:13.5px;color:var(--uw-ink-500);margin-bottom:34px">Prefer email? Write to <!--email_off--><a href="mailto:support@usmlewise.com" style="color:var(--uw-red-500);font-weight:600;text-decoration:none">support@usmlewise.com</a><!--/email_off--> or send us a message below.</div>
 
       <form onsubmit="{{ onSubmit }}" style="text-align:left;display:flex;flex-direction:column;gap:14px;background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:clamp(22px,4vw,32px)">
         <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700)">Full name
@@ -1049,7 +1049,7 @@ class Component extends DCLogic {
         <a href="https://www.linkedin.com/company/usmle-wise/" class="msp-foot__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
           <i data-lucide="linkedin" width="18" height="18"></i>
         </a>
-        <!--email_off--><a href="mailto:hello@usmle-wise.com" class="msp-foot__social-link" aria-label="Email us">
+        <!--email_off--><a href="mailto:support@usmlewise.com" class="msp-foot__social-link" aria-label="Email us">
           <i data-lucide="mail" width="18" height="18"></i>
         </a><!--/email_off-->
         <a href="https://wa.me/19192015700" class="msp-foot__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">

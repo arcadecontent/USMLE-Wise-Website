@@ -58,7 +58,7 @@
         <a href="https://www.linkedin.com/company/usmle-wise/" class="msp-foot__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
           <i data-lucide="linkedin" width="18" height="18"></i>
         </a>
-        <!--email_off--><a href="mailto:hello@usmle-wise.com" class="msp-foot__social-link" aria-label="Email us">
+        <!--email_off--><a href="mailto:support@usmlewise.com" class="msp-foot__social-link" aria-label="Email us">
           <i data-lucide="mail" width="18" height="18"></i>
         </a><!--/email_off-->
         <a href="https://wa.me/19192015700" class="msp-foot__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
