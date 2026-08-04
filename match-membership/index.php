@@ -60,6 +60,11 @@
 </helmet>
 <div class="uw" style="font-family:var(--font-sans);color:var(--uw-ink-800);background:var(--uw-bg);-webkit-font-smoothing:antialiased">
 
+  <!-- announcement -->
+  <div style="background:var(--uw-blue-900);color:#fff;text-align:center;font-size:13px;letter-spacing:.01em;padding:9px 16px">
+    <span style="opacity:.7">Limited —</span>&nbsp; <b style="color:var(--uw-success-300)">this offer is open to the first 30 students only</b>
+  </div>
+
   <nav class="uw-nav" style="display:flex;justify-content:space-between;align-items:center;padding:14px 40px;border-bottom:1px solid var(--uw-border);position:sticky;top:0;background:rgba(255,255,255,.86);backdrop-filter:blur(8px);z-index:20">
     <img src="/assets/usmle-design-system/assets/Logo-Horizontal.svg" alt="USMLE Wise" style="height:28px">
     <div style="display:flex;gap:10px;align-items:center">
