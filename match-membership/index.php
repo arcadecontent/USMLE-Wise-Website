@@ -78,7 +78,7 @@
       <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);display:inline-flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-500)"></span>The USMLEWise Live Match Mentorship</div>
       <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(38px,7.4vw,64px);line-height:1.03;letter-spacing:-0.02em;margin:20px 0 0;color:var(--uw-ink-900);text-wrap:pretty">Match on your <em>first attempt</em>.</h1>
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:24px;line-height:1.3;letter-spacing:-0.015em;margin:16px 0 0;color:var(--uw-blue-500)">Backed by our 100% Match Guarantee.</h2>
-      <p style="font-size:17.5px;line-height:1.55;color:var(--uw-ink-600);max-width:62ch;margin:20px 0 0;text-wrap:pretty">The complete mentorship that teaches you to build your whole application to the exact framework program directors use.</p>
+      <p style="font-size:17.5px;line-height:1.55;color:var(--uw-ink-600);max-width:62ch;margin:20px 0 0;text-wrap:pretty">We teach you how to write your personal statement, build your ERAS CV, pick your programs, and answer interview questions, all built on proven frameworks that get you matched.</p>
       <p style="font-size:14px;color:var(--uw-ink-500);margin:10px 0 0">For IMGs, MDs, and DOs.</p>
       <div data-cta="pricing" style="display:flex;justify-content:center;gap:12px;margin-top:30px;cursor:pointer">
         <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="xl" hint-size="280px,56px">Enroll now →</x-import>
