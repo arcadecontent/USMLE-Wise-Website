@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Design-tool export, not a page for visitors. It is a stale copy of
+     /match-membership (no announcement bar, no Meta Pixel, old email markup)
+     but it is served publicly at its encoded path and returns 200, so without
+     this it can be indexed and compete with the real page in search.
+     noindex is set here rather than as a robots.txt Disallow on purpose:
+     a Disallow would stop crawlers reading the page at all, and a URL that
+     cannot be crawled cannot be de-indexed. -->
+<meta name="robots" content="noindex, nofollow">
 <script src="./support.js"></script>
 </head>
 <body>
