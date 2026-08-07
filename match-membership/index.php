@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!--
+  ============================================================================
+  HAND-EDITED. Re-exporting this page from the design tool WILL WIPE the
+  items below — they exist only here, not in the design document.
+
+  The design-tool export lives at:
+      match membership landing/1st Attempt Match System.dc.html
+  and is already stale. Never copy it over this file without re-applying:
+
+    1. ANNOUNCEMENT BAR — the dark "first 30 students only" bar that sits
+       directly above <nav class="uw-nav">. Search: "announcement".
+    2. META PIXEL — base code + PageView in this <head> (dataset
+       1638193350706029), and the conversion-event block before </body>
+       (ViewContent / InitiateCheckout / EnrollCTAClick / Lead / Contact).
+       Search: "Meta Pixel". Removing it silently blinds Meta ad reporting.
+    3. EMAIL LINK — the support@usmlewise.com link near the bottom is wrapped
+       in a pair of Cloudflare "email_off" HTML comments, which stop it being
+       rendered as "[email protected]". Search: "email_off".
+
+  The Cookie Policy and Privacy Policy both state the Meta Pixel runs on THIS
+  PAGE ONLY. If the pixel is ever moved into a shared partial, those two
+  pages become inaccurate and must be updated in the same change.
+
+  Every item above is in git — recover with:  git log -p -- match-membership/
+  ============================================================================
+-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
