@@ -6,6 +6,28 @@
 <link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
 <script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
 <script src="/match-media/support.js"></script>
+
+<!-- Meta Pixel — dataset "CRM Integrate" (1638193350706029).
+     Deliberately scoped to this page only: it is not in partials/head.php,
+     so no other page on the site loads it or sets the _fbp cookie. The
+     Cookie Policy and Privacy Policy describe it as this-page-only, so
+     moving it into a shared partial would make both of them inaccurate. -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1638193350706029');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1638193350706029&ev=PageView&noscript=1"
+alt="" /></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 <x-dc>
@@ -779,5 +801,50 @@
   els.forEach(function (el) { io.observe(el); });
 })();
 </script>
+
+<!-- Meta Pixel conversion events -->
+<script>
+(function () {
+  if (typeof fbq !== 'function') return;
+
+  var OFFER = { content_name: 'Match Membership', content_category: 'Match Mentorship' };
+  var PRICE = 299.00, CURRENCY = 'USD'; // early-bird price shown in the pricing card
+
+  // This page is the offer itself, so the pageview doubles as a product view.
+  fbq('track', 'ViewContent', {
+    content_name: OFFER.content_name,
+    content_category: OFFER.content_category,
+    value: PRICE,
+    currency: CURRENCY
+  });
+
+  // Delegated for the same reason as the CTA handler above: the dc-runtime
+  // re-renders each <x-import> Button after first paint, so a listener bound
+  // straight to those nodes would be discarded with them.
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+
+    if (t.closest('[data-cta="checkout"]')) {
+      // The only button that actually opens Stripe.
+      fbq('track', 'InitiateCheckout', {
+        content_name: OFFER.content_name,
+        value: PRICE,
+        currency: CURRENCY
+      });
+    } else if (t.closest('[data-cta="pricing"]')) {
+      // The eight "Enroll now" buttons only scroll to the pricing card, so
+      // this is interest, not checkout — kept as a custom event so it cannot
+      // dilute the InitiateCheckout signal Meta optimises delivery against.
+      fbq('trackCustom', 'EnrollCTAClick', { content_name: OFFER.content_name });
+    } else if (t.closest('a[href*="wa.me"]')) {
+      fbq('track', 'Lead', { content_name: OFFER.content_name, method: 'WhatsApp' });
+    } else if (t.closest('a[href^="mailto:"]')) {
+      fbq('track', 'Contact', { content_name: OFFER.content_name, method: 'Email' });
+    }
+  });
+})();
+</script>
+<!-- End Meta Pixel conversion events -->
 </body>
 </html>
