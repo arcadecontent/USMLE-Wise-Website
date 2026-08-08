@@ -12,17 +12,17 @@
 
     1. ANNOUNCEMENT BAR — the dark "first 30 students only" bar that sits
        directly above <nav class="uw-nav">. Search: "announcement".
-    2. META PIXEL — base code + PageView in this <head> (dataset
-       1638193350706029), and the conversion-event block before </body>
-       (ViewContent / InitiateCheckout / EnrollCTAClick / Lead / Contact).
+    2. META PIXEL — the partials/meta-pixel.php include in this <head>, and
+       the conversion-event block before </body> (ViewContent /
+       InitiateCheckout / EnrollCTAClick / Lead / Contact).
        Search: "Meta Pixel". Removing it silently blinds Meta ad reporting.
     3. EMAIL LINK — the support@usmlewise.com link near the bottom is wrapped
        in a pair of Cloudflare "email_off" HTML comments, which stop it being
        rendered as "[email protected]". Search: "email_off".
 
-  The Cookie Policy and Privacy Policy both state the Meta Pixel runs on THIS
-  PAGE ONLY. If the pixel is ever moved into a shared partial, those two
-  pages become inaccurate and must be updated in the same change.
+  The Meta Pixel now runs SITE-WIDE from partials/meta-pixel.php, and the
+  Cookie Policy and Privacy Policy have been updated to say so. The pixel ID
+  lives in that partial only — never hard-code it here again.
 
   Every item above is in git — recover with:  git log -p -- match-membership/
   ============================================================================
@@ -33,26 +33,16 @@
 <script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
 <script src="/match-media/support.js"></script>
 
-<!-- Meta Pixel — dataset "CRM Integrate" (1638193350706029).
-     Deliberately scoped to this page only: it is not in partials/head.php,
-     so no other page on the site loads it or sets the _fbp cookie. The
-     Cookie Policy and Privacy Policy describe it as this-page-only, so
-     moving it into a shared partial would make both of them inaccurate. -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1638193350706029');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1638193350706029&ev=PageView&noscript=1"
-alt="" /></noscript>
+<!-- Meta Pixel — now the shared partial, dataset "USMLEWise Match"
+     (2073939646805580). This page used to init 1638193350706029, but that ID
+     is the "CRM Integrate" APP dataset, not a web pixel, so every event it
+     ever sent was discarded — Events Manager still reads "Never received
+     event" for it. The pixel now runs site-wide; the Cookie Policy and
+     Privacy Policy were updated in the same change to say so.
+     $uw_pixel_cta_events = false because the conversion-event block before
+     </body> already tracks WhatsApp as a Lead; leaving the partial's generic
+     CTA handler on would fire a second Lead for the same click. -->
+<?php $uw_pixel_cta_events = false; include $_SERVER['DOCUMENT_ROOT'] . '/partials/meta-pixel.php'; ?>
 <!-- End Meta Pixel -->
 </head>
 <body>

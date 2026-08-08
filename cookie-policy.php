@@ -29,15 +29,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </ul>
         <p>These cookies are set by Google, not by us directly. Google&rsquo;s own use of this data is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&rsquo;s Privacy Policy</a>.</p>
 
-        <h2>3. Advertising Cookies on Our Match Membership Page</h2>
-        <p>On our <a href="/match-membership">Match Membership</a> page only, we use the Meta Pixel so that we can measure how our advertising performs and show relevant ads to people who have visited that page. It is not used anywhere else on the site.</p>
+        <h2>3. Advertising Cookies</h2>
+        <p>Across our Site we use the Meta Pixel so that we can measure how our advertising performs and show relevant ads to people who have visited us. It records page views, and key actions such as starting an enrolment, booking a guidance call, or sending us a message.</p>
         <ul>
           <li><strong>_fbp</strong> &mdash; set by Meta (Facebook) to identify browsers for advertising measurement and retargeting.</li>
         </ul>
         <p>This cookie is set by Meta, not by us directly. Meta&rsquo;s own use of this data is governed by <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta&rsquo;s Privacy Policy</a>. You can control how your data is used for ads in your <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener noreferrer">Meta ad preferences</a>.</p>
 
         <h2>4. Cookies We Don&rsquo;t Use</h2>
-        <p>Apart from the Meta Pixel described above, which runs on our Match Membership page only, we do not use advertising or retargeting cookies, and we do not set any first-party tracking cookies of our own. We may use basic browser session storage for site functionality (for example, remembering that you closed a banner during your visit) &mdash; this is not a cookie and is cleared when you close your browser.</p>
+        <p>Apart from the Meta Pixel described above, we do not use any other advertising or retargeting cookies, and we do not set any first-party tracking cookies of our own. We may use basic browser session storage for site functionality (for example, remembering that you closed a banner during your visit) &mdash; this is not a cookie and is cleared when you close your browser.</p>
 
         <h2>5. Managing Cookies</h2>
         <p>Most browsers let you block or delete cookies through their settings. You can also install Google&rsquo;s <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Analytics opt-out browser add-on</a> to prevent Google Analytics from using your data across all websites that use it. Blocking cookies may affect how some parts of the Site behave, though our core content will still work without them.</p>

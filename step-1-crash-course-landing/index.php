@@ -13,6 +13,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
   gtag('js', new Date());
   gtag('config', 'G-1MMVZ5WKY2');
 </script>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/meta-pixel.php'; ?>
 <title>Step 1 High Yield Crash Course | USMLE Wise</title>
 <meta name="description" content="USMLE Step 1 High Yield Crash Course by USMLE Wise — a focused 10-day recorded program to help IMGs review high-yield content and prepare efficiently for Step 1." />
 <!-- Standalone ad/campaign landing page: kept out of the sitemap and out of the

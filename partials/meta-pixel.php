@@ -3,6 +3,11 @@
 // Lives in one file so the ID only ever has to change in one place. Included
 // from partials/head.php and from the few pages that carry their own <head>.
 $UW_META_PIXEL_ID = '2073939646805580';
+
+// Pages that already track their own conversions (match-membership) set this
+// to false before including, so the generic CTA handler below does not fire a
+// second Lead on top of theirs.
+$uw_pixel_cta_events = isset($uw_pixel_cta_events) ? $uw_pixel_cta_events : true;
 ?>
 <!-- Meta Pixel Code -->
 <script>
@@ -21,6 +26,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=<?php echo $UW_META_PIXEL_ID; ?>&ev=PageView&noscript=1"
 alt="" /></noscript>
 <!-- End Meta Pixel Code -->
+<?php if ($uw_pixel_cta_events): ?>
 <script>
 /* Lead on the outbound conversion CTAs. The Match pages' on-page form is a
    design-tool stub that only prints a thank-you, so booking a guidance call
@@ -42,3 +48,4 @@ alt="" /></noscript>
   }, true);
 })();
 </script>
+<?php endif; ?>
