@@ -31,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p>If you finish the recorded sessions and the required drills, sit your USMLE Step 1 exam, and do not pass, you are entitled to a full refund of the course fee.</p>
         <ul>
           <li><strong>Eligibility:</strong> you must have completed all sessions and the required drills before sitting the exam.</li>
-          <li><strong>How to claim:</strong> email <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a> with your official USMLE score report within 14 days of receiving it.</li>
+          <li><strong>How to claim:</strong> email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with your official USMLE score report within 14 days of receiving it.</li>
           <li><strong>Window:</strong> refund requests must be submitted within 14 days of your score report date. Requests submitted after this window are not covered by the guarantee.</li>
         </ul>
 
@@ -54,10 +54,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p>Enrollment begins with a one-month trial and a deposit. If, by the end of that one-month trial, the program is not the right fit for your child, your deposit is refunded in full.</p>
 
         <h2>5. All Other Programs</h2>
-        <p>Step 1 Mastery, NBME-Style Coaching (Step 1 &amp; Step 2), 1:1 Tutoring, Research Masterclass, Original Research, Systematic Review/Meta-Analysis, J-1 Research Fellowship Placement, and Clinical Rotation placements do not currently have a fixed, published refund schedule. Refund requests for these programs are reviewed case by case &mdash; contact <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a> with your situation and our team will work with you directly.</p>
+        <p>Step 1 Mastery, NBME-Style Coaching (Step 1 &amp; Step 2), 1:1 Tutoring, Research Masterclass, Original Research, Systematic Review/Meta-Analysis, J-1 Research Fellowship Placement, and Clinical Rotation placements do not currently have a fixed, published refund schedule. Refund requests for these programs are reviewed case by case &mdash; contact <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with your situation and our team will work with you directly.</p>
 
         <h2>6. How to Request a Refund</h2>
-        <p>Email <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a> with:</p>
+        <p>Email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with:</p>
         <ul>
           <li>Your full name and the email address used at purchase</li>
           <li>The program or package you enrolled in</li>
@@ -70,7 +70,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
         <h2>8. Contact Us</h2>
         <ul>
-          <li>Email: <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a></li>
+          <li>Email: <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--></li>
           <li>Website: <a href="/">usmlewise.com</a></li>
         </ul>
 

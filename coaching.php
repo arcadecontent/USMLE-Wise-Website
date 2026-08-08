@@ -917,12 +917,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 profile, answer your questions, and tell you exactly what the
                 next step is.
               </p>
-              <a
+              <!--email_off--><a
                 class="btn btn--primary btn--xl"
-                href="mailto:arcadecontentsolutions@gmail.com?subject=Match%20Discovery%20Call"
+                href="mailto:support@usmlewise.com?subject=Match%20Discovery%20Call"
               >
                 Book Your Free Guidance Call
-              </a>
+              </a><!--/email_off-->
               <p class="msp-cta__trust">
                 No commitment. No sales pitch. Just a clear plan.
               </p>

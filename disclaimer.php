@@ -51,7 +51,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
         <h2>11. Contact Us</h2>
         <ul>
-          <li>Email: <a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a></li>
+          <li>Email: <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--></li>
           <li>Website: <a href="/">usmlewise.com</a></li>
         </ul>
 

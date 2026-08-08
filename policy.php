@@ -60,7 +60,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <main>
       <div class="msp-policy">
         <h1>Privacy Policy</h1>
-        <p class="msp-policy__meta">Last updated: July 2026</p>
+        <p class="msp-policy__meta">Last updated: August 2026</p>
 
         <p>USMLE Wise (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website usmle-wise.com and provides coaching, research, and residency match services to international medical graduates. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
 
@@ -90,11 +90,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li><strong>Booking &amp; scheduling</strong> &mdash; Guidance calls are booked through an external scheduling platform. Information you enter during booking (name, email, notes) is processed by that platform.</li>
           <li><strong>WhatsApp</strong> &mdash; We communicate with students via WhatsApp. Messages sent through WhatsApp are subject to Meta&rsquo;s privacy policy.</li>
           <li><strong>Google Fonts &amp; CDN services</strong> &mdash; Our website loads fonts and icon libraries from Google and unpkg. These services may collect minimal technical data as part of serving those assets.</li>
+          <li><strong>Meta Pixel (advertising measurement)</strong> &mdash; Our Match Membership page includes the Meta Pixel, which tells Meta when that page is viewed and when key actions on it are taken (for example, starting an enrolment or contacting us). We use this to measure how our ads perform and to show relevant ads to people who have visited that page. It runs on that page only, and its use of your data is governed by <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta&rsquo;s Privacy Policy</a>.</li>
           <li><strong>Social media platforms</strong> &mdash; We maintain pages on Instagram, Facebook, LinkedIn, TikTok, and YouTube. Interactions on those platforms are governed by the respective platform&rsquo;s privacy policy.</li>
         </ul>
 
         <h2>4. Cookies</h2>
-        <p>We use Google Analytics to understand aggregate site traffic, which sets cookies on your device. We do not use advertising or retargeting cookies, and we do not set any first-party tracking cookies of our own. No personal data is stored in cookies. See our <a href="/cookie-policy">Cookie Policy</a> for full detail and how to manage cookies.</p>
+        <p>We use Google Analytics to understand aggregate site traffic, which sets cookies on your device. On our Match Membership page only, the Meta Pixel also sets an advertising cookie so we can measure our ads and reach people who have visited that page; no other page on the Site uses advertising or retargeting cookies. We do not set any first-party tracking cookies of our own. No personal data is stored in cookies. See our <a href="/cookie-policy">Cookie Policy</a> for full detail and how to manage cookies.</p>
 
         <h2>5. Data Retention</h2>
         <p>We retain your information for as long as necessary to provide our services and fulfill the purposes described in this policy. If you request deletion of your data, we will remove it within a reasonable timeframe, except where retention is required by law.</p>
@@ -113,7 +114,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li>Request deletion of your data</li>
           <li>Withdraw consent for communications at any time</li>
         </ul>
-        <p>To exercise any of these rights, contact us at <a href="mailto:hello@usmle-wise.com">hello@usmle-wise.com</a>.</p>
+        <p>To exercise any of these rights, contact us at <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off-->.</p>
 
         <h2>9. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page. Continued use of our website after any changes constitutes acceptance of the updated policy.</p>
@@ -121,7 +122,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h2>10. Contact Us</h2>
         <p>If you have questions or concerns about this Privacy Policy or how your data is handled, please reach out:</p>
         <ul>
-          <li>Email: <a href="mailto:hello@usmle-wise.com">hello@usmle-wise.com</a></li>
+          <li>Email: <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--></li>
           <li>Website: <a href="/">usmle-wise.com</a></li>
         </ul>
 
