@@ -10,6 +10,7 @@
 <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
 <script src="/js/mobile-nav.js" defer></script>
 <script src="/js/uw-track.js" defer></script>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/meta-pixel.php'; ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   if (window.lucide && typeof window.lucide.createIcons === 'function') {

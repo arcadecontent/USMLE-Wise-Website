@@ -48,6 +48,13 @@
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
           if (res.ok && res.j.success) {
+            // Tell the Meta pixel a lead came in, so Match ads can optimise for
+            // conversions. Guarded because ad blockers often stop fbq loading.
+            if (window.fbq) {
+              try {
+                window.fbq('track', 'Lead', { content_name: document.title || location.pathname });
+              } catch (_) {}
+            }
             form.reset();
             if (window.turnstile) { try { window.turnstile.reset(); } catch (_) {} }
             setStatus((res.j && res.j.message) || 'Thanks — we’ll be in touch soon.', 'success');

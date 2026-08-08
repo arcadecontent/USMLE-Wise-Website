@@ -11,6 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-1MMVZ5WKY2');
 </script>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/meta-pixel.php'; ?>
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>" />
 <link rel="canonical" href="<?php echo $canonical; ?>" />

@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script src="/js/mobile-nav.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/mobile-nav.js') ?: '1'; ?>" defer></script>
 <script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/meta-pixel.php'; ?>
 <style>
 
   .cc { font-family: var(--font-sans); color: var(--uw-ink-800); background: var(--uw-surface); -webkit-font-smoothing: antialiased; }
@@ -923,6 +924,11 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
         if (res.ok && res.j.success) {
+          // Tell the Meta pixel a lead came in, so ads can optimise for
+          // conversions. Guarded because ad blockers often stop fbq loading.
+          if (window.fbq) {
+            try { window.fbq('track', 'Lead', { content_name: document.title || location.pathname }); } catch (_) {}
+          }
           document.getElementById('ccFormWrap').style.display = 'none';
           document.getElementById('ccSent').style.display = '';
         } else {
