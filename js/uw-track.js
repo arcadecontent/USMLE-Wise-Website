@@ -63,12 +63,26 @@
   /* ---- CTA clicks ---- */
   document.addEventListener('click', function (ev) {
     var el = ev.target;
-    var a = el && el.closest ? el.closest('a') : null;
+    if (!el || !el.closest) return;
+
+    /* Match Membership's CTAs are <div data-cta="..."> rather than links — the
+       "Get started" button opens Stripe from JS, and "Enroll now" only scrolls
+       to the pricing card. Checked before the <a> lookup below, because these
+       never match closest('a') and were invisible to the admin panel. */
+    var cta = el.closest('[data-cta]');
+    if (cta) {
+      var kind = cta.getAttribute('data-cta');
+      var label = (cta.textContent || '').trim().slice(0, 80);
+      if (kind === 'checkout') { send('checkout_click', { m: label }); return; }
+      if (kind === 'pricing') { send('enroll_click', { m: label }); return; }
+    }
+
+    var a = el.closest('a');
     if (!a) return;
     var href = a.getAttribute('href') || '';
     if (href === '#offer') {
       send('enroll_click', { m: (a.textContent || '').trim().slice(0, 80) });
-    } else if (href.indexOf('nas.com/checkout') !== -1) {
+    } else if (href.indexOf('nas.com/checkout') !== -1 || href.indexOf('buy.stripe.com') !== -1) {
       send('checkout_click', { m: (a.textContent || '').trim().slice(0, 80) });
     } else if (href.indexOf('guidance-call') !== -1) {
       var loc = a.closest('header') ? 'header' : (a.closest('footer') ? 'footer' : 'body');
