@@ -1,8 +1,12 @@
 <?php
-// Meta (Facebook) Pixel — dataset "USMLEWise Match", ID 2073939646805580.
+// Meta (Facebook) Pixel — dataset "Solutions Engineering Team Meta Pixel",
+// ID 1530314334871974. This is the pixel that belongs to the ad account which
+// actually runs the Match ads (Solutions Engineering Team, 726533136594018, in
+// the Research Catalyst portfolio), which is why the site reports into it
+// rather than into a pixel owned by a personal ad account.
 // Lives in one file so the ID only ever has to change in one place. Included
 // from partials/head.php and from the few pages that carry their own <head>.
-$UW_META_PIXEL_ID = '2073939646805580';
+$UW_META_PIXEL_ID = '1530314334871974';
 
 // Pages that already track their own conversions (match-membership) set this
 // to false before including, so the generic CTA handler below does not fire a

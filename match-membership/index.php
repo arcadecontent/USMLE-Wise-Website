@@ -33,11 +33,11 @@
 <script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
 <script src="/match-media/support.js"></script>
 
-<!-- Meta Pixel — now the shared partial, dataset "USMLEWise Match"
-     (2073939646805580). This page used to init 1638193350706029, but that ID
-     is the "CRM Integrate" APP dataset, not a web pixel, so every event it
-     ever sent was discarded — Events Manager still reads "Never received
-     event" for it. The pixel now runs site-wide; the Cookie Policy and
+<!-- Meta Pixel — now the shared partial, which points at the pixel owned by
+     the ad account that runs the Match ads. This page used to init
+     1638193350706029, but that ID is the "CRM Integrate" APP dataset, not a
+     web pixel, so every event it ever sent was discarded — Events Manager
+     read "Never received event" for it. The pixel now runs site-wide; the Cookie Policy and
      Privacy Policy were updated in the same change to say so.
      $uw_pixel_cta_events = false because the conversion-event block before
      </body> already tracks WhatsApp as a Lead; leaving the partial's generic
