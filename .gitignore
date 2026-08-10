@@ -5,6 +5,12 @@
 /memory.md
 /DEV.md
 
+# Student-story layout demo — not live, not linked, not in sitemap.xml.
+# Held back deliberately so it can't be pushed by accident. Delete these two
+# lines when the real student-story page is ready to ship.
+/story-demo.php
+/styles/story.css
+
 # AI agent / skill tooling and editor state
 /skills-lock.json
 /.agents/
