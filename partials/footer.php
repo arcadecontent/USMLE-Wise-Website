@@ -27,6 +27,8 @@
           <a href="/research-masterclass">Research Masterclass</a>
           <a href="/research-junior-scientist">Junior Scientist Program</a>
           <a href="/research-j1-fellowship">J-1 Research Fellowship Placement</a>
+          <a href="/research-networking">Strategic Networking Program</a>
+          <a href="/research-cohort">Research Cohort Access</a>
         </div>
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Match</span>
@@ -35,6 +37,8 @@
           <a href="/match-eras-cv">ERAS CV</a>
           <a href="/match-ps3x">Personal Statement</a>
           <a href="/match-interview">Interview Preparation</a>
+          <a href="/match-soap">SOAP Match Support</a>
+          <a href="/match-signaling">Program Signaling Strategy</a>
         </div>
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Site</span>

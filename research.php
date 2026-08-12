@@ -131,7 +131,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-head reveal">
             <span class="msp-eyebrow">What We Offer</span>
             <h2 id="servicesTitle" class="msp-h2">
-              Our five research programs
+              Our seven research programs
             </h2>
             <p class="msp-sub">
               From a $19 recorded foundation to a full 12-month publication
@@ -305,6 +305,34 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
                   <a href="/research-j1-fellowship" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="msp-sva-row msp-sva-row--flip reveal">
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/kaitlyn-baker-vZJdYl5JVXY-unsplash.webp');"></div>
+              <div class="msp-sva-body">
+                <span class="msp-sva-eyebrow">06 &middot; Live &middot; Per outreach cycle</span>
+                <h3 class="msp-sva-title">Strategic Networking Program</h3>
+                <div class="msp-sva-price">$1,500</div>
+                <p class="msp-sva-desc">We help you identify the exact faculty and Program Directors to target, so every conference conversation and cold email has a clear strategic purpose.</p>
+                <div class="msp-sva-ctas">
+                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                  <a href="/research-networking" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="msp-sva-row reveal">
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp');"></div>
+              <div class="msp-sva-body">
+                <span class="msp-sva-eyebrow">07 &middot; Recorded &middot; Self-paced</span>
+                <h3 class="msp-sva-title">Research Cohort Access</h3>
+                <div class="msp-sva-price">$99</div>
+                <p class="msp-sva-desc">18 recorded sessions covering study design, writing, publishing, and conferences — the library to work through once you're actively running your own project.</p>
+                <div class="msp-sva-ctas">
+                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                  <a href="/research-cohort" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
                 </div>
               </div>
             </article>

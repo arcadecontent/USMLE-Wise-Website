@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Interview Preparation | USMLE Wise";
-$pageDescription = "Mock interviews, peer buddy sessions, and a 1,200+ question bank to prepare IMG residency applicants for ranking season.";
+$pageDescription = "Mock interviews, peer buddy sessions, and a 1,200+ question bank to prepare IMG residency applicants for ranking season. Advanced Interview Course $500, Mock Interview Package $1,000.";
 $canonical = "https://usmlewise.com/match-interview";
 $bodyClass = "msp";
 $stylesheets = [
@@ -59,6 +59,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         display: grid; place-items: center; color: rgba(255,255,255,.7);
       }
       .ip-auth-badge__text { font-size: 15px; color: rgba(255,255,255,.75); line-height: 1.6; margin: 0; padding-top: 6px; }
+      /* pricing — .msp-tier rows, reused from the ERAS CV package table */
+      .pg-fee { max-width: 860px; margin: clamp(40px, 5vw, 60px) auto 0; }
+      /* FAQ */
+      .pg-faq__accordion { max-width: 760px; margin: clamp(40px, 5vw, 60px) auto 0; }
       /* CTA card */
       .pg-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
       .pg-cta-card {
@@ -181,6 +185,105 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="ip-auth-badge__item">
               <div class="ip-auth-badge__icon"><i data-lucide="heart" width="16" height="16"></i></div>
               <p class="ip-auth-badge__text">IMG-centered strategy that turns your international background into an asset, not a liability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="msp-section" id="pricing" aria-labelledby="pricingTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Pricing</span>
+          <h2 id="pricingTitle" class="msp-h2">Two ways to prepare, priced separately.</h2>
+          <p class="msp-sub">Start with the recorded course, add the live Mock Interview Package when your invitations start coming in, or do both.</p>
+        </div>
+        <div class="pg-fee">
+          <!-- NOTE: no Stripe/checkout URL for these yet — CTAs point at the
+               guidance-call booking link, same as the ERAS CV packages. -->
+          <div class="msp-pricing__rows reveal">
+
+            <div class="msp-tier">
+              <div class="msp-tier__info">
+                <span class="msp-tier__badge">Recorded &middot; Self-paced</span>
+                <span class="msp-tier__name">Advanced Interview Course</span>
+                <div class="msp-tier__price">$500</div>
+                <p class="msp-tier__sub">The full recorded curriculum, made by Dr. Manik.</p>
+                <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Get Started</a>
+              </div>
+              <ul class="msp-tier__features">
+                <li>Full recorded curriculum from Dr. Manik</li>
+                <li>Behavioral, ethical &amp; program-specific question walkthroughs</li>
+                <li>IMG-specific framing &amp; communication strategy</li>
+                <li>Self-paced — watch anytime, revisit before every interview</li>
+              </ul>
+            </div>
+
+            <div class="msp-tier msp-tier--featured">
+              <div class="msp-tier__info">
+                <span class="msp-tier__badge">Most popular</span>
+                <span class="msp-tier__name">Mock Interview Package</span>
+                <div class="msp-tier__price">$1,000</div>
+                <p class="msp-tier__sub">4 mentor-led sessions + 20 peer sessions.</p>
+                <a class="btn btn--primary btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Get Started</a>
+              </div>
+              <ul class="msp-tier__features">
+                <li>Behavioral &amp; ethical interview preparation</li>
+                <li>&ldquo;Tell me about yourself&rdquo; refinement</li>
+                <li>Program-specific interview strategy</li>
+                <li>Timed mock interviews</li>
+                <li>Personalized feedback</li>
+                <li>Performance tracking</li>
+                <li>Communication enhancement</li>
+                <li>High-yield interview strategies</li>
+              </ul>
+            </div>
+
+          </div>
+          <p class="msp-pricing__note">Already enrolled in one of our Complete Match Packages? The Advanced Interview Course is included at no extra cost — this pricing is for the standalone course and package only. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="msp-section pg-about" id="faq" aria-labelledby="faqTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">F.A.Q</span>
+          <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
+        </div>
+        <div class="pg-faq__accordion accordion reveal">
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">
+              What's the difference between the course and the package?
+            </button>
+            <div class="accordion__body">
+              The Advanced Interview Course is a recorded, self-paced foundation — watch it whenever, however many times you want. The Mock Interview Package is live: mentor-led and peer sessions where you actually practice, get timed, and receive feedback. Most applicants start with the course and add the package once interview invitations start coming in.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">
+              Do I need both?
+            </button>
+            <div class="accordion__body">
+              Not necessarily. If you're confident under pressure and just want the frameworks and IMG-specific strategy, the course alone may be enough. If you want live practice, timed reps, and personalized feedback before the real thing, the Mock Interview Package is where that happens.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">
+              I already enrolled in a Complete Match Package — do I need to buy the course separately?
+            </button>
+            <div class="accordion__body">
+              No. The Advanced Interview Course is already included in every Complete Match Package at no extra cost. This pricing is for applicants who want interview preparation on its own, without enrolling in a full package.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">
+              Are these fees refundable?
+            </button>
+            <div class="accordion__body">
+              Refund requests are reviewed case by case — see our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for details, or contact us directly to discuss your situation.
             </div>
           </div>
         </div>

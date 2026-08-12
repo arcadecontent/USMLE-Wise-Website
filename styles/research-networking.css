@@ -1,0 +1,24 @@
+/* ============================================================
+   USMLE Wise — Strategic Networking Program page
+   Page-specific additions on top of research-catalyst.css
+   ============================================================ */
+
+/* Plain cards — no photo background, so drop the dark-overlay/white-text
+   treatment .rc-learn-card normally uses (built for Catalyst's photo tiles)
+   and style it like a standard bordered card instead. Same treatment as the
+   J-1 Fellowship page, just at the base 3-column grid instead of J-1's 2x2. */
+.rc-learn-cards--networking .rc-learn-card {
+  background-color: var(--uw-surface);
+  border: 1px solid var(--uw-border);
+  min-height: auto;
+  justify-content: flex-start;
+}
+.rc-learn-cards--networking .rc-learn-card::before { content: none; }
+.rc-learn-cards--networking .rc-learn-card__icon {
+  background: var(--uw-blue-50);
+  border-color: oklch(88% 0.08 255);
+  color: var(--uw-blue-600);
+}
+.rc-learn-cards--networking .rc-learn-card__head { color: var(--uw-ink-900); }
+.rc-learn-cards--networking .rc-learn-card__list li { color: var(--uw-ink-600); }
+.rc-learn-cards--networking .rc-learn-card__list li::before { color: var(--uw-blue-400); }

@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Personal Statement | USMLE Wise";
-$pageDescription = "Strategic timing and editing of Letters of Interest and Letters of Intent for IMG residency applicants in the post-interview phase.";
+$pageDescription = "Physician-guided personal statement mentorship for IMG residency applicants — strategy, story development, and editing across three sessions. $600 per specialty.";
 $canonical = "https://usmlewise.com/match-ps3x";
 $bodyClass = "msp";
 $stylesheets = [
@@ -46,6 +46,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .ps-step__body { padding-top: 12px; }
       .ps-step__title { font-size: 17px; font-weight: 600; color: var(--uw-ink-900); margin: 0 0 6px; }
       .ps-step__desc { font-size: 15px; color: var(--uw-ink-600); line-height: 1.7; margin: 0; }
+      /* pricing — .msp-tier row, reused from the ERAS CV package table */
+      .pg-fee { max-width: 860px; margin: clamp(40px, 5vw, 60px) auto 0; }
+      .pg-tier__price-unit {
+        font-family: var(--font-sans);
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0;
+        color: var(--uw-ink-500);
+      }
+      /* FAQ */
+      .pg-faq__accordion { max-width: 760px; margin: clamp(40px, 5vw, 60px) auto 0; }
       /* CTA card */
       .pg-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
       .pg-cta-card {
@@ -162,6 +173,82 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="ps-step__body">
               <p class="ps-step__title">The Final Review</p>
               <p class="ps-step__desc">A rigorous quality check to guarantee your statement is flawless, professional, and ready to submit. Nothing leaves our hands unless we're confident it will land.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="msp-section pg-about" id="pricing" aria-labelledby="pricingTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Pricing</span>
+          <h2 id="pricingTitle" class="msp-h2">Three sessions, one specialty, one submission-ready statement.</h2>
+        </div>
+        <div class="pg-fee">
+          <!-- NOTE: no Stripe/checkout URL for this yet — CTA points at the
+               guidance-call booking link, same as the ERAS CV packages. -->
+          <div class="msp-pricing__rows reveal">
+            <div class="msp-tier">
+              <div class="msp-tier__info">
+                <span class="msp-tier__name">Personal Statement Mentorship</span>
+                <div class="msp-tier__price">$600<span class="pg-tier__price-unit">/specialty</span></div>
+                <p class="msp-tier__sub">For applicants who've completed their USCE and research and want physician eyes on their narrative before they submit.</p>
+                <a class="btn btn--primary btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Get Started</a>
+              </div>
+              <ul class="msp-tier__features">
+                <li>Personal statement strategy</li>
+                <li>Story development</li>
+                <li>Physician review &amp; editing</li>
+                <li>Specialty-specific customization</li>
+                <li>Final polished version</li>
+              </ul>
+            </div>
+          </div>
+          <p class="msp-pricing__note">Applying to more than one specialty? Personal Statement Mentorship is priced per specialty, since each one needs its own narrative and customization — <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">book a call</a> and we'll scope a plan that covers all of them. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="msp-section" id="faq" aria-labelledby="faqTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">F.A.Q</span>
+          <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
+        </div>
+        <div class="pg-faq__accordion accordion reveal">
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">
+              How are the three sessions structured?
+            </button>
+            <div class="accordion__body">
+              Strategy and story development first, then physician review and editing, then a final polish pass before you submit. Most applicants move through all three sessions within two to three weeks.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">
+              Why is this priced per specialty?
+            </button>
+            <div class="accordion__body">
+              A personal statement written for Internal Medicine and one written for Dermatology are different documents — different narrative, different emphasis, different specialty-specific customization. If you're applying to more than one specialty, book a call and we'll scope a plan that covers each one.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">
+              Do you write the personal statement for me?
+            </button>
+            <div class="accordion__body">
+              No. Your mentor works with your own experiences and your own voice, and shapes them into a stronger narrative — you do the writing, we do the strategy and editing. We don't rewrite your history or hand you a template.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">
+              Is this fee refundable?
+            </button>
+            <div class="accordion__body">
+              Refund requests are reviewed case by case — see our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for details, or contact us directly to discuss your situation.
             </div>
           </div>
         </div>

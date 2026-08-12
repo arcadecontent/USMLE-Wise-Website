@@ -75,6 +75,14 @@
             <span class="msp-nav__dd-name">J-1 Research Fellowship Placement</span>
             <span class="msp-nav__dd-meta">12-month &middot; Placement service</span>
           </a>
+          <a href="/research-networking" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Strategic Networking Program</span>
+            <span class="msp-nav__dd-meta">Live &middot; Per outreach cycle</span>
+          </a>
+          <a href="/research-cohort" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Research Cohort Access</span>
+            <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
+          </a>
         </div>
       </div>
       <div class="msp-nav__item msp-nav__item--has-dd">
@@ -99,6 +107,14 @@
           <a href="/match-interview" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Interview Preparation</span>
             <span class="msp-nav__dd-meta">Mock interviews &middot; Strategy</span>
+          </a>
+          <a href="/match-soap" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">SOAP Match Support</span>
+            <span class="msp-nav__dd-meta">Real-time scramble guidance</span>
+          </a>
+          <a href="/match-signaling" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Program Signaling Strategy</span>
+            <span class="msp-nav__dd-meta">Gold &amp; Silver signal planning</span>
           </a>
         </div>
       </div>
