@@ -3,7 +3,9 @@ $pageTitle = "Page Not Found | USMLE Wise";
 $pageDescription = "The page you are looking for could not be found.";
 $canonical = "https://usmlewise.com/404";
 $bodyClass = "msp";
-$stylesheets = [];
+$stylesheets = [
+    "/styles/blog.css"
+];
 $scripts = [];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
