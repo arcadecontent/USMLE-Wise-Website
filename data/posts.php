@@ -1005,6 +1005,800 @@ $blogPosts = [
             <p>Coordinating all of these moving pieces — ECFMG, exams, USCE, and ERAS — while staying ahead of processing deadlines is genuinely difficult to do alone. USMLE Wise works with IMGs from Step 1 prep through Match Day, keeping every part of your timeline on track. <a href="/coaching">See how we work with IMGs →</a></p>
             HTML,
     ],
+    [
+        'slug'     => 'clinical-rotations-in-florida-for-imgs',
+        'title'    => 'Clinical Rotations in Florida for IMGs: Your Complete Guide (2026)',
+        'excerpt'  => 'Florida is one of the busiest states for IMG clinical rotations, from an ACGME-accredited surgery site in Miami to hospitalist medicine in Kissimmee. Here is every placement, broken down.',
+        'category' => 'rotations',
+        'date'     => '2026-08-10',
+        'read'     => 7,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/florida-medical-team.webp',
+        'body'     => <<<'HTML'
+            <p>Florida shows up constantly in conversations about IMG clinical rotations, and for good reason. It has a dense concentration of teaching hospitals, a large existing IMG community (which means preceptors who already know how to mentor visiting students), and a mix of ACGME-accredited and community sites across nearly every core specialty. If you are trying to build a US clinical experience (USCE) record before ERAS, Florida is one of the most efficient states to do it in.</p>
+            <p>Here is a breakdown of every current USMLE Wise placement in Florida, followed by how to think about choosing between them.</p>
+
+            <h2>Florida Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Specialty</th><th>City</th><th>Setting</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-florida">AdventHealth Kissimmee Campus</a></td><td>Hospitalist</td><td>Kissimmee</td><td>Inpatient</td><td>$2,425</td></tr>
+                <tr><td><a href="/rotation-miami-surgery">General Surgery: Larkin Community Hospital</a></td><td>General Surgery</td><td>Miami</td><td>Inpatient + Surgical Centers</td><td>$3,400</td></tr>
+                <tr><td><a href="/rotation-kissimmee-surgery">General Surgery: Kissimmee</a></td><td>General Surgery</td><td>Kissimmee</td><td>Clinic + Surgical Procedures</td><td>$3,200</td></tr>
+                <tr><td><a href="/rotation-mercy-pediatrics">Pediatrics: Mercy Hospital Faculty</a></td><td>Pediatrics</td><td>Miami</td><td>Clinic + Hospital</td><td>$3,200</td></tr>
+                <tr><td><a href="/rotation-larkin-family-medicine">Family Medicine: Larkin Program Director</a></td><td>Family Medicine</td><td>Hialeah</td><td>Inpatient + Outpatient + Telemedicine</td><td>$4,196</td></tr>
+                <tr><td><a href="/rotation-keralty-family-medicine">Family Medicine: Keralty Hospital Faculty</a></td><td>Family Medicine</td><td>Miami</td><td>Inpatient + Outpatient</td><td>$3,800</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Hospitalist Medicine in Kissimmee</h2>
+            <p>The <a href="/rotation-florida">AdventHealth Kissimmee Campus</a> rotation, affiliated with AdventHealth Orlando, is a 100% inpatient hospitalist experience built around a 7-days-on/7-days-off schedule. On your "on" weeks you get roughly 5–6 hours of direct clinical exposure daily; "off" weeks are reserved for self-study and case presentations. At $2,425 with monthly starts and a max of 4 students, it is one of the more accessible entry points into inpatient medicine in the state.</p>
+
+            <h2>General Surgery: Two Very Different Miami-Area Options</h2>
+            <p>Florida has two General Surgery placements, and they are worth comparing directly. <a href="/rotation-miami-surgery">General Surgery at Larkin Community Hospital</a> (with rounds also at Hialeah Hospital) is an ACGME-accredited site. You will round alongside Caribbean students enrolled in accredited programs and get real OR observation time, which is a genuine differentiator on an ERAS application. It runs $3,400 for 4 weeks, capped at 2 students.</p>
+            <p><a href="/rotation-kissimmee-surgery">General Surgery in Kissimmee</a> is clinic-based rather than hospital-based: a steady Monday–Friday, 9am–5pm schedule with pre- and post-operative evaluations, wound care, and suturing practice, plus OR observation. At $3,200, it is a strong option if you want more consistent one-on-one time with a single surgeon rather than a larger teaching-hospital environment.</p>
+
+            <h2>Pediatrics in Miami</h2>
+            <p>The <a href="/rotation-mercy-pediatrics">Mercy Hospital Faculty</a> rotation pairs clinic and inpatient hospital rounding with full EMR access (useful if you want documentation experience alongside direct patient care). It starts on the first Monday of each month, and documents are due 28 days in advance, so this one requires planning further ahead than most.</p>
+
+            <h2>Family Medicine: Program-Director-Level Mentorship</h2>
+            <p>Florida's two Family Medicine rotations both come with unusually senior mentors. The <a href="/rotation-larkin-family-medicine">Larkin Community Hospital</a> rotation is run by the Family Medicine Program Director himself, and combines inpatient rounding, outpatient clinic, telemedicine, and weekly online didactics. It's the most structured, classroom-adjacent experience on this list, and it accommodates up to 6 students at $4,196.</p>
+            <p>The <a href="/rotation-keralty-family-medicine">Keralty Hospital</a> rotation in Miami is inpatient plus outpatient at $3,800, but it comes with two conditions worth knowing before you apply: USMLE Step 1 must be completed first, and the letter of recommendation is performance-based rather than guaranteed: if you round well, you earn it (and potentially an interview opportunity).</p>
+
+            <h2>What Every Florida Rotation Includes</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead (except Keralty, where the LOR is conditional on performance)</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose Between Them</h2>
+            <p>Start with specialty fit: if you already know you are applying Surgery, the ACGME-accredited Larkin site is the stronger signal on paper. If you are still exploring or want a calmer, more mentorship-heavy pace, the clinic-based options (Kissimmee Surgery, Keralty, Mercy Pediatrics) tend to give you more direct one-on-one time. If budget is the deciding factor, the Hospitalist rotation in Kissimmee is the lowest-priced entry point into inpatient training in the state.</p>
+            <p>You can browse every current placement, including all Florida sites, on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Not sure which Florida rotation fits your application?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you match your specialty goals to the right placement.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'clinical-rotations-in-texas-for-imgs',
+        'title'    => 'US Clinical Rotations in Texas: Where IMGs Can Train',
+        'excerpt'  => 'From an Internal Medicine sub-internship in McAllen to psychiatry and family medicine in Houston, here is a full breakdown of every USMLE Wise clinical rotation currently available in Texas.',
+        'category' => 'rotations',
+        'date'     => '2026-08-11',
+        'read'     => 6,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp',
+        'body'     => <<<'HTML'
+            <p>Texas offers something most states on our roster do not: a true inpatient sub-internship. Between an Internal Medicine placement in McAllen and three outpatient rotations in Houston and Richmond, Texas covers a wider range of clinical settings than almost any other state we work with.</p>
+
+            <h2>Texas Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Specialty</th><th>City</th><th>Setting</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-south-texas">Internal Medicine Sub-Internship</a></td><td>Internal Medicine</td><td>McAllen</td><td>Inpatient</td><td>$3,500</td></tr>
+                <tr><td><a href="/rotation-flourish-psychiatry">Flourish Mental Health</a></td><td>Psychiatry</td><td>Houston</td><td>Outpatient</td><td>$2,800</td></tr>
+                <tr><td><a href="/rotation-houston-psychiatry">Psychiatry: 30 Years Experience</a></td><td>Psychiatry</td><td>Houston</td><td>Outpatient</td><td>$2,000</td></tr>
+                <tr><td><a href="/rotation-richmond-family-medicine">Family Medicine: IMG Physician Mentor</a></td><td>Family Medicine</td><td>Richmond</td><td>Outpatient</td><td>$1,675</td></tr>
+              </tbody>
+            </table>
+
+            <h2>An Actual Sub-Internship in McAllen</h2>
+            <p>The <a href="/rotation-south-texas">Internal Medicine Sub-Internship</a> at South Texas Health System (DHR Health &amp; Cornerstone Regional Medical Center) is the closest thing on our roster to a true acting internship. You are managing patient care from admission to discharge, rounding daily, and presenting cases directly to the attending, inside an active IM residency environment capped at just 3 students. At $3,500, it is priced accordingly for the depth of hands-on responsibility it offers.</p>
+
+            <h2>Two Psychiatry Options in Houston, at Very Different Price Points</h2>
+            <p><a href="/rotation-flourish-psychiatry">Flourish Mental Health</a> is a one-on-one rotation (max 1 student) with a child and adolescent psychiatrist who has particular expertise in autism-spectrum cases. It runs a full Monday–Friday, 9am–7pm schedule at $2,800.</p>
+            <p>The second Houston option, <a href="/rotation-houston-psychiatry">Psychiatry with 30 Years of Experience</a>, is broader in scope: the preceptor sees patients of all ages, from children through adults, and has served on the medical staff at the University of Houston providing psychiatric evaluations for graduate students. At $2,000 for a max of 2 students, it is one of the more affordable psychiatry placements on our entire roster.</p>
+
+            <h2>Family Medicine with a Mentor Who Was an IMG Himself</h2>
+            <p>The <a href="/rotation-richmond-family-medicine">Oakbend Medical Center</a> rotation near Houston stands out for one specific reason: the supervising physician was an IMG himself, and understands the residency-match journey firsthand. You will see up to 20 patients per day on a flexible schedule (daily or 3 days per week), with involvement ranging from observation to active participation in procedures as your skills develop. At $1,675, it is the least expensive rotation in this guide.</p>
+
+            <h2>What Every Texas Rotation Includes</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose Between Them</h2>
+            <p>If your goal is Internal Medicine or Hospital Medicine and you want a rotation that reads as a genuine sub-internship on your ERAS application, McAllen is the clear choice (just apply early, since it caps at 3 students). If you are targeting Psychiatry, decide between depth (Flourish's one-on-one, subspecialty-focused mentorship) and breadth (the 30-years-experience preceptor's all-ages caseload). And if Family Medicine is your track and budget matters, Richmond offers the highest patient volume per dollar on this list.</p>
+            <p>You can browse every current placement, including all Texas sites, on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Trying to decide which Texas rotation fits your specialty goals?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you plan it out.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'clinical-rotations-in-new-york-for-imgs',
+        'title'    => 'Clinical Rotations in New York for International Medical Graduates',
+        'excerpt'  => 'New York offers two very different paths for IMGs: a housing-included Internal Medicine elective near the Hudson Valley, and a Mount Sinai-affiliated Family Medicine rotation in NYC.',
+        'category' => 'rotations',
+        'date'     => '2026-08-12',
+        'read'     => 5,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/new-york-hospital-room.webp',
+        'body'     => <<<'HTML'
+            <p>New York carries obvious weight on a residency application: it is home to some of the country's most recognized teaching hospitals, and "trained in New York" reads well regardless of the specialty you are pursuing. USMLE Wise currently offers two placements in the state, and they are aimed at fairly different students.</p>
+
+            <h2>New York Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Specialty</th><th>City</th><th>Setting</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-new-york">Elective in New York</a></td><td>Internal Medicine</td><td>Newburgh</td><td>Inpatient + Outpatient</td><td>$4,150</td></tr>
+                <tr><td><a href="/rotation-new-york-family-medicine">Family Medicine: Mount Sinai Affiliated</a></td><td>Family Medicine</td><td>New York City</td><td>Outpatient</td><td>$2,900</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Internal Medicine with Housing Included, Near the Hudson Valley</h2>
+            <p>The <a href="/rotation-new-york">Elective in New York</a> at St. Luke's Cornwall Hospital's affiliated campus in Newburgh is a 4-week combined inpatient and outpatient Internal Medicine experience, and one of the few rotations on our entire roster where housing is included in the price. You get dorm accommodation close to the hospital, occasional meals and pickup/drop-off support from the mentor, and a genuinely IMG-friendly environment: this hospital has a residency program, and past rotators through this exact placement have gone on to match. At $4,150 (rotation plus housing), capped at 2 students, it is priced as a complete package rather than tuition alone.</p>
+
+            <h2>Family Medicine in the Heart of NYC</h2>
+            <p>The <a href="/rotation-new-york-family-medicine">Family Medicine rotation</a> is run by a board-certified physician who also serves as a Visiting Attending Physician with Mount Sinai Hospital. You will split time across two outpatient clinics in New York City, seeing the full spectrum of primary care in a high-volume, diverse patient population, on a standard Monday–Friday, 9am–5pm schedule. It runs $2,900, capped at 2 students, and the resulting letter of recommendation carries the added weight of the Mount Sinai affiliation.</p>
+
+            <h2>What Both New York Rotations Include</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose Between Them</h2>
+            <p>If you are set on Internal Medicine and want an inpatient-heavy experience with housing logistics already solved, Newburgh is the more complete package, and the fact that prior rotators have matched through this exact site is worth weighing heavily. If Family Medicine or primary care is your track and you want the credibility of a Mount Sinai-affiliated letter, or simply want to train in Manhattan itself, the NYC clinic rotation is the better fit.</p>
+            <p>You can browse every current placement, including both New York sites, on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Weighing New York against another state for your USCE?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you decide.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'clinical-rotations-in-new-jersey-for-imgs',
+        'title'    => 'New Jersey Clinical Rotations for IMGs: Hospitals, Specialties & LORs',
+        'excerpt'  => 'New Jersey has the deepest bench of any state on our roster: five rotations spanning surgery, psychiatry, pediatrics, and family medicine, several with Hackensack- and department-head-level mentors.',
+        'category' => 'rotations',
+        'date'     => '2026-08-13',
+        'read'     => 7,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/new-jersey-physician-chart.webp',
+        'body'     => <<<'HTML'
+            <p>New Jersey is, quietly, the deepest state on our entire roster. Five active rotations span four specialties, and several come with the kind of mentor credentials (a former Program Director, a Hackensack faculty appointment, a Department Head) that carry real weight in an ERAS application. If you are building a multi-specialty USCE portfolio without leaving one metro area, New Jersey is worth a close look.</p>
+
+            <h2>New Jersey Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Specialty</th><th>City</th><th>Setting</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-new-jersey-surgery">General Surgery: Former Program Director</a></td><td>General Surgery</td><td>Englewood</td><td>Clinic + Outpatient Surgical Center</td><td>$1,996</td></tr>
+                <tr><td><a href="/rotation-ramapo-ridge-psychiatry">Psychiatry: Department Head</a></td><td>Psychiatry</td><td>Wayne</td><td>Outpatient</td><td>$3,400</td></tr>
+                <tr><td><a href="/rotation-st-joseph-pediatrics">Pediatrics: Residency Faculty</a></td><td>Pediatrics</td><td>Clifton</td><td>Outpatient</td><td>$3,500</td></tr>
+                <tr><td><a href="/rotation-jersey-city-pediatrics">Pediatrics: Medical Director</a></td><td>Pediatrics</td><td>Jersey City</td><td>Outpatient</td><td>$2,000</td></tr>
+                <tr><td><a href="/rotation-englewood-family-medicine">Family Medicine: Chief of Family Practice</a></td><td>Family Medicine</td><td>Englewood</td><td>Clinic + Living Facilities + Nursing Homes</td><td>$1,996</td></tr>
+              </tbody>
+            </table>
+
+            <h2>General Surgery with a Former Program Director</h2>
+            <p>The <a href="/rotation-new-jersey-surgery">Englewood General Surgery</a> rotation, affiliated with Bergen New Bridge Medical Center and Hudson Regional Hospital, is led by a former Program Director and current Hackensack residency faculty member with over 20 years of surgical experience. The week is structured deliberately: clinic days early in the week, student-led didactics midweek, physician-led discussions on Fridays, and surgical procedures at a modern outpatient center throughout, with OR observation opportunities. At $1,996, it is also one of the least expensive General Surgery placements on our entire roster relative to the seniority of the mentor.</p>
+
+            <h2>Psychiatry with a Department Head</h2>
+            <p>At <a href="/rotation-ramapo-ridge-psychiatry">Ramapo Ridge Psychiatric Hospital</a> in Wayne, you rotate one-on-one (max 1 student) with the hospital's Department Head, who has extensive experience in adult psychiatry with a subspecialty in geriatric psychiatry and substance use disorders. The commitment is real (a minimum of 3 days and 30 hours per week in the outpatient clinic), but so is the access. It runs $3,400.</p>
+
+            <h2>Two Pediatrics Rotations, Different Intensities</h2>
+            <p><a href="/rotation-st-joseph-pediatrics">St. Joseph University Medical Center</a> in Clifton pairs you one-on-one with residency program faculty for at least 30 hours per week of outpatient pediatric exposure, with limited inpatient experience possible at the preceptor's discretion. At $3,500, it is priced for that one-on-one residency-faculty access.</p>
+            <p>The <a href="/rotation-jersey-city-pediatrics">Jersey City</a> rotation, with a board-certified Medical Director, is higher-volume and more clinic-paced: a standard 8:30am–4:30pm schedule (extended to 7pm on Wednesdays) with regular literature discussions built into the week, and a path toward taking histories independently after the first week. At $2,000, it is the more budget-friendly of the two pediatrics options.</p>
+
+            <h2>Family Medicine Across Three Care Settings</h2>
+            <p>The <a href="/rotation-englewood-family-medicine">Englewood Hospital</a> Family Medicine rotation is led by the hospital's Chief of Family Practice, who is board-certified not just in Family Medicine but also Geriatric Medicine and Hospice &amp; Palliative Medicine. That breadth shows up in the rotation itself: you will spend time across an outpatient clinic, assisted living facilities, and nursing homes, a genuinely unusual mix of care settings for a single 4-week rotation, at $1,996.</p>
+
+            <h2>What Every New Jersey Rotation Includes</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose Between Them</h2>
+            <p>If credential weight on your LOR matters most, the Englewood Surgery rotation (former PD, Hackensack faculty) and the Ramapo Ridge Psychiatry rotation (Department Head) are the standouts. If you want maximum one-on-one time, look at the two max-1-student options: Ramapo Ridge and St. Joseph Pediatrics. If you are working with a tighter budget, both Family Medicine and Surgery in Englewood sit at $1,996, among the lowest prices across our entire roster.</p>
+            <p>You can browse every current placement, including all five New Jersey sites, on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Trying to decide which New Jersey rotation fits your specialty and budget?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you map it out.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'clinical-rotations-in-virginia-for-imgs',
+        'title'    => 'Clinical Rotations in Virginia: Georgetown-Affiliated Training for IMGs',
+        'excerpt'  => 'Virginia offers two outpatient rotations in the DC metro area, including a Family Medicine placement led by a Georgetown University Associate Professor with 39 years of active practice.',
+        'category' => 'rotations',
+        'date'     => '2026-08-14',
+        'read'     => 5,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/virginia-doctor-notes.webp',
+        'body'     => <<<'HTML'
+            <p>Virginia's two rotations both sit in the DC metro area, and both are outpatient-focused, but they serve different goals. One is built around independent, hands-on patient care in Pediatrics; the other pairs you with one of the most academically credentialed mentors on our entire roster.</p>
+
+            <h2>Virginia Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Specialty</th><th>City</th><th>Setting</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-arlington-pediatrics">Pediatrics: Medical Director</a></td><td>Pediatrics</td><td>Arlington</td><td>Outpatient</td><td>$2,000</td></tr>
+                <tr><td><a href="/rotation-alexandria-family-medicine">Family Medicine: Georgetown Associate Professor</a></td><td>Family Medicine</td><td>Alexandria</td><td>Outpatient</td><td>$2,500</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Pediatrics with Real Clinical Independence</h2>
+            <p>The <a href="/rotation-arlington-pediatrics">Arlington Pediatrics</a> rotation is explicitly designed to teach how pediatric care is managed in the US system, not just to have you observe it. You progress toward seeing patients independently, conducting physical examinations, presenting to the preceptor, proposing management plans, and working directly in the EMR from early in the rotation. At $2,000, it is one of the more hands-on outpatient Pediatrics placements on our roster.</p>
+
+            <h2>Family Medicine with a Georgetown Associate Professor</h2>
+            <p>The <a href="/rotation-alexandria-family-medicine">Inova Alexandria Hospital</a> rotation is led by an Associate Professor at Georgetown University School of Medicine with 39 years of active practice and five current medical school clinical professorships, spanning Family Medicine, Internal Medicine, and Geriatric Medicine. The resulting letter of recommendation is written on the physician's personal letterhead and highlights those academic affiliations directly, a distinct kind of endorsement compared to a standard clinic LOR. At $2,500, it accommodates up to 4 students.</p>
+
+            <h2>What Both Virginia Rotations Include</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose Between Them</h2>
+            <p>If you are applying Pediatrics and want to build demonstrable clinical independence you can speak to in interviews, Arlington is the more targeted choice. If you are applying Family Medicine, Internal Medicine, or Geriatrics and want an LOR carrying serious academic weight, the Georgetown-affiliated Alexandria rotation is hard to match at this price point.</p>
+            <p>You can browse every current placement, including both Virginia sites, on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Considering Virginia alongside other states for your rotations?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you build the right plan.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'psychiatry-clinical-rotations-for-imgs',
+        'title'    => 'Psychiatry Clinical Rotations for IMGs: What to Expect and How to Choose',
+        'excerpt'  => 'From one-on-one mentorship with a psychiatric hospital Department Head to academic training with a UNC Chapel Hill Associate Professor, here is how to choose the right psychiatry rotation.',
+        'category' => 'rotations',
+        'date'     => '2026-08-04',
+        'read'     => 6,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/psychiatry-therapy-session.webp',
+        'body'     => <<<'HTML'
+            <p>Psychiatry has become one of the more competitive specialties for IMGs in recent Match cycles, which means a strong clinical rotation matters more than ever. Programs want to see that you understand outpatient psychiatric practice, can build rapport with patients, and can hold your own in case discussions. Here is every psychiatry rotation USMLE Wise currently offers, and how to think about choosing between them.</p>
+
+            <h2>Psychiatry Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Location</th><th>Focus</th><th>Max Students</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-flourish-psychiatry">Flourish Mental Health</a></td><td>Houston, TX</td><td>Child &amp; Adolescent, Autism</td><td>1</td><td>$2,800</td></tr>
+                <tr><td><a href="/rotation-ramapo-ridge-psychiatry">Ramapo Ridge Psychiatric Hospital</a></td><td>Wayne, NJ</td><td>Adult &amp; Geriatric, Substance Use</td><td>1</td><td>$3,400</td></tr>
+                <tr><td><a href="/rotation-unc-psychiatry">UNC Chapel Hill Dept. of Psychiatry</a></td><td>Chapel Hill, NC</td><td>Emergency, Addiction, Precision Medicine</td><td>3</td><td>$1,800</td></tr>
+                <tr><td><a href="/rotation-wisconsin-psychiatry">Psychiatry Medical Director</a></td><td>Mequon, WI</td><td>Telehealth, ADHD</td><td>2</td><td>$1,800</td></tr>
+                <tr><td><a href="/rotation-houston-psychiatry">Psychiatry, 30 Years Experience</a></td><td>Houston, TX</td><td>All Ages</td><td>2</td><td>$2,000</td></tr>
+              </tbody>
+            </table>
+
+            <h2>One-on-One Mentorship: Flourish and Ramapo Ridge</h2>
+            <p>Two rotations on this list cap out at a single student, which means genuinely undivided attention from your preceptor. At <a href="/rotation-flourish-psychiatry">Flourish Mental Health</a> in Houston, you work full days (9am to 7pm, Monday through Friday) with a child and adolescent psychiatrist who has particular expertise in autism spectrum cases. At <a href="/rotation-ramapo-ridge-psychiatry">Ramapo Ridge Psychiatric Hospital</a> in Wayne, NJ, your preceptor is the hospital's Department Head, with a subspecialty in geriatric psychiatry and substance use disorders. Both require a serious time commitment (Ramapo Ridge asks for a minimum of 30 hours per week), but you leave with a letter written by someone who watched you work every day.</p>
+
+            <h2>Academic Affiliations: UNC and Wisconsin</h2>
+            <p>If you want a letter that carries institutional weight, look at the two academically affiliated rotations. The <a href="/rotation-unc-psychiatry">UNC Chapel Hill</a> rotation is led by a Medical School Associate Professor who spent over 20 years as Clinical Director of UNC's counseling and psychological services, and exposes you to emergency psychiatry, addiction medicine, precision medicine, and ecopsychology in a single placement. The <a href="/rotation-wisconsin-psychiatry">Mequon, Wisconsin</a> rotation is run by a Medical Director who previously served as Assistant Professor of Psychiatry at the University of Wisconsin-Madison School of Medicine and Public Health, and mixes telehealth sessions, in-person clinic, EMR training, and lectures on ADHD. Both are priced at $1,800, making them the most affordable psychiatry placements on our roster relative to the seniority of the mentor.</p>
+
+            <h2>Broad, All-Ages Exposure: Houston</h2>
+            <p>The second <a href="/rotation-houston-psychiatry">Houston rotation</a> is led by a Medical Director with 30 years of clinical experience who has also served on the medical staff at the University of Houston, providing psychiatric evaluations and case management for graduate students. Rather than a subspecialty focus, this one gives you a diverse caseload spanning children, adolescents, and adults, which is useful if you have not yet settled on a specific psychiatric subspecialty.</p>
+
+            <h2>What Every Psychiatry Rotation Includes</h2>
+            <ul>
+              <li>A personalized letter of recommendation on clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose</h2>
+            <p>Start with the subspecialty you are most drawn to: child and adolescent care points to Flourish, geriatric psychiatry and substance use points to Ramapo Ridge, and emergency or addiction psychiatry points to UNC. If you want the strongest possible institutional name on your LOR, UNC or Wisconsin are your best options at the lowest price point. And if you are still deciding on a subspecialty, the broad, all-ages caseload in Houston gives you the widest exposure to figure it out.</p>
+            <p>You can browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>, including our state guides for <a href="/blog/clinical-rotations-in-texas-for-imgs">Texas</a> and <a href="/blog/clinical-rotations-in-new-jersey-for-imgs">New Jersey</a>.</p>
+            <p><strong>Not sure which psychiatry rotation fits your goals?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you decide.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'internal-medicine-sub-internships-for-imgs',
+        'title'    => 'Internal Medicine Sub-Internships for IMGs: A Complete Guide',
+        'excerpt'  => 'What is a sub-internship, and why does it matter so much for an IMG applying Internal Medicine? Here is what to expect from our inpatient IM placements in Texas, New York, and Tennessee.',
+        'category' => 'rotations',
+        'date'     => '2026-08-05',
+        'read'     => 6,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/internal-medicine-rounds.webp',
+        'body'     => <<<'HTML'
+            <p>A "sub-internship" (often shortened to "Sub-I," and also called an acting internship) is a clinical rotation where a student takes on intern-level responsibilities under supervision: admitting patients, writing daily notes, presenting on rounds, and following cases from admission through discharge. For an IMG, a strong Sub-I is one of the clearest ways to show a program director you are ready to function at a resident's pace on day one.</p>
+            <p>Here is what our Internal Medicine placements actually look like, and how they differ.</p>
+
+            <h2>Internal Medicine Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Location</th><th>Setting</th><th>Max Students</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-south-texas">Internal Medicine Sub-Internship</a></td><td>McAllen, TX</td><td>Inpatient</td><td>3</td><td>$3,500</td></tr>
+                <tr><td><a href="/rotation-new-york">Elective in New York</a></td><td>Newburgh, NY</td><td>Inpatient + Outpatient</td><td>2</td><td>$4,150</td></tr>
+                <tr><td><a href="/rotation-tennessee">IM with the Chair of Medicine</a></td><td>Winchester, TN</td><td>Inpatient</td><td>4</td><td>$2,700</td></tr>
+              </tbody>
+            </table>
+
+            <h2>The True Sub-Internship: South Texas Health System</h2>
+            <p>The <a href="/rotation-south-texas">McAllen, Texas rotation</a> is the one on our roster that is literally titled a Sub-Internship, and it earns the name. You manage patient care from admission to discharge, actively participate in daily rounds and treatment planning, and present your cases directly to the attending physician, inside a hospital system with an active IM residency program. Capped at just 3 students, it is the most hands-on IM experience we offer, at $3,500.</p>
+
+            <h2>Combined Inpatient and Outpatient: New York</h2>
+            <p>The <a href="/rotation-new-york">Newburgh, New York rotation</a> at St. Luke's Cornwall Hospital's affiliated campus blends inpatient and outpatient IM over 4 weeks, with a supportive, resident-readiness-focused mentor and an IMG-friendly hospital that has its own residency program. It is also one of the few rotations on our entire roster with housing included: at $4,150 for rotation plus housing, capped at 2 students, it is priced as a complete package rather than tuition alone.</p>
+
+            <h2>Rounds with the Chair of Medicine: Tennessee</h2>
+            <p>The <a href="/rotation-tennessee">Winchester, Tennessee rotation</a> pairs you directly with the Chair of Medicine at Highpoint Health St. Thomas Hospital for 100% inpatient rounds, plus time at an on-campus rehab center. You will work alongside US medical students during their own core rotations and take part in in-depth discussions of diagnostic reasoning and treatment planning. At $2,700 with room for 4 students, it is the most accessible price point of the three, and it comes with occasional hospital lunches and desserts as a small added perk.</p>
+
+            <h2>What Every Internal Medicine Rotation Includes</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose</h2>
+            <p>If you want the closest possible simulation of intern-level responsibility for your ERAS application, South Texas is the strongest match for the "Sub-I" label. If you want a gentler ramp that still includes outpatient exposure and comes with housing solved for you, New York is the more complete package. And if you want direct, sustained access to a department chair and a slightly lower price point, Tennessee is worth a close look.</p>
+            <p>You can browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>, or read our state guides for <a href="/blog/clinical-rotations-in-texas-for-imgs">Texas</a> and <a href="/blog/clinical-rotations-in-new-york-for-imgs">New York</a>.</p>
+            <p><strong>Trying to figure out which Internal Medicine rotation fits your application?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you plan it out.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'general-surgery-rotations-for-imgs',
+        'title'    => 'General Surgery Rotations for IMGs: OR Exposure, LORs, and What Matters',
+        'excerpt'  => 'ACGME accreditation, hands-on suturing labs, or a former Program Director on your letter: our five General Surgery rotations each offer something different. Here is how to weigh them.',
+        'category' => 'rotations',
+        'date'     => '2026-08-06',
+        'read'     => 7,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/general-surgery-operating-room.webp',
+        'body'     => <<<'HTML'
+            <p>General Surgery is a demanding specialty to apply into as an IMG, and program directors tend to weigh three things heavily when they read your rotation experience: how much real OR time you got, who wrote your letter, and whether the site itself carries any institutional credibility. Our five General Surgery rotations each lean into a different one of those factors. Here is how they compare.</p>
+
+            <h2>General Surgery Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Location</th><th>Setting</th><th>Max Students</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-miami-surgery">Larkin Community Hospital</a></td><td>Miami, FL</td><td>Inpatient + Surgical Centers</td><td>2</td><td>$3,400</td></tr>
+                <tr><td><a href="/rotation-maryland-surgery">Wright Center Faculty</a></td><td>Silver Spring, MD</td><td>Clinic + Lab Skills + OR</td><td>2</td><td>$2,500</td></tr>
+                <tr><td><a href="/rotation-kissimmee-surgery">Kissimmee</a></td><td>Kissimmee, FL</td><td>Clinic + Surgical Procedures</td><td>2</td><td>$3,200</td></tr>
+                <tr><td><a href="/rotation-arkansas-surgery">Baptist Health Fort Smith</a></td><td>Fort Smith, AR</td><td>Inpatient + OR</td><td>2</td><td>$2,500</td></tr>
+                <tr><td><a href="/rotation-new-jersey-surgery">Former Program Director</a></td><td>Englewood, NJ</td><td>Clinic + Outpatient Surgical Center</td><td>2</td><td>$1,996</td></tr>
+              </tbody>
+            </table>
+
+            <h2>If Accreditation Matters Most: Miami</h2>
+            <p>The <a href="/rotation-miami-surgery">Larkin Community Hospital</a> rotation in Miami is the only ACGME-accredited site on this list, with rounds also taking place at Hialeah Hospital. You round alongside Caribbean students enrolled in accredited programs, in a genuinely competitive clinical environment, with real OR observation built in. At $3,400 for 4 weeks, it is priced for that accreditation and the networking access it opens up.</p>
+
+            <h2>If Hands-On Skills Matter Most: Maryland</h2>
+            <p>Most General Surgery rotations are observation-heavy by necessity. The <a href="/rotation-maryland-surgery">Wright Center Faculty</a> rotation near Washington, DC is the exception: alongside OR observation and didactic sessions, you get dedicated lab time on basic suturing, knot tying, and in-office ultrasound technique, under a board-certified surgeon with over 20 years of experience. At $2,500, it is the rotation to pick if you want to leave with tangible procedural reps, not just observation hours.</p>
+
+            <h2>If Steady Clinic Reps Matter Most: Kissimmee and Arkansas</h2>
+            <p>Two rotations are built around a consistent, predictable clinical schedule. <a href="/rotation-kissimmee-surgery">Kissimmee, Florida</a> runs a standard Monday to Friday, 9am to 5pm week, with pre- and post-operative evaluations, wound care, and suturing practice at $3,200. <a href="/rotation-arkansas-surgery">Baptist Health Fort Smith</a> in Arkansas spends more than half its time in the hospital itself, with case exposure to colonoscopy, mastectomy, and colorectal surgery, at $2,500. Both are designed for international students seeking immersive, active participation rather than a purely observational experience.</p>
+
+            <h2>If Your LOR's Author Matters Most: New Jersey</h2>
+            <p>The <a href="/rotation-new-jersey-surgery">Englewood, New Jersey</a> rotation is led by a former Program Director and current Hackensack residency faculty member with over 20 years of surgical experience. The structured week (clinic early on, student-led didactics midweek, physician-led discussions on Fridays, and procedures at an outpatient surgical center throughout) is deliberately built to give that mentor real visibility into your clinical reasoning before they write your letter. At $1,996, it is also the least expensive General Surgery rotation on our roster.</p>
+
+            <h2>What Every General Surgery Rotation Includes</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose</h2>
+            <p>If you can only afford to prioritize one factor, think about what your application is missing. If it lacks institutional credibility, Miami's ACGME accreditation is worth the premium. If it lacks procedural detail, Maryland's lab sessions fill that gap directly. If it lacks a senior physician's endorsement, New Jersey's former Program Director is hard to beat at the price. And if you simply need consistent, high-volume clinical hours, Kissimmee and Arkansas both deliver that reliably.</p>
+            <p>You can browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>, or read our guide to <a href="/blog/clinical-rotations-in-florida-for-imgs">Clinical Rotations in Florida</a> for more on the two Miami-area sites.</p>
+            <p><strong>Weighing General Surgery rotations against each other?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you find the right fit.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'pediatrics-rotations-for-imgs-inpatient-vs-outpatient',
+        'title'    => 'Pediatrics Rotations for IMGs: Outpatient vs. Inpatient Explained',
+        'excerpt'  => 'Most pediatrics rotations for IMGs are outpatient by design, but one of ours adds hospital rounding into the mix. Here is what the difference actually means for your training and your LOR.',
+        'category' => 'rotations',
+        'date'     => '2026-08-07',
+        'read'     => 6,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/pediatrics-child-exam.webp',
+        'body'     => <<<'HTML'
+            <p>Pediatrics rotations for IMGs skew heavily outpatient, and that is not an accident. Outpatient clinics are where most pediatric care actually happens in the US: well-child checks, sick visits, developmental screening, and the kind of longitudinal patient relationships that clinics build and hospitals do not. But inpatient pediatric rounding teaches a different skill set: acute assessment, hospital-based EMR documentation, and working alongside a care team. Of our five Pediatrics rotations, four are purely outpatient and one combines both. Here is how they compare.</p>
+
+            <h2>Pediatrics Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Location</th><th>Setting</th><th>Max Students</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-st-joseph-pediatrics">St. Joseph University Medical Center</a></td><td>Clifton, NJ</td><td>Outpatient (limited inpatient possible)</td><td>1</td><td>$3,500</td></tr>
+                <tr><td><a href="/rotation-jersey-city-pediatrics">Medical Director</a></td><td>Jersey City, NJ</td><td>Outpatient</td><td>Not capped</td><td>$2,000</td></tr>
+                <tr><td><a href="/rotation-arlington-pediatrics">Medical Director</a></td><td>Arlington, VA</td><td>Outpatient</td><td>Not capped</td><td>$2,000</td></tr>
+                <tr><td><a href="/rotation-mercy-pediatrics">Mercy Hospital Faculty</a></td><td>Miami, FL</td><td>Clinic + Hospital Rounding</td><td>Not capped</td><td>$3,200</td></tr>
+                <tr><td><a href="/rotation-baltimore-pediatrics">20+ Years Experience</a></td><td>Baltimore, MD</td><td>Outpatient</td><td>1</td><td>$1,600</td></tr>
+              </tbody>
+            </table>
+
+            <h2>The Outpatient-Only Rotations</h2>
+            <p>Four of our five pediatrics placements are entirely clinic-based. <a href="/rotation-st-joseph-pediatrics">St. Joseph University Medical Center</a> in Clifton, NJ pairs you one-on-one with residency program faculty for at least 30 hours per week, with limited inpatient exposure possible but not guaranteed. In <a href="/rotation-jersey-city-pediatrics">Jersey City</a>, you join a high-volume clinic on a standard 8:30am to 4:30pm schedule (extended to 7pm on Wednesdays), with regular literature discussions and a path toward taking independent histories after your first week. The <a href="/rotation-arlington-pediatrics">Arlington, VA</a> rotation is built specifically around clinical independence: seeing patients on your own, presenting to the preceptor, and documenting in the EMR from early on. And in <a href="/rotation-baltimore-pediatrics">Baltimore</a>, a single-student rotation with an attending of 20-plus years, you see 10 to 15 patients a day, including well-child visits, sick-child visits, and pre-operative consults, with detailed differential diagnosis discussion built into the day.</p>
+
+            <h2>The One That Combines Both: Miami</h2>
+            <p>The <a href="/rotation-mercy-pediatrics">Mercy Hospital</a> rotation in Miami is the outlier, and the one to pick if you specifically want inpatient exposure. You round alongside faculty in both clinic and hospital settings, with full EMR access throughout. It starts on the first Monday of each month, and documents are due 28 days in advance, so it requires more lead time to book than the others.</p>
+
+            <h2>What Every Pediatrics Rotation Includes</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose</h2>
+            <p>If your application already has inpatient hours from another rotation, an outpatient-only pediatrics placement rounds out your experience nicely, and one-on-one options like St. Joseph and Baltimore give you the most direct preceptor access. If you have no inpatient pediatric exposure at all, Mercy Hospital in Miami is worth prioritizing, and worth booking early given its 28-day document deadline.</p>
+            <p>You can browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>, or read our guides to <a href="/blog/clinical-rotations-in-new-jersey-for-imgs">New Jersey</a> and <a href="/blog/clinical-rotations-in-florida-for-imgs">Florida</a>, which together cover three of these five sites.</p>
+            <p><strong>Deciding between outpatient and inpatient pediatric exposure?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you plan your rotation sequence.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'family-medicine-rotations-for-imgs',
+        'title'    => 'Family Medicine Rotations for IMGs: Building Your Primary Care Foundation',
+        'excerpt'  => 'From a Georgetown Associate Professor in Virginia to inpatient telemedicine in Florida, our six Family Medicine rotations cover the full range of what primary care training can look like.',
+        'category' => 'rotations',
+        'date'     => '2026-08-08',
+        'read'     => 7,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/family-medicine-consultation.webp',
+        'body'     => <<<'HTML'
+            <p>Family Medicine is one of the broadest specialties an IMG can train in, and also one of the more IMG-friendly ones to match into. Because the specialty itself spans everything from pediatrics to geriatrics to minor procedures, the rotations that prepare you for it vary just as widely. We currently offer six Family Medicine placements across five states, and no two look alike.</p>
+
+            <h2>Family Medicine Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>Location</th><th>Setting</th><th>Max Students</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-englewood-family-medicine">Chief of Family Practice</a></td><td>Englewood, NJ</td><td>Clinic + Living Facilities + Nursing Homes</td><td>2</td><td>$1,996</td></tr>
+                <tr><td><a href="/rotation-richmond-family-medicine">IMG Physician Mentor</a></td><td>Richmond, TX</td><td>Outpatient</td><td>2</td><td>$1,675</td></tr>
+                <tr><td><a href="/rotation-alexandria-family-medicine">Georgetown Associate Professor</a></td><td>Alexandria, VA</td><td>Outpatient</td><td>4</td><td>$2,500</td></tr>
+                <tr><td><a href="/rotation-new-york-family-medicine">Mount Sinai Affiliated</a></td><td>New York, NY</td><td>Outpatient</td><td>2</td><td>$2,900</td></tr>
+                <tr><td><a href="/rotation-larkin-family-medicine">Larkin Program Director</a></td><td>Hialeah, FL</td><td>Inpatient + Outpatient + Telemedicine</td><td>6</td><td>$4,196</td></tr>
+                <tr><td><a href="/rotation-keralty-family-medicine">Keralty Hospital Faculty</a></td><td>Miami, FL</td><td>Inpatient + Outpatient</td><td>2</td><td>$3,800</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Breadth Across the Lifespan: New Jersey</h2>
+            <p>The <a href="/rotation-englewood-family-medicine">Englewood, NJ</a> rotation, led by the hospital's Chief of Family Practice, is board-certified across Family Medicine, Geriatric Medicine, and Hospice and Palliative Medicine. You will spend time across an outpatient clinic, assisted living facilities, and nursing homes, a genuinely unusual mix of care settings for a single 4-week placement, at $1,996.</p>
+
+            <h2>High Patient Volume: Texas</h2>
+            <p>If reps matter most to you, the <a href="/rotation-richmond-family-medicine">Richmond, TX</a> rotation delivers up to 20 patients a day on a flexible schedule (daily or 3 days a week), under a mentor who was an IMG himself and understands your path firsthand. At $1,675, it is also the least expensive rotation on this entire list.</p>
+
+            <h2>Academic Credibility: Virginia and New York</h2>
+            <p>Two rotations pair you with physicians holding notable academic titles. In <a href="/rotation-alexandria-family-medicine">Alexandria, VA</a>, your mentor is a Georgetown University School of Medicine Associate Professor with 39 years of active practice and five current clinical professorships. In <a href="/rotation-new-york-family-medicine">New York City</a>, you split time across two clinics with a board-certified physician who also holds the title of Visiting Attending Physician with Mount Sinai Hospital. Both letters carry institutional names that program directors recognize on sight.</p>
+
+            <h2>Inpatient Exposure Within Family Medicine: Florida</h2>
+            <p>Family Medicine does not usually include hospital time, which makes Florida's two rotations distinct. The <a href="/rotation-larkin-family-medicine">Larkin Community Hospital</a> rotation, run by the FM Program Director himself, combines inpatient rounding, outpatient clinic, telemedicine, and weekly online didactics, at $4,196 for up to 6 students. The <a href="/rotation-keralty-family-medicine">Keralty Hospital</a> rotation in Miami also mixes inpatient and outpatient time at $3,800, though it requires USMLE Step 1 to be completed first, and the LOR is performance-based rather than guaranteed.</p>
+
+            <h2>What Every Family Medicine Rotation Includes</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead (conditional at Keralty)</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose</h2>
+            <p>If you want your application to show the widest possible primary care skill set, New Jersey's mix of clinic, assisted living, and nursing home care is hard to match. If your budget is tight and you want maximum patient volume, Texas wins on both counts. If you want an academically prestigious letter, choose between Virginia and New York based on which coast fits your logistics. And if Family Medicine is your track but you also want hospital-based experience on your record, the two Florida rotations are your only options that offer it.</p>
+            <p>You can browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>, or read our state guides for <a href="/blog/clinical-rotations-in-new-jersey-for-imgs">New Jersey</a>, <a href="/blog/clinical-rotations-in-virginia-for-imgs">Virginia</a>, and <a href="/blog/clinical-rotations-in-new-york-for-imgs">New York</a>.</p>
+            <p><strong>Trying to map out your Family Medicine rotation plan?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you build it.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'hospitalist-rotations-for-imgs',
+        'title'    => 'Hospitalist Rotations Explained: What IMGs Gain from a 7-on/7-off Schedule',
+        'excerpt'  => 'Hospitalist medicine runs on a schedule most students have never experienced before residency. Here is what that actually looks like, and what our Kissimmee, Florida rotation offers.',
+        'category' => 'rotations',
+        'date'     => '2026-08-09',
+        'read'     => 5,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/hospitalist-hospital-corridor.webp',
+        'body'     => <<<'HTML'
+            <p>Hospitalist medicine is one of the fastest-growing fields in American healthcare, and one of the least understood by students who trained outside the US system. A hospitalist is an internist who practices exclusively in the hospital: managing inpatients from admission to discharge, coordinating with specialists, and handing off care instead of following patients into an outpatient clinic. If you are considering Internal Medicine or Med-Peds, spending time with a hospitalist is one of the clearest ways to see what that career actually looks like day to day.</p>
+
+            <h2>Quick Facts</h2>
+            <ul>
+              <li><strong>Location:</strong> <a href="/rotation-florida">AdventHealth Kissimmee Campus</a>, affiliated with AdventHealth Orlando</li>
+              <li><strong>Setting:</strong> 100% inpatient</li>
+              <li><strong>Schedule:</strong> 7 days on, 7 days off</li>
+              <li><strong>Price:</strong> $2,425</li>
+              <li><strong>Max students:</strong> 4, with monthly starts</li>
+            </ul>
+
+            <h2>What the 7-on/7-off Schedule Actually Means</h2>
+            <p>Most hospitalist groups in the US run on a block schedule rather than a standard five-day work week, and this rotation is built around that same rhythm. During your "on" week, you get roughly 5 to 6 hours of direct clinical exposure daily: rounding, history taking, and building nuanced care plans alongside a renowned internist. During your "off" week, you shift into self-study, working through assigned readings and preparing brief case presentations. It is a genuinely different rhythm from a standard outpatient clinic rotation, and experiencing it firsthand is part of the value.</p>
+
+            <h2>What You Will Gain</h2>
+            <p>Because the setting is 100% inpatient, this rotation is focused on acute care skills: comprehensive history taking, hospital-based clinical decision-making, and the kind of nuanced care planning that only comes from managing sicker, more complex patients than you typically see in a clinic. It is a strong complement to outpatient-heavy Internal Medicine or Family Medicine rotations elsewhere on your schedule.</p>
+
+            <h2>Who This Rotation Is For</h2>
+            <p>If you are applying Internal Medicine, Family Medicine, or Med-Peds and your USCE so far has been entirely outpatient, this rotation fills a real gap. It also pairs naturally with our other Internal Medicine placements. If you have not yet done a Sub-Internship, consider reading our guide to <a href="/blog/internal-medicine-sub-internships-for-imgs">Internal Medicine Sub-Internships for IMGs</a> to compare a more acting-intern-style rotation against this hospitalist-specific one.</p>
+
+            <h2>What's Included</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <p>You can browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>, or read our full guide to <a href="/blog/clinical-rotations-in-florida-for-imgs">Clinical Rotations in Florida</a>.</p>
+            <p><strong>Curious whether hospitalist medicine fits your specialty plans?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you figure it out.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'psychiatry-rotations-in-new-jersey',
+        'title'    => 'Psychiatry Rotations in New Jersey: One-on-One Mentorship with a Department Head',
+        'excerpt'  => 'Our New Jersey psychiatry placement is a one-on-one rotation with the Department Head at Ramapo Ridge Psychiatric Hospital. Here is exactly what the schedule, mentorship, and LOR look like.',
+        'category' => 'rotations',
+        'date'     => '2026-07-29',
+        'read'     => 5,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/nj-psychiatry-office.webp',
+        'body'     => <<<'HTML'
+            <p>If you are searching for a psychiatry rotation in New Jersey, here is what is currently available: a single, deliberately small placement at <a href="/rotation-ramapo-ridge-psychiatry">Ramapo Ridge Psychiatric Hospital</a> in Wayne, capped at one student per rotation cycle. That cap is the point. Instead of splitting a preceptor's attention across a group, you get sustained, one-on-one time with the hospital's Department Head.</p>
+
+            <h2>Quick Facts</h2>
+            <ul>
+              <li><strong>Location:</strong> Ramapo Ridge Psychiatric Hospital, Wayne, NJ</li>
+              <li><strong>Mentor:</strong> Department Head, adult psychiatry with a subspecialty in geriatric psychiatry and substance use disorders</li>
+              <li><strong>Setting:</strong> Outpatient clinic</li>
+              <li><strong>Schedule:</strong> Minimum 3 days per week, at least 30 hours per week</li>
+              <li><strong>Max students:</strong> 1</li>
+              <li><strong>Price:</strong> $3,400</li>
+            </ul>
+
+            <h2>What Makes One-on-One Mentorship Different</h2>
+            <p>Most outpatient psychiatry rotations run with 2 or 3 students rotating through the same preceptor's clinic day. At Ramapo Ridge, you are the only one there. Every case you see, every history you take, and every discussion of a treatment plan happens directly between you and the Department Head, with no split attention. For a specialty where interviewing skill and clinical judgment are hard to demonstrate on paper, that kind of direct observation over 30-plus hours a week gives your preceptor far more to write about when it comes time for your letter of recommendation.</p>
+
+            <h2>Adult and Geriatric Psychiatry, with Substance Use Exposure</h2>
+            <p>The preceptor's subspecialty focus means you are not just seeing generic outpatient psychiatric cases. Expect meaningful exposure to geriatric psychiatry (cognitive decline, polypharmacy, late-life mood disorders) alongside substance use disorders, which is a combination you will not find at most general outpatient placements. If your specialty interest already leans toward adult or geriatric psychiatry specifically, this is the most targeted training on our roster for it.</p>
+
+            <h2>Who This Rotation Is For</h2>
+            <p>This placement suits a student who wants depth over breadth: fewer cases seen alongside classmates, more sustained access to one experienced physician, and a real time commitment (30 hours a week, minimum 3 days) rather than a lighter schedule. If you are earlier in your specialty exploration and want broader exposure across multiple psychiatric subspecialties instead, our <a href="/rotation-unc-psychiatry">UNC Chapel Hill rotation</a> or <a href="/rotation-houston-psychiatry">Houston rotation</a> may fit better.</p>
+
+            <h2>What's Included</h2>
+            <ul>
+              <li>A personalized letter of recommendation on clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <p>Want to see how this compares to our other psychiatry placements? Read our full <a href="/blog/psychiatry-clinical-rotations-for-imgs">Psychiatry Clinical Rotations for IMGs guide</a>, or browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Wondering if the New Jersey psychiatry rotation is the right fit?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll walk you through it.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'general-surgery-rotations-in-florida-acgme-miami',
+        'title'    => 'General Surgery Rotations in Florida: ACGME-Accredited Clinical Exposure in Miami',
+        'excerpt'  => 'Our Miami General Surgery rotation is the only ACGME-accredited site on our entire roster. Here is what that accreditation means for your application, plus a second, clinic-based option in Kissimmee.',
+        'category' => 'rotations',
+        'date'     => '2026-07-30',
+        'read'     => 6,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/fl-surgery-team.webp',
+        'body'     => <<<'HTML'
+            <p>Florida offers two General Surgery rotations, but one detail sets the Miami placement apart from every other rotation we offer: it takes place at an ACGME-accredited site. For a specialty as competitive as General Surgery, that accreditation is worth understanding in detail before you decide where to train.</p>
+
+            <h2>Florida General Surgery Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>City</th><th>Setting</th><th>Max Students</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-miami-surgery">Larkin Community Hospital</a></td><td>Miami</td><td>Inpatient + Surgical Centers</td><td>2</td><td>$3,400</td></tr>
+                <tr><td><a href="/rotation-kissimmee-surgery">Kissimmee</a></td><td>Kissimmee</td><td>Clinic + Surgical Procedures</td><td>2</td><td>$3,200</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Why ACGME Accreditation Matters</h2>
+            <p>ACGME (the Accreditation Council for Graduate Medical Education) accreditation is the standard that governs US residency programs themselves. Training at an ACGME-accredited site means you are learning inside the same institutional framework your future residency will run under, not adjacent to it. At <a href="/rotation-miami-surgery">Larkin Community Hospital</a>, with rounds also taking place at Hialeah Hospital, you round alongside Caribbean medical students who are themselves enrolled in accredited programs, inside a genuinely competitive clinical environment. That combination of accreditation and peer competition is difficult to find at a community clinic rotation.</p>
+
+            <h2>What the Miami Rotation Looks Like</h2>
+            <p>The 4-week placement spans both inpatient settings and surgical centers, with real OR observation built in. You will work directly with a General Surgeon affiliated with both hospitals, capped at 2 students, at $3,400. Beyond the clinical exposure itself, the networking opportunities at an ACGME-accredited program are a genuine advantage when it comes time to apply: attendings and residents you meet during this rotation are part of the same accredited pipeline you are trying to enter.</p>
+
+            <h2>A Second Florida Option: Kissimmee</h2>
+            <p>If your priority is a steadier, more predictable clinic pace rather than a teaching-hospital environment, the <a href="/rotation-kissimmee-surgery">Kissimmee rotation</a> runs a standard Monday to Friday, 9am to 5pm schedule, with pre- and post-operative evaluations, wound care, and suturing practice, plus OR observation. It is not ACGME-accredited, but it offers more consistent one-on-one time with a single surgeon, at a slightly lower price point of $3,200.</p>
+
+            <h2>What Both Rotations Include</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital or clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <h2>How to Choose</h2>
+            <p>If accreditation and networking access matter most for your General Surgery application, Miami is the clear choice. If you want steadier, more individualized clinic time and are less focused on the ACGME distinction, Kissimmee is worth a look. Both are strong options, and both are covered in more detail in our full <a href="/blog/general-surgery-rotations-for-imgs">General Surgery Rotations for IMGs guide</a> and our <a href="/blog/clinical-rotations-in-florida-for-imgs">Florida state guide</a>.</p>
+            <p><strong>Deciding between Florida's two General Surgery rotations?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you weigh them.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'family-medicine-rotations-in-florida',
+        'title'    => 'Family Medicine Rotations in Florida: Inpatient, Outpatient & Telemedicine Training',
+        'excerpt'  => 'Most Family Medicine rotations are outpatient-only. Our two Florida placements are the exception, combining inpatient rounding, outpatient clinic, and telemedicine in a single 4-week rotation.',
+        'category' => 'rotations',
+        'date'     => '2026-07-31',
+        'read'     => 6,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/fl-family-medicine-telemedicine.webp',
+        'body'     => <<<'HTML'
+            <p>Family Medicine training is usually clinic-bound. Our two Florida placements break that pattern, mixing inpatient hospital rounding into a specialty that most IMGs only ever experience in an outpatient setting. If you want your Family Medicine application to show hospital-based experience alongside clinic time, Florida is where to look.</p>
+
+            <h2>Florida Family Medicine Rotations at a Glance</h2>
+            <table>
+              <thead>
+                <tr><th>Rotation</th><th>City</th><th>Setting</th><th>Max Students</th><th>Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a href="/rotation-larkin-family-medicine">Larkin Program Director</a></td><td>Hialeah</td><td>Inpatient + Outpatient + Telemedicine</td><td>6</td><td>$4,196</td></tr>
+                <tr><td><a href="/rotation-keralty-family-medicine">Keralty Hospital Faculty</a></td><td>Miami</td><td>Inpatient + Outpatient</td><td>2</td><td>$3,800</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Larkin Community Hospital: The Full Spread</h2>
+            <p>The <a href="/rotation-larkin-family-medicine">Larkin Community Hospital</a> rotation in Hialeah is run by the Family Medicine Program Director himself, and it is structured across three distinct components each week. Outpatient site visits happen 2 to 3 times a week, from 6:30am to around noon, where you practice writing notes, interpreting labs, and performing physical exams. Inpatient time follows a flexible-start model (6:30am, 1pm, or 7pm), seeing 1 to 3 patients per day in 6-hour blocks with full EMR access. And online didactic sessions run every Thursday from 4 to 5pm and Friday from noon to 5pm, deepening your clinical reasoning between clinical blocks. At $4,196, it accommodates up to 6 students and is the most structured, classroom-adjacent rotation on our entire roster.</p>
+
+            <h2>Keralty Hospital: A Leaner Inpatient-Outpatient Mix</h2>
+            <p>The <a href="/rotation-keralty-family-medicine">Keralty Hospital</a> rotation in Miami combines inpatient experience working alongside residents and faculty with outpatient clinic exposure, plus full EMR access throughout. Two conditions apply: USMLE Step 1 must be completed before you enroll, and documents are due 28 days before your start date. The letter of recommendation is also performance-based rather than guaranteed, if you round well, you earn it, along with a potential interview opportunity. At $3,800, capped at 2 students, rotations start on the first Monday of each month.</p>
+
+            <h2>What Both Rotations Include</h2>
+            <ul>
+              <li>A personalized letter of recommendation on hospital letterhead (conditional on performance at Keralty)</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID (plus a USMLE Step 1 score report for Keralty)</li>
+            </ul>
+
+            <h2>How to Choose</h2>
+            <p>If you want the most complete training experience, including formal didactics and telemedicine, Larkin is the more comprehensive option. If you have already passed Step 1 and want a leaner, more direct inpatient-outpatient mix with residents and faculty, Keralty is worth the earlier planning it requires. Both are covered further in our <a href="/blog/family-medicine-rotations-for-imgs">Family Medicine Rotations for IMGs guide</a> and our <a href="/blog/clinical-rotations-in-florida-for-imgs">Florida state guide</a>.</p>
+            <p><strong>Trying to decide between Florida's two Family Medicine rotations?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you choose.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'pediatrics-rotations-in-maryland',
+        'title'    => 'Pediatrics Rotations in Maryland: Hands-On Clinical Experience for IMGs',
+        'excerpt'  => 'Our Baltimore pediatrics placement pairs you with an attending of 20-plus years for a genuinely hands-on, high-volume outpatient experience, at the lowest price of any pediatrics rotation we offer.',
+        'category' => 'rotations',
+        'date'     => '2026-08-01',
+        'read'     => 5,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/md-pediatrics-infant-exam.webp',
+        'body'     => <<<'HTML'
+            <p>Our Maryland pediatrics placement is a single, tightly focused rotation in Baltimore, and it is built around one idea: real hands-on volume, not passive observation. If you want to leave a pediatrics rotation having actually worked up patients yourself rather than watching from the corner of the room, this is the one to look at.</p>
+
+            <h2>Quick Facts</h2>
+            <ul>
+              <li><strong>Location:</strong> Outpatient clinic, Baltimore, MD</li>
+              <li><strong>Mentor:</strong> Attending physician with 20-plus years of experience</li>
+              <li><strong>Patient volume:</strong> 10 to 15 patients per day</li>
+              <li><strong>Schedule:</strong> Monday through Friday, 9am to 6pm</li>
+              <li><strong>Max students:</strong> 1 per month</li>
+              <li><strong>Price:</strong> $1,600</li>
+            </ul>
+
+            <h2>What "Hands-On" Actually Means Here</h2>
+            <p>From day one, you get full EMR access, not a shadowing badge. Across a high patient volume of 10 to 15 kids a day, you will see well-child visits, sick-child visits, and pre-operative consults, giving you exposure to the full range of routine pediatric practice rather than a narrow slice of it. Case discussions built into the day cover differential diagnosis and developmental milestones in detail, so the volume comes with teaching attached, not just repetition.</p>
+
+            <h2>The Lowest Price on Our Pediatrics Roster</h2>
+            <p>At $1,600, this is the most affordable pediatrics placement we offer, and one of the most affordable rotations across our entire roster in any specialty. Combined with the high patient volume and full EMR access, it offers strong value if budget is a real constraint in your rotation planning. The required documentation is also simpler than most of our other placements: just an updated CV, with no separate immunization or transcript submission required.</p>
+
+            <h2>Who This Rotation Is For</h2>
+            <p>Because it is capped at 1 student per month, this rotation suits someone planning ahead rather than booking last-minute. It is a strong fit if you want to maximize raw patient contact hours on a limited budget, or if you are early in building your USCE and need broad, high-volume general pediatric exposure before narrowing into a subspecialty interest.</p>
+
+            <h2>What's Included</h2>
+            <ul>
+              <li>A fully personalized letter of recommendation based on your performance</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Required documents: your most updated CV</li>
+            </ul>
+
+            <p>Curious how this compares to our other pediatrics placements? Read our full <a href="/blog/pediatrics-rotations-for-imgs-inpatient-vs-outpatient">Pediatrics Rotations for IMGs guide</a>, or browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Want to lock in a spot before the monthly cap fills?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll help you plan your timing.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'psychiatry-rotations-in-north-carolina',
+        'title'    => 'Psychiatry Rotations in North Carolina: Training with UNC Chapel Hill Faculty',
+        'excerpt'  => 'Our North Carolina psychiatry rotation puts you with a UNC Chapel Hill Associate Professor who spent 20-plus years as Clinical Director of the university counseling and psychological services.',
+        'category' => 'rotations',
+        'date'     => '2026-08-02',
+        'read'     => 5,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/nc-psychiatry-counseling.webp',
+        'body'     => <<<'HTML'
+            <p>The University of North Carolina at Chapel Hill needs no introduction on a residency application, and our North Carolina rotation puts you directly inside its Department of Psychiatry. It is also, at $1,800, one of the most affordable placements on our entire roster relative to the seniority of the mentor teaching it.</p>
+
+            <h2>Quick Facts</h2>
+            <ul>
+              <li><strong>Location:</strong> UNC Chapel Hill, Department of Psychiatry, Chapel Hill, NC</li>
+              <li><strong>Mentor:</strong> Medical School Associate Professor, formerly 20-plus years as Clinical Director of UNC's counseling and psychological services</li>
+              <li><strong>Setting:</strong> Outpatient clinic</li>
+              <li><strong>Schedule:</strong> Monday through Friday, 9am to 4:30pm</li>
+              <li><strong>Max students:</strong> 3, with monthly starts</li>
+              <li><strong>Price:</strong> $1,800</li>
+            </ul>
+
+            <h2>Breadth Across Psychiatric Subspecialties</h2>
+            <p>Most outpatient psychiatry rotations focus on one or two patient populations. This one is unusually broad: you will see emergency psychiatry, addiction medicine, precision medicine, and ecopsychology cases within a single 4-week placement, across a genuinely diverse patient population. For a student who has not yet settled on a psychiatric subspecialty, that range is valuable exposure you will not find at a smaller private clinic.</p>
+
+            <h2>Why the Mentor's Background Matters</h2>
+            <p>Your preceptor's two decades as Clinical Director of UNC's counseling and psychological services means they have supervised, taught, and evaluated students at scale, long before you arrive. That teaching experience tends to show up in how a rotation is run: more structured feedback, clearer expectations, and a letter of recommendation written by someone with a long track record of assessing trainees fairly.</p>
+
+            <h2>Who This Rotation Is For</h2>
+            <p>If you want a well-known academic medical center on your CV and a broad view of psychiatric subspecialties before you commit to one, this rotation is a strong fit, especially at this price point. If you already know you want a narrower, one-on-one focus in a specific subspecialty like geriatric psychiatry or child and adolescent care, our <a href="/rotation-ramapo-ridge-psychiatry">New Jersey</a> or <a href="/rotation-flourish-psychiatry">Houston</a> rotations may be a better match.</p>
+
+            <h2>What's Included</h2>
+            <ul>
+              <li>A personalized letter of recommendation on clinic letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <p>See how this compares to our other psychiatry placements in our full <a href="/blog/psychiatry-clinical-rotations-for-imgs">Psychiatry Clinical Rotations for IMGs guide</a>, or browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Want to know if the UNC rotation fits your application?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll talk it through.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'internal-medicine-rotations-in-new-york-housing-included',
+        'title'    => 'Internal Medicine Rotations in New York: Housing-Included Clinical Training',
+        'excerpt'  => 'Our New York Internal Medicine rotation is one of the only placements on our roster with housing built into the price. Here is what that actually covers, and why it matters logistically.',
+        'category' => 'rotations',
+        'date'     => '2026-08-03',
+        'read'     => 5,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/ny-im-student-travel.webp',
+        'body'     => <<<'HTML'
+            <p>Arranging housing from another country, sight unseen, is one of the more stressful logistics an IMG has to sort out before starting a US rotation. Our New York Internal Medicine placement removes that step entirely: housing is built into the price, and it is one of the few rotations on our roster where that is true.</p>
+
+            <h2>Quick Facts</h2>
+            <ul>
+              <li><strong>Location:</strong> St. Luke's Cornwall Hospital affiliated campus, Newburgh, NY</li>
+              <li><strong>Setting:</strong> Combined inpatient and outpatient, 4 weeks</li>
+              <li><strong>Housing:</strong> Included (dorm accommodation close to the hospital)</li>
+              <li><strong>Extras:</strong> Occasional lunch provided by the mentor, occasional pickup and drop-off support</li>
+              <li><strong>Max students:</strong> 2</li>
+              <li><strong>Price:</strong> $4,150 (rotation plus housing)</li>
+            </ul>
+
+            <h2>What "Housing Included" Actually Covers</h2>
+            <p>Instead of arranging a short-term rental or hotel on your own, you get dorm accommodation within close range of the hospital as part of the package. The mentor also occasionally provides lunch and pickup or drop-off support. For a student coming from overseas without a US bank account, credit history, or local contacts to help arrange short-term housing, that logistical certainty is worth as much as the clinical training itself.</p>
+
+            <h2>An IMG-Friendly Hospital with a Track Record</h2>
+            <p>St. Luke's Cornwall Hospital's affiliated campus has its own residency program, and the mentor here has prior rotators who went on to match. That is not a small detail: it means the environment is genuinely built around supporting visiting IMGs toward residency readiness, not simply tolerating them for a month. You will get 4 weeks of combined inpatient and outpatient exposure, in a supportive learning environment focused specifically on getting you to resident-level competence.</p>
+
+            <h2>Who This Rotation Is For</h2>
+            <p>This placement is a strong fit if you are applying Internal Medicine and want New York experience without the added stress of solving housing on your own, particularly if this is your first US clinical rotation. If you want a more intensive, sub-internship-style experience with a higher patient-management workload instead, compare it against our <a href="/rotation-south-texas">South Texas Sub-Internship</a> in our full <a href="/blog/internal-medicine-sub-internships-for-imgs">Internal Medicine Sub-Internships guide</a>.</p>
+
+            <h2>What's Included</h2>
+            <ul>
+              <li>Housing (dorm accommodation close to the hospital)</li>
+              <li>A personalized letter of recommendation on hospital letterhead</li>
+              <li>A $500 deposit applied toward your total balance, due before your start date</li>
+              <li>Standard required documents: updated CV, AAMC standardized immunization records, and your medical school transcript or ID</li>
+            </ul>
+
+            <p>Read more about this and our other New York placement in our <a href="/blog/clinical-rotations-in-new-york-for-imgs">New York state guide</a>, or browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
+            <p><strong>Want help planning your logistics around this rotation?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll walk you through it.</p>
+            HTML,
+    ],
 ];
 
 // Newest first.
