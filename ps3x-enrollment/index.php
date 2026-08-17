@@ -54,21 +54,14 @@ document.addEventListener('DOMContentLoaded', function () {
     .px-mobilebar { display: flex !important; }
   }
 
-  /* Frosted-glass header (matches the home page's scrolled state) — this page has no scroll-based toggle, so it's always on */
-  .msp-nav { background: rgba(250,250,249,.92); -webkit-backdrop-filter: saturate(180%) blur(12px); backdrop-filter: saturate(180%) blur(12px); border-bottom-color: var(--uw-border); box-shadow: var(--shadow-sm); }
   /* Standalone landing page: fewer footer nav columns than the site-wide footer
      this was copied from, so space-between leaves a large gap. */
   .msp-foot__top { justify-content: flex-start; gap: clamp(48px, 8vw, 120px); }
-  /* Narrow screens: no menu at all (mobile-nav.js is deliberately not loaded on this
-     page), so the header is just the logo and the CTA. match.css hides .msp-nav__cta
-     under 560px for the site-wide nav — here it is the only thing in the header, so
-     keep it visible. The label stays full-length at every width, so the logo is the
-     part that gives: it scales down rather than letting the CTA wrap or truncate. */
+
+  /* Header — matches the original design's nav exactly: logo + "Have questions?" + WhatsApp CTA. */
+  .px-nav-wa:hover { background: #1fb855; }
   @media (max-width: 560px) {
-    .msp-nav__cta { display: inline-flex; flex: none; padding: 10px 14px; font-size: 13px; gap: 7px; }
-    .msp-nav__inner { gap: 10px; }
-    .msp-brand { min-width: 0; flex: 0 1 auto; }
-    .msp-brand img { height: auto; width: 100%; max-width: 128px; }
+    .px-nav-ask { display: none; }
   }
 
   /* Matched-at marquee */
@@ -102,20 +95,17 @@ document.addEventListener('DOMContentLoaded', function () {
 </head>
 <body>
 
-<!-- ============== MINIMAL LANDING HEADER (in-page section links only — standalone page) ============== -->
-<header class="msp-nav" id="pxNav">
-  <div class="msp-wrap msp-nav__inner">
-    <span class="msp-brand" aria-label="USMLE Wise">
-      <img src="/assets/usmle-design-system/assets/Logo-Horizontal.svg" alt="USMLE Wise" height="36" />
-    </span>
-    <nav class="msp-nav__links" aria-label="Page sections">
-      <a href="#why">Why It Works</a>
-      <a href="#framework">3X Framework</a>
-      <a href="#testimonials">Reviews</a>
-      <a href="#packages">Pricing</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn btn--primary msp-nav__cta" href="#packages">Get Started</a>
+<!-- ============== HEADER (matches the original design: logo + WhatsApp CTA, no nav links) ============== -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(250,250,249,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--uw-border)">
+  <div style="max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#top" style="display:flex;align-items:center"><img src="/assets/usmle-design-system/assets/Logo-Horizontal.svg" alt="USMLE Wise" style="height:30px;width:auto;display:block"></a>
+    <div style="display:flex;align-items:center;gap:14px">
+      <span class="px-nav-ask" style="font:400 14px var(--font-sans);color:var(--uw-ink-500);white-space:nowrap">Have questions?</span>
+      <a class="px-nav-wa" href="https://api.whatsapp.com/send/?phone=19192015700&text=I+am+interested+in+Personal+statement+editing&type=phone_number&app_absent=0" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b1220;font:600 14px/1 var(--font-sans);padding:11px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background 140ms">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.7 8.23 8.24 0 4.54-3.69 8.21-8.23 8.21zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42h-.48c-.16 0-.43.06-.65.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.73 2.65 4.2 3.71.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.22-.18-.47-.3z"></path></svg>
+        <span>WhatsApp us</span>
+      </a>
+    </div>
   </div>
 </header>
 
@@ -406,19 +396,19 @@ foreach ($px_videos as $v):
         <div style="font:600 16px var(--font-sans);color:var(--uw-ink-700)">1 specialty</div>
         <div style="font:600 40px var(--font-display);color:var(--uw-ink-900)">$299</div>
         <p style="margin:0;font-size:14px;line-height:1.5;color:var(--uw-ink-600);flex:1">A polished, program-ready statement. Formatting, structure, language, and revisions.</p>
-        <a href="#contact" class="btn btn--outline" style="margin-top:14px">Get started</a>
+        <a href="https://buy.stripe.com/28E9AU1iGgXHeJi9cges00i" target="_blank" rel="noopener" class="btn btn--outline" style="margin-top:14px">Get started</a>
       </div>
       <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:12px;padding:28px 24px;text-align:left;display:flex;flex-direction:column;gap:8px">
         <div style="font:600 16px var(--font-sans);color:var(--uw-ink-700)">2 specialties <span style="font:500 11px var(--font-mono);letter-spacing:.08em;color:var(--uw-success-500)">SAVE $50</span></div>
         <div style="font:600 40px var(--font-display);color:var(--uw-ink-900)">$450</div>
         <p style="margin:0;font-size:14px;line-height:1.5;color:var(--uw-ink-600);flex:1">Two specialty-focused versions that keep your core story.</p>
-        <a href="#contact" class="btn btn--outline" style="margin-top:14px">Get started</a>
+        <a href="https://buy.stripe.com/8x214o3qO4aV7gQdswes00o" target="_blank" rel="noopener" class="btn btn--outline" style="margin-top:14px">Get started</a>
       </div>
       <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:12px;padding:28px 24px;text-align:left;display:flex;flex-direction:column;gap:8px">
         <div style="font:600 16px var(--font-sans);color:var(--uw-ink-700)">3 specialties <span style="font:500 11px var(--font-mono);letter-spacing:.08em;color:var(--uw-success-500)">SAVE $100</span></div>
         <div style="font:600 40px var(--font-display);color:var(--uw-ink-900)">$650</div>
         <p style="margin:0;font-size:14px;line-height:1.5;color:var(--uw-ink-600);flex:1">Three versions tailored across your specialties.</p>
-        <a href="#contact" class="btn btn--outline" style="margin-top:14px">Get started</a>
+        <a href="https://buy.stripe.com/00wfZi1iG7n744Ebkoes00p" target="_blank" rel="noopener" class="btn btn--outline" style="margin-top:14px">Get started</a>
       </div>
       <div style="background:var(--uw-blue-500);background-image:radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px);background-size:16px 16px;border-radius:12px;padding:28px 24px;text-align:left;display:flex;flex-direction:column;gap:8px">
         <div style="font:600 16px var(--font-sans);color:#fff">Signal-personalized <span style="font:500 11px var(--font-mono);letter-spacing:.08em;color:var(--uw-success-300)">FULL SERVICE</span></div>
