@@ -776,8 +776,10 @@
   var videoFrame = videoModal ? videoModal.querySelector('.uw-video-modal__frame') : null;
   function openVideoModal(id) {
     if (!videoModal || !videoFrame || !id) return;
+    // referrerpolicy is required: without a Referer, YouTube refuses to play the
+    // embed and shows "Error 153 - Video player configuration error".
     videoFrame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
-      '?autoplay=1&rel=0" title="Match story video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      '?autoplay=1&rel=0" title="Match story video" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
     videoModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
