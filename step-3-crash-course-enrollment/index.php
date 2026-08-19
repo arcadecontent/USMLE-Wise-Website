@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
   .ccx-h1 { transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med); }
   .ccx-h1:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
   .cc-faq-btn:hover { background: var(--uw-ink-75); }
+  .cc-play:focus-visible { outline: 2px solid var(--uw-blue-300); outline-offset: 2px; }
   /* Standalone landing page: fewer footer nav columns than the site-wide footer
      this was copied from, so space-between leaves a large gap. */
   .msp-foot__top { justify-content: flex-start; gap: clamp(48px, 8vw, 120px); }
@@ -560,29 +561,29 @@ foreach (array_merge($m3_marquee, $m3_marquee) as $img):
       <div style="display:flex;justify-content:center;align-items:center;gap:9px;font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>Watch their stories</div>
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.02em;margin:0 auto clamp(30px,3.6vw,40px);color:var(--uw-ink-900);text-align:center;max-width:22ch">Hear it from students who got their score.</h2>
       <div class="cc-videos">
-        <a href="https://www.youtube.com/shorts/SmDKOptBIV4" target="_blank" rel="noopener" data-video="short" style="position:relative;width:100%;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:9/16;cursor:pointer;display:block;text-decoration:none">
+        <div class="cc-play" role="button" tabindex="0" data-vid="SmDKOptBIV4" data-title="Student video review" aria-label="Play student video review" style="position:relative;width:100%;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:9/16;cursor:pointer;display:block">
             <img src="https://i.ytimg.com/vi/SmDKOptBIV4/oardefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42))"></div>
             <div style="position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.4);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-400)"></span>Short</div>
             <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
-        </a>
-        <a href="https://www.youtube.com/shorts/pcQuFkFmnAE" target="_blank" rel="noopener" data-video="short" style="position:relative;width:100%;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:9/16;cursor:pointer;display:block;text-decoration:none">
+        </div>
+        <div class="cc-play" role="button" tabindex="0" data-vid="pcQuFkFmnAE" data-title="Student video review" aria-label="Play student video review" style="position:relative;width:100%;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:9/16;cursor:pointer;display:block">
             <img src="https://i.ytimg.com/vi/pcQuFkFmnAE/oardefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42))"></div>
             <div style="position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.4);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-400)"></span>Short</div>
             <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
-        </a>
+        </div>
         <div class="cc-vid-land" style="display:flex;flex-direction:column;gap:18px">
-          <a href="https://www.youtube.com/watch?v=5qnypeUipdE" target="_blank" rel="noopener" data-video="va" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block;text-decoration:none">
+          <div class="cc-play" role="button" tabindex="0" data-vid="5qnypeUipdE" data-title="Student video review" aria-label="Play student video review" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block">
               <img src="https://i.ytimg.com/vi/5qnypeUipdE/hqdefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.34))"></div>
               <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
-          </a>
-          <a href="https://www.youtube.com/watch?v=yljBSeYYx6s" target="_blank" rel="noopener" data-video="vb" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block;text-decoration:none">
+          </div>
+          <div class="cc-play" role="button" tabindex="0" data-vid="yljBSeYYx6s" data-title="Student video review" aria-label="Play student video review" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block">
               <img src="https://i.ytimg.com/vi/yljBSeYYx6s/hqdefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.34))"></div>
               <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -819,6 +820,29 @@ foreach ($m3_wall_cols as $col):
         var ans = btn.parentElement.querySelector('.cc-faq-a');
         if (ans) ans.style.display = '';
       }
+    });
+  });
+
+  // Click-to-play YouTube embeds — swaps the thumbnail for a playing iframe in place,
+  // instead of sending the visitor to youtube.com.
+  function playVideo(el) {
+    var id = el.getAttribute('data-vid');
+    var title = el.getAttribute('data-title') || 'USMLE Wise video';
+    if (!id || el.__played) return;
+    el.__played = true;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+    iframe.title = title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;display:block';
+    el.innerHTML = '';
+    el.appendChild(iframe);
+  }
+  document.querySelectorAll('.cc-play').forEach(function (el) {
+    el.addEventListener('click', function () { playVideo(el); });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(el); }
     });
   });
 })();
