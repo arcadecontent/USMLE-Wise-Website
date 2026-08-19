@@ -59,6 +59,19 @@ document.addEventListener('DOMContentLoaded', function () {
   .cc-wall::-webkit-scrollbar-thumb { background: var(--uw-blue-300); border-radius: 999px; border: 2px solid var(--uw-blue-50); }
   .cc-wall::-webkit-scrollbar-thumb:hover { background: var(--uw-blue-500); }
   .cc-videos { display: grid; grid-template-columns: 0.7fr 0.7fr 1.1fr; gap: 18px; align-items: start; }
+  /* Video review lightbox. The review thumbnails used to be plain links that
+     sent the visitor to youtube.com in a new tab; they now play in this modal. */
+  .cc-video-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .cc-video-modal[hidden] { display: none; }
+  .cc-video-modal__backdrop { position: absolute; inset: 0; background: rgba(10, 12, 20, .82); }
+  .cc-video-modal__dialog { position: relative; width: 100%; max-width: 900px; }
+  .cc-video-modal__frame { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+  .cc-video-modal__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  /* Shorts are 9/16 — cap the dialog width so the tall frame still fits the viewport. */
+  .cc-video-modal--portrait .cc-video-modal__dialog { max-width: min(420px, calc((100vh - 120px) * 9 / 16)); }
+  .cc-video-modal--portrait .cc-video-modal__frame { aspect-ratio: 9/16; }
+  .cc-video-modal__close { position: absolute; top: -44px; right: 0; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; display: grid; place-items: center; }
+  .cc-video-modal__close:hover { background: rgba(255,255,255,.26); }
   @media (max-width: 1024px) { .cc-stats { grid-template-columns: repeat(3,1fr) !important; } }
   @media (max-width: 1000px) { .cc-nav-links { display: none !important; } }
   @media (max-width: 560px) { .cc-stats { grid-template-columns: repeat(2,1fr) !important; } }
@@ -715,6 +728,68 @@ foreach ($m2_wall_cols as $col):
 
 </div>
 
+<!-- Video review lightbox — the student reviews play here, on the page. -->
+<div id="ccVideoModal" class="cc-video-modal" hidden>
+  <div class="cc-video-modal__backdrop" data-video-close></div>
+  <div class="cc-video-modal__dialog" role="dialog" aria-modal="true" aria-label="Student video review">
+    <button type="button" class="cc-video-modal__close" data-video-close aria-label="Close video">&times;</button>
+    <div class="cc-video-modal__frame"></div>
+  </div>
+</div>
+<script>
+(function () {
+  // The student review thumbnails are real links to youtube.com, so clicking one
+  // used to leave the page and open a new tab. Play them in the lightbox instead.
+  // The href stays put, so cmd/ctrl/middle-click and no-JS visitors still get
+  // the YouTube page as before.
+  var modal = document.getElementById('ccVideoModal');
+  var frame = modal ? modal.querySelector('.cc-video-modal__frame') : null;
+  if (!modal || !frame) return;
+
+  // Handles /watch?v=ID, /shorts/ID, /embed/ID, /live/ID and youtu.be/ID.
+  function videoId(href) {
+    var m = /[?&]v=([\w-]{6,})/.exec(href) ||
+            /(?:youtu\.be|\/shorts|\/embed|\/live)\/([\w-]{6,})/.exec(href);
+    return m ? m[1] : null;
+  }
+
+  function openVideo(id, portrait) {
+    // referrerpolicy is required: the server sends Referrer-Policy: same-origin,
+    // which strips the Referer on cross-origin requests and makes YouTube fail
+    // with error 153.
+    frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+      '?autoplay=1&rel=0" title="Student video review" referrerpolicy="strict-origin-when-cross-origin"' +
+      ' allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    modal.classList.toggle('cc-video-modal--portrait', !!portrait);
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideo() {
+    frame.innerHTML = '';
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.cc-videos a[data-video]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      // Leave modified clicks alone so "open in new tab" keeps working.
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var id = videoId(link.getAttribute('href') || '');
+      if (!id) return;
+      e.preventDefault();
+      openVideo(id, link.getAttribute('data-video') === 'short');
+    });
+  });
+
+  modal.addEventListener('click', function (e) {
+    if (e.target.hasAttribute('data-video-close')) closeVideo();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) closeVideo();
+  });
+})();
+</script>
 <script>
 (function () {
   // Stat count-up on scroll-into-view.
