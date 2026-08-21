@@ -24,7 +24,6 @@
           <a href="/research-catalyst">Research Catalyst</a>
           <a href="/research-original">Original Research</a>
           <a href="/research-review">Systematic Review / Meta-Analysis</a>
-          <a href="/research-masterclass">Research Masterclass</a>
           <a href="/research-junior-scientist">Junior Scientist Program</a>
           <a href="/research-j1-fellowship">J-1 Research Fellowship Placement</a>
           <a href="/research-networking">Strategic Networking Program</a>

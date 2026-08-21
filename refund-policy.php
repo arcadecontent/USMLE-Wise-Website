@@ -54,7 +54,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p>Enrollment begins with a one-month trial and a deposit. If, by the end of that one-month trial, the program is not the right fit for your child, your deposit is refunded in full.</p>
 
         <h2>5. All Other Programs</h2>
-        <p>Step 1 Mastery, NBME-Style Coaching (Step 1 &amp; Step 2), 1:1 Tutoring, Research Masterclass, Original Research, Systematic Review/Meta-Analysis, J-1 Research Fellowship Placement, and Clinical Rotation placements do not currently have a fixed, published refund schedule. Refund requests for these programs are reviewed case by case &mdash; contact <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with your situation and our team will work with you directly.</p>
+        <p>Step 1 Mastery, NBME-Style Coaching (Step 1 &amp; Step 2), 1:1 Tutoring, Original Research, Systematic Review/Meta-Analysis, J-1 Research Fellowship Placement, and Clinical Rotation placements do not currently have a fixed, published refund schedule. Refund requests for these programs are reviewed case by case &mdash; contact <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with your situation and our team will work with you directly.</p>
 
         <h2>6. How to Request a Refund</h2>
         <p>Email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with:</p>

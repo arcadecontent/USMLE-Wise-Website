@@ -63,10 +63,6 @@
             <span class="msp-nav__dd-name">Systematic Review / Meta-Analysis</span>
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
           </a>
-          <a href="/research-masterclass" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Research Masterclass</span>
-            <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
-          </a>
           <a href="/research-junior-scientist" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Junior Scientist Program</span>
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>

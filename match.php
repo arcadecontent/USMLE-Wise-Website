@@ -94,10 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <span class="msp-nav__dd-name">Systematic Review / Meta-Analysis</span>
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
           </a>
-          <a href="/research-masterclass" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Research Masterclass</span>
-            <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
-          </a>
           <a href="/research-junior-scientist" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Junior Scientist Program</span>
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
@@ -1017,7 +1013,6 @@ class Component extends DCLogic {
           <a href="/research-catalyst">Research Catalyst</a>
           <a href="/research-original">Original Research</a>
           <a href="/research-review">Systematic Review / Meta-Analysis</a>
-          <a href="/research-masterclass">Research Masterclass</a>
           <a href="/research-junior-scientist">Junior Scientist Program</a>
         </div>
         <div class="msp-foot__nav-group">

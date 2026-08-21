@@ -127,15 +127,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <span class="msp-eyebrow">Level up</span>
               <h2 id="forWhomTitle" class="msp-h2">The library for when you're actually doing the project.</h2>
               <p class="msp-lede">
-                The Masterclass teaches you how research works. Cohort Access is what
-                you come back to at every stage while you're doing it — eighteen sessions
-                deep enough to answer the question you're stuck on right now.
+                Cohort Access is what you come back to at every stage while you're
+                doing the project — eighteen sessions deep enough to answer the
+                question you're stuck on right now.
               </p>
             </div>
             <ol class="rc-for-whom__list">
               <li class="reveal">
                 <span class="rc-whom-num">01</span>
-                <span class="rc-whom-item">You've finished the Masterclass, or already know the basics, and you're working on a real project</span>
+                <span class="rc-whom-item">You already know the research basics and you're working on a real project</span>
               </li>
               <li class="reveal">
                 <span class="rc-whom-num">02</span>
@@ -167,15 +167,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 Is "Cohort Access" a live group program?
               </button>
               <div class="accordion__body">
-                No. Despite the name, Cohort Access is a library of 18 recorded sessions, not a live group or a fixed start date. It's fully self-paced, exactly like the Masterclass — just with a lot more content.
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                How is this different from the Research Masterclass?
-              </button>
-              <div class="accordion__body">
-                The Masterclass ($19) is a six-module introduction to how research works, built for someone starting from zero. Cohort Access ($99) is a much larger library — 18 sessions spanning study design, writing, publishing, conferences, and turning research into a stronger ERAS application. Most students start with the Masterclass, then move into Cohort Access once they're actively working on a project.
+                No. Despite the name, Cohort Access is a library of 18 recorded sessions, not a live group or a fixed start date. It's fully self-paced.
               </div>
             </div>
             <div class="accordion__item">
@@ -191,7 +183,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 What level is this designed for?
               </button>
               <div class="accordion__body">
-                Built for medical graduates who already understand research basics — through the Masterclass or prior experience — and are ready to work through a real project with structured guidance at every stage.
+                Built for medical graduates who already understand research basics and are ready to work through a real project with structured guidance at every stage.
               </div>
             </div>
           </div>

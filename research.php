@@ -290,7 +290,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <p class="msp-sva-desc">Research fundamentals for medical graduates. The right starting point before working with a mentor.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-masterclass" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                  <a href="/research-cohort" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
                 </div>
               </div>
             </article>
