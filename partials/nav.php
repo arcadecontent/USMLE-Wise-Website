@@ -29,6 +29,10 @@
             <span class="msp-nav__dd-name">1:1 Tutoring</span>
             <span class="msp-nav__dd-meta">Done-with-you</span>
           </a>
+          <a href="/mastery" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Our Mastery</span>
+            <span class="msp-nav__dd-meta">Full course library</span>
+          </a>
         </div>
       </div>
       <div class="msp-nav__item msp-nav__item--has-dd">
@@ -59,6 +63,18 @@
             <span class="msp-nav__dd-name">Original Research</span>
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
           </a>
+          <a href="/research-coauthor" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Single Research Paper &mdash; Co-Author</span>
+            <span class="msp-nav__dd-meta">PubMed-indexed &middot; $300</span>
+          </a>
+          <a href="/research-lead-author" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Lead Author Publication</span>
+            <span class="msp-nav__dd-meta">PubMed-indexed &middot; $1,000</span>
+          </a>
+          <a href="/research-lead-author-conference" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Lead Author + Conference Presentation</span>
+            <span class="msp-nav__dd-meta">Publication &amp; presentation &middot; $1,500</span>
+          </a>
           <a href="/research-review" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Systematic Review / Meta-Analysis</span>
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
@@ -87,6 +103,10 @@
           <a href="/match" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Match Overview</span>
             <span class="msp-nav__dd-meta">End-to-end residency support</span>
+          </a>
+          <a href="/match-mentorship" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Live Match Mentorship</span>
+            <span class="msp-nav__dd-meta">Live masterclasses &middot; 3X framework</span>
           </a>
           <a href="/match-lor" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">LOR Editing</span>

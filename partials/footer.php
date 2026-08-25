@@ -23,6 +23,9 @@
           <a href="/research">Research Overview</a>
           <a href="/research-catalyst">Research Catalyst</a>
           <a href="/research-original">Original Research</a>
+          <a href="/research-coauthor">Single Research Paper &mdash; Co-Author</a>
+          <a href="/research-lead-author">Lead Author Publication</a>
+          <a href="/research-lead-author-conference">Lead Author + Conference</a>
           <a href="/research-review">Systematic Review / Meta-Analysis</a>
           <a href="/research-junior-scientist">Junior Scientist Program</a>
           <a href="/research-j1-fellowship">J-1 Research Fellowship Placement</a>
@@ -32,6 +35,7 @@
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Match</span>
           <a href="/match">Match Overview</a>
+          <a href="/match-mentorship">Live Match Mentorship</a>
           <a href="/match-lor">LOR Editing</a>
           <a href="/match-eras-cv">ERAS CV</a>
           <a href="/match-ps3x">Personal Statement</a>

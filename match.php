@@ -107,6 +107,10 @@ document.addEventListener('DOMContentLoaded', function () {
             <span class="msp-nav__dd-name">Match Overview</span>
             <span class="msp-nav__dd-meta">End-to-end residency support</span>
           </a>
+          <a href="/match-mentorship" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Live Match Mentorship</span>
+            <span class="msp-nav__dd-meta">Live masterclasses &middot; 3X framework</span>
+          </a>
           <a href="/match-lor" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">LOR Editing</span>
             <span class="msp-nav__dd-meta">Letters of Recommendation</span>
@@ -1018,6 +1022,7 @@ class Component extends DCLogic {
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Match</span>
           <a href="/match">Match Overview</a>
+          <a href="/match-mentorship">Live Match Mentorship</a>
           <a href="/match-lor">LOR Editing</a>
           <a href="/match-eras-cv">ERAS CV</a>
           <a href="/match-ps3x">Personal Statement</a>
