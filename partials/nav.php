@@ -105,8 +105,8 @@
             <span class="msp-nav__dd-meta">End-to-end residency support</span>
           </a>
           <a href="/match-mentorship" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Live Match Mentorship</span>
-            <span class="msp-nav__dd-meta">Live masterclasses &middot; 3X framework</span>
+            <span class="msp-nav__dd-name">Match Mentorship</span>
+            <span class="msp-nav__dd-meta">Recorded masterclasses &middot; 3X framework</span>
           </a>
           <a href="/match-lor" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">LOR Editing</span>

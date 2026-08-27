@@ -14,8 +14,8 @@
   second Lead for the same click. partials/head.php includes meta-pixel.php
   itself, so this only needs to be set once, before that include.
 */
-$pageTitle = "Live Match Mentorship | USMLE Wise";
-$pageDescription = "The USMLEWise Live Match Mentorship: live masterclasses on your personal statement, ERAS CV, signaling strategy, interviews, and SOAP, built on the 3X framework and backed by our 100% Match Guarantee.";
+$pageTitle = "Match Mentorship | USMLE Wise";
+$pageDescription = "The USMLEWise Match Mentorship: recorded masterclasses on your personal statement, ERAS CV, signaling strategy, interviews, and SOAP, built on the 3X framework and backed by our 100% Match Guarantee.";
 $canonical = "https://usmlewise.com/match-mentorship";
 $bodyClass = "msp";
 // match.css, not the global stylesheet, is what styles the shared .msp-nav/
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <section data-screen-label="Hero" class="msp-hero" aria-labelledby="heroTitle">
     <div class="msp-wrap msp-hero__grid">
       <div class="msp-hero__copy">
-        <span class="msp-eyebrow"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-500);display:inline-block"></span>The USMLEWise Live Match Mentorship</span>
+        <span class="msp-eyebrow"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-500);display:inline-block"></span>The USMLEWise Match Mentorship</span>
         <h1 id="heroTitle" class="msp-h1">Match on your <span class="msp-h1__accent">first attempt</span>.</h1>
         <p style="font-family:var(--font-display);font-weight:400;font-size:22px;line-height:1.3;letter-spacing:-0.015em;margin:0 0 20px;color:var(--uw-blue-500)">Backed by our 100% Match Guarantee.</p>
         <p class="msp-lede">We teach you how to write your personal statement, build your ERAS CV, pick your programs, and answer interview questions, all built on proven frameworks that get you matched.</p>
@@ -340,13 +340,13 @@ document.addEventListener('DOMContentLoaded', function () {
     <div style="max-width:900px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-blue-500)">The system</div>
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900);max-width:26ch;text-wrap:pretty">One system. One story. Built on what programs actually score.</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:62ch;margin:20px 0 0;text-wrap:pretty">Most applicants build their Match in pieces. One person edits the CV. Someone else touches the personal statement. A third gives interview tips. The story falls apart in the gaps. The USMLEWise Live Match Mentorship puts every piece in one place and teaches you to build all of it to the 3X framework.</p>
+      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:62ch;margin:20px 0 0;text-wrap:pretty">Most applicants build their Match in pieces. One person edits the CV. Someone else touches the personal statement. A third gives interview tips. The story falls apart in the gaps. The USMLEWise Match Mentorship puts every piece in one place and teaches you to build all of it to the 3X framework.</p>
 
       <div class="uw-g2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px;width:100%;text-align:left">
         <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px">
           <div style="width:38px;height:38px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2"></rect></svg></div>
-          <h4 style="margin:0 0 8px;font-size:17px;font-weight:600;color:var(--uw-ink-900)">Live masterclasses, plus every recording</h4>
-          <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Much of the training runs live, where we teach the 3X framework and answer your questions on the spot. Miss one? Every recording and all materials are yours. Nothing is locked away.</p>
+          <h4 style="margin:0 0 8px;font-size:17px;font-weight:600;color:var(--uw-ink-900)">Recorded masterclasses, watch anytime</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Every masterclass is recorded, so you go through the 3X framework on your own schedule instead of around a live call. Every recording and all materials are yours from day one. Nothing is locked away.</p>
         </div>
         <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px">
           <div style="width:38px;height:38px;background:var(--uw-blue-50);color:var(--uw-blue-500);border-radius:var(--r-md);display:grid;place-items:center;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path></svg></div>
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div style="max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-blue-500)">What’s inside</div>
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900);max-width:24ch;text-wrap:pretty">The masterclasses that teach you the whole Match.</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:58ch;margin:20px 0 0;text-wrap:pretty">Each one teaches a piece of the 3X framework, live, with every recording and all the materials yours to keep.</p>
+      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:58ch;margin:20px 0 0;text-wrap:pretty">Each one teaches a piece of the 3X framework, recorded and ready to watch on your own schedule, with all the materials yours to keep.</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:18px;margin-top:36px;width:100%;text-align:left">
         <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden">
@@ -423,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div style="display:flex;justify-content:space-between;gap:16px;padding:15px 22px;border-bottom:1px solid var(--uw-border);font-size:15px"><span style="color:var(--uw-ink-800)">Original Research Course</span><span style="color:var(--uw-ink-500);font-variant-numeric:tabular-nums">$149</span></div>
         <div style="display:flex;justify-content:space-between;gap:16px;padding:15px 22px;border-bottom:1px solid var(--uw-border);font-size:15px"><span style="color:var(--uw-ink-800)">Program Navigator (program list + signaling tool)</span><span style="color:var(--uw-ink-500);font-variant-numeric:tabular-nums">$99</span></div>
         <div style="display:flex;justify-content:space-between;gap:16px;padding:15px 22px;border-bottom:1px solid var(--uw-border);font-size:15px"><span style="color:var(--uw-ink-800)">Conference Database</span><span style="color:var(--uw-ink-500);font-variant-numeric:tabular-nums">$79</span></div>
-        <div style="display:flex;justify-content:space-between;gap:16px;padding:15px 22px;border-bottom:1px solid var(--uw-border);font-size:15px"><span style="color:var(--uw-ink-800)">Live masterclass access + all recordings &amp; materials</span><span style="color:var(--uw-blue-500);font-weight:600">Included</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:15px 22px;border-bottom:1px solid var(--uw-border);font-size:15px"><span style="color:var(--uw-ink-800)">Recorded masterclass access + all materials</span><span style="color:var(--uw-blue-500);font-weight:600">Included</span></div>
         <div style="display:flex;justify-content:space-between;gap:16px;padding:15px 22px;border-bottom:1px solid var(--uw-border);font-size:15px"><span style="color:var(--uw-ink-800)">Private WhatsApp community (staff + alumni)</span><span style="color:var(--uw-blue-500);font-weight:600">Included</span></div>
         <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 22px;background:var(--uw-blue-50)"><span style="font-weight:600;color:var(--uw-ink-900);font-size:15.5px">Total value</span><span style="font-family:var(--font-display);font-size:30px;letter-spacing:-0.02em;color:var(--uw-blue-500)">$2,419</span></div>
       </div>
@@ -439,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div style="background:var(--uw-blue-500);color:#fff;padding:18px 24px;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:16px 16px"></div>
           <div style="position:relative;z-index:1;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap">
-            <span style="font-family:var(--font-display);font-size:19px;letter-spacing:-0.015em">USMLEWise Live Match Mentorship</span>
+            <span style="font-family:var(--font-display);font-size:19px;letter-spacing:-0.015em">USMLEWise Match Mentorship</span>
             <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:var(--uw-red-500);color:#fff;padding:4px 10px;border-radius:999px">Early bird</span>
           </div>
         </div>
@@ -453,7 +453,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--uw-red-500);margin:20px 0 0">Early-bird price. It goes back to $2,419.</p>
         <div class="uw-pricelist" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-top:28px;padding-top:26px;border-top:1px solid var(--uw-border);width:100%;text-align:left;font-size:14px;color:var(--uw-ink-700)">
-          <div style="display:flex;gap:9px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-blue-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:2px"><path d="m5 12 5 5L20 7"></path></svg><span>Five live masterclasses</span></div>
+          <div style="display:flex;gap:9px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-blue-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:2px"><path d="m5 12 5 5L20 7"></path></svg><span>Five recorded masterclasses</span></div>
           <div style="display:flex;gap:9px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-blue-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:2px"><path d="m5 12 5 5L20 7"></path></svg><span>Every recording and all materials</span></div>
           <div style="display:flex;gap:9px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-blue-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:2px"><path d="m5 12 5 5L20 7"></path></svg><span>Four research courses</span></div>
           <div style="display:flex;gap:9px;align-items:flex-start"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--uw-blue-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:2px"><path d="m5 12 5 5L20 7"></path></svg><span>Program Navigator + Conference Database</span></div>
@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900)">The 100% Match Guarantee.</h2>
       <p style="font-size:18px;line-height:1.6;color:var(--uw-ink-800);margin:20px 0 0">The whole risk sits with us.</p>
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:22px;font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:60ch">
-        <p style="margin:0">Get the full Live Match Mentorship. Use it the way it’s built. Apply through the strategy inside it.</p>
+        <p style="margin:0">Get the full Match Mentorship. Use it the way it’s built. Apply through the strategy inside it.</p>
         <p style="margin:0;text-wrap:pretty">Don’t match this cycle? <b style="color: var(--uw-ink-900);">You don’t pay again.</b> Your membership stays active, free, with every masterclass, every recording, and every update we release, until you match.</p>
       </div>
     </div>
@@ -682,19 +682,19 @@ document.addEventListener('DOMContentLoaded', function () {
       <div style="display:flex;flex-direction:column;gap:12px;margin-top:36px;width:100%;text-align:left">
         <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
           <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Is this done for you?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
-          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">No, and that’s the whole point. We hand you the exact frameworks program directors use, teach them across the live masterclasses, and show you how to build every piece. You write your own personal statement. You build your own CV. You do the work. That’s how you learn to tell your story in a way a committee trusts, and it’s why this costs $349 instead of thousands. If you’d rather we build your application with you, that’s our done-for-you Match packages, and your $349 credits fully toward them.</p>
+          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">No, and that’s the whole point. We hand you the exact frameworks program directors use, teach them across the recorded masterclasses, and show you how to build every piece. You write your own personal statement. You build your own CV. You do the work. That’s how you learn to tell your story in a way a committee trusts, and it’s why this costs $349 instead of thousands. If you’d rather we build your application with you, that’s our done-for-you Match packages, and your $349 credits fully toward them.</p>
         </details>
         <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
           <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Who is this for?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
           <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">IMGs, US IMGs, US MDs, and DOs. First-time applicants who want to get it right from the start, and reapplicants rebuilding a stronger cycle. If you’re applying to the Match, these frameworks work for you.</p>
         </details>
         <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
-          <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Do I have to attend the masterclasses live?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
-          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">No. Come live to ask your questions in real time, or watch the recordings on your own schedule. You get every recording and all the materials either way.</p>
+          <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Are the masterclasses live or recorded?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
+          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">Recorded. Every masterclass is ready to watch the moment you enroll, so you can go through the 3X framework on your own schedule instead of around a live call. You get every recording and all the materials from day one.</p>
         </details>
         <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
           <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">How does the 100% Match Guarantee work?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
-          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">Get the Live Match Mentorship, use it, and apply through the strategy inside it. If you don’t match this cycle, you don’t pay again, and your access stays free, cycle after cycle, until you do. The programs make the final Match call, so we commit to staying with you the whole way.</p>
+          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">Get the Match Mentorship, use it, and apply through the strategy inside it. If you don’t match this cycle, you don’t pay again, and your access stays free, cycle after cycle, until you do. The programs make the final Match call, so we commit to staying with you the whole way.</p>
         </details>
         <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
           <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">What if I want you to build my application for me?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
@@ -711,7 +711,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center">
           <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.8vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:24ch;text-wrap:pretty;color:#fff">Make this your first and last Match season.</h2>
           <p style="font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.8);max-width:58ch;margin:22px 0 0;text-wrap:pretty">You’ve already proven you’re a good doctor. Your Match comes down to whether a committee can see it, in one clear story, built the way they score.</p>
-          <p style="font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.8);max-width:58ch;margin:14px 0 0;text-wrap:pretty">That’s the whole Live Match Mentorship. And if it doesn’t get you there this cycle, we don’t stop until it does.</p>
+          <p style="font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.8);max-width:58ch;margin:14px 0 0;text-wrap:pretty">That’s the whole Match Mentorship. And if it doesn’t get you there this cycle, we don’t stop until it does.</p>
           <div data-cta="pricing" style="display:flex;justify-content:center;margin-top:30px;cursor:pointer">
             <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="xl" hint-size="280px,56px">Get access →</x-import>
           </div>

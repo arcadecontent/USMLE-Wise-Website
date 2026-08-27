@@ -35,7 +35,7 @@
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Match</span>
           <a href="/match">Match Overview</a>
-          <a href="/match-mentorship">Live Match Mentorship</a>
+          <a href="/match-mentorship">Match Mentorship</a>
           <a href="/match-lor">LOR Editing</a>
           <a href="/match-eras-cv">ERAS CV</a>
           <a href="/match-ps3x">Personal Statement</a>

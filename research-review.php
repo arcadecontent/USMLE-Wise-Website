@@ -153,6 +153,32 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
+      <!-- ============== PROGRAM FEE ============== -->
+      <section class="msp-section" id="fee" aria-labelledby="feeTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Program fee</span>
+            <h2 id="feeTitle" class="msp-h2">One fee, one mentored review.</h2>
+          </div>
+          <div class="rc-payment reveal">
+            <div class="rc-payment__inner">
+              <div>
+                <span class="rc-sec-label">Investment</span>
+                <div class="rc-payment__price">$199</div>
+                <p class="rc-payment__note">Covers mentor guidance across topic selection, protocol and search strategy, screening and data extraction, writing, and journal submission for one systematic review or meta-analysis. Journal fees, if any, are separate. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+              </div>
+              <a
+                class="btn btn--primary"
+                href="https://team.manikmadaan.com/guidance-call/book"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Book a Free Call</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ============== FAQ ============== -->
       <section class="msp-section rc-faq" id="faq" aria-labelledby="faqTitle">
         <div class="msp-wrap">

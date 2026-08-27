@@ -154,6 +154,32 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
+      <!-- ============== PROGRAM FEE ============== -->
+      <section class="msp-section" id="fee" aria-labelledby="feeTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Price</span>
+            <h2 id="feeTitle" class="msp-h2">One payment, lifetime access.</h2>
+          </div>
+          <div class="rc-payment reveal">
+            <div class="rc-payment__inner">
+              <div>
+                <span class="rc-sec-label">Investment</span>
+                <div class="rc-payment__price">$99</div>
+                <p class="rc-payment__note">One-time payment for all 18 recorded sessions, self-paced, with lifetime access and any future additions to the library. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+              </div>
+              <a
+                class="btn btn--primary"
+                href="https://team.manikmadaan.com/guidance-call/book"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Enroll Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ============== FAQ ============== -->
       <section class="msp-section rc-faq" id="faq" aria-labelledby="faqTitle">
         <div class="msp-wrap">
