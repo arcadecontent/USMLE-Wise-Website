@@ -114,27 +114,34 @@ document.addEventListener('DOMContentLoaded', function () {
 </helmet>
 <div class="uw" style="font-family:var(--font-sans);color:var(--uw-ink-800);background:var(--uw-bg);-webkit-font-smoothing:antialiased">
 
-  <!-- announcement -->
-  <div style="background:var(--uw-blue-900);color:#fff;text-align:center;font-size:13px;letter-spacing:.01em;padding:9px 16px">
-    <span style="opacity:.7">Limited —</span>&nbsp; <b style="color:var(--uw-success-300)">this offer is open to the first 30 students only</b>
-  </div>
+  <section data-screen-label="Hero" class="msp-hero" aria-labelledby="heroTitle">
+    <div class="msp-wrap msp-hero__grid">
+      <div class="msp-hero__copy">
+        <span class="msp-eyebrow"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-500);display:inline-block"></span>The USMLEWise Live Match Mentorship</span>
+        <h1 id="heroTitle" class="msp-h1">Match on your <span class="msp-h1__accent">first attempt</span>.</h1>
+        <p style="font-family:var(--font-display);font-weight:400;font-size:22px;line-height:1.3;letter-spacing:-0.015em;margin:0 0 20px;color:var(--uw-blue-500)">Backed by our 100% Match Guarantee.</p>
+        <p class="msp-lede">We teach you how to write your personal statement, build your ERAS CV, pick your programs, and answer interview questions, all built on proven frameworks that get you matched.</p>
+        <p style="font-size:14px;color:var(--uw-ink-500);margin:-20px 0 24px">For IMGs, MDs, and DOs.</p>
+        <div class="msp-cta-row">
+          <div data-cta="pricing" style="cursor:pointer">
+            <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="xl" hint-size="280px,56px">Enroll now →</x-import>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:26px">
+          <div style="display:flex;gap:3px;align-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg></div>
+          <span style="font-size:15px;color:var(--uw-ink-700)">Trusted by <b style="color:var(--uw-ink-900)" data-count="100000" data-suffix="+">100,000+</b> students and doctors</span>
+        </div>
+      </div>
 
-  <section data-screen-label="Hero" class="uw-sec" style="padding:88px 24px 0;background:radial-gradient(760px 420px at 50% -10%, var(--uw-blue-50), transparent), var(--uw-surface);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:820px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);display:inline-flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-500)"></span>The USMLEWise Live Match Mentorship</div>
-      <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(38px,7.4vw,64px);line-height:1.03;letter-spacing:-0.02em;margin:20px 0 0;color:var(--uw-ink-900);text-wrap:pretty">Match on your <em>first attempt</em>.</h1>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:24px;line-height:1.3;letter-spacing:-0.015em;margin:16px 0 0;color:var(--uw-blue-500)">Backed by our 100% Match Guarantee.</h2>
-      <p style="font-size:17.5px;line-height:1.55;color:var(--uw-ink-600);max-width:62ch;margin:20px 0 0;text-wrap:pretty">We teach you how to write your personal statement, build your ERAS CV, pick your programs, and answer interview questions, all built on proven frameworks that get you matched.</p>
-      <p style="font-size:14px;color:var(--uw-ink-500);margin:10px 0 0">For IMGs, MDs, and DOs.</p>
-      <div data-cta="pricing" style="display:flex;justify-content:center;gap:12px;margin-top:30px;cursor:pointer">
-        <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="xl" hint-size="280px,56px">Enroll now →</x-import>
-      </div>
-      <div style="display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:26px">
-        <div style="display:flex;gap:3px;align-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg></div>
-        <span style="font-size:15px;color:var(--uw-ink-700)">Trusted by <b style="color:var(--uw-ink-900)" data-count="100000" data-suffix="+">100,000+</b> students and doctors</span>
-      </div>
-      <div style="width:100%;max-width:820px;margin:44px auto 0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--uw-border);box-shadow:var(--shadow-lg);background:var(--uw-blue-500)">
-        <img src="/match-membership-media/uploads/USMLE-Updates-GV-100.webp" alt="USMLEWise Match Mentorship Program" width="2731" height="1536" fetchpriority="high" decoding="async" style="width:100%;height:auto;display:block">
+      <div class="msp-hero__frame-wrap">
+        <!-- aspect-ratio override: this hero image is a wide (2731x1536,
+             ~16:9) banner graphic with text baked in, not a portrait photo —
+             .msp-hero__frame's default 4:5 crop (sized for portrait photos,
+             see index.php) cut the banner text off mid-word. Same frame
+             styling (radius/shadow/overflow) otherwise, just a wider box. -->
+        <div class="msp-hero__frame" style="aspect-ratio: 16 / 9;">
+          <img src="/match-membership-media/uploads/USMLE-Updates-GV-100.webp" alt="USMLEWise Match Mentorship Program" width="2731" height="1536" fetchpriority="high" decoding="async">
+        </div>
       </div>
     </div>
     <div style="margin-top:48px;overflow:hidden;position:relative;border-top:1px solid var(--uw-border);border-bottom:1px solid var(--uw-border);padding:16px 0;background:var(--uw-bg)">
