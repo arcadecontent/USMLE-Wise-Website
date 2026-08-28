@@ -1124,5 +1124,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </footer>
 
+<?php $whatsappMessage = 'I have a question about the Step 1 High Yield Crash Course.'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
+
 </body>
 </html>

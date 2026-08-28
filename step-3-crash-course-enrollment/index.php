@@ -910,5 +910,7 @@ foreach ($m3_wall_cols as $col):
   </div>
 </footer>
 
+<?php $whatsappMessage = 'I have a question about the Step 3 Crash Course.'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
+
 </body>
 </html>

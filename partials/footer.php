@@ -87,5 +87,7 @@
   </div>
 </footer>
 
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
+
 </body>
 </html>

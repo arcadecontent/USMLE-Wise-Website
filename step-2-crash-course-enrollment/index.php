@@ -915,5 +915,7 @@ foreach ($m2_wall_cols as $col):
   </div>
 </footer>
 
+<?php $whatsappMessage = 'I have a question about the Step 2 Crash Course.'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
+
 </body>
 </html>

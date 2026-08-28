@@ -744,5 +744,7 @@ foreach ($px_videos as $v):
   </div>
 </footer>
 
+<?php $whatsappMessage = 'I have a question about the PS3X personal statement service.'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
+
 </body>
 </html>

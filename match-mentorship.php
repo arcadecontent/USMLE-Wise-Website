@@ -84,9 +84,11 @@ document.addEventListener('DOMContentLoaded', function () {
   .uw-scroll::-webkit-scrollbar-track { background: transparent; }
   .uw-scroll::-webkit-scrollbar-thumb { background: var(--uw-border); border-radius: 999px; }
   @keyframes uw-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .uw-bio-grid { display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; text-align: left; }
   @media (max-width: 900px) {
     .uw-masonry { column-count: 2 !important; }
     .uw-g3, .uw-g2, .uw-split { grid-template-columns: 1fr !important; }
+    .uw-bio-grid { grid-template-columns: 1fr !important; justify-items: center; text-align: center !important; }
     .uw-cmp { grid-template-columns: 1fr !important; gap: 6px !important; }
     .uw-cmp-head { display: none !important; }
     .uw-sec { padding-left: 20px !important; padding-right: 20px !important; padding-top: 56px !important; padding-bottom: 56px !important; }
@@ -143,36 +145,45 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="The problem" class="uw-sec" style="padding:88px 24px;background:var(--uw-blue-700);border-bottom:1px solid var(--uw-border);position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px);background-size:18px 18px;pointer-events:none"></div>
-    <div style="position:relative;z-index:1;max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72)">The problem</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:#fff">The email no one wants to open.</h2>
-      <p style="font-family:var(--font-display);font-style:italic;font-size:22px;line-height:1.4;color:rgba(255,255,255,.82);margin:22px 0 0">“We regret to inform you, you did not match.”</p>
-      <div style="display:flex;flex-direction:column;gap:16px;margin-top:26px;font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.78);max-width:64ch">
+  <section data-screen-label="The problem" class="msp-section" style="background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:720px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">The problem</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:none">The email no one wants to open.</h2>
+      <p style="font-family:var(--font-display);font-style:italic;font-size:22px;line-height:1.4;color:var(--uw-ink-700);margin:22px 0 0">“We regret to inform you, you did not match.”</p>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-top:26px;font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:64ch">
         <p style="margin:0;text-wrap:pretty">Every year, thousands of brilliant applicants open Match Day to the same line.</p>
         <p style="margin:0;text-wrap:pretty">They were smart enough. They worked hard enough. Their application just never lined up with the criteria programs score them on, and their story didn’t add up to the people deciding.</p>
-      </div>
-      <img src="/match-membership-media/uploads/Profile-pic.jpeg" alt="Dr. Manik Madaan" width="1920" height="1920" loading="lazy" decoding="async" class="uw-portrait" style="width:190px;height:190px;border-radius:50%;object-fit:cover;display:block;margin:38px 0 6px;border:4px solid rgba(255,255,255,.35);box-shadow:var(--shadow-lg)">
-      <div style="display:flex;flex-direction:column;gap:16px;margin-top:22px;font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.78);max-width:64ch">
-        <p style="margin:0;text-wrap:pretty">I’m Dr. Manik Madaan, and I’ve watched too many brilliant applicants go unmatched, some for five, six, seven seasons in a row. A capable applicant with a weak application, passed over because a program never got to see who they were. It broke my heart every time.</p>
-        <p style="margin:0;text-wrap:pretty">I spent about four years serving on a residency selection committee, and I’ve worked with multiple program directors, so I know what happens on the other side. I saw exactly what they select for, and turned it into a process: the 3X framework, the criteria programs use to choose who to interview and rank.</p>
-        <p style="margin:0;text-wrap:pretty">Since then, applicants who went unmatched for years have matched. First-time applicants match into their dream residency, even in highly competitive programs and specialties, on their first attempt.</p>
-      </div>
-      <p style="font-family:var(--font-display);font-size:26px;line-height:1.35;letter-spacing:-0.015em;color:#fff;margin:32px 0 0;max-width:30ch">You’ve done the hard part. Your application should do you justice.</p>
-      <div style="margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:6px">
-        <div style="font-size:16px;font-weight:600;color:#fff">Dr. Manik Madaan</div>
-        <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)">Contributor, USMLE Wise</div>
-        <div style="font-size:13px;line-height:1.6;color:rgba(255,255,255,.6);max-width:52ch">World’s most-followed USMLE and Match expert · 700,000+ followers · 12,000+ students mentored to match</div>
       </div>
     </div>
   </section>
 
-  <section data-screen-label="The 3X framework" class="uw-sec" style="padding:80px 24px;background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:900px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500)">The 3X framework</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900);max-width:26ch;text-wrap:pretty">We build your application to the <em>3X framework</em>.</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:62ch;margin:20px 0 0;text-wrap:pretty">Programs judge your whole application against a fixed set of criteria. We write every piece to all three lenses, so a committee reads one clear, trustworthy story across every document.</p>
+  <section data-screen-label="Meet your mentor" class="msp-section" style="background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap uw-bio-grid">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+        <img src="/match-membership-media/uploads/Profile-pic.jpeg" alt="Dr. Manik Madaan" width="1920" height="1920" loading="lazy" decoding="async" class="uw-portrait" style="width:190px;height:190px;border-radius:50%;object-fit:cover;display:block;border:4px solid var(--uw-border);box-shadow:var(--shadow-lg)">
+        <div style="text-align:center">
+          <div style="font-size:16px;font-weight:600;color:var(--uw-ink-900)">Dr. Manik Madaan</div>
+          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-top:4px">Contributor, USMLE Wise</div>
+          <div style="font-size:13px;line-height:1.6;color:var(--uw-ink-500);margin-top:8px;max-width:22ch">World’s most-followed USMLE and Match expert · 700,000+ followers · 12,000+ students mentored to match</div>
+        </div>
+      </div>
+      <div>
+        <span class="msp-eyebrow">Meet your mentor</span>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px;font-size:16.5px;line-height:1.6;color:var(--uw-ink-600)">
+          <p style="margin:0;text-wrap:pretty">I’m Dr. Manik Madaan, and I’ve watched too many brilliant applicants go unmatched, some for five, six, seven seasons in a row. A capable applicant with a weak application, passed over because a program never got to see who they were. It broke my heart every time.</p>
+          <p style="margin:0;text-wrap:pretty">I spent about four years serving on a residency selection committee, and I’ve worked with multiple program directors, so I know what happens on the other side. I saw exactly what they select for, and turned it into a process: the 3X framework, the criteria programs use to choose who to interview and rank.</p>
+          <p style="margin:0;text-wrap:pretty">Since then, applicants who went unmatched for years have matched. First-time applicants match into their dream residency, even in highly competitive programs and specialties, on their first attempt.</p>
+        </div>
+        <p style="font-family:var(--font-display);font-size:24px;line-height:1.35;letter-spacing:-0.015em;color:var(--uw-ink-900);margin:24px 0 0">You’ve done the hard part. Your application should do you justice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="The 3X framework" class="msp-section" style="background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:900px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">The 3X framework</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:26ch;text-wrap:pretty">We build your application to the <em>3X framework</em>.</h2>
+      <p class="msp-lede" style="margin:20px auto 0;max-width:62ch;text-wrap:pretty">Programs judge your whole application against a fixed set of criteria. We write every piece to all three lenses, so a committee reads one clear, trustworthy story across every document.</p>
       <div class="uw-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;width:100%;text-align:left">
         <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;position:relative;overflow:hidden">
           <div style="position:absolute;top:-14px;right:6px;font-family:var(--font-display);font-size:88px;line-height:1;color:var(--uw-blue-50);pointer-events:none">01</div>
@@ -199,10 +210,10 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="The proof" class="uw-sec" style="padding:80px 24px;background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:860px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-blue-500)">The proof</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900);max-width:24ch;text-wrap:pretty">The numbers behind the system</h2>
+  <section data-screen-label="The proof" class="msp-section" style="background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:860px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">The proof</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:24ch;text-wrap:pretty">The numbers behind the system</h2>
 
       <div class="uw-split" style="display:grid;grid-template-columns:1.05fr .95fr;gap:16px;margin-top:40px;width:100%;text-align:left">
         <div style="background:var(--uw-blue-500);border-radius:var(--r-lg);padding:28px 26px;color:#fff;position:relative;overflow:hidden">
@@ -244,10 +255,10 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="Proof in their words" class="uw-sec" style="padding:80px 24px;background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:1040px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500)">What our students say</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900)">Applications rebuilt. Seasons ended.</h2>
+  <section data-screen-label="Proof in their words" class="msp-section" style="background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:1040px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">What our students say</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:none">Applications rebuilt. Seasons ended.</h2>
       <div class="uw-scroll uw-scroll-box" style="margin-top:30px;width:100%;max-height:760px;overflow-y:auto;border:1px solid var(--uw-border);border-radius:var(--r-lg);background:var(--uw-surface);padding:22px 22px 10px;text-align:left">
         <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:14px">Match day</div>
         <div class="uw-masonry" style="column-count:3;column-gap:12px">
@@ -326,11 +337,11 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="The system" class="uw-sec" style="padding:80px 24px;background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:900px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-blue-500)">The system</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900);max-width:26ch;text-wrap:pretty">One system. One story. Built on what programs actually score.</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:62ch;margin:20px 0 0;text-wrap:pretty">Most applicants build their Match in pieces. One person edits the CV. Someone else touches the personal statement. A third gives interview tips. The story falls apart in the gaps. The USMLEWise Match Mentorship puts every piece in one place and teaches you to build all of it to the 3X framework.</p>
+  <section data-screen-label="The system" class="msp-section" style="background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:900px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">The system</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:26ch;text-wrap:pretty">One system. One story. Built on what programs actually score.</h2>
+      <p class="msp-lede" style="margin:20px auto 0;max-width:62ch;text-wrap:pretty">Most applicants build their Match in pieces. One person edits the CV. Someone else touches the personal statement. A third gives interview tips. The story falls apart in the gaps. The USMLEWise Match Mentorship puts every piece in one place and teaches you to build all of it to the 3X framework.</p>
 
       <div class="uw-g2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px;width:100%;text-align:left">
         <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px">
@@ -360,11 +371,11 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="What's inside" class="uw-sec" style="padding:80px 24px;background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-blue-500)">What’s inside</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900);max-width:24ch;text-wrap:pretty">The masterclasses that teach you the whole Match.</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:58ch;margin:20px 0 0;text-wrap:pretty">Each one teaches a piece of the 3X framework, recorded and ready to watch on your own schedule, with all the materials yours to keep.</p>
+  <section data-screen-label="What's inside" class="msp-section" style="background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:760px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">What’s inside</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:24ch;text-wrap:pretty">The masterclasses that teach you the whole Match.</h2>
+      <p class="msp-lede" style="margin:20px auto 0;max-width:58ch;text-wrap:pretty">Each one teaches a piece of the 3X framework, recorded and ready to watch on your own schedule, with all the materials yours to keep.</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:18px;margin-top:36px;width:100%;text-align:left">
         <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden">
@@ -422,9 +433,9 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section id="pricing" data-screen-label="Pricing" class="uw-sec" style="scroll-margin-top:80px;padding:80px 24px;background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:640px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-blue-500)">Early-bird price</div>
+  <section id="pricing" data-screen-label="Pricing" class="msp-section" style="scroll-margin-top:80px;background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:640px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">Early-bird price</span>
       <div style="width:100%;margin-top:24px;background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);overflow:hidden">
         <div style="background:var(--uw-blue-500);color:#fff;padding:18px 24px;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:16px 16px"></div>
@@ -455,15 +466,15 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="The guarantee" class="uw-sec" style="padding:80px 24px;background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
+  <section data-screen-label="The guarantee" class="msp-section" style="background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:760px;text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="width:88px;height:88px;border-radius:50%;background:var(--uw-blue-500);display:grid;place-items:center;color:#fff;position:relative;overflow:hidden;margin-bottom:24px;box-shadow:var(--shadow-lg)">
         <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1px);background-size:12px 12px"></div>
         <div style="position:absolute;inset:7px;border:1px solid rgba(255,255,255,.35);border-radius:50%"></div>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:relative;z-index:1"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
       </div>
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500)">The guarantee</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900)">The 100% Match Guarantee.</h2>
+      <span class="msp-eyebrow" style="justify-content:center">The guarantee</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:none">The 100% Match Guarantee.</h2>
       <p style="font-size:18px;line-height:1.6;color:var(--uw-ink-800);margin:20px 0 0">The whole risk sits with us.</p>
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:22px;font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:60ch">
         <p style="margin:0">Get the full Match Mentorship. Use it the way it’s built. Apply through the strategy inside it.</p>
@@ -472,11 +483,11 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="First attempt value" class="uw-sec" style="padding:80px 24px;background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:860px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500)">First attempt value</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900);max-width:26ch;text-wrap:pretty">Matching first attempt saves you <em>$92,000</em>.</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:60ch;margin:20px 0 0;text-wrap:pretty">The traditional applicant takes at least two Match cycles to get in. Our students match on the first, and save the cost of the extra cycle.</p>
+  <section data-screen-label="First attempt value" class="msp-section" style="background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:860px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">First attempt value</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:26ch;text-wrap:pretty">Matching first attempt saves you <em>$92,000</em>.</h2>
+      <p class="msp-lede" style="margin:20px auto 0;max-width:60ch;text-wrap:pretty">The traditional applicant takes at least two Match cycles to get in. Our students match on the first, and save the cost of the extra cycle.</p>
       <div class="uw-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;width:100%;text-align:left">
         <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:24px">
           <div style="font-family:var(--font-display);font-size:40px;line-height:1;letter-spacing:-0.02em;color:var(--uw-ink-900)">$19,000</div>
@@ -501,11 +512,11 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="Testimonials" class="uw-sec" style="padding:80px 24px;background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:1040px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-blue-500)">In their words</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900)">Hear how they got there.</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:60ch;margin:20px 0 0;text-wrap:pretty">Old grads, low scores, second attempts, prestigious programs — every path to the Match, told by the doctors who walked it.</p>
+  <section data-screen-label="Testimonials" class="msp-section" style="background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:1040px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">In their words</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:none">Hear how they got there.</h2>
+      <p class="msp-lede" style="margin:20px auto 0;max-width:60ch;text-wrap:pretty">Old grads, low scores, second attempts, prestigious programs — every path to the Match, told by the doctors who walked it.</p>
 
       <div class="uw-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;width:100%;text-align:left">
         <div class="uw-video-card" data-video-id="WDrpqKmLwLs" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
@@ -647,10 +658,10 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="The difference" class="uw-sec" style="padding:80px 24px;background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:980px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500)">The difference</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900);max-width:28ch;text-wrap:pretty">Why applicants pick us over generic prep and freelancers</h2>
+  <section data-screen-label="The difference" class="msp-section" style="background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:980px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center">The difference</span>
+      <h2 class="msp-h2" style="margin:18px auto 0;max-width:28ch;text-wrap:pretty">Why applicants pick us over generic prep and freelancers</h2>
       <div style="width:100%;margin-top:36px;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;background:var(--uw-bg);text-align:left">
         <div class="uw-cmp-head" style="display:grid;grid-template-columns:150px 1fr 1fr;gap:0;padding:14px 20px;background:var(--uw-blue-500);color:#fff;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase"><span></span><span style="color:rgba(255,255,255,.66)">Generic prep / freelancers</span><span>USMLEWise</span></div>
         <div class="uw-cmp" style="display:grid;grid-template-columns:150px 1fr 1fr;gap:20px;padding:16px 20px;border-bottom:1px solid var(--uw-border);font-size:14.5px;line-height:1.55"><b style="color:var(--uw-ink-900)">Approach</b><span style="color:var(--uw-ink-500)">Different people for CV, PS, and interviews. The story gets lost.</span><span style="color:var(--uw-ink-800)">One system. Every piece tells the same story.</span></div>
@@ -665,41 +676,56 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <section data-screen-label="FAQ" class="uw-sec" style="padding:80px 24px;background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
-    <div style="max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-blue-500)">FAQ</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,42px);line-height:1.1;letter-spacing:-0.02em;margin:18px 0 0;color:var(--uw-ink-900)">Questions, answered honestly.</h2>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-top:36px;width:100%;text-align:left">
-        <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
-          <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Is this done for you?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
-          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">No, and that’s the whole point. We hand you the exact frameworks program directors use, teach them across the recorded masterclasses, and show you how to build every piece. You write your own personal statement. You build your own CV. You do the work. That’s how you learn to tell your story in a way a committee trusts, and it’s why this costs $349 instead of thousands. If you’d rather we build your application with you, that’s our done-for-you Match packages, and your $349 credits fully toward them.</p>
+  <section data-screen-label="FAQ" class="msp-section" id="faq" aria-labelledby="faqTitle" style="background:var(--uw-surface);border-bottom:1px solid var(--uw-border)">
+    <div class="msp-wrap" style="max-width:760px">
+      <div class="msp-head" style="text-align:center;margin-inline:auto">
+        <span class="msp-eyebrow" style="justify-content:center">FAQ</span>
+        <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto">Questions, answered honestly.</h2>
+      </div>
+      <!-- Native <details>/<summary> on purpose, not the shared .accordion
+           component's JS-toggled classes: the dc-runtime re-renders this
+           <x-dc> subtree on click and resets any DOM mutation that isn't
+           browser-native state (proven by testing — a classList-based
+           open/close silently reverted after every click). <details> is
+           real browser state, immune to that reset; clicking a <summary>
+           works correctly and persists. Styled inline to match .accordion's
+           look (assets/usmle-design-system/styles.css) since that CSS is
+           keyed to classes this markup doesn't use.
+           No item starts pre-opened: an initial `open` attribute hits the
+           same runtime quirk already documented below for the video modal's
+           `hidden` attribute — boolean attributes get dropped when this
+           subtree is first parsed, so it's stripped before paint anyway. -->
+      <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);overflow:hidden;background:#fff">
+        <details style="border-bottom:1px solid var(--uw-border)">
+          <summary style="padding:14px 18px;font-family:var(--font-sans);font-size:14px;font-weight:500;color:var(--uw-ink-900);display:flex;justify-content:space-between;align-items:center;gap:16px">Is this done for you?<span class="uw-plus" style="font-size:18px;color:var(--uw-ink-500);line-height:1;transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
+          <p style="margin:0;padding:0 18px 16px;font-size:13.5px;line-height:1.55;color:var(--uw-ink-600)">No, and that’s the whole point. We hand you the exact frameworks program directors use, teach them across the recorded masterclasses, and show you how to build every piece. You write your own personal statement. You build your own CV. You do the work. That’s how you learn to tell your story in a way a committee trusts, and it’s why this costs $349 instead of thousands. If you’d rather we build your application with you, that’s our done-for-you Match packages, and your $349 credits fully toward them.</p>
         </details>
-        <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
-          <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Who is this for?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
-          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">IMGs, US IMGs, US MDs, and DOs. First-time applicants who want to get it right from the start, and reapplicants rebuilding a stronger cycle. If you’re applying to the Match, these frameworks work for you.</p>
+        <details style="border-bottom:1px solid var(--uw-border)">
+          <summary style="padding:14px 18px;font-family:var(--font-sans);font-size:14px;font-weight:500;color:var(--uw-ink-900);display:flex;justify-content:space-between;align-items:center;gap:16px">Who is this for?<span class="uw-plus" style="font-size:18px;color:var(--uw-ink-500);line-height:1;transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
+          <p style="margin:0;padding:0 18px 16px;font-size:13.5px;line-height:1.55;color:var(--uw-ink-600)">IMGs, US IMGs, US MDs, and DOs. First-time applicants who want to get it right from the start, and reapplicants rebuilding a stronger cycle. If you’re applying to the Match, these frameworks work for you.</p>
         </details>
-        <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
-          <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">Are the masterclasses live or recorded?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
-          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">Recorded. Every masterclass is ready to watch the moment you enroll, so you can go through the 3X framework on your own schedule instead of around a live call. You get every recording and all the materials from day one.</p>
+        <details style="border-bottom:1px solid var(--uw-border)">
+          <summary style="padding:14px 18px;font-family:var(--font-sans);font-size:14px;font-weight:500;color:var(--uw-ink-900);display:flex;justify-content:space-between;align-items:center;gap:16px">Are the masterclasses live or recorded?<span class="uw-plus" style="font-size:18px;color:var(--uw-ink-500);line-height:1;transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
+          <p style="margin:0;padding:0 18px 16px;font-size:13.5px;line-height:1.55;color:var(--uw-ink-600)">Recorded. Every masterclass is ready to watch the moment you enroll, so you can go through the 3X framework on your own schedule instead of around a live call. You get every recording and all the materials from day one.</p>
         </details>
-        <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
-          <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">How does the 100% Match Guarantee work?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
-          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">Get the Match Mentorship, use it, and apply through the strategy inside it. If you don’t match this cycle, you don’t pay again, and your access stays free, cycle after cycle, until you do. The programs make the final Match call, so we commit to staying with you the whole way.</p>
+        <details style="border-bottom:1px solid var(--uw-border)">
+          <summary style="padding:14px 18px;font-family:var(--font-sans);font-size:14px;font-weight:500;color:var(--uw-ink-900);display:flex;justify-content:space-between;align-items:center;gap:16px">How does the 100% Match Guarantee work?<span class="uw-plus" style="font-size:18px;color:var(--uw-ink-500);line-height:1;transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
+          <p style="margin:0;padding:0 18px 16px;font-size:13.5px;line-height:1.55;color:var(--uw-ink-600)">Get the Match Mentorship, use it, and apply through the strategy inside it. If you don’t match this cycle, you don’t pay again, and your access stays free, cycle after cycle, until you do. The programs make the final Match call, so we commit to staying with you the whole way.</p>
         </details>
-        <details style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:18px 22px">
-          <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">What if I want you to build my application for me?<span class="uw-plus" style="font-size:20px;color:var(--uw-blue-500);transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
-          <p style="margin:14px 0 0;font-size:15.5px;line-height:1.65;color:var(--uw-ink-600);text-wrap:pretty">Your $349 credits 100% toward any USMLEWise service. Put it toward a done-for-you Match package, where physician advisors build your CV, personal statement, and strategy with you, or toward our personal statement editing service if that’s the piece you want handled. Whatever you pick, the full $349 comes off the price.</p>
+        <details>
+          <summary style="padding:14px 18px;font-family:var(--font-sans);font-size:14px;font-weight:500;color:var(--uw-ink-900);display:flex;justify-content:space-between;align-items:center;gap:16px">What if I want you to build my application for me?<span class="uw-plus" style="font-size:18px;color:var(--uw-ink-500);line-height:1;transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
+          <p style="margin:0;padding:0 18px 16px;font-size:13.5px;line-height:1.55;color:var(--uw-ink-600)">Your $349 credits 100% toward any USMLEWise service. Put it toward a done-for-you Match package, where physician advisors build your CV, personal statement, and strategy with you, or toward our personal statement editing service if that’s the piece you want handled. Whatever you pick, the full $349 comes off the price.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <section data-screen-label="Final CTA" class="uw-sec" style="padding:80px 24px;background:var(--uw-bg)">
-    <div style="max-width:900px;margin:0 auto">
+  <section data-screen-label="Final CTA" class="msp-section" style="background:var(--uw-bg)">
+    <div class="msp-wrap" style="max-width:900px">
       <div style="background:var(--uw-blue-500);border-radius:var(--r-xl);padding:64px 40px;color:#fff;position:relative;overflow:hidden;text-align:center">
         <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.1) 1px,transparent 1px);background-size:18px 18px"></div>
         <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center">
-          <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.8vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:24ch;text-wrap:pretty;color:#fff">Make this your first and last Match season.</h2>
+          <h2 class="msp-h2 msp-h2--invert" style="margin:0;max-width:24ch;text-wrap:pretty">Make this your first and last Match season.</h2>
           <p style="font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.8);max-width:58ch;margin:22px 0 0;text-wrap:pretty">You’ve already proven you’re a good doctor. Your Match comes down to whether a committee can see it, in one clear story, built the way they score.</p>
           <p style="font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.8);max-width:58ch;margin:14px 0 0;text-wrap:pretty">That’s the whole Match Mentorship. And if it doesn’t get you there this cycle, we don’t stop until it does.</p>
           <div data-cta="pricing" style="display:flex;justify-content:center;margin-top:30px;cursor:pointer">
@@ -715,8 +741,8 @@ document.addEventListener('DOMContentLoaded', function () {
   </section>
 
   <section data-screen-label="Still have questions" class="uw-sec" style="padding:0 24px 88px;background:var(--uw-bg)">
-    <div style="max-width:640px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-ink-500)">Still have questions?</div>
+    <div class="msp-wrap" style="max-width:640px;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span class="msp-eyebrow" style="justify-content:center;color:var(--uw-ink-500)">Still have questions?</span>
       <h3 style="font-family:var(--font-display);font-weight:400;font-size:32px;line-height:1.15;letter-spacing:-0.02em;margin:16px 0 0;color:var(--uw-ink-900)">Reach out before you decide.</h3>
       <p style="font-size:16px;line-height:1.6;color:var(--uw-ink-600);max-width:52ch;margin:18px 0 0;text-wrap:pretty">Not sure this is right for where you are in your Match journey? Message us. We’ll give you a straight answer about your best next step, even if that answer is to wait a cycle.</p>
       <div style="display:flex;justify-content:center;margin-top:24px">

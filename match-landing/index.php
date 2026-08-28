@@ -973,5 +973,7 @@ class Component extends DCLogic {
     </div>
   </div>
 </footer>
+<?php $whatsappMessage = 'I am interested in Match Mentorship'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
+
 </body>
 </html>
