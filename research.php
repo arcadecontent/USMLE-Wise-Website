@@ -131,10 +131,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-head reveal">
             <span class="msp-eyebrow">What We Offer</span>
             <h2 id="servicesTitle" class="msp-h2">
-              Our ten research programs
+              Our nine research programs
             </h2>
             <p class="msp-sub">
-              From a $19 recorded foundation to a full 12-month publication
+              From a $99 recorded foundation to a full 12-month publication
               pathway. Choose the level that fits your timeline and goals.
             </p>
           </div>
@@ -286,7 +286,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">04 &middot; Live &middot; Mentored</span>
                 <h3 class="msp-sva-title">Lead Author Publication</h3>
-                <div class="msp-sva-price">$1,000</div>
+                <div class="msp-sva-price">$800</div>
                 <p class="msp-sva-desc">Take the lead-author role on an active, mentor-run project. Drive the manuscript and get listed as lead author on a paper submitted to a PubMed-indexed journal.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
@@ -324,23 +324,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp'); background-position: right center;"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">07 &middot; Recorded &middot; Self-paced</span>
-                <h3 class="msp-sva-title">Research Masterclass</h3>
-                <div class="msp-sva-price">$19</div>
-                <p class="msp-sva-desc">Research fundamentals for medical graduates. The right starting point before working with a mentor.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-cohort" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row msp-sva-row--flip reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">08 &middot; Placement Service &middot; 12-month fellowship</span>
+                <span class="msp-sva-eyebrow">07 &middot; Placement Service &middot; 12-month fellowship</span>
                 <h3 class="msp-sva-title">J-1 Research Fellowship Placement</h3>
                 <div class="msp-sva-price">$20,000</div>
                 <p class="msp-sva-desc">End-to-end placement support for a 12-month J-1 research fellowship &mdash; institution matching, application guidance, visa documentation assistance, and relocation support.</p>
@@ -351,10 +337,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
-            <article class="msp-sva-row reveal">
+            <article class="msp-sva-row msp-sva-row--flip reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/kaitlyn-baker-vZJdYl5JVXY-unsplash.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">09 &middot; Live &middot; Per outreach cycle</span>
+                <span class="msp-sva-eyebrow">08 &middot; Live &middot; Per outreach cycle</span>
                 <h3 class="msp-sva-title">Strategic Networking Program</h3>
                 <div class="msp-sva-price">$1,500</div>
                 <p class="msp-sva-desc">We help you identify the exact faculty and Program Directors to target, so every conference conversation and cold email has a clear strategic purpose.</p>
@@ -365,10 +351,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
-            <article class="msp-sva-row msp-sva-row--flip reveal">
+            <article class="msp-sva-row reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">10 &middot; Recorded &middot; Self-paced</span>
+                <span class="msp-sva-eyebrow">09 &middot; Recorded &middot; Self-paced</span>
                 <h3 class="msp-sva-title">Research Cohort Access</h3>
                 <div class="msp-sva-price">$99</div>
                 <p class="msp-sva-desc">18 recorded sessions covering study design, writing, publishing, and conferences — the library to work through once you're actively running your own project.</p>
@@ -493,13 +479,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
               <div class="msp-mtr-e__body">
                 <div class="msp-mtr-e__header">
-                  <span class="msp-mtr-e__role">Research Mentor</span>
+                  <span class="msp-mtr-e__role">Research Manager, Data Analyst &amp; Statistician</span>
                   <h3 class="msp-mtr-e__name">Muhammad Ahmad Barakat</h3>
                   <span class="msp-mtr-e__prog">Medical Student, Caucasus International University</span>
                 </div>
                 <ul class="msp-mtr-e__creds">
-                  <li>6 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
-                  <li>160+ students guided to publication across SRA &amp; MEDMARK programs</li>
+                  <li>7 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
+                  <li>200+ students guided to publication across MEDICA SRA &amp; MEDMARK MRMS programs</li>
                   <li>APA PsychSIGN International Student Liaison Research Chair 2026&ndash;2027</li>
                 </ul>
               </div>

@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Lead Author Publication | USMLE Wise";
-$pageDescription = "Take the lead-author role on an active, mentor-run research project. Drive the manuscript, work with your mentor, and get listed as lead author on a paper submitted to a PubMed-indexed journal. $1,000.";
+$pageDescription = "Take the lead-author role on an active, mentor-run research project. Drive the manuscript, work with your mentor, and get listed as lead author on a paper submitted to a PubMed-indexed journal. $800.";
 $canonical = "https://usmlewise.com/research-lead-author";
 $bodyClass = "msp";
 $stylesheets = [
@@ -167,7 +167,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rc-payment__inner">
               <div>
                 <span class="rc-sec-label">Investment</span>
-                <div class="rc-payment__price">$1,000</div>
+                <div class="rc-payment__price">$800</div>
                 <p class="rc-payment__note">Covers your lead-author placement on an active, mentor-run project, mentor guidance through drafting and revisions, and submission to a PubMed-indexed journal. Journal fees, if any, are separate. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
               </div>
               <a

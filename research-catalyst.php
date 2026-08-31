@@ -357,13 +357,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
               <div class="rc-mtr__body">
                 <div class="rc-mtr__header">
-                  <span class="rc-mtr__role">Research Mentor</span>
+                  <span class="rc-mtr__role">Research Manager, Data Analyst &amp; Statistician</span>
                   <h3 class="rc-mtr__name">Muhammad Ahmad Barakat</h3>
                   <span class="rc-mtr__prog">Medical Student, Caucasus International University</span>
                 </div>
                 <ul class="rc-mtr__creds">
-                  <li>6 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
-                  <li>160+ students guided to publication across SRA &amp; MEDMARK programs</li>
+                  <li>7 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
+                  <li>200+ students guided to publication across MEDICA SRA &amp; MEDMARK MRMS programs</li>
                   <li>APA PsychSIGN International Student Liaison Research Chair 2026&ndash;2027</li>
                 </ul>
               </div>

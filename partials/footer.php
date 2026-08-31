@@ -14,6 +14,8 @@
           <span class="msp-foot__nav-label">Coaching</span>
           <a href="/coaching">Coaching Overview</a>
           <a href="/step-1-high-yield-crash-course">Step 1 High Yield Crash Course</a>
+          <a href="/step-2-live-crash-course">Step 2 Live Crash Course</a>
+          <a href="/step-3-live-crash-course">Step 3 Live Crash Course</a>
           <a href="/coaching-step1-mastery">Step 1 Mastery</a>
           <a href="/coaching-step23-mastery">NBME Style Coaching (Step 1 and Step 2)</a>
           <a href="/coaching-tutoring">1:1 Tutoring</a>

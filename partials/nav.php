@@ -17,6 +17,14 @@
             <span class="msp-nav__dd-name">Step 1 High Yield Crash Course</span>
             <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
           </a>
+          <a href="/step-2-live-crash-course" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Step 2 Live Crash Course</span>
+            <span class="msp-nav__dd-meta">Live &middot; 7-day</span>
+          </a>
+          <a href="/step-3-live-crash-course" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Step 3 Live Crash Course</span>
+            <span class="msp-nav__dd-meta">Live &middot; 8-day</span>
+          </a>
           <a href="/coaching-step1-mastery" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Step 1 Mastery</span>
             <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
@@ -69,7 +77,7 @@
           </a>
           <a href="/research-lead-author" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Lead Author Publication</span>
-            <span class="msp-nav__dd-meta">PubMed-indexed &middot; $1,000</span>
+            <span class="msp-nav__dd-meta">PubMed-indexed &middot; $800</span>
           </a>
           <a href="/research-lead-author-conference" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Lead Author + Conference Presentation</span>
