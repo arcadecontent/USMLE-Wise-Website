@@ -4,58 +4,14 @@ $pageDescription = "Privacy Policy for USMLE Wise — how we collect, use, and p
 $canonical = "https://usmlewise.com/policy";
 $bodyClass = "msp";
 $stylesheets = [
-    "/styles/match.css"
+    "/styles/match.css",
+    "/styles/legal.css"
 ];
 $scripts = [
     "/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
-<style>
-      .msp-policy {
-        max-width: 720px;
-        margin-inline: auto;
-        padding-block: clamp(48px, 8vw, 96px);
-        padding-inline: 24px;
-      }
-      .msp-policy h1 {
-        font-size: clamp(28px, 4vw, 40px);
-        font-family: var(--font-display);
-        color: var(--uw-ink-900);
-        margin: 0 0 8px;
-      }
-      .msp-policy__meta {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--uw-ink-500);
-        margin: 0 0 48px;
-      }
-      .msp-policy h2 {
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--uw-ink-900);
-        margin: 40px 0 12px;
-      }
-      .msp-policy p,
-      .msp-policy li {
-        font-size: 16px;
-        line-height: 1.75;
-        color: var(--uw-ink-700);
-      }
-      .msp-policy ul {
-        padding-left: 20px;
-        margin: 12px 0;
-      }
-      .msp-policy li { margin-bottom: 6px; }
-      .msp-policy a { color: var(--uw-blue-600); text-decoration: underline; }
-      .msp-policy hr {
-        border: none;
-        border-top: 1px solid var(--uw-border);
-        margin: 48px 0;
-      }
-    </style>
 
 <main>
       <div class="msp-policy">

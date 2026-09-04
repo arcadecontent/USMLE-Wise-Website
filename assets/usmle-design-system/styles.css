@@ -184,6 +184,21 @@ body {
   font-feature-settings: "ss01", "cv11";
 }
 
+/* ---------- 2b. TYPOGRAPHY SCALE ---------- */
+/* H1/H2: Source Serif 4, the two editorial moments per page. H3-H5: Geist,
+   structural/UI headings. Only applies where nothing more specific already
+   sets a size (e.g. .msp-h1, .rot-feature__heading) — see design-system
+   reference at /assets/usmle-design-system/index.html. */
+h1, h2, h3, h4, h5 { margin: 0; color: var(--uw-ink-900); }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-4xl); line-height: var(--lh-tight); letter-spacing: var(--tracking-display); }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-3xl); line-height: var(--lh-tight); letter-spacing: var(--tracking-display); }
+h3 { font-family: var(--font-sans); font-weight: 600; font-size: var(--fs-2xl); line-height: var(--lh-snug); letter-spacing: var(--tracking-tight); }
+h4 { font-family: var(--font-sans); font-weight: 600; font-size: var(--fs-xl); line-height: var(--lh-snug); letter-spacing: var(--tracking-tight); }
+h5 { font-family: var(--font-sans); font-weight: 600; font-size: var(--fs-lg); line-height: var(--lh-snug); letter-spacing: var(--tracking-ui); }
+.lede { font-size: var(--fs-md); line-height: var(--lh-base); color: var(--uw-ink-600); }
+.small { font-size: var(--fs-sm); line-height: var(--lh-loose); color: var(--uw-ink-500); }
+.eyebrow { font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+
 img, svg { max-width: 100%; display: block; }
 
 a { color: var(--uw-blue-600); text-decoration: none; }

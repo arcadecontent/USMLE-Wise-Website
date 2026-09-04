@@ -54,12 +54,21 @@ function usmlewise_render_rotation_card(array $r): string
 
     $price = '$' . number_format((float) ($r['price'] ?? 0));
 
+    $searchText = strtolower(implode(' ', array_filter([
+        $r['title'] ?? '',
+        $r['hospital'] ?? '',
+        $r['city'] ?? '',
+        $r['state'] ?? '',
+        $r['specialty'] ?? '',
+    ])));
+
     return
         '            <article class="rot-pg-card reveal"' . "\n" .
         '                     data-specialty="' . $attr($r['specialty_value'] ?? '') . '"' . "\n" .
         '                     data-state="' . $attr($r['state_value'] ?? '') . '"' . "\n" .
         '                     data-price="' . $attr($r['price_bucket'] ?? '') . '"' . "\n" .
-        '                     data-setting="' . $attr($r['setting_filter'] ?? '') . '">' . "\n" .
+        '                     data-setting="' . $attr($r['setting_filter'] ?? '') . '"' . "\n" .
+        '                     data-search="' . $attr($searchText) . '">' . "\n" .
         '              <div class="rot-pg-card__top">' . "\n" .
         '                <div class="rot-pg-card__badges">' . "\n" .
         '                  ' . $badgesHtml . "\n" .
@@ -166,6 +175,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <span class="msp-eyebrow">Available placements</span>
             <h2 id="rotTitle" class="msp-h2">Rotations that open doors. Not just fill weeks.</h2>
             <p class="msp-sub">Four IMG-friendly placements with hospital letterhead LORs, monthly starts, and full clinical exposure.</p>
+          </div>
+
+          <!-- Search bar -->
+          <div class="rot-search">
+            <i data-lucide="search" width="16" height="16" class="rot-search__icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="rotSearchInput"
+              class="rot-search__input"
+              placeholder="Search by specialty, hospital, or city..."
+              aria-label="Search rotations"
+              autocomplete="off"
+            />
+            <button class="rot-search__clear" id="rotSearchClear" type="button" aria-label="Clear search" hidden>
+              <i data-lucide="x" width="14" height="14"></i>
+            </button>
           </div>
 
           <!-- Mobile filter toggle -->

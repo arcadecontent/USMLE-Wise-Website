@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Clinical Rotations | USMLE Wise";
+$pageTitle = "Rotations List | USMLE Wise";
 $pageDescription = "Browse all U.S. clinical rotation placements for IMGs. Filter by specialty, state, price, and setting to find hands-on experience with hospital letterhead LORs.";
 $canonical = "https://usmlewise.com/clinical-rotations";
 $bodyClass = "msp";
@@ -18,8 +18,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
           <div class="msp-head reveal">
             <span class="msp-eyebrow">Available placements</span>
-            <h2 id="rotTitle" class="msp-h2">Clinical Rotations</h2>
+            <h2 id="rotTitle" class="msp-h2">Rotations List</h2>
             <p class="msp-sub">Browse all our IMG-friendly placements with hospital letterhead LORs, monthly starts, and full clinical exposure. Filter by specialty, state, price, and setting.</p>
+          </div>
+
+          <!-- Search bar -->
+          <div class="rot-search">
+            <i data-lucide="search" width="16" height="16" class="rot-search__icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="rotSearchInput"
+              class="rot-search__input"
+              placeholder="Search by specialty, hospital, or city..."
+              aria-label="Search rotations"
+              autocomplete="off"
+            />
+            <button class="rot-search__clear" id="rotSearchClear" type="button" aria-label="Clear search" hidden>
+              <i data-lucide="x" width="14" height="14"></i>
+            </button>
           </div>
 
           <!-- Mobile filter toggle -->
@@ -116,7 +132,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="internal-medicine"
                      data-state="texas"
                      data-price="3k-4k"
-                     data-setting="inpatient">
+                     data-setting="inpatient"
+                     data-search="internal medicine sub-internship south texas health system mcallen, texas internal medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Internal Medicine</span>
@@ -143,7 +160,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="internal-medicine"
                      data-state="new-york"
                      data-price="over-4k"
-                     data-setting="inpatient-outpatient">
+                     data-setting="inpatient-outpatient"
+                     data-search="elective in new york st. luke&#039;s cornwall hospital newburgh, new york internal medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Internal Medicine</span>
@@ -171,7 +189,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="internal-medicine"
                      data-state="tennessee"
                      data-price="under-3k"
-                     data-setting="inpatient">
+                     data-setting="inpatient"
+                     data-search="im with the chair of medicine highpoint health st. thomas hospital winchester, tennessee internal medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Internal Medicine</span>
@@ -198,7 +217,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="hospitalist"
                      data-state="florida"
                      data-price="under-3k"
-                     data-setting="inpatient">
+                     data-setting="inpatient"
+                     data-search="adventhealth kissimmee campus affiliated with adventhealth orlando kissimmee, florida hospitalist">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Hospitalist</span>
@@ -225,7 +245,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="general-surgery"
                      data-state="florida"
                      data-price="3k-4k"
-                     data-setting="inpatient">
+                     data-setting="inpatient"
+                     data-search="general surgery at larkin community hospital larkin community hospital + hialeah hospital miami, florida general surgery">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">General Surgery</span>
@@ -252,7 +273,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="general-surgery"
                      data-state="maryland"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="general surgery — wright center faculty wright center for graduate medical education silver spring, maryland general surgery">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">General Surgery</span>
@@ -279,7 +301,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="general-surgery"
                      data-state="florida"
                      data-price="3k-4k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="general surgery — kissimmee clinic-based, kissimmee, florida kissimmee, florida general surgery">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">General Surgery</span>
@@ -306,7 +329,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="general-surgery"
                      data-state="arkansas"
                      data-price="under-3k"
-                     data-setting="inpatient">
+                     data-setting="inpatient"
+                     data-search="general surgery at baptist health baptist health — fort smith fort smith, arkansas general surgery">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">General Surgery</span>
@@ -333,7 +357,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="general-surgery"
                      data-state="new-jersey"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="general surgery — former program director bergen new bridge medical center + hudson regional hospital englewood, new jersey general surgery">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">General Surgery</span>
@@ -361,7 +386,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="psychiatry"
                      data-state="texas"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="psychiatry — child &amp; adolescent focus physician with flourish mental health houston, texas psychiatry">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Psychiatry</span>
@@ -388,7 +414,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="psychiatry"
                      data-state="new-jersey"
                      data-price="3k-4k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="psychiatry — department head ramapo ridge psychiatric hospital wayne, new jersey psychiatry">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Psychiatry</span>
@@ -415,7 +442,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="psychiatry"
                      data-state="north-carolina"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="psychiatry — unc associate professor university of north carolina, dept. of psychiatry chapel hill, north carolina psychiatry">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Psychiatry</span>
@@ -442,7 +470,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="psychiatry"
                      data-state="wisconsin"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="psychiatry — medical director private clinic, mequon, wisconsin mequon, wisconsin psychiatry">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Psychiatry</span>
@@ -469,7 +498,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="psychiatry"
                      data-state="texas"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="psychiatry — 30 years experience psychiatry medical director, houston houston, texas psychiatry">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Psychiatry</span>
@@ -497,7 +527,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="pediatrics"
                      data-state="new-jersey"
                      data-price="3k-4k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="pediatrics — residency faculty st. joseph university medical center clifton, new jersey pediatrics">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Pediatrics</span>
@@ -524,7 +555,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="pediatrics"
                      data-state="new-jersey"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="pediatrics — medical director board-certified pediatrician, jersey city jersey city, new jersey pediatrics">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Pediatrics</span>
@@ -551,7 +583,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="pediatrics"
                      data-state="virginia"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="pediatrics — medical director private clinic, arlington, virginia arlington, virginia pediatrics">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Pediatrics</span>
@@ -578,7 +611,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="pediatrics"
                      data-state="florida"
                      data-price="3k-4k"
-                     data-setting="inpatient-outpatient">
+                     data-setting="inpatient-outpatient"
+                     data-search="pediatrics — mercy hospital faculty mercy hospital, miami miami, florida pediatrics">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Pediatrics</span>
@@ -605,7 +639,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="pediatrics"
                      data-state="maryland"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="pediatrics — 20+ years experience outpatient clinic, baltimore, maryland baltimore, maryland pediatrics">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Pediatrics</span>
@@ -632,7 +667,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="family-medicine"
                      data-state="new-jersey"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="family medicine — chief of family practice englewood hospital and medical center englewood, new jersey family medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Family Medicine</span>
@@ -659,7 +695,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="family-medicine"
                      data-state="texas"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="family medicine — img physician mentor oakbend medical center richmond, texas family medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Family Medicine</span>
@@ -686,7 +723,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="family-medicine"
                      data-state="virginia"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="family medicine — georgetown associate prof. inova alexandria hospital alexandria, virginia family medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Family Medicine</span>
@@ -713,7 +751,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="family-medicine"
                      data-state="new-york"
                      data-price="under-3k"
-                     data-setting="outpatient">
+                     data-setting="outpatient"
+                     data-search="family medicine — mount sinai affiliated two clinics, new york city new york, new york family medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Family Medicine</span>
@@ -740,7 +779,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="family-medicine"
                      data-state="florida"
                      data-price="over-4k"
-                     data-setting="inpatient-outpatient">
+                     data-setting="inpatient-outpatient"
+                     data-search="family medicine — larkin program director larkin community hospital hialeah, florida family medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Family Medicine</span>
@@ -767,7 +807,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                      data-specialty="family-medicine"
                      data-state="florida"
                      data-price="3k-4k"
-                     data-setting="inpatient-outpatient">
+                     data-setting="inpatient-outpatient"
+                     data-search="family medicine — keralty hospital faculty keralty hospital, miami miami, florida family medicine">
               <div class="rot-pg-card__top">
                 <div class="rot-pg-card__badges">
                   <span class="rot-pg-badge rot-pg-badge--specialty">Family Medicine</span>

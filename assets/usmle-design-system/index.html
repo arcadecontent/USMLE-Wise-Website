@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>USMLE Wise — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============== SIDEBAR ============== -->
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <div class="sidebar__brand">
+      <img src="assets/emblem.svg" alt="USMLE Wise emblem" />
+      <div>
+        <div class="sidebar__brand-name">USMLE Wise</div>
+        <div class="sidebar__brand-sub">Design System</div>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group__label">Foundations</div>
+      <a class="nav-link" href="#type"><span class="nav-link__num">01</span> Typography</a>
+      <a class="nav-link" href="#color"><span class="nav-link__num">02</span> Color</a>
+      <a class="nav-link" href="#spacing"><span class="nav-link__num">03</span> Spacing</a>
+    </div>
+  </aside>
+
+  <!-- ============== CONTENT ============== -->
+  <main class="content">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero__meta">
+        <span class="hero__tag hero__tag--dot">Living document</span>
+        <span class="hero__tag">Typography v2</span>
+      </div>
+      <h1>A <em>type scale</em> with a job for every size.</h1>
+      <p class="hero__sub">Nine roles, built entirely from tokens already defined in this design system — no new variables invented. Source Serif 4 is reserved for the two big editorial moments on a page, H1 and H2; everything smaller is Geist doing structural work.</p>
+      <div class="hero__stats">
+        <div>
+          <div class="hero__stat-num">9</div>
+          <div class="hero__stat-label">TYPE ROLES</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">2</div>
+          <div class="hero__stat-label">SERIF ROLES (H1–H2)</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">0</div>
+          <div class="hero__stat-label">NEW TOKENS NEEDED</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">4×</div>
+          <div class="hero__stat-label">H1 : SMALL RATIO</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========== 01 · TYPOGRAPHY =========== -->
+    <section class="section" id="type">
+      <div class="section__eyebrow">01 — Foundation</div>
+      <h2 class="section__title">Typography</h2>
+      <p class="section__lede">A two-family system: <b>Source Serif 4</b> for the two big editorial moments on a page — H1 and H2 — and <b>Geist</b> for everything else: structural headings, body copy, UI text. <b>JetBrains Mono</b> covers the one label role, Eyebrow.</p>
+
+      <div class="specimen">
+        <div class="specimen__big">USMLE <em>Wise</em></div>
+        <div class="specimen__meta">
+          <div><b>Display</b>Source Serif 4</div>
+          <div><b>Sans</b>Geist · 400–600</div>
+          <div><b>Mono</b>JetBrains Mono</div>
+          <div><b>Scale</b>9 roles · 9 tokens</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub h-sub--first">Editorial — Source Serif 4, weight 400</h3>
+      <div>
+        <div class="type-row"><div class="type-row__label">H1</div><div class="type-display" style="font-size: 48px; letter-spacing: -0.02em;">Match into your dream residency.</div><div class="type-row__meta">48px · --fs-4xl<br>lh 1.1 · -0.02em</div></div>
+        <div class="type-row"><div class="type-row__label">H2</div><div class="type-display" style="font-size: 36px; letter-spacing: -0.02em;">Built for IMGs, by IMGs.</div><div class="type-row__meta">36px · --fs-3xl<br>lh 1.1 · -0.02em</div></div>
+      </div>
+
+      <h3 class="h-sub">Structural — Geist, weight 600</h3>
+      <div>
+        <div class="type-row"><div class="type-row__label">H3</div><div class="type-sans" style="font-size: 28px; font-weight: 600; letter-spacing: -0.015em;">Sub-section heading</div><div class="type-row__meta">28px · --fs-2xl<br>lh 1.25 · -0.015em</div></div>
+        <div class="type-row"><div class="type-row__label">H4</div><div class="type-sans" style="font-size: 22px; font-weight: 600; letter-spacing: -0.015em;">Card or component title</div><div class="type-row__meta">22px · --fs-xl<br>lh 1.25 · -0.015em</div></div>
+        <div class="type-row"><div class="type-row__label">H5</div><div class="type-sans" style="font-size: 18px; font-weight: 600; letter-spacing: -0.005em;">Minor heading, small label title</div><div class="type-row__meta">18px · --fs-lg<br>lh 1.25 · -0.005em</div></div>
+      </div>
+
+      <h3 class="h-sub">Body — Geist, weight 400</h3>
+      <div>
+        <div class="type-row"><div class="type-row__label">Lede</div><div class="type-sans" style="font-size: 16px;">Intro paragraph directly under an H1 — a little larger and lighter than body text.</div><div class="type-row__meta">16px · --fs-md<br>lh 1.55</div></div>
+        <div class="type-row"><div class="type-row__label">Body</div><div class="type-sans" style="font-size: 15px;">Standard paragraph text. This is also the site-wide default already set on the &lt;body&gt; element.</div><div class="type-row__meta">15px · --fs-base<br>lh 1.55</div></div>
+        <div class="type-row"><div class="type-row__label">Small</div><div class="type-sans" style="font-size: 13px; color: var(--uw-ink-500);">Captions, form hints, footnotes, meta text.</div><div class="type-row__meta">13px · --fs-sm<br>lh 1.75</div></div>
+      </div>
+
+      <h3 class="h-sub">Label — JetBrains Mono</h3>
+      <div>
+        <div class="type-row"><div class="type-row__label">Eyebrow</div><div class="type-sans" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-mono); font-weight: 500;">Section · 01</div><div class="type-row__meta">12px · --fs-xs<br>0.1em · uppercase</div></div>
+      </div>
+
+      <h3 class="h-sub">Line-height scale</h3>
+      <div>
+        <div class="type-row"><div class="type-row__label">lh-tight</div><div style="font-family:var(--font-sans); font-size:15px; line-height:1.1; color:var(--uw-ink-900);">Used on H1 and H2.</div><div class="type-row__meta">1.1 · Editorial headings</div></div>
+        <div class="type-row"><div class="type-row__label">lh-snug</div><div style="font-family:var(--font-sans); font-size:15px; line-height:1.25; color:var(--uw-ink-900);">Used on H3, H4, H5.</div><div class="type-row__meta">1.25 · Structural headings</div></div>
+        <div class="type-row"><div class="type-row__label">lh-base</div><div style="font-family:var(--font-sans); font-size:15px; line-height:1.55; color:var(--uw-ink-900);">Used on Lede and Body.</div><div class="type-row__meta">1.55 · Body copy</div></div>
+        <div class="type-row"><div class="type-row__label">lh-loose</div><div style="font-family:var(--font-sans); font-size:15px; line-height:1.75; color:var(--uw-ink-900);">Used on Small text.</div><div class="type-row__meta">1.75 · Captions</div></div>
+      </div>
+
+      <div class="callout" style="margin-top: var(--space-8);"><b>The rule that holds it together</b>Serif stops at H2. The moment a heading starts doing structural or UI work — a card title, a label — it switches to Geist. Carrying the serif further down would dilute what makes H1 and H2 feel special.</div>
+    </section>
+
+    <!-- =========== 02 · COLOR =========== -->
+    <section class="section" id="color">
+      <div class="section__eyebrow">02 — Foundation</div>
+      <h2 class="section__title">Color System</h2>
+      <p class="section__lede">Three colors anchor everything: the emblem blue, the emblem red, and white. Every additional color is a tint or shade of those — or a calm neutral that gets out of their way.</p>
+
+      <h3 class="h-sub h-sub--first">Brand core</h3>
+      <div class="grid-3">
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--uw-blue-500);"></div>
+          <div class="swatch__info">
+            <div class="swatch__name">USMLE Blue <span class="swatch__hex">#2C3386</span></div>
+            <div style="font-size: 12px; color: var(--uw-ink-500);">Primary brand · trust, stability, intelligence. Surfaces, headers, links.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--uw-red-500);"></div>
+          <div class="swatch__info">
+            <div class="swatch__name">Wise Red <span class="swatch__hex">#E32124</span></div>
+            <div style="font-size: 12px; color: var(--uw-ink-500);">Accent · energy, action, momentum. CTAs &amp; key moments only.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__color swatch__color--check" style="background: #fff;"></div>
+          <div class="swatch__info">
+            <div class="swatch__name">Paper White <span class="swatch__hex">#FFFFFF</span></div>
+            <div style="font-size: 12px; color: var(--uw-ink-500);">Pure white. Cards, modals. Page bg uses warmer #FAFAF9.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">USMLE Blue · 10-step scale</h3>
+      <div class="scale">
+        <div class="scale__step" style="background: var(--uw-blue-50);">50</div>
+        <div class="scale__step" style="background: var(--uw-blue-100);">100</div>
+        <div class="scale__step" style="background: var(--uw-blue-200);">200</div>
+        <div class="scale__step" style="background: var(--uw-blue-300);">300</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-400);">400</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-500);">500</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-600);">600</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-700);">700</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-800);">800</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-blue-900);">900</div>
+      </div>
+
+      <h3 class="h-sub">Wise Red · 8-step scale</h3>
+      <div class="scale" style="grid-template-columns: repeat(8, 1fr);">
+        <div class="scale__step" style="background: var(--uw-red-50);">50</div>
+        <div class="scale__step" style="background: var(--uw-red-100);">100</div>
+        <div class="scale__step" style="background: var(--uw-red-200);">200</div>
+        <div class="scale__step" style="background: var(--uw-red-300);">300</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-red-400);">400</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-red-500);">500</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-red-600);">600</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-red-700);">700</div>
+      </div>
+
+      <h3 class="h-sub">Neutral Ink · for type, borders, surfaces</h3>
+      <div class="scale" style="grid-template-columns: repeat(10, 1fr);">
+        <div class="scale__step" style="background: var(--uw-ink-50);">50</div>
+        <div class="scale__step" style="background: var(--uw-ink-75);">75</div>
+        <div class="scale__step" style="background: var(--uw-ink-100);">100</div>
+        <div class="scale__step" style="background: var(--uw-ink-200);">200</div>
+        <div class="scale__step" style="background: var(--uw-ink-300);">300</div>
+        <div class="scale__step" style="background: var(--uw-ink-400);">400</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-ink-500);">500</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-ink-600);">600</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-ink-700);">700</div>
+        <div class="scale__step scale__step--light" style="background: var(--uw-ink-900);">900</div>
+      </div>
+
+      <h3 class="h-sub">Semantic</h3>
+      <div class="grid-4">
+        <div class="swatch"><div class="swatch__color" style="background: var(--uw-success-500);"></div><div class="swatch__info"><div class="swatch__name">Success <span class="swatch__hex">#2F8A5A</span></div><div style="font-size: 12px; color: var(--uw-ink-500);">Milestones, passing scores</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background: var(--uw-warning-500);"></div><div class="swatch__info"><div class="swatch__name">Warning <span class="swatch__hex">#C98A14</span></div><div style="font-size: 12px; color: var(--uw-ink-500);">Deadlines, schedule risks</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background: var(--uw-info-500);"></div><div class="swatch__info"><div class="swatch__name">Info <span class="swatch__hex">#3A5FC0</span></div><div style="font-size: 12px; color: var(--uw-ink-500);">Tips, neutral notices</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background: var(--uw-danger-500);"></div><div class="swatch__info"><div class="swatch__name">Danger <span class="swatch__hex">#B91C1C</span></div><div style="font-size: 12px; color: var(--uw-ink-500);">Errors, destructive actions. Distinct from Wise Red (CTAs).</div></div></div>
+      </div>
+
+      <h3 class="h-sub">Color usage rules</h3>
+      <div class="grid-2">
+        <div class="callout"><b>The 60·30·10 rule</b>60% neutral surfaces (white, paper, ink-75) · 30% USMLE Blue for structure and trust · 10% Wise Red exclusively for CTAs and energy moments.</div>
+        <div class="callout callout--red"><b>Red is precious</b>Never use Wise Red as a large background, body text color, or for routine UI chrome. Reserve it for primary CTAs, key statistics, and one accent moment per screen.</div>
+      </div>
+    </section>
+
+    <!-- =========== 03 · SPACING =========== -->
+    <section class="section" id="spacing">
+      <div class="section__eyebrow">03 — Foundation</div>
+      <h2 class="section__title">Spacing</h2>
+      <p class="section__lede">Everything in the interface sits on a 4&nbsp;px base grid. Twelve named tokens cover every space we need, from 4&nbsp;px gutters between badges to 96&nbsp;px section breathers.</p>
+
+      <div class="grid-2">
+        <div>
+          <h3 class="h-sub h-sub--first">Scale</h3>
+          <div>
+            <div class="spacing-row"><span class="spacing-row__token">space-1</span><div class="spacing-row__bar" style="width: 4px;"></div><span class="spacing-row__val">4 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-2</span><div class="spacing-row__bar" style="width: 8px;"></div><span class="spacing-row__val">8 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-3</span><div class="spacing-row__bar" style="width: 12px;"></div><span class="spacing-row__val">12 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-4</span><div class="spacing-row__bar" style="width: 16px;"></div><span class="spacing-row__val">16 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-5</span><div class="spacing-row__bar" style="width: 20px;"></div><span class="spacing-row__val">20 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-6</span><div class="spacing-row__bar" style="width: 24px;"></div><span class="spacing-row__val">24 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-8</span><div class="spacing-row__bar" style="width: 32px;"></div><span class="spacing-row__val">32 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-10</span><div class="spacing-row__bar" style="width: 40px;"></div><span class="spacing-row__val">40 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-12</span><div class="spacing-row__bar" style="width: 48px;"></div><span class="spacing-row__val">48 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-16</span><div class="spacing-row__bar" style="width: 64px;"></div><span class="spacing-row__val">64 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-20</span><div class="spacing-row__bar" style="width: 80px;"></div><span class="spacing-row__val">80 px</span></div>
+            <div class="spacing-row"><span class="spacing-row__token">space-24</span><div class="spacing-row__bar" style="width: 96px;"></div><span class="spacing-row__val">96 px</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="h-sub h-sub--first">Density rules</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="card"><div class="card__title">Inline (4–8 px)</div><div class="card__body">Between an icon and its label, between badges in a row, between a value and its unit.</div></div>
+            <div class="card"><div class="card__title">Component (12–24 px)</div><div class="card__body">Card padding, button padding, gaps between siblings in a flex row.</div></div>
+            <div class="card"><div class="card__title">Block (32–48 px)</div><div class="card__body">Vertical rhythm between content blocks, hero internal padding, dashboard widget gaps.</div></div>
+            <div class="card"><div class="card__title">Section (64–96 px)</div><div class="card__body">Page-level breathers. Always 96 px between top-level marketing sections.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Radius</h3>
+      <div class="grid-4">
+        <div class="card" style="text-align:center;"><div style="height:60px; background: var(--uw-blue-500); border-radius: 4px; margin-bottom: 12px;"></div><div style="font-family:var(--font-mono); font-size:11px; color:var(--uw-ink-500);">r-xs · 4 px</div><div style="font-size:12px; color:var(--uw-ink-500); margin-top:2px;">Inputs, tags</div></div>
+        <div class="card" style="text-align:center;"><div style="height:60px; background: var(--uw-blue-500); border-radius: 8px; margin-bottom: 12px;"></div><div style="font-family:var(--font-mono); font-size:11px; color:var(--uw-ink-500);">r-md · 8 px</div><div style="font-size:12px; color:var(--uw-ink-500); margin-top:2px;">Buttons, fields</div></div>
+        <div class="card" style="text-align:center;"><div style="height:60px; background: var(--uw-blue-500); border-radius: 12px; margin-bottom: 12px;"></div><div style="font-family:var(--font-mono); font-size:11px; color:var(--uw-ink-500);">r-lg · 12 px</div><div style="font-size:12px; color:var(--uw-ink-500); margin-top:2px;">Cards, modals</div></div>
+        <div class="card" style="text-align:center;"><div style="height:60px; background: var(--uw-blue-500); border-radius: 999px; margin-bottom: 12px;"></div><div style="font-family:var(--font-mono); font-size:11px; color:var(--uw-ink-500);">r-pill · 999 px</div><div style="font-size:12px; color:var(--uw-ink-500); margin-top:2px;">Badges, avatars</div></div>
+      </div>
+
+      <h3 class="h-sub">Shadow elevation</h3>
+      <div class="grid-4">
+        <div class="shadow-tile" style="box-shadow: var(--shadow-xs);"><div class="shadow-tile__name">shadow-xs</div><div class="shadow-tile__val">resting</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-sm);"><div class="shadow-tile__name">shadow-sm</div><div class="shadow-tile__val">card / button</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-md);"><div class="shadow-tile__name">shadow-md</div><div class="shadow-tile__val">hover / dropdown</div></div>
+        <div class="shadow-tile" style="box-shadow: var(--shadow-lg);"><div class="shadow-tile__name">shadow-lg</div><div class="shadow-tile__val">modal / popover</div></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div style="margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--uw-border); display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+      <img src="assets/emblem.svg" alt="" style="width: 44px; height: 44px;" />
+      <div style="flex: 1; min-width: 280px;">
+        <div style="font-family: var(--font-display); font-size: 24px; letter-spacing: -0.015em; color: var(--uw-ink-900); margin-bottom: 4px;">USMLE Wise Design System</div>
+        <div style="font-size: 13px; color: var(--uw-ink-500);">Typography v2 · Foundations only — components not yet documented here.</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

@@ -19,6 +19,10 @@
     3. EMAIL LINK — the support@usmlewise.com link near the bottom is wrapped
        in a pair of Cloudflare "email_off" HTML comments, which stop it being
        rendered as "[email protected]". Search: "email_off".
+    4. FULL_PAGE_CSS FIX — the <style> block right after the support.js
+       <script> tag, restoring html/body/#dc-root to height:auto. Without it
+       the sticky <nav class="uw-nav"> unsticks after one viewport of scroll
+       and the page appears to load broken. Search: "Undo dc-runtime's".
 
   The Meta Pixel now runs SITE-WIDE from partials/meta-pixel.php, and the
   Cookie Policy and Privacy Policy have been updated to say so. The pixel ID
@@ -32,6 +36,23 @@
 <link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
 <script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
 <script src="/match-media/support.js"></script>
+<style>
+  /* Undo dc-runtime's FULL_PAGE_CSS. This page carries no $preview prop in a
+     data-dc-script block, so support.js's boot() appends
+     `html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}`
+     to <head> (see `if (!parsed.preview)` in its boot()). A 100%-height body
+     caps the sticky <nav class="uw-nav">'s travel to one viewport, after
+     which it unsticks and scrolls away, showing the page through where it
+     used to be — the "loads weirdly" scroll bug. Restoring auto height is
+     the runtime's own known-good configuration: its built-in @media print
+     block sets height:auto on these exact selectors. !important because
+     FULL_PAGE_CSS is appended after this and would otherwise win on source
+     order. Both rules are needed — releasing the body alone leaves #dc-root
+     at 100% of an auto-height parent, which collapses the page to one
+     screen. See the identical fix and longer writeup in match-mentorship.php. */
+  html, body { height: auto !important; }
+  #dc-root, #dc-root > .sc-host { height: auto !important; }
+</style>
 
 <!-- Meta Pixel — now the shared partial, which points at the pixel owned by
      the ad account that runs the Match ads. This page used to init

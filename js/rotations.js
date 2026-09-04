@@ -129,6 +129,7 @@
       var PRICE_MIN = 1000, PRICE_MAX = 5000;
       var activeFilters = { specialty: [], state: [], setting: [] };
       var priceMin = PRICE_MIN, priceMax = PRICE_MAX;
+      var searchQuery = '';
 
       var cards = Array.prototype.slice.call(document.querySelectorAll('.rot-pg-card'));
       var emptyEl     = document.getElementById('rotEmpty');
@@ -142,6 +143,8 @@
       var fillEl      = document.getElementById('priceFill');
       var labelMin    = document.getElementById('priceMinLabel');
       var labelMax    = document.getElementById('priceMaxLabel');
+      var searchInput = document.getElementById('rotSearchInput');
+      var searchClear = document.getElementById('rotSearchClear');
       if (!cards.length) return;
 
       var scrim = document.createElement('div');
@@ -181,6 +184,10 @@
             var p = parseCardPrice(card);
             if (!isNaN(p)) show = p >= priceMin && p <= priceMax;
           }
+          if (show && searchQuery) {
+            var haystack = card.getAttribute('data-search') || '';
+            show = haystack.indexOf(searchQuery) !== -1;
+          }
           card.classList.toggle('is-hidden', !show);
           if (show) visible++;
         });
@@ -196,6 +203,9 @@
         priceMin = PRICE_MIN; priceMax = PRICE_MAX;
         if (sliderMin) sliderMin.value = PRICE_MIN;
         if (sliderMax) sliderMax.value = PRICE_MAX;
+        searchQuery = '';
+        if (searchInput) searchInput.value = '';
+        if (searchClear) searchClear.hidden = true;
         updateSliderUI();
         applyFilters();
       }
@@ -245,6 +255,23 @@
       /* Reset buttons */
       if (resetBtn)    resetBtn.addEventListener('click', resetAll);
       if (resetInline) resetInline.addEventListener('click', resetAll);
+
+      /* Search input */
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          searchQuery = searchInput.value.trim().toLowerCase();
+          if (searchClear) searchClear.hidden = searchQuery.length === 0;
+          applyFilters();
+        });
+      }
+      if (searchClear) {
+        searchClear.addEventListener('click', function () {
+          searchQuery = '';
+          if (searchInput) { searchInput.value = ''; searchInput.focus(); }
+          searchClear.hidden = true;
+          applyFilters();
+        });
+      }
 
       /* Accordion: group collapse/expand */
       document.querySelectorAll('.rot-sidebar__gh').forEach(function (btn) {

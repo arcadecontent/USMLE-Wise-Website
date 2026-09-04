@@ -5,8 +5,11 @@
   padding-inline: 24px;
 }
 .msp-policy h1 {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: var(--fs-4xl);
+  font-weight: 400;
   font-family: var(--font-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
   color: var(--uw-ink-900);
   margin: 0 0 8px;
 }

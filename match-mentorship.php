@@ -1,12 +1,34 @@
 <?php
 /*
-  HAND-EDITED, like match-membership/ and match-members/ before it — see the
-  identical warning in those two files before ever re-exporting this from the
-  design tool. This copy additionally swaps the page's own inline <head>/nav
-  for the site's shared partials/head.php + partials/nav.php + footer.php, so
-  it behaves like a normal match-*.php page (title, canonical, global nav/
-  footer, GA4). match-membership/ and match-members/ are untouched on purpose
-  — their links are already out in the world — this is a new, third URL.
+  NO LONGER A DESIGN-TOOL EXPORT. This page started life as one, but the
+  entire dc-runtime has been removed: it is now plain server-rendered HTML
+  built on the site's shared partials (head.php + nav.php + footer.php),
+  exactly like rotations.php or coaching.php. Do not re-export it from the
+  design tool — that would undo everything below.
+
+  What was removed and why: the runtime shipped 136KB of render-blocking JS
+  in the <body> (match-media/support.js 61KB + _ds_bundle.js 75KB), and on
+  boot it ran `dc.replaceWith(hostEl)` — tearing out the whole
+  server-rendered page and re-rendering it in React. That is what made the
+  page visibly load in two stages: header paints, long stall, body pops in.
+
+  It was all dead weight. The page had no runtime logic at all: no {{ }}
+  interpolation, no <sc-if>, no data-dc-script block. The 136KB existed only
+  to render eight <x-import> Buttons, and the <helmet> stylesheets it pulled
+  in were byte-for-byte the same design tokens partials/head.php already
+  loads from /assets/usmle-design-system/styles.css.
+
+  So: the eight Buttons are now <button class="btn btn--primary btn--lg|xl">.
+  That is not an approximation — .btn/.btn--primary/.btn--lg/.btn--xl in
+  assets/usmle-design-system/styles.css match the React component's padding,
+  font-size, colors, shadows and transitions exactly (compare the SIZES and
+  variantStyle() tables in _ds_bundle.js). The <helmet> block and the
+  html/body height:auto hack that fought the runtime's FULL_PAGE_CSS are
+  gone with it, since nothing appends that rule any more.
+
+  match-membership/ and match-members/ are STANDALONE LANDING PAGES and are
+  deliberately NOT touched by any of this — they keep their own minimal nav,
+  announcement bar and dc-runtime. Leave them alone.
 
   $uw_pixel_cta_events = false because the Meta Pixel conversion-event block
   near the end of this file already tracks WhatsApp/email as Lead/Contact;
@@ -20,31 +42,14 @@ $canonical = "https://usmlewise.com/match-mentorship";
 $bodyClass = "msp";
 // match.css, not the global stylesheet, is what styles the shared .msp-nav/
 // .msp-foot markup partials/head.php and partials/footer.php pull in — every
-// other match-*.php page loads it for the same reason. The page's own inline
-// styles below (the .uw-* classes and CSS custom properties in <helmet>)
-// don't collide with anything in it.
+// other match-*.php page loads it for the same reason. The page's own .uw-*
+// rules in the <style> block below don't collide with anything in it, and
+// the design tokens they reference come from the design-system stylesheet
+// partials/head.php already loads.
 $stylesheets = ["/styles/match.css"];
 $uw_pixel_cta_events = false;
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
-<style>
-  /* Undo dc-runtime's FULL_PAGE_CSS.
-     /match-media/support.js appends `html,body{height:100%;margin:0}
-     #dc-root,#dc-root>.sc-host{height:100%}` to <head> at boot, but only when
-     the page has no `$preview` prop (see `if (!parsed.preview)` in its boot()).
-     match.php dodges it by carrying a data-dc-script block with $preview; this
-     page has none, so it gets the rule — and a 100%-height body caps the
-     sticky #mspNav's travel to one viewport, after which the header unsticks
-     and scrolls away, showing the page through where it used to be.
-     Restoring auto height is the runtime's own known-good configuration: its
-     built-in @media print block sets height:auto on these exact selectors.
-     !important because FULL_PAGE_CSS is appended after this and would
-     otherwise win on source order. Both rules are needed — releasing the body
-     alone leaves #dc-root at 100% of an auto-height parent, which collapses
-     the page to one screen. */
-  html, body { height: auto !important; }
-  #dc-root, #dc-root > .sc-host { height: auto !important; }
-</style>
 <script>
 // .msp-nav renders transparent until JS adds .is-stuck (see styles/match.css)
 // — every other page gets this from js/match.js, but that file also runs its
@@ -61,16 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', onScroll, { passive: true });
 });
 </script>
-<script src="/match-media/support.js"></script>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/fonts.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/colors.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/typography.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/spacing.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/base.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/styles.css">
-<script src="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/_ds_bundle.js"></script>
 <style>
   body { margin: 0; background: var(--uw-bg); }
   a { color: var(--uw-blue-500); text-decoration: none; }
@@ -113,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
   .uw-video-modal__close:hover { background: rgba(255,255,255,.26); }
   .uw-video-card:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 2px; }
 </style>
-</helmet>
 <div class="uw" style="font-family:var(--font-sans);color:var(--uw-ink-800);background:var(--uw-bg);-webkit-font-smoothing:antialiased">
 
   <section data-screen-label="Hero" class="uw-sec" style="padding:88px 24px 0;background:radial-gradient(760px 420px at 50% -10%, var(--uw-blue-50), transparent), var(--uw-surface);border-bottom:1px solid var(--uw-border)">
@@ -124,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <p style="font-size:17.5px;line-height:1.55;color:var(--uw-ink-600);max-width:62ch;margin:20px 0 0;text-wrap:pretty">We teach you how to write your personal statement, build your ERAS CV, pick your programs, and answer interview questions, all built on proven frameworks that get you matched.</p>
       <p style="font-size:14px;color:var(--uw-ink-500);margin:10px 0 0">For IMGs, MDs, and DOs.</p>
       <div data-cta="pricing" style="display:flex;justify-content:center;gap:12px;margin-top:30px;cursor:pointer">
-        <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="xl" hint-size="280px,56px">Enroll now →</x-import>
+        <button type="button" class="btn btn--primary btn--xl">Enroll now →</button>
       </div>
       <div style="display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:26px">
         <div style="display:flex;gap:3px;align-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg></div>
@@ -205,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div data-cta="pricing" style="display:flex;justify-content:center;margin-top:30px;cursor:pointer">
-        <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="280px,48px">Get access →</x-import>
+        <button type="button" class="btn btn--primary btn--lg">Get access →</button>
       </div>
     </div>
   </section>
@@ -250,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
       
       <blockquote style="font-family:var(--font-display);font-size:28px;line-height:1.35;letter-spacing:-0.015em;color:var(--uw-ink-900);margin:32px 0 0;max-width:26ch">“That’s not luck. That’s a system.”</blockquote>
       <div data-cta="pricing" style="display:flex;justify-content:center;margin-top:30px;cursor:pointer">
-        <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="280px,48px">Get access →</x-import>
+        <button type="button" class="btn btn--primary btn--lg">Get access →</button>
       </div>
     </div>
   </section>
@@ -366,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div data-cta="pricing" style="display:flex;justify-content:center;margin-top:34px;cursor:pointer">
-        <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="280px,48px">Get access →</x-import>
+        <button type="button" class="btn btn--primary btn--lg">Get access →</button>
       </div>
     </div>
   </section>
@@ -450,7 +444,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <p style="font-size:16.5px;line-height:1.6;color:var(--uw-ink-600);max-width:44ch;margin:22px 0 0;text-wrap:pretty">Full access to every masterclass, recording, and material. Start today, prepare on your schedule.</p>
         
         <div data-cta="checkout" style="display:flex;justify-content:center;margin-top:28px;cursor:pointer">
-          <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="xl" hint-size="280px,56px">Get started →</x-import>
+          <button type="button" class="btn btn--primary btn--xl">Get started →</button>
         </div>
         <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--uw-red-500);margin:20px 0 0">Early-bird price. It goes back to $2,419.</p>
         <div class="uw-pricelist" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-top:28px;padding-top:26px;border-top:1px solid var(--uw-border);width:100%;text-align:left;font-size:14px;color:var(--uw-ink-700)">
@@ -507,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
       <p style="font-family:var(--font-display);font-size:26px;line-height:1.3;letter-spacing:-0.015em;color:var(--uw-ink-900);margin:30px 0 0;max-width:30ch">Match the first time and you keep all of it.</p>
       <div data-cta="pricing" style="display:flex;justify-content:center;margin-top:28px;cursor:pointer">
-        <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="280px,48px">Get access →</x-import>
+        <button type="button" class="btn btn--primary btn--lg">Get access →</button>
       </div>
     </div>
   </section>
@@ -653,7 +647,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       <div data-cta="pricing" style="display:flex;justify-content:center;margin-top:38px;cursor:pointer">
-        <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="280px,48px">Get access →</x-import>
+        <button type="button" class="btn btn--primary btn--lg">Get access →</button>
       </div>
     </div>
   </section>
@@ -683,18 +677,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto">Questions, answered honestly.</h2>
       </div>
       <!-- Native <details>/<summary> on purpose, not the shared .accordion
-           component's JS-toggled classes: the dc-runtime re-renders this
-           <x-dc> subtree on click and resets any DOM mutation that isn't
-           browser-native state (proven by testing — a classList-based
-           open/close silently reverted after every click). <details> is
-           real browser state, immune to that reset; clicking a <summary>
-           works correctly and persists. Styled inline to match .accordion's
-           look (assets/usmle-design-system/styles.css) since that CSS is
-           keyed to classes this markup doesn't use.
-           No item starts pre-opened: an initial `open` attribute hits the
-           same runtime quirk already documented below for the video modal's
-           `hidden` attribute — boolean attributes get dropped when this
-           subtree is first parsed, so it's stripped before paint anyway. -->
+           component's JS-toggled classes. This originally worked around the
+           dc-runtime resetting any non-native DOM mutation on re-render;
+           that runtime is gone, but <details> needs no JS at all, so it
+           stays. Styled inline to match .accordion's look
+           (assets/usmle-design-system/styles.css) since that CSS is keyed
+           to classes this markup doesn't use. -->
       <div style="border:1px solid var(--uw-border);border-radius:var(--r-md);overflow:hidden;background:#fff">
         <details style="border-bottom:1px solid var(--uw-border)">
           <summary style="padding:14px 18px;font-family:var(--font-sans);font-size:14px;font-weight:500;color:var(--uw-ink-900);display:flex;justify-content:space-between;align-items:center;gap:16px">Is this done for you?<span class="uw-plus" style="font-size:18px;color:var(--uw-ink-500);line-height:1;transition:transform var(--dur-fast) var(--ease-out)">+</span></summary>
@@ -729,7 +717,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <p style="font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.8);max-width:58ch;margin:22px 0 0;text-wrap:pretty">You’ve already proven you’re a good doctor. Your Match comes down to whether a committee can see it, in one clear story, built the way they score.</p>
           <p style="font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.8);max-width:58ch;margin:14px 0 0;text-wrap:pretty">That’s the whole Match Mentorship. And if it doesn’t get you there this cycle, we don’t stop until it does.</p>
           <div data-cta="pricing" style="display:flex;justify-content:center;margin-top:30px;cursor:pointer">
-            <x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="xl" hint-size="280px,56px">Get access →</x-import>
+            <button type="button" class="btn btn--primary btn--xl">Get access →</button>
           </div>
           <div style="display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:26px">
             <div style="display:flex;gap:3px;align-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#D69E2E" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.74-5.1 4.6 1.42 6.73L12 17l-6.07 3.33 1.42-6.73-5.1-4.6 6.85-.74z"/></svg></div>
@@ -754,12 +742,11 @@ document.addEventListener('DOMContentLoaded', function () {
   </section>
 </div>
 
-</x-dc>
-<!-- Kept outside <x-dc>: the dc-runtime reconciles that whole subtree as
-     React (see the onclick note below), and it drops the plain boolean
-     `hidden` attribute in the process — the modal rendered permanently
-     visible, blocking every click on the page underneath it. Plain HTML
-     out here is untouched by that runtime. -->
+<!-- Video modal. Uses style="display:none" rather than the boolean `hidden`
+     attribute: when this page still ran through the dc-runtime that runtime
+     stripped `hidden` while reconciling, leaving the modal permanently
+     visible and blocking every click underneath. The runtime is gone now,
+     but the JS below toggles .style.display, so the two must stay in step. -->
 <div id="uwVideoModal" class="uw-video-modal" style="display:none">
   <div class="uw-video-modal__backdrop" data-video-close></div>
   <div class="uw-video-modal__dialog" role="dialog" aria-modal="true" aria-label="Match story video">
@@ -769,16 +756,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 <script>
 (function () {
-  // Delegated on document, not attached to the wrapper divs directly: each
-  // wrapper contains an <x-import> Button that the dc-runtime (support.js)
-  // mounts as a real React node, re-rendering that subtree (and possibly
-  // replacing the wrapper element itself, per its own data-dc-tpl bookkeeping)
-  // after this script's first pass — a listener bound straight to the div
-  // would ride off with the discarded node. Delegation looks the target up
-  // fresh via closest() on every click, so it survives any re-render.
-  // (A literal onclick="" attribute isn't an option either: the runtime
-  // forwards it verbatim as the React onClick prop, and React throws —
-  // invariant #231 — because that prop must be a function, not a string.)
+  // Delegated on document rather than bound to each button. The buttons sit
+  // inside [data-cta] wrappers and the whole wrapper is the click target, so
+  // one listener that resolves via closest() covers the eight CTAs, the
+  // video cards, and the modal's close controls without re-binding.
   document.addEventListener('click', function (e) {
     var videoCard = e.target.closest('[data-video-id]');
     if (e.target.closest('[data-cta="pricing"]')) {
@@ -867,9 +848,8 @@ document.addEventListener('DOMContentLoaded', function () {
     currency: CURRENCY
   });
 
-  // Delegated for the same reason as the CTA handler above: the dc-runtime
-  // re-renders each <x-import> Button after first paint, so a listener bound
-  // straight to those nodes would be discarded with them.
+  // Delegated for the same reason as the CTA handler above: the [data-cta]
+  // wrapper, not the button itself, is what the click resolves against.
   document.addEventListener('click', function (e) {
     var t = e.target;
     if (!t || !t.closest) return;

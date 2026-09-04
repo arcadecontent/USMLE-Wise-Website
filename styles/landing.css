@@ -125,9 +125,9 @@
 .lpx-h2 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(30px, 4.2vw, 52px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
   color: var(--uw-ink-900);
   margin: 0 0 var(--space-5);
   max-width: 20ch;

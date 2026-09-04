@@ -1,16 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<base href="/match-media/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
-<link rel="stylesheet" href="/assets/usmle-design-system/styles.css">
-<link rel="stylesheet" href="/styles/match.css">
-<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
-<script src="/js/mobile-nav.js" defer></script>
-<script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/meta-pixel.php'; ?>
+<?php
+/*
+  HAND-EDITED, same treatment as match-mentorship.php: this copy swaps the
+  page's own inline <head>/nav for the site's shared partials/head.php +
+  partials/nav.php + footer.php, so the header/footer always match the rest
+  of the site (they used to be a hardcoded, stale copy that drifted out of
+  sync with partials/nav.php and was missing several dropdown items) and the
+  page behaves like a normal match-*.php page (title, canonical, global
+  nav/footer, GA4).
+
+  The x-dc/dc-runtime section below is otherwise untouched, aside from
+  rewriting every relative asset URL (uploads/..., _ds/..., ./image-slot.js)
+  to an absolute /match-media/... path, since dropping the page's own
+  <base href="/match-media/"> tag (replaced by partials/head.php, which has
+  no base tag) would otherwise break them.
+
+  DROPPING THAT <base> ALSO BROKE THE FOUR <x-import image-slot> PHOTOS,
+  which is why they are now plain <img> tags. Those slots never had their
+  image in the HTML: the component fetched match-media/.image-slots.state.json
+  (a design-tool sidecar) and read the photo out of it as a base64 data URL.
+  That fetch is DOCUMENT-RELATIVE — `fetch('.image-slots.state.json')` — so
+  the old <base href="/match-media/"> was the only reason it ever resolved.
+  Without it the request went to /.image-slots.state.json, 404'd, and all
+  four slots silently fell back to their "Drop a photo" placeholder.
+
+  So the four photos were extracted out of that sidecar into real files
+  (match-media/uploads/slot-*.webp) and are now ordinary <img> tags. Three
+  of them carried a pan/zoom crop in the sidecar, reproduced here as
+  `transform:translate(x%,y%) scale(s)` on top of object-fit:cover — that is
+  exactly what the component's _applyView() computed (cover baseline × s,
+  centred at 50+x / 50+y percent of the frame), so they frame identically.
+  The sidecar and image-slot.js are now unused by this page; leave them in
+  place for the standalone landing pages, which still rely on them.
+
+  match.php already carries a `$preview` prop in its data-dc-script block
+  near the end of the file, so support.js's boot() never appends the
+  FULL_PAGE_CSS rule that breaks the sticky nav on pages without one (see
+  the long comment in match-mentorship.php for the full mechanism) — no
+  height:auto override is needed here the way it is there.
+*/
+$pageTitle = "Match Support | USMLE Wise";
+$pageDescription = "Done-for-you Match support built by former program directors and residency selection committee members: ERAS, personal statement, letters, signaling, and interview prep, engineered into one coherent story.";
+$canonical = "https://usmlewise.com/match";
+$bodyClass = "msp";
+$stylesheets = ["/styles/match.css"];
+include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
+?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   if (window.lucide && typeof window.lucide.createIcons === 'function') {
@@ -26,125 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
-<script src="./support.js"></script>
-</head>
-<body>
-<!-- ============== SITE NAV ============== -->
-<header class="msp-nav" id="mspNav">
-  <div class="msp-wrap msp-nav__inner">
-    <a class="msp-brand" href="/" aria-label="USMLE Wise home">
-      <img src="/assets/usmle-design-system/assets/Logo-Horizontal.svg" alt="USMLE Wise" height="36" />
-    </a>
-    <nav class="msp-nav__links" aria-label="Primary">
-      <a href="/">Home</a>
-      <div class="msp-nav__item msp-nav__item--has-dd">
-        <a href="/coaching">Coaching <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
-        <div class="msp-nav__dropdown">
-          <a href="/coaching" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Coaching Overview</span>
-            <span class="msp-nav__dd-meta">Step 1, Step 2 CK &amp; Step 3</span>
-          </a>
-          <a href="/step-1-high-yield-crash-course" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 1 High Yield Crash Course</span>
-            <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
-          </a>
-          <a href="/coaching-step1-mastery" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 1 Mastery</span>
-            <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>
-          </a>
-          <a href="/coaching-step23-mastery" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">NBME Style Coaching</span>
-            <span class="msp-nav__dd-meta">NBME &middot; Step 1 &amp; Step 2</span>
-          </a>
-          <a href="/coaching-tutoring" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">1:1 Tutoring</span>
-            <span class="msp-nav__dd-meta">Done-with-you</span>
-          </a>
-        </div>
-      </div>
-      <div class="msp-nav__item msp-nav__item--has-dd">
-            <a href="/rotations">Rotations <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
-            <div class="msp-nav__dropdown">
-              <a href="/rotations" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Rotations Overview</span>
-                <span class="msp-nav__dd-meta">Placements, LORs &amp; USCE</span>
-              </a>
-              <a href="/clinical-rotations" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Clinical Rotations</span>
-                <span class="msp-nav__dd-meta">Browse all placements</span>
-              </a>
-            </div>
-          </div>
-      <div class="msp-nav__item msp-nav__item--has-dd">
-        <a href="/research">Research <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
-        <div class="msp-nav__dropdown">
-          <a href="/research" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Research Overview</span>
-            <span class="msp-nav__dd-meta">All programs &amp; services</span>
-          </a>
-          <a href="/research-catalyst" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Research Catalyst</span>
-            <span class="msp-nav__dd-meta">Flagship &middot; 12-month program</span>
-          </a>
-          <a href="/research-original" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Original Research</span>
-            <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
-          </a>
-          <a href="/research-review" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Systematic Review / Meta-Analysis</span>
-            <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
-          </a>
-          <a href="/research-junior-scientist" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Junior Scientist Program</span>
-            <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
-          </a>
-        </div>
-      </div>
-      <div class="msp-nav__item msp-nav__item--has-dd">
-        <a href="/match">Match <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
-        <div class="msp-nav__dropdown">
-          <a href="/match" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Match Overview</span>
-            <span class="msp-nav__dd-meta">End-to-end residency support</span>
-          </a>
-          <a href="/match-mentorship" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Match Mentorship</span>
-            <span class="msp-nav__dd-meta">Recorded masterclasses &middot; 3X framework</span>
-          </a>
-          <a href="/match-lor" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">LOR Editing</span>
-            <span class="msp-nav__dd-meta">Letters of Recommendation</span>
-          </a>
-          <a href="/match-eras-cv" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">ERAS CV</span>
-            <span class="msp-nav__dd-meta">CV overhaul</span>
-          </a>
-          <a href="/match-ps3x" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Personal Statement</span>
-            <span class="msp-nav__dd-meta">PS3X</span>
-          </a>
-          <a href="/match-interview" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Interview Preparation</span>
-            <span class="msp-nav__dd-meta">Mock interviews &middot; Strategy</span>
-          </a>
-        </div>
-      </div>
-      <a href="/testimonials">Stories</a>
-      <a href="/blog">Blog</a>
-      <a href="/qa">FAQ</a>
-    </nav>
-    <a class="btn btn--primary msp-nav__cta" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-  </div>
-</header>
+<script src="/match-media/support.js"></script>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/fonts.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/colors.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/typography.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/spacing.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/base.css">
-<link rel="stylesheet" href="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/styles.css">
-<script src="_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/_ds_bundle.js"></script>
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/fonts.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/colors.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/typography.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/spacing.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/base.css">
+<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/styles.css">
+<script src="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/_ds_bundle.js"></script>
 <style>
   body{margin:0}
   .mp{font-family:var(--font-sans);color:var(--uw-ink-800);background:var(--uw-surface);overflow-x:hidden}
@@ -237,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.65;color:rgba(255,255,255,.82);max-width:58ch;margin:0 auto 34px">They were smart enough. They worked hard enough. Their application just never lined up with the criteria programs score them on, and their story didn't add up to the people deciding.</p>
 
       <div style="width:188px;height:188px;margin:0 auto 24px;border-radius:50%;overflow:hidden;box-shadow:var(--shadow-lg);border:4px solid rgba(255,255,255,.25)">
-        <x-import component-from-global-scope="image-slot" from="./match-packages/image-slot.js" id="founder" shape="circle" placeholder="Drop founder photo" hint-size="188px,188px"></x-import>
+        <img src="/match-media/uploads/slot-founder.webp" alt="Dr. Manik Madaan" width="188" height="188" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
       </div>
       <div style="font-size:clamp(15px,2.4vw,18px);line-height:1.7;color:rgba(255,255,255,.82);max-width:60ch;margin:0 auto;display:flex;flex-direction:column;gap:18px;text-align:left">
         <p style="margin:0;text-align:center">I'm Dr. Manik Madaan, and I've watched too many brilliant applicants go unmatched, some for five, six, seven seasons in a row. A capable applicant with a weak application, passed over because a program never got to see who they were. It broke my heart every time.</p>
@@ -320,75 +245,75 @@ document.addEventListener('DOMContentLoaded', function () {
     <div style="max-width:1040px;margin:0 auto;max-height:78vh;overflow-y:auto;border-radius:var(--r-lg);border:1px solid var(--uw-border);padding:16px;background:var(--uw-surface)">
       <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin:2px 0 12px">Match day</div>
       <div class="mp-testi-grid" style="margin-bottom:8px">
-        <img src="uploads/Instagram%20Photo%20Download%20(2).jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Instagram%20Photo%20660329525.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/656425718_17890021239448701_3488419753803306264_n.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Instagram%20Photo%20Download%20(1).jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Instagram%20Photo%20656292960.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/WhatsApp%20Image%20Apr%204%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/WhatsApp%20Image%20Apr%204%202026%20(1).jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/WhatsApp%20Image%20May%2016%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/WhatsApp%20Image%20Apr%2015%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Instagram%20Photo%20657845911.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Instagram%20Photo%20Download%20(2).jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Instagram%20Photo%20660329525.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/656425718_17890021239448701_3488419753803306264_n.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Instagram%20Photo%20Download%20(1).jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Instagram%20Photo%20656292960.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/WhatsApp%20Image%20Apr%204%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/WhatsApp%20Image%20Apr%204%202026%20(1).jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/WhatsApp%20Image%20May%2016%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/WhatsApp%20Image%20Apr%2015%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Instagram%20Photo%20657845911.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
       </div>
       <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin:0 0 12px;padding-top:16px;border-top:1px solid var(--uw-border)">In their words</div>
       <div class="mp-testi-grid">
-        <img src="uploads/Zeel%20Patel.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/1.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/2.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/3.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/4.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/5.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/6.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/7.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/8.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/9.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/10.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/11.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/12.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/13.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Allegheny%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Anjali.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Ayesha%20Surgery.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Ayra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Bardia.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/EM_Anniesha.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Guy%20Advanced%20Intereviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Guy%20UOH.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Hamna.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Joycine%20matched.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Lakshita%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Logesh.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Mounika.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Nancy.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Naz%20advanced%20interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Neuro.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Niyati%20Off%20Cycle.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Okkes.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Paranshi%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Pavani.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Praneet.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Psych%20match.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Rasmitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Ravindra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/SOAP%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Saint%20Vincnent%20R.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Screenshot_20260703_032742_Instagram~2.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Shiv.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Shreya%20FM%20Match.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/SidNath.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Sinmmer.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Smit.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Sonia%201%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Sonia%202%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Soura%20Psych.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Swathi.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/UIC%20Peoria.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Unknown%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Unknown%203.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Unkown%202.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/Yog%2014.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="uploads/babitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Zeel%20Patel.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/1.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/2.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/3.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/4.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/5.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/6.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/7.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/8.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/9.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/10.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/11.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/12.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/13.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Allegheny%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Anjali.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Ayesha%20Surgery.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Ayra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Bardia.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/EM_Anniesha.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Guy%20Advanced%20Intereviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Guy%20UOH.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Hamna.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Joycine%20matched.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Lakshita%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Logesh.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Mounika.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Nancy.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Naz%20advanced%20interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Neuro.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Niyati%20Off%20Cycle.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Okkes.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Paranshi%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Pavani.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Praneet.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Psych%20match.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Rasmitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Ravindra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/SOAP%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Saint%20Vincnent%20R.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Screenshot_20260703_032742_Instagram~2.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Shiv.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Shreya%20FM%20Match.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/SidNath.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Sinmmer.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Smit.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Sonia%201%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Sonia%202%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Soura%20Psych.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Swathi.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/UIC%20Peoria.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Unknown%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Unknown%203.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Unkown%202.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/Yog%2014.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
+        <img src="/match-media/uploads/babitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
       </div>
     </div>
     <div style="display:flex;justify-content:center;margin-top:34px">
@@ -826,19 +751,19 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px">
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px">
-        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-manik" shape="rounded" radius="8" placeholder="Drop or click to upload Dr. Madaan's photo" hint-size="100%,100%"><img src="./profile-pic-mrebpmf0.jpeg" alt="profile-pic" style="max-width: 100%; height: auto; display: block; object-fit: cover"></x-import></div>
+        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><img src="/match-media/uploads/slot-team-manik.webp" alt="Dr. Manik Madaan" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transform:translate(-0.97%,15.7%) scale(1.293)"></div>
         <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:10px">Contributor</div>
         <h3 style="font-family:var(--font-display);font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-0.01em;margin:0 0 12px;color:var(--uw-ink-900)"><b>Dr. Manik Madaan</b></h3>
         <p style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-700);margin:0">The world's most-followed USMLE and Match expert, and a doctor in the U.S. <br>Served 4 Years In Residency Selection Committee</p>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px">
-        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-kothari" shape="rounded" radius="8" placeholder="Drop or click to upload Dr. Kothari's photo" hint-size="100%,100%"></x-import></div>
+        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><img src="/match-media/uploads/slot-team-kothari.webp" alt="Dr. Kothari" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transform:translate(0%,2.82%)"></div>
         <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:10px">Overseeing committee head</div>
         <h3 style="font-family:var(--font-display);font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-0.01em;margin:0 0 12px;color:var(--uw-ink-900)"><b>Dr. Nayan K. Kothari</b></h3>
         <p style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-700);margin:0">Program Director, Internal Medicine, Rutgers-RWJ Medical School. Chair, Dept. of Medicine, Saint Peter's (1996-2025). Reviewed thousands of CVs and matched hundreds of residents.</p>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px">
-        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-kaushik" shape="rounded" radius="8" placeholder="Drop or click to upload Dr. Sreeram's photo" hint-size="100%,100%"></x-import></div>
+        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><img src="/match-media/uploads/slot-team-kaushik.webp" alt="Dr. Kaushik Sreeram" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transform:translate(3.44%,-9.96%) scale(1.203)"></div>
         <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:10px">Founder</div>
         <h3 style="font-family:var(--font-display);font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-0.01em;margin:0 0 12px;color:var(--uw-ink-900)"><b>Dr. Kaushik Sreeram</b></h3>
         <p style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-700);margin:0">Former Infectious Disease and opioid researcher at Duke University and UPMC.</p>
@@ -992,86 +917,4 @@ class Component extends DCLogic {
 }
 </script>
 
-<!-- ============== SITE FOOTER ============== -->
-<footer class="msp-foot">
-  <div class="msp-wrap">
-    <div class="msp-foot__top">
-      <div class="msp-foot__brand-col">
-        <a class="msp-brand" href="/" aria-label="USMLE Wise home">
-          <img src="/assets/usmle-design-system/assets/Logo-Horizontal-Dark.svg" alt="USMLE Wise" height="36" />
-        </a>
-        <p>Guiding international medical graduates from USMLE to Match Day.</p>
-      </div>
-      <nav class="msp-foot__nav" aria-label="Footer navigation">
-        <div class="msp-foot__nav-group">
-          <span class="msp-foot__nav-label">Coaching</span>
-          <a href="/coaching">Coaching Overview</a>
-          <a href="/step-1-high-yield-crash-course">Step 1 High Yield Crash Course</a>
-          <a href="/coaching-step1-mastery">Step 1 Mastery</a>
-          <a href="/coaching-step23-mastery">NBME Style Coaching (Step 1 and Step 2)</a>
-          <a href="/coaching-tutoring">1:1 Tutoring</a>
-        </div>
-        <div class="msp-foot__nav-group">
-          <span class="msp-foot__nav-label">Research</span>
-          <a href="/research">Research Overview</a>
-          <a href="/research-catalyst">Research Catalyst</a>
-          <a href="/research-original">Original Research</a>
-          <a href="/research-review">Systematic Review / Meta-Analysis</a>
-          <a href="/research-junior-scientist">Junior Scientist Program</a>
-        </div>
-        <div class="msp-foot__nav-group">
-          <span class="msp-foot__nav-label">Match</span>
-          <a href="/match">Match Overview</a>
-          <a href="/match-mentorship">Match Mentorship</a>
-          <a href="/match-lor">LOR Editing</a>
-          <a href="/match-eras-cv">ERAS CV</a>
-          <a href="/match-ps3x">Personal Statement</a>
-          <a href="/match-interview">Interview Preparation</a>
-        </div>
-        <div class="msp-foot__nav-group">
-          <span class="msp-foot__nav-label">Site</span>
-          <a href="/">Home</a>
-          <a href="/rotations">Rotations</a>
-          <a href="/testimonials">Stories</a>
-          <a href="/blog">Blog</a>
-          <a href="/qa">FAQ</a>
-          <a href="/policy">Privacy Policy</a>
-        </div>
-      </nav>
-    </div>
-    <div class="msp-foot__bottom">
-      <div class="msp-foot__social">
-        <a href="https://www.instagram.com/usmle_wise/" class="msp-foot__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-          <i data-lucide="instagram" width="18" height="18"></i>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61579260924818" class="msp-foot__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-          <i data-lucide="facebook" width="18" height="18"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/usmle-wise/" class="msp-foot__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <i data-lucide="linkedin" width="18" height="18"></i>
-        </a>
-        <!--email_off--><a href="mailto:support@usmlewise.com" class="msp-foot__social-link" aria-label="Email us">
-          <i data-lucide="mail" width="18" height="18"></i>
-        </a><!--/email_off-->
-        <a href="https://wa.me/19192015700" class="msp-foot__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-        </a>
-        <a href="https://www.tiktok.com/@usmle_wise" class="msp-foot__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.79a4.85 4.85 0 01-1.02-.1z"/>
-          </svg>
-        </a>
-        <a href="https://www.youtube.com/@usmlewise" class="msp-foot__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-          <i data-lucide="youtube" width="18" height="18"></i>
-        </a>
-      </div>
-      <small>&copy; 2026 USMLE Wise. All rights reserved.</small>
-    </div>
-  </div>
-</footer>
-<?php $whatsappMessage = 'I am interested in Match Mentorship'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
-
-</body>
-</html>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>

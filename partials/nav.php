@@ -51,7 +51,7 @@
                 <span class="msp-nav__dd-meta">Placements, LORs &amp; USCE</span>
               </a>
               <a href="/clinical-rotations" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Clinical Rotations</span>
+                <span class="msp-nav__dd-name">Rotations List</span>
                 <span class="msp-nav__dd-meta">Browse all placements</span>
               </a>
             </div>
@@ -131,6 +131,10 @@
           <a href="/match-interview" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Interview Preparation</span>
             <span class="msp-nav__dd-meta">Mock interviews &middot; Strategy</span>
+          </a>
+          <a href="/match-advanced-interviewing" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Advanced Interviewing</span>
+            <span class="msp-nav__dd-meta">Dr. Manik's course &middot; $399</span>
           </a>
           <a href="/match-soap" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">SOAP Match Support</span>
