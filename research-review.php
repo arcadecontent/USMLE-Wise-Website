@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Systematic Review &amp; Meta-Analysis — Fast-track Publication Mentorship | USMLE Wise";
-$pageDescription = "A mentor-guided systematic review or meta-analysis. A rigorous, credible first-author publication for your residency application. $199 — Live, mentored.";
+$pageDescription = "A mentor-guided systematic review or meta-analysis. A rigorous, credible first-author publication for your residency application. $300. Live, mentored.";
 $canonical = "https://usmlewise.com/research-review";
 $bodyClass = "msp";
 $stylesheets = [
@@ -164,7 +164,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rc-payment__inner">
               <div>
                 <span class="rc-sec-label">Investment</span>
-                <div class="rc-payment__price">$199</div>
+                <div class="rc-payment__price">$300</div>
                 <p class="rc-payment__note">Covers mentor guidance across topic selection, protocol and search strategy, screening and data extraction, writing, and journal submission for one systematic review or meta-analysis. Journal fees, if any, are separate. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
               </div>
               <a

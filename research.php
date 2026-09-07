@@ -314,7 +314,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">06 &middot; Live</span>
                 <h3 class="msp-sva-title">Systematic Review / Meta-Analysis</h3>
-                <div class="msp-sva-price">$199</div>
+                <div class="msp-sva-price">$300</div>
                 <p class="msp-sva-desc">A mentor-guided systematic review or meta-analysis: a rigorous, credible first publication for your CV.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
