@@ -72,20 +72,8 @@
             <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
           </a>
           <a href="/research-coauthor" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Single Research Paper &mdash; Co-Author</span>
-            <span class="msp-nav__dd-meta">PubMed-indexed &middot; $300</span>
-          </a>
-          <a href="/research-lead-author" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Lead Author Publication</span>
-            <span class="msp-nav__dd-meta">PubMed-indexed &middot; $800</span>
-          </a>
-          <a href="/research-lead-author-conference" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Lead Author + Conference Presentation</span>
-            <span class="msp-nav__dd-meta">Publication &amp; presentation &middot; $1,500</span>
-          </a>
-          <a href="/research-review" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Systematic Review / Meta-Analysis</span>
-            <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+            <span class="msp-nav__dd-name">Get Published</span>
+            <span class="msp-nav__dd-meta">Co-Author to Lead Author &middot; $300&ndash;$1,500</span>
           </a>
           <a href="/research-junior-scientist" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Junior Scientist Program</span>

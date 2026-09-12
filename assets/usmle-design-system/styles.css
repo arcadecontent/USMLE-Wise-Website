@@ -1778,19 +1778,25 @@ svg.lucide {
 }
 .msp-nav__item:hover .msp-nav__dd-caret,
 .msp-nav__item:focus-within .msp-nav__dd-caret { transform: rotate(180deg); }
-.msp-nav__dropdown::before {
+.msp-nav__item::after {
+  /* Invisible hover-bridge: keeps :hover alive while the cursor crosses the
+     gap between the trigger link and the dropdown. Lives on .msp-nav__item
+     (not .msp-nav__dropdown) so it isn't clipped by the dropdown's overflow. */
   content: '';
   position: absolute;
-  top: -10px;
+  top: 100%;
   left: 0;
   right: 0;
-  height: 10px;
+  height: 12px;
 }
 .msp-nav__dropdown {
   position: absolute;
   top: calc(100% + 6px);
   left: 0;
   min-width: 220px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: var(--uw-bg);
   border: 1px solid var(--uw-border);
   border-radius: var(--r-lg);

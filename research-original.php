@@ -38,28 +38,42 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
           </div>
 
+          <div class="msp-hero__frame-wrap">
+            <div class="msp-hero__frame reveal">
+              <picture>
+                <source srcset="/assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp" type="image/webp">
+                <img src="/assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.jpg" alt="Physician in lab coat writing in a notebook" fetchpriority="high" decoding="async" />
+              </picture>
+            </div>
+            <div class="msp-float-note" aria-hidden="true">
+              <span class="msp-float-note__num">95<small>%</small></span>
+              <span class="msp-float-note__label">Match rate</span>
+              <span class="msp-float-note__sub">340+ students &middot; 4.9 rating</span>
+            </div>
+          </div>
+
         </div>
 
         <div class="msp-bar msp-wrap" aria-label="Track record">
           <div class="msp-bar__inner">
             <div class="msp-stat reveal">
-              <b data-count="250" data-suffix="+">250+</b>
+              <b data-count="90" data-suffix="+">90+</b>
               <span>Students &amp; professionals guided</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="75" data-suffix="+">75+</b>
+              <b data-count="30" data-suffix="+">30+</b>
               <span>Publications &amp; presentations</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="150" data-suffix="+">150+</b>
-              <span>Research projects mentored</span>
+              <b data-count="10" data-suffix="+">10+</b>
+              <span>Active projects running</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="16" data-suffix="+">16+</b>
-              <span>Countries represented</span>
+              <b data-count="65" data-suffix="+">65+</b>
+              <span>Projects mentored</span>
             </div>
           </div>
         </div>
@@ -93,7 +107,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rp-include reveal">
               <div class="rp-include__icon"><i data-lucide="shield-check" width="18" height="18"></i></div>
               <h3 class="rp-include__head">IRB &amp; Ethics Guidance</h3>
-              <p>Ethics and compliance guidance tailored to your situation. If formal IRB access isn't available through your institution, your mentor will design the project around it from the start.</p>
+              <p>Ethics/IRB approval comes from your own institution, not from us; we can't issue it on your behalf. Your mentor helps you prepare the submission and, if formal IRB access isn't available, designs the project around it. Review wait times are outside our control and excluded from our quoted timeline.</p>
             </div>
 
             <div class="rp-include reveal">
@@ -114,6 +128,52 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <p>Your mentor walks you through submission, reviewer response letters, and acceptance correspondence from start to finish.</p>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== STUDY DESIGNS ============== -->
+      <section class="msp-section" id="study-designs" aria-labelledby="studyDesignsTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">What you'll produce</span>
+            <h2 id="studyDesignsTitle" class="msp-h2">One of four study designs.</h2>
+            <p class="msp-lede">
+              Your mentor helps you pick the design that fits your access to data, your
+              timeline, and your specialty goals.
+            </p>
+          </div>
+          <div class="rc-pub-types reveal">
+            <div class="rc-pub-types__grid rc-pub-types__grid--4">
+              <div class="rc-pub-type rc-pub-type--amber">
+                <div class="rc-pub-type__icon-wrap">
+                  <i data-lucide="file-text" width="18" height="18"></i>
+                </div>
+                <h3 class="rc-pub-type__head">Case Report</h3>
+                <p>Document and publish a compelling clinical case with full mentor support. Requires ethical approval and documented patient consent through your institution before submission.</p>
+              </div>
+              <div class="rc-pub-type rc-pub-type--blue">
+                <div class="rc-pub-type__icon-wrap">
+                  <i data-lucide="eye" width="18" height="18"></i>
+                </div>
+                <h3 class="rc-pub-type__head">Observational Study</h3>
+                <p>Study a population or exposure as it naturally occurs, without intervening. A common entry point when you don't yet have access to a formal dataset.</p>
+              </div>
+              <div class="rc-pub-type rc-pub-type--emerald">
+                <div class="rc-pub-type__icon-wrap">
+                  <i data-lucide="history" width="18" height="18"></i>
+                </div>
+                <h3 class="rc-pub-type__head">Retrospective Study</h3>
+                <p>Analyze existing records or past cases to identify patterns. A strong option if your institution has accessible historical data.</p>
+              </div>
+              <div class="rc-pub-type rc-pub-type--violet">
+                <div class="rc-pub-type__icon-wrap">
+                  <i data-lucide="compass" width="18" height="18"></i>
+                </div>
+                <h3 class="rc-pub-type__head">Prospective Study</h3>
+                <p>Collect new data going forward under a defined protocol. Higher rigor, and typically a longer timeline than retrospective work.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

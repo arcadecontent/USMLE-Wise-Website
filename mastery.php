@@ -309,11 +309,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <span class="mst-card__cat">Research &amp; Publishing</span>
                 <span class="mst-card__format mst-card__format--live">Live</span>
               </div>
-              <h3 class="mst-card__title">Systematic Review &amp; Meta-Analysis</h3>
-              <p class="mst-card__desc">Live, mentored training on running a systematic review from protocol through submission, built for a faster, guided publication.</p>
+              <h3 class="mst-card__title">Get Published</h3>
+              <p class="mst-card__desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation, for a faster, guided publication line.</p>
               <div class="mst-card__foot">
                 <span class="mst-card__price">Mentored</span>
-                <a href="/research-review" class="btn btn--ghost btn--sm">View Course <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                <a href="/research-coauthor" class="btn btn--ghost btn--sm">View Course <i data-lucide="arrow-right" width="14" height="14"></i></a>
               </div>
             </article>
 

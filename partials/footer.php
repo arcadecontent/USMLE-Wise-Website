@@ -25,10 +25,7 @@
           <a href="/research">Research Overview</a>
           <a href="/research-catalyst">Research Catalyst</a>
           <a href="/research-original">Original Research</a>
-          <a href="/research-coauthor">Single Research Paper &mdash; Co-Author</a>
-          <a href="/research-lead-author">Lead Author Publication</a>
-          <a href="/research-lead-author-conference">Lead Author + Conference</a>
-          <a href="/research-review">Systematic Review / Meta-Analysis</a>
+          <a href="/research-coauthor">Get Published (Co-Author to Lead Author)</a>
           <a href="/research-junior-scientist">Junior Scientist Program</a>
           <a href="/research-j1-fellowship">J-1 Research Fellowship Placement</a>
           <a href="/research-networking">Strategic Networking Program</a>

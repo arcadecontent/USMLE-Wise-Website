@@ -64,23 +64,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-bar msp-wrap" aria-label="Track record">
           <div class="msp-bar__inner">
             <div class="msp-stat reveal">
-              <b data-count="250" data-suffix="+">250+</b>
+              <b data-count="90" data-suffix="+">90+</b>
               <span>Students &amp; professionals guided</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="75" data-suffix="+">75+</b>
+              <b data-count="30" data-suffix="+">30+</b>
               <span>Publications &amp; presentations</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="150" data-suffix="+">150+</b>
-              <span>Research projects mentored</span>
+              <b data-count="10" data-suffix="+">10+</b>
+              <span>Active projects running</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="16" data-suffix="+">16+</b>
-              <span>Countries represented</span>
+              <b data-count="65" data-suffix="+">65+</b>
+              <span>Projects mentored</span>
             </div>
           </div>
         </div>
@@ -131,10 +131,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-head reveal">
             <span class="msp-eyebrow">What We Offer</span>
             <h2 id="servicesTitle" class="msp-h2">
-              Our nine research programs
+              Our five research programs
             </h2>
             <p class="msp-sub">
-              From a $99 recorded foundation to a full 12-month publication
+              From a $300 mentored paper to a full 12-month publication
               pathway. Choose the level that fits your timeline and goals.
             </p>
           </div>
@@ -271,9 +271,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-sva-img" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp');"></div>
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">03 &middot; Live &middot; Mentored</span>
-                <h3 class="msp-sva-title">Single Research Paper &mdash; Co-Author</h3>
-                <div class="msp-sva-price">$300</div>
-                <p class="msp-sva-desc">Join an active, mentor-run project as a co-author. Do a defined piece of the work and get listed on a paper submitted to a PubMed-indexed journal.</p>
+                <h3 class="msp-sva-title">Get Published</h3>
+                <div class="msp-sva-price">$300&ndash;$1,500</div>
+                <p class="msp-sva-desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation. Listed on a paper submitted to a PubMed-indexed journal.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
                   <a href="/research-coauthor" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
@@ -282,51 +282,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/virginia-doctor-notes.webp');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">04 &middot; Live &middot; Mentored</span>
-                <h3 class="msp-sva-title">Lead Author Publication</h3>
-                <div class="msp-sva-price">$800</div>
-                <p class="msp-sva-desc">Take the lead-author role on an active, mentor-run project. Drive the manuscript and get listed as lead author on a paper submitted to a PubMed-indexed journal.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-lead-author" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-vertical-crop.webp');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">05 &middot; Live &middot; Mentored</span>
-                <h3 class="msp-sva-title">Lead Author + Conference Presentation</h3>
-                <div class="msp-sva-price">$1,500</div>
-                <p class="msp-sva-desc">Everything in Lead Author Publication, plus your project is submitted as a conference abstract &mdash; and if accepted, you present it yourself.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-lead-author-conference" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/pexels-tara-winstead-7722791.webp');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">06 &middot; Live</span>
-                <h3 class="msp-sva-title">Systematic Review / Meta-Analysis</h3>
-                <div class="msp-sva-price">$300</div>
-                <p class="msp-sva-desc">A mentor-guided systematic review or meta-analysis: a rigorous, credible first publication for your CV.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-review" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">07 &middot; Placement Service &middot; 12-month fellowship</span>
+                <span class="msp-sva-eyebrow">04 &middot; Placement Service &middot; 12-month fellowship</span>
                 <h3 class="msp-sva-title">J-1 Research Fellowship Placement</h3>
                 <div class="msp-sva-price">$20,000</div>
                 <p class="msp-sva-desc">End-to-end placement support for a 12-month J-1 research fellowship &mdash; institution matching, application guidance, visa documentation assistance, and relocation support.</p>
@@ -337,30 +295,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
-            <article class="msp-sva-row msp-sva-row--flip reveal">
+            <article class="msp-sva-row reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/kaitlyn-baker-vZJdYl5JVXY-unsplash.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">08 &middot; Live &middot; Per outreach cycle</span>
+                <span class="msp-sva-eyebrow">05 &middot; Live &middot; Per outreach cycle</span>
                 <h3 class="msp-sva-title">Strategic Networking Program</h3>
                 <div class="msp-sva-price">$1,500</div>
                 <p class="msp-sva-desc">We help you identify the exact faculty and Program Directors to target, so every conference conversation and cold email has a clear strategic purpose.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
                   <a href="/research-networking" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">09 &middot; Recorded &middot; Self-paced</span>
-                <h3 class="msp-sva-title">Research Cohort Access</h3>
-                <div class="msp-sva-price">$99</div>
-                <p class="msp-sva-desc">18 recorded sessions covering study design, writing, publishing, and conferences — the library to work through once you're actively running your own project.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-cohort" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
                 </div>
               </div>
             </article>
@@ -379,7 +323,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-head reveal">
             <span class="msp-eyebrow">How it works</span>
             <h2 id="processTitle" class="msp-h2">
-              Six stages from assessment to publication
+              Five stages from assessment to publication
             </h2>
           </div>
 
@@ -529,6 +473,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
+            <article class="msp-mtr-e reveal">
+              <div class="msp-mtr-e__photo">
+                <img src="/assets/Photos/Team-Members/Shelja-Sharma.jpg" alt="Shelja Sharma" loading="lazy" decoding="async" />
+              </div>
+              <div class="msp-mtr-e__body">
+                <div class="msp-mtr-e__header">
+                  <span class="msp-mtr-e__role">Research Mentor</span>
+                  <h3 class="msp-mtr-e__name">Shelja Sharma</h3>
+                  <span class="msp-mtr-e__prog">Research &amp; Publications Mentor</span>
+                </div>
+                <ul class="msp-mtr-e__creds">
+                  <li>7 published papers &middot; 6 co-authored poster presentations</li>
+                  <li>15 students mentored to a publication credit</li>
+                </ul>
+              </div>
+            </article>
+
           </div>
 
 
@@ -647,7 +608,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               Your questions, answered.
             </h2>
           </div>
-          <div class="accordion reveal">
+          <div class="accordion rc-faq__accordion reveal">
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 What is the difference between a systematic review and original research?
@@ -701,12 +662,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-wrap">
           <div class="msp-cta-a reveal">
             <div class="msp-cta-a__stat">
-              <div class="msp-cta-a__num">150<span>+</span></div>
+              <div class="msp-cta-a__num">90<span>+</span></div>
               <p class="msp-cta-a__stat-line">
-                Research projects mentored
+                Students &amp; professionals guided
               </p>
               <p class="msp-cta-a__stat-sub">
-                75+ publications &middot; 250+ students guided
+                30+ publications &middot; 65+ projects mentored
               </p>
             </div>
             <div class="msp-cta-a__content">

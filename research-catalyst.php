@@ -28,28 +28,42 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
           </div>
 
+          <div class="msp-hero__frame-wrap">
+            <div class="msp-hero__frame reveal">
+              <picture>
+                <source srcset="/assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp" type="image/webp">
+                <img src="/assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.jpg" alt="Physician in lab coat writing in a notebook" fetchpriority="high" decoding="async" />
+              </picture>
+            </div>
+            <div class="msp-float-note" aria-hidden="true">
+              <span class="msp-float-note__num">95<small>%</small></span>
+              <span class="msp-float-note__label">Match rate</span>
+              <span class="msp-float-note__sub">340+ students &middot; 4.9 rating</span>
+            </div>
+          </div>
+
         </div>
 
         <div class="msp-bar msp-wrap" aria-label="Track record">
           <div class="msp-bar__inner">
             <div class="msp-stat reveal">
-              <b data-count="250" data-suffix="+">250+</b>
+              <b data-count="90" data-suffix="+">90+</b>
               <span>Students &amp; professionals guided</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="75" data-suffix="+">75+</b>
+              <b data-count="30" data-suffix="+">30+</b>
               <span>Publications &amp; presentations</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="150" data-suffix="+">150+</b>
-              <span>Research projects mentored</span>
+              <b data-count="10" data-suffix="+">10+</b>
+              <span>Active projects running</span>
             </div>
             <div class="msp-divider" aria-hidden="true"></div>
             <div class="msp-stat reveal">
-              <b data-count="16" data-suffix="+">16+</b>
-              <span>Countries represented</span>
+              <b data-count="65" data-suffix="+">65+</b>
+              <span>Projects mentored</span>
             </div>
           </div>
         </div>
@@ -197,45 +211,70 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="rc-receive__stat">
                 <span class="rc-receive__num">4</span>
                 <div>
-                  <span class="rc-receive__stat-label">Publications targeted</span>
-                  <span class="rc-receive__stat-sub">Systematic reviews, meta-analyses, and conference abstracts — case reports included where a suitable case is available</span>
+                  <span class="rc-receive__stat-label">Papers targeted</span>
+                  <span class="rc-receive__stat-sub">Chosen from six study designs, with lead authorship on one of the four</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Publication Types -->
+          <!-- Study Designs -->
           <div class="rc-pub-types reveal">
-            <span class="rc-sec-label">Publication Types</span>
+            <span class="rc-sec-label">Study Designs</span>
             <div class="rc-pub-types__grid">
               <div class="rc-pub-type rc-pub-type--blue">
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="list-checks" width="18" height="18"></i>
                 </div>
                 <h3 class="rc-pub-type__head">Systematic Reviews</h3>
-                <p>Synthesize the existing evidence on a focused clinical question using a rigorous, pre-defined methodology. High credibility — and no new data collection required.</p>
+                <p>Synthesize the existing evidence on a focused clinical question using a rigorous, pre-defined methodology. High credibility, and no new data collection required.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--emerald">
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="bar-chart-2" width="18" height="18"></i>
                 </div>
                 <h3 class="rc-pub-type__head">Meta-Analyses</h3>
-                <p>Pool data from multiple studies to produce a statistically combined result. Among the most cited publication types in medicine and a strong signal to residency programs.</p>
-              </div>
-              <div class="rc-pub-type rc-pub-type--violet">
-                <div class="rc-pub-type__icon-wrap">
-                  <i data-lucide="presentation" width="18" height="18"></i>
-                </div>
-                <h3 class="rc-pub-type__head">Conference Abstracts</h3>
-                <p>Submit structured summaries of your work to medical conferences for poster or oral presentation. A fast, high-visibility addition to your academic record.</p>
+                <p>Pool data from multiple studies to produce a statistically combined result. Among the most cited study types in medicine and a strong signal to residency programs.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--amber">
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="file-text" width="18" height="18"></i>
                 </div>
                 <h3 class="rc-pub-type__head">Case Reports</h3>
-                <p>Document and publish a compelling clinical case with full mentor support. Included where a suitable case is available — a strong CV line that shows clinical curiosity.</p>
+                <p>Document and publish a compelling clinical case with full mentor support, where a suitable case is available. Requires ethical approval and documented patient consent before submission.</p>
               </div>
+              <div class="rc-pub-type rc-pub-type--violet">
+                <div class="rc-pub-type__icon-wrap">
+                  <i data-lucide="layers" width="18" height="18"></i>
+                </div>
+                <h3 class="rc-pub-type__head">Cross-Sectional Studies</h3>
+                <p>Analyze a population at a single point in time to identify patterns or associations. A practical option when prospective data collection isn't feasible.</p>
+              </div>
+              <div class="rc-pub-type rc-pub-type--blue">
+                <div class="rc-pub-type__icon-wrap">
+                  <i data-lucide="history" width="18" height="18"></i>
+                </div>
+                <h3 class="rc-pub-type__head">Retrospective Cohort Studies</h3>
+                <p>Track outcomes in a group over time using existing records. A strong option when your institution has accessible historical data.</p>
+              </div>
+              <div class="rc-pub-type rc-pub-type--emerald">
+                <div class="rc-pub-type__icon-wrap">
+                  <i data-lucide="flask-conical" width="18" height="18"></i>
+                </div>
+                <h3 class="rc-pub-type__head">Randomized Controlled Trials</h3>
+                <p>Test an intervention against a control group under controlled conditions. The highest tier of evidence, where your access and timeline allow for it.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conference Abstract Add-on -->
+          <div class="rc-conf-add reveal">
+            <div class="rc-conf-add__icon-wrap">
+              <i data-lucide="presentation" width="20" height="20"></i>
+            </div>
+            <div class="rc-conf-add__body">
+              <h3 class="rc-conf-add__head">Plus a conference abstract</h3>
+              <p>One of your four completed studies is also submitted as a conference abstract for poster or oral presentation, a fast, high-visibility addition to your CV. It's a presentation drawn from a paper you've already written, not a fifth publication.</p>
             </div>
           </div>
 
@@ -407,6 +446,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
+            <article class="rc-mtr reveal">
+              <div class="rc-mtr__photo">
+                <img src="/assets/Photos/Team-Members/Shelja-Sharma.jpg" alt="Shelja Sharma" loading="lazy" decoding="async" />
+              </div>
+              <div class="rc-mtr__body">
+                <div class="rc-mtr__header">
+                  <span class="rc-mtr__role">Research Mentor</span>
+                  <h3 class="rc-mtr__name">Shelja Sharma</h3>
+                  <span class="rc-mtr__prog">Research &amp; Publications Mentor</span>
+                </div>
+                <ul class="rc-mtr__creds">
+                  <li>7 published papers &middot; 6 co-authored poster presentations</li>
+                  <li>15 students mentored to a publication credit</li>
+                </ul>
+              </div>
+            </article>
+
           </div>
 
 
@@ -426,7 +482,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 What does the 12 months actually look like week to week?
               </button>
               <div class="accordion__body">
-                The program is structured around six stages &mdash; from assessment through publication. You'll have regular check-ins with your mentor, milestone reviews at each stage, and ongoing support as your manuscript develops. The pace is designed to fit alongside your USMLE prep and rotations.
+                The program is structured around five stages &mdash; from assessment through publication. You'll have regular check-ins with your mentor, milestone reviews at each stage, and ongoing support as your manuscript develops. The pace is designed to fit alongside your USMLE prep and rotations.
               </div>
             </div>
             <div class="accordion__item">
@@ -434,7 +490,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 What kind of publications will I have at the end?
               </button>
               <div class="accordion__body">
-                We primarily target systematic reviews, meta-analyses, and conference abstracts. Case reports are included where a student has a suitable case available. The goal is four publication-quality outputs across the 12 months.
+                You'll choose from six study designs: systematic reviews, meta-analyses, case reports, cross-sectional studies, retrospective cohort studies, and randomized controlled trials, based on what's feasible for your specialty, timeline, and data access. The goal is four completed papers across the 12 months, including lead authorship on one of them. One of your studies is also submitted as a conference abstract for presentation, not counted as a separate publication. Case reports require documented patient consent and ethical/IRB approval before submission; your mentor will guide you through that process.
               </div>
             </div>
             <div class="accordion__item">
