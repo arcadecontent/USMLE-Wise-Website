@@ -5,11 +5,8 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
 // "Lead on any wa.me link click" handler must stay off (it would double-count).
 $uw_pixel_cta_events = false;
 
-// Pre-select the visitor's country code from Cloudflare's geo header.
-$gs_country = strtoupper(preg_replace('/[^A-Za-z0-9]/', '', $_SERVER['HTTP_CF_IPCOUNTRY'] ?? ''));
-if (!preg_match('/^[A-Z]{2}$/', $gs_country) || $gs_country === 'XX') {
-  $gs_country = 'US';
-}
+// Country code the WhatsApp number picker starts on (India).
+$gs_country = 'IN';
 
 $gs_questions = [
   [
@@ -274,7 +271,7 @@ function gs_e($value) {
     });
 
   // Shown first when the search box is empty (where most applicants are).
-  var POPULAR = ['US', 'PK', 'IN', 'GB', 'CA', 'AE', 'SA', 'EG', 'NG', 'BD'];
+  var POPULAR = ['IN', 'US', 'PK', 'GB', 'CA', 'AE', 'SA', 'EG', 'NG', 'BD'];
 
   var form = document.getElementById('gsForm');
   var ccBtn = document.getElementById('gsCcBtn');
