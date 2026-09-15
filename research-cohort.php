@@ -1,6 +1,6 @@
 <?php
-$pageTitle = "Research Cohort Access — 18-Session Self-Paced Research Library | USMLE Wise";
-$pageDescription = "18 recorded sessions covering study design, writing, publishing, conferences, and turning research into a stronger ERAS application. $99 — self-paced, lifetime access.";
+$pageTitle = "Research Cohort Access — 9-Session Self-Paced Research Library | USMLE Wise";
+$pageDescription = "9 recorded sessions covering study design, writing, publishing, conferences, and turning research into a stronger ERAS application. $99 — self-paced, lifetime access.";
 $canonical = "https://usmlewise.com/research-cohort";
 $bodyClass = "msp";
 $stylesheets = [
@@ -20,7 +20,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-hero__copy reveal">
             <h1 id="heroTitle" class="msp-h1">Go from idea<br>to <span class="msp-h1__accent">finished project.</span></h1>
             <p class="msp-lede">
-              A self-paced library of 18 recorded sessions covering study design, writing,
+              A self-paced library of 9 recorded sessions covering study design, writing,
               publishing, conferences, and how to turn your research into a stronger ERAS
               application — $99, one-time, lifetime access.
             </p>
@@ -71,10 +71,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-wrap">
           <div class="msp-head reveal">
             <span class="msp-eyebrow">Curriculum</span>
-            <h2 id="includesTitle" class="msp-h2">Six tracks. Eighteen sessions.</h2>
+            <h2 id="includesTitle" class="msp-h2">What you'll learn.</h2>
             <p class="msp-lede">
-              Each track runs three sessions deep, taking you from a research question
-              to a finished, submitted, presented project.
+              Six tracks that take you from a research question to a finished,
+              submitted, presented project.
             </p>
           </div>
           <div class="rp-includes__grid">
@@ -128,7 +128,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <h2 id="forWhomTitle" class="msp-h2">The library for when you're actually doing the project.</h2>
               <p class="msp-lede">
                 Cohort Access is what you come back to at every stage while you're
-                doing the project — eighteen sessions deep enough to answer the
+                doing the project, deep enough to answer the
                 question you're stuck on right now.
               </p>
             </div>
@@ -166,7 +166,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div>
                 <span class="rc-sec-label">Investment</span>
                 <div class="rc-payment__price">$99</div>
-                <p class="rc-payment__note">One-time payment for all 18 recorded sessions, self-paced, with lifetime access and any future additions to the library. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+                <p class="rc-payment__note">One-time payment for all 9 recorded sessions, self-paced, with lifetime access and any future additions to the library. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
               </div>
               <a
                 class="btn btn--primary"
@@ -193,7 +193,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 Is "Cohort Access" a live group program?
               </button>
               <div class="accordion__body">
-                No. Despite the name, Cohort Access is a library of 18 recorded sessions, not a live group or a fixed start date. It's fully self-paced.
+                No. Despite the name, Cohort Access is a library of 9 recorded sessions, not a live group or a fixed start date. It's fully self-paced.
               </div>
             </div>
             <div class="accordion__item">
@@ -221,7 +221,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-wrap">
           <div class="rc-cta reveal">
             <span class="msp-eyebrow msp-eyebrow--light">Start learning</span>
-            <h2 class="rc-cta__head">Eighteen sessions.<br>One project, start to finish.</h2>
+            <h2 class="rc-cta__head">Nine sessions.<br>One project, start to finish.</h2>
             <p class="rc-cta__sub">
               Enroll today and get lifetime access to the full library — come back to
               whichever session answers the question you're stuck on.
