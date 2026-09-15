@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Get Your Research Paper Published — Co-Author to Lead Author | USMLE Wise";
-$pageDescription = "Get published as a co-author or lead author on a mentor-run research project, with an optional conference presentation. PubMed-indexed target. $300 to $1,500.";
+$pageDescription = "Get published as a co-author or lead author on a mentor-run research project, with an optional conference presentation. PubMed-indexed target. $300 to $1,000.";
 $canonical = "https://usmlewise.com/research-coauthor";
 $bodyClass = "msp";
 $stylesheets = [
@@ -156,7 +156,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <div class="rc-tier reveal">
               <span class="rc-tier__name">Lead Author + Conference</span>
-              <div class="rc-tier__price">$1,500</div>
+              <div class="rc-tier__price">$1,000</div>
               <p class="rc-tier__desc">Everything in Lead Author, with the same project also adapted into a conference abstract.</p>
               <ul class="rc-tier__list">
                 <li>Everything in Lead Author</li>

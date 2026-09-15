@@ -272,7 +272,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-sva-body">
                 <span class="msp-sva-eyebrow">03 &middot; Live &middot; Mentored</span>
                 <h3 class="msp-sva-title">Get Published</h3>
-                <div class="msp-sva-price">$300&ndash;$1,500</div>
+                <div class="msp-sva-price">$300&ndash;$1,000</div>
                 <p class="msp-sva-desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation. Listed on a paper submitted to a PubMed-indexed journal.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>

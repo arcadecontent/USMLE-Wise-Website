@@ -73,7 +73,7 @@
           </a>
           <a href="/research-coauthor" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Get Published</span>
-            <span class="msp-nav__dd-meta">Co-Author to Lead Author &middot; $300&ndash;$1,500</span>
+            <span class="msp-nav__dd-meta">Co-Author to Lead Author &middot; $300&ndash;$1,000</span>
           </a>
           <a href="/research-junior-scientist" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Junior Scientist Program</span>
