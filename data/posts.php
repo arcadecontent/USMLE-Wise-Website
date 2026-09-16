@@ -21,6 +21,169 @@ $blogCategories = [
 
 $blogPosts = [
     [
+        'slug'     => 'where-to-put-your-research-on-eras',
+        'title'    => 'Where to Put Your Research on ERAS: A Guide to the MyERAS Scholarly Work Section',
+        'excerpt'  => 'MyERAS gives you exactly five categories for scholarly work and no way to create your own. Here is the table to find your exact situation, plus the rules for statuses, authors, and the mistakes that get flagged in review.',
+        'category' => 'research',
+        'date'     => '2026-09-16',
+        'read'     => 8,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/surface-XHSYzoIC_SM-unsplash.webp',
+        'body'     => <<<'HTML'
+            <p>The Scholarly Work section of MyERAS looks simple until you try to fill it in. There are exactly five entry types, no custom category, no field for a link or a DOI, and it is a required section you cannot leave blank. Most applicants find out the hard way, mid-application, that the paper they are proud of does not fit neatly into any of the five boxes.</p>
+            <p>This guide fixes that. Part 1 is a single table: find the row that matches your situation and you have your answer. Everything after it explains why the form works the way it does, so you can handle the situations the table does not cover.</p>
+
+            <h2>Find Your Situation, Get Your Answer</h2>
+            <p>Find the row that describes your research. That row tells you everything you need.</p>
+            <table>
+              <thead>
+                <tr><th>My research is...</th><th>Entry type to pick</th><th>Status to pick</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Accepted at a conference as a POSTER (link or not, does not matter)</td><td>Poster Presentation</td><td>There is no status field. Skip it.</td></tr>
+                <tr><td>Accepted at a conference as a TALK (link or not, does not matter)</td><td>Oral Presentation</td><td>There is no status field. Skip it.</td></tr>
+                <tr><td>A full paper I sent to a journal, still waiting to hear back</td><td>Journal Article (peer-reviewed)</td><td>Submitted</td></tr>
+                <tr><td>A full paper the journal said YES to, not out yet</td><td>Journal Article (peer-reviewed)</td><td>Accepted, or In-press if it is already in production</td></tr>
+                <tr><td>A full paper that is out, online or in print</td><td>Journal Article (peer-reviewed)</td><td>Published</td></tr>
+                <tr><td>An abstract I sent to a JOURNAL (not a conference)</td><td>Journal Abstract (peer-reviewed)</td><td>Submitted, Accepted, In-press, or Published</td></tr>
+                <tr><td>A book chapter, any stage</td><td>Book Chapter (peer-reviewed)</td><td>Submitted, Accepted, In-press, or Published</td></tr>
+                <tr><td>Still being written. Not sent anywhere yet.</td><td>Do not enter in Scholarly Work. Put it in the Experience section instead.</td><td>Not applicable</td></tr>
+                <tr><td>The journal asked for revisions, has not said yes yet</td><td>Journal Article (peer-reviewed)</td><td>Submitted. Do not pick Accepted.</td></tr>
+                <tr><td>A Journal Club, M&amp;M, or Noon Conference talk at my own hospital</td><td>Do not enter in Scholarly Work. MyERAS excludes these.</td><td>Not applicable</td></tr>
+              </tbody>
+            </table>
+
+            <h2>How the Section Works</h2>
+            <h3>The Five Entry Types, and Nothing Else</h3>
+            <p>When you click Add Entry, MyERAS shows you exactly five choices. There are no other options and you cannot create your own category:</p>
+            <ul>
+              <li>Journal Article (peer-reviewed)</li>
+              <li>Book Chapter (peer-reviewed)</li>
+              <li>Journal Abstract (peer-reviewed)</li>
+              <li>Oral Presentation</li>
+              <li>Poster Presentation</li>
+            </ul>
+            <p>If you truly have no scholarly work, you must click None. You cannot leave the section blank, because it is a required section.</p>
+
+            <h3>The Single Most Important Rule</h3>
+            <p>Only three of the five entry types have a Publication Status dropdown. The two presentation types do not have one at all.</p>
+            <table>
+              <thead>
+                <tr><th>Entry type</th><th>Status dropdown?</th><th>What the form asks for</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Journal Article</td><td>Yes</td><td>Article Title, Publication Name, Authors, First author Yes/No, Publication Status</td></tr>
+                <tr><td>Book Chapter</td><td>Yes</td><td>Title, Publication Name, Authors, First author Yes/No, Publication Status</td></tr>
+                <tr><td>Journal Abstract</td><td>Yes</td><td>Article Title, Publication Name, Authors, First author Yes/No, Publication Status</td></tr>
+                <tr><td>Oral Presentation</td><td>No</td><td>Presentation Title, Authors, First author Yes/No, Events Presented</td></tr>
+                <tr><td>Poster Presentation</td><td>No</td><td>Presentation Title, Authors, First author Yes/No, Events Presented</td></tr>
+              </tbody>
+            </table>
+            <p>A conference poster is proven by the event where you presented it. A journal paper is proven by its stage in the publishing process. That is why one has a status field and the other does not.</p>
+
+            <h3>There Is No Place to Put a Link</h3>
+            <p>None of the five forms has a field for a URL, a DOI, or a PMID. If you are waiting on a link before you enter something, stop waiting: there is nowhere to put it.</p>
+
+            <h3>Two Features People Miss</h3>
+            <ul>
+              <li><strong>Grouping:</strong> once an entry is saved, you can group related work together. One project that produced a poster and then a paper can be shown as connected instead of looking like two unrelated items.</li>
+              <li><strong>Most meaningful:</strong> you can star up to three entries as your most meaningful work. Use all three, and choose the ones you can talk about confidently in an interview, not simply the highest impact factor.</li>
+            </ul>
+
+            <h2>Your Four Situations, Step by Step</h2>
+
+            <h3>Situation 1: Accepted at a Conference, No Link Yet</h3>
+            <p><strong>Pick:</strong> Poster Presentation, or Oral Presentation if you gave a talk.</p>
+            <p><strong>Status:</strong> This form has no status field. Do not go looking for one.</p>
+            <p><strong>Fill in:</strong> Presentation Title, Authors, whether you are first author, and the Events Presented details for the conference.</p>
+            <p><strong>About the missing link:</strong> It does not matter. There is no link field. Your entry is complete without anything from the conference organizers, so do this now rather than wait for the conference website to update.</p>
+            <p><strong>Warning:</strong> MyERAS states that Oral Presentations must be talks where a submission and selection process happened. Presentations required for coursework do not count, local rotation presentations do not count, and MyERAS names Journal Club, Morbidity and Mortality, and Noon Conference as examples that must be left out. Putting these in is a red flag, not a bonus.</p>
+            <p><strong>If the same poster went to two or three meetings:</strong> make one entry and add each event to it. Do not create a separate entry per meeting; that looks like padding.</p>
+
+            <h3>Situation 2: Not Accepted Anywhere, Not Even Submitted</h3>
+            <p><strong>Pick:</strong> Nothing. Do not create a Scholarly Work entry.</p>
+            <p><strong>Why not:</strong> MyERAS defines an eligible journal article as one that has been submitted to, accepted by, is in-press with, or has been published by a peer-reviewed publication. Work that is still being written is none of those four, so there is no honest status you could select.</p>
+            <p><strong>Where it goes instead:</strong> the Experience section, as a Research experience. Describe the project, your role, and what you did, and note that the manuscript is in preparation in the description.</p>
+            <p>This is not a downgrade and you are not losing credit. A clearly written research Experience entry is verifiable and carries genuine weight. A fake Scholarly Work entry is a liability.</p>
+
+            <h3>Situation 3: Submitted, Waiting to Hear Back</h3>
+            <p><strong>Pick:</strong> Journal Article (peer-reviewed), or Journal Abstract (peer-reviewed) if what you submitted was an abstract to a journal rather than a full paper.</p>
+            <p><strong>Status:</strong> Submitted.</p>
+            <p><strong>Publication Name:</strong> the journal you actually sent it to.</p>
+            <p><strong>The test for whether you can claim this:</strong> you can log into the journal's submission portal right now, see your manuscript listed as under review or with editor, and you have a manuscript ID. If you cannot, it is not submitted. A draft emailed to your mentor is not submitted, and a paper your PI said they would send is not submitted.</p>
+
+            <h3>Situation 4: Everything Else</h3>
+            <p>The Publication Status dropdown covers four stages. Here is exactly when each one applies:</p>
+            <table>
+              <thead>
+                <tr><th>Status</th><th>Pick it when</th><th>Proof you should have</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Submitted</td><td>Uploaded to the journal and under review. No decision yet.</td><td>Manuscript ID and portal screenshot</td></tr>
+                <tr><td>Accepted</td><td>The journal formally said yes. Not typeset or released yet.</td><td>Acceptance email</td></tr>
+                <tr><td>In-press</td><td>Accepted and in the production pipeline, often with an ahead-of-print version up.</td><td>Proof pages or production email</td></tr>
+                <tr><td>Published</td><td>Out. This includes online ahead of print with a permanent DOI.</td><td>The live article</td></tr>
+              </tbody>
+            </table>
+            <p><strong>Revisions requested, major or minor:</strong> there is no dropdown option for this, and it is not the same as Accepted. Keep it as Submitted until you hold a clean acceptance email. Do not round up.</p>
+            <p><strong>Book chapters:</strong> same dropdown, same four statuses, same rules as journal articles.</p>
+            <p><strong>Case reports:</strong> not a separate entry type. A published case report is a Journal Article (peer-reviewed).</p>
+
+            <h2>Filling In the Fields Correctly</h2>
+            <h3>Authors</h3>
+            <p>MyERAS wants a specific format and will not fix it for you.</p>
+            <ul>
+              <li>List authors in the exact order they appear on the publication.</li>
+              <li>Format each name as last name followed by initials, no periods: Cameron Blake Smith becomes Smith CB.</li>
+              <li>Separate names with commas, for example: Smith AB, Cline J, Garcia MM, Yourname YY.</li>
+              <li>Highlight your own name only, then bold it. Do not bold anyone else.</li>
+            </ul>
+            <h3>The First-Author Question</h3>
+            <p>Every entry makes you answer Yes or No. Answer truthfully. Being second or fifth author is normal and expected. Claiming first author when you are not is a fast way to get caught, because the author list you typed sits directly above your answer.</p>
+            <h3>Character Limits</h3>
+            <p>Article Title and Publication Name each allow 255 characters. Long titles fit, so do not abbreviate a real title to save space.</p>
+
+            <h2>Mistakes That Get Applicants in Trouble</h2>
+            <table>
+              <thead>
+                <tr><th>Do not do this</th><th>Do this instead</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Listing a manuscript that is in preparation</td><td>Put it in the Experience section</td></tr>
+                <tr><td>Picking Accepted when the journal only asked for revisions</td><td>Pick Submitted</td></tr>
+                <tr><td>Waiting for a conference link before entering a poster</td><td>Enter it now; there is no link field</td></tr>
+                <tr><td>Entering the same poster three times for three meetings</td><td>One entry, add all three events to it</td></tr>
+                <tr><td>Listing Journal Club or M&amp;M as an Oral Presentation</td><td>Leave it out entirely</td></tr>
+                <tr><td>Bolding every author or no author</td><td>Bold only your own name</td></tr>
+                <tr><td>Saying first author when you are not</td><td>Answer honestly; it is visible either way</td></tr>
+                <tr><td>Adding a fake year, volume, or DOI to a submitted paper</td><td>Leave it as Submitted with the journal name only</td></tr>
+                <tr><td>Leaving the section blank because you have nothing</td><td>Click None; it is a required section</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Final Check Before You Certify</h2>
+            <p>Go through this list once. Every item should be a yes:</p>
+            <ul>
+              <li>Every entry uses one of the five official types.</li>
+              <li>Every journal article, abstract, and book chapter has a status I can prove with an email or a portal login.</li>
+              <li>No entry is in preparation; anything unsubmitted lives in the Experience section.</li>
+              <li>No poster or oral presentation is duplicated across multiple events.</li>
+              <li>No coursework or local rotation talks are listed as Oral Presentations.</li>
+              <li>Author lists are in publication order, correctly formatted, with only my name bolded.</li>
+              <li>Every first-author question is answered truthfully.</li>
+              <li>Related work is grouped, and my three most meaningful items are starred.</li>
+              <li>I have a folder with acceptance emails, submission confirmations, and conference acceptance emails saved.</li>
+            </ul>
+            <p><strong>Why that last one matters:</strong> publication-status misrepresentation is a documented problem in the Match, and programs do check. Every status you select should be one you could defend with a document in under a minute. If you cannot, change the status.</p>
+
+            <h2>Getting This Right</h2>
+            <p>Filling out the section correctly assumes you already have something to put in it. The harder problem for most applicants is upstream of MyERAS entirely: finding a feasible project, getting it written, and getting it in front of a journal or conference before applications open.</p>
+            <p>That is what USMLE Wise's research programs are built for, whether you need to <a href="/research-coauthor">join an active project as a co-author or lead author</a>, want <a href="/research-original">full mentor guidance through a case report or original study</a>, or are building a whole publication pathway with <a href="/research-catalyst">Research Catalyst</a>.</p>
+            <p><strong>Not sure which of your projects belongs where on ERAS, or whether you have enough to apply with?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call</a> and we will go through your Scholarly Work section line by line before you certify it.</p>
+            HTML,
+    ],
+    [
         'slug'     => 'residency-program-signaling-gold-silver-signals',
         'title'    => 'Residency Program Signaling: How to Use Your Gold and Silver Signals',
         'excerpt'  => 'Program signaling is the highest-leverage decision in your residency application, and you only get a handful. Here is how gold and silver signals actually work, how many each specialty gives you, and where to spend them.',
