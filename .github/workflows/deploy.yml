@@ -17,6 +17,7 @@ jobs:
           script: |
             cd /home/usmlewise/htdocs/usmlewise.com
             dploy deploy main
+
             # dploy deploys into releases/ and symlinks current/ — verify there
             STYLES="current/assets/usmle-design-system/styles.css"
             if [ ! -f "$STYLES" ]; then
@@ -35,11 +36,50 @@ jobs:
               exit 1
             fi
             echo "Verified index.php exists at $INDEX"
-            # Purge CloudPanel Varnish cache so the new release is served
-            # immediately (default lifetime is 7 days). Each mechanism is
-            # best-effort, but we VERIFY the result below and fail the deploy
-            # if the cache is still stale -- a silently stale cache serves the
-            # previous release's HTML (old links, wrong slugs) for days.
+
+            # ----------------------------------------------------------------
+            # Wait for PHP-FPM to actually serve the NEW release before we
+            # touch the cache.
+            #
+            # `dploy` swaps the current/ symlink and then fires an ASYNCHRONOUS
+            # `systemctl reload php8.2-fpm`. PHP's realpath cache is set to
+            # 86400s here, and nginx passes the symlinked path to PHP, so until
+            # the FPM workers recycle they keep resolving current/ to the
+            # PREVIOUS release. Purging Varnish during that window makes it
+            # re-cache the OLD page for the full 7-day cache lifetime — which
+            # is exactly how a green deploy leaves a stale page live.
+            #
+            # A per-release marker file proves PHP is on the new release: it
+            # only exists inside this release directory, so a stale worker
+            # cannot return its contents.
+            # ----------------------------------------------------------------
+            REL_PATH=$(readlink -f current)
+            REL_ID=$(basename "$REL_PATH")
+            printf '<?php echo "%s";' "$REL_ID" > "$REL_PATH/_deploy-marker.php"
+
+            PHP_READY=0
+            GOT=""
+            i=0
+            while [ "$i" -lt 30 ]; do
+              GOT=$(curl -s -H 'Host: usmlewise.com' \
+                "http://127.0.0.1:8080/_deploy-marker.php" --max-time 5 || true)
+              if [ "$GOT" = "$REL_ID" ]; then PHP_READY=1; break; fi
+              i=$((i + 1))
+              sleep 2
+            done
+            rm -f "$REL_PATH/_deploy-marker.php"
+
+            if [ "$PHP_READY" != "1" ]; then
+              echo "ERROR: PHP-FPM is still serving a previous release after 60s"
+              echo "       expected '$REL_ID', got '$GOT'"
+              exit 1
+            fi
+            echo "PHP-FPM confirmed serving release $REL_ID"
+
+            # ----------------------------------------------------------------
+            # Only now purge the CloudPanel Varnish cache. Each mechanism is
+            # best-effort; correctness is enforced by the comparison below.
+            # ----------------------------------------------------------------
             if command -v clpctl >/dev/null 2>&1; then
               clpctl varnish-cache:purge --purge=all \
                 && echo "Varnish purged via clpctl" || echo "WARN: clpctl purge failed"
@@ -50,18 +90,69 @@ jobs:
               -X PURGE -H 'X-Cache-Tags: f2eb' http://127.0.0.1:6081 || true
             curl -s -o /dev/null -w "PURGE by host -> HTTP %{http_code}\n" \
               -X PURGE -H 'Host: usmlewise.com' http://127.0.0.1:6081 || true
-            # Verify the purge took effect: a freshly purged page reports a low
-            # x-cache-age (Varnish repopulates at age 0 on the next request). If
-            # it is still high, none of the purges worked -- fail loudly.
-            age=$(curl -s -D - -o /dev/null https://usmlewise.com/ \
-              | awk 'tolower($1)=="x-cache-age:"{gsub(/\r/,"",$2); print $2}')
-            case "$age" in ''|*[!0-9]*) age="" ;; esac
-            echo "Post-purge x-cache-age: ${age:-<none>}"
-            if [ -n "$age" ] && [ "$age" -gt 120 ]; then
-              echo "ERROR: Varnish still serving stale cache (x-cache-age=${age}s) after purge"
+
+            # ----------------------------------------------------------------
+            # Verify that what the site actually SERVES matches what the new
+            # release renders, for every page.
+            #
+            # The old check only read x-cache-age on "/" — a value its own curl
+            # had just reset to 0 — so it passed no matter how stale the site
+            # was. Comparing served HTML against freshly rendered HTML is the
+            # check that actually catches a stale cache.
+            #
+            # Both sides are fetched locally and compared:
+            #   EDGE   = nginx:443 -> Varnish -> PHP   (what visitors receive)
+            #   ORIGIN = nginx:8080 -> PHP             (bypasses Varnish)
+            # Varnish is the layer that goes stale, so this isolates it exactly.
+            #
+            # We deliberately do NOT fetch https://usmlewise.com here. That
+            # path goes through Cloudflare, whose email-obfuscation rewrites
+            # bare addresses with a per-request random token, so the HTML never
+            # hashes the same twice and the check would fail at random.
+            # Cloudflare does not cache this site's HTML anyway (it reports
+            # cf-cache-status: DYNAMIC), so nothing is lost by testing locally.
+            # ----------------------------------------------------------------
+            hash_page() { tr -d ' \t\r\n' | md5sum | cut -d' ' -f1; }
+
+            fetch_edge()   { curl -sk --resolve usmlewise.com:443:127.0.0.1 \
+                               "https://usmlewise.com$1" --max-time 20 | hash_page; }
+            fetch_origin() { curl -s -H 'Host: usmlewise.com' \
+                               "http://127.0.0.1:8080$1" --max-time 20 | hash_page; }
+
+            # Every page in the release, so newly added pages are covered
+            # automatically. Templates that need parameters are skipped.
+            PAGES=$(cd "$REL_PATH" && ls *.php 2>/dev/null | sed 's/\.php$//' \
+              | grep -vE '^(index|404|500|blog-post|rotation-detail|_deploy-marker)$')
+
+            STALE=""
+            CHECKED=0
+            for slug in / $PAGES; do
+              [ "$slug" = "/" ] && p="/" || p="/$slug"
+              attempt=0
+              while [ "$attempt" -lt 2 ]; do
+                ORIGIN=$(fetch_origin "$p")
+                EDGE=$(fetch_edge "$p")
+                [ "$ORIGIN" = "$EDGE" ] && break
+                # Targeted purge of just this page, then re-check once.
+                curl -s -o /dev/null -X PURGE -H 'Host: usmlewise.com' \
+                  "http://127.0.0.1:6081$p" || true
+                attempt=$((attempt + 1))
+                sleep 3
+              done
+              CHECKED=$((CHECKED + 1))
+              if [ "$ORIGIN" != "$EDGE" ]; then
+                echo "STALE $p (origin=$ORIGIN served=$EDGE)"
+                STALE="$STALE $p"
+              fi
+            done
+
+            if [ -n "$STALE" ]; then
+              echo "ERROR: the site is still serving stale pages for:$STALE"
+              echo "       The new release is on disk and PHP is serving it, so this"
+              echo "       is a Varnish invalidation failure, not a bad deploy."
               exit 1
             fi
-            echo "Varnish cache verified fresh (x-cache-age=${age:-n/a})"
+            echo "Verified: all $CHECKED pages match the freshly deployed release."
 
       - name: Purge Cloudflare cache
         if: success()
