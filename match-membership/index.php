@@ -777,7 +777,9 @@
       var y = target.getBoundingClientRect().top + window.pageYOffset - 72;
       window.scrollTo({ top: y, behavior: 'smooth' });
     } else if (e.target.closest('[data-cta="checkout"]')) {
-      window.open('https://buy.stripe.com/dRm5kEbXk9vfeJiewAes02v', '_blank', 'noopener');
+      // Mastery's Match entry: sign up (name, email, phone, password), then pay
+      // by card, with instant access. Signed-in visitors skip straight to checkout.
+      window.open('https://mastery.usmlewise.com/match-membership', '_blank', 'noopener');
     } else if (videoCard) {
       openVideoModal(videoCard.getAttribute('data-video-id'));
     } else if (e.target.closest('[data-video-close]')) {
