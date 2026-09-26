@@ -82,7 +82,8 @@
     var href = a.getAttribute('href') || '';
     if (href === '#offer') {
       send('enroll_click', { m: (a.textContent || '').trim().slice(0, 80) });
-    } else if (href.indexOf('nas.com/checkout') !== -1 || href.indexOf('buy.stripe.com') !== -1) {
+    } else if (href.indexOf('nas.com/checkout') !== -1 || href.indexOf('buy.stripe.com') !== -1 ||
+               href.indexOf('mastery.usmlewise.com/api/checkout') !== -1) {
       send('checkout_click', { m: (a.textContent || '').trim().slice(0, 80) });
     } else if (href.indexOf('guidance-call') !== -1) {
       var loc = a.closest('header') ? 'header' : (a.closest('footer') ? 'footer' : 'body');

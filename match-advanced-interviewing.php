@@ -213,7 +213,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <h1 id="heroTitle" class="msp-h1">Make Your Match Inevitable into your #1 choice of residency on your 1st and last attempt</h1>
           <p class="msp-lede">Stop leaving your future to chance. Learn how to control your residency interview and secure your spot in the program you deserve.</p>
           <div class="msp-cta-row">
-            <a class="btn btn--primary btn--xl" href="https://manikmadaan.systeme.io/advancedinterviewing/orderform" target="_blank" rel="noopener noreferrer">Buy Now &mdash; $399</a>
+            <a class="btn btn--primary btn--xl" href="https://mastery.usmlewise.com/api/checkout/single-course?courseId=cmuh0fq9i419lvyz68t85rewp" target="_blank" rel="noopener noreferrer">Buy Now &mdash; $399</a>
             <a class="btn btn--outline btn--xl" href="/match">Back to Match</a>
           </div>
         </div>
@@ -684,7 +684,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <li><i data-lucide="check" width="16" height="16"></i><span><strong>Handle Behavioral Questions:</strong> Answer tough behavioral questions with ease using structured frameworks.</span></li>
               <li><i data-lucide="check" width="16" height="16"></i><span><strong>Tailor Responses to Interviewers:</strong> Apply frameworks like PCM and OCEAN to connect with every personality type.</span></li>
             </ul>
-            <a class="btn btn--primary btn--xl" href="https://manikmadaan.systeme.io/advancedinterviewing/orderform" target="_blank" rel="noopener noreferrer" style="width:100%;">Buy now!</a>
+            <a class="btn btn--primary btn--xl" href="https://mastery.usmlewise.com/api/checkout/single-course?courseId=cmuh0fq9i419lvyz68t85rewp" target="_blank" rel="noopener noreferrer" style="width:100%;">Buy now!</a>
           </div>
           <p class="msp-pricing__note">Already enrolled in a Complete Match Package? Advanced Interviewing may already be included &mdash; check with your mentor before purchasing separately.</p>
         </div>
@@ -772,7 +772,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <h2 id="ctaTitle" class="msp-h2">Ready to become a Match Day Champion?</h2>
           <p class="msp-sub">$399 for one year of full access &mdash; match, or your money back.</p>
           <div class="msp-cta-row">
-            <a class="btn btn--primary btn--xl" href="https://manikmadaan.systeme.io/advancedinterviewing/orderform" target="_blank" rel="noopener noreferrer">Buy Now &mdash; $399</a>
+            <a class="btn btn--primary btn--xl" href="https://mastery.usmlewise.com/api/checkout/single-course?courseId=cmuh0fq9i419lvyz68t85rewp" target="_blank" rel="noopener noreferrer">Buy Now &mdash; $399</a>
             <a class="btn btn--outline btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
           </div>
         </div>
