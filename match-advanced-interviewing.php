@@ -15,6 +15,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       /* ---- Advanced Interviewing page ---- */
       .ai-h2--wide { max-width: 34ch; }
 
+      .ai-hero__guarantee {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
+        font-size: 13.5px;
+        color: var(--uw-ink-600);
+        text-decoration: none;
+      }
+      .ai-hero__guarantee i { color: var(--uw-blue-600); flex-shrink: 0; }
+      .ai-hero__guarantee:hover { color: var(--uw-ink-900); }
+
       /* hero video: the shared grid reserves a narrow 3fr column sized for a 4:5 portrait photo;
          a 16:9 video in that column renders too small, so this page widens the column instead */
       .msp-hero__grid.ai-hero-grid { grid-template-columns: 5fr 6fr; gap: 6%; }
@@ -208,6 +220,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-cta-row">
             <a class="btn btn--primary btn--xl" href="#pricing">Get access</a>
           </div>
+          <a class="ai-hero__guarantee" href="#guarantee">
+            <i data-lucide="shield-check" width="16" height="16"></i>
+            Backed by our Match or Money Back Guarantee
+          </a>
         </div>
 
         <div class="msp-hero__frame-wrap">
@@ -692,7 +708,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </section>
 
     <!-- GUARANTEE -->
-    <section class="msp-section ai-guarantee" aria-labelledby="guaranteeTitle">
+    <section class="msp-section ai-guarantee" id="guarantee" aria-labelledby="guaranteeTitle">
       <div class="msp-wrap">
         <div class="ai-guarantee__inner reveal">
           <div class="ai-guarantee__icon"><i data-lucide="shield-check" width="26" height="26"></i></div>
