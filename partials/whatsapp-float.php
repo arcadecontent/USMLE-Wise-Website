@@ -139,7 +139,7 @@ $uw_wa_href = 'https://wa.me/' . $uw_wa_number . '?text=' . rawurlencode($uw_wa_
    keeps the bar from covering the last bit of page content underneath it. */
 @media (max-width: 640px) {
   body {
-    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(36px + env(safe-area-inset-bottom, 0px));
   }
   .uw-wa-float {
     left: 0;
@@ -148,22 +148,22 @@ $uw_wa_href = 'https://wa.me/' . $uw_wa_number . '?text=' . rawurlencode($uw_wa_
     bottom: env(safe-area-inset-bottom, 0px);
     width: 100%;
     height: auto;
-    min-height: 56px;
-    padding: 14px 20px calc(14px + env(safe-area-inset-bottom, 0px));
+    min-height: 36px;
+    padding: 6px 20px calc(6px + env(safe-area-inset-bottom, 0px));
     border-radius: 0;
     justify-content: center;
-    gap: 10px;
+    gap: 6px;
     box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
   }
   .uw-wa-float:hover,
   .uw-wa-float:focus-visible {
     transform: none;
   }
-  .uw-wa-float__icon { width: 22px; height: 22px; }
-  .uw-wa-float__icon svg { width: 22px; height: 22px; }
+  .uw-wa-float__icon { width: 16px; height: 16px; }
+  .uw-wa-float__icon svg { width: 16px; height: 16px; }
   /* No hover on touch, so the desktop hover-expand label never shows here. */
   .uw-wa-float__label { display: none; }
-  .uw-wa-float__bar-text { display: inline; }
+  .uw-wa-float__bar-text { display: inline; font-size: 13px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

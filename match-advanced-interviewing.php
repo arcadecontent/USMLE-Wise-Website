@@ -106,6 +106,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .ai-topic-item__body { font-size: 14px; line-height: 1.65; color: var(--uw-ink-600); margin: 0; }
       .ai-topic-item__body ul { margin: 6px 0 0; padding-left: 18px; }
       .ai-topic-item__body li { margin-bottom: 3px; }
+      .ai-module__cta { margin-top: clamp(22px, 2.5vw, 30px); text-align: center; }
+      #faq .msp-head { text-align: center; margin-left: auto; margin-right: auto; }
+      #faq .msp-h2 { margin-left: auto; margin-right: auto; }
+      #pricing .msp-head { text-align: center; margin-left: auto; margin-right: auto; }
+      #pricing .msp-head .msp-h2,
+      #pricing .msp-head .msp-sub { margin-left: auto; margin-right: auto; }
 
       /* founder credibility */
       .ai-founder { display: grid; grid-template-columns: 300px 1fr; gap: clamp(28px, 4vw, 48px); align-items: stretch; max-width: 900px; margin: clamp(40px, 5vw, 60px) auto 0; }
@@ -179,19 +185,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .ai-guarantee__steps li { display: flex; gap: 12px; font-size: 14.5px; color: var(--uw-ink-700); line-height: 1.6; }
       .ai-guarantee__steps b { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--uw-blue-600); color: #fff; font-size: 12px; display: grid; place-items: center; font-weight: 600; }
 
-      .ai-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
-      .ai-cta-card {
-        background: #08111f; border: 1px solid rgba(255,255,255,.08);
-        border-radius: clamp(20px, 2.4vw, 28px); box-shadow: var(--shadow-lg);
-        padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px); text-align: center;
-      }
-      .ai-cta-card .msp-eyebrow { display: block; text-align: center; }
-      .ai-cta-card .msp-h2 { color: #fff; text-align: center; max-width: 24ch; margin-inline: auto; margin-bottom: 0; }
-      .ai-cta-card .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); text-align: center; }
-      .ai-cta-card .msp-cta-row { justify-content: center; margin-inline: auto; margin-top: clamp(28px,4vw,44px); }
-      .ai-cta-card .btn--outline { border-color: rgba(255,255,255,.4) !important; color: #fff !important; background: transparent !important; transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease; }
-      .ai-cta-card .btn--outline:hover { background: #fff !important; border-color: #fff !important; color: #08111f !important; box-shadow: 0 8px 24px rgba(255,255,255,0.12) !important; }
-
       .ai-faq__accordion { max-width: 760px; margin: clamp(40px, 5vw, 60px) auto 0; }
 
       @media (max-width: 720px) {
@@ -213,8 +206,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <h1 id="heroTitle" class="msp-h1">Make Your Match Inevitable into your #1 choice of residency on your 1st and last attempt</h1>
           <p class="msp-lede">Stop leaving your future to chance. Learn how to control your residency interview and secure your spot in the program you deserve.</p>
           <div class="msp-cta-row">
-            <a class="btn btn--primary btn--xl" href="https://mastery.usmlewise.com/api/checkout/single-course?courseId=cmuh0fq9i419lvyz68t85rewp" target="_blank" rel="noopener noreferrer">Buy Now &mdash; $399</a>
-            <a class="btn btn--outline btn--xl" href="/match">Back to Match</a>
+            <a class="btn btn--primary btn--xl" href="#pricing">Get access</a>
           </div>
         </div>
 
@@ -346,6 +338,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">6. OCEAN Framework</p><p class="ai-topic-item__body">The OCEAN Framework helps you identify their personality traits and customize your communication style to match. With the OCEAN framework, you'll learn to pick up on cues in their questions and body language, allowing you to adjust your responses to fit their personality profile seamlessly.</p></div></div>
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">7. The PCM Model</p><p class="ai-topic-item__body">Here's the game changer: The PCM Model doesn't just help you read people's communication styles, it empowers you to blend them seamlessly into your answers. By skillfully weaving together elements of logic, emotion, and action, you can create responses that resonate with any interviewer, regardless of their communication style. Imagine infusing your answers with a dynamic mix of thought-provoking ideas, genuine emotions, and actionable insights &mdash; captivating your interviewer while radiating charisma, making you unforgettable from the very first question.</p></div></div>
             </div>
+            <div class="ai-module__cta">
+              <a class="btn btn--primary btn--lg" href="#pricing">Get access</a>
+            </div>
           </div>
 
           <div class="ai-module reveal">
@@ -369,6 +364,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">5. Frameworks for All Research Questions</p><p class="ai-topic-item__body">Research plays an important role in many residency interviews. You'll learn how to confidently answer questions about your research experience, articulate the value of your work, and explain its relevance to the residency program.</p></div></div>
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">6. Frameworks for Addressing All Red Flags</p><p class="ai-topic-item__body">Learn how to address potential red flags in your application &mdash; gaps in your CV, poor test scores, lack of U.S. clinical experience. You'll master techniques to frame these issues positively, show growth, and demonstrate resilience, ensuring that you come across as a stronger, more self-aware candidate.</p></div></div>
             </div>
+            <div class="ai-module__cta">
+              <a class="btn btn--primary btn--lg" href="#pricing">Get access</a>
+            </div>
           </div>
 
           <div class="ai-module reveal">
@@ -389,6 +387,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">2. Breaking Down Real Interview Scenarios</p><p class="ai-topic-item__body">We'll further analyze real residency interview scenarios to show you how successful candidates respond to various situations. You'll learn from how they handle challenging moments like unexpected questions, unclear prompts, and difficult follow-ups with grace and precision.</p></div></div>
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">3. Key Takeaways</p><p class="ai-topic-item__body">Learn by example: see when, where &amp; how to apply the techniques you've studied, from controlling the narrative to displaying confidence through both verbal and non-verbal communication. Observe how advanced interviewers navigate difficult moments, awkward pauses, and curveball questions with ease.</p></div></div>
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">4. Deep Analysis of Inner + Outer Game of Interviewing</p><p class="ai-topic-item__body">You'll observe how advanced interviewers integrate both the inner and outer game of interviewing to dominate the interview. See how concepts like PCM, OCEAN, contextual authenticity, straight line model, frame control, calibration, and charisma are applied together with different answer frameworks to answer every question in real time.</p></div></div>
+            </div>
+            <div class="ai-module__cta">
+              <a class="btn btn--primary btn--lg" href="#pricing">Get access</a>
             </div>
           </div>
 
@@ -684,9 +685,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <li><i data-lucide="check" width="16" height="16"></i><span><strong>Handle Behavioral Questions:</strong> Answer tough behavioral questions with ease using structured frameworks.</span></li>
               <li><i data-lucide="check" width="16" height="16"></i><span><strong>Tailor Responses to Interviewers:</strong> Apply frameworks like PCM and OCEAN to connect with every personality type.</span></li>
             </ul>
-            <a class="btn btn--primary btn--xl" href="https://mastery.usmlewise.com/api/checkout/single-course?courseId=cmuh0fq9i419lvyz68t85rewp" target="_blank" rel="noopener noreferrer" style="width:100%;">Buy now!</a>
+            <a class="btn btn--primary btn--xl" href="https://mastery.usmlewise.com/api/checkout/single-course?courseId=cmuh0fq9i419lvyz68t85rewp" target="_blank" rel="noopener noreferrer" style="width:100%;">Get access</a>
           </div>
-          <p class="msp-pricing__note">Already enrolled in a Complete Match Package? Advanced Interviewing may already be included &mdash; check with your mentor before purchasing separately.</p>
         </div>
       </div>
     </section>
@@ -759,21 +759,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="accordion__item">
             <button class="accordion__head" type="button">10. Can I access the course from any device?</button>
             <div class="accordion__body">Yes! The course platform is mobile-friendly, so you can access it from your phone, tablet, or computer, making it easy to study on the go.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="ai-cta-wrap">
-      <div class="msp-wrap">
-        <div class="ai-cta-card reveal" aria-labelledby="ctaTitle">
-          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
-          <h2 id="ctaTitle" class="msp-h2">Ready to become a Match Day Champion?</h2>
-          <p class="msp-sub">$399 for one year of full access &mdash; match, or your money back.</p>
-          <div class="msp-cta-row">
-            <a class="btn btn--primary btn--xl" href="https://mastery.usmlewise.com/api/checkout/single-course?courseId=cmuh0fq9i419lvyz68t85rewp" target="_blank" rel="noopener noreferrer">Buy Now &mdash; $399</a>
-            <a class="btn btn--outline btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
           </div>
         </div>
       </div>
