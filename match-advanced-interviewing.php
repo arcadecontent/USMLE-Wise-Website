@@ -7,7 +7,8 @@ $stylesheets = [
     "/styles/match.css"
 ];
 $scripts = [
-    "/js/match.js"
+    "/js/match.js",
+    "/js/advanced-interview-checkout.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -701,7 +702,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <li><i data-lucide="check" width="16" height="16"></i><span><strong>Handle Behavioral Questions:</strong> Answer tough behavioral questions with ease using structured frameworks.</span></li>
               <li><i data-lucide="check" width="16" height="16"></i><span><strong>Tailor Responses to Interviewers:</strong> Apply frameworks like PCM and OCEAN to connect with every personality type.</span></li>
             </ul>
-            <a class="btn btn--primary btn--xl" href="https://mastery.usmlewise.com/api/checkout/single-course?courseId=cmuh0fq9i419lvyz68t85rewp" target="_blank" rel="noopener noreferrer" style="width:100%;">Get access</a>
+            <form id="ai-checkout" action="https://mastery.usmlewise.com/api/checkout/single-course" method="get" target="_blank" rel="noopener noreferrer">
+              <input type="hidden" name="courseId" value="cmuh0fq9i419lvyz68t85rewp">
+              <label for="ai-promo" style="display:block; font-weight:600; margin-bottom:8px;">Promo code (optional)</label>
+              <input id="ai-promo" name="promo" type="text" maxlength="80" autocomplete="off" spellcheck="false" placeholder="Enter promo code" aria-describedby="ai-promo-result" style="width:100%; box-sizing:border-box; border:1px solid var(--uw-border); border-radius:8px; padding:12px; font:inherit; background:#fff; color:var(--uw-ink-900);">
+              <p id="ai-promo-result" aria-live="polite" style="min-height:2.8em; margin:10px 0; font-size:14px;">One-time payment. Any promo code is verified at checkout.</p>
+              <button class="btn btn--primary btn--xl" data-cta="checkout" type="submit" style="width:100%;">Continue to checkout</button>
+            </form>
           </div>
         </div>
       </div>
