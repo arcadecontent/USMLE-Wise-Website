@@ -168,9 +168,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .ai-shots__label--divider { margin: 0 0 12px; padding-top: 16px; border-top: 1px solid var(--uw-border); }
       .ai-shots__grid { column-count: 3; column-gap: 12px; }
       .ai-shots__grid--tight { margin-bottom: 8px; }
-      .ai-shots__grid img { width: 100%; display: block; margin-bottom: 12px; border-radius: var(--r-md); break-inside: avoid; }
+      .ai-shots__grid img { width: 100%; height: auto; display: block; margin-bottom: 12px; border-radius: var(--r-md); break-inside: avoid; }
       @media (max-width: 820px) { .ai-shots__grid { column-count: 2; } }
       @media (max-width: 520px) { .ai-shots__grid { column-count: 1; } }
+
+      /* Keep the anchor position stable while lazy-loaded images decode above it. */
+      #price-card { scroll-margin-top: 88px; }
 
       /* pricing */
       .ai-price-wrap { max-width: 560px; margin: clamp(40px, 5vw, 60px) auto 0; }
@@ -259,7 +262,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <p><strong style="font-size:1.15em;">THEY DON'T CONNECT</strong></p>
         </div>
         <div class="ai-panel__figure reveal">
-          <img src="/assets/advanced-interviewing/problem-pitfall.png" alt="Diagram: 'Miss the Connection, Miss the Match' &mdash; poor interviewing skills leave a match applicant stuck in the gap, while strong interviewing skills carry the connection across to a match." loading="lazy">
+          <img src="/assets/advanced-interviewing/problem-pitfall.png" alt="Diagram: 'Miss the Connection, Miss the Match' &mdash; poor interviewing skills leave a match applicant stuck in the gap, while strong interviewing skills carry the connection across to a match." loading="lazy" width="1080" height="1080">
         </div>
       </div>
     </section>
@@ -275,7 +278,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <p><strong>Interpersonal skills are key</strong> to showing that you can collaborate, lead, and communicate effectively in a high-stakes environment.</p>
         </div>
         <div class="ai-panel__figure reveal">
-          <img src="/assets/advanced-interviewing/nrmp-chart.png" alt="NRMP Program Director Survey chart: interpersonal skills rated the top factor at 89%, ahead of interactions with faculty during interview and visit (87%), feedback from current residents (76%), and interactions with house staff (76%) &mdash; all above every academic metric below it." loading="lazy">
+          <img src="/assets/advanced-interviewing/nrmp-chart.png" alt="NRMP Program Director Survey chart: interpersonal skills rated the top factor at 89%, ahead of interactions with faculty during interview and visit (87%), feedback from current residents (76%), and interactions with house staff (76%) &mdash; all above every academic metric below it." loading="lazy" width="1080" height="1080">
         </div>
       </div>
     </section>
@@ -290,7 +293,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <p>This is what happens when you rehearse without a clear understanding of how to build connection. Instead of improving, you end up going backwards.</p>
         </div>
         <div class="ai-panel__figure reveal">
-          <img src="/assets/advanced-interviewing/strategy-quadrant.png" alt="Quadrant chart: interview preparation vs. strategy effectiveness &mdash; high strategy plus high preparation is optimal performance, high preparation with low strategy produces robotic responses." loading="lazy">
+          <img src="/assets/advanced-interviewing/strategy-quadrant.png" alt="Quadrant chart: interview preparation vs. strategy effectiveness &mdash; high strategy plus high preparation is optimal performance, high preparation with low strategy produces robotic responses." loading="lazy" width="1500" height="1234">
         </div>
       </div>
     </section>
@@ -305,7 +308,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <p>But now, with <strong>Advanced Interviewing</strong>, you'll have the tools to finally take control of this step.</p>
         </div>
         <div class="ai-panel__figure ai-panel__figure--cap reveal">
-          <img src="/assets/advanced-interviewing/prep-flowchart.png" alt="Flowchart: Medical School to USMLE Exams to Building CV to Interviewing, then a gap in interview training leads to failing to match." loading="lazy">
+          <img src="/assets/advanced-interviewing/prep-flowchart.png" alt="Flowchart: Medical School to USMLE Exams to Building CV to Interviewing, then a gap in interview training leads to failing to match." loading="lazy" width="410" height="1500">
         </div>
       </div>
     </section>
@@ -320,7 +323,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <p>This isn't about memorizing scripts or rehearsing until you're stiff. It's about learning how to turn your residency interview into a conversation &mdash; natural, engaging dialogue that makes you unforgettable.</p>
         </div>
         <div class="ai-panel__figure ai-panel__figure--cap reveal">
-          <img src="/assets/advanced-interviewing/course-intro.png" alt="Guarantee Your Match wheel: flexible non-rigid interviewing, stand out, handle any question, connect with interviewers, make a lasting impression." loading="lazy">
+          <img src="/assets/advanced-interviewing/course-intro.png" alt="Guarantee Your Match wheel: flexible non-rigid interviewing, stand out, handle any question, connect with interviewers, make a lasting impression." loading="lazy" width="1500" height="1313">
         </div>
       </div>
     </section>
@@ -343,7 +346,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
             <p class="ai-module__intro">Module 1 is about mastering the psychology of communication. It focuses on the internal strategies that allow you to walk into any interview room with unshakable confidence and the ability to connect with your interviewer on a deep, human level.</p>
             <div class="ai-module__diagram">
-              <img src="/assets/advanced-interviewing/module-1.png" alt="Inner Game of Interviewing diagram: Logical Levels, Frame Control, Contextual Authenticity, Calibration, OCEAN Framework, PCM Model." loading="lazy">
+              <img src="/assets/advanced-interviewing/module-1.png" alt="Inner Game of Interviewing diagram: Logical Levels, Frame Control, Contextual Authenticity, Calibration, OCEAN Framework, PCM Model." loading="lazy" width="1500" height="1078">
             </div>
             <p class="msp-sub" style="text-align:left; margin-bottom:16px;">What you'll learn in Module 1:</p>
             <div class="ai-topics">
@@ -370,7 +373,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
             <p class="ai-module__intro">Module 2 prepares you for the external aspects of the interview process. From navigating different residency interview formats to answering challenging questions with confidence, this module gives you the tools to stand out in any situation.</p>
             <div class="ai-module__diagram" style="max-width:560px;">
-              <img src="/assets/advanced-interviewing/module-2.png" alt="Outer Game of Interviewing diagram: Interview Formats, Most Common Questions, Behavioral and Personality Questions, Handling Curveball Questions, Research Questions." loading="lazy">
+              <img src="/assets/advanced-interviewing/module-2.png" alt="Outer Game of Interviewing diagram: Interview Formats, Most Common Questions, Behavioral and Personality Questions, Handling Curveball Questions, Research Questions." loading="lazy" width="1500" height="1058">
             </div>
             <p class="msp-sub" style="text-align:left; margin-bottom:16px;">What you'll learn in Module 2:</p>
             <div class="ai-topics">
@@ -396,7 +399,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
             <p class="ai-module__intro">Module 3 is where everything you've learned comes together. Through mock interview analysis, you'll have the chance to perfect implementation of all the strategies, frameworks, and techniques, ensuring that you walk into your actual residency interviews confident and fully prepared.</p>
             <div class="ai-module__diagram">
-              <img src="/assets/advanced-interviewing/module-3.png" alt="Mock Interview Analysis gear diagram: The Perfect Mock Interview, Breaking Down Real Interview Scenarios, Key Takeaways, Deep Analysis of Inner + Outer Game of Interviewing." loading="lazy">
+              <img src="/assets/advanced-interviewing/module-3.png" alt="Mock Interview Analysis gear diagram: The Perfect Mock Interview, Breaking Down Real Interview Scenarios, Key Takeaways, Deep Analysis of Inner + Outer Game of Interviewing." loading="lazy" width="1500" height="827">
             </div>
             <p class="msp-sub" style="text-align:left; margin-bottom:16px;">What you'll learn in Module 3:</p>
             <div class="ai-topics">
@@ -422,7 +425,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
         <div class="ai-founder reveal">
           <div class="ai-founder__photo">
-            <img src="/assets/advanced-interviewing/manik-madaan.jpeg" alt="Dr. Manik Madaan" loading="lazy">
+            <img src="/assets/advanced-interviewing/manik-madaan.jpeg" alt="Dr. Manik Madaan" loading="lazy" width="1500" height="1500">
           </div>
           <div class="ai-founder__card">
             <div class="ai-founder__body">
@@ -468,75 +471,75 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="ai-shots reveal">
           <div class="ai-shots__label">Match day</div>
           <div class="ai-shots__grid ai-shots__grid--tight">
-            <img src="/match-media/uploads/Instagram%20Photo%20Download%20(2).jpg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/Instagram%20Photo%20660329525.jpg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/656425718_17890021239448701_3488419753803306264_n.jpg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/Instagram%20Photo%20Download%20(1).jpg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/Instagram%20Photo%20656292960.jpg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/WhatsApp%20Image%20Apr%204%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/WhatsApp%20Image%20Apr%204%202026%20(1).jpeg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/WhatsApp%20Image%20May%2016%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/WhatsApp%20Image%20Apr%2015%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy">
-            <img src="/match-media/uploads/Instagram%20Photo%20657845911.jpg" alt="USMLE Wise applicant who matched" loading="lazy">
+            <img src="/match-media/uploads/Instagram%20Photo%20Download%20(2).jpg" alt="USMLE Wise applicant who matched" loading="lazy" width="1350" height="1688">
+            <img src="/match-media/uploads/Instagram%20Photo%20660329525.jpg" alt="USMLE Wise applicant who matched" loading="lazy" width="1350" height="1688">
+            <img src="/match-media/uploads/656425718_17890021239448701_3488419753803306264_n.jpg" alt="USMLE Wise applicant who matched" loading="lazy" width="1152" height="1440">
+            <img src="/match-media/uploads/Instagram%20Photo%20Download%20(1).jpg" alt="USMLE Wise applicant who matched" loading="lazy" width="786" height="786">
+            <img src="/match-media/uploads/Instagram%20Photo%20656292960.jpg" alt="USMLE Wise applicant who matched" loading="lazy" width="1440" height="1800">
+            <img src="/match-media/uploads/WhatsApp%20Image%20Apr%204%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/WhatsApp%20Image%20Apr%204%202026%20(1).jpeg" alt="USMLE Wise applicant who matched" loading="lazy" width="1280" height="854">
+            <img src="/match-media/uploads/WhatsApp%20Image%20May%2016%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" width="1193" height="1280">
+            <img src="/match-media/uploads/WhatsApp%20Image%20Apr%2015%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" width="1200" height="1600">
+            <img src="/match-media/uploads/Instagram%20Photo%20657845911.jpg" alt="USMLE Wise applicant who matched" loading="lazy" width="1440" height="1800">
           </div>
           <div class="ai-shots__label ai-shots__label--divider">In their words</div>
           <div class="ai-shots__grid">
-            <img src="/match-media/uploads/Zeel%20Patel.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/1.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/2.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/3.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/4.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/5.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/6.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/7.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/8.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/9.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/10.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/11.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/12.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/13.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Allegheny%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Anjali.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Ayesha%20Surgery.png" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Ayra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Bardia.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/EM_Anniesha.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/assets/advanced-interviewing/testimonial-shot-matched.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Guy%20UOH.png" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Hamna.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Joycine%20matched.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Lakshita%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Logesh.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Mounika.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Nancy.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Naz%20advanced%20interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Neuro.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Niyati%20Off%20Cycle.png" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Okkes.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Paranshi%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Pavani.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Praneet.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Psych%20match.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Rasmitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Ravindra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/SOAP%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Saint%20Vincnent%20R.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Screenshot_20260703_032742_Instagram~2.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Shiv.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Shreya%20FM%20Match.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/SidNath.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Sinmmer.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Smit.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Sonia%201%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Sonia%202%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Soura%20Psych.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Swathi.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/UIC%20Peoria.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Unknown%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Unknown%203.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Unkown%202.jpg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/Yog%2014.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
-            <img src="/match-media/uploads/babitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy">
+            <img src="/match-media/uploads/Zeel%20Patel.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="1129" height="1280">
+            <img src="/match-media/uploads/1.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/2.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/3.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/4.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/5.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/6.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/7.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/8.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/9.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/10.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/11.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/12.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/13.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/Allegheny%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1326">
+            <img src="/match-media/uploads/Anjali.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="996" height="1600">
+            <img src="/match-media/uploads/Ayesha%20Surgery.png" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1920">
+            <img src="/match-media/uploads/Ayra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1560">
+            <img src="/match-media/uploads/Bardia.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/EM_Anniesha.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="2520">
+            <img src="/assets/advanced-interviewing/testimonial-shot-matched.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="962">
+            <img src="/match-media/uploads/Guy%20UOH.png" alt="USMLE Wise student match testimonial" loading="lazy" width="784" height="772">
+            <img src="/match-media/uploads/Hamna.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1560">
+            <img src="/match-media/uploads/Joycine%20matched.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="706" height="431">
+            <img src="/match-media/uploads/Lakshita%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1079" height="1196">
+            <img src="/match-media/uploads/Logesh.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1552">
+            <img src="/match-media/uploads/Mounika.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="738" height="1600">
+            <img src="/match-media/uploads/Nancy.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1560">
+            <img src="/match-media/uploads/Naz%20advanced%20interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1162">
+            <img src="/match-media/uploads/Neuro.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="2075">
+            <img src="/match-media/uploads/Niyati%20Off%20Cycle.png" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1350">
+            <img src="/match-media/uploads/Okkes.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/Paranshi%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1583">
+            <img src="/match-media/uploads/Pavani.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1156">
+            <img src="/match-media/uploads/Praneet.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/Psych%20match.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="808">
+            <img src="/match-media/uploads/Rasmitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/Ravindra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1560">
+            <img src="/match-media/uploads/SOAP%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1560">
+            <img src="/match-media/uploads/Saint%20Vincnent%20R.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="1179" height="933">
+            <img src="/match-media/uploads/Screenshot_20260703_032742_Instagram~2.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1674">
+            <img src="/match-media/uploads/Shiv.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/Shreya%20FM%20Match.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="1179" height="1128">
+            <img src="/match-media/uploads/SidNath.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="877" height="2048">
+            <img src="/match-media/uploads/Sinmmer.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1600">
+            <img src="/match-media/uploads/Smit.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1401">
+            <img src="/match-media/uploads/Sonia%201%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1706">
+            <img src="/match-media/uploads/Sonia%202%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="2238">
+            <img src="/match-media/uploads/Soura%20Psych.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="738" height="1600">
+            <img src="/match-media/uploads/Swathi.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1560">
+            <img src="/match-media/uploads/UIC%20Peoria.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="1179" height="622">
+            <img src="/match-media/uploads/Unknown%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="1134">
+            <img src="/match-media/uploads/Unknown%203.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="1173" height="1280">
+            <img src="/match-media/uploads/Unkown%202.jpg" alt="USMLE Wise student match testimonial" loading="lazy" width="1080" height="659">
+            <img src="/match-media/uploads/Yog%2014.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="1179" height="1171">
+            <img src="/match-media/uploads/babitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" width="720" height="1560">
           </div>
         </div>
       </div>
