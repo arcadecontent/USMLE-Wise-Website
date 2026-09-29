@@ -218,7 +218,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <h1 id="heroTitle" class="msp-h1">Make Your Match Inevitable into your #1 choice of residency on your 1st and last attempt</h1>
           <p class="msp-lede">Stop leaving your future to chance. Learn how to control your residency interview and secure your spot in the program you deserve.</p>
           <div class="msp-cta-row">
-            <a class="btn btn--primary btn--xl" href="#pricing">Get access</a>
+            <a class="btn btn--primary btn--xl" href="#price-card">Get access</a>
           </div>
           <a class="ai-hero__guarantee" href="#guarantee">
             <i data-lucide="shield-check" width="16" height="16"></i>
@@ -355,7 +355,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">7. The PCM Model</p><p class="ai-topic-item__body">Here's the game changer: The PCM Model doesn't just help you read people's communication styles, it empowers you to blend them seamlessly into your answers. By skillfully weaving together elements of logic, emotion, and action, you can create responses that resonate with any interviewer, regardless of their communication style. Imagine infusing your answers with a dynamic mix of thought-provoking ideas, genuine emotions, and actionable insights &mdash; captivating your interviewer while radiating charisma, making you unforgettable from the very first question.</p></div></div>
             </div>
             <div class="ai-module__cta">
-              <a class="btn btn--primary btn--lg" href="#pricing">Get access</a>
+              <a class="btn btn--primary btn--lg" href="#price-card">Get access</a>
             </div>
           </div>
 
@@ -381,7 +381,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">6. Frameworks for Addressing All Red Flags</p><p class="ai-topic-item__body">Learn how to address potential red flags in your application &mdash; gaps in your CV, poor test scores, lack of U.S. clinical experience. You'll master techniques to frame these issues positively, show growth, and demonstrate resilience, ensuring that you come across as a stronger, more self-aware candidate.</p></div></div>
             </div>
             <div class="ai-module__cta">
-              <a class="btn btn--primary btn--lg" href="#pricing">Get access</a>
+              <a class="btn btn--primary btn--lg" href="#price-card">Get access</a>
             </div>
           </div>
 
@@ -405,7 +405,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="ai-topic-item"><div><p class="ai-topic-item__title">4. Deep Analysis of Inner + Outer Game of Interviewing</p><p class="ai-topic-item__body">You'll observe how advanced interviewers integrate both the inner and outer game of interviewing to dominate the interview. See how concepts like PCM, OCEAN, contextual authenticity, straight line model, frame control, calibration, and charisma are applied together with different answer frameworks to answer every question in real time.</p></div></div>
             </div>
             <div class="ai-module__cta">
-              <a class="btn btn--primary btn--lg" href="#pricing">Get access</a>
+              <a class="btn btn--primary btn--lg" href="#price-card">Get access</a>
             </div>
           </div>
 
@@ -687,7 +687,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
         <p class="msp-h2" style="text-align:center; font-size: clamp(20px,2.4vw,26px); max-width: 30ch; margin: clamp(24px,3vw,36px) auto 0;">Join Advanced Interviewing Today and become a Match Day Champion.</p>
         <div class="ai-price-wrap">
-          <div class="ai-price-card reveal">
+          <div class="ai-price-card reveal" id="price-card">
             <p class="ai-price-card__badge">Only</p>
             <div class="ai-price-card__amount">$399</div>
             <p class="ai-price-card__unit">1 Year Full Access</p>
