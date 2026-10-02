@@ -26,8 +26,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         background: var(--uw-blue-50); display: grid; place-items: center;
         color: var(--uw-blue-600); flex-shrink: 0;
       }
-      .pg-feat__title { font-size: 16px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
-      .pg-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
+      .pg-feat__title { font-size: var(--fs-md); font-weight: 600; color: var(--uw-ink-900); margin: 0; }
+      .pg-feat__body { font-size: var(--fs-base); color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
       .pg-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
       .pg-cta-card {
         background: #08111f;

@@ -72,10 +72,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         white-space: nowrap;
       }
       .mst-card__format--live { background: var(--uw-success-50); color: var(--uw-success-700); }
-      .mst-card__title { font-size: 19px; font-weight: 700; color: var(--uw-ink-900); margin: 0 0 8px; line-height: 1.3; }
-      .mst-card__desc { font-size: 14.5px; color: var(--uw-ink-600); line-height: 1.6; margin: 0 0 18px; flex-grow: 1; }
+      .mst-card__title { font-size: var(--fs-19); font-weight: 700; color: var(--uw-ink-900); margin: 0 0 8px; line-height: 1.3; }
+      .mst-card__desc { font-size: var(--fs-14-5); color: var(--uw-ink-600); line-height: 1.6; margin: 0 0 18px; flex-grow: 1; }
       .mst-card__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1px solid var(--uw-border); }
-      .mst-card__price { font-size: 15px; font-weight: 700; color: var(--uw-ink-900); }
+      .mst-card__price { font-size: var(--fs-base); font-weight: 700; color: var(--uw-ink-900); }
       .mst-card__price span { font-size: 12.5px; font-weight: 500; color: var(--uw-ink-500); }
       @media (max-width: 900px) { .mst-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 620px) { .mst-grid { grid-template-columns: 1fr; } }
@@ -93,8 +93,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         background: var(--uw-blue-50); display: grid; place-items: center;
         color: var(--uw-blue-600); flex-shrink: 0;
       }
-      .mst-feat__title { font-size: 16px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
-      .mst-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
+      .mst-feat__title { font-size: var(--fs-md); font-weight: 600; color: var(--uw-ink-900); margin: 0; }
+      .mst-feat__body { font-size: var(--fs-base); color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
       @media (max-width: 640px) { .mst-feat-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 400px) { .mst-feat-grid { grid-template-columns: 1fr; } }
 

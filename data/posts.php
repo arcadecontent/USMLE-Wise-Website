@@ -792,80 +792,81 @@ $blogPosts = [
     [
         'slug'     => 'usmle-scores-explained-specialty-requirements',
         'title'    => 'USMLE Scores Explained: What Score Do You Need for Your Dream Specialty?',
-        'excerpt'  => 'Step 2 CK is now the most critical three-digit number on your application. Here is the data — specialty by specialty — on exactly what score you need to match.',
+        'excerpt'  => 'Step 2 CK is now the most critical three-digit number on your application. Updated with NRMP\'s 2026 Charting Outcomes data: here is exactly what score you need, specialty by specialty.',
         'category' => 'match',
-        'date'     => '2026-06-16',
+        'date'     => '2026-10-02',
         'read'     => 7,
         'author'   => 'USMLE Wise Team',
         'featured' => false,
         'image'    => '/assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp',
         'body'     => <<<'HTML'
             <p>When the USMLE Step 1 transitioned to a Pass/Fail scoring model, the burden of being the primary academic filter shifted entirely to USMLE Step 2 Clinical Knowledge (CK). Because of this, your Step 2 CK score is arguably the most critical three-digit number on your residency application.</p>
-            <p>If you are mapping out your medical career, you need to know: what score do programs actually look for? Here is the data from the latest NRMP Charting Outcomes in the Match report.</p>
+            <p>If you are mapping out your medical career, you need to know: what score do programs actually look for? The numbers below come from NRMP's Charting Outcomes in the Match, U.S. MD Seniors report for the 2026 appointment year (published July 2026) — primary-source Step 2 CK data supplied directly through USMLE's partnership with NRMP, covering 16,379 MD seniors who consented to share their results.</p>
 
-            <h2>The Big Picture: National Score Averages</h2>
-            <p>Before looking at specific specialties, let's establish a baseline:</p>
+            <h2>The Big Picture: National Score Medians</h2>
+            <p>Across all specialties combined, U.S. MD seniors who matched to their preferred specialty had a median Step 2 CK score of <strong>253</strong> (n=14,889); those who did not match had a median of <strong>244</strong> (n=1,636) — a 9-point gap.</p>
             <ul>
               <li>The minimum passing score for Step 2 CK is <strong>218</strong>.</li>
-              <li>The national average for U.S. MD seniors sits at <strong>250</strong>.</li>
-              <li>The national average for matching Non-U.S. International Medical Graduates is approximately <strong>245</strong>.</li>
+              <li>The median for matched U.S. MD seniors, across all specialties, is <strong>253</strong>.</li>
+              <li>IMG medians run lower on average, though the gap varies significantly by specialty (see the IMG section below).</li>
             </ul>
             <p><strong>The General Rule of Thumb:</strong></p>
             <ul>
-              <li><strong>250+:</strong> Extremely strong. You are in a comfortable position for almost any specialty.</li>
-              <li><strong>240–249:</strong> Very solid. Competitive for most core specialties (Internal Medicine, Pediatrics, Psychiatry, Neurology).</li>
+              <li><strong>253+:</strong> At or above the national matched median. You are in a comfortable position for most specialties.</li>
+              <li><strong>240–252:</strong> Solid. Competitive for most core specialties (Internal Medicine, Pediatrics, Psychiatry, Neurology).</li>
               <li><strong>230–239:</strong> Workable. Safe for primary care fields, but requires stronger letters or research to compete in moderately competitive fields.</li>
               <li><strong>Below 230:</strong> Vulnerable. You will need to apply broadly, target friendly programs, and rely on non-academic strengths.</li>
             </ul>
 
-            <h2>Average Step 2 CK Scores by Specialty</h2>
-            <p>Not all specialties are created equal. High-demand fields like Neurosurgery or Dermatology naturally attract higher averages due to extreme competition.</p>
+            <h2>Median Step 2 CK Scores by Specialty</h2>
+            <p>Not all specialties are created equal. High-demand fields like Otolaryngology and Orthopaedic Surgery naturally attract higher medians due to extreme competition. The "U.S. MD Matched" column below is now a median pulled directly from NRMP's 2026 Table 5 (median/Q1/Q3 by specialty and Match status), not a mean. DO and IMG columns are retained from our prior data pass since the 2026 MD-senior report does not cover those populations.</p>
 
-            <h3>Tier 1: Ultra-Competitive Specialties (Target Score: 255+)</h3>
+            <h3>Tier 1: Ultra-Competitive Specialties (Target Score: 256+)</h3>
             <p>These specialties feature high surgical procedural demands, highly favorable lifestyles, or both. Because positions are limited, programs use aggressive Step 2 score cutoffs.</p>
             <table>
               <thead>
-                <tr><th>Specialty</th><th>U.S. MD Matched Avg.</th><th>U.S. DO Matched Avg.</th><th>Non-U.S. IMG Matched Avg.</th></tr>
+                <tr><th>Specialty</th><th>U.S. MD Matched Median</th><th>U.S. DO Matched Avg.</th><th>Non-U.S. IMG Matched Avg.</th></tr>
               </thead>
               <tbody>
-                <tr><td>Dermatology</td><td>257</td><td>250</td><td>256</td></tr>
-                <tr><td>Orthopaedic Surgery</td><td>257</td><td>251</td><td>247</td></tr>
-                <tr><td>Otolaryngology (ENT)</td><td>256</td><td>248</td><td>N/A</td></tr>
-                <tr><td>Plastic Surgery</td><td>256</td><td>N/A</td><td>242</td></tr>
-                <tr><td>Diagnostic Radiology</td><td>256</td><td>252</td><td>252</td></tr>
-                <tr><td>Neurological Surgery</td><td>255</td><td>256</td><td>246</td></tr>
+                <tr><td>Otolaryngology (ENT)</td><td>261</td><td>248</td><td>N/A</td></tr>
+                <tr><td>Orthopaedic Surgery</td><td>259</td><td>251</td><td>247</td></tr>
+                <tr><td>Plastic Surgery</td><td>259</td><td>N/A</td><td>242</td></tr>
+                <tr><td>Dermatology</td><td>258</td><td>250</td><td>256</td></tr>
+                <tr><td>Diagnostic Radiology</td><td>257</td><td>252</td><td>252</td></tr>
+                <tr><td>Neurological Surgery</td><td>256</td><td>256</td><td>246</td></tr>
               </tbody>
             </table>
 
-            <h3>Tier 2: Highly Competitive Specialties (Target Score: 248–254)</h3>
+            <h3>Tier 2: Highly Competitive Specialties (Target Score: 248–255)</h3>
             <p>These fields are competitive, but place a strong emphasis on clinical performance and research alongside test scores.</p>
             <table>
               <thead>
-                <tr><th>Specialty</th><th>U.S. MD Matched Avg.</th><th>U.S. DO Matched Avg.</th><th>Non-U.S. IMG Matched Avg.</th></tr>
+                <tr><th>Specialty</th><th>U.S. MD Matched Median</th><th>U.S. DO Matched Avg.</th><th>Non-U.S. IMG Matched Avg.</th></tr>
               </thead>
               <tbody>
-                <tr><td>General Surgery</td><td>253</td><td>248</td><td>249</td></tr>
-                <tr><td>Anesthesiology</td><td>252</td><td>251</td><td>248</td></tr>
-                <tr><td>Obstetrics &amp; Gynecology</td><td>252</td><td>245</td><td>251</td></tr>
-                <tr><td>Internal Medicine (Academic)</td><td>251</td><td>242</td><td>248</td></tr>
-                <tr><td>Neurology</td><td>250</td><td>245</td><td>245</td></tr>
+                <tr><td>General Surgery</td><td>255</td><td>248</td><td>249</td></tr>
+                <tr><td>Anesthesiology</td><td>255</td><td>251</td><td>248</td></tr>
+                <tr><td>Internal Medicine</td><td>254</td><td>242</td><td>248</td></tr>
+                <tr><td>Obstetrics &amp; Gynecology</td><td>253</td><td>245</td><td>251</td></tr>
+                <tr><td>Neurology</td><td>252</td><td>245</td><td>245</td></tr>
               </tbody>
             </table>
 
-            <h3>Tier 3: Broadly Accessible Specialties (Target Score: 230–247)</h3>
+            <h3>Tier 3: Broadly Accessible Specialties (Target Score: 230–249)</h3>
             <p>These specialties typically have a larger volume of residency slots available, making them much more accommodating to a wider range of test scores.</p>
             <table>
               <thead>
-                <tr><th>Specialty</th><th>U.S. MD Matched Avg.</th><th>U.S. DO Matched Avg.</th><th>Non-U.S. IMG Matched Avg.</th></tr>
+                <tr><th>Specialty</th><th>U.S. MD Matched Median</th><th>U.S. DO Matched Avg.</th><th>Non-U.S. IMG Matched Avg.</th></tr>
               </thead>
               <tbody>
-                <tr><td>Emergency Medicine</td><td>248</td><td>242</td><td>239</td></tr>
-                <tr><td>Pediatrics</td><td>247</td><td>241</td><td>240</td></tr>
+                <tr><td>Emergency Medicine</td><td>249</td><td>242</td><td>239</td></tr>
+                <tr><td>Pediatrics</td><td>249</td><td>241</td><td>240</td></tr>
                 <tr><td>Pathology</td><td>247</td><td>245</td><td>240</td></tr>
-                <tr><td>Psychiatry</td><td>246</td><td>240</td><td>240</td></tr>
+                <tr><td>Psychiatry</td><td>247</td><td>240</td><td>240</td></tr>
                 <tr><td>Family Medicine</td><td>244</td><td>240</td><td>231</td></tr>
               </tbody>
             </table>
+            <p>Two things stand out in the new data. First, the spread is narrower than you'd think: just 17 points separate Otolaryngology's median (261) from Family Medicine's (244). Second, the gap between matched and not-matched applicants within the <em>same</em> specialty is often just as large as the gap between specialties — in Emergency Medicine, the matched median is 249 versus 229 for those who didn't match their preferred specialty, a 20-point spread.</p>
 
             <h2>How Much Do Scores Matter for IMGs?</h2>
             <p>For International Medical Graduates, the baseline score thresholds are generally higher. Because U.S. residency program directors may not be familiar with your home medical institution, they rely on the USMLE as an objective equalizer. An IMG with a Step 2 score of 240 may face steeper competition in Internal Medicine than a domestic U.S. MD senior with the same score.</p>
@@ -2070,6 +2071,453 @@ $blogPosts = [
 
             <p>Read more about this and our other New York placement in our <a href="/blog/clinical-rotations-in-new-york-for-imgs">New York state guide</a>, or browse every current placement on our <a href="/clinical-rotations">Clinical Rotations page</a>.</p>
             <p><strong>Want help planning your logistics around this rotation?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call with USMLE Wise</a> and we'll walk you through it.</p>
+            HTML,
+    ],
+    [
+        'slug'     => '2026-match-by-the-numbers',
+        'title'    => 'The 2026 Match by the Numbers: What Separates Matched from Unmatched Applicants',
+        'excerpt'  => 'NRMP tracked 16,379 U.S. MD seniors through the 2026 Match on 13 measures, from Step 2 CK to AOA membership. Here is what actually separated the applicants who matched from the ones who did not.',
+        'category' => 'match',
+        'date'     => '2026-09-20',
+        'read'     => 8,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/researcher-in-lab-computer.webp',
+        'body'     => <<<'HTML'
+            <p>Every year, NRMP publishes Charting Outcomes in the Match: a statistical profile of applicants who did and did not match to their preferred specialty. The 2026 edition, covering the Main Residency Match for U.S. MD seniors, tracked 16,379 consented applicants across 13 measures — everything from how many programs they ranked to whether they belonged to Alpha Omega Alpha.</p>
+            <p>Most applicants never read the actual report. They hear secondhand that "research matters" or "you need a high Step 2 score," without ever seeing the numbers behind those claims. Here is the real data, and what it does and does not tell you.</p>
+
+            <h2>The Headline Number: 86.1% Matched</h2>
+            <p>Across all specialties, 86.1 percent of U.S. MD seniors matched to their preferred specialty in 2026. That figure swings enormously by specialty — from a high of 100 percent in Public Health and Preventive Medicine (a small, low-competition field) down to a low of 62.6 percent in Dermatology. In other words, roughly 1 in 3 MD seniors who ranked Dermatology first did not match into it.</p>
+
+            <h2>The 13-Measure Scorecard</h2>
+            <p>NRMP's Table 2 compares matched applicants (n=14,889) against those who did not match their preferred specialty (n=1,636) on every measure in the report, combined across all specialties:</p>
+            <table>
+              <thead>
+                <tr><th>Measure</th><th>Matched</th><th>Not Matched</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Median contiguous ranks (programs ranked in preferred specialty)</td><td>13.0</td><td>5.0</td></tr>
+                <tr><td>Median distinct specialties ranked</td><td>1.0</td><td>1.0</td></tr>
+                <tr><td>Median USMLE Step 2 CK score</td><td>253</td><td>244</td></tr>
+                <tr><td>Median research experiences</td><td>4.0</td><td>5.0</td></tr>
+                <tr><td>Median abstracts</td><td>2.0</td><td>2.0</td></tr>
+                <tr><td>Median presentations</td><td>4.0</td><td>5.0</td></tr>
+                <tr><td>Median publications</td><td>2.0</td><td>3.0</td></tr>
+                <tr><td>Median work experiences</td><td>2.0</td><td>3.0</td></tr>
+                <tr><td>Median volunteer experiences</td><td>5.0</td><td>5.0</td></tr>
+                <tr><td>% AOA members</td><td>17.2%</td><td>9.0%</td></tr>
+                <tr><td>% from a top-40 NIH-funded medical school</td><td>30.2%</td><td>25.4%</td></tr>
+                <tr><td>% with a Ph.D.</td><td>4.2%</td><td>3.4%</td></tr>
+                <tr><td>% with another graduate degree</td><td>18.9%</td><td>26.2%</td></tr>
+              </tbody>
+            </table>
+
+            <h2>What Actually Separated Matched Applicants</h2>
+            <p>NRMP's own summary of the 2026 data points to four consistent differentiators. Applicants who matched to their preferred specialty were more likely to:</p>
+            <ul>
+              <li><strong>Rank more programs in their preferred specialty.</strong> The gap here is the largest in the entire report: a median of 13 contiguous ranks for matched applicants versus 5 for those who did not match. We break this down specialty-by-specialty in <a href="/blog/how-many-programs-should-you-rank">How Many Residency Programs Should You Rank?</a></li>
+              <li><strong>Score higher on Step 2 CK.</strong> A 9-point median gap (253 vs. 244) nationally, widening to 20 points in specialties like Emergency Medicine. Full specialty-by-specialty numbers are in our <a href="/blog/usmle-scores-explained-specialty-requirements">updated Step 2 CK breakdown</a>.</li>
+              <li><strong>Be AOA members.</strong> 17.2 percent of matched applicants were AOA members versus 9.0 percent of those who did not match.</li>
+              <li><strong>Have graduated from a top-40 NIH-funded medical school.</strong> 30.2 percent of matched applicants versus 25.4 percent of those who did not match — a real gap, but smaller than most applicants assume. We unpack what this does and does not mean in <a href="/blog/does-medical-school-matter-in-the-match">Does Your Medical School's Name Matter?</a></li>
+            </ul>
+            <p>Notice what is <em>not</em> in that list: research output. At the aggregate level, applicants who did <em>not</em> match actually had slightly higher medians for research experiences (5.0 vs. 4.0), presentations (5.0 vs. 4.0), and publications (3.0 vs. 2.0). That is not a typo, and it is not the whole story either — we explain why in <a href="/blog/does-research-matter-in-the-match">Does Research Actually Matter in the Match?</a>.</p>
+            <p>NRMP itself is careful to note that these trends, "while informative, do not convey the full story." Course evaluations, letters of recommendation, and the Medical School Performance Evaluation (MSPE) all factor into Match outcomes and none of them show up in this data.</p>
+
+            <h2>The Most Competitive Specialties in 2026</h2>
+            <p>Two different lenses on "competitive" tell a consistent story. By MD-senior match rate (the percentage of MD seniors who ranked a specialty first and actually matched into it), the hardest specialties to match into in 2026 were:</p>
+            <table>
+              <thead>
+                <tr><th>Specialty</th><th>MD Senior Match Rate</th><th>Applicants per Position (all applicant types)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Dermatology</td><td>62.6%</td><td>1.83</td></tr>
+                <tr><td>Thoracic Surgery (Integrated)</td><td>64.0%</td><td>1.59</td></tr>
+                <tr><td>Plastic Surgery (Integrated)</td><td>65.4%</td><td>1.77</td></tr>
+                <tr><td>Orthopaedic Surgery</td><td>69.1%</td><td>1.66</td></tr>
+                <tr><td>Neurological Surgery</td><td>70.6%</td><td>1.71</td></tr>
+                <tr><td>Otolaryngology</td><td>76.8%</td><td>1.44</td></tr>
+                <tr><td>Surgery-General</td><td>80.3%</td><td>1.53</td></tr>
+              </tbody>
+            </table>
+            <p>Both measures agree: Dermatology, the integrated surgical subspecialties (Thoracic, Plastic), and the core surgical subspecialties (Orthopaedics, Neurosurgery, ENT) sit at the top of the competitiveness ladder. At the other end, Family Medicine, Pediatrics, and Internal Medicine all posted MD-senior match rates above 97 percent.</p>
+
+            <h2>How to Use This Data</h2>
+            <p>Three practical takeaways, in order of how much control you actually have over them this cycle:</p>
+            <ol>
+              <li><strong>Rank list length is the single most actionable lever.</strong> It is the largest gap in the dataset, it is entirely within your control, and it costs nothing but application fees once you have already applied broadly.</li>
+              <li><strong>Your Step 2 CK score is close to fixed once you have taken the exam</strong> — but if you have not sat for it yet, the specialty-by-specialty targets are worth planning around now rather than after the fact.</li>
+              <li><strong>AOA membership and school pedigree are not things you can change this cycle.</strong> If you are not AOA and did not attend a top-40 NIH-funded school, the data says you are not alone — the majority of matched applicants in every specialty fall into that group too.</li>
+            </ol>
+            <p>If you are still finalizing your rank order list or deciding how broadly to apply, a strategy session that looks at your actual numbers against this year's data can save you from the two most common mistakes: ranking too narrow a list, or spreading signals too thin. <a href="/coaching">Explore USMLE Wise coaching →</a></p>
+            HTML,
+    ],
+    [
+        'slug'     => 'how-many-programs-should-you-rank',
+        'title'    => 'How Many Residency Programs Should You Rank? What NRMP\'s 2026 Data Shows',
+        'excerpt'  => 'Matched U.S. MD seniors ranked a median of 13 programs in their preferred specialty; those who did not match ranked 5. Here is the specialty-by-specialty breakdown and how to use it to build your own rank order list.',
+        'category' => 'match',
+        'date'     => '2026-09-24',
+        'read'     => 7,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/team-young-specialist-doctors-vertical-crop.webp',
+        'body'     => <<<'HTML'
+            <p>"How many programs should I rank?" is one of the few Match questions NRMP's data answers almost directly. Every year, Charting Outcomes tracks what it calls <strong>contiguous ranks</strong>: the number of programs an applicant ranked in their preferred specialty before a program in a different specialty appeared anywhere on their rank order list. It is the cleanest available proxy for "how many programs in my specialty did I actually rank."</p>
+            <p>The 2026 data, covering 16,379 U.S. MD seniors, makes the relationship between list length and Match success about as clear as this kind of data ever gets.</p>
+
+            <h2>The Headline Gap</h2>
+            <p>Across all specialties combined, U.S. MD seniors who matched to their preferred specialty ranked a median of <strong>13 programs</strong> within it. Those who did not match ranked a median of <strong>5</strong>. That is the single largest gap of any measure in the entire report — larger than the Step 2 CK gap, larger than the research-experience gap, larger than anything else NRMP tracks.</p>
+            <p>NRMP's own language is direct about the implication: "applicants with longer rank order lists appear to have a higher likelihood of matching than those with shorter ones."</p>
+
+            <h2>Contiguous Ranks by Specialty</h2>
+            <p>The right number is not the same for every specialty. Here is the median number of contiguous ranks for matched vs. not-matched U.S. MD seniors, specialty by specialty (Q1–Q3 shown in parentheses):</p>
+            <table>
+              <thead>
+                <tr><th>Specialty</th><th>Matched Median (Q1–Q3)</th><th>Not Matched Median (Q1–Q3)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Vascular Surgery (Integrated)</td><td>21.0 (15.0–25.0)</td><td>6.5 (1.0–11.0)</td></tr>
+                <tr><td>Radiation Oncology</td><td>16.0 (12.0–19.0)</td><td>too few to report</td></tr>
+                <tr><td>Pediatrics</td><td>15.0 (12.0–18.0)</td><td>1.0 (1.0–2.0)</td></tr>
+                <tr><td>Emergency Medicine</td><td>15.0 (12.0–18.0)</td><td>4.0 (3.0–6.0)</td></tr>
+                <tr><td>Neurological Surgery</td><td>15.0 (12.0–18.0)</td><td>7.0 (5.0–9.0)</td></tr>
+                <tr><td>Family Medicine</td><td>14.0 (10.0–17.0)</td><td>1.0 (1.0–3.0)</td></tr>
+                <tr><td>Surgery-General</td><td>14.0 (10.0–17.0)</td><td>5.0 (3.0–8.0)</td></tr>
+                <tr><td>Anesthesiology</td><td>13.0 (9.0–16.0)</td><td>5.0 (3.0–8.0)</td></tr>
+                <tr><td>Physical Medicine and Rehabilitation</td><td>13.0 (9.0–17.0)</td><td>6.0 (3.0–8.0)</td></tr>
+                <tr><td>Radiology-Diagnostic</td><td>13.0 (10.0–17.0)</td><td>2.0 (1.0–4.0)</td></tr>
+                <tr><td>Internal Medicine</td><td>12.0 (9.0–15.0)</td><td>3.0 (2.0–5.0)</td></tr>
+                <tr><td>Internal Medicine/Pediatrics</td><td>12.0 (7.0–16.0)</td><td>2.0 (1.0–4.0)</td></tr>
+                <tr><td>Neurology</td><td>12.0 (9.0–15.0)</td><td>4.5 (3.0–6.0)</td></tr>
+                <tr><td>Obstetrics and Gynecology</td><td>12.0 (9.0–14.0)</td><td>6.0 (4.0–9.0)</td></tr>
+                <tr><td>Otolaryngology</td><td>12.0 (9.0–15.0)</td><td>7.0 (4.0–9.0)</td></tr>
+                <tr><td>Pathology-Anatomic and Clinical</td><td>12.5 (9.0–17.0)</td><td>6.0 (2.0–9.0)</td></tr>
+                <tr><td>Plastic Surgery (Integrated)</td><td>12.0 (9.0–15.0)</td><td>6.0 (4.0–8.0)</td></tr>
+                <tr><td>Psychiatry</td><td>12.0 (8.0–15.0)</td><td>5.0 (3.0–8.0)</td></tr>
+                <tr><td>Child Neurology</td><td>14.0 (11.0–17.0)</td><td>too few to report</td></tr>
+                <tr><td>Orthopaedic Surgery</td><td>10.0 (7.0–13.0)</td><td>6.0 (4.0–8.0)</td></tr>
+                <tr><td>Dermatology</td><td>7.0 (5.0–10.0)</td><td>4.0 (2.0–5.0)</td></tr>
+                <tr><td>Thoracic Surgery (Integrated)</td><td>7.0 (4.0–9.0)</td><td>3.0 (2.0–7.0)</td></tr>
+                <tr><td>Interventional Radiology (Integrated)</td><td>3.0 (1.0–8.0)</td><td>1.0 (1.0–5.0)</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Why the Range Is So Wide</h2>
+            <p>Vascular Surgery (Integrated) sits at one extreme: matched applicants ranked a median of 21 programs, and even that only got them to a 85.7 percent match rate on a small applicant pool. Interventional Radiology sits at the other: matched applicants ranked a median of just 3 programs. The difference is not about how "hard" each specialty is to match into in the abstract — it comes down to how many programs even exist. There are only a handful of Vascular Surgery and Interventional Radiology programs nationally, so there is a hard ceiling on how long any applicant's list in that specialty can possibly be, regardless of strategy.</p>
+            <p>The practical lesson: do not import a "rank at least 15 programs" rule of thumb into a specialty that only has 20 programs in the country. Check how many programs actually exist in your specialty, and use the matched-applicant median above as your real target.</p>
+
+            <h2>What "Contiguous Ranks" Does and Doesn't Capture</h2>
+            <p>One definitional note that changes how you should read this data: contiguous ranks count programs in your <strong>preferred specialty only</strong>, stopping the count the moment a different specialty appears anywhere on the list. If you ranked 10 Internal Medicine programs, then one Family Medicine backup program, then five more Internal Medicine programs further down, your contiguous rank count is 10 — not 15. This measure rewards applicants who front-load their list with their actual first choice rather than interleaving backup specialties early.</p>
+            <p>It also is not the same as <em>total</em> applications submitted through ERAS. Plenty of matched applicants applied to far more programs than they ultimately ranked — interviews, waitlists, and program fit all thin that number down before Rank Order List Certification Deadline. Contiguous ranks measure the end of that funnel, not the start of it.</p>
+
+            <h2>How to Use This When Building Your List</h2>
+            <ul>
+              <li><strong>Find your specialty's row above</strong> and treat the matched-applicant median as a floor, not a ceiling. If you are already at or below the not-matched median for your specialty, that is a signal to broaden your program list before certification, not after.</li>
+              <li><strong>Check program count before panicking about a low number.</strong> A list of 6 programs looks short next to Vascular Surgery's median of 21, but it is a strong list in Interventional Radiology, where the matched median is 3.</li>
+              <li><strong>Pair list length with your Step 2 CK position.</strong> If your score sits below your specialty's matched median (see our <a href="/blog/usmle-scores-explained-specialty-requirements">specialty-by-specialty Step 2 CK breakdown</a>), ranking more broadly is one of the few levers you still fully control heading into certification.</li>
+            </ul>
+            <p>Not sure whether your current list is long enough, or whether it is too concentrated in reach programs? A signaling and rank-list strategy session can pressure-test your list against this year's data before certification closes. <a href="/coaching">Explore USMLE Wise coaching →</a></p>
+            HTML,
+    ],
+    [
+        'slug'     => 'does-research-matter-in-the-match',
+        'title'    => 'Does Research Actually Matter in the Match? What the 2026 Data Shows',
+        'excerpt'  => 'Nationally, applicants who did not match actually had slightly more research experiences than those who did. The real pattern is more specific than "more research is better" — here is what the data actually supports.',
+        'category' => 'research',
+        'date'     => '2026-09-27',
+        'read'     => 8,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/pexels-tara-winstead-7722791.webp',
+        'body'     => <<<'HTML'
+            <p>If you have spent any time on residency applicant forums, you have heard some version of: "you need research to match into a competitive specialty." NRMP's 2026 Charting Outcomes data lets us actually test that claim, measure by measure, specialty by specialty — and the honest answer is more specific than the forum wisdom suggests.</p>
+            <p>One methodology note before the numbers: starting with the 2026 report, NRMP separated what used to be a single combined "scholarly activity" item into three distinct measures: abstracts, presentations, and publications, plus a fourth measure for research experiences generally. That is a meaningfully more precise dataset than prior years, and it's what makes this breakdown possible.</p>
+
+            <h2>The Counterintuitive Headline</h2>
+            <p>Across all specialties combined (n=14,889 matched, n=1,636 not matched), the aggregate numbers run <em>against</em> the conventional wisdom:</p>
+            <table>
+              <thead>
+                <tr><th>Measure</th><th>Matched (Median)</th><th>Not Matched (Median)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Research experiences</td><td>4.0</td><td>5.0</td></tr>
+                <tr><td>Abstracts</td><td>2.0</td><td>2.0</td></tr>
+                <tr><td>Presentations</td><td>4.0</td><td>5.0</td></tr>
+                <tr><td>Publications</td><td>2.0</td><td>3.0</td></tr>
+              </tbody>
+            </table>
+            <p>Taken at face value, that table says not-matched applicants out-published matched ones. That is real data, not a typo — but it is also a textbook example of why aggregate statistics can mislead. The explanation is a composition effect: applicants who do not match are disproportionately concentrated in the handful of ultra-competitive, research-saturated specialties (Dermatology, Neurological Surgery, Plastic Surgery) where <em>everyone</em> in the pool, matched or not, has enormous research output. That pulls the "not matched" aggregate upward even though, within most individual specialties, the opposite relationship holds.</p>
+
+            <h2>What the Specialty-Level Data Actually Shows</h2>
+            <p>Looking within individual specialties tells a cleaner story. Here is matched vs. not-matched medians across nine specialties spanning primary care to the most research-intensive surgical subspecialties:</p>
+            <table>
+              <thead>
+                <tr><th>Specialty</th><th>Research Exp. (M / NM)</th><th>Abstracts (M / NM)</th><th>Presentations (M / NM)</th><th>Publications (M / NM)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Internal Medicine</td><td>4.0 / 3.0</td><td>2.0 / 1.0</td><td>4.0 / 3.0</td><td>2.0 / 2.0</td></tr>
+                <tr><td>Anesthesiology</td><td>5.0 / 4.0</td><td>2.0 / 2.0</td><td>4.0 / 3.0</td><td>2.0 / 1.0</td></tr>
+                <tr><td>Psychiatry</td><td>4.0 / 3.0</td><td>1.0 / 1.0</td><td>3.0 / 2.0</td><td>2.0 / 1.0</td></tr>
+                <tr><td>Emergency Medicine</td><td>3.0 / 3.0</td><td>1.0 / 1.0</td><td>3.0 / 2.0</td><td>1.0 / 1.0</td></tr>
+                <tr><td>Orthopaedic Surgery</td><td>7.5 / 7.0</td><td>5.0 / 4.0</td><td>11.0 / 8.0</td><td>7.0 / 5.0</td></tr>
+                <tr><td>Neurological Surgery</td><td>6.0 / 6.0</td><td>9.0 / 7.5</td><td>11.0 / 11.0</td><td>12.5 / 9.0</td></tr>
+                <tr><td>Plastic Surgery (Integrated)</td><td>6.0 / 7.0</td><td>6.0 / 6.0</td><td>20.0 / 14.5</td><td>10.0 / 9.0</td></tr>
+                <tr><td>Dermatology</td><td>7.0 / 8.0</td><td>4.0 / 4.0</td><td>12.0 / 9.0</td><td>9.0 / 6.0</td></tr>
+              </tbody>
+            </table>
+            <p>(M = matched, NM = not matched. Family Medicine is excluded from this table — its not-matched group was only 11 applicants, too small to read any pattern into.)</p>
+
+            <h2>The Real Pattern: Output Beats Volume</h2>
+            <p>Across these eight specialties, raw "research experiences" is the <em>weakest</em> and least consistent differentiator — it ties or even runs slightly higher for not-matched applicants in three of the eight, including both Dermatology and Plastic Surgery. But <strong>presentations and publications</strong> — the measures that require you to actually finish something, not just join a lab — favor matched applicants in the large majority of specialties, including every surgical subspecialty in this table.</p>
+            <p>The practical reading: once you are in a competitive applicant pool, simply accumulating research "experiences" stops differentiating you — everyone around you has plenty of those too. What separates matched from not-matched applicants within that pool is whether those experiences turned into finished output: an abstract that got presented, a manuscript that got published. Starting five projects you never finish is weaker than finishing two.</p>
+
+            <h2>A Caveat Worth Taking Seriously</h2>
+            <p>None of this is causal. NRMP's data cannot tell you whether strong research output <em>causes</em> a match, or whether the kind of applicant who finishes publications also tends to be stronger across the board — clinical grades, letters, interview performance — in ways this dataset does not capture. NRMP's own introduction to the report makes the same point: these trends "do not convey the full story," and course evaluations, letters of recommendation, and the MSPE all factor into outcomes without appearing anywhere in this data.</p>
+
+            <h2>What This Means for Your Application</h2>
+            <ul>
+              <li><strong>If you are early in medical school and specialty-undecided:</strong> prioritize finishing projects over starting new ones. A completed abstract beats three half-finished chart reviews.</li>
+              <li><strong>If you are applying to a research-saturated specialty</strong> (Dermatology, Plastic Surgery, Neurological Surgery): assume research output alone will not differentiate you from the rest of the pool. It is necessary to be competitive, not sufficient — your rank list length and Step 2 CK score are doing more of the differentiating work (see our <a href="/blog/2026-match-by-the-numbers">full breakdown of the 2026 Match data</a>).</li>
+              <li><strong>If you are applying to a less research-intensive specialty</strong> (Internal Medicine, Psychiatry, Emergency Medicine): even modest, completed research output appears to correlate with better outcomes, and the bar to stand out is much lower.</li>
+            </ul>
+            <p>Figuring out where to put research on your actual application once you have it? Our guide on <a href="/blog/where-to-put-your-research-on-eras">where to put your research on ERAS</a> covers exactly how MyERAS's Scholarly Work section works, entry type by entry type.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'does-medical-school-matter-in-the-match',
+        'title'    => 'Does Your Medical School\'s Name Matter? AOA, Top-40 Funding, and Match Outcomes',
+        'excerpt'  => 'Even in Plastic Surgery, the most "pedigree-heavy" specialty in the 2026 data, 55% of matched applicants did not attend a top-40 NIH-funded school. Here is what AOA membership and school funding actually predict — and what they don\'t.',
+        'category' => 'match',
+        'date'     => '2026-09-29',
+        'read'     => 7,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/frustrated.webp',
+        'body'     => <<<'HTML'
+            <p>Every applicant who did not attend a "big name" medical school has had the same thought while building their rank list: <em>am I even competitive without the brand name?</em> NRMP's 2026 Charting Outcomes data gives a real answer, using two measures that function as school-pedigree proxies — AOA (Alpha Omega Alpha) membership and graduation from one of the 40 U.S. medical schools with the highest NIH funding.</p>
+
+            <h2>The Aggregate Gap Is Real, But Smaller Than You'd Guess</h2>
+            <p>Across all specialties, 17.2 percent of matched U.S. MD seniors were AOA members, versus 9.0 percent of those who did not match. For top-40 NIH-funded school graduates, the gap was 30.2 percent matched versus 25.4 percent not matched. Both gaps point the same direction NRMP's summary describes: matched applicants were somewhat more likely to hold these credentials. Neither gap is small. But neither one comes close to being the dividing line either.</p>
+
+            <h2>Specialty by Specialty: AOA and Top-40 School Rates</h2>
+            <table>
+              <thead>
+                <tr><th>Specialty</th><th>AOA % (Matched / Not Matched)</th><th>Top-40 NIH School % (Matched / Not Matched)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Plastic Surgery (Integrated)</td><td>35.2% / 12.2%</td><td>44.7% / 39.0%</td></tr>
+                <tr><td>Dermatology</td><td>35.1% / 21.0%</td><td>41.3% / 29.8%</td></tr>
+                <tr><td>Orthopaedic Surgery</td><td>34.9% / 14.3%</td><td>33.0% / 23.7%</td></tr>
+                <tr><td>Neurological Surgery</td><td>23.4% / 9.7%</td><td>43.2% / 29.2%</td></tr>
+                <tr><td>Anesthesiology</td><td>18.6% / 0.0%</td><td>32.2% / 25.7%</td></tr>
+                <tr><td>Internal Medicine</td><td>16.1% / 1.2%</td><td>31.1% / 20.2%</td></tr>
+                <tr><td>Psychiatry</td><td>7.8% / 2.7%</td><td>32.2% / 23.0%</td></tr>
+                <tr><td>Emergency Medicine</td><td>11.1% / 4.9%</td><td>26.2% / 19.5%</td></tr>
+                <tr><td>Family Medicine</td><td>6.4% / 0.0%</td><td>25.2% / 27.3%</td></tr>
+              </tbody>
+            </table>
+            <p>A pattern emerges fast: AOA rates track almost perfectly with how competitive a specialty is overall — highest in Plastic Surgery, Dermatology, and Orthopaedic Surgery, lowest in Family Medicine and Psychiatry. Top-40 NIH funding follows a looser version of the same pattern, with one exception: Family Medicine is the only specialty in this table where not-matched applicants had a <em>higher</em> top-40 school rate than matched ones (27.3% vs. 25.2%) — a reminder that in less research-driven specialties, school funding stops being predictive at all.</p>
+
+            <h2>The Number That Should Actually Reassure You</h2>
+            <p>Flip the AOA and top-40 percentages around and a different story appears. In Plastic Surgery — the single most "pedigree-leaning" specialty in this dataset — <strong>64.8 percent of matched applicants were not AOA members</strong>, and <strong>55.3 percent did not graduate from a top-40 NIH-funded school</strong>. In Dermatology, 64.9 percent of matched applicants were not AOA, and 58.7 percent were not from a top-40 school. Even at the most competitive end of the spectrum, the clear majority of people who matched did not hold either credential.</p>
+            <p>If you are neither AOA nor a graduate of a top-40 NIH-funded program, the data says you are not an exception — you are the norm, in every single specialty this report tracks.</p>
+
+            <h2>One More Data Point: Extra Degrees Don't Reliably Help</h2>
+            <p>It's worth separating AOA and top-40 school status from a third credential some applicants chase: a second graduate degree (MPH, MBA, MS, and similar, excluding Ph.D.). The 2026 data does not support this as a differentiator — if anything, the relationship often runs backward. Nationally, 18.9 percent of matched applicants held another graduate degree versus 26.2 percent of those who did not match. The same reversal shows up within individual specialties:</p>
+            <table>
+              <thead>
+                <tr><th>Specialty</th><th>Other Graduate Degree % (Matched / Not Matched)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Emergency Medicine</td><td>18.2% / 48.6%</td></tr>
+                <tr><td>Family Medicine</td><td>17.7% / 40.0%</td></tr>
+                <tr><td>Plastic Surgery (Integrated)</td><td>18.4% / 35.2%</td></tr>
+                <tr><td>Neurological Surgery</td><td>30.7% / 42.2%</td></tr>
+                <tr><td>Internal Medicine</td><td>17.8% / 28.6%</td></tr>
+              </tbody>
+            </table>
+            <p>This almost certainly is not a case of extra degrees hurting anyone directly — it more likely reflects that applicants add a second degree after an earlier setback, or pursue one alongside a weaker overall application. Either way, the data gives no support to the idea that stacking credentials compensates for other gaps. A Ph.D. shows a modestly positive association in most specialties (unlike other graduate degrees); a second master's degree largely does not.</p>
+
+            <h2>What to Actually Do With This</h2>
+            <ul>
+              <li><strong>Do not let a non-top-40 school or missed AOA induction talk you out of a competitive specialty.</strong> The majority of matched applicants in every specialty in this report lack both.</li>
+              <li><strong>Do not add a second master's degree purely as a credential play.</strong> The data gives no indication it correlates with better outcomes — spend that time on your Step 2 CK score or your rank list instead.</li>
+              <li><strong>Remember what this data cannot see.</strong> NRMP is explicit that course evaluations, letters of recommendation, and the Medical School Performance Evaluation all factor into outcomes, and none of them show up in this report. A strong MSPE from a lesser-known school can do work that no NIH funding ranking captures.</li>
+            </ul>
+            <p>For the full picture of what did and did not separate matched from not-matched applicants in 2026, see <a href="/blog/2026-match-by-the-numbers">The 2026 Match by the Numbers</a>. If your application is strong on paper but you're unsure how to position a non-traditional background, a strategy session can help you build a rank list and signaling plan around your actual strengths. <a href="/coaching">Explore USMLE Wise coaching →</a></p>
+            HTML,
+    ],
+    [
+        'slug'     => 'work-volunteer-experience-match',
+        'title'    => 'Work and Volunteer Experience: Do They Actually Move the Needle in the Match?',
+        'excerpt'  => 'Nationally, applicants who did not match reported more work and volunteer experiences than those who did. Here is why piling up extracurriculars is probably the lowest-leverage way to spend your remaining application time.',
+        'category' => 'match',
+        'date'     => '2026-10-01',
+        'read'     => 6,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp',
+        'body'     => <<<'HTML'
+            <p>Medical students are told, constantly, to "build a well-rounded application." Shadowing, volunteering, part-time research-adjacent jobs, committee memberships — the implicit promise is that more extracurricular activity adds up to a stronger candidate. NRMP's 2026 Charting Outcomes data gives us a way to check that promise against actual outcomes, and the result is the flattest, least supportive relationship in the entire report.</p>
+
+            <h2>The National Numbers</h2>
+            <p>Across all specialties combined, matched U.S. MD seniors reported a median of <strong>2.0 work experiences</strong> and <strong>5.0 volunteer experiences</strong>. Applicants who did not match their preferred specialty actually reported slightly <em>more</em> of both: a median of <strong>3.0 work experiences</strong> and the same <strong>5.0 volunteer experiences</strong>. Unlike Step 2 CK or rank list length, where matched applicants consistently come out ahead, these two measures run flat or in reverse.</p>
+
+            <h2>The Pattern Holds Across Specialties</h2>
+            <table>
+              <thead>
+                <tr><th>Specialty</th><th>Work Experiences (Matched / Not Matched)</th><th>Volunteer Experiences (Matched / Not Matched)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Anesthesiology</td><td>2.0 / 3.0</td><td>5.0 / 6.0</td></tr>
+                <tr><td>Dermatology</td><td>2.0 / 2.0</td><td>6.0 / 6.0</td></tr>
+                <tr><td>Emergency Medicine</td><td>3.0 / 3.5</td><td>5.0 / 6.0</td></tr>
+                <tr><td>Internal Medicine</td><td>2.0 / 2.0</td><td>5.0 / 4.0</td></tr>
+                <tr><td>Neurological Surgery</td><td>2.0 / 2.0</td><td>4.0 / 5.0</td></tr>
+                <tr><td>Orthopaedic Surgery</td><td>3.0 / 3.0</td><td>5.0 / 5.0</td></tr>
+                <tr><td>Plastic Surgery (Integrated)</td><td>3.0 / 4.0</td><td>5.0 / 6.0</td></tr>
+                <tr><td>Psychiatry</td><td>2.0 / 3.0</td><td>5.0 / 5.0</td></tr>
+              </tbody>
+            </table>
+            <p>Of the eight specialties above, not one shows matched applicants with a meaningfully higher median on either measure. Internal Medicine is the closest thing to an exception (matched applicants reported one more volunteer experience, 5.0 vs. 4.0), and even that gap is small relative to the Step 2 CK or rank-list gaps covered in our other 2026 Match breakdowns.</p>
+
+            <h2>Why This Is Probably Not What It Looks Like</h2>
+            <p>This does not mean volunteering or working is bad for your application, and it is not evidence that program directors penalize these experiences. The more likely explanation is that work and volunteer experiences are nearly universal — almost every applicant in every specialty has a handful of them — so the raw count stops carrying useful information. When virtually everyone has 2 to 5 of something, that count cannot be what's separating matched from not-matched applicants, even if having some baseline level matters for every single person in the pool.</p>
+            <p>Compare this to research output (covered in <a href="/blog/does-research-matter-in-the-match">our companion piece on research and the Match</a>), where completed presentations and publications showed a real, consistent gap favoring matched applicants in most specialties. Work and volunteer experiences do not show that pattern anywhere in this dataset.</p>
+
+            <h2>The Opportunity Cost Argument</h2>
+            <p>Here is the actual, practical implication. Every hour spent accumulating a sixth or seventh volunteer entry is an hour not spent on the two measures that showed the largest, most consistent gaps in the 2026 data:</p>
+            <ul>
+              <li><strong>Rank list breadth</strong> — the single largest gap in the entire report (13 vs. 5 median contiguous ranks). See <a href="/blog/how-many-programs-should-you-rank">how many programs you should actually rank</a>.</li>
+              <li><strong>Step 2 CK score</strong> — a 9-point national median gap that widens to 20 points in some specialties. See our <a href="/blog/usmle-scores-explained-specialty-requirements">specialty-by-specialty score targets</a>.</li>
+            </ul>
+            <p>If you already have 3 to 5 solid work and volunteer entries and are debating whether to add a sixth versus spending that time on a dedicated Step 2 CK study block or researching additional programs to rank, the 2026 data suggests the second option is the better use of your time.</p>
+
+            <h2>What This Doesn't Mean</h2>
+            <p>Do not read this as "stop volunteering." Having some meaningful work and volunteer experience is close to universal among applicants, which itself suggests a baseline level is expected. The data simply does not support the belief that piling on more of either, past that baseline, differentiates your application. Quality, depth, and what you can speak to meaningfully in an interview almost certainly matter more than the raw count — this dataset just cannot measure quality, only quantity.</p>
+            <p>For the full picture of what the 2026 data says actually separates matched from not-matched applicants, start with <a href="/blog/2026-match-by-the-numbers">The 2026 Match by the Numbers</a>.</p>
+            HTML,
+    ],
+    [
+        'slug'     => 'matching-into-dermatology-2026-data',
+        'title'    => 'Matching Into Dermatology in 2026: The Real Numbers Behind Step 2 CK, Research, and Rank Lists',
+        'excerpt'  => 'Dermatology had the lowest MD-senior match rate of any specialty in the 2026 Charting Outcomes report — 62.6%. Here is the complete, verified data profile: Step 2 CK, contiguous ranks, research output, and AOA rates, matched vs. not matched.',
+        'category' => 'match',
+        'date'     => '2026-10-03',
+        'read'     => 8,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp',
+        'body'     => <<<'HTML'
+            <p>Of every specialty tracked in NRMP's 2026 Charting Outcomes report, Dermatology had the lowest match rate for U.S. MD seniors: <strong>62.6 percent</strong>. Of the 727 MD seniors who ranked Dermatology as their preferred specialty, 455 matched into it and 272 did not. That is roughly 1 in 3 applicants who did not get their first choice — the toughest odds of any specialty in the entire dataset.</p>
+            <p>None of that means Dermatology is unmatchable. It means the margin for a weak application is the thinnest of any specialty. Here is the complete, verified 2026 data profile, straight from NRMP's Dermatology chapter (Table DM-1) and the full-report Step 2 CK and contiguous-rank tables.</p>
+
+            <h2>The Full Picture: Matched vs. Not Matched</h2>
+            <table>
+              <thead>
+                <tr><th>Measure</th><th>Matched (n=356)</th><th>Not Matched (n=181)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Median contiguous ranks</td><td>7.0</td><td>4.0</td></tr>
+                <tr><td>Median distinct specialties ranked</td><td>3.0</td><td>2.0</td></tr>
+                <tr><td>Median USMLE Step 2 CK score</td><td>258</td><td>252</td></tr>
+                <tr><td>Median research experiences</td><td>7.0</td><td>8.0</td></tr>
+                <tr><td>Median abstracts</td><td>4.0</td><td>4.0</td></tr>
+                <tr><td>Median presentations</td><td>12.0</td><td>9.0</td></tr>
+                <tr><td>Median publications</td><td>9.0</td><td>6.0</td></tr>
+                <tr><td>Median work experiences</td><td>2.0</td><td>2.0</td></tr>
+                <tr><td>Median volunteer experiences</td><td>6.0</td><td>6.0</td></tr>
+                <tr><td>% AOA members</td><td>35.1%</td><td>21.0%</td></tr>
+                <tr><td>% from a top-40 NIH-funded medical school</td><td>41.3%</td><td>29.8%</td></tr>
+                <tr><td>% with a Ph.D.</td><td>7.7%</td><td>1.9%</td></tr>
+                <tr><td>% with another graduate degree</td><td>17.4%</td><td>19.3%</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Step 2 CK: A 6-Point Gap, With a Wide Spread</h2>
+            <p>Matched applicants scored a median of 258 (Q1 251, Q3 266, range 221–285). Not-matched applicants scored a median of 252 (Q1 239, Q3 259, range 218–281). The gap is real but narrower than in some other competitive specialties — and the ranges overlap heavily. Plenty of applicants matched with scores in the low 250s, and plenty with scores above 260 did not match. Score alone is not the deciding factor here; it is a threshold you need to clear, not a ranking you need to win outright.</p>
+
+            <h2>Rank List Length: Shorter Than You'd Expect, Still Decisive</h2>
+            <p>Matched Dermatology applicants ranked a median of just 7 contiguous programs — far shorter than the 13-program national median across all specialties, and shorter than most other competitive surgical subspecialties. That is simply a function of how few Dermatology programs exist nationally. But the relative gap still matters: not-matched applicants ranked a median of only 4, nearly half as many. If your list is sitting at 4 or 5 Dermatology programs, the 2026 data says that is squarely in not-matched territory, not matched territory.</p>
+            <p>One more detail worth noting: matched applicants ranked a median of 3 distinct specialties overall, versus 2 for those who did not match. Having a genuine backup specialty on your rank order list — not just a long Dermatology list — was more common among applicants who successfully matched.</p>
+
+            <h2>Research: Volume Doesn't Differentiate, Output Does</h2>
+            <p>This is the most counterintuitive line in Dermatology's data, and it's worth sitting with. Not-matched applicants actually reported <em>more</em> raw research experiences (median 8.0 vs. 7.0) and tied on abstracts (4.0 vs. 4.0). But matched applicants had meaningfully more presentations (12.0 vs. 9.0) and more publications (9.0 vs. 6.0, a 50 percent difference in medians).</p>
+            <p>The pattern matches what we found across the broader 2026 dataset in <a href="/blog/does-research-matter-in-the-match">our research-and-the-Match breakdown</a>: in a research-saturated specialty like Dermatology, simply joining more projects does not differentiate you — essentially every applicant in the pool has done that. What separates matched from not-matched applicants is whether those projects turned into finished, citable output.</p>
+
+            <h2>AOA and School Funding: Real Signal, Still a Minority</h2>
+            <p>Dermatology has one of the highest AOA rates of any specialty in the report: 35.1 percent of matched applicants were AOA members, and 41.3 percent graduated from a top-40 NIH-funded medical school. Those are the largest such gaps you'll find anywhere in the 2026 data (21.0% and 29.8% respectively among not-matched applicants).</p>
+            <p>But flip the numbers around: <strong>64.9 percent of matched Dermatology applicants were not AOA members</strong>, and <strong>58.7 percent did not attend a top-40 NIH-funded school</strong>. Even in the specialty where these credentials matter most, most successful applicants had neither. For more on how this plays out across specialties, see <a href="/blog/does-medical-school-matter-in-the-match">Does Your Medical School's Name Matter?</a></p>
+
+            <h2>Building a Realistic Dermatology Application</h2>
+            <ul>
+              <li><strong>Treat 258 as your Step 2 CK target</strong>, not a hard cutoff — but know that 252 (the not-matched median) is where margin for error starts disappearing.</li>
+              <li><strong>Rank broadly within Dermatology and have a real backup specialty on your list.</strong> A median of 7 contiguous Dermatology ranks plus a genuine second-specialty plan outperformed shorter, single-specialty lists in this data.</li>
+              <li><strong>Finish what you start.</strong> A smaller number of completed, published projects beat a larger number of in-progress "experiences" in this dataset.</li>
+              <li><strong>Do not count yourself out for lacking AOA or a top-40 school.</strong> Nearly two-thirds of matched applicants had neither.</li>
+            </ul>
+            <p>Dermatology's low match rate means there is less room for an unfocused strategy than in almost any other field. If you want a rank list, signaling plan, and Step 2 CK target built around your actual numbers against this year's data, <a href="/coaching">explore USMLE Wise coaching →</a></p>
+            HTML,
+    ],
+    [
+        'slug'     => 'matching-into-orthopaedic-surgery-2026-data',
+        'title'    => 'Matching Into Orthopaedic Surgery in 2026: The Real Numbers Behind Step 2 CK, Research, and Rank Lists',
+        'excerpt'  => 'Orthopaedic Surgery MD seniors matched at a 69.1% rate in 2026 — and it is the rare specialty where every research measure, not just completed output, favored matched applicants. Here is the full verified data profile.',
+        'category' => 'match',
+        'date'     => '2026-10-05',
+        'read'     => 8,
+        'author'   => 'USMLE Wise Team',
+        'featured' => false,
+        'image'    => '/assets/Photos/general-surgery-operating-room.webp',
+        'body'     => <<<'HTML'
+            <p>Orthopaedic Surgery offered 963 positions in the 2026 Main Residency Match and drew 1,598 total applicants — a 1.66 applicant-to-position ratio, among the tightest in the report. Of the 1,108 U.S. MD seniors who ranked it as their preferred specialty, 765 matched and 343 did not, for a <strong>69.1 percent</strong> MD-senior match rate.</p>
+            <p>Here is the complete, verified 2026 data profile for Orthopaedic Surgery, straight from NRMP's chapter table (ORS-1) and the full-report Step 2 CK and contiguous-rank tables.</p>
+
+            <h2>The Full Picture: Matched vs. Not Matched</h2>
+            <table>
+              <thead>
+                <tr><th>Measure</th><th>Matched (n=628)</th><th>Not Matched (n=245)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Median contiguous ranks</td><td>10.0</td><td>6.0</td></tr>
+                <tr><td>Median distinct specialties ranked</td><td>1.0</td><td>1.0</td></tr>
+                <tr><td>Median USMLE Step 2 CK score</td><td>259</td><td>251</td></tr>
+                <tr><td>Median research experiences</td><td>7.5</td><td>7.0</td></tr>
+                <tr><td>Median abstracts</td><td>5.0</td><td>4.0</td></tr>
+                <tr><td>Median presentations</td><td>11.0</td><td>8.0</td></tr>
+                <tr><td>Median publications</td><td>7.0</td><td>5.0</td></tr>
+                <tr><td>Median work experiences</td><td>3.0</td><td>3.0</td></tr>
+                <tr><td>Median volunteer experiences</td><td>5.0</td><td>5.0</td></tr>
+                <tr><td>% AOA members</td><td>34.9%</td><td>14.3%</td></tr>
+                <tr><td>% from a top-40 NIH-funded medical school</td><td>33.0%</td><td>23.7%</td></tr>
+                <tr><td>% with a Ph.D.</td><td>1.7%</td><td>0.5%</td></tr>
+                <tr><td>% with another graduate degree</td><td>20.8%</td><td>28.2%</td></tr>
+              </tbody>
+            </table>
+
+            <h2>Step 2 CK: An 8-Point Gap</h2>
+            <p>Matched applicants scored a median of 259 (Q1 250, Q3 266, range 220–281). Not-matched applicants scored a median of 251 (Q1 241, Q3 260, range 214–276). That puts Orthopaedic Surgery's matched median among the highest of any specialty in the 2026 report, just behind Otolaryngology, Plastic Surgery, and Dermatology.</p>
+
+            <h2>Rank List Length: A Clear, Almost Linear Gap</h2>
+            <p>Matched applicants ranked a median of 10 contiguous Orthopaedic Surgery programs; not-matched applicants ranked a median of 6. That gap — matched applicants ranking roughly 1.7 times as many programs — is one of the cleaner, more consistent rank-list gaps in the entire 2026 dataset.</p>
+            <p>What stands out more is the distinct-specialties-ranked measure: both matched and not-matched applicants had a median of exactly <strong>1.0</strong>. Orthopaedic Surgery applicants, far more than Dermatology applicants (median 3.0, see our <a href="/blog/matching-into-dermatology-2026-data">Dermatology data breakdown</a>), tend to rank Orthopaedic Surgery and essentially nothing else. There is very little hedging into a backup specialty in this applicant pool — the culture here leans all-in on a single specialty, for matched and not-matched applicants alike.</p>
+
+            <h2>Research: One of the Few Specialties Where Every Measure Favors Matched Applicants</h2>
+            <p>Orthopaedic Surgery stands out in our broader analysis of <a href="/blog/does-research-matter-in-the-match">research and the 2026 Match</a>. In most research-intensive specialties, raw research "experiences" ties or even reverses between matched and not-matched applicants — more projects started doesn't reliably separate the two groups. Orthopaedic Surgery is one of the few specialties in the entire report where matched applicants came out ahead on <em>all four</em> research measures: experiences (7.5 vs. 7.0), abstracts (5.0 vs. 4.0), presentations (11.0 vs. 8.0), and publications (7.0 vs. 5.0). The gaps are modest on raw experience count but widen substantially on completed output — matched applicants had 40 percent more publications at the median.</p>
+
+            <h2>AOA and School Funding: A Real, Sizeable Gap — Still a Minority</h2>
+            <p>34.9 percent of matched Orthopaedic Surgery applicants were AOA members, versus 14.3 percent of those who did not match — a 2.4x difference, one of the largest AOA gaps in the report. 33.0 percent of matched applicants graduated from a top-40 NIH-funded school, versus 23.7 percent of those who did not match.</p>
+            <p>Even so, <strong>65.1 percent of matched applicants were not AOA members</strong>, and <strong>67.0 percent did not attend a top-40 NIH-funded school</strong>. The credential helps, but its absence is still the norm among successfully matched applicants. See <a href="/blog/does-medical-school-matter-in-the-match">Does Your Medical School's Name Matter?</a> for how this compares across specialties.</p>
+
+            <h2>Building a Realistic Orthopaedic Surgery Application</h2>
+            <ul>
+              <li><strong>Treat 259 as your Step 2 CK target</strong>, with 251 marking where the not-matched group clusters.</li>
+              <li><strong>Rank at least 10 contiguous Orthopaedic Surgery programs if you can.</strong> The not-matched median of 6 is a real warning sign, not a safe middle ground.</li>
+              <li><strong>Convert research experiences into finished output.</strong> This is one specialty where the full research pipeline — not just completed publications — showed a real gap, so depth matters at every stage, not just the end.</li>
+              <li><strong>Decide early whether you are all-in on Orthopaedics.</strong> Unlike Dermatology applicants, most of this applicant pool — matched or not — ranked no backup specialty at all. If you want insurance, build it deliberately; it is not the norm in this data.</li>
+            </ul>
+            <p>Want a rank list, signaling strategy, and Step 2 CK target built around your actual numbers against this year's data? <a href="/coaching">Explore USMLE Wise coaching →</a></p>
             HTML,
     ],
 ];

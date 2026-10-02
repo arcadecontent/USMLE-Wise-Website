@@ -7,7 +7,7 @@
     <nav class="msp-nav__links" aria-label="Primary">
       <a href="/">Home</a>
       <div class="msp-nav__item msp-nav__item--has-dd">
-        <a href="/coaching">Coaching <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+        <a href="/coaching">Steps <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
         <div class="msp-nav__dropdown">
           <a href="/coaching" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Coaching Overview</span>
@@ -134,9 +134,32 @@
           </a>
         </div>
       </div>
-      <a href="/testimonials">Stories</a>
-      <a href="/blog">Blog</a>
-      <a href="/qa">FAQ</a>
+      <div class="msp-nav__item msp-nav__item--has-dd">
+        <a href="/match-maker">Tools <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+        <div class="msp-nav__dropdown">
+          <a href="/match-maker" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Match Maker</span>
+            <span class="msp-nav__dd-meta">Program list &amp; odds tool &middot; $100</span>
+          </a>
+        </div>
+      </div>
+      <div class="msp-nav__item msp-nav__item--has-dd">
+        <a href="/testimonials">Resources <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+        <div class="msp-nav__dropdown">
+          <a href="/testimonials" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Stories</span>
+            <span class="msp-nav__dd-meta">Real IMG match outcomes</span>
+          </a>
+          <a href="/blog" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Blog</span>
+            <span class="msp-nav__dd-meta">Guides &amp; match strategy</span>
+          </a>
+          <a href="/qa" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">FAQ</span>
+            <span class="msp-nav__dd-meta">Answers to common questions</span>
+          </a>
+        </div>
+      </div>
     </nav>
     <a class="btn btn--primary msp-nav__cta" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
   </div>

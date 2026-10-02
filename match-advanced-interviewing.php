@@ -99,7 +99,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       }
       .ai-insight__label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7eb8f7; margin: 0 0 14px; }
       .ai-insight__text { font-family: var(--font-display); font-size: clamp(19px, 2.4vw, 26px); line-height: 1.4; color: #fff; margin: 0 0 10px; }
-      .ai-insight__body { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.7); margin: 0; }
+      .ai-insight__body { font-size: var(--fs-base); line-height: 1.7; color: rgba(255,255,255,.7); margin: 0; }
       .ai-insight__cite { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 14px; }
 
       /* modules */
@@ -108,15 +108,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .ai-module__head { display: flex; align-items: flex-start; gap: 16px; margin-bottom: clamp(18px, 2vw, 24px); }
       .ai-module__num { font-family: var(--font-display); font-size: 32px; color: var(--uw-blue-500); line-height: 1; flex-shrink: 0; }
       .ai-module__title { font-size: 20px; font-weight: 600; color: var(--uw-ink-900); margin: 0 0 4px; }
-      .ai-module__sub { font-size: 14.5px; color: var(--uw-ink-500); margin: 0; }
-      .ai-module__intro { font-size: 15px; line-height: 1.7; color: var(--uw-ink-700); margin: 0 0 22px; }
+      .ai-module__sub { font-size: var(--fs-14-5); color: var(--uw-ink-500); margin: 0; }
+      .ai-module__intro { font-size: var(--fs-base); line-height: 1.7; color: var(--uw-ink-700); margin: 0 0 22px; }
       .ai-module__diagram { max-width: 460px; margin: 0 auto 26px; }
       .ai-module__diagram img { width: 100%; height: auto; border-radius: var(--r-md); }
       .ai-topics { display: flex; flex-direction: column; gap: 16px; }
       .ai-topic-item { display: flex; gap: 12px; align-items: flex-start; }
       .ai-topic-item__icon { width: 26px; height: 26px; border-radius: 8px; background: var(--uw-blue-50); color: var(--uw-blue-600); display: grid; place-items: center; flex-shrink: 0; margin-top: 2px; }
-      .ai-topic-item__title { font-size: 14.5px; font-weight: 600; color: var(--uw-ink-900); margin: 0 0 3px; }
-      .ai-topic-item__body { font-size: 14px; line-height: 1.65; color: var(--uw-ink-600); margin: 0; }
+      .ai-topic-item__title { font-size: var(--fs-14-5); font-weight: 600; color: var(--uw-ink-900); margin: 0 0 3px; }
+      .ai-topic-item__body { font-size: var(--fs-14); line-height: 1.65; color: var(--uw-ink-600); margin: 0; }
       .ai-topic-item__body ul { margin: 6px 0 0; padding-left: 18px; }
       .ai-topic-item__body li { margin-bottom: 3px; }
       .ai-module__cta { margin-top: clamp(22px, 2.5vw, 30px); text-align: center; }
@@ -142,8 +142,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         flex-direction: column;
         justify-content: center;
       }
-      .ai-founder__quote { font-family: var(--font-display); font-size: 19px; color: var(--uw-ink-900); margin: 0 0 14px; line-height: 1.4; }
-      .ai-founder__body p { font-size: 14.5px; color: var(--uw-ink-600); line-height: 1.7; margin: 0 0 10px; }
+      .ai-founder__quote { font-family: var(--font-display); font-size: var(--fs-19); color: var(--uw-ink-900); margin: 0 0 14px; line-height: 1.4; }
+      .ai-founder__body p { font-size: var(--fs-14-5); color: var(--uw-ink-600); line-height: 1.7; margin: 0 0 10px; }
       .ai-founder__body p:last-child { margin-bottom: 0; }
       .ai-founder__stats { display: flex; flex-wrap: wrap; gap: 20px 32px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--uw-border); }
       .ai-founder__stat b { display: block; font-family: var(--font-display); font-size: 22px; color: var(--uw-blue-600); }
@@ -185,9 +185,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       }
       .ai-price-card__badge { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--uw-blue-600); margin-bottom: 10px; }
       .ai-price-card__amount { font-family: var(--font-display); font-size: clamp(40px, 6vw, 52px); color: var(--uw-ink-900); line-height: 1; }
-      .ai-price-card__unit { font-size: 15px; color: var(--uw-ink-500); margin-top: 6px; }
+      .ai-price-card__unit { font-size: var(--fs-base); color: var(--uw-ink-500); margin-top: 6px; }
       .ai-price-card__list { list-style: none; margin: clamp(22px, 3vw, 30px) 0; padding: 0; display: flex; flex-direction: column; gap: 10px; text-align: left; }
-      .ai-price-card__list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; color: var(--uw-ink-700); }
+      .ai-price-card__list li { display: flex; gap: 10px; align-items: flex-start; font-size: var(--fs-14-5); color: var(--uw-ink-700); }
       .ai-price-card__list svg { flex-shrink: 0; margin-top: 3px; color: var(--uw-blue-600); }
 
       /* guarantee */
@@ -198,7 +198,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .ai-guarantee__body p:last-child { margin-bottom: 0; }
       .ai-guarantee__body em { font-style: italic; color: var(--uw-ink-900); }
       .ai-guarantee__steps { list-style: none; margin: clamp(18px, 2.4vw, 26px) 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-      .ai-guarantee__steps li { display: flex; gap: 12px; font-size: 14.5px; color: var(--uw-ink-700); line-height: 1.6; }
+      .ai-guarantee__steps li { display: flex; gap: 12px; font-size: var(--fs-14-5); color: var(--uw-ink-700); line-height: 1.6; }
       .ai-guarantee__steps b { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--uw-blue-600); color: #fff; font-size: 12px; display: grid; place-items: center; font-weight: 600; }
 
       .ai-faq__accordion { max-width: 760px; margin: clamp(40px, 5vw, 60px) auto 0; }

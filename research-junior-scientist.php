@@ -37,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         justify-content: center;
         text-align: center;
         padding: 24px 56px;
-        font-size: 16px;
+        font-size: var(--fs-md);
         line-height: 1.45;
       }
       .msp-faq .accordion__head::after {
@@ -49,7 +49,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       }
       .msp-faq .accordion__body {
         padding: 0 56px 24px;
-        font-size: 15px;
+        font-size: var(--fs-base);
         line-height: 1.65;
         text-align: center;
       }
@@ -71,7 +71,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .msp-faq .accordion .msp-eyebrow:first-child { margin-top: 0; }
       .msp-faq .msp-h2 { margin-inline: auto; }
       @media (max-width: 640px) {
-        .msp-faq .accordion__head { padding: 18px 44px; font-size: 15px; }
+        .msp-faq .accordion__head { padding: 18px 44px; font-size: var(--fs-base); }
         .msp-faq .accordion__body { padding: 0 24px 20px; }
       }
 
@@ -99,14 +99,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         color: var(--uw-blue-200);
       }
       .jsp-prob__card h3 {
-        font-size: 17px;
+        font-size: var(--fs-17);
         font-weight: 600;
         color: var(--uw-ink-900);
         margin: 0;
         line-height: 1.35;
       }
       .jsp-prob__card p {
-        font-size: 14px;
+        font-size: var(--fs-14);
         color: var(--uw-ink-600);
         line-height: 1.65;
         margin: 0;
@@ -141,7 +141,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       }
       .jsp-story__name {
         font-family: var(--font-display);
-        font-size: 19px;
+        font-size: var(--fs-19);
         font-weight: 600;
         color: var(--uw-ink-900);
         margin: 16px 0 0;
@@ -168,7 +168,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         margin: 0 0 22px;
         letter-spacing: -0.01em;
       }
-      .jsp-story__copy { font-size: 16.5px; line-height: 1.6; color: var(--uw-ink-700); max-width: 56ch; }
+      .jsp-story__copy { font-size: var(--fs-16-5); line-height: 1.6; color: var(--uw-ink-700); max-width: 56ch; }
       .jsp-story__copy p { margin: 0 0 20px; }
       .jsp-story__copy strong { color: var(--uw-ink-900); font-weight: 600; }
       .jsp-story__cta { margin-top: 28px; }
@@ -235,7 +235,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .jsp-cmp__row:last-child { border-bottom: none; }
       .jsp-cmp__cell {
         padding: clamp(15px, 1.8vw, 22px) clamp(16px, 2vw, 26px);
-        font-size: 14px;
+        font-size: var(--fs-14);
         line-height: 1.55;
         color: var(--uw-ink-600);
         display: flex;
@@ -329,7 +329,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         margin: 0;
       }
       .jsp-proof__card p {
-        font-size: 15px;
+        font-size: var(--fs-base);
         line-height: 1.65;
         color: var(--uw-ink-600);
         margin: 0;
@@ -348,7 +348,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           gap: clamp(36px, 5vw, 80px);
         }
         .jsp-proof__card--feat .jsp-proof__head { flex: 1; }
-        .jsp-proof__card--feat p { flex: 1; font-size: 16px; }
+        .jsp-proof__card--feat p { flex: 1; font-size: var(--fs-md); }
         .jsp-proof__card--feat .jsp-proof__q {
           font-size: clamp(24px, 2.8vw, 33px);
         }
@@ -405,7 +405,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         grid-template-columns: auto 1fr;
         gap: 14px;
         align-items: start;
-        font-size: 15.5px;
+        font-size: var(--fs-15-5);
         line-height: 1.5;
       }
       .jsp-year__list i {
@@ -480,12 +480,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         line-height: 1;
       }
       .jsp-fellow__currency {
-        font-size: 14px;
+        font-size: var(--fs-14);
         color: var(--uw-ink-500);
         font-family: var(--font-mono);
       }
       .jsp-fellow__tagline {
-        font-size: 16px;
+        font-size: var(--fs-md);
         color: var(--uw-ink-700);
         margin: 0;
         line-height: 1.45;
@@ -502,7 +502,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         display: flex;
         align-items: flex-start;
         gap: 10px;
-        font-size: 15px;
+        font-size: var(--fs-base);
         color: var(--uw-ink-700);
         line-height: 1.5;
       }
@@ -540,14 +540,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         border-color: #f0d9a0;
       }
       .jsp-fellow__panel h3 {
-        font-size: 16px;
+        font-size: var(--fs-md);
         font-weight: 600;
         color: var(--uw-ink-900);
         margin: 0 0 12px;
         line-height: 1.35;
       }
       .jsp-fellow__panel p {
-        font-size: 14.5px;
+        font-size: var(--fs-14-5);
         color: var(--uw-ink-600);
         line-height: 1.65;
         margin: 0;
@@ -558,7 +558,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         text-align: center;
       }
       .jsp-fellow__trial p {
-        font-size: 16px;
+        font-size: var(--fs-md);
         color: var(--uw-ink-600);
         line-height: 1.65;
         font-style: italic;

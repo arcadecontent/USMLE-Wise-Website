@@ -43,7 +43,7 @@
   max-width: 720px;
   margin-inline: auto;
   padding-bottom: clamp(48px, 7vw, 96px);
-  font-size: 18px;
+  font-size: var(--fs-lg);
   line-height: 1.72;
   color: var(--uw-ink-800);
 }
@@ -104,7 +104,7 @@
   border-collapse: separate;
   border-spacing: 0;
   overflow: hidden;
-  font-size: 15.5px;
+  font-size: var(--fs-15-5);
   line-height: 1.55;
 }
 
@@ -141,7 +141,7 @@
 /* The 4-column tables (specialty scores, weekly schedule) can't compress to a
    phone width — let them scroll in their own box instead of crushing the text. */
 @media (max-width: 620px) {
-  .post-body table { display: block; overflow-x: auto; font-size: 14.5px; }
+  .post-body table { display: block; overflow-x: auto; font-size: var(--fs-14-5); }
   .post-body thead th,
   .post-body tbody td { padding: 11px 13px; }
 }

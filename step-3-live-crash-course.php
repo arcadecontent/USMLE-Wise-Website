@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .cc-nav-links { display: none !important; }
     .cc-2 { grid-template-columns: 1fr !important; }
     .cc-day { grid-template-columns: 1fr !important; gap: 10px !important; }
-    .cc-pill { width: 100%; justify-content: space-between; align-items: flex-start !important; font-size: 14px !important; padding: 10px 14px 10px 12px !important; }
+    .cc-pill { width: 100%; justify-content: space-between; align-items: flex-start !important; font-size: var(--fs-14) !important; padding: 10px 14px 10px 12px !important; }
     .cc-badge { width: 74px !important; height: 74px !important; right: -8px !important; top: -10px !important; }
   }
   @media (max-width: 820px) { .cc-videos { grid-template-columns: 1fr 1fr !important; } .cc-vid-land { grid-column: 1 / -1; } }
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
   @media (max-width: 700px) {
     .cc-offer { padding-top: 14px !important; padding-bottom: 18px !important; scroll-margin-top: 2px !important; }
     .cc-offer-eyebrow { margin-bottom: 6px !important; font-size: 11px !important; }
-    .cc-offer-h2 { font-size: 19px !important; line-height: 1.2 !important; margin-bottom: 10px !important; }
+    .cc-offer-h2 { font-size: var(--fs-19) !important; line-height: 1.2 !important; margin-bottom: 10px !important; }
     .cc-offer-list { padding: 8px 15px !important; }
     .cc-offer-list > div { padding: 6px 0 !important; gap: 9px !important; }
     .cc-offer-list > div > span { font-size: 13.5px !important; line-height: 1.45 !important; }
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .cc-offer-pay { padding: 13px 15px 15px !important; }
     .cc-offer-pay .cc-offer-label { margin-bottom: 4px !important; }
     .cc-offer-pay .cc-offer-price { font-size: 40px !important; }
-    .cc-offer-pay .cc-offer-was { font-size: 19px !important; }
+    .cc-offer-pay .cc-offer-was { font-size: var(--fs-19) !important; }
     .cc-offer-onetime { margin-bottom: 12px !important; }
     .cc-offer-btns { gap: 10px !important; }
     .cc-offer-sample { font-size: 13.5px !important; height: 53.8px !important; }
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .cc-offer-h2 { margin-bottom: 18px !important; }
     .cc-offer-list { padding: 18px 30px !important; }
     .cc-offer-list > div { padding: 7px 0 !important; }
-    .cc-offer-list > div > span { font-size: 15px !important; line-height: 1.45 !important; }
+    .cc-offer-list > div > span { font-size: var(--fs-base) !important; line-height: 1.45 !important; }
     .cc-offer-pay { padding: 22px 26px 24px !important; }
     .cc-offer-pay .cc-offer-label { margin-bottom: 5px !important; }
     .cc-offer-pay .cc-offer-price { font-size: 46px !important; }

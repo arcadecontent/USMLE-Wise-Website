@@ -59,8 +59,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       text-transform: uppercase;
       color: var(--uw-red-500);
     }
-    .ec-card__title { font-size: 16.5px; font-weight: 600; color: var(--uw-ink-900); margin: 0; letter-spacing: -.01em; }
-    .ec-card__body { font-size: 14.5px; color: var(--uw-ink-600); line-height: 1.7; margin: 0; }
+    .ec-card__title { font-size: var(--fs-16-5); font-weight: 600; color: var(--uw-ink-900); margin: 0; letter-spacing: -.01em; }
+    .ec-card__body { font-size: var(--fs-14-5); color: var(--uw-ink-600); line-height: 1.7; margin: 0; }
     .ec-card__body em { font-style: italic; color: var(--uw-ink-500); }
 
     /* kicker line under a section */
@@ -85,7 +85,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     }
     .ec-ba__col--before .ec-ba__label { color: var(--uw-ink-400); }
     .ec-ba__col--after .ec-ba__label { color: #7eb8f7; }
-    .ec-ba__text { font-size: 15.5px; line-height: 1.75; margin: 0; }
+    .ec-ba__text { font-size: var(--fs-15-5); line-height: 1.75; margin: 0; }
     .ec-ba__col--before .ec-ba__text { color: var(--uw-ink-600); }
     .ec-ba__col--after .ec-ba__text { color: rgba(255,255,255,.78); }
 
@@ -146,7 +146,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       gap: 13px 36px;
     }
     #pricing .msp-tier__features li {
-      font-size: 14px;
+      font-size: var(--fs-14);
       line-height: 1.55;
       padding-left: 24px;
     }
@@ -220,7 +220,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     }
     .ec-tier__price-unit {
       font-family: var(--font-sans);
-      font-size: 14px;
+      font-size: var(--fs-14);
       font-weight: 400;
       letter-spacing: 0;
       color: rgba(255,255,255,.42);

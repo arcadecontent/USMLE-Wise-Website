@@ -197,7 +197,7 @@
   flex-shrink: 0;
 }
 .rp-include__head {
-  font-size: 15px;
+  font-size: var(--fs-base);
   font-weight: 500;
   color: var(--uw-ink-900);
   margin: 0;

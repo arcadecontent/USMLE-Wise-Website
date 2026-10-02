@@ -10,12 +10,6 @@
   color: var(--uw-ink-800);
 }
 
-.msp-wrap {
-  width: 100%;
-  max-width: 1180px;
-  margin-inline: auto;
-  padding-inline: clamp(20px, 5vw, 56px);
-}
 
 /* ---------- NAV ---------- */
 .msp-nav {
@@ -52,7 +46,7 @@
   margin-left: auto;
 }
 .msp-nav__links a {
-  font-size: 14px;
+  font-size: var(--fs-14);
   color: var(--uw-ink-600);
   padding: 8px 12px;
   border-radius: var(--r-sm);
@@ -159,7 +153,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: var(--fs-14);
   font-weight: 500;
   color: var(--uw-red-500);
   margin-top: auto;
@@ -238,7 +232,7 @@
   margin: 0 0 var(--space-4);
 }
 .blog-featured__excerpt {
-  font-size: 16px;
+  font-size: var(--fs-md);
   line-height: 1.6;
   color: var(--uw-ink-600);
   margin: 0 0 var(--space-6);
@@ -293,7 +287,7 @@
   margin: 0 0 var(--space-3);
 }
 .blog-card__excerpt {
-  font-size: 14.5px;
+  font-size: var(--fs-14-5);
   line-height: 1.6;
   color: var(--uw-ink-600);
   margin: 0 0 var(--space-5);
@@ -303,7 +297,7 @@
 .blog-empty {
   text-align: center;
   color: var(--uw-ink-500);
-  font-size: 16px;
+  font-size: var(--fs-md);
   padding-block: clamp(40px, 6vw, 80px);
 }
 
@@ -346,7 +340,7 @@
 }
 .msp-foot .msp-brand__main { color: #fff; }
 .msp-foot .msp-brand__usmle { color: var(--uw-blue-200); }
-.msp-foot p { margin: 0; font-size: 14px; color: rgba(255,255,255,.6); }
+.msp-foot p { margin: 0; font-size: var(--fs-14); color: rgba(255,255,255,.6); }
 .msp-foot small { font-size: 12px; color: rgba(255,255,255,.38); }
 .msp-foot__social { display: flex; gap: 4px; }
 .msp-foot__social-link {
@@ -379,7 +373,7 @@
   color: rgba(255,255,255,.35);
   margin-bottom: 2px;
 }
-.msp-foot__nav-group a { font-size: 14px; color: rgba(255,255,255,.55); text-decoration: none; transition: color 0.15s ease; }
+.msp-foot__nav-group a { font-size: var(--fs-14); color: rgba(255,255,255,.55); text-decoration: none; transition: color 0.15s ease; }
 .msp-foot__nav-group a:hover { color: #fff; }
 .msp-foot__bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 @media (max-width: 640px) {

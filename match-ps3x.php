@@ -26,8 +26,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         background: var(--uw-blue-50); display: grid; place-items: center;
         color: var(--uw-blue-600); flex-shrink: 0;
       }
-      .pg-feat__title { font-size: 16px; font-weight: 600; color: var(--uw-ink-900); margin: 0; }
-      .pg-feat__body { font-size: 15px; color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
+      .pg-feat__title { font-size: var(--fs-md); font-weight: 600; color: var(--uw-ink-900); margin: 0; }
+      .pg-feat__body { font-size: var(--fs-base); color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
       /* numbered steps */
       .ps-steps { display: flex; flex-direction: column; gap: clamp(20px, 2.5vw, 28px); margin-top: clamp(44px,5vw,64px); }
       .ps-step {
@@ -40,17 +40,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         width: 52px; height: 52px; border-radius: 50%;
         background: var(--uw-blue-50); border: 1px solid var(--uw-blue-100);
         display: grid; place-items: center; flex-shrink: 0;
-        font-family: var(--font-mono); font-size: 14px; font-weight: 600;
+        font-family: var(--font-mono); font-size: var(--fs-14); font-weight: 600;
         color: var(--uw-blue-600);
       }
       .ps-step__body { padding-top: 12px; }
-      .ps-step__title { font-size: 17px; font-weight: 600; color: var(--uw-ink-900); margin: 0 0 6px; }
-      .ps-step__desc { font-size: 15px; color: var(--uw-ink-600); line-height: 1.7; margin: 0; }
+      .ps-step__title { font-size: var(--fs-17); font-weight: 600; color: var(--uw-ink-900); margin: 0 0 6px; }
+      .ps-step__desc { font-size: var(--fs-base); color: var(--uw-ink-600); line-height: 1.7; margin: 0; }
       /* pricing — .msp-tier row, reused from the ERAS CV package table */
       .pg-fee { max-width: 860px; margin: clamp(40px, 5vw, 60px) auto 0; }
       .pg-tier__price-unit {
         font-family: var(--font-sans);
-        font-size: 14px;
+        font-size: var(--fs-14);
         font-weight: 400;
         letter-spacing: 0;
         color: var(--uw-ink-500);

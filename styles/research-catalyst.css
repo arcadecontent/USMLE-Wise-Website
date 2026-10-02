@@ -7,12 +7,6 @@
   background: var(--uw-bg);
   color: var(--uw-ink-800);
 }
-.msp-wrap {
-  width: 100%;
-  max-width: 1180px;
-  margin-inline: auto;
-  padding-inline: clamp(20px, 5vw, 56px);
-}
 
 /* ---- NAV ---- */
 .msp-nav {
@@ -49,7 +43,7 @@
   margin-left: auto;
 }
 .msp-nav__links a {
-  font-size: 14px;
+  font-size: var(--fs-14);
   color: var(--uw-ink-600);
   padding: 8px 12px;
   border-radius: var(--r-sm);
@@ -124,7 +118,7 @@
   color: rgba(255,255,255,.6);
   padding-block: clamp(40px, 5vw, 64px);
 }
-.msp-foot p { margin: 0; font-size: 14px; color: rgba(255,255,255,.6); }
+.msp-foot p { margin: 0; font-size: var(--fs-14); color: rgba(255,255,255,.6); }
 .msp-foot small { font-size: 12px; color: rgba(255,255,255,.38); }
 .msp-foot__social { display: flex; gap: 4px; }
 .msp-foot__social-link {
@@ -155,7 +149,7 @@
   color: rgba(255,255,255,.35);
   margin-bottom: 2px;
 }
-.msp-foot__nav-group a { font-size: 14px; color: rgba(255,255,255,.55); text-decoration: none; transition: color 0.15s ease; }
+.msp-foot__nav-group a { font-size: var(--fs-14); color: rgba(255,255,255,.55); text-decoration: none; transition: color 0.15s ease; }
 .msp-foot__nav-group a:hover { color: #fff; }
 .msp-foot__bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 @media (max-width: 640px) {
@@ -369,7 +363,7 @@
   width: 20px;
 }
 .rc-whom-item {
-  font-size: 15px;
+  font-size: var(--fs-base);
   color: var(--uw-ink-700);
   line-height: 1.45;
 }
@@ -468,7 +462,7 @@
   position: absolute;
   left: 0;
   color: rgba(255,255,255,0.35);
-  font-size: 18px;
+  font-size: var(--fs-lg);
   line-height: 1;
   top: -2px;
 }
@@ -498,7 +492,7 @@
   gap: 10px;
 }
 .rc-receive__list li {
-  font-size: 14px;
+  font-size: var(--fs-14);
   color: var(--uw-ink-700);
   padding-left: 16px;
   position: relative;
@@ -509,7 +503,7 @@
   position: absolute;
   left: 0;
   color: var(--uw-blue-500);
-  font-size: 18px;
+  font-size: var(--fs-lg);
   line-height: 1;
   top: -1px;
 }
@@ -530,7 +524,7 @@
 }
 .rc-receive__stat-label {
   display: block;
-  font-size: 14px;
+  font-size: var(--fs-14);
   font-weight: 500;
   color: var(--uw-ink-800);
   line-height: 1.3;
@@ -573,7 +567,7 @@
   letter-spacing: -0.015em;
 }
 .rc-step__content p {
-  font-size: 14px;
+  font-size: var(--fs-14);
   color: var(--uw-ink-500);
   line-height: 1.55;
   margin: 0;
@@ -754,7 +748,7 @@
   position: absolute;
   left: 0;
   color: var(--uw-blue-400);
-  font-size: 16px;
+  font-size: var(--fs-md);
   line-height: 1;
   top: -1px;
 }
@@ -790,7 +784,7 @@
   align-items: flex-start;
   gap: 18px;
   padding: 17px 20px;
-  font-size: 15.5px;
+  font-size: var(--fs-15-5);
   font-weight: 500;
   line-height: 1.45;
 }
@@ -808,7 +802,7 @@
 .rc-faq__accordion .accordion__item.is-open .accordion__head::after { content: "\2212"; }
 .rc-faq__accordion .accordion__body {
   padding: 0 20px 18px;
-  font-size: 14.5px;
+  font-size: var(--fs-14-5);
   line-height: 1.62;
   max-width: 66ch;
 }
@@ -852,7 +846,7 @@
   background: transparent;
   border-radius: var(--r-md);
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: var(--fs-14);
   font-weight: 500;
   text-decoration: none;
   transition: border-color 0.15s, color 0.15s;
@@ -919,7 +913,7 @@
   margin: 0;
 }
 .rc-problem p {
-  font-size: 14px;
+  font-size: var(--fs-14);
   color: var(--uw-ink-600);
   line-height: 1.6;
   margin: 0;
@@ -969,7 +963,7 @@
 .rc-pub-type--amber   { background: oklch(98% 0.04 75); border-color: oklch(92% 0.1 75); }
 .rc-pub-type--amber   .rc-pub-type__icon-wrap { background: oklch(95% 0.08 75); color: oklch(52% 0.18 65); border: 1px solid oklch(90% 0.12 75); }
 .rc-pub-type__head {
-  font-size: 14px;
+  font-size: var(--fs-14);
   font-weight: 600;
   color: var(--uw-ink-800);
   margin: 0;
@@ -1003,7 +997,7 @@
   border: 1px solid oklch(88% 0.09 295);
 }
 .rc-conf-add__head {
-  font-size: 14px;
+  font-size: var(--fs-14);
   font-weight: 600;
   color: var(--uw-ink-800);
   margin: 0 0 4px;
@@ -1047,7 +1041,7 @@
   margin: 8px 0 12px;
 }
 .rc-payment__note {
-  font-size: 14px;
+  font-size: var(--fs-14);
   color: var(--uw-ink-600);
   line-height: 1.65;
   margin: 0;
@@ -1091,7 +1085,7 @@
   padding: 3px 10px;
 }
 .rc-tier__name {
-  font-size: 15px;
+  font-size: var(--fs-base);
   font-weight: 600;
   color: var(--uw-ink-900);
 }
@@ -1152,7 +1146,7 @@
   gap: var(--space-3);
 }
 .rc-acc__text {
-  font-size: 14px;
+  font-size: var(--fs-14);
   color: var(--uw-ink-600);
   line-height: 1.65;
   margin: 0;
@@ -1160,4 +1154,38 @@
 .rc-acc__text strong {
   color: var(--uw-ink-900);
   font-weight: 600;
+}
+
+
+/* ---------- Section head: two-column split on large screens ----------
+   Below 1280px this does nothing, so phones, tablets and laptops keep the
+   stacked layout exactly as before. Above it, a head that actually carries
+   body copy puts the eyebrow and heading in the left column and the body
+   text in the right, so the row fills instead of stranding most of its
+   width as whitespace once the container widens.
+
+   Guards, in order: :has(> .msp-sub) skips heads that are only an eyebrow
+   plus a heading (which includes both centered FAQ heads, so they stay
+   centered), and :not([style*="center"]) skips any head centered inline.
+   Browsers without :has() drop the whole block and keep the old layout. */
+@media (min-width: 1280px) {
+  .msp-head:has(> .msp-sub):not([style*="center"]) {
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(40px, 5vw, 88px);
+    align-items: start;
+  }
+  .msp-head:has(> .msp-sub):not([style*="center"]) > .msp-eyebrow {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .msp-head:has(> .msp-sub):not([style*="center"]) > .msp-h2 {
+    grid-area: 2 / 1 / 3 / 2;
+    max-width: 24ch;
+    margin-bottom: 0;
+  }
+  .msp-head:has(> .msp-sub):not([style*="center"]) > .msp-sub {
+    grid-area: 2 / 2 / 3 / 3;
+    max-width: 62ch;
+  }
 }
