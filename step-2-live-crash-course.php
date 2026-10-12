@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <style>
   .cc { font-family: var(--font-sans); color: var(--uw-ink-800); background: var(--uw-surface); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   .cc a { color: inherit; text-decoration: none; }
+  .cc-checkout-btn { all: unset; display: block; width: 100%; cursor: pointer; }
+  .cc-checkout-btn:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 3px; border-radius: var(--r-md); }
   .cc a:hover { color: var(--uw-blue-600); }
   .cc img { max-width: 100%; }
   .cc ::selection { background: var(--uw-blue-100); }
@@ -462,7 +464,7 @@ foreach (array_merge($m2_marquee, $m2_marquee) as $img):
             <div style="display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:6px"><s class="cc-offer-was" style="font-family:var(--font-display);font-size:30px;color:rgba(255,255,255,.5)">$999</s><span class="cc-offer-price" style="font-family:var(--font-display);font-size:clamp(52px,8vw,72px);font-weight:600;line-height:.9">$499</span></div>
             <div class="cc-offer-onetime" style="font-size:13.5px;color:rgba(255,255,255,.78);margin-bottom:24px">one time.</div>
             <div class="cc-offer-btns" style="display:flex;flex-direction:column;align-items:center;gap:12px">
-              <a href="https://buy.stripe.com/9B65kEe5s8rbgRq4W0es03b" target="_blank" rel="noopener" style="display:block;width:320px;max-width:100%"><span class="btn btn--primary btn--xl" style="width:100%">Enroll now</span></a>
+              <form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="display:block;width:320px;max-width:100%"><input type="hidden" name="courseId" value="cmtb3d8b90n2oqyu2t9a69zlc"><button type="submit" class="cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--xl" style="width:100%">Enroll now</span></button></form>
               <a class="cc-offer-sample" href="https://wa.me/19192015700?text=Send%20me%20a%20FREE%20sample%20lesson%20of%20Step%202%20crash%20course" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:9px;width:320px;max-width:100%;height:53.8px;box-sizing:border-box;background:#25D366;color:#fff;font-weight:600;font-size:15px;padding:0 18px;border-radius:var(--r-md);white-space:nowrap;transition:background var(--dur-fast)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"></path></svg>
                 <span>Request a free sample lesson</span>
@@ -494,7 +496,7 @@ foreach (array_merge($m2_marquee, $m2_marquee) as $img):
         </div>
       </div>
       <p style="text-align:center;font-family:var(--font-display);font-size:clamp(22px,2.6vw,30px);font-weight:600;letter-spacing:-0.015em;color:var(--uw-blue-700);margin:clamp(30px,3.6vw,40px) 0 0">Zero risk. Pure results.</p>
-      <div style="margin-top:24px;text-align:center"><a href="https://buy.stripe.com/9B65kEe5s8rbgRq4W0es03b" target="_blank" rel="noopener"><span class="btn btn--primary btn--lg">Start risk-free</span></a></div>
+      <div style="margin-top:24px;text-align:center"><form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="display:inline-block"><input type="hidden" name="courseId" value="cmtb3d8b90n2oqyu2t9a69zlc"><button type="submit" class="cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--lg">Start risk-free</span></button></form></div>
     </div>
   </section>
 
@@ -552,7 +554,7 @@ foreach ($m2_wall_cols as $col):
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:20px;margin-top:clamp(32px,4vw,44px)">
         <p style="font-family:var(--font-display);font-weight:600;font-size:clamp(24px,2.9vw,34px);line-height:1.2;letter-spacing:-0.015em;color:var(--uw-blue-700);margin:0;text-align:center;max-width:26ch;text-wrap:pretty">Your name belongs on that wall next.</p>
-        <a href="https://buy.stripe.com/9B65kEe5s8rbgRq4W0es03b" target="_blank" rel="noopener"><span class="btn btn--primary btn--lg">Reserve my spot</span></a>
+        <form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="display:inline-block"><input type="hidden" name="courseId" value="cmtb3d8b90n2oqyu2t9a69zlc"><button type="submit" class="cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--lg">Reserve my spot</span></button></form>
       </div>
     </div>
   </section>
@@ -674,7 +676,7 @@ foreach ($m2_wall_cols as $col):
       <p style="font-size:clamp(16.5px,1.7vw,19px);line-height:1.62;color:rgba(255,255,255,.82);margin:0 auto 18px;max-width:58ch">Every week on old material is a week training for an exam that doesn't exist anymore.</p>
       <p style="font-size:clamp(16.5px,1.7vw,19px);line-height:1.62;color:rgba(255,255,255,.82);margin:0 auto;max-width:58ch">7 days from now, you either walk in hoping you studied the right things, or you walk in knowing what's coming.</p>
       <div style="height:clamp(30px,3.8vw,44px)"></div>
-      <a href="https://buy.stripe.com/9B65kEe5s8rbgRq4W0es03b" target="_blank" rel="noopener"><span class="btn btn--primary btn--xl">Save my seat</span></a>
+      <form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="display:inline-block"><input type="hidden" name="courseId" value="cmtb3d8b90n2oqyu2t9a69zlc"><button type="submit" class="cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--xl">Save my seat</span></button></form>
     </div>
   </section>
 
