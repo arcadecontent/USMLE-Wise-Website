@@ -1,3 +1,5 @@
+/* Preview only: the real price and codes live in Mastery (src/lib/course-checkout.ts
+   COURSE_PROMOS + the course price in the database). Update both together. */
 (function () {
   'use strict';
   var form = document.getElementById('ai-checkout');
