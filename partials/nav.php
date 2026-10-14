@@ -141,6 +141,10 @@
             <span class="msp-nav__dd-name">Match Maker</span>
             <span class="msp-nav__dd-meta">Program list &amp; odds tool &middot; $100</span>
           </a>
+          <a href="/conference-finder" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Conference Finder</span>
+            <span class="msp-nav__dd-meta">Find a conference to submit to</span>
+          </a>
         </div>
       </div>
       <div class="msp-nav__item msp-nav__item--has-dd">
