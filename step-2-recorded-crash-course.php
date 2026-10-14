@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
-<script src="/js/mobile-nav.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/mobile-nav.js') ?: '1'; ?>" defer></script>
+<!-- mobile-nav.js is intentionally not loaded: this page has its own compact nav
+     (logo + WhatsApp CTA only on narrow screens), not the site-wide drawer. -->
 <script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
 <script src="/js/step2-checkout.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/step2-checkout.js') ?: '1'; ?>" defer></script>
 <style>
@@ -140,17 +141,32 @@ document.addEventListener('DOMContentLoaded', function () {
     .cc { padding-bottom: 78px; }
     .cc-mobilebar { display: flex !important; }
   }
-  /* Frosted-glass header (matches the home page's scrolled state) — this page has no scroll-based toggle, so it's always on */
-  .msp-nav { background: rgba(252,252,251,.9); -webkit-backdrop-filter: saturate(180%) blur(12px); backdrop-filter: saturate(180%) blur(12px); border-bottom-color: var(--uw-border); box-shadow: var(--shadow-sm); }
+  /* Standalone landing page: fewer footer nav columns than the site-wide footer
+     this was copied from, so space-between leaves a large gap. */
+  .msp-foot__top { justify-content: flex-start; gap: clamp(48px, 8vw, 120px); }
 </style>
 </head>
 <body>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/nav.php'; ?>
-
 <div class="cc">
 
-  <header style="position:relative;overflow:hidden;background:radial-gradient(1000px 520px at 88% -8%, var(--uw-blue-50), transparent), var(--uw-surface)">
+  <nav class="cc-nav" style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px clamp(20px,5vw,48px);border-bottom:1px solid var(--uw-border);position:sticky;top:0;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);z-index:40">
+    <a href="#top" style="display:flex;align-items:center"><img class="cc-nav-logo" src="/assets/usmle-design-system/assets/Logo-Horizontal.svg" alt="USMLE Wise" style="height:30px;display:block"></a>
+    <div class="cc-nav-links" style="display:flex;gap:2px;align-items:center;font-size:13.5px;color:var(--uw-ink-700)">
+      <a href="#why" style="padding:8px 12px;border-radius:6px">Why it works</a>
+      <a href="#curriculum" style="padding:8px 12px;border-radius:6px">Curriculum</a>
+      <a href="#offer" style="padding:8px 12px;border-radius:6px">What you get</a>
+      <a href="#faq" style="padding:8px 12px;border-radius:6px">FAQ</a>
+    </div>
+    <div class="cc-nav-right" style="display:flex;align-items:center;gap:10px">
+      <span class="cc-nav-ask" style="display:flex;flex-wrap:wrap;justify-content:flex-end;column-gap:4px;font-size:13.5px;line-height:1.3;color:var(--uw-ink-600);text-align:right"><span style="white-space:nowrap">Request a free</span><span style="white-space:nowrap">sample lesson</span></span>
+      <a class="cc-nav-wa" href="https://wa.me/19192015700?text=Send%20me%20a%20FREE%20sample%20lesson%20of%20Step%202%20crash%20course" target="_blank" rel="noopener" title="Request a free sample lesson" style="display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;font-weight:600;font-size:14px;padding:10px 18px;border-radius:var(--r-md);box-shadow:var(--shadow-xs);white-space:nowrap;transition:background var(--dur-fast)">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"></path></svg>
+        <span>WhatsApp us</span>
+      </a>
+    </div>
+  </nav>
+
+  <header id="top" style="position:relative;overflow:hidden;background:radial-gradient(1000px 520px at 88% -8%, var(--uw-blue-50), transparent), var(--uw-surface)">
     <section style="max-width:920px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(44px,6vw,84px) clamp(20px,5vw,48px)">
       <h1 class="cc-hero-h1" style="font-family:var(--font-display);font-weight:400;font-size:clamp(35px,4.7vw,60px);line-height:1.12;letter-spacing:-0.018em;margin:0 auto;color:var(--uw-ink-900);max-width:16em;text-wrap:balance">Crush Step&nbsp;2 with <em style="font-style:italic;font-weight:600;color:var(--uw-red-500);white-space:nowrap">70 hours</em> of recorded, ultra high&#8209;yield training, <em style="font-style:italic;font-weight:600;color:var(--uw-blue-500)">or your money back.</em></h1>
 
@@ -780,4 +796,68 @@ foreach ($m2_wall_cols as $col):
 
 </div>
 
-<?php $whatsappMessage = 'I have a question about the Step 2 Recorded Crash Course.'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>
+<!-- ============== STANDALONE FOOTER (in-page links + legal only) ============== -->
+<footer class="msp-foot">
+  <div class="msp-wrap">
+    <div class="msp-foot__top">
+      <div class="msp-foot__brand-col">
+        <span class="msp-brand" aria-label="USMLE Wise">
+          <img src="/assets/usmle-design-system/assets/Logo-Horizontal-Dark.svg" alt="USMLE Wise" height="36" />
+        </span>
+        <p>Guiding international medical graduates from USMLE to Match Day.</p>
+      </div>
+      <nav class="msp-foot__nav" aria-label="Footer navigation">
+        <div class="msp-foot__nav-group">
+          <span class="msp-foot__nav-label">This Page</span>
+          <a href="#why">Why It Works</a>
+          <a href="#curriculum">Curriculum</a>
+        </div>
+        <div class="msp-foot__nav-group">
+          <span class="msp-foot__nav-label">&nbsp;</span>
+          <a href="#offer">What You Get</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="msp-foot__nav-group">
+          <span class="msp-foot__nav-label">Legal</span>
+          <a href="/legal">Legal &amp; Policies</a>
+        </div>
+      </nav>
+    </div>
+    <div class="msp-foot__bottom">
+      <div class="msp-foot__social">
+        <a href="https://www.instagram.com/usmle_wise/" class="msp-foot__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="instagram" width="18" height="18"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61579260924818" class="msp-foot__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="facebook" width="18" height="18"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/usmle-wise/" class="msp-foot__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="linkedin" width="18" height="18"></i>
+        </a>
+        <!--email_off--><a href="mailto:support@usmlewise.com" class="msp-foot__social-link" aria-label="Email us">
+          <i data-lucide="mail" width="18" height="18"></i>
+        </a><!--/email_off-->
+        <a href="https://wa.me/19192015700" class="msp-foot__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@usmle_wise" class="msp-foot__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.79a4.85 4.85 0 01-1.02-.1z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@usmlewise" class="msp-foot__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="youtube" width="18" height="18"></i>
+        </a>
+      </div>
+      <small>&copy; 2026 USMLE Wise. Not endorsed by or affiliated with the NBME or the USMLE program.</small>
+    </div>
+  </div>
+</footer>
+
+<?php $whatsappMessage = 'I have a question about the Step 2 Recorded Crash Course.'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
+
+</body>
+</html>
