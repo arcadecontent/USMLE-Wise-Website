@@ -166,6 +166,7 @@
 .blog-cover--research  { background: linear-gradient(135deg, var(--uw-blue-400), var(--uw-blue-700)); }
 .blog-cover--rotations { background: linear-gradient(135deg, var(--uw-success-500), var(--uw-blue-700)); }
 .blog-cover--img-life  { background: linear-gradient(135deg, var(--uw-ink-700), var(--uw-blue-800)); }
+.blog-cover--awards    { background: linear-gradient(135deg, var(--uw-warning-500), var(--uw-warning-700)); }
 .blog-cover__tag {
   position: absolute;
   left: 14px;
@@ -217,6 +218,7 @@
 .blog-cover--research .blog-cover__tag  { background: #0d9488;               border-color: transparent; }
 .blog-cover--rotations .blog-cover__tag { background: #16a34a;               border-color: transparent; }
 .blog-cover--img-life .blog-cover__tag  { background: #d97706;               border-color: transparent; }
+.blog-cover--awards .blog-cover__tag    { background: var(--uw-warning-700); border-color: transparent; }
 .blog-featured__body {
   display: flex;
   flex-direction: column;

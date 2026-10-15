@@ -4,10 +4,13 @@ $pageDescription = "A dedicated 12-month research mentorship for IMG applicants.
 $canonical = "https://usmlewise.com/research-catalyst";
 $bodyClass = "msp";
 $stylesheets = [
-    "/styles/research-catalyst.css"
+    "/styles/research-catalyst.css",
+    "/styles/blog.css",
+    "/styles/awards-carousel.css"
 ];
 $scripts = [
-    "/js/research-catalyst.js"
+    "/js/research-catalyst.js",
+    "/js/awards-carousel.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -470,6 +473,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </section>
 
       <!-- ============== FAQ ============== -->
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
+
       <section class="msp-section rc-faq" id="faq" aria-labelledby="faqTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">

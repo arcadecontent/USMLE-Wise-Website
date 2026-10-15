@@ -5,10 +5,13 @@ $canonical = "https://usmlewise.com/research-networking";
 $bodyClass = "msp";
 $stylesheets = [
     "/styles/research-catalyst.css",
-    "/styles/research-networking.css"
+    "/styles/research-networking.css",
+    "/styles/blog.css",
+    "/styles/awards-carousel.css"
 ];
 $scripts = [
-    "/js/research-catalyst.js"
+    "/js/research-catalyst.js",
+    "/js/awards-carousel.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -245,6 +248,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </section>
 
       <!-- ============== FAQ ============== -->
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
+
       <section class="msp-section rc-faq" id="faq" aria-labelledby="faqTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">

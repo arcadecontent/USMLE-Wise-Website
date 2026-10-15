@@ -4,10 +4,13 @@ $pageDescription = "Build the academic profile your residency application needs.
 $canonical = "https://usmlewise.com/research-junior-scientist";
 $bodyClass = "msp";
 $stylesheets = [
-    "/styles/research.css"
+    "/styles/research.css",
+    "/styles/blog.css",
+    "/styles/awards-carousel.css"
 ];
 $scripts = [
-    "/js/research.js"
+    "/js/research.js",
+    "/js/awards-carousel.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -1080,6 +1083,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </section>
 
       <!-- ============== 6. FAQ ============== -->
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
+
       <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
         <div class="msp-wrap msp-faq__grid">
           <div class="reveal">
