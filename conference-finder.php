@@ -18,7 +18,81 @@ $conferencesList   = $conferencesData['conferences'];
 $conferencesSpecs  = $conferencesData['specialties'];
 $conferencesStatus = $conferencesData['statuses'];
 $conferencesUpdated = $conferencesData['last_updated'];
-$conferencesOpenCount = count(array_filter($conferencesList, function ($c) { return !empty($c['deadline_open']); }));
+$conferencesOpenCount = count(array_filter($conferencesList, 'usmlewise_conf_is_open'));
+
+/**
+ * Signed day count from today to an ISO (Y-m-d) date, or null if the date
+ * is missing/unparseable. Computed at render time (not baked into the data)
+ * so the counters on the page are never stale.
+ */
+function usmlewise_conf_days_until(?string $isoDate): ?int
+{
+    if (!$isoDate) {
+        return null;
+    }
+    $target = DateTime::createFromFormat('Y-m-d', $isoDate);
+    if (!$target) {
+        return null;
+    }
+    $target->setTime(0, 0, 0);
+    $today = new DateTime('today');
+    return (int) $today->diff($target)->format('%r%a');
+}
+
+function usmlewise_conf_timing_label(?string $startIso, ?string $endIso): string
+{
+    $startDays = usmlewise_conf_days_until($startIso);
+    if ($startDays === null) {
+        return '';
+    }
+    if ($startDays > 1) {
+        return "Starts in {$startDays} days";
+    }
+    if ($startDays === 1) {
+        return 'Starts tomorrow';
+    }
+    if ($startDays === 0) {
+        return 'Starts today';
+    }
+    $endDays = usmlewise_conf_days_until($endIso);
+    if ($endDays !== null && $endDays >= 0) {
+        return 'Happening now';
+    }
+    return 'Concluded';
+}
+
+function usmlewise_conf_deadline_timing(?string $deadlineIso): string
+{
+    $days = usmlewise_conf_days_until($deadlineIso);
+    if ($days === null) {
+        return '';
+    }
+    if ($days > 1) {
+        return "Closes in {$days} days";
+    }
+    if ($days === 1) {
+        return 'Closes tomorrow';
+    }
+    if ($days === 0) {
+        return 'Closes today';
+    }
+    return 'Deadline passed';
+}
+
+/**
+ * Whether a conference's abstract deadline is still open, checked live
+ * against today when a real deadline_date exists rather than trusted from
+ * the sheet's Oct-3 snapshot flag (so this self-corrects as deadlines pass).
+ */
+function usmlewise_conf_is_open(array $c): bool
+{
+    $deadlineDateIso = $c['deadline_date'] ?? null;
+    if ($deadlineDateIso) {
+        $days = usmlewise_conf_days_until($deadlineDateIso);
+        return $days !== null && $days >= 0;
+    }
+    return !empty($c['deadline_open']);
+}
 
 function usmlewise_render_conf_filter_options(string $filter, array $options): string
 {
@@ -38,7 +112,7 @@ function usmlewise_render_conf_card(array $c): string
     $esc  = static function ($v) { return htmlspecialchars((string) $v, ENT_NOQUOTES, 'UTF-8'); };
     $attr = static function ($v) { return htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); };
 
-    $deadlineOpen = !empty($c['deadline_open']);
+    $deadlineOpen = usmlewise_conf_is_open($c);
     $statusValue  = $attr($c['status_value'] ?? '');
 
     $searchText = strtolower(implode(' ', array_filter([
@@ -47,6 +121,57 @@ function usmlewise_render_conf_card(array $c): string
         $c['city'] ?? '',
         $c['state'] ?? '',
     ])));
+
+    // ---- Facts grid: timing, abstract deadline, registration, fee, publish status ----
+    $timingLabel = usmlewise_conf_timing_label($c['start_date'] ?? null, $c['end_date'] ?? null);
+
+    $deadlineDays = usmlewise_conf_deadline_timing($c['deadline_date'] ?? null);
+    if ($deadlineDays !== '') {
+        // We have a real date: lead with the day count, keep the sheet's
+        // original note (exact time, fee mentions, etc.) alongside it.
+        $deadlineValue = $deadlineDays . ' — ' . ($c['deadline_label'] ?? '');
+        $deadlineTbd = false;
+    } else {
+        // No parseable date yet -- fall back to the sheet's own free-text
+        // status (already reads like "Not yet published", "Not an abstract
+        // venue", etc.), which doubles as our TBD state for this field.
+        $deadlineValue = $c['deadline_label'] ?? 'Not yet published';
+        $deadlineTbd = true;
+    }
+
+    $fee = $c['submission_fee'] ?? null;
+    $feeValue = $fee !== null && $fee !== '' ? $fee : 'To be announced';
+    $feeTbd = ($fee === null || $fee === '');
+
+    $publishes = $c['publishes_abstract'] ?? null;
+    $publishesValue = $publishes !== null && $publishes !== '' ? $publishes : 'To be decided';
+    $publishesTbd = ($publishes === null || $publishes === '');
+
+    $regDeadline = $c['registration_deadline_date'] ?? null;
+    $regValue = 'Stay tuned';
+    $regTbd = true;
+    if ($regDeadline) {
+        $regDays = usmlewise_conf_days_until($regDeadline);
+        if ($regDays !== null) {
+            $regValue = ($regDays > 0 ? "Closes in {$regDays} days" : ($regDays === 0 ? 'Closes today' : 'Deadline passed'));
+            $regTbd = false;
+        }
+    }
+
+    $factRow = static function (string $label, string $value, bool $tbd) use ($esc) {
+        return '                <div class="conf-fact' . ($tbd ? ' conf-fact--tbd' : '') . '">' . "\n" .
+            '                  <span class="conf-fact__label">' . $esc($label) . '</span>' . "\n" .
+            '                  <span class="conf-fact__value">' . $esc($value) . '</span>' . "\n" .
+            '                </div>';
+    };
+
+    $factsHtml = implode("\n", [
+        $factRow('Conference', $timingLabel !== '' ? $timingLabel : 'Dates TBD', $timingLabel === ''),
+        $factRow('Abstract deadline', $deadlineValue, $deadlineTbd),
+        $factRow('Registration deadline', $regValue, $regTbd),
+        $factRow('Submission fee', $feeValue, $feeTbd),
+        $factRow('Publishes abstract', $publishesValue, $publishesTbd),
+    ]);
 
     return
         '            <article class="conf-card reveal' . ($deadlineOpen ? ' is-deadline-open' : '') . '"' . "\n" .
@@ -65,12 +190,12 @@ function usmlewise_render_conf_card(array $c): string
         '                <h3 class="conf-card__title">' . $esc($c['name'] ?? '') . '</h3>' . "\n" .
         '                <span class="conf-card__dates">' . $esc($c['date_range'] ?? '') . '</span>' . "\n" .
         '              </div>' . "\n" .
-        '              <div class="conf-card__deadline-row">' . "\n" .
-        '                <span class="conf-card__deadline"><span class="conf-card__deadline-dot" aria-hidden="true"></span>' . $esc($c['deadline_label'] ?? '') . '</span>' . "\n" .
-        '                <a href="' . $attr($c['link'] ?? '#') . '" class="btn btn--outline btn--sm conf-card__cta" target="_blank" rel="noopener noreferrer">' . "\n" .
-        '                  Visit site <i data-lucide="arrow-up-right" width="13" height="13"></i>' . "\n" .
-        '                </a>' . "\n" .
+        '              <div class="conf-card__facts">' . "\n" .
+        $factsHtml . "\n" .
         '              </div>' . "\n" .
+        '              <a href="' . $attr($c['link'] ?? '#') . '" class="btn btn--outline btn--sm conf-card__cta" target="_blank" rel="noopener noreferrer">' . "\n" .
+        '                Visit site <i data-lucide="arrow-up-right" width="13" height="13"></i>' . "\n" .
+        '              </a>' . "\n" .
         '            </article>';
 }
 
