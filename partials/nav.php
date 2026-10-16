@@ -162,6 +162,10 @@
             <span class="msp-nav__dd-name">FAQ</span>
             <span class="msp-nav__dd-meta">Answers to common questions</span>
           </a>
+          <a href="/team" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Our Team</span>
+            <span class="msp-nav__dd-meta">Meet the mentors &amp; founders</span>
+          </a>
         </div>
       </div>
     </nav>

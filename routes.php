@@ -36,7 +36,7 @@
     }
 
     $pageFile = function (string $s): ?string {
-        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail'], true)) {
+        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail', 'team-member'], true)) {
             return null;
         }
         if (is_file(__DIR__ . '/' . $s . '.php')) {
@@ -239,6 +239,23 @@
             exit;
         }
         $redirect('/blog');
+    }
+    // Team member detail pages render from data/team.php via team-member.php;
+    // adding a member there is all that is needed for /team/<slug> to resolve.
+    if (strpos($slug, 'team/') === 0) {
+        $rest = substr($slug, strlen('team/'));
+        if ($rest !== '' && preg_match('/\A[a-z0-9-]+\z/', $rest)) {
+            require_once __DIR__ . '/data/team.php';
+            $teamMember = usmlewise_find_team_member($rest);
+            if ($teamMember !== null) {
+                if ($hadExtension || $reqPath !== '/team/' . $rest) {
+                    $redirect('/team/' . $rest);
+                }
+                require __DIR__ . '/team-member.php';
+                exit;
+            }
+        }
+        $redirect('/team');
     }
     if (strpos($slug, 'rotations/') === 0) {
         $rest = substr($slug, strlen('rotations/'));

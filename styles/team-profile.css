@@ -1,0 +1,146 @@
+/* ============================================================
+   USMLE Wise — Individual team member profile page
+   ============================================================ */
+
+.msp {
+  background: var(--uw-bg);
+  color: var(--uw-ink-800);
+}
+
+/* ---- BACK LINK ---- */
+.tp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--uw-ink-500);
+  padding: 20px clamp(20px, 5vw, 48px) 0;
+}
+.tp-back:hover { color: var(--uw-blue-500); }
+
+/* ---- HERO ---- */
+.tp-hero {
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 5vw, 48px) clamp(36px, 4.5vw, 60px);
+}
+.tp-hero__grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: clamp(220px, 28vw, 340px) 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+.tp-hero__photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  background: var(--uw-ink-100);
+}
+.tp-hero__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.tp-hero__role {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--uw-blue-500);
+}
+.tp-hero__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 4.4vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--uw-ink-900);
+  margin: 10px 0 0;
+}
+.tp-hero__sub {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: var(--uw-ink-600);
+  margin: 10px 0 0;
+}
+.tp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(22px, 2.6vw, 30px);
+}
+
+/* ---- BIO + AFFILIATIONS ---- */
+/* Border replaces the separation the stat strip used to provide between the
+   hero and the bio. */
+.tp-body {
+  border-top: 1px solid var(--uw-border);
+  padding: clamp(44px, 5.5vw, 76px) clamp(20px, 5vw, 48px) clamp(56px, 7vw, 96px);
+}
+.tp-body__grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(40px, 5vw, 72px);
+}
+.tp-bio p {
+  font-size: clamp(16px, 1.3vw, 18px);
+  line-height: 1.7;
+  color: var(--uw-ink-700);
+  max-width: 62ch;
+  margin: 0 0 20px;
+}
+.tp-bio p:last-child { margin-bottom: 0; }
+
+.tp-affil {
+  border-left: 1px solid var(--uw-border);
+  padding-left: clamp(28px, 3.5vw, 40px);
+}
+.tp-affil__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+  margin-bottom: 18px;
+  display: block;
+}
+.tp-affil__list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.tp-affil__list li {
+  padding-top: 16px;
+  border-top: 1px solid var(--uw-border);
+}
+.tp-affil__list li:first-child { padding-top: 0; border-top: none; }
+.tp-affil__role {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  line-height: 1.35;
+}
+.tp-affil__org {
+  font-size: 13px;
+  color: var(--uw-ink-500);
+  margin-top: 2px;
+}
+
+@media (max-width: 820px) {
+  .tp-hero__grid { grid-template-columns: 1fr; }
+  .tp-hero__photo { max-width: 280px; margin: 0 auto; }
+  .tp-hero__role, .tp-hero__name, .tp-hero__sub, .tp-hero__actions { text-align: center; }
+  .tp-hero__actions { justify-content: center; }
+  .tp-body__grid { grid-template-columns: 1fr; }
+  .tp-affil { border-left: none; padding-left: 0; border-top: 1px solid var(--uw-border); padding-top: 32px; }
+}

@@ -1,0 +1,237 @@
+/* ============================================================
+   USMLE Wise — Team page
+   ============================================================ */
+
+/* ---- BASE ---- */
+.msp {
+  background: var(--uw-bg);
+  color: var(--uw-ink-800);
+}
+
+/* ============================================================
+   OPTION A — Spotlight rows (editorial, same shape as the
+   mentor-entry cards already shipping on /research)
+   ============================================================ */
+.team-spot-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 28px);
+}
+.team-spot {
+  display: grid;
+  grid-template-columns: clamp(180px, 20vw, 240px) 1fr;
+  background: var(--uw-ink-75);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  min-height: 220px;
+}
+.team-spot--flip { grid-template-columns: 1fr clamp(180px, 20vw, 240px); }
+.team-spot--flip .team-spot__photo { order: 2; }
+.team-spot--flip .team-spot__body { order: 1; }
+
+.team-spot__photo {
+  background: var(--uw-ink-100);
+  border-right: 1px solid var(--uw-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.team-spot--flip .team-spot__photo { border-right: none; border-left: 1px solid var(--uw-border); }
+.team-spot__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.team-spot__ava {
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.team-spot__body {
+  padding: clamp(26px, 3.2vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-content: center;
+}
+.team-spot__role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--uw-blue-500);
+}
+.team-spot__name {
+  font-size: clamp(19px, 2.1vw, 26px);
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  letter-spacing: -0.02em;
+  margin: 4px 0 0;
+  line-height: 1.1;
+}
+.team-spot__sub {
+  font-size: var(--fs-14);
+  color: var(--uw-ink-500);
+  margin-top: 2px;
+}
+.team-spot__bio {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--uw-ink-600);
+  margin: 4px 0 0;
+  max-width: 56ch;
+}
+
+@media (max-width: 820px) {
+  .team-spot,
+  .team-spot--flip { grid-template-columns: 1fr; }
+  .team-spot__photo,
+  .team-spot--flip .team-spot__photo {
+    order: 0;
+    min-height: 220px;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid var(--uw-border);
+  }
+  .team-spot--flip .team-spot__body { order: 0; }
+}
+
+/* ============================================================
+   OPTION B — Roster grid (compact, for the wider team list)
+   ============================================================ */
+.team-roster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(18px, 2vw, 24px);
+}
+.team-card {
+  background: var(--uw-surface);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med) var(--ease-out);
+}
+.team-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.team-card__photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  position: relative;
+  background: var(--uw-ink-100);
+  flex: none;
+}
+.team-card__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.team-card__body {
+  padding: 18px clamp(18px, 2.2vw, 22px) clamp(20px, 2.4vw, 24px);
+  display: flex;
+  flex-direction: column;
+}
+.team-card__name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.team-card__role {
+  font-size: 12.5px;
+  color: var(--uw-blue-500);
+  margin-top: 3px;
+}
+.team-card__line {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--uw-ink-600);
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--uw-border);
+}
+
+/* ============================================================
+   FINAL CTA — same dark band + rc-cta shape used on the other
+   msp- service pages (research-catalyst.css, not loaded here)
+   ============================================================ */
+.team-cta-wrap {
+  padding-block: clamp(56px, 7vw, 96px);
+}
+.rc-cta {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.rc-cta__head {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0;
+}
+.rc-cta__sub {
+  font-size: clamp(15px, 1.3vw, 17px);
+  color: rgba(255,255,255,.6);
+  line-height: 1.65;
+  max-width: 52ch;
+  margin: 0;
+}
+.rc-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: var(--space-2);
+}
+.btn--outline-light {
+  border: 1px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.75);
+  background: transparent;
+  border-radius: var(--r-md);
+  padding: 10px 20px;
+  font-size: var(--fs-14);
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+  display: inline-flex;
+  align-items: center;
+}
+.btn--outline-light:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+
+/* Contained card rather than a full-bleed band: the gradient lives on the card
+   itself, inset within .msp-wrap. Overrides .rc-cta's 600px text-column width,
+   so it must stay after the .rc-cta rules above. */
+.team-cta-card {
+  max-width: none;
+  background: linear-gradient(145deg, oklch(14% 0.08 255) 0%, oklch(10% 0.04 270) 50%, oklch(15% 0.09 240) 100%);
+  border-radius: var(--r-2xl);
+  padding: clamp(40px, 5.5vw, 72px) clamp(26px, 4.5vw, 64px);
+  align-items: center;
+  text-align: center;
+}
+/* .rc-cta__sub is capped at 52ch and left-aligned by default; centering the
+   flex column alone would leave it off-centre. */
+.team-cta-card .rc-cta__sub { margin-inline: auto; }
+.team-cta-card .rc-cta__actions { justify-content: center; }

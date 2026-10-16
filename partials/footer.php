@@ -50,6 +50,7 @@
           <a href="/testimonials">Stories</a>
           <a href="/blog">Blog</a>
           <a href="/qa">FAQ</a>
+          <a href="/team">Our Team</a>
           <a href="/legal">Legal &amp; Policies</a>
         </div>
       </nav>
