@@ -16,6 +16,25 @@ $rotationsData    = usmlewise_rotations_payload();
 $rotationsList    = $rotationsData['rotations'];
 $rotationsFilters = $rotationsData['filters'];
 
+// Price slider range follows the rotations actually shown (rounded outward to
+// the nearest $100); falls back to $1,000-$5,000 when there are no prices.
+$rotPrices = [];
+foreach ($rotationsList as $rotRow) {
+    if (is_array($rotRow) && isset($rotRow['price']) && is_numeric($rotRow['price']) && (float) $rotRow['price'] > 0) {
+        $rotPrices[] = (float) $rotRow['price'];
+    }
+}
+if ($rotPrices) {
+    $priceSliderMin = (int) (floor(min($rotPrices) / 100) * 100);
+    $priceSliderMax = (int) (ceil(max($rotPrices) / 100) * 100);
+    if ($priceSliderMax <= $priceSliderMin) {
+        $priceSliderMax = $priceSliderMin + 100;
+    }
+} else {
+    $priceSliderMin = 1000;
+    $priceSliderMax = 5000;
+}
+
 function usmlewise_render_filter_options(string $filter, array $options): string
 {
     $attr = static function ($v) { return htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); };
@@ -237,16 +256,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 </button>
                 <div class="rot-price-slider">
                   <div class="rot-price-slider__labels">
-                    <span id="priceMinLabel">$1,000</span>
-                    <span id="priceMaxLabel">$5,000+</span>
+                    <span id="priceMinLabel">$<?php echo number_format($priceSliderMin); ?></span>
+                    <span id="priceMaxLabel">$<?php echo number_format($priceSliderMax); ?>+</span>
                   </div>
                   <div class="rot-price-slider__track-wrap">
                     <div class="rot-price-slider__track"></div>
                     <div class="rot-price-slider__fill" id="priceFill"></div>
                     <input type="range" id="priceSliderMin" class="rot-price-slider__thumb"
-                           min="1000" max="5000" step="50" value="1000" aria-label="Minimum price">
+                           min="<?php echo $priceSliderMin; ?>" max="<?php echo $priceSliderMax; ?>" step="50" value="<?php echo $priceSliderMin; ?>" aria-label="Minimum price">
                     <input type="range" id="priceSliderMax" class="rot-price-slider__thumb"
-                           min="1000" max="5000" step="50" value="5000" aria-label="Maximum price">
+                           min="<?php echo $priceSliderMin; ?>" max="<?php echo $priceSliderMax; ?>" step="50" value="<?php echo $priceSliderMax; ?>" aria-label="Maximum price">
                   </div>
                 </div>
               </div>
