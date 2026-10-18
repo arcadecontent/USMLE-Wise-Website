@@ -126,9 +126,7 @@
 
     /* ---- 7. Sidebar filters ---- */
     (function () {
-      var PRICE_MIN = 1000, PRICE_MAX = 5000;
       var activeFilters = { specialty: [], state: [], setting: [] };
-      var priceMin = PRICE_MIN, priceMax = PRICE_MAX;
       var searchQuery = '';
 
       var cards = Array.prototype.slice.call(document.querySelectorAll('.rot-pg-card'));
@@ -147,6 +145,11 @@
       var searchClear = document.getElementById('rotSearchClear');
       if (!cards.length) return;
 
+      /* Slider range is set by the server from the rotations on the page. */
+      var PRICE_MIN = sliderMin ? parseInt(sliderMin.min, 10) : 1000;
+      var PRICE_MAX = sliderMax ? parseInt(sliderMax.max, 10) : 5000;
+      var priceMin = PRICE_MIN, priceMax = PRICE_MAX;
+
       var scrim = document.createElement('div');
       scrim.className = 'rot-sidebar-scrim';
       document.body.appendChild(scrim);
@@ -164,7 +167,7 @@
         fillEl.style.left  = leftPct + '%';
         fillEl.style.right = (100 - rightPct) + '%';
         if (labelMin) labelMin.textContent = '$' + priceMin.toLocaleString();
-        if (labelMax) labelMax.textContent = priceMax >= PRICE_MAX ? '$5,000+' : '$' + priceMax.toLocaleString();
+        if (labelMax) labelMax.textContent = priceMax >= PRICE_MAX ? '$' + PRICE_MAX.toLocaleString() + '+' : '$' + priceMax.toLocaleString();
       }
 
       function getTotalActive() {
