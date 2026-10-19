@@ -243,15 +243,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="msp-sva-list">
 
             <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">01 &middot; Live &middot; 12-month program</span>
-                <h3 class="msp-sva-title">Research Catalyst</h3>
-                <div class="msp-sva-price">$4,500</div>
-                <p class="msp-sva-desc">A fully guided 12-month pathway from zero to publication. Topic selection, study design, writing, and journal submission, all with your mentor.</p>
+                <span class="msp-sva-eyebrow">01 &middot; Live &middot; Mentored</span>
+                <h3 class="msp-sva-title">Get Published</h3>
+                <div class="msp-sva-price">$300&ndash;$1,000</div>
+                <p class="msp-sva-desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation. Listed on a paper submitted to a PubMed-indexed journal.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-catalyst" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                  <a href="/research-coauthor" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
                 </div>
               </div>
             </article>
@@ -271,15 +271,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp');"></div>
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">03 &middot; Live &middot; Mentored</span>
-                <h3 class="msp-sva-title">Get Published</h3>
-                <div class="msp-sva-price">$300&ndash;$1,000</div>
-                <p class="msp-sva-desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation. Listed on a paper submitted to a PubMed-indexed journal.</p>
+                <span class="msp-sva-eyebrow">03 &middot; Live &middot; 12-month program</span>
+                <h3 class="msp-sva-title">Research Catalyst</h3>
+                <div class="msp-sva-price">$4,500</div>
+                <p class="msp-sva-desc">A fully guided 12-month pathway from zero to publication. Topic selection, study design, writing, and journal submission, all with your mentor.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-coauthor" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                  <a href="/research-catalyst" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
                 </div>
               </div>
             </article>

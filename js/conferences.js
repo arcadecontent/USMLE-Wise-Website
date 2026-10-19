@@ -53,7 +53,7 @@
 
     /* ---- Sidebar filters ---- */
     (function () {
-      var activeFilters = { specialty: [], status: [], deadline: [] };
+      var activeFilters = { specialty: [], status: [], deadline: [], participating: [] };
       var searchQuery = '';
 
       var cards       = Array.prototype.slice.call(document.querySelectorAll('.conf-card'));
@@ -111,7 +111,7 @@
         if (toggleBtn) { toggleBtn.setAttribute('aria-expanded', 'false'); toggleBtn.classList.remove('is-active'); }
       }
 
-      /* Option buttons (specialty, status, deadline) */
+      /* Option buttons (specialty, status, deadline, participating) */
       document.querySelectorAll('.conf-sidebar__opt').forEach(function (opt) {
         opt.addEventListener('click', function () {
           var group = opt.getAttribute('data-filter');

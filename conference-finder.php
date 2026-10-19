@@ -19,6 +19,7 @@ $conferencesSpecs  = $conferencesData['specialties'];
 $conferencesStatus = $conferencesData['statuses'];
 $conferencesUpdated = $conferencesData['last_updated'];
 $conferencesOpenCount = count(array_filter($conferencesList, 'usmlewise_conf_is_open'));
+$conferencesUwCount = count(array_filter($conferencesList, 'usmlewise_conf_is_participating'));
 
 /**
  * Signed day count from today to an ISO (Y-m-d) date, or null if the date
@@ -94,6 +95,16 @@ function usmlewise_conf_is_open(array $c): bool
     return !empty($c['deadline_open']);
 }
 
+/**
+ * Whether USMLE Wise is attending the conference. Tri-state in the data:
+ * true (confirmed), false (not attending) and null (under consideration,
+ * renders as "To be confirmed"); only true drives the badge and the filter.
+ */
+function usmlewise_conf_is_participating(array $c): bool
+{
+    return ($c['usmlewise_participating'] ?? null) === true;
+}
+
 function usmlewise_render_conf_filter_options(string $filter, array $options): string
 {
     $attr = static function ($v) { return htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); };
@@ -112,14 +123,17 @@ function usmlewise_render_conf_card(array $c): string
     $esc  = static function ($v) { return htmlspecialchars((string) $v, ENT_NOQUOTES, 'UTF-8'); };
     $attr = static function ($v) { return htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); };
 
-    $deadlineOpen = usmlewise_conf_is_open($c);
-    $statusValue  = $attr($c['status_value'] ?? '');
+    $deadlineOpen  = usmlewise_conf_is_open($c);
+    $participating = usmlewise_conf_is_participating($c);
+    $statusValue   = $attr($c['status_value'] ?? '');
 
     $searchText = strtolower(implode(' ', array_filter([
         $c['name'] ?? '',
         $c['specialty'] ?? '',
         $c['city'] ?? '',
         $c['state'] ?? '',
+        // so typing "usmle wise" surfaces the conferences we're at
+        $participating ? 'USMLE Wise attending' : '',
     ])));
 
     // ---- Facts grid: timing, abstract deadline, registration, fee, publish status ----
@@ -158,31 +172,42 @@ function usmlewise_render_conf_card(array $c): string
         }
     }
 
-    $factRow = static function (string $label, string $value, bool $tbd) use ($esc) {
-        return '                <div class="conf-fact' . ($tbd ? ' conf-fact--tbd' : '') . '">' . "\n" .
+    // Tri-state: true = confirmed, false = not attending, null = undecided.
+    $uwRaw = $c['usmlewise_participating'] ?? null;
+    $uwValue = $participating ? 'Attending' : ($uwRaw === null ? 'To be confirmed' : 'Not attending');
+    $uwTbd = ($uwRaw === null);
+
+    $factRow = static function (string $label, string $value, bool $tbd, string $mod = '') use ($esc) {
+        return '                <div class="conf-fact' . ($tbd ? ' conf-fact--tbd' : '') . ($mod !== '' ? ' ' . $mod : '') . '">' . "\n" .
             '                  <span class="conf-fact__label">' . $esc($label) . '</span>' . "\n" .
             '                  <span class="conf-fact__value">' . $esc($value) . '</span>' . "\n" .
             '                </div>';
     };
 
+    // Keep the new row last: .is-deadline-open styling targets :nth-child(2).
     $factsHtml = implode("\n", [
         $factRow('Conference', $timingLabel !== '' ? $timingLabel : 'Dates TBD', $timingLabel === ''),
         $factRow('Abstract deadline', $deadlineValue, $deadlineTbd),
         $factRow('Registration deadline', $regValue, $regTbd),
         $factRow('Submission fee', $feeValue, $feeTbd),
         $factRow('Publishes abstract', $publishesValue, $publishesTbd),
+        $factRow('USMLE Wise', $uwValue, $uwTbd, $participating ? 'conf-fact--uw-yes' : ''),
     ]);
 
     return
-        '            <article class="conf-card reveal' . ($deadlineOpen ? ' is-deadline-open' : '') . '"' . "\n" .
+        '            <article class="conf-card reveal' . ($deadlineOpen ? ' is-deadline-open' : '') . ($participating ? ' is-uw-attending' : '') . '"' . "\n" .
         '                     data-specialty="' . $attr($c['specialty_value'] ?? '') . '"' . "\n" .
         '                     data-status="' . $statusValue . '"' . "\n" .
         '                     data-deadline="' . ($deadlineOpen ? 'open' : '') . '"' . "\n" .
+        '                     data-participating="' . ($participating ? 'yes' : '') . '"' . "\n" .
         '                     data-search="' . $attr($searchText) . '">' . "\n" .
         '              <div class="conf-card__top">' . "\n" .
         '                <div class="conf-card__badges">' . "\n" .
         '                  <span class="conf-badge conf-badge--specialty">' . $esc($c['specialty'] ?? '') . '</span>' . "\n" .
         '                  <span class="conf-badge conf-badge--' . $statusValue . '">' . $esc($c['status'] ?? '') . '</span>' . "\n" .
+        ($participating
+            ? '                  <span class="conf-badge conf-badge--uw"><i data-lucide="badge-check" width="10" height="10"></i>USMLE Wise attending</span>' . "\n"
+            : '') .
         '                </div>' . "\n" .
         '                <span class="conf-card__loc"><i data-lucide="map-pin" width="11" height="11"></i>' . $esc(($c['city'] ?? '') . ', ' . ($c['state'] ?? '')) . '</span>' . "\n" .
         '              </div>' . "\n" .
@@ -215,6 +240,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="conf-summary reveal">
             <span><strong><?php echo count($conferencesList); ?></strong> conferences</span>
             <span><strong><?php echo $conferencesOpenCount; ?></strong> open deadlines</span>
+<?php if ($conferencesUwCount > 0): ?>
+            <span><strong><?php echo $conferencesUwCount; ?></strong> we're attending</span>
+<?php endif; ?>
             <span><strong><?php echo count($conferencesSpecs); ?></strong> specialties</span>
             <span>Last updated <?php echo htmlspecialchars($conferencesUpdated, ENT_QUOTES, 'UTF-8'); ?></span>
           </div>
@@ -250,6 +278,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="conf-sidebar__hd">
                 <span class="conf-sidebar__title">Filter</span>
                 <button class="conf-sidebar__reset" id="confReset" type="button">Clear all</button>
+              </div>
+
+              <div class="conf-sidebar__group is-open">
+                <button class="conf-sidebar__gh" type="button" aria-expanded="true">
+                  <span>USMLE Wise</span>
+                  <i data-lucide="chevron-down" width="14" height="14"></i>
+                </button>
+                <ul class="conf-sidebar__opts">
+                  <li><button class="conf-sidebar__opt" type="button" data-filter="participating" data-value="yes">We're attending</button></li>
+                </ul>
               </div>
 
               <div class="conf-sidebar__group is-open">

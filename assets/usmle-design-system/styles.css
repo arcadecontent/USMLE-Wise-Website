@@ -1871,6 +1871,51 @@ svg.lucide {
   color: var(--uw-ink-500);
 }
 
+/* ---- Nested submenu (e.g. Research > Research Courses) ----
+   Expands inline/downward rather than flying out sideways: the parent
+   .msp-nav__dropdown scrolls (overflow-y: auto) on short viewports, and an
+   absolutely-positioned side-flyout would get clipped by that scroll box.
+   An inline expand has no such escaping-container problem. */
+.msp-nav__dd-sub-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  border-radius: var(--r-sm);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+.msp-nav__dd-sub-trigger:hover,
+.msp-nav__dd-sub-trigger:focus-visible { background: var(--uw-ink-75); }
+.msp-nav__dd-sub-caret {
+  color: var(--uw-ink-400);
+  flex-shrink: 0;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+.msp-nav__dd-item--has-sub:hover .msp-nav__dd-sub-caret,
+.msp-nav__dd-item--has-sub:focus-within .msp-nav__dd-sub-caret {
+  transform: rotate(90deg);
+  color: var(--uw-ink-700);
+}
+.msp-nav__dd-sub {
+  max-height: 0;
+  overflow: hidden;
+  margin-left: 10px;
+  padding-left: 8px;
+  border-left: 1px solid var(--uw-border);
+  transition: max-height 0.2s ease;
+}
+.msp-nav__dd-item--has-sub:hover .msp-nav__dd-sub,
+.msp-nav__dd-item--has-sub:focus-within .msp-nav__dd-sub {
+  max-height: 240px;
+}
+
 /* ============================================================
    MOBILE NAV — hamburger button + off-canvas drawer
    Shown at ≤940px. Injected into DOM via mobile-nav.js.

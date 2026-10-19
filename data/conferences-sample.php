@@ -28,6 +28,13 @@
  * - publishes_abstract: not tracked as a structured field anywhere in the
  *   sheet. Always null for now -- renders as "TBD". Needs the research
  *   manager to classify this per conference (e.g. Yes / No / Not stated).
+ * - usmlewise_participating: true when USMLE Wise is attending/exhibiting at
+ *   the conference. Not in the source sheet either, so every row ships false
+ *   until the team confirms which ones we are at; flip the ones we attend to
+ *   true and the card picks up the "USMLE Wise attending" badge and matches
+ *   the sidebar's "USMLE Wise attending" filter. Use null (not false) if a
+ *   conference is under consideration but unconfirmed -- that renders as
+ *   "To be confirmed" instead of "Not attending".
  * - There is no poster/oral/both field in the source sheet yet, so it is not
  *   rendered here.
  */
@@ -91,6 +98,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://aapexperience.org/',
             ],
             [
@@ -111,6 +119,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.heart.org/en/meetings/hypertension',
             ],
             [
@@ -131,6 +140,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aan.com/events/upcoming-events',
             ],
             [
@@ -151,6 +161,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.healio.com/news/ophthalmology/meeting-news/meeting-calendar',
             ],
             [
@@ -171,6 +182,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.orthoptics.org/',
             ],
             [
@@ -191,6 +203,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aan.com/events/upcoming-events',
             ],
             [
@@ -211,6 +224,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aao.org/annual-meeting',
             ],
             [
@@ -231,6 +245,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://acgmeetings.gi.org/',
             ],
             [
@@ -251,6 +266,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.asdp.org/ASDP/ASDPWeb/Meetings---Events/Events_Calendar.aspx',
             ],
             [
@@ -271,6 +287,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://pedsanesthesia.org/',
             ],
             [
@@ -291,6 +308,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.hospitalmedicine.org/event/conferences/',
             ],
             [
@@ -311,6 +329,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.asn-online.org/education/kidneyweek/',
             ],
             [
@@ -331,6 +350,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.idweek.org/',
             ],
             [
@@ -351,6 +371,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aacap.org/AACAP/CME_and_Meetings/Future_Annual_Meetings.aspx',
             ],
             [
@@ -371,6 +392,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.diabetes.org/',
             ],
             [
@@ -391,6 +413,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://meeting.aahks.org/',
             ],
             [
@@ -411,6 +434,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aasld.org/the-liver-meeting',
             ],
             [
@@ -431,6 +455,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.asds.net/AnnualMeeting',
             ],
             [
@@ -451,6 +476,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://rheumatology.org/annual-meeting-attendees/',
             ],
             [
@@ -471,6 +497,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://rheumatology.org/meetings/',
             ],
             [
@@ -491,6 +518,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.heart.org/en/meetings/scientific-sessions',
             ],
             [
@@ -511,6 +539,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.heart.org/en/meetings/resuscitation-science-symposium',
             ],
             [
@@ -531,6 +560,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aapmr.org/education/annual-assembly',
             ],
             [
@@ -551,6 +581,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aaap.org/annual-meeting/',
             ],
             [
@@ -571,6 +602,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.asdp.org/ASDP/ASDPWeb/Meetings---Events/Events_Calendar.aspx',
             ],
             [
@@ -591,6 +623,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.rsna.org/annual-meeting',
             ],
             [
@@ -611,6 +644,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://aesnet.org/',
             ],
             [
@@ -631,6 +665,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.hematology.org/meetings/annual-meeting',
             ],
             [
@@ -651,6 +686,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://retinatoday.com/calendar/2027',
             ],
             [
@@ -671,6 +707,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.pas-meeting.org/pediatric-meetings/',
             ],
             [
@@ -691,6 +728,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.acep.org/',
             ],
             [
@@ -711,6 +749,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://rheumatology.org/meetings/',
             ],
             [
@@ -731,6 +770,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://retinatoday.com/calendar/2027',
             ],
             [
@@ -751,6 +791,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.acep.org/',
             ],
             [
@@ -771,6 +812,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.academicsurgicalcongress.org/',
             ],
             [
@@ -791,6 +833,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.heart.org/en/meetings/international-stroke-conference',
             ],
             [
@@ -811,6 +854,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://ncchapter.acponline.org/',
             ],
             [
@@ -831,6 +875,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.astct.org/',
             ],
             [
@@ -851,6 +896,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.pas-meeting.org/pediatric-meetings/',
             ],
             [
@@ -871,6 +917,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.ors.org/',
             ],
             [
@@ -891,6 +938,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.nasbs.org/',
             ],
             [
@@ -911,6 +959,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.pas-meeting.org/pediatric-meetings/',
             ],
             [
@@ -931,6 +980,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://retinatoday.com/calendar/2027',
             ],
             [
@@ -951,6 +1001,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.heart.org/en/meetings/epi-lifestyle',
             ],
             [
@@ -971,6 +1022,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aaos.org/annual',
             ],
             [
@@ -991,6 +1043,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.americanglaucomasociety.net/',
             ],
             [
@@ -1011,6 +1064,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.sccm.org/',
             ],
             [
@@ -1031,6 +1085,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aapos.org/',
             ],
             [
@@ -1051,6 +1106,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.auanet.org/',
             ],
             [
@@ -1071,6 +1127,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://retinatoday.com/calendar/2027',
             ],
             [
@@ -1091,6 +1148,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aad.org/member/meetings-education/am27',
             ],
             [
@@ -1111,6 +1169,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.nanosweb.org/',
             ],
             [
@@ -1131,6 +1190,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.sgo.org/annual-meeting/',
             ],
             [
@@ -1151,6 +1211,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://shmconverge.hospitalmedicine.org/',
             ],
             [
@@ -1171,6 +1232,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://retinatoday.com/calendar/2027',
             ],
             [
@@ -1191,6 +1253,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aacr.org/',
             ],
             [
@@ -1211,6 +1274,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://ascrs.org/',
             ],
             [
@@ -1231,6 +1295,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aans.org/annual-scientific-meeting/',
             ],
             [
@@ -1251,6 +1316,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://americanotologicalsociety.org/',
             ],
             [
@@ -1271,6 +1337,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://accscientificsession.acc.org/Submit-Your-Science',
             ],
             [
@@ -1291,6 +1358,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => '$45 per abstract',
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://annualmeeting.acponline.org/',
             ],
             [
@@ -1311,6 +1379,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://americansurgical.org/',
             ],
             [
@@ -1331,6 +1400,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aaem.org/aaem27/',
             ],
             [
@@ -1351,6 +1421,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.pas-meeting.org/',
             ],
             [
@@ -1371,6 +1442,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aan.com/events/2027-annual-meeting',
             ],
             [
@@ -1391,6 +1463,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.psychiatry.org/psychiatrists/meetings/annual-meeting',
             ],
             [
@@ -1411,6 +1484,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.arvo.org/annual-meeting/',
             ],
             [
@@ -1431,6 +1505,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.islh.org/',
             ],
             [
@@ -1451,6 +1526,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://annualmeeting.sgim.org/',
             ],
             [
@@ -1471,6 +1547,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.acep.org/',
             ],
             [
@@ -1491,6 +1568,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aana.org/',
             ],
             [
@@ -1511,6 +1589,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://retinatoday.com/calendar/2027',
             ],
             [
@@ -1531,6 +1610,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://conference.thoracic.org/',
             ],
             [
@@ -1551,6 +1631,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://ddw.org/',
             ],
             [
@@ -1571,6 +1652,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.saem.org/meetings-and-events/annual-meeting',
             ],
             [
@@ -1591,6 +1673,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://meeting.americangeriatrics.org/',
             ],
             [
@@ -1611,6 +1694,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.asoprs.org/',
             ],
             [
@@ -1631,6 +1715,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.acog.org/',
             ],
             [
@@ -1651,6 +1736,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.auanet.org/AUA2027',
             ],
             [
@@ -1671,6 +1757,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://conferences.asco.org/am/attend',
             ],
             [
@@ -1691,6 +1778,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.snmmi.org/',
             ],
             [
@@ -1711,6 +1799,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.ama-assn.org/house-delegates',
             ],
             [
@@ -1731,6 +1820,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.diabetes.org/scientific-sessions',
             ],
             [
@@ -1751,6 +1841,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.sportsmed.org/',
             ],
             [
@@ -1771,6 +1862,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.heart.org/en/meetings/basic-cardiovascular-sciences',
             ],
             [
@@ -1791,6 +1883,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://professional.heart.org/en/meetings/vascular-discovery',
             ],
             [
@@ -1811,6 +1904,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.asrs.org/',
             ],
             [
@@ -1831,6 +1925,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.cap.org/member-resources/cap-annual-meeting',
             ],
             [
@@ -1851,6 +1946,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.srs.org/',
             ],
             [
@@ -1871,6 +1967,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://myana.org/meetings/future-annual-meeting-dates/',
             ],
             [
@@ -1891,6 +1988,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.astro.org/',
             ],
             [
@@ -1911,6 +2009,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aofas.org/annual-meeting',
             ],
             [
@@ -1931,6 +2030,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://aapexperience.org/future-dates/',
             ],
             [
@@ -1951,6 +2051,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://pedsanesthesia.org/',
             ],
             [
@@ -1971,6 +2072,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.facs.org/for-medical-professionals/conferences-and-meetings/clinical-congress-2027/',
             ],
             [
@@ -1991,6 +2093,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://retinatoday.com/calendar/2027',
             ],
             [
@@ -2011,6 +2114,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.auanet.org/',
             ],
             [
@@ -2031,6 +2135,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aacap.org/AACAP/CME_and_Meetings/Future_Annual_Meetings.aspx',
             ],
             [
@@ -2051,6 +2156,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.acep.org/sa',
             ],
             [
@@ -2071,6 +2177,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.asn-online.org/education/kidneyweek/',
             ],
             [
@@ -2091,6 +2198,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://ota.org/annual-meeting',
             ],
             [
@@ -2111,6 +2219,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://meeting.aahks.org/',
             ],
             [
@@ -2131,6 +2240,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.asdp.org/ASDP/ASDPWeb/Meetings---Events/Events_Calendar.aspx',
             ],
             [
@@ -2151,6 +2261,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.orthoptics.org/',
             ],
             [
@@ -2171,6 +2282,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
+                'usmlewise_participating' => false,
                 'link' => 'https://www.aao.org/annual-meeting',
             ],
         ],

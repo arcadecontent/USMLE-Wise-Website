@@ -483,6 +483,8 @@
   border-color: var(--uw-blue-200);
 }
 
+.conf-card.is-uw-attending { border-color: var(--uw-blue-200); }
+
 .conf-card.is-hidden { display: none; }
 
 .conf-card__top {
@@ -531,6 +533,21 @@
   color: oklch(42% 0.1 230);
   border: 1px solid oklch(88% 0.05 230);
 }
+
+/* "We're attending" — the only filled pill, so it reads as ours at a glance
+   instead of blending into the pastel specialty/timing badges next to it. */
+.conf-badge--uw {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--uw-blue-600);
+  color: #fff;
+  border: 1px solid var(--uw-blue-600);
+  font-weight: 500;
+}
+
+.conf-badge--uw i,
+.conf-badge--uw svg { flex-shrink: 0; }
 
 .conf-card__loc {
   display: flex;
@@ -611,6 +628,11 @@
 
 .conf-card.is-deadline-open .conf-fact:nth-child(2) .conf-fact__value {
   color: oklch(40% 0.14 150);
+  font-weight: 600;
+}
+
+.conf-fact--uw-yes .conf-fact__value {
+  color: var(--uw-blue-600);
   font-weight: 600;
 }
 

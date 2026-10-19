@@ -60,7 +60,7 @@
         <a href="/research">Research <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
         <div class="msp-nav__dropdown">
           <a href="/research" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Research Overview</span>
+            <span class="msp-nav__dd-name">Research Packages</span>
             <span class="msp-nav__dd-meta">All programs &amp; services</span>
           </a>
           <a href="/research-catalyst" class="msp-nav__dd-link">
@@ -87,10 +87,18 @@
             <span class="msp-nav__dd-name">Strategic Networking Program</span>
             <span class="msp-nav__dd-meta">Live &middot; Per outreach cycle</span>
           </a>
-          <a href="/research-cohort" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Research Cohort Access</span>
-            <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
-          </a>
+          <div class="msp-nav__dd-item msp-nav__dd-item--has-sub">
+            <button type="button" class="msp-nav__dd-sub-trigger" aria-haspopup="true">
+              <span class="msp-nav__dd-name">Research Courses</span>
+              <i data-lucide="chevron-right" width="12" height="12" class="msp-nav__dd-sub-caret"></i>
+            </button>
+            <div class="msp-nav__dd-sub">
+              <a href="/research-cohort" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Cohort Access</span>
+                <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="msp-nav__item msp-nav__item--has-dd">
@@ -99,10 +107,6 @@
           <a href="/match" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Match Overview</span>
             <span class="msp-nav__dd-meta">End-to-end residency support</span>
-          </a>
-          <a href="/match-mentorship" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Match Mentorship</span>
-            <span class="msp-nav__dd-meta">Recorded masterclasses &middot; 3X framework</span>
           </a>
           <a href="/match-lor" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">LOR Editing</span>
@@ -120,10 +124,6 @@
             <span class="msp-nav__dd-name">Interview Preparation</span>
             <span class="msp-nav__dd-meta">Mock interviews &middot; Strategy</span>
           </a>
-          <a href="/match-advanced-interviewing" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Advanced Interviewing</span>
-            <span class="msp-nav__dd-meta">Dr. Manik's course &middot; $399</span>
-          </a>
           <a href="/match-soap" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">SOAP Match Support</span>
             <span class="msp-nav__dd-meta">Real-time scramble guidance</span>
@@ -132,6 +132,22 @@
             <span class="msp-nav__dd-name">Program Signaling Strategy</span>
             <span class="msp-nav__dd-meta">Gold &amp; Silver signal planning</span>
           </a>
+          <div class="msp-nav__dd-item msp-nav__dd-item--has-sub">
+            <button type="button" class="msp-nav__dd-sub-trigger" aria-haspopup="true">
+              <span class="msp-nav__dd-name">Match Courses</span>
+              <i data-lucide="chevron-right" width="12" height="12" class="msp-nav__dd-sub-caret"></i>
+            </button>
+            <div class="msp-nav__dd-sub">
+              <a href="/match-mentorship" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Match Membership</span>
+                <span class="msp-nav__dd-meta">Recorded masterclasses &middot; 3X framework</span>
+              </a>
+              <a href="/match-advanced-interviewing" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Advanced Interviewing</span>
+                <span class="msp-nav__dd-meta">Dr. Manik's course &middot; $399</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="msp-nav__item msp-nav__item--has-dd">
