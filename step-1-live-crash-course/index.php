@@ -540,7 +540,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
                 <span style="font-size:12.5px;font-weight:600;color:var(--uw-ink-900);background:var(--uw-success-300);border-radius:999px;padding:5px 11px;white-space:nowrap">You save $898</span>
               </div>
             </div>
-            <a href="#contact" class="cc-offer-cta" style="display:block"><span class="btn btn--primary btn--xl">Get Access Now</span></a>
+            <a href="https://buy.stripe.com/aFa3cw7H4azj7gQ748es044" target="_blank" rel="noopener noreferrer" class="cc-offer-cta" style="display:block"><span class="btn btn--primary btn--xl">Get Access Now</span></a>
             <div class="cc-promo" style="display:flex;align-items:center;height:46px;margin-top:4px;padding:4px 4px 4px 14px;box-sizing:border-box;border-radius:var(--r-md);border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08)">
               <input id="ccPromo" type="text" placeholder="Promo code" aria-label="Promo code" style="flex:1;min-width:0;height:100%;border:0;background:transparent;color:#fff;font:inherit;font-size:14.5px;outline:none;text-transform:uppercase;letter-spacing:.04em">
               <button class="ccx-h3" style="flex:none;height:100%;padding:0 16px;border-radius:6px;border:0;background:#fff;color:var(--uw-blue-700);font:inherit;font-size:14px;font-weight:600;cursor:pointer">Apply</button>
