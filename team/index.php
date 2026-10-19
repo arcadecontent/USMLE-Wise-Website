@@ -34,7 +34,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <section class="msp-section" id="leadership" aria-labelledby="leadershipTitle">
   <div class="msp-wrap">
     <div class="msp-head reveal">
-      <span class="msp-eyebrow">Founders &amp; Leadership</span>
       <h2 id="leadershipTitle" class="msp-h2">Built by doctors who've been through it.</h2>
     </div>
 
@@ -60,9 +59,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <section class="msp-section" id="research-team" aria-labelledby="researchTeamTitle" style="background:var(--uw-surface-sunk)">
   <div class="msp-wrap">
     <div class="msp-head reveal">
-      <span class="msp-eyebrow">Research Team</span>
       <h2 id="researchTeamTitle" class="msp-h2">The team behind every published paper.</h2>
-      <p class="msp-sub">Mentors from our other programs will join this page as their profiles are finalized.</p>
     </div>
 
     <div class="team-roster reveal">

@@ -296,8 +296,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <!-- ============== FINAL CTA ============== -->
       <section class="rc-cta-wrap">
         <div class="msp-wrap">
-          <div class="rc-cta reveal">
-            <span class="msp-eyebrow msp-eyebrow--light">Start networking with purpose</span>
+          <div class="rc-cta rc-cta-card reveal">
             <h2 class="rc-cta__head">Your target list starts<br>with one call.</h2>
             <p class="rc-cta__sub">
               Book a free 30-minute session. We'll map your specialty, your target
@@ -305,15 +304,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </p>
             <div class="rc-cta__actions">
               <a
-                class="btn btn--primary btn--lg"
+                class="btn btn--primary btn--xl"
                 href="https://team.manikmadaan.com/guidance-call/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 >Book a Free Guidance Call</a
               >
-              <a class="btn--outline-light btn--lg" href="/research">Back to Research</a>
+              <a class="btn btn--outline btn--xl rc-cta__outline" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
             </div>
-            <p class="rc-cta__trust">Free 30-minute call. No commitment.</p>
           </div>
         </div>
       </section>

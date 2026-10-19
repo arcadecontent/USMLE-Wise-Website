@@ -224,8 +224,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <!-- ============== FINAL CTA ============== -->
       <section class="rc-cta-wrap">
         <div class="msp-wrap">
-          <div class="rc-cta reveal">
-            <span class="msp-eyebrow msp-eyebrow--light">Start learning</span>
+          <div class="rc-cta rc-cta-card reveal">
             <h2 class="rc-cta__head">Nine sessions.<br>One project, start to finish.</h2>
             <p class="rc-cta__sub">
               Enroll today and get lifetime access to the full library — come back to
@@ -233,15 +232,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </p>
             <div class="rc-cta__actions">
               <a
-                class="btn btn--primary btn--lg"
+                class="btn btn--primary btn--xl"
                 href="https://team.manikmadaan.com/guidance-call/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 >Enroll Now</a
               >
-              <a class="btn--outline-light btn--lg" href="/research">Explore Mentorship Programs</a>
+              <a class="btn btn--outline btn--xl rc-cta__outline" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
             </div>
-            <p class="rc-cta__trust">One-time payment. Lifetime access.</p>
           </div>
         </div>
       </section>

@@ -809,8 +809,7 @@
 
 /* ---- FINAL CTA ---- */
 .rc-cta-wrap {
-  background: linear-gradient(145deg, oklch(14% 0.08 255) 0%, oklch(10% 0.04 270) 50%, oklch(15% 0.09 240) 100%);
-  padding-block: clamp(72px, 9vw, 120px);
+  padding-block: clamp(56px, 7vw, 96px);
 }
 .rc-cta {
   max-width: 600px;
@@ -860,6 +859,39 @@
   letter-spacing: 0.1em;
   color: rgba(255,255,255,.35);
   margin: 0;
+}
+
+/* Contained card rather than a full-bleed band: the gradient lives on the card
+   itself, inset within .msp-wrap. Overrides .rc-cta's 600px text-column width,
+   so it must stay after the .rc-cta rules above. */
+.rc-cta-card {
+  max-width: none;
+  background: linear-gradient(145deg, oklch(14% 0.08 255) 0%, oklch(10% 0.04 270) 50%, oklch(15% 0.09 240) 100%);
+  border-radius: var(--r-2xl);
+  padding: clamp(40px, 5.5vw, 72px) clamp(26px, 4.5vw, 64px);
+  align-items: center;
+  text-align: center;
+}
+/* .rc-cta__sub is capped at 52ch and left-aligned by default; centering the
+   flex column alone would leave it off-centre. */
+.rc-cta-card .rc-cta__sub { margin-inline: auto; }
+.rc-cta-card .rc-cta__actions {
+  justify-content: center;
+  gap: clamp(12px, 1.5vw, 16px);
+}
+/* Outline button on a dark card. Mirrors .lpx-final__outline from landing.css
+   (the home page's final CTA), which these pages don't load. */
+.rc-cta__outline {
+  border-color: rgba(255,255,255,.4) !important;
+  color: #fff !important;
+  background: transparent !important;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+.rc-cta__outline:hover {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #08111f !important;
+  box-shadow: 0 8px 24px rgba(255,255,255,0.12) !important;
 }
 
 /* ---- PROBLEMS ---- */

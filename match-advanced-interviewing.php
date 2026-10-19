@@ -219,7 +219,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="msp-hero" aria-labelledby="heroTitle">
       <div class="msp-wrap msp-hero__grid ai-hero-grid">
         <div class="msp-hero__copy reveal">
-          <h1 id="heroTitle" class="msp-h1">Make Your Match Inevitable into your #1 choice of residency on your 1st and last attempt</h1>
+          <h1 id="heroTitle" class="msp-h1">Match into your dream residency in 1 attempt or your money back</h1>
           <p class="msp-lede">Stop leaving your future to chance. Learn how to control your residency interview and secure your spot in the program you deserve.</p>
           <div class="msp-cta-row">
             <a class="btn btn--primary btn--xl" href="#price-card">Get access</a>
