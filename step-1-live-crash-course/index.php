@@ -34,6 +34,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
      nav and footer rather than the site-wide .msp-* shell, and every icon in it
      is already an inline SVG. -->
 <script src="/js/uw-track.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/uw-track.js') ?: '1'; ?>" defer></script>
+<script src="/js/step1-checkout.js?v=<?php echo @filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/step1-checkout.js') ?: '1'; ?>" defer></script>
 <style>
 /* ===== Verbatim from the design's <helmet> block ===== */
   .cc { font-family: var(--font-sans); color: var(--uw-ink-800); background: var(--uw-surface); -webkit-font-smoothing: antialiased; }
@@ -78,6 +79,9 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
     .cc-day > div:first-child { flex-direction: row !important; align-items: baseline !important; gap: 10px !important; }
   }
   .cc-offer-cta button, .cc-offer-cta > * { width: 100% !important; }
+  .cc-checkout-btn { all: unset; display: block; width: 100%; box-sizing: border-box; cursor: pointer; }
+  .cc-checkout-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: var(--r-md); }
+  .cc-checkout-btn .btn { box-sizing: border-box; justify-content: center; }
   .cc-promo input::placeholder { color: rgba(255,255,255,.65); text-transform: none; letter-spacing: 0; }
   @media (max-width: 560px) {
     .cc-offer { padding-top: 18px !important; padding-left: 14px !important; padding-right: 14px !important; scroll-margin-top: 56px !important; }
@@ -540,11 +544,15 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
                 <span style="font-size:12.5px;font-weight:600;color:var(--uw-ink-900);background:var(--uw-success-300);border-radius:999px;padding:5px 11px;white-space:nowrap">You save $898</span>
               </div>
             </div>
-            <a href="https://buy.stripe.com/aFa3cw7H4azj7gQ748es044" target="_blank" rel="noopener noreferrer" class="cc-offer-cta" style="display:block"><span class="btn btn--primary btn--xl">Get Access Now</span></a>
-            <div class="cc-promo" style="display:flex;align-items:center;height:46px;margin-top:4px;padding:4px 4px 4px 14px;box-sizing:border-box;border-radius:var(--r-md);border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08)">
-              <input id="ccPromo" type="text" placeholder="Promo code" aria-label="Promo code" style="flex:1;min-width:0;height:100%;border:0;background:transparent;color:#fff;font:inherit;font-size:14.5px;outline:none;text-transform:uppercase;letter-spacing:.04em">
-              <button class="ccx-h3" style="flex:none;height:100%;padding:0 16px;border-radius:6px;border:0;background:#fff;color:var(--uw-blue-700);font:inherit;font-size:14px;font-weight:600;cursor:pointer">Apply</button>
-            </div>
+            <form id="s1-checkout" action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="display:flex;flex-direction:column;gap:12px;margin:0">
+              <input type="hidden" name="courseId" value="cdbu1brx0peuyo75xzpwjcota">
+              <button type="submit" class="cc-offer-cta cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--xl" style="width:100%">Get Access Now</span></button>
+              <div class="cc-promo" style="display:flex;align-items:center;height:46px;margin-top:4px;padding:4px 4px 4px 14px;box-sizing:border-box;border-radius:var(--r-md);border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08)">
+                <input id="ccPromo" name="promo" type="text" maxlength="80" autocomplete="off" spellcheck="false" placeholder="Promo code" aria-label="Promo code" aria-describedby="s1-promo-result" style="flex:1;min-width:0;height:100%;border:0;background:transparent;color:#fff;font:inherit;font-size:14.5px;outline:none;text-transform:uppercase;letter-spacing:.04em">
+                <button type="button" id="s1-promo-apply" class="ccx-h3" style="flex:none;height:100%;padding:0 16px;border-radius:6px;border:0;background:#fff;color:var(--uw-blue-700);font:inherit;font-size:14px;font-weight:600;cursor:pointer">Apply</button>
+              </div>
+              <p id="s1-promo-result" aria-live="polite" style="min-height:1.3em;margin:-4px 0 0;font-size:13px;line-height:1.4;text-align:center;color:rgba(255,255,255,.85)"></p>
+            </form>
             <div style="display:flex;align-items:center;justify-content:center;gap:7px;margin-top:-2px;font-size:13px;line-height:1.3;color:rgba(255,255,255,.85);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg><span>First 200 students: <b style="color:var(--uw-success-300);font-weight:600">$100 off</b> with <b style="font-family:var(--font-mono);font-weight:600;color:#fff;letter-spacing:.04em">STEP100</b></span></div>
           </div>
         </div>
@@ -1138,12 +1146,6 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
       }
     });
   });
-
-  // Promo code field: decorative in the design (no onClick wired at all), so
-  // it stays a plain text input + Apply button with no-op JS rather than a
-  // silently broken "working" field.
-  var applyBtn = document.querySelector('.cc-promo button');
-  if (applyBtn) applyBtn.setAttribute('type', 'button');
 
   // Contact form. The design's submit only flipped a `sent` flag, so it is wired
   // to the WiseCRM intake here with Turnstile + honeypot, same as the sibling
