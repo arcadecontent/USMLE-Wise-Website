@@ -37,7 +37,73 @@
  *   "To be confirmed" instead of "Not attending".
  * - There is no poster/oral/both field in the source sheet yet, so it is not
  *   rendered here.
+ * - specialty_value is a single, often fellowship-level tag straight from the
+ *   sheet. The sidebar groups those under the specialty you actually apply to
+ *   in the Match -- see usmlewise_conference_specialty_groups() below.
  */
+
+/**
+ * Specialty taxonomy for the sidebar filter.
+ *
+ * The sheet tags each conference at whatever level the organising society
+ * sits at, so a flat list put Cardiology, Nephrology and Rheumatology beside
+ * Internal Medicine as if they were peers -- 29 options, most of them IM
+ * fellowships. This maps each leaf onto its parent Match specialty: parents
+ * are what the sidebar lists, and a parent with more than one child gets a
+ * caret that reveals its subspecialties for people who do want to narrow.
+ *
+ * Keys are the parent (filter) value; 'children' are specialty_value leaves.
+ * Every leaf in the sample's 'specialties' list must appear in exactly one
+ * group -- usmlewise_render_conf_specialty_filter() appends any stray leaf as
+ * its own row rather than silently dropping it from the filter.
+ *
+ * Grouping notes: critical care and pulm/crit sit under Internal Medicine
+ * because that's the usual route in, even though EM, anaesthesia and surgery
+ * also fellow into it. Neurosurgery, Orthopaedics, Otolaryngology, Urology
+ * and Ophthalmology stay top-level rather than folding into a "Surgery"
+ * umbrella, since each is its own categorical Match specialty.
+ */
+function usmlewise_conference_specialty_groups(): array
+{
+    return [
+        'anesthesiology' => ['label' => 'Anesthesiology', 'children' => ['anesthesiology']],
+        'dermatology' => ['label' => 'Dermatology', 'children' => ['dermatology']],
+        'emergency-medicine' => ['label' => 'Emergency Medicine', 'children' => ['emergency-medicine']],
+        'general-surgery' => ['label' => 'General Surgery', 'children' => ['general-surgery']],
+        'internal-medicine' => [
+            'label' => 'Internal Medicine',
+            'children' => [
+                'internal-medicine',
+                'cardiology',
+                'critical-care-medicine',
+                'endocrinology',
+                'gastroenterology-hepatology',
+                'geriatric-medicine',
+                'hematology-oncology',
+                'infectious-diseases',
+                'nephrology',
+                'pulmonary-critical-care',
+                'rheumatology',
+            ],
+            // "Internal Medicine" nested under "Internal Medicine" reads badly
+            'child_labels' => ['internal-medicine' => 'General Internal Medicine'],
+        ],
+        'neurology' => ['label' => 'Neurology', 'children' => ['neurology']],
+        'neurosurgery' => ['label' => 'Neurosurgery', 'children' => ['neurosurgery']],
+        'obstetrics-gynecology' => ['label' => 'Obstetrics & Gynecology', 'children' => ['obstetrics-gynecology']],
+        'ophthalmology' => ['label' => 'Ophthalmology', 'children' => ['ophthalmology']],
+        'orthopaedics' => ['label' => 'Orthopaedics', 'children' => ['orthopaedics']],
+        'otolaryngology' => ['label' => 'Otolaryngology', 'children' => ['otolaryngology']],
+        'pathology' => ['label' => 'Pathology', 'children' => ['pathology']],
+        'pediatrics' => ['label' => 'Pediatrics', 'children' => ['pediatrics']],
+        'physical-medicine-rehabilitation' => ['label' => 'Physical Medicine & Rehabilitation', 'children' => ['physical-medicine-rehabilitation']],
+        'psychiatry' => ['label' => 'Psychiatry', 'children' => ['psychiatry']],
+        'radiation-oncology' => ['label' => 'Radiation Oncology', 'children' => ['radiation-oncology']],
+        'radiology' => ['label' => 'Radiology', 'children' => ['radiology']],
+        'urology' => ['label' => 'Urology', 'children' => ['urology']],
+        'policy-multi-specialty' => ['label' => 'Policy / Multi-specialty', 'children' => ['policy-multi-specialty']],
+    ];
+}
 
 function usmlewise_conferences_sample(): array
 {
@@ -833,7 +899,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
-                'usmlewise_participating' => false,
+                'usmlewise_participating' => true,
                 'link' => 'https://professional.heart.org/en/meetings/international-stroke-conference',
             ],
             [
@@ -917,7 +983,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
-                'usmlewise_participating' => false,
+                'usmlewise_participating' => true,
                 'link' => 'https://www.ors.org/',
             ],
             [
@@ -1148,7 +1214,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
-                'usmlewise_participating' => false,
+                'usmlewise_participating' => true,
                 'link' => 'https://www.aad.org/member/meetings-education/am27',
             ],
             [
@@ -1295,7 +1361,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
-                'usmlewise_participating' => false,
+                'usmlewise_participating' => true,
                 'link' => 'https://www.aans.org/annual-scientific-meeting/',
             ],
             [
@@ -1337,7 +1403,7 @@ function usmlewise_conferences_sample(): array
                 'registration_deadline_date' => null,
                 'submission_fee' => null,
                 'publishes_abstract' => null,
-                'usmlewise_participating' => false,
+                'usmlewise_participating' => true,
                 'link' => 'https://accscientificsession.acc.org/Submit-Your-Science',
             ],
             [

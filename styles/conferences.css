@@ -315,15 +315,19 @@
 
 .conf-filter-toggle__count[hidden] { display: none; }
 
-/* ---- Sidebar panel ---- */
+/* ---- Sidebar panel ----
+   Deliberately in normal document flow: the panel is full height, shows every
+   filter at once, and scrolls with the page exactly like the card grid beside
+   it. No sticky pinning and no scroller of its own -- an inner scroll area
+   nested in a sticky panel was what made wheel gestures here feel wrong and
+   left the bottom rows unreachable. Keep it that way; cap the height or pin
+   it to the viewport and both problems come back. */
 .conf-sidebar {
   border: 1px solid var(--uw-border);
   border-radius: var(--r-xl);
   background: #fff;
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  position: sticky;
-  top: calc(72px + 20px);
 }
 
 .conf-sidebar__hd {
@@ -403,12 +407,6 @@
 
 .conf-sidebar__group.is-open .conf-sidebar__opts { display: block; }
 
-/* Specialty list is long (29 options) — keep it from taking over the page */
-.conf-sidebar__opts--scroll {
-  max-height: 260px;
-  overflow-y: auto;
-}
-
 .conf-sidebar__opt {
   display: flex;
   align-items: center;
@@ -423,6 +421,81 @@
   text-align: left;
   transition: background 0.1s, color 0.1s;
   line-height: 1.35;
+}
+
+/* ---- Specialty tree: parent row + collapsible subspecialties ----
+   The parent checkbox and its disclosure caret are separate controls, so
+   opening a group never changes what is filtered. */
+.conf-sidebar__opts--tree { padding-bottom: 6px; }
+
+.conf-sidebar__row {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Every option in the sidebar carries a count, so they all share one right
+   gutter; only rows with a caret hand that 32px over to the toggle. */
+.conf-sidebar__opt { padding-right: 32px; }
+.conf-sidebar__row:has(.conf-sidebar__sub-toggle) .conf-sidebar__opt { padding-right: 4px; }
+
+.conf-sidebar__opt-label { flex: 1; min-width: 0; }
+
+.conf-sidebar__count {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--uw-ink-400);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.conf-sidebar__opt.is-active .conf-sidebar__count { color: var(--uw-ink-500); }
+
+.conf-sidebar__sub-toggle {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  padding: 0 10px 0 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--uw-ink-400);
+}
+
+.conf-sidebar__sub-toggle:hover { color: var(--uw-ink-700); }
+
+.conf-sidebar__sub-toggle i,
+.conf-sidebar__sub-toggle svg { transition: transform 0.2s ease; }
+
+.conf-sidebar__parent.is-expanded .conf-sidebar__sub-toggle i,
+.conf-sidebar__parent.is-expanded .conf-sidebar__sub-toggle svg { transform: rotate(180deg); }
+
+.conf-sidebar__subopts {
+  list-style: none;
+  margin: 0 0 4px;
+  padding: 0;
+  display: none;
+}
+
+.conf-sidebar__parent.is-expanded .conf-sidebar__subopts { display: block; }
+
+/* Indent rail makes the nesting readable without extra chrome */
+.conf-sidebar__opt--sub {
+  padding-left: 30px;
+  font-size: 12.5px;
+  color: var(--uw-ink-500);
+  position: relative;
+}
+
+.conf-sidebar__opt--sub::after {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--uw-border);
 }
 
 .conf-sidebar__opt:hover {
@@ -677,10 +750,26 @@
     width: min(288px, 85vw);
     z-index: 300;
     border-radius: 0;
+    /* The drawer is the one place the panel scrolls on its own, since it is
+       pinned to the viewport. Contain the overscroll so the page behind it
+       doesn't take over the gesture when the filter list bottoms out. */
     overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--uw-border) transparent;
     transform: translateX(-100%);
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-md);
+  }
+
+  /* Slim, inset thumb — the default chrome is heavy next to 13px rows */
+  .conf-sidebar::-webkit-scrollbar { width: 11px; }
+  .conf-sidebar::-webkit-scrollbar-track { background: transparent; }
+  .conf-sidebar::-webkit-scrollbar-thumb {
+    background: var(--uw-ink-300);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
   }
 
   .conf-sidebar.is-open { transform: translateX(0); }

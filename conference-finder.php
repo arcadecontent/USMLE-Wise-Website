@@ -16,10 +16,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/data/conferences-sample.php';
 $conferencesData   = usmlewise_conferences_sample();
 $conferencesList   = $conferencesData['conferences'];
 $conferencesSpecs  = $conferencesData['specialties'];
+$conferencesSpecGroups = usmlewise_conference_specialty_groups();
 $conferencesStatus = $conferencesData['statuses'];
 $conferencesUpdated = $conferencesData['last_updated'];
 $conferencesOpenCount = count(array_filter($conferencesList, 'usmlewise_conf_is_open'));
 $conferencesUwCount = count(array_filter($conferencesList, 'usmlewise_conf_is_participating'));
+
+// Sidebar facet counts: whole-dataset totals, so they don't move as filters
+// are applied -- they're there to show which buckets are worth opening.
+$conferencesStatusCounts = [];
+foreach ($conferencesList as $conferenceRow) {
+    $statusKey = $conferenceRow['status_value'] ?? '';
+    $conferencesStatusCounts[$statusKey] = ($conferencesStatusCounts[$statusKey] ?? 0) + 1;
+}
 
 /**
  * Signed day count from today to an ISO (Y-m-d) date, or null if the date
@@ -105,16 +114,133 @@ function usmlewise_conf_is_participating(array $c): bool
     return ($c['usmlewise_participating'] ?? null) === true;
 }
 
-function usmlewise_render_conf_filter_options(string $filter, array $options): string
+/**
+ * Flat option list for the single-level filter groups. $counts is an optional
+ * value => total map; every group in the sidebar shows counts, so leaving it
+ * out should be a deliberate choice rather than an oversight.
+ */
+function usmlewise_render_conf_filter_options(string $filter, array $options, array $counts = []): string
 {
     $attr = static function ($v) { return htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); };
     $esc  = static function ($v) { return htmlspecialchars((string) $v, ENT_NOQUOTES, 'UTF-8'); };
     $lines = [];
     foreach ($options as $opt) {
+        $value = $opt['value'] ?? '';
+        $count = array_key_exists($value, $counts)
+            ? '<span class="conf-sidebar__count">' . (int) $counts[$value] . '</span>'
+            : '';
         $lines[] = '                  <li><button class="conf-sidebar__opt" type="button" data-filter="'
-            . $attr($filter) . '" data-value="' . $attr($opt['value'] ?? '') . '">'
-            . $esc($opt['label'] ?? '') . '</button></li>';
+            . $attr($filter) . '" data-value="' . $attr($value) . '">'
+            . '<span class="conf-sidebar__opt-label">' . $esc($opt['label'] ?? '') . '</span>'
+            . $count . '</button></li>';
     }
+    return implode("\n", $lines);
+}
+
+/**
+ * Parent Match specialty for a sheet-level specialty_value, falling back to
+ * the leaf itself so an untaxonomised tag still filters as its own group.
+ */
+function usmlewise_conf_specialty_group(string $leaf): string
+{
+    static $map = null;
+    if ($map === null) {
+        $map = [];
+        foreach (usmlewise_conference_specialty_groups() as $groupValue => $group) {
+            foreach ($group['children'] as $child) {
+                $map[$child] = $groupValue;
+            }
+        }
+    }
+    return $map[$leaf] ?? $leaf;
+}
+
+/**
+ * Sidebar Specialty list: one row per parent specialty, with the IM-style
+ * clusters tucked behind a caret. Counts are whole-dataset totals (they do
+ * not react to the other filter groups), there to show up front which
+ * buckets are big rather than to track the current result set.
+ */
+function usmlewise_render_conf_specialty_filter(array $groups, array $specialties, array $conferences): string
+{
+    $attr = static function ($v) { return htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); };
+    $esc  = static function ($v) { return htmlspecialchars((string) $v, ENT_NOQUOTES, 'UTF-8'); };
+
+    // Leaf label lookup + per-leaf conference counts
+    $labels = [];
+    foreach ($specialties as $spec) {
+        $labels[$spec['value']] = $spec['label'];
+    }
+    $leafCounts = [];
+    foreach ($conferences as $c) {
+        $leaf = $c['specialty_value'] ?? '';
+        $leafCounts[$leaf] = ($leafCounts[$leaf] ?? 0) + 1;
+    }
+
+    $countEl = static function (int $n) {
+        return '<span class="conf-sidebar__count">' . $n . '</span>';
+    };
+
+    $lines = [];
+    $covered = [];
+
+    foreach ($groups as $groupValue => $group) {
+        $children = $group['children'];
+        $childLabels = $group['child_labels'] ?? [];
+        $covered = array_merge($covered, $children);
+
+        $groupCount = 0;
+        foreach ($children as $child) {
+            $groupCount += $leafCounts[$child] ?? 0;
+        }
+
+        // A single-child group is just a plain row -- nothing to expand into.
+        $hasSubs = count($children) > 1;
+
+        $row = '                  <li class="conf-sidebar__parent">' . "\n"
+            . '                    <div class="conf-sidebar__row">' . "\n"
+            . '                      <button class="conf-sidebar__opt" type="button" data-filter="specialty-group" data-value="'
+            . $attr($groupValue) . '"><span class="conf-sidebar__opt-label">' . $esc($group['label']) . '</span>'
+            . $countEl($groupCount) . '</button>' . "\n";
+
+        if ($hasSubs) {
+            $row .= '                      <button class="conf-sidebar__sub-toggle" type="button" aria-expanded="false" aria-label="'
+                . $attr('Show ' . $group['label'] . ' subspecialties') . '">' . "\n"
+                . '                        <i data-lucide="chevron-down" width="12" height="12"></i>' . "\n"
+                . '                      </button>' . "\n";
+        }
+
+        $row .= '                    </div>' . "\n";
+
+        if ($hasSubs) {
+            $row .= '                    <ul class="conf-sidebar__subopts">' . "\n";
+            foreach ($children as $child) {
+                $label = $childLabels[$child] ?? ($labels[$child] ?? $child);
+                $row .= '                      <li><button class="conf-sidebar__opt conf-sidebar__opt--sub" type="button" data-filter="specialty" data-value="'
+                    . $attr($child) . '"><span class="conf-sidebar__opt-label">' . $esc($label) . '</span>'
+                    . $countEl($leafCounts[$child] ?? 0) . '</button></li>' . "\n";
+            }
+            $row .= '                    </ul>' . "\n";
+        }
+
+        $row .= '                  </li>';
+        $lines[] = $row;
+    }
+
+    // Safety net: a specialty the taxonomy forgot still gets a filter row.
+    foreach ($specialties as $spec) {
+        if (in_array($spec['value'], $covered, true)) {
+            continue;
+        }
+        $lines[] = '                  <li class="conf-sidebar__parent">' . "\n"
+            . '                    <div class="conf-sidebar__row">' . "\n"
+            . '                      <button class="conf-sidebar__opt" type="button" data-filter="specialty" data-value="'
+            . $attr($spec['value']) . '"><span class="conf-sidebar__opt-label">' . $esc($spec['label']) . '</span>'
+            . $countEl($leafCounts[$spec['value']] ?? 0) . '</button>' . "\n"
+            . '                    </div>' . "\n"
+            . '                  </li>';
+    }
+
     return implode("\n", $lines);
 }
 
@@ -197,6 +323,7 @@ function usmlewise_render_conf_card(array $c): string
     return
         '            <article class="conf-card reveal' . ($deadlineOpen ? ' is-deadline-open' : '') . ($participating ? ' is-uw-attending' : '') . '"' . "\n" .
         '                     data-specialty="' . $attr($c['specialty_value'] ?? '') . '"' . "\n" .
+        '                     data-specialty-group="' . $attr(usmlewise_conf_specialty_group($c['specialty_value'] ?? '')) . '"' . "\n" .
         '                     data-status="' . $statusValue . '"' . "\n" .
         '                     data-deadline="' . ($deadlineOpen ? 'open' : '') . '"' . "\n" .
         '                     data-participating="' . ($participating ? 'yes' : '') . '"' . "\n" .
@@ -243,7 +370,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <?php if ($conferencesUwCount > 0): ?>
             <span><strong><?php echo $conferencesUwCount; ?></strong> we're attending</span>
 <?php endif; ?>
-            <span><strong><?php echo count($conferencesSpecs); ?></strong> specialties</span>
+            <span><strong><?php echo count($conferencesSpecGroups); ?></strong> specialties</span>
             <span>Last updated <?php echo htmlspecialchars($conferencesUpdated, ENT_QUOTES, 'UTF-8'); ?></span>
           </div>
 
@@ -286,7 +413,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   <i data-lucide="chevron-down" width="14" height="14"></i>
                 </button>
                 <ul class="conf-sidebar__opts">
-                  <li><button class="conf-sidebar__opt" type="button" data-filter="participating" data-value="yes">We're attending</button></li>
+                  <li><button class="conf-sidebar__opt" type="button" data-filter="participating" data-value="yes"><span class="conf-sidebar__opt-label">We're attending</span><span class="conf-sidebar__count"><?php echo $conferencesUwCount; ?></span></button></li>
                 </ul>
               </div>
 
@@ -296,7 +423,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   <i data-lucide="chevron-down" width="14" height="14"></i>
                 </button>
                 <ul class="conf-sidebar__opts">
-                  <li><button class="conf-sidebar__opt" type="button" data-filter="deadline" data-value="open">Submission still open</button></li>
+                  <li><button class="conf-sidebar__opt" type="button" data-filter="deadline" data-value="open"><span class="conf-sidebar__opt-label">Submission still open</span><span class="conf-sidebar__count"><?php echo $conferencesOpenCount; ?></span></button></li>
                 </ul>
               </div>
 
@@ -306,7 +433,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   <i data-lucide="chevron-down" width="14" height="14"></i>
                 </button>
                 <ul class="conf-sidebar__opts">
-<?php echo usmlewise_render_conf_filter_options('status', $conferencesStatus) . "\n"; ?>
+<?php echo usmlewise_render_conf_filter_options('status', $conferencesStatus, $conferencesStatusCounts) . "\n"; ?>
                 </ul>
               </div>
 
@@ -315,8 +442,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   <span>Specialty</span>
                   <i data-lucide="chevron-down" width="14" height="14"></i>
                 </button>
-                <ul class="conf-sidebar__opts conf-sidebar__opts--scroll">
-<?php echo usmlewise_render_conf_filter_options('specialty', $conferencesSpecs) . "\n"; ?>
+                <ul class="conf-sidebar__opts conf-sidebar__opts--tree">
+<?php echo usmlewise_render_conf_specialty_filter($conferencesSpecGroups, $conferencesSpecs, $conferencesList) . "\n"; ?>
                 </ul>
               </div>
             </aside>

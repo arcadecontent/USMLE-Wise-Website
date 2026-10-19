@@ -53,7 +53,16 @@
 
     /* ---- Sidebar filters ---- */
     (function () {
-      var activeFilters = { specialty: [], status: [], deadline: [], participating: [] };
+      /* Keys map to data-* attributes on the cards. 'specialty-group' is the
+         parent Match specialty and 'specialty' the sheet-level leaf, so
+         ticking Internal Medicine + Cardiology narrows to cardiology. */
+      var activeFilters = {
+        'specialty': [],
+        'specialty-group': [],
+        'status': [],
+        'deadline': [],
+        'participating': []
+      };
       var searchQuery = '';
 
       var cards       = Array.prototype.slice.call(document.querySelectorAll('.conf-card'));
@@ -95,9 +104,18 @@
         if (countEl)  { countEl.textContent = total > 0 ? total : ''; countEl.hidden = total === 0; }
       }
 
+      function collapseSubLists() {
+        document.querySelectorAll('.conf-sidebar__parent.is-expanded').forEach(function (p) {
+          p.classList.remove('is-expanded');
+          var t = p.querySelector('.conf-sidebar__sub-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+
       function resetAll() {
         Object.keys(activeFilters).forEach(function (k) { activeFilters[k] = []; });
         document.querySelectorAll('.conf-sidebar__opt').forEach(function (o) { o.classList.remove('is-active'); });
+        collapseSubLists();
         searchQuery = '';
         if (searchInput) searchInput.value = '';
         if (searchClear) searchClear.hidden = true;
@@ -111,7 +129,7 @@
         if (toggleBtn) { toggleBtn.setAttribute('aria-expanded', 'false'); toggleBtn.classList.remove('is-active'); }
       }
 
-      /* Option buttons (specialty, status, deadline, participating) */
+      /* Option buttons (specialty, specialty-group, status, deadline, participating) */
       document.querySelectorAll('.conf-sidebar__opt').forEach(function (opt) {
         opt.addEventListener('click', function () {
           var group = opt.getAttribute('data-filter');
@@ -122,6 +140,17 @@
           if (idx === -1) { arr.push(value); opt.classList.add('is-active'); }
           else            { arr.splice(idx, 1); opt.classList.remove('is-active'); }
           applyFilters();
+        });
+      });
+
+      /* Specialty tree: reveal a parent's subspecialties. Purely a disclosure
+         control -- it never changes what is filtered. */
+      document.querySelectorAll('.conf-sidebar__sub-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var parent = btn.closest('.conf-sidebar__parent');
+          if (!parent) return;
+          var open = parent.classList.toggle('is-expanded');
+          btn.setAttribute('aria-expanded', open);
         });
       });
 
