@@ -201,7 +201,7 @@
         'about'                => '/', 'about-us'            => '/',
         'home'                 => '/', 'services'            => '/',
         'services-offered'     => '/', 'blog-home'           => '/',
-        'free-resources'       => '/', 'contact'             => '/',
+        'free-resources'       => '/',
         'csv-converter'        => '/', 'track-your-usmle-study-progress-daily' => '/',
         'divine-intervention'  => '/', 'draft-29'            => '/',
         'user-account'         => '/', 'user-account-new'    => '/',

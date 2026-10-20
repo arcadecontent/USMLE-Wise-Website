@@ -182,6 +182,10 @@
             <span class="msp-nav__dd-name">Our Team</span>
             <span class="msp-nav__dd-meta">Meet the mentors &amp; founders</span>
           </a>
+          <a href="/contact" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Contact Us</span>
+            <span class="msp-nav__dd-meta">Reach our team directly</span>
+          </a>
         </div>
       </div>
     </nav>

@@ -1,0 +1,169 @@
+/* ============================================================
+   USMLE Wise — Step 1 Recorded Crash Course (brochure page)
+   Page-level layout on top of design-system tokens + match.css
+   (loaded first for .msp-nav / .msp-hero / .msp-bar / .msp-foot).
+   ============================================================ */
+
+/* ---------- SHARED ROW/ICON PATTERN ---------- */
+.pg-feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 36px);
+  margin-top: clamp(40px, 5vw, 60px);
+}
+.pg-feat { display: flex; flex-direction: column; gap: 10px; }
+.pg-feat__icon {
+  width: 42px; height: 42px; border-radius: var(--r-md);
+  background: var(--uw-blue-50); display: grid; place-items: center;
+  color: var(--uw-blue-500); flex-shrink: 0;
+}
+.pg-feat__title { font-size: var(--fs-16-5); font-weight: 600; color: var(--uw-ink-900); margin: 0; }
+.pg-feat__body { font-size: var(--fs-14); color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
+@media (max-width: 760px) { .pg-feat-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .pg-feat-grid { grid-template-columns: 1fr; } }
+
+/* ---------- PROBLEM ---------- */
+.s1-problem { background: var(--uw-surface-sunk); border-block: 1px solid var(--uw-border); }
+.s1-problem__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 44px);
+}
+.s1-problem__card {
+  display: flex; align-items: center; gap: 13px;
+  background: var(--uw-surface); border: 1px solid var(--uw-border);
+  border-radius: var(--r-lg); padding: 20px 22px;
+}
+.s1-problem__card p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--uw-ink-700); }
+.s1-problem__turn {
+  text-align: center; font-family: var(--font-display); font-size: clamp(19px, 2.2vw, 25px);
+  color: var(--uw-ink-900); margin: clamp(30px, 3.5vw, 40px) 0 clamp(18px, 2.5vw, 26px);
+}
+@media (max-width: 760px) { .s1-problem__grid { grid-template-columns: 1fr; } }
+
+/* ---------- CURRICULUM — reuses .msp-svc row shape ---------- */
+.s1-curric { margin-top: clamp(36px, 4.5vw, 52px); }
+.s1-curric .msp-svc__no { color: var(--uw-blue-500); }
+
+/* ---------- INSTRUCTOR ---------- */
+.s1-founder {
+  display: grid; grid-template-columns: 0.72fr 1.28fr;
+  gap: clamp(28px, 4vw, 48px); align-items: start;
+}
+.s1-founder__photo {
+  border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--uw-border);
+  box-shadow: var(--shadow-md); aspect-ratio: 1/1;
+}
+.s1-founder__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.s1-founder__name { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--uw-ink-900); margin-top: 16px; }
+.s1-founder__meta { font-size: 13px; color: var(--uw-ink-500); margin-top: 3px; line-height: 1.5; }
+.s1-founder__copy p { margin: 0 0 16px; font-size: 16px; line-height: 1.62; color: var(--uw-ink-700); }
+.s1-founder__copy p:last-child { margin-bottom: 0; }
+.s1-founder__pull {
+  font-family: var(--font-display); font-weight: 600; font-size: clamp(19px, 2.1vw, 24px);
+  line-height: 1.3; color: var(--uw-blue-700); margin: 24px 0 !important; max-width: 30ch;
+}
+@media (max-width: 760px) { .s1-founder { grid-template-columns: 1fr; } .s1-founder__photo { max-width: 260px; } }
+
+/* ---------- COMPARE — stacked rows, works at every width ---------- */
+.s1-compare { margin-top: clamp(32px, 4vw, 44px); display: flex; flex-direction: column; gap: 10px; }
+.s1-compare__row {
+  display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; align-items: center;
+  border: 1px solid var(--uw-border); border-radius: var(--r-lg); padding: 16px 20px;
+  background: var(--uw-surface);
+}
+.s1-compare__feat { font-size: 13.5px; font-weight: 600; color: var(--uw-ink-900); }
+.s1-compare__col { font-size: 13px; line-height: 1.5; display: flex; gap: 8px; align-items: flex-start; }
+.s1-compare__col svg { flex-shrink: 0; margin-top: 2px; }
+.s1-compare__col--us { color: var(--uw-ink-800); }
+.s1-compare__col--us svg { color: var(--uw-blue-500); }
+.s1-compare__col--others { color: var(--uw-ink-500); }
+.s1-compare__col--others svg { color: var(--uw-ink-300); }
+.s1-compare__head { display: none; }
+@media (min-width: 761px) {
+  .s1-compare__head { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; padding: 0 20px; margin-bottom: 2px; }
+  .s1-compare__head span { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--uw-ink-400); }
+}
+@media (max-width: 760px) {
+  .s1-compare__row { grid-template-columns: 1fr; gap: 10px; }
+  .s1-compare__feat { padding-bottom: 4px; border-bottom: 1px solid var(--uw-border); margin-bottom: 2px; }
+}
+
+/* ---------- OFFER ---------- */
+.s1-offer {
+  max-width: 640px; margin: clamp(32px, 4vw, 44px) auto 0;
+  background: var(--uw-surface); border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl); box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.s1-offer__list { padding: clamp(22px, 3vw, 30px) clamp(22px, 3vw, 30px) 6px; display: flex; flex-direction: column; }
+.s1-offer__item {
+  display: flex; align-items: flex-start; gap: 12px; padding: 13px 0;
+  border-bottom: 1px solid var(--uw-border);
+}
+.s1-offer__item:last-child { border-bottom: none; }
+.s1-offer__item svg { flex-shrink: 0; margin-top: 2px; color: var(--uw-blue-500); }
+.s1-offer__item-name { font-size: 14.5px; color: var(--uw-ink-800); line-height: 1.5; }
+.s1-offer__pay {
+  background: var(--uw-bg); border-top: 1px solid var(--uw-border);
+  padding: clamp(22px, 3vw, 30px); text-align: center;
+}
+.s1-offer__price { font-family: var(--font-display); font-weight: 600; font-size: clamp(42px, 5vw, 52px); line-height: 1; color: var(--uw-ink-900); }
+.s1-offer__price-note { font-size: 13px; color: var(--uw-ink-500); margin: 8px 0 20px; }
+.s1-offer__guarantee { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--uw-success-700, #1a7f4b); margin-top: 16px; }
+.s1-offer__guarantee svg { flex-shrink: 0; }
+
+/* ---------- STUDENT RESULTS MARQUEE ---------- */
+.s1-marquee-mask {
+  position: relative; margin-top: clamp(32px, 4vw, 44px);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+.s1-marquee-track { display: flex; gap: 18px; width: max-content; animation: s1-marquee 60s linear infinite; }
+.s1-marquee-mask:hover .s1-marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .s1-marquee-track { animation: none; } }
+@media (max-width: 700px) { .s1-marquee-track { animation-duration: 42s; } }
+@keyframes s1-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.s1-marquee-track img { height: 300px; width: auto; display: block; border: 1px solid var(--uw-border); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); background: var(--uw-surface); flex: 0 0 auto; }
+
+/* ---------- VIDEO REVIEWS ---------- */
+.s1-videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: clamp(32px, 4vw, 44px); }
+.s1-video {
+  position: relative; display: block; border: 1px solid var(--uw-border); border-radius: var(--r-xl);
+  overflow: hidden; box-shadow: var(--shadow-md); background: #000; aspect-ratio: 16/9;
+}
+.s1-video img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.s1-video::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.38));
+}
+.s1-video__play {
+  position: absolute; inset: 0; display: grid; place-items: center; z-index: 1;
+}
+.s1-video__play span {
+  width: 60px; height: 42px; background: #E32124; border-radius: 12px;
+  display: grid; place-items: center; box-shadow: 0 6px 20px rgba(0,0,0,.35);
+}
+@media (max-width: 760px) { .s1-videos { grid-template-columns: 1fr; } }
+
+/* ---------- FAQ — boxed accordion cards ---------- */
+.s1-faq { max-width: 760px; margin: clamp(32px, 4vw, 44px) auto 0; display: flex; flex-direction: column; gap: 10px; }
+.s1-faq .accordion__item { border: 1px solid var(--uw-border); border-radius: var(--r-md); background: var(--uw-surface); overflow: hidden; }
+.s1-faq .accordion__head { align-items: flex-start; gap: 18px; padding: 17px 20px; font-size: 15px; font-weight: 500; line-height: 1.45; }
+.s1-faq .accordion__body { padding: 0 20px 18px; font-size: 14px; line-height: 1.6; max-width: 66ch; }
+
+/* ---------- FINAL CTA ---------- */
+.s1-cta-wrap { padding-block: clamp(64px, 8vw, 110px); }
+.s1-cta-card {
+  background: #08111f; border: 1px solid rgba(255,255,255,.08);
+  border-radius: clamp(20px, 2.4vw, 28px); box-shadow: var(--shadow-lg);
+  padding: clamp(44px, 6vw, 76px) clamp(28px, 5vw, 64px); text-align: center;
+}
+.s1-cta-card .msp-eyebrow { display: block; text-align: center; }
+.s1-cta-card .msp-h2 { color: #fff; text-align: center; max-width: 20ch; margin-inline: auto; margin-bottom: 0; }
+.s1-cta-card .msp-sub { color: rgba(255,255,255,.65); max-width: 52ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); text-align: center; }
+.s1-cta-card .msp-cta-row { justify-content: center; margin-inline: auto; margin-top: clamp(28px, 4vw, 44px); }
+.s1-cta-card .btn--outline {
+  border-color: rgba(255,255,255,.4) !important; color: #fff !important; background: transparent !important;
+}
+.s1-cta-card .btn--outline:hover { background: #fff !important; border-color: #fff !important; color: #08111f !important; }
