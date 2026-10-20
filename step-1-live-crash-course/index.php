@@ -1151,6 +1151,98 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
   // Contact form. The design's submit only flipped a `sent` flag, so it is wired
   // to the WiseCRM intake here with Turnstile + honeypot, same as the sibling
   // Step 1 landing pages.
+  // Student videos play on the page instead of opening YouTube. A tap swaps the
+  // thumbnail for YouTube's player. The player API is loaded before the videos
+  // scroll into view, so a single tap starts playback on phones too (iOS and
+  // Android refuse sound autoplay in a plain iframe). If the API is blocked the
+  // plain embed is used. Starting one video puts the others back to their
+  // thumbnails. Without JS the links still open YouTube.
+  var videoLinks = Array.prototype.slice.call(document.querySelectorAll('a[data-video]'));
+  var ytApi = null;
+  function ytId(href) {
+    var m = href.match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : null;
+  }
+  function loadYtApi() {
+    if (ytApi) return ytApi;
+    ytApi = new Promise(function (resolve, reject) {
+      if (window.YT && window.YT.Player) return resolve(window.YT);
+      var prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () { if (prev) prev(); resolve(window.YT); };
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      tag.async = true;
+      tag.onerror = reject;
+      document.head.appendChild(tag);
+      setTimeout(reject, 6000);
+    });
+    ytApi.catch(function () {});
+    return ytApi;
+  }
+  function stopVideos(except) {
+    videoLinks.forEach(function (a) {
+      if (a === except || !a._thumb) return;
+      if (a._player && a._player.destroy) { try { a._player.destroy(); } catch (err) {} }
+      a._player = null;
+      a.innerHTML = a._thumb;
+      a._thumb = null;
+      a.setAttribute('href', a._href);
+      a.style.cursor = 'pointer';
+    });
+  }
+  function plainEmbed(box, id) {
+    var frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1&modestbranding=1';
+    frame.title = 'Student video review';
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.allowFullscreen = true;
+    frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    frame.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;display:block';
+    box.parentNode.replaceChild(frame, box);
+  }
+  if (videoLinks.length) {
+    // Warm the player API before the visitor reaches the videos.
+    if ('IntersectionObserver' in window) {
+      var warm = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { loadYtApi(); warm.disconnect(); }
+      }, { rootMargin: '600px 0px' });
+      videoLinks.forEach(function (a) { warm.observe(a); });
+    } else {
+      loadYtApi();
+    }
+  }
+  videoLinks.forEach(function (a) {
+    a._href = a.getAttribute('href');
+    a.addEventListener('click', function (e) {
+      var id = ytId(a._href || '');
+      if (!id) return;
+      e.preventDefault();
+      if (a._thumb) return; // already playing
+      stopVideos(a);
+      a._thumb = a.innerHTML;
+      a.removeAttribute('href'); // a playing card is no longer a link
+      a.style.cursor = 'default';
+      var box = document.createElement('div');
+      box.style.cssText = 'position:absolute;inset:0;width:100%;height:100%';
+      a.innerHTML = '';
+      a.appendChild(box);
+      var start = function (YT) {
+        if (a._thumb === null || !box.parentNode) return; // stopped meanwhile
+        a._player = new YT.Player(box, {
+          videoId: id,
+          host: 'https://www.youtube-nocookie.com',
+          width: '100%', height: '100%',
+          playerVars: { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1 },
+          events: { onReady: function (ev) { ev.target.playVideo(); } }
+        });
+        var f = a.querySelector('iframe');
+        if (f) { f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;display:block'; f.title = 'Student video review'; }
+      };
+      if (window.YT && window.YT.Player) start(window.YT);
+      else loadYtApi().then(start, function () { if (box.parentNode) plainEmbed(box, id); });
+    });
+  });
+
   var form = document.getElementById('ccContactForm');
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
