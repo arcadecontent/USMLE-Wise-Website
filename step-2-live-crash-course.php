@@ -314,7 +314,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto;max-width:22ch">Frequently asked questions</h2>
     </div>
 
-    <div class="s1-faq reveal">
+    <div class="accordion accordion--faq s1-faq reveal">
       <div class="accordion__item">
         <button class="accordion__head" type="button">What exactly happens if I don't pass?</button>
         <div class="accordion__body">Email us your score report and we issue a full refund. No store credit, no fine print.</div>

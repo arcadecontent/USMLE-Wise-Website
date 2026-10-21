@@ -253,7 +253,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <span class="msp-eyebrow">F.A.Q</span>
           <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
         </div>
-        <div class="pg-faq__accordion accordion reveal">
+        <div class="pg-faq__accordion accordion accordion--faq reveal">
           <div class="accordion__item">
             <button class="accordion__head" type="button">
               What's the difference between the course and the package?

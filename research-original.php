@@ -251,7 +251,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <span class="msp-eyebrow">F.A.Q</span>
             <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
           </div>
-          <div class="accordion rc-faq__accordion reveal">
+          <div class="accordion accordion--faq rc-faq__accordion reveal">
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 How long does this typically take?

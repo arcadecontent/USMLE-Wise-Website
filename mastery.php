@@ -390,11 +390,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
       <!-- ============== FAQ ============== -->
       <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
-        <div class="msp-wrap msp-faq__grid">
-          <div class="reveal">
-            <span class="msp-eyebrow">Common questions</span>
-            <h2 id="faqTitle" class="msp-h2">Questions about Our Mastery</h2>
-            <p class="msp-sub">
+        <div class="msp-wrap">
+          <div class="msp-head reveal" style="max-width:68ch;margin-inline:auto;text-align:center">
+            <span class="msp-eyebrow" style="justify-content:center">Common questions</span>
+            <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto">Questions about Our Mastery</h2>
+            <p class="msp-sub" style="margin-inline:auto">
               Still unsure which track to start with? The guidance call is
               free and walks through it directly.
             </p>
@@ -406,7 +406,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               >Book a Free Guidance Call</a
             >
           </div>
-          <div class="accordion reveal">
+          <div class="accordion accordion--faq reveal">
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 Do I need to buy courses separately, or is there a bundle?

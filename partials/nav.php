@@ -93,6 +93,10 @@
               <i data-lucide="chevron-right" width="12" height="12" class="msp-nav__dd-sub-caret"></i>
             </button>
             <div class="msp-nav__dd-sub">
+              <a href="/research-wise" class="msp-nav__dd-link">
+                <span class="msp-nav__dd-name">Research Wise</span>
+                <span class="msp-nav__dd-meta">Free &middot; Live webinar series</span>
+              </a>
               <a href="/research-cohort" class="msp-nav__dd-link">
                 <span class="msp-nav__dd-name">Research Cohort Access</span>
                 <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>

@@ -763,49 +763,10 @@
 
 /* ---- FAQ ---- */
 .rc-faq .msp-head { text-align: center; margin-left: auto; margin-right: auto; }
-.rc-faq__accordion {
-  max-width: 760px;
-  margin: 0 auto;
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.rc-faq__accordion .accordion__item {
-  border: 1px solid var(--uw-border);
-  border-radius: var(--r-md);
-  background: var(--uw-surface);
-  overflow: hidden;
-}
-.rc-faq__accordion .accordion__head {
-  align-items: flex-start;
-  gap: 18px;
-  padding: 17px 20px;
-  font-size: var(--fs-15-5);
-  font-weight: 500;
-  line-height: 1.45;
-}
-.rc-faq__accordion .accordion__head::after {
-  content: "+";
-  flex: none;
-  font-family: var(--font-display);
-  font-size: 22px;
-  line-height: 1;
-  color: var(--uw-blue-500);
-  width: 22px;
-  text-align: center;
-  margin-top: 1px;
-}
-.rc-faq__accordion .accordion__item.is-open .accordion__head::after { content: "\2212"; }
-.rc-faq__accordion .accordion__body {
-  padding: 0 20px 18px;
-  font-size: var(--fs-14-5);
-  line-height: 1.62;
-  max-width: 66ch;
-}
+/* The boxed-card FAQ design this used to duplicate now lives in the design
+   system as .accordion--faq (shared by every FAQ in the header nav), which
+   also supplies the max-width and centering. Nothing page-specific is left,
+   so .rc-faq__accordion is now just a markup hook. */
 
 /* ---- FINAL CTA ---- */
 .rc-cta-wrap {

@@ -606,14 +606,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
 
       <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
-        <div class="msp-wrap msp-faq__grid">
-          <div class="reveal">
-            <span class="msp-eyebrow">F.A.Q</span>
-            <h2 id="faqTitle" class="msp-h2">
+        <div class="msp-wrap">
+          <div class="msp-head reveal" style="max-width:68ch;margin-inline:auto;text-align:center">
+            <span class="msp-eyebrow" style="justify-content:center">F.A.Q</span>
+            <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto">
               Your questions, answered.
             </h2>
           </div>
-          <div class="accordion rc-faq__accordion reveal">
+          <div class="accordion accordion--faq rc-faq__accordion reveal">
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 What is the difference between a systematic review and original research?

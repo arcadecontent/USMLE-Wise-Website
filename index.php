@@ -561,13 +561,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
   <!-- ============== 8 · FAQ ============== -->
   <section class="lpx-section lpx-faq" id="faq" aria-labelledby="faqTitle">
-    <div class="lpx-wrap lpx-faq__grid">
-      <div class="reveal">
+    <div class="lpx-wrap">
+      <div class="lpx-head lpx-head--center reveal">
         <h2 id="faqTitle" class="lpx-h2">Questions IMGs ask us first</h2>
         <p class="lpx-sub">Still unsure where you stand? The strategy call exists to answer exactly that.</p>
         <a class="btn btn--outline btn--lg lpx-faq__cta" href="#book">Book a Free Strategy Call</a>
       </div>
-      <div class="accordion reveal">
+      <div class="accordion accordion--faq reveal">
         <div class="accordion__item">
           <button class="accordion__head" type="button">Can USMLE Wise help if I already failed an exam?</button>
           <div class="accordion__body">Yes. Many students come to us after setbacks. We help you rebuild a smarter strategy and improve your profile moving forward.</div>

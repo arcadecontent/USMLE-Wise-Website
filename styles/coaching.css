@@ -883,16 +883,10 @@
 }
 
 /* ---------- 9 · FAQ ---------- */
-.msp-faq__grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: clamp(36px, 6vw, 80px);
-  align-items: start;
-}
-.msp-faq .accordion { border-radius: var(--r-lg); }
+/* The FAQ sections are now heading-on-top, accordion-below (the shape the
+   step pages use), so the old two-column msp-faq__grid is gone. */
 .msp-faq__cta { margin-top: var(--space-6); }
 
-@media (max-width: 820px) { .msp-faq__grid { grid-template-columns: 1fr; } }
 
 /* ---------- 9 · FINAL CTA ---------- */
 .msp-cta-wrap { background: var(--uw-bg); }

@@ -746,7 +746,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <span class="msp-eyebrow">Frequently Asked Questions</span>
           <h2 id="faqTitle" class="msp-h2">You've got questions, we've got answers!</h2>
         </div>
-        <div class="ai-faq__accordion accordion reveal">
+        <div class="ai-faq__accordion accordion accordion--faq reveal">
           <div class="accordion__item">
             <button class="accordion__head" type="button">1. What makes Advanced Interviewing different from other residency interview courses?</button>
             <div class="accordion__body">Advanced Interviewing goes beyond traditional mock interviews and generic prep. We teach you how to turn your interview into a conversation, not just a Q&amp;A session, leading to a deeper connection with your interviewers, making the match more likely. Using psychological frameworks like the PCM model and OCEAN analysis, this course ensures you connect with your interviewers on multiple levels. You'll learn how to handle any question with plug-and-play formats, giving you an edge other resources just don't offer.</div>

@@ -29,6 +29,7 @@
           <a href="/research-junior-scientist">Junior Scientist Program</a>
           <a href="/research-j1-fellowship">J-1 Research Fellowship Placement</a>
           <a href="/research-networking">Strategic Networking Program</a>
+          <a href="/research-wise">Research Wise</a>
           <a href="/research-cohort">Research Cohort Access</a>
         </div>
         <div class="msp-foot__nav-group">

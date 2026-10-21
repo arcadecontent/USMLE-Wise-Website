@@ -29,6 +29,13 @@
     document.querySelectorAll('.accordion__item').forEach(function (item) {
       var head = item.querySelector('.accordion__head');
       if (!head) return;
+      // Bind once per item. Some pages load two of these page scripts (the
+      // homepage loads landing.js and match.js), and a second copy of this
+      // handler would re-run the toggle on the same click and undo the first,
+      // leaving the accordion unable to open.
+      if (item.dataset.accordionBound) return;
+      item.dataset.accordionBound = '1';
+
       head.addEventListener('click', function () {
         var parent = item.parentElement;
         var isOpen = item.classList.contains('is-open');

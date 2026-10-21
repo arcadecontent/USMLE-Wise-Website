@@ -316,7 +316,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto;max-width:22ch">Frequently asked questions</h2>
     </div>
 
-    <div class="s1-faq reveal">
+    <div class="accordion accordion--faq s1-faq reveal">
       <div class="accordion__item">
         <button class="accordion__head" type="button">Is this live or self-paced?</button>
         <div class="accordion__body">It's 100% self-paced and pre-recorded. You start the moment you enroll, study on your own schedule, and pause, rewind, or rewatch as often as you need. There's no cohort to wait for.</div>

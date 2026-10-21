@@ -166,78 +166,11 @@
 }
 @media (max-width: 760px) { .s1-videos { grid-template-columns: 1fr; } }
 
-/* ---------- FAQ — boxed accordion cards ---------- */
-.s1-faq { max-width: 760px; margin: clamp(32px, 4vw, 44px) auto 0; display: flex; flex-direction: column; gap: 10px; }
-.s1-faq .accordion__head { align-items: flex-start; gap: 18px; padding: 17px 20px; font-size: 15px; font-weight: 500; line-height: 1.45; }
-
-/* Animated open/close.
-   The shared accordion in the design system toggles display:none/block, which
-   cannot transition, so these pages get an animatable version instead: the
-   item becomes a grid whose second track eases from 0fr to 1fr. That reaches
-   the answer's natural height with no JS measuring it, so the existing
-   is-open toggle in research-catalyst.js drives this unchanged. Browsers that
-   can't interpolate fr tracks (Safari < 17.2) snap open, exactly as today. */
-.s1-faq .accordion__item {
-  border: 1px solid var(--uw-border);
-  border-radius: var(--r-md);
-  background: var(--uw-surface);
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: auto 0fr;
-  transition: grid-template-rows var(--dur-med) var(--ease-out);
-}
-.s1-faq .accordion__item.is-open { grid-template-rows: auto 1fr; }
-
-/* display:block overrides the shared display:none so the track height does
-   the hiding; the bottom padding has to animate with it or it would prop the
-   collapsed row open by 18px. */
-.s1-faq .accordion__body {
-  display: block;
-  overflow: hidden;
-  min-height: 0;
-  padding: 0 20px;
-  font-size: 14px;
-  line-height: 1.6;
-  max-width: 66ch;
-  opacity: 0;
-  transition: padding-bottom var(--dur-med) var(--ease-out),
-              opacity 120ms var(--ease-out);
-}
-.s1-faq .accordion__item.is-open .accordion__body {
-  padding-bottom: 18px;
-  opacity: 1;
-  /* Fade trails the expand slightly so the text doesn't ride up mid-slide,
-     still landing with it (60ms + 180ms = the --dur-med 240ms expand). */
-  transition: padding-bottom var(--dur-med) var(--ease-out),
-              opacity 180ms var(--ease-out) 60ms;
-}
-
-/* The +/− marker is drawn as two bars rather than swapped glyphs, so the
-   vertical stroke can retract into a minus instead of cutting instantly
-   next to an easing expand. */
-.s1-faq .accordion__head::after {
-  content: "";
-  flex-shrink: 0;
-  width: 12px;
-  height: 12px;
-  margin-top: 5px;
-  color: var(--uw-ink-500);
-  background:
-    linear-gradient(currentColor, currentColor) center / 12px 1.5px no-repeat,
-    linear-gradient(currentColor, currentColor) center / 1.5px 12px no-repeat;
-  transition: background-size var(--dur-med) var(--ease-out);
-}
-.s1-faq .accordion__item.is-open .accordion__head::after {
-  content: "";
-  background-size: 12px 1.5px, 1.5px 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .s1-faq .accordion__item,
-  .s1-faq .accordion__body,
-  .s1-faq .accordion__item.is-open .accordion__body,
-  .s1-faq .accordion__head::after { transition: none; }
-}
+/* ---------- FAQ ----------
+   The boxed-card design and its open/close animation now live in the design
+   system as .accordion--faq, shared by every FAQ in the header nav. All that
+   is left here is this page's spacing under the section head. */
+.s1-faq { margin-block-start: clamp(32px, 4vw, 44px); }
 
 /* ---------- FINAL CTA ---------- */
 .s1-cta-wrap { padding-block: clamp(64px, 8vw, 110px); }

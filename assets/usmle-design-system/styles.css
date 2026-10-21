@@ -1566,6 +1566,111 @@ svg.lucide {
 .accordion__item.is-open .accordion__head::after { content: "−"; }
 .accordion__item.is-open .accordion__body { display: block; }
 
+/* ---------- 36b. Accordion — FAQ variant ----------
+   Opt-in modifier: <div class="accordion accordion--faq">. The standard FAQ
+   treatment for every page in the header nav. It replaces three near-identical
+   copies of this design that used to live in page stylesheets (.s1-faq in
+   crash-course-brochure.css, .rc-faq__accordion duplicated in research.css and
+   research-catalyst.css), so change the look here and every FAQ follows.
+
+   It is a modifier rather than a change to the base .accordion so that plain
+   accordions, and anything outside the nav, keep the original single-box look.
+
+   The base toggles display:none/block, which cannot transition, so this
+   animates differently: the item becomes a grid whose second track eases from
+   0fr to 1fr, which reaches the answer's natural height without JS measuring
+   it. The is-open toggle in each page's script drives this unchanged.
+   Browsers that cannot interpolate fr tracks (Safari < 17.2) snap open, as
+   they did before. */
+.accordion--faq {
+  /* Clear the base's single-box chrome: this is a stack of separate cards */
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 760px;
+  margin-inline: auto;
+  /* Several FAQ sections sit in a centered container. The head forces its own
+     alignment but the body would inherit, leaving centered answers under
+     left-aligned questions, so pin it here for both. */
+  text-align: left;
+}
+.accordion--faq .accordion__item {
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-md);
+  background: var(--uw-surface);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows var(--dur-med) var(--ease-out);
+}
+/* Base removes the last item's bottom border; each card needs all four */
+.accordion--faq .accordion__item:last-child { border-bottom: 1px solid var(--uw-border); }
+.accordion--faq .accordion__item.is-open { grid-template-rows: auto 1fr; }
+
+.accordion--faq .accordion__head {
+  align-items: flex-start;
+  gap: 18px;
+  padding: 17px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* display:block overrides the base's display:none so the track height does
+   the hiding; the bottom padding animates with it or it would prop the
+   collapsed row open by 18px. */
+.accordion--faq .accordion__body {
+  display: block;
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 66ch;
+  opacity: 0;
+  transition: padding-bottom var(--dur-med) var(--ease-out),
+              opacity 120ms var(--ease-out);
+}
+.accordion--faq .accordion__item.is-open .accordion__body {
+  padding-bottom: 18px;
+  opacity: 1;
+  /* Fade trails the expand slightly so the text doesn't ride up mid-slide,
+     still landing with it (60ms + 180ms = the --dur-med 240ms expand). */
+  transition: padding-bottom var(--dur-med) var(--ease-out),
+              opacity 180ms var(--ease-out) 60ms;
+}
+
+/* The +/− marker is drawn as two bars rather than swapped glyphs, so the
+   vertical stroke can retract into a minus instead of cutting instantly
+   next to an easing expand. */
+.accordion--faq .accordion__head::after {
+  content: "";
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  color: var(--uw-ink-500);
+  background:
+    linear-gradient(currentColor, currentColor) center / 12px 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 12px no-repeat;
+  transition: background-size var(--dur-med) var(--ease-out);
+}
+.accordion--faq .accordion__item.is-open .accordion__head::after {
+  content: "";
+  background-size: 12px 1.5px, 1.5px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion--faq .accordion__item,
+  .accordion--faq .accordion__body,
+  .accordion--faq .accordion__item.is-open .accordion__body,
+  .accordion--faq .accordion__head::after { transition: none; }
+}
+
 /* ---------- 37. BACK-TO-TOP visual aid ---------- */
 .token-grid {
   display: grid;

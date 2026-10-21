@@ -15,47 +15,13 @@ $scripts = [
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
 <style>
-      /* ---- JSP: single-column, centered, spacious FAQ ---- */
-      .msp-faq .msp-faq__grid {
-        display: block;
-        max-width: 860px;
-        margin-inline: auto;
-        text-align: center;
-      }
-      .msp-faq .accordion {
-        margin-top: 2.75rem;
-        border: none;
-        background: none;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
-      .msp-faq .accordion__item {
-        border: 1px solid var(--uw-border);
-        border-radius: var(--r-md);
-        background: #fff;
-      }
-      .msp-faq .accordion__head {
-        position: relative;
-        justify-content: center;
-        text-align: center;
-        padding: 24px 56px;
-        font-size: var(--fs-md);
-        line-height: 1.45;
-      }
-      .msp-faq .accordion__head::after {
-        position: absolute;
-        right: 24px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 22px;
-      }
-      .msp-faq .accordion__body {
-        padding: 0 56px 24px;
-        font-size: var(--fs-base);
-        line-height: 1.65;
-        text-align: center;
-      }
+      /* The FAQ now uses the standard shape shared across the header-nav
+         pages: a centered .msp-head on top, then the .accordion--faq cards
+         from the design system. This page's bespoke centered-text variant and
+         its two-column grid override are gone, and .msp-head's own
+         margin-bottom supplies the gap, so nothing is left to style here.
+         Note these .msp-faq selectors outrank the component's, so anything
+         re-added here would win. */
       .js-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -66,16 +32,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       }
       @media (max-width: 440px) {
         .js-stats { grid-template-columns: 1fr; }
-      }
-      .msp-faq .msp-eyebrow {
-        display: block;
-        margin-top: 2.25rem;
-      }
-      .msp-faq .accordion .msp-eyebrow:first-child { margin-top: 0; }
-      .msp-faq .msp-h2 { margin-inline: auto; }
-      @media (max-width: 640px) {
-        .msp-faq .accordion__head { padding: 18px 44px; font-size: var(--fs-base); }
-        .msp-faq .accordion__body { padding: 0 24px 20px; }
       }
 
       /* ---- JSP: the real problem ---- */
@@ -1086,14 +1042,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
 
       <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
-        <div class="msp-wrap msp-faq__grid">
-          <div class="reveal">
-            <span class="msp-eyebrow">F.A.Q</span>
-            <h2 id="faqTitle" class="msp-h2">
+        <div class="msp-wrap">
+          <div class="msp-head reveal" style="max-width:68ch;margin-inline:auto;text-align:center">
+            <span class="msp-eyebrow" style="justify-content:center">F.A.Q</span>
+            <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto">
               Your questions, answered.
             </h2>
           </div>
-          <div class="accordion reveal">
+          <div class="accordion accordion--faq reveal">
             <div class="accordion__item">
               <button class="accordion__head" type="button">
                 How much time does it take each week?

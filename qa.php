@@ -48,7 +48,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 What each program costs and how payment works.
               </p>
             </div>
-            <div class="accordion reveal">
+            <div class="accordion accordion--faq reveal">
 
               <div class="accordion__item">
                 <button class="accordion__head" type="button">
@@ -118,7 +118,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 Find the right program for where you are in your prep.
               </p>
             </div>
-            <div class="accordion reveal">
+            <div class="accordion accordion--faq reveal">
 
               <div class="accordion__item">
                 <button class="accordion__head" type="button">
@@ -208,7 +208,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 Who teaches, how they're qualified, and our track record.
               </p>
             </div>
-            <div class="accordion reveal">
+            <div class="accordion accordion--faq reveal">
 
               <div class="accordion__item">
                 <button class="accordion__head" type="button">
@@ -271,7 +271,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 How to enroll, access content, and join from anywhere.
               </p>
             </div>
-            <div class="accordion reveal">
+            <div class="accordion accordion--faq reveal">
 
               <div class="accordion__item">
                 <button class="accordion__head" type="button">
@@ -343,7 +343,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 Residency application, interview prep, and the match process.
               </p>
             </div>
-            <div class="accordion reveal">
+            <div class="accordion accordion--faq reveal">
 
               <div class="accordion__item">
                 <button class="accordion__head" type="button">

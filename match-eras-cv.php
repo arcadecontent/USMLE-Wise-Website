@@ -824,14 +824,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
       <!-- FAQ -->
       <section class="msp-section msp-faq ec-problem" id="faq" aria-labelledby="faqTitle">
-        <div class="msp-wrap msp-faq__grid">
-          <div class="reveal">
-            <span class="msp-eyebrow">Common questions</span>
-            <h2 id="faqTitle" class="msp-h2">Questions, answered.</h2>
-            <p class="msp-sub">Still unsure? The guidance call is free and covers your specific situation.</p>
+        <div class="msp-wrap">
+          <div class="msp-head reveal" style="max-width:68ch;margin-inline:auto;text-align:center">
+            <span class="msp-eyebrow" style="justify-content:center">Common questions</span>
+            <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto">Questions, answered.</h2>
+            <p class="msp-sub" style="margin-inline:auto">Still unsure? The guidance call is free and covers your specific situation.</p>
             <a class="btn btn--outline msp-faq__cta" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Get Your Questions Answered</a>
           </div>
-          <div class="accordion reveal">
+          <div class="accordion accordion--faq reveal">
             <div class="accordion__item">
               <button class="accordion__head" type="button">I haven't written anything yet. Can I still use this?</button>
               <div class="accordion__body">Yes, and honestly, it's easier. Starting from blank means no bad habits to undo. In the strategy audit and live surgery we pull your experiences out of you and build the CV from scratch.</div>
