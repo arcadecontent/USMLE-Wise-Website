@@ -1,8 +1,20 @@
 /* ============================================================
-   USMLE Wise — Step 1 Recorded Crash Course (brochure page)
+   USMLE Wise — Recorded Crash Course brochure pages (Step 1, Step 2, …)
    Page-level layout on top of design-system tokens + match.css
    (loaded first for .msp-nav / .msp-hero / .msp-bar / .msp-foot).
    ============================================================ */
+
+/* A <button type="submit"> wrapped around a .btn span, for pages whose CTA
+   posts to a checkout endpoint instead of linking straight to one. */
+.cc-checkout-btn { all: unset; display: block; width: 100%; cursor: pointer; }
+
+/* Small subject-coverage pill, used inside curriculum rows that list more
+   than one topic per module. */
+.crs-tag {
+  display: inline-flex; align-items: center; font-size: 12.5px; line-height: 1.3;
+  color: var(--uw-ink-600); background: var(--uw-bg); border: 1px solid var(--uw-border);
+  border-radius: 999px; padding: 4px 11px; margin: 2px 6px 2px 0;
+}
 
 /* ---------- SHARED ROW/ICON PATTERN ---------- */
 .pg-feat-grid {
@@ -45,6 +57,14 @@
 /* ---------- CURRICULUM — reuses .msp-svc row shape ---------- */
 .s1-curric { margin-top: clamp(36px, 4.5vw, 52px); }
 .s1-curric .msp-svc__no { color: var(--uw-blue-500); }
+
+/* Single-column variant, for curriculum lists whose item count doesn't
+   split evenly into .msp-services__grid's default 2 columns (match.css's
+   own border logic assumes 2 columns; this corrects it for 1). */
+.s1-curric--list { grid-template-columns: 1fr; }
+.s1-curric--list .msp-svc { border-right: none; }
+.s1-curric--list .msp-svc:nth-last-child(-n+2) { border-bottom: 1px solid var(--uw-border); }
+.s1-curric--list .msp-svc:last-child { border-bottom: none; }
 
 /* ---------- INSTRUCTOR ---------- */
 .s1-founder {

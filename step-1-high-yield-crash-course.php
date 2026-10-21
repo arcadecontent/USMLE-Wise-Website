@@ -6,7 +6,7 @@ $bodyClass = "msp";
 $preloadImage = "/assets/step1-crash-course/step1-crash-course-image.jpg";
 $stylesheets = [
     "/styles/match.css",
-    "/styles/step1-crash-course.css"
+    "/styles/crash-course-brochure.css"
 ];
 $scripts = [
     "/js/research-catalyst.js"

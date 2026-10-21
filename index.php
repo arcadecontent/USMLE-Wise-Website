@@ -159,40 +159,39 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <div class="lpx-services">
         <article class="lpx-svc reveal">
           <span class="lpx-svc__no">01</span>
+          <i data-lucide="microscope"></i>
+          <h3>Research Guidance</h3>
+          <p>Improve your profile with research mentorship and publication support.</p>
+        </article>
+        <article class="lpx-svc reveal">
+          <span class="lpx-svc__no">02</span>
           <i data-lucide="book-open-check"></i>
           <h3>USMLE Exam Prep</h3>
           <p>Learn proven strategies from high-scoring mentors who understand exactly what it takes to succeed.</p>
         </article>
         <article class="lpx-svc reveal">
-          <span class="lpx-svc__no">02</span>
+          <span class="lpx-svc__no">03</span>
           <i data-lucide="route"></i>
           <h3>Residency Match Mentorship</h3>
           <p>Get a personalized roadmap based on your profile, goals, and specialty.</p>
         </article>
-
-        <article class="lpx-svc reveal">
-          <span class="lpx-svc__no">03</span>
-          <i data-lucide="file-text"></i>
-          <h3>ERAS Application Support</h3>
-          <p>Build a stronger CV, personal statement, and residency application that stands out.</p>
-        </article>
         <article class="lpx-svc reveal">
           <span class="lpx-svc__no">04</span>
-          <i data-lucide="messages-square"></i>
-          <h3>Interview Preparation</h3>
-          <p>Practice real residency interview questions with direct feedback and coaching.</p>
-        </article>
-        <article class="lpx-svc reveal">
-          <span class="lpx-svc__no">05</span>
           <i data-lucide="stethoscope"></i>
           <h3>Clinical Rotations</h3>
           <p>Gain U.S. clinical experience and strengthen your residency application.</p>
         </article>
         <article class="lpx-svc reveal">
+          <span class="lpx-svc__no">05</span>
+          <i data-lucide="file-text"></i>
+          <h3>ERAS Application Support</h3>
+          <p>Build a stronger CV, personal statement, and residency application that stands out.</p>
+        </article>
+        <article class="lpx-svc reveal">
           <span class="lpx-svc__no">06</span>
-          <i data-lucide="microscope"></i>
-          <h3>Research Guidance</h3>
-          <p>Improve your profile with research mentorship and publication support.</p>
+          <i data-lucide="messages-square"></i>
+          <h3>Interview Preparation</h3>
+          <p>Practice real residency interview questions with direct feedback and coaching.</p>
         </article>
       </div>
     </div>
@@ -214,9 +213,21 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <section class="lpx-svc-a" aria-label="Services">
     <div class="lpx-wrap">
     <article class="lpx-sva-row reveal">
+      <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp')"></div>
+      <div class="lpx-sva-body">
+        <span class="lpx-sva-eyebrow">01 &middot; Research</span>
+        <h3 class="lpx-sva-title">Research Guidance</h3>
+        <p class="lpx-sva-desc">Build your academic profile with mentored research and publication support tailored to your target specialty.</p>
+        <div class="lpx-sva-ctas">
+          <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
+          <a href="/research" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="lpx-sva-row lpx-sva-row--flip reveal">
       <div class="lpx-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')"></div>
       <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">01 &middot; Exam Prep</span>
+        <span class="lpx-sva-eyebrow">02 &middot; Exam Prep</span>
         <h3 class="lpx-sva-title">USMLE Exam Preparation</h3>
         <p class="lpx-sva-desc">Structured strategies from high-scoring mentors who have been through the process. Build the score your application needs.</p>
         <div class="lpx-sva-ctas">
@@ -225,10 +236,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
     </article>
-    <article class="lpx-sva-row lpx-sva-row--flip reveal">
+
+    <article class="lpx-sva-row reveal">
       <div class="lpx-sva-img" style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')"></div>
       <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">02 &middot; Residency Match</span>
+        <span class="lpx-sva-eyebrow">03 &middot; Residency Match</span>
         <h3 class="lpx-sva-title">Residency Match Mentorship</h3>
         <p class="lpx-sva-desc">A personalized roadmap built around your profile, scores, specialty, and timeline. Weekly guidance every step of the way.</p>
         <div class="lpx-sva-ctas">
@@ -237,11 +249,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
     </article>
-
-    <article class="lpx-sva-row reveal">
+    <article class="lpx-sva-row lpx-sva-row--flip reveal">
       <div class="lpx-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp')"></div>
       <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">05 &middot; Clinical</span>
+        <span class="lpx-sva-eyebrow">04 &middot; Clinical</span>
         <h3 class="lpx-sva-title">Clinical Rotations</h3>
         <p class="lpx-sva-desc">Gain real U.S. clinical experience and the LORs that strengthen your residency application meaningfully.</p>
         <div class="lpx-sva-ctas">
@@ -250,15 +261,28 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
     </article>
-    <article class="lpx-sva-row lpx-sva-row--flip reveal">
-      <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp')"></div>
+
+    <article class="lpx-sva-row reveal">
+      <div class="lpx-sva-img" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp')"></div>
       <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">06 &middot; Research</span>
-        <h3 class="lpx-sva-title">Research Guidance</h3>
-        <p class="lpx-sva-desc">Build your academic profile with mentored research and publication support tailored to your target specialty.</p>
+        <span class="lpx-sva-eyebrow">05 &middot; ERAS</span>
+        <h3 class="lpx-sva-title">ERAS Application Support</h3>
+        <p class="lpx-sva-desc">Build a stronger CV, personal statement, and residency application that stands out.</p>
         <div class="lpx-sva-ctas">
           <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="/research" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          <a href="/match-eras-cv" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="lpx-sva-row lpx-sva-row--flip reveal">
+      <div class="lpx-sva-img" style="background-image: url('assets/Photos/mentorship.webp')"></div>
+      <div class="lpx-sva-body">
+        <span class="lpx-sva-eyebrow">06 &middot; Interview</span>
+        <h3 class="lpx-sva-title">Interview Preparation</h3>
+        <p class="lpx-sva-desc">Practice real residency interview questions with direct feedback and coaching that sharpens every answer.</p>
+        <div class="lpx-sva-ctas">
+          <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
+          <a href="/match-interview" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
         </div>
       </div>
     </article>

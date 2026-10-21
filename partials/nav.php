@@ -18,12 +18,12 @@
             <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
           </a>
           <a href="/step-2-live-crash-course" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 2 Live Crash Course</span>
-            <span class="msp-nav__dd-meta">Live &middot; 7-day</span>
+            <span class="msp-nav__dd-name">Step 2 High Yield Crash Course</span>
+            <span class="msp-nav__dd-meta">Recorded &middot; 70 hrs</span>
           </a>
           <a href="/step-3-live-crash-course" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 3 Live Crash Course</span>
-            <span class="msp-nav__dd-meta">Live &middot; 8-day</span>
+            <span class="msp-nav__dd-name">Step 3 High Yield Crash Course</span>
+            <span class="msp-nav__dd-meta">Recorded &middot; 80 hrs</span>
           </a>
           <a href="/coaching-step1-mastery" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Step 1 Mastery</span>
