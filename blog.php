@@ -10,16 +10,25 @@ $scripts = [
     "/js/blog.js"
 ];
 
-require $_SERVER['DOCUMENT_ROOT'] . '/data/posts.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/data/posts.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
+
+// Research-award write-ups have their own page at /research-awards and are
+// deliberately kept out of this listing and its category filter.
+$feedPosts = usmlewise_blog_feed_posts($blogPosts);
+$feedCategories = array_filter(
+    $blogCategories,
+    static function (string $key): bool { return $key !== USMLEWISE_AWARDS_CATEGORY; },
+    ARRAY_FILTER_USE_KEY
+);
 
 // Split out the featured post (falls back to the newest if none flagged).
 $featured = null;
-foreach ($blogPosts as $p) {
+foreach ($feedPosts as $p) {
     if (!empty($p['featured'])) { $featured = $p; break; }
 }
-if ($featured === null && !empty($blogPosts)) {
-    $featured = $blogPosts[0];
+if ($featured === null && !empty($feedPosts)) {
+    $featured = $feedPosts[0];
 }
 $featuredSlug = $featured ? $featured['slug'] : null;
 
@@ -53,7 +62,7 @@ $fmtDate = function ($iso) {
       <!-- Category filter -->
       <nav class="blog-filter reveal" aria-label="Filter posts by topic">
         <button class="blog-filter__chip is-active" type="button" data-filter="all">All</button>
-        <?php foreach ($blogCategories as $key => $label): ?>
+        <?php foreach ($feedCategories as $key => $label): ?>
           <button class="blog-filter__chip" type="button" data-filter="<?php echo htmlspecialchars($key); ?>">
             <?php echo htmlspecialchars($label); ?>
           </button>
@@ -62,7 +71,7 @@ $fmtDate = function ($iso) {
 
       <?php if ($featured): ?>
       <!-- Featured post -->
-      <a class="blog-featured reveal" href="/blog/<?php echo htmlspecialchars($featured['slug']); ?>"
+      <a class="blog-featured reveal" href="<?php echo htmlspecialchars(usmlewise_post_url($featured)); ?>"
          data-category="<?php echo htmlspecialchars($featured['category']); ?>">
         <div class="blog-featured__cover blog-cover--<?php echo htmlspecialchars($featured['category']); ?>"
              <?php if (!empty($featured['image'])): ?>style="background-image:url('<?php echo htmlspecialchars($featured['image']); ?>')"<?php endif; ?>>
@@ -85,10 +94,10 @@ $fmtDate = function ($iso) {
 
       <!-- Post grid -->
       <div class="blog-grid" id="blogGrid">
-        <?php foreach ($blogPosts as $post): ?>
+        <?php foreach ($feedPosts as $post): ?>
           <?php if ($post['slug'] === $featuredSlug) continue; ?>
           <article class="blog-card reveal" data-category="<?php echo htmlspecialchars($post['category']); ?>">
-            <a class="blog-card__link" href="/blog/<?php echo htmlspecialchars($post['slug']); ?>">
+            <a class="blog-card__link" href="<?php echo htmlspecialchars(usmlewise_post_url($post)); ?>">
               <div class="blog-card__cover blog-cover--<?php echo htmlspecialchars($post['category']); ?>"
                    <?php if (!empty($post['image'])): ?>style="background-image:url('<?php echo htmlspecialchars($post['image']); ?>')"<?php endif; ?>>
                 <span class="blog-cover__tag"><?php echo htmlspecialchars($blogCategories[$post['category']] ?? ''); ?></span>

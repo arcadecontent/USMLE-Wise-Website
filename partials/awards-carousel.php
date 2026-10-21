@@ -1,16 +1,15 @@
 <?php
 /**
  * Awards carousel — shown on every research-program page.
- * Pulls category: 'awards' entries from data/posts.php and renders them as
- * a horizontally-scrolling row of plain blog cards, each linking to the
- * full article at /blog/<slug>. Renders nothing if no award posts exist yet.
+ * Pulls the award write-ups from data/posts.php and renders them as a
+ * horizontally-scrolling row of plain blog cards, each linking to the full
+ * write-up under /research-awards/<slug>. Renders nothing if there are none
+ * yet. The full set lives on the /research-awards page.
  */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/posts.php';
 
-$awardPosts = array_values(array_filter($blogPosts, function ($p) {
-    return $p['category'] === 'awards';
-}));
+$awardPosts = usmlewise_award_posts($blogPosts);
 
 if (empty($awardPosts)) return;
 
@@ -24,6 +23,10 @@ $fmtDate = function ($iso) {
     <div class="msp-head reveal">
       <span class="msp-eyebrow">Recognition</span>
       <h2 id="awardsTitle" class="msp-h2">Awards that back our results.</h2>
+      <p class="msp-sub">
+        Conference recognition earned by students in our research programs.
+        <a href="/research-awards">See all research awards</a>
+      </p>
     </div>
 
     <div class="awd-carousel__wrap reveal">
@@ -35,7 +38,7 @@ $fmtDate = function ($iso) {
         <?php foreach ($awardPosts as $post): ?>
         <li class="awd-carousel__card">
           <article class="blog-card" data-category="<?php echo htmlspecialchars($post['category']); ?>">
-            <a class="blog-card__link" href="/blog/<?php echo htmlspecialchars($post['slug']); ?>">
+            <a class="blog-card__link" href="<?php echo htmlspecialchars(usmlewise_post_url($post)); ?>">
               <div class="blog-card__cover blog-cover--<?php echo htmlspecialchars($post['category']); ?>"
                    <?php if (!empty($post['image'])): ?>style="background-image:url('<?php echo htmlspecialchars($post['image']); ?>')"<?php endif; ?>>
                 <span class="blog-cover__tag"><?php echo htmlspecialchars($blogCategories[$post['category']] ?? ''); ?></span>

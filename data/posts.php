@@ -8,10 +8,16 @@
  * `image` is optional — when empty, the listing renders a category-colored cover.
  * `body` is the full article HTML, rendered at /blog/<slug> by blog-post.php.
  *
- * `category: 'awards'` posts also surface in the awards carousel on research
- * pages (see partials/awards-carousel.php), rendered as plain blog cards.
+ * `category: 'awards'` posts are research-award write-ups. They do NOT appear
+ * in the general blog listing -- they live on their own page at
+ * /research-awards (research-awards.php) and surface in the awards carousel on
+ * research pages (partials/awards-carousel.php). Use the helpers below rather
+ * than comparing the category string by hand.
  *
  * Returned to the page as $blogPosts (already sorted newest-first).
+ *
+ * NOTE: this file declares functions and a constant, so every include of it
+ * must be require_once.
  */
 
 $blogCategories = [
@@ -22,6 +28,42 @@ $blogCategories = [
     'img-life'  => 'IMG Life',
     'awards'    => 'Research Awards',
 ];
+
+/** The category whose posts are award write-ups rather than blog articles. */
+const USMLEWISE_AWARDS_CATEGORY = 'awards';
+
+function usmlewise_post_is_award(array $post): bool
+{
+    return ($post['category'] ?? '') === USMLEWISE_AWARDS_CATEGORY;
+}
+
+/**
+ * Canonical path for a post, and the single source of truth for post links.
+ *
+ * Award write-ups sit under /research-awards/<slug> so the recognition lives
+ * with the research work instead of in the general blog; every other category
+ * stays at /blog/<slug>. blog-post.php renders both and 301s the wrong prefix
+ * to the right one, so an old /blog/<award-slug> link keeps working.
+ */
+function usmlewise_post_url(array $post): string
+{
+    $base = usmlewise_post_is_award($post) ? '/research-awards/' : '/blog/';
+    return $base . ($post['slug'] ?? '');
+}
+
+/** Award write-ups only, keeping the source array's newest-first order. */
+function usmlewise_award_posts(array $posts): array
+{
+    return array_values(array_filter($posts, 'usmlewise_post_is_award'));
+}
+
+/** What the general blog lists: everything except the award write-ups. */
+function usmlewise_blog_feed_posts(array $posts): array
+{
+    return array_values(array_filter($posts, static function (array $p): bool {
+        return !usmlewise_post_is_award($p);
+    }));
+}
 
 $blogPosts = [
     [

@@ -170,6 +170,10 @@
             <span class="msp-nav__dd-name">Stories</span>
             <span class="msp-nav__dd-meta">Real IMG match outcomes</span>
           </a>
+          <a href="/research-awards" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Research Awards</span>
+            <span class="msp-nav__dd-meta">Conference wins by our students</span>
+          </a>
           <a href="/blog" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Blog</span>
             <span class="msp-nav__dd-meta">Guides &amp; match strategy</span>

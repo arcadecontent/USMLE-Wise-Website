@@ -232,6 +232,7 @@
         $rest = substr($slug, strlen('blog/'));
         if ($rest !== '' && preg_match('/\A[a-z0-9-]+\z/', $rest)) {
             // Canonicalize (.html/.php suffix or trailing slash), then serve.
+            // blog-post.php 301s award slugs on to /research-awards/<slug>.
             if ($hadExtension || $reqPath !== '/blog/' . $rest) {
                 $redirect('/blog/' . $rest);
             }
@@ -239,6 +240,18 @@
             exit;
         }
         $redirect('/blog');
+    }
+    // Award write-ups: same template as the blog, different section.
+    if (strpos($slug, 'research-awards/') === 0) {
+        $rest = substr($slug, strlen('research-awards/'));
+        if ($rest !== '' && preg_match('/\A[a-z0-9-]+\z/', $rest)) {
+            if ($hadExtension || $reqPath !== '/research-awards/' . $rest) {
+                $redirect('/research-awards/' . $rest);
+            }
+            require __DIR__ . '/blog-post.php';
+            exit;
+        }
+        $redirect('/research-awards');
     }
     // Team member detail pages render from data/team.php via team-member.php;
     // adding a member there is all that is needed for /team/<slug> to resolve.

@@ -1,10 +1,25 @@
 /* ============================================================
-   USMLE Wise — Single blog article (/blog/<slug>)
+   USMLE Wise — Single article (/blog/<slug> and
+   /research-awards/<slug>, both rendered by blog-post.php)
    Layered on top of blog.css, which supplies the msp chrome,
    shared meta bits, and the .blog-cta panel.
    ============================================================ */
 
 .post { padding-top: clamp(28px, 4vw, 48px); }
+
+/* ---------- BACK LINK ----------
+   The template serves two sections, so the article says which one it came
+   from. Mirrors .tp-back on the team profile pages. */
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--uw-ink-500);
+  text-decoration: none;
+}
+.post-back:hover { color: var(--uw-blue-500); }
 
 /* ---------- HERO ---------- */
 .post-hero { padding-block: clamp(28px, 5vw, 56px) clamp(24px, 3vw, 40px); }
