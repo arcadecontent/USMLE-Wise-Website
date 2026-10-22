@@ -59,6 +59,21 @@
   letter-spacing: -0.01em;
 }
 
+/* Initials fallback for members without a photo on file yet. */
+.team-ava {
+  width: 100%; height: 100%;
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.team-ava--blue   { background: linear-gradient(135deg, var(--uw-blue-400), var(--uw-blue-700)); }
+.team-ava--red    { background: linear-gradient(135deg, var(--uw-red-400), var(--uw-red-700)); }
+.team-ava--green  { background: linear-gradient(135deg, var(--uw-success-300), var(--uw-success-700)); }
+.team-ava--purple { background: linear-gradient(135deg, #a78bfa, #6d28d9); }
+
 .team-spot__body {
   padding: clamp(26px, 3.2vw, 44px);
   display: flex;

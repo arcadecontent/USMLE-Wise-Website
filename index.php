@@ -7,11 +7,14 @@ $canonical = "https://usmlewise.com/";
 $bodyClass = "lpx";
 $stylesheets = [
     "/styles/landing.css",
-    "/styles/match.css"
+    "/styles/match.css",
+    "/styles/blog.css",
+    "/styles/awards-carousel.css"
 ];
 $scripts = [
     "/js/landing.js",
-    "/js/match.js"
+    "/js/match.js",
+    "/js/awards-carousel.js"
 ];
 $preloadImage = "/assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp";
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
@@ -147,6 +150,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   </section>
 
   <!-- ============== 4 · THE SOLUTION ============== -->
+  <?php /* Solution overview grid — commented out, superseded by the per-service sections below */ ?>
+  <?php if (false): ?>
   <section class="lpx-section lpx-solution" id="solution" aria-labelledby="solTitle">
     <div class="lpx-wrap">
       <div class="lpx-head reveal">
@@ -196,6 +201,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </div>
   </section>
+  <?php endif; ?>
 
   <!-- ============== 5 · SERVICES ============== -->
 
@@ -210,82 +216,340 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </div>
   </div>
 
-  <section class="lpx-svc-a" aria-label="Services">
+  <!-- 5a · Research (two-column intro row, then package cards, then awards) -->
+  <section class="lpx-svc-block lpx-svc-block--research" id="svc-research" aria-label="Research Guidance">
     <div class="lpx-wrap">
-    <article class="lpx-sva-row reveal">
-      <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp')"></div>
-      <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">01 &middot; Research</span>
-        <h3 class="lpx-sva-title">Research Guidance</h3>
-        <p class="lpx-sva-desc">Build your academic profile with mentored research and publication support tailored to your target specialty.</p>
-        <div class="lpx-sva-ctas">
-          <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="/research" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+      <article class="lpx-sva-row reveal">
+        <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp')"></div>
+        <div class="lpx-sva-body">
+          <span class="lpx-sva-eyebrow">01 &middot; Research</span>
+          <h3 class="lpx-sva-title">Research Guidance</h3>
+          <p class="lpx-sva-desc">Build your academic profile with mentored research and publication support tailored to your target specialty. From picking the right project to submitting your manuscript, we guide every step toward a credit that strengthens your application.</p>
+          <div class="lpx-sva-ctas">
+            <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
+            <a href="/research" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          </div>
         </div>
-      </div>
-    </article>
-    <article class="lpx-sva-row lpx-sva-row--flip reveal">
-      <div class="lpx-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')"></div>
-      <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">02 &middot; Exam Prep</span>
-        <h3 class="lpx-sva-title">USMLE Exam Preparation</h3>
-        <p class="lpx-sva-desc">Structured strategies from high-scoring mentors who have been through the process. Build the score your application needs.</p>
-        <div class="lpx-sva-ctas">
-          <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="/coaching" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-        </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="lpx-sva-row reveal">
-      <div class="lpx-sva-img" style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')"></div>
-      <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">03 &middot; Residency Match</span>
-        <h3 class="lpx-sva-title">Residency Match Mentorship</h3>
-        <p class="lpx-sva-desc">A personalized roadmap built around your profile, scores, specialty, and timeline. Weekly guidance every step of the way.</p>
-        <div class="lpx-sva-ctas">
-          <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="/match" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-        </div>
+      <div class="lpx-svc-block__pkghead reveal">
+        <h4 class="lpx-svc-block__pkgtitle">Popular Packages</h4>
+        <a href="/research" class="lpx-svc-block__more">See all our research programs <i data-lucide="arrow-right" width="14" height="14"></i></a>
       </div>
-    </article>
-    <article class="lpx-sva-row lpx-sva-row--flip reveal">
-      <div class="lpx-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp')"></div>
-      <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">04 &middot; Clinical</span>
-        <h3 class="lpx-sva-title">Clinical Rotations</h3>
-        <p class="lpx-sva-desc">Gain real U.S. clinical experience and the LORs that strengthen your residency application meaningfully.</p>
-        <div class="lpx-sva-ctas">
-          <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="/rotations" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-        </div>
-      </div>
-    </article>
 
-    <article class="lpx-sva-row reveal">
-      <div class="lpx-sva-img" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp')"></div>
-      <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">05 &middot; ERAS</span>
-        <h3 class="lpx-sva-title">ERAS Application Support</h3>
-        <p class="lpx-sva-desc">Build a stronger CV, personal statement, and residency application that stands out.</p>
-        <div class="lpx-sva-ctas">
-          <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="/match-eras-cv" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-        </div>
+      <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; Mentored</span>
+            <h4 class="lpx-svc-card__title">Get Published</h4>
+            <div class="lpx-svc-card__price">$300&ndash;$1,000</div>
+            <p class="lpx-svc-card__desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/research-coauthor" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Placement Service &middot; 12-month fellowship</span>
+            <h4 class="lpx-svc-card__title">J-1 Research Fellowship Placement</h4>
+            <div class="lpx-svc-card__price">$20,000</div>
+            <p class="lpx-svc-card__desc">End-to-end placement support for a 12-month J-1 research fellowship: institution matching, application guidance, and visa documentation.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/research-j1-fellowship" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; 12-month program</span>
+            <h4 class="lpx-svc-card__title">Research Catalyst</h4>
+            <div class="lpx-svc-card__price">$4,500</div>
+            <p class="lpx-svc-card__desc">A fully guided 12-month pathway from zero to publication: topic selection, study design, writing, and journal submission.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/research-catalyst" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
       </div>
-    </article>
-    <article class="lpx-sva-row lpx-sva-row--flip reveal">
-      <div class="lpx-sva-img" style="background-image: url('assets/Photos/mentorship.webp')"></div>
-      <div class="lpx-sva-body">
-        <span class="lpx-sva-eyebrow">06 &middot; Interview</span>
-        <h3 class="lpx-sva-title">Interview Preparation</h3>
-        <p class="lpx-sva-desc">Practice real residency interview questions with direct feedback and coaching that sharpens every answer.</p>
-        <div class="lpx-sva-ctas">
-          <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-          <a href="/match-interview" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+    </div>
+  </section>
+
+  <?php $awdSimpleHeader = true; include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
+
+  <!-- 5b · Exam Prep -->
+  <section class="lpx-svc-block" id="svc-examprep" aria-label="USMLE Exam Prep">
+    <div class="lpx-wrap">
+      <article class="lpx-sva-row reveal">
+        <div class="lpx-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')"></div>
+        <div class="lpx-sva-body">
+          <span class="lpx-sva-eyebrow">02 &middot; Exam Prep</span>
+          <h3 class="lpx-sva-title">USMLE Exam Preparation</h3>
+          <p class="lpx-sva-desc">Structured strategies from high-scoring mentors who have been through the process. Build the score your application needs.</p>
+          <div class="lpx-sva-ctas">
+            <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
+            <a href="/coaching" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          </div>
         </div>
+      </article>
+
+      <div class="lpx-svc-block__pkghead reveal">
+        <h4 class="lpx-svc-block__pkgtitle">Popular Packages</h4>
+        <a href="/coaching" class="lpx-svc-block__more">See all our exam prep programs <i data-lucide="arrow-right" width="14" height="14"></i></a>
       </div>
-    </article>
+
+      <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('/assets/step1-crash-course/step1-crash-course-image.jpg')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Recorded</span>
+            <h4 class="lpx-svc-card__title">Step 1 Crash Course</h4>
+            <div class="lpx-svc-card__price">$199</div>
+            <p class="lpx-svc-card__desc">A 10-day, 60-hour recorded crash course covering every high-yield Step 1 subject, taught by a team of 270+ scorers.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/step-1-high-yield-crash-course" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('/assets/step-2-crash-course-enrollment/step-2-live-crash-course-hero.jpg')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Recorded</span>
+            <h4 class="lpx-svc-card__title">Step 2 Crash Course</h4>
+            <div class="lpx-svc-card__price">$499</div>
+            <p class="lpx-svc-card__desc">A 7-module, 70-hour recorded crash course covering every high-yield Step 2 CK subject, taught by a team of 270+ scorers.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/step-2-live-crash-course" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('/assets/step-3-crash-course-enrollment/step-3-live-crash-course-hero.jpg')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Recorded</span>
+            <h4 class="lpx-svc-card__title">Step 3 Crash Course</h4>
+            <div class="lpx-svc-card__price">$499</div>
+            <p class="lpx-svc-card__desc">An 8-module, 80-hour recorded crash course covering every high-yield Step 3 subject plus a full module on CCS, taught by a team of 270+ scorers.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/step-3-live-crash-course" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5c · Residency Match Mentorship -->
+  <section class="lpx-svc-block" id="svc-match" aria-label="Residency Match Mentorship">
+    <div class="lpx-wrap">
+      <article class="lpx-sva-row lpx-sva-row--flip reveal">
+        <div class="lpx-sva-img" style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')"></div>
+        <div class="lpx-sva-body">
+          <span class="lpx-sva-eyebrow">03 &middot; Residency Match</span>
+          <h3 class="lpx-sva-title">Residency Match Mentorship</h3>
+          <p class="lpx-sva-desc">A personalized roadmap built around your profile, scores, specialty, and timeline. Weekly guidance every step of the way.</p>
+          <div class="lpx-sva-ctas">
+            <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
+            <a href="/match" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <div class="lpx-svc-block__pkghead reveal">
+        <h4 class="lpx-svc-block__pkgtitle">Popular Packages</h4>
+        <a href="/match" class="lpx-svc-block__more">See all our match programs <i data-lucide="arrow-right" width="14" height="14"></i></a>
+      </div>
+
+      <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/pexels-tara-winstead-7722791.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Self-serve &middot; Per cycle</span>
+            <h4 class="lpx-svc-card__title">Match Maker</h4>
+            <div class="lpx-svc-card__price">$100</div>
+            <p class="lpx-svc-card__desc">Scores every eligible residency program against your profile, estimates your real interview odds, and allocates your Gold and Silver signals.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/match-maker" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/kaitlyn-baker-vZJdYl5JVXY-unsplash.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; Per specialty</span>
+            <h4 class="lpx-svc-card__title">Program Signaling Strategy</h4>
+            <div class="lpx-svc-card__price">$800</div>
+            <p class="lpx-svc-card__desc">A competitiveness assessment plus a 1:1 strategy call to build your program list and optimize your Gold and Silver signal allocation.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/match-signaling" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/calendar.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; SOAP week</span>
+            <h4 class="lpx-svc-card__title">SOAP Match Support</h4>
+            <div class="lpx-svc-card__price">$1,550</div>
+            <p class="lpx-svc-card__desc">Real-time strategy and mentor access through SOAP week if the Match doesn't go as planned, plus post-SOAP guidance.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/match-soap" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5d · Clinical Rotations -->
+  <section class="lpx-svc-block" id="svc-rotations" aria-label="Clinical Rotations">
+    <div class="lpx-wrap">
+      <article class="lpx-sva-row reveal">
+        <div class="lpx-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp')"></div>
+        <div class="lpx-sva-body">
+          <span class="lpx-sva-eyebrow">04 &middot; Clinical</span>
+          <h3 class="lpx-sva-title">Clinical Rotations</h3>
+          <p class="lpx-sva-desc">Gain real U.S. clinical experience and the LORs that strengthen your residency application meaningfully.</p>
+          <div class="lpx-sva-ctas">
+            <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
+            <a href="/rotations" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <div class="lpx-svc-block__pkghead reveal">
+        <h4 class="lpx-svc-block__pkgtitle">Featured Rotations</h4>
+        <a href="/rotations" class="lpx-svc-block__more">See all our clinical rotations <i data-lucide="arrow-right" width="14" height="14"></i></a>
+      </div>
+
+      <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/internal-medicine-rounds.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Internal Medicine &middot; New York, NY</span>
+            <h4 class="lpx-svc-card__title">Internal Medicine Elective</h4>
+            <div class="lpx-svc-card__price">$4,150</div>
+            <p class="lpx-svc-card__desc">4-week inpatient and outpatient elective at St. Luke's Cornwall Hospital. Housing included, max 2 students, LOR on hospital letterhead.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/rotation-new-york" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/general-surgery-operating-room.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">General Surgery &middot; Miami, FL</span>
+            <h4 class="lpx-svc-card__title">General Surgery Rotation</h4>
+            <div class="lpx-svc-card__price">$3,400</div>
+            <p class="lpx-svc-card__desc">4-week hands-on rotation at Larkin Community Hospital and Hialeah Hospital, an ACGME-accredited site with OR observation and a hospital-letterhead LOR.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/rotation-miami-surgery" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/psychiatry-therapy-session.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Psychiatry &middot; Houston, TX</span>
+            <h4 class="lpx-svc-card__title">Psychiatry Rotation</h4>
+            <div class="lpx-svc-card__price">$2,000</div>
+            <p class="lpx-svc-card__desc">4-week rotation with a Psychiatry Medical Director with 30 years of experience treating all ages. Max 2 students, LOR included.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/rotation-houston-psychiatry" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5e · ERAS Application Support -->
+  <section class="lpx-svc-block" id="svc-eras" aria-label="ERAS Application Support">
+    <div class="lpx-wrap">
+      <article class="lpx-sva-row lpx-sva-row--flip reveal">
+        <div class="lpx-sva-img" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp')"></div>
+        <div class="lpx-sva-body">
+          <span class="lpx-sva-eyebrow">05 &middot; ERAS</span>
+          <h3 class="lpx-sva-title">ERAS Application Support</h3>
+          <p class="lpx-sva-desc">Build a stronger CV, personal statement, and residency application that stands out.</p>
+          <div class="lpx-sva-ctas">
+            <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
+            <a href="/match-eras-cv" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <div class="lpx-svc-block__pkghead reveal">
+        <h4 class="lpx-svc-block__pkgtitle">Popular Packages</h4>
+        <a href="/match-eras-cv" class="lpx-svc-block__more">See all our ERAS packages <i data-lucide="arrow-right" width="14" height="14"></i></a>
+      </div>
+
+      <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/high-school-student.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; 2-hour session</span>
+            <h4 class="lpx-svc-card__title">Lite Edit</h4>
+            <div class="lpx-svc-card__price">$499</div>
+            <p class="lpx-svc-card__desc">A fast, physician-led 2-hour live CV rebuild session with full 3X-framework integration and 1 revision.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/match-eras-cv#pricing" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/team-young-specialist-doctors-vertical-crop.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; Most popular</span>
+            <h4 class="lpx-svc-card__title">Signature Surgery</h4>
+            <div class="lpx-svc-card__price">$899</div>
+            <p class="lpx-svc-card__desc">The complete 3-hour CV rebuild plus a CV, personal statement, and LOR coherence check, with unlimited revisions for 7 days.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/match-eras-cv#pricing" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/ny-im-student-travel.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; Comprehensive</span>
+            <h4 class="lpx-svc-card__title">Strategic Surgery</h4>
+            <div class="lpx-svc-card__price">$1,199</div>
+            <p class="lpx-svc-card__desc">Everything in Signature Surgery, plus program-signaling strategy and priority support until you submit.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/match-eras-cv#pricing" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 

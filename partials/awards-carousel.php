@@ -20,6 +20,9 @@ $fmtDate = function ($iso) {
 ?>
 <section class="msp-section awd-carousel" id="awards" aria-labelledby="awardsTitle">
   <div class="msp-wrap">
+    <?php if (!empty($awdSimpleHeader)): ?>
+    <h3 id="awardsTitle" class="lpx-svc-block__pkgtitle awd-carousel__simple-title reveal">Research Awards</h3>
+    <?php else: ?>
     <div class="msp-head reveal">
       <span class="msp-eyebrow">Recognition</span>
       <h2 id="awardsTitle" class="msp-h2">Awards that back our results.</h2>
@@ -28,15 +31,20 @@ $fmtDate = function ($iso) {
         <a href="/research-awards">See all research awards</a>
       </p>
     </div>
+    <?php endif; ?>
 
+    <?php if (!empty($awdSimpleHeader)): ?>
+    <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
+    <?php else: ?>
     <div class="awd-carousel__wrap reveal">
       <button class="awd-carousel__btn awd-carousel__btn--prev" type="button" aria-label="Previous award" aria-controls="awardsTrack" disabled>
         <i data-lucide="chevron-left" width="18" height="18"></i>
       </button>
 
       <ul class="awd-carousel__track" id="awardsTrack">
+    <?php endif; ?>
         <?php foreach ($awardPosts as $post): ?>
-        <li class="awd-carousel__card">
+        <?php if (empty($awdSimpleHeader)): ?><li class="awd-carousel__card"><?php endif; ?>
           <article class="blog-card" data-category="<?php echo htmlspecialchars($post['category']); ?>">
             <a class="blog-card__link" href="<?php echo htmlspecialchars(usmlewise_post_url($post)); ?>">
               <div class="blog-card__cover blog-cover--<?php echo htmlspecialchars($post['category']); ?>"
@@ -55,13 +63,17 @@ $fmtDate = function ($iso) {
               </div>
             </a>
           </article>
-        </li>
+        <?php if (empty($awdSimpleHeader)): ?></li><?php endif; ?>
         <?php endforeach; ?>
+    <?php if (!empty($awdSimpleHeader)): ?>
+    </div>
+    <?php else: ?>
       </ul>
 
       <button class="awd-carousel__btn awd-carousel__btn--next" type="button" aria-label="Next award" aria-controls="awardsTrack">
         <i data-lucide="chevron-right" width="18" height="18"></i>
       </button>
     </div>
+    <?php endif; ?>
   </div>
 </section>

@@ -7,11 +7,14 @@
  * against it, so no new file or routing change is needed.
  *
  * Fields:
- *   group        'leadership' | 'research' — which section the card appears in
+ *   group        'leadership' | 'research' | 'match' | 'coaching' | 'marketing'
+ *                | 'sales' | 'operations' | 'tech' | 'admin' — which section
+ *                the card appears in
  *   name         Full display name
  *   role         Eyebrow above the name (detail page) and role line (card)
  *   sub          Secondary line under the name on the detail page
- *   photo        Absolute path under /assets
+ *   photo        Absolute path under /assets, or null when no photo is on
+ *                file yet — templates fall back to an initials avatar
  *   card_line    One-line credential summary shown on the card
  *   card_bio     Optional short blurb for the leadership card; falls back to
  *                bio[0], which can read as repetitive next to the role label
@@ -90,30 +93,33 @@ function usmlewise_team_members(): array
 
         'shivani-ravipati' => [
             'group'     => 'research',
-            'name'      => 'Shivani Ravipati',
-            'role'      => 'Research Mentor',
+            'also_in'   => ['coaching'],
+            'name'      => 'Dr. Shivani Ravipati',
+            'role'      => 'Research Mentor &amp; Coaching Operations',
             'sub'       => 'Research &amp; Publications Mentor',
             'photo'     => '/assets/Photos/Team-Members/shivani.jpeg',
-            'card_line' => '5 first-author publications &middot; IRB-approved trial lead',
+            'card_line' => 'Research mentor, case studies &middot; Coaching operations &amp; QA',
             'bio'       => [
-                "Shivani Ravipati is a Research and Publications Mentor at USMLE Wise, with five first-author publications, an AHA poster presentation, and more than eight co-authored papers.",
+                "Dr. Shivani Ravipati is a volunteer Research and Publications Mentor at USMLE Wise, with five first-author publications, an AHA poster presentation, and more than eight co-authored papers.",
                 "She leads an IRB-approved clinical trial in PRP research, and actively guides international medical graduates through research, Step preparation, and their ERAS applications.",
+                "Within Research, she mentors case-study manuscripts specifically, and she also supports the Coaching team with day-to-day operations and quality assurance.",
             ],
             'affiliations' => [
                 ['role' => 'Research &amp; Publications Mentor', 'org' => 'USMLE Wise'],
                 ['role' => 'Clinical Trial Lead (IRB-approved)', 'org' => 'PRP Research'],
+                ['role' => 'Operations &amp; QA', 'org' => 'USMLE Wise Coaching'],
             ],
         ],
 
         'shelja-sharma' => [
             'group'     => 'research',
-            'name'      => 'Shelja Sharma',
+            'name'      => 'Dr. Shelja Sharma',
             'role'      => 'Research Mentor',
             'sub'       => 'Research &amp; Publications Mentor',
             'photo'     => '/assets/Photos/Team-Members/Shelja-Sharma.jpg',
             'card_line' => '7 published papers &middot; 15 students mentored to publication',
             'bio'       => [
-                "Shelja Sharma is a Research and Publications Mentor at USMLE Wise, with seven published papers and six co-authored poster presentations.",
+                "Dr. Shelja Sharma is a volunteer Research and Publications Mentor at USMLE Wise, with seven published papers and six co-authored poster presentations.",
                 "She has mentored fifteen students to a publication credit of their own.",
             ],
             'affiliations' => [
@@ -285,6 +291,451 @@ function usmlewise_team_members(): array
             ],
         ],
 
+        /* ---------------- Sales &amp; Customer Success ---------------- */
+
+        'aya-jabeur' => [
+            'group'     => 'sales',
+            'name'      => 'Aya Jabeur',
+            'role'      => 'Sales Manager',
+            'sub'       => 'Sales, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Aya-Jabeur.webp',
+            'card_line' => 'First call for prospective students &middot; Runs discovery calls &amp; enrollment',
+            'bio'       => [
+                "Aya Jabeur is Sales Manager at USMLE Wise, and the first real conversation a prospective student has with the team.",
+                "She qualifies inbound leads, runs discovery calls, presents the right program with honest expectations, handles objections, and closes enrollments, then hands new students to Customer Success and reports weekly on pipeline and conversion.",
+            ],
+            'affiliations' => [
+                ['role' => 'Sales Manager', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'kanika-chopra' => [
+            'group'     => 'sales',
+            'name'      => 'Kanika Chopra',
+            'role'      => 'Sales Executive',
+            'sub'       => 'Sales, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Kanika-Chopra.webp',
+            'card_line' => 'Converts inbound leads into enrolled students &middot; Discovery &amp; closing calls',
+            'bio'       => [
+                "Kanika Chopra is a Sales Executive at USMLE Wise, converting inbound leads into enrolled students by matching each prospect to the right program and closing with integrity.",
+                "She responds to leads quickly, runs discovery and closing calls, logs everything in the CRM, hands students to Customer Success, and reports pipeline weekly.",
+            ],
+            'affiliations' => [
+                ['role' => 'Sales Executive', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'khadija-grati' => [
+            'group'     => 'sales',
+            'name'      => 'Khadija Grati',
+            'role'      => 'Sales &amp; Customer Success Executive',
+            'sub'       => 'Sales, Post-Sales, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Khadija-Grati.webp',
+            'card_line' => 'One point of contact from enrollment to Match Day &middot; 48-hour onboarding',
+            'bio'       => [
+                "Khadija Grati is Sales and Customer Success Executive at USMLE Wise, owning the full student lifecycle from first contact to Match Day so each student has one consistent point of contact.",
+                "She closes enrollments, onboards new students within 48 hours, answers ongoing questions, escalates payment and refund cases, and keeps CRM records current.",
+            ],
+            'affiliations' => [
+                ['role' => 'Sales &amp; Customer Success Executive', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'eman-fatima' => [
+            'group'     => 'sales',
+            'name'      => 'Eman Fatima',
+            'role'      => 'Sales Intern',
+            'sub'       => 'Sales, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Eman-Fatima.webp',
+            'card_line' => 'First-touch lead engagement &middot; CRM &amp; pipeline upkeep',
+            'bio'       => [
+                "Eman Fatima is a Sales Intern at USMLE Wise, supporting the Sales team on first-touch engagement and pipeline upkeep.",
+                "She triages and tags new leads, updates the CRM, sends follow-up templates, helps book calls, and shadows sales calls to take notes, as a learning track into a full sales career.",
+            ],
+            'affiliations' => [
+                ['role' => 'Sales Intern', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        /* ---------------- Marketing, Content &amp; Outreach ---------------- */
+
+        'abhishek-dinesh' => [
+            'group'     => 'marketing',
+            'name'      => 'Abhishek Dinesh',
+            'role'      => 'Video Editor &amp; Content Creator',
+            'sub'       => 'Marketing, Sales, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Abhishek-Dinesh.webp',
+            'card_line' => 'Owns content from script to published video &middot; Reels, YouTube &amp; carousels',
+            'bio'       => [
+                "Abhishek Dinesh is Video Editor and Content Creator at USMLE Wise, owning content from idea to published video.",
+                "He writes scripts for Reels, YouTube, and carousels on medical education and Match topics, checks medical accuracy, edits to a publish-ready standard, and reports weekly on views and engagement. He also supports outbound sales.",
+            ],
+            'affiliations' => [
+                ['role' => 'Video Editor &amp; Content Creator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'mohamed-samir-bacha' => [
+            'group'     => 'marketing',
+            'name'      => 'Mohamed Samir Bacha',
+            'role'      => 'Content Creator',
+            'sub'       => 'Sales, Marketing, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Mohamed-Samir-Bacha.webp',
+            'card_line' => 'Scripts, posts &amp; videos tied to the Step and Match calendar',
+            'bio'       => [
+                "Mohamed Samir Bacha is a Content Creator at USMLE Wise, turning complex medical and process knowledge into scripts, posts, and videos for Instagram, YouTube, and other channels.",
+                "He keeps a content calendar tied to launches and the Step and Match seasons, writes ad and landing page copy, and reports weekly on what works.",
+            ],
+            'affiliations' => [
+                ['role' => 'Content Creator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'leesarena-kani' => [
+            'group'     => 'marketing',
+            'name'      => 'Leesarena Kani',
+            'role'      => 'Outreach Executive',
+            'sub'       => 'Outreach, Marketing, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Leesarena-Kani.webp',
+            'card_line' => 'Builds relationships with institutions, influencers &amp; partners',
+            'bio'       => [
+                "Leesarena Kani is Outreach Executive at USMLE Wise, building relationships with institutions, influencers, collaborators, and potential partners.",
+                "She researches targets, sends personalized outreach, follows up to a clear next step, coordinates agreed collaborations, and reports weekly on response rate and collaborations closed.",
+            ],
+            'affiliations' => [
+                ['role' => 'Outreach Executive', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'chrisann' => [
+            'group'     => 'marketing',
+            'name'      => 'Chrisann',
+            'role'      => 'Social Media Manager &amp; Match Coordinator',
+            'sub'       => 'Marketing, Match, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Chrisann.webp',
+            'card_line' => 'Leads the social media team &middot; Coordinates Match-team scheduling &amp; documents',
+            'bio'       => [
+                "Chrisann is Social Media Manager, Team Leader, and Match Coordinator at USMLE Wise.",
+                "Chrisann leads the social media team and manages the company's social presence, with the content creators working within the team. Chrisann also coordinates scheduling and document logistics for the Match team.",
+            ],
+            'affiliations' => [
+                ['role' => 'Social Media Manager, Team Leader &amp; Match Coordinator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'shrunga' => [
+            'group'     => 'marketing',
+            'name'      => 'Shrunga',
+            'role'      => 'Content Creator',
+            'sub'       => 'Marketing, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Shrunga.webp',
+            'card_line' => 'Educational &amp; promotional content for Instagram, YouTube &amp; beyond',
+            'bio'       => [
+                "Shrunga is a Content Creator at USMLE Wise, producing the educational and promotional content that attracts and converts its audience of IMGs: scripts, posts, and videos for Instagram, YouTube, and other channels.",
+                "The work runs on accurate medical content, a content calendar, supporting ad and landing page copy, and weekly performance reporting.",
+            ],
+            'affiliations' => [
+                ['role' => 'Content Creator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'pratyusha' => [
+            'group'     => 'marketing',
+            'name'      => 'Pratyusha',
+            'role'      => 'Content Creator',
+            'sub'       => 'Marketing, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Pratyusha.webp',
+            'card_line' => 'Educational &amp; promotional content for Instagram, YouTube &amp; beyond',
+            'bio'       => [
+                "Pratyusha is a Content Creator at USMLE Wise, producing the educational and promotional content that attracts and converts its audience of IMGs: scripts, posts, and videos for Instagram, YouTube, and other channels.",
+                "The work runs on accurate medical content, a content calendar, supporting ad and landing page copy, and weekly performance reporting.",
+            ],
+            'affiliations' => [
+                ['role' => 'Content Creator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'uzair' => [
+            'group'     => 'marketing',
+            'name'      => 'Uzair',
+            'role'      => 'Content Creator',
+            'sub'       => 'Marketing, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Uzair.webp',
+            'card_line' => 'Educational &amp; promotional content for Instagram, YouTube &amp; beyond',
+            'bio'       => [
+                "Uzair is a Content Creator at USMLE Wise, producing the educational and promotional content that attracts and converts its audience of IMGs: scripts, posts, and videos for Instagram, YouTube, and other channels.",
+                "The work runs on accurate medical content, a content calendar, supporting ad and landing page copy, and weekly performance reporting.",
+            ],
+            'affiliations' => [
+                ['role' => 'Content Creator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        /* ---------------- Research (cont.) ---------------- */
+
+        'meghana-reddy' => [
+            'group'     => 'research',
+            'name'      => 'Meghana Reddy',
+            'role'      => 'Research Coordinator',
+            'sub'       => 'Research Coordinator, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Meghana-Reddy.webp',
+            'card_line' => 'Keeps every research project on schedule across the team',
+            'bio'       => [
+                "Meghana Reddy is Research Coordinator at USMLE Wise, keeping every student's research project on schedule by handling the logistics behind the mentorship.",
+                "Meghana schedules sessions, tracks journal and conference deadlines, organizes drafts and approvals, flags missing materials, and maintains the CRM, aiming for zero coordination-related missed deadlines.",
+            ],
+            'affiliations' => [
+                ['role' => 'Research Coordinator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'nikita-tompe' => [
+            'group'     => 'research',
+            'name'      => 'Nikita Tompe',
+            'role'      => 'Research Intern',
+            'sub'       => 'Research Intern (Projects), USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Nikita-Tompe.webp',
+            'card_line' => 'Literature searches, data organization &amp; reference management',
+            'bio'       => [
+                "Nikita Tompe is a Research Intern at USMLE Wise, supporting the Research Lead, mentors, and students with literature searches and summaries, data organization, reference management, formatting, and proofreading.",
+                "Nikita also tracks deadlines across projects, as a path toward Research Coordinator or Research Mentor.",
+            ],
+            'affiliations' => [
+                ['role' => 'Research Intern (Projects)', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'vidhi-dhaduk' => [
+            'group'     => 'research',
+            'name'      => 'Vidhi Dhaduk',
+            'role'      => 'Research Intern',
+            'sub'       => 'Research Intern (Projects), USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Vidhi-Dhaduk.webp',
+            'card_line' => 'Literature searches, data organization &amp; reference management',
+            'bio'       => [
+                "Vidhi Dhaduk is a Research Intern at USMLE Wise, supporting the Research Lead, mentors, and students with literature searches and summaries, data organization, reference management, formatting, and proofreading.",
+                "Vidhi also tracks deadlines across projects, as a path toward Research Coordinator or Research Mentor.",
+            ],
+            'affiliations' => [
+                ['role' => 'Research Intern (Projects)', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'malihaa-tabassum' => [
+            'group'     => 'research',
+            'name'      => 'Malihaa Tabassum',
+            'role'      => 'Research Intern',
+            'sub'       => 'Research Intern (Projects), USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Malihaa-Tabassum.webp',
+            'card_line' => 'Literature searches, data organization &amp; reference management',
+            'bio'       => [
+                "Malihaa Tabassum is a Research Intern at USMLE Wise, supporting the Research Lead, mentors, and students with literature searches and summaries, data organization, reference management, formatting, and proofreading.",
+                "Malihaa also tracks deadlines across projects, as a path toward Research Coordinator or Research Mentor.",
+            ],
+            'affiliations' => [
+                ['role' => 'Research Intern (Projects)', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        /* ---------------- Match Services ---------------- */
+
+        'roohi' => [
+            'group'     => 'match',
+            'name'      => 'Roohi',
+            'role'      => 'Match Lead',
+            'sub'       => 'Match, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Roohi.webp',
+            'card_line' => 'Owns Match strategy &amp; delivery for every applicant',
+            'bio'       => [
+                "Roohi is Match Lead at USMLE Wise, owning Match strategy and delivery for applicants and setting the playbook that mentors and coordinators follow.",
+                "Roohi approves high-stakes client strategies, assigns clients to mentors, audits quality, keeps the team on ERAS and NRMP deadlines, and mentors on personal statements.",
+            ],
+            'affiliations' => [
+                ['role' => 'Match Lead', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'tanishq' => [
+            'group'     => 'match',
+            'name'      => 'Dr. Tanishq',
+            'role'      => 'Match Mentor',
+            'sub'       => 'Match Mentor, ERAS CVs &amp; Program Signaling, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Tanishq.webp',
+            'card_line' => 'Primary strategist for an assigned roster of applicants',
+            'bio'       => [
+                "Dr. Tanishq is a volunteer Match Mentor at USMLE Wise focused on ERAS CVs and program signaling.",
+                "Dr. Tanishq is the primary strategist for an assigned roster of residency applicants: running strategy calls, building program lists, keeping each client's portfolio current, and handing applicants to Interview Coaches when interview season starts.",
+            ],
+            'affiliations' => [
+                ['role' => 'Match Mentor', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'meher' => [
+            'group'     => 'match',
+            'name'      => 'Dr. Meher',
+            'role'      => 'Match Mentor',
+            'sub'       => 'Match, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Meher.webp',
+            'card_line' => 'Primary strategist for an assigned roster of applicants',
+            'bio'       => [
+                "Dr. Meher is a volunteer Match Mentor at USMLE Wise.",
+                "Dr. Meher is the primary strategist for an assigned roster of residency applicants: running strategy calls, building program lists, keeping each client's portfolio current, and handing applicants to Interview Coaches when interview season starts.",
+            ],
+            'affiliations' => [
+                ['role' => 'Match Mentor', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'saket' => [
+            'group'     => 'match',
+            'name'      => 'Dr. Saket',
+            'role'      => 'Match Mentor',
+            'sub'       => 'Match, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Saket.webp',
+            'card_line' => 'Primary strategist for an assigned roster of applicants',
+            'bio'       => [
+                "Dr. Saket is a volunteer Match Mentor at USMLE Wise.",
+                "Dr. Saket is the primary strategist for an assigned roster of residency applicants: running strategy calls, building program lists, keeping each client's portfolio current, and handing applicants to Interview Coaches when interview season starts.",
+            ],
+            'affiliations' => [
+                ['role' => 'Match Mentor', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        /* ---------------- Coaching ---------------- */
+
+        'shashank-choti' => [
+            'group'     => 'coaching',
+            'name'      => 'Shashank Choti',
+            'role'      => 'Coaching Manager',
+            'sub'       => 'Coaching, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Shashank-Choti.webp',
+            'card_line' => 'Owns quality &amp; consistency of all coaching delivered to students',
+            'bio'       => [
+                "Shashank Choti is Coaching Manager at USMLE Wise, owning the quality and consistency of all coaching delivered to students.",
+                "Shashank recruits and trains coaches, assigns students, maintains coaching frameworks, monitors outcomes, steps in on high-risk cases, and oversees coach scheduling.",
+            ],
+            'affiliations' => [
+                ['role' => 'Coaching Manager', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'vanshitha' => [
+            'group'     => 'coaching',
+            'name'      => 'Vanshitha',
+            'role'      => 'Coaching Coordinator &amp; Content Creator',
+            'sub'       => 'Coaching, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Vanshitha.webp',
+            'card_line' => 'Keeps the coaching program on schedule for every student',
+            'bio'       => [
+                "Vanshitha is Coaching Coordinator and Content Creator at USMLE Wise, keeping the coaching program on schedule for every student and coach.",
+                "Vanshitha schedules sessions, monitors attendance and no-shows, tracks session counts and renewals, keeps CRM logs current, sends reminders, and contributes content.",
+            ],
+            'affiliations' => [
+                ['role' => 'Coaching Coordinator &amp; Content Creator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'darshan' => [
+            'group'     => 'marketing',
+            'name'      => 'Darshan',
+            'role'      => 'Content Creator',
+            'sub'       => 'Marketing, Coaching, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Darshan.webp',
+            'card_line' => 'Social &amp; content production, carousels',
+            'bio'       => [
+                "Darshan is a Content Creator at USMLE Wise, producing carousels, and is also a member of the coaching team.",
+            ],
+            'affiliations' => [
+                ['role' => 'Content Creator', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        /* ---------------- Tech ---------------- */
+
+        'syed-hassam' => [
+            'group'     => 'tech',
+            'name'      => 'Syed Hassam',
+            'role'      => 'Developer',
+            'sub'       => 'Tech, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Syed-Hassam.webp',
+            'card_line' => 'Primary developer on the CRM &amp; USMLE Wise platforms',
+            'bio'       => [
+                "Syed Hassam is Developer at USMLE Wise, building and maintaining its interconnected platforms: the CRM, WhatsApp AI bot infrastructure, Matchmaker, the Mastery and Q Bank learning platform, and the CRIST app.",
+                "Hassam is the primary developer on the CRM architecture and builds features, automations, and lead routing flows.",
+            ],
+            'affiliations' => [
+                ['role' => 'Developer', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        /* ---------------- Admin ---------------- */
+
+        'harshitha' => [
+            'group'     => 'admin',
+            'name'      => 'Harshitha',
+            'role'      => 'Admin',
+            'sub'       => 'Admin, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Harshitha.webp',
+            'card_line' => 'Keeps the administrative backbone of USMLE Wise running',
+            'bio'       => [
+                "Harshitha is Admin at USMLE Wise, keeping the administrative backbone of the company running: shared calendars and scheduling, general inboxes, internal documents and records, trackers, CRM data cleanup, and SOP upkeep, so other teams can focus on their core work.",
+            ],
+            'affiliations' => [
+                ['role' => 'Admin', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'divya' => [
+            'group'     => 'admin',
+            'name'      => 'Divya',
+            'role'      => 'Admin',
+            'sub'       => 'Admin, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Divya.webp',
+            'card_line' => 'Keeps the administrative backbone of USMLE Wise running',
+            'bio'       => [
+                "Divya is Admin at USMLE Wise, keeping the administrative backbone of the company running: shared calendars and scheduling, general inboxes, internal documents and records, trackers, CRM data cleanup, and SOP upkeep, so other teams can focus on their core work.",
+            ],
+            'affiliations' => [
+                ['role' => 'Admin', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        /* ---------------- Operations ---------------- */
+
+        'mohamed-regaieg' => [
+            'group'     => 'operations',
+            'name'      => 'Mohamed Regaieg',
+            'role'      => 'General Manager &amp; UX/UI Designer',
+            'sub'       => 'Operations &amp; Product, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Mohamed-Regaieg.webp',
+            'card_line' => 'Runs day-to-day operations across every team &middot; Owns UX/UI across all USMLE Wise products',
+            'bio'       => [
+                "Mohamed Regaieg is General Manager and UX/UI Designer at USMLE Wise.",
+                "He keeps daily operations running across every team at USMLE Wise, and owns the look, feel, and usability of its digital products, so operational decisions and product design come from the same person.",
+            ],
+            'affiliations' => [
+                ['role' => 'General Manager &amp; UX/UI Designer', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
+        'sharvesh-rajesh' => [
+            'group'     => 'operations',
+            'name'      => 'Sharvesh Rajesh',
+            'role'      => 'Operations Lead',
+            'sub'       => 'Operations, USMLE Wise',
+            'photo'     => '/assets/Photos/Team-Members/Sharvesh-Rajesh.webp',
+            'card_line' => 'Runs marketing, outreach &amp; the sales pipeline as one system',
+            'bio'       => [
+                "Sharvesh Rajesh is Operations Lead at USMLE Wise, overseeing marketing, social media, outreach, customer satisfaction, product development, and the sales pipeline so every part of the student journey runs as one connected system.",
+                "Sharvesh builds lead campaigns, shapes lead conversion, develops new programs such as Research Wise, and tracks each student from sale to completion.",
+            ],
+            'affiliations' => [
+                ['role' => 'Operations Lead', 'org' => 'USMLE Wise'],
+            ],
+        ],
+
     ];
 }
 
@@ -301,4 +752,44 @@ function usmlewise_find_team_member(string $slug): ?array
     $member = $members[$slug];
     $member['slug'] = $slug;
     return $member;
+}
+
+/**
+ * Up to two initials for the no-photo avatar fallback used on both the
+ * roster cards and the detail-page hero.
+ */
+function usmlewise_team_initials(string $name): string
+{
+    $name = preg_replace('/^(Dr\.?|Mr\.?|Ms\.?|Mrs\.?)\s+/i', '', trim($name));
+    $words = preg_split('/\s+/', $name);
+    $initials = '';
+    foreach (array_slice($words, 0, 2) as $word) {
+        $initials .= mb_strtoupper(mb_substr($word, 0, 1));
+    }
+    return $initials;
+}
+
+/**
+ * Deterministic gradient variant (blue/red/green/purple) for the no-photo
+ * avatar, keyed on slug so a given member always gets the same color.
+ */
+function usmlewise_team_ava_class(string $slug): string
+{
+    $variants = ['team-ava--blue', 'team-ava--red', 'team-ava--green', 'team-ava--purple'];
+    $index = crc32($slug) % count($variants);
+    return $variants[$index];
+}
+
+/**
+ * True if a member belongs to any of the given section groups, counting both
+ * their primary 'group' and any cross-listed 'also_in' groups (e.g. a
+ * research mentor who also does coaching operations shows up on both
+ * sections without duplicating their profile).
+ */
+function usmlewise_team_in_groups(array $member, array $groups): bool
+{
+    if (in_array($member['group'], $groups, true)) {
+        return true;
+    }
+    return !empty($member['also_in']) && array_intersect($member['also_in'], $groups);
 }

@@ -32,7 +32,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <section class="tp-hero">
   <div class="tp-hero__grid">
     <div class="tp-hero__photo">
+      <?php if (!empty($teamMember['photo'])): ?>
       <img src="<?php echo $teamMember['photo']; ?>" alt="<?php echo htmlspecialchars($tmName, ENT_QUOTES); ?>" loading="lazy" decoding="async" />
+      <?php else: ?>
+      <div class="team-ava <?php echo usmlewise_team_ava_class($teamMember['slug']); ?>"><?php echo usmlewise_team_initials($tmName); ?></div>
+      <?php endif; ?>
     </div>
     <div class="tp-hero__copy reveal">
       <span class="tp-hero__role"><?php echo $teamMember['role']; ?></span>
