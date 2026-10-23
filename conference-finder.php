@@ -10,10 +10,10 @@ $scripts = [
     "/js/conferences.js"
 ];
 
-// SAMPLE data for now — see data/conferences-sample.php. Swapping this for a
-// live CRM-backed source (like data/rotations.php) is a follow-up dev task.
-require_once $_SERVER['DOCUMENT_ROOT'] . '/data/conferences-sample.php';
-$conferencesData   = usmlewise_conferences_sample();
+// Data comes from the CRM feed (see data/conferences.php); edit conferences at
+// https://team.manikmadaan.com/admin/conferences.
+require_once $_SERVER['DOCUMENT_ROOT'] . '/data/conferences.php';
+$conferencesData   = usmlewise_conferences_payload();
 $conferencesList   = $conferencesData['conferences'];
 $conferencesSpecs  = $conferencesData['specialties'];
 $conferencesSpecGroups = usmlewise_conference_specialty_groups();
