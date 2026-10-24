@@ -1,19 +1,31 @@
 <?php
-// Meta (Facebook) Pixel — dataset "Solutions Engineering Team Meta Pixel",
-// ID 1530314334871974. This is the pixel that belongs to the ad account which
-// actually runs the Match ads (Solutions Engineering Team, 726533136594018, in
-// the Research Catalyst portfolio), which is why the site reports into it
-// rather than into a pixel owned by a personal ad account.
-// Lives in one file so the ID only ever has to change in one place. Included
-// from partials/head.php and from the few pages that carry their own <head>.
-$UW_META_PIXEL_ID = '1530314334871974';
+// Meta (Facebook) Pixels — one shared file so IDs only ever change in one place.
+// Included from partials/head.php and from the few pages that carry their own
+// <head>, so every public page reports the same pixels.
+//
+//   PRIMARY  1854932902054310 — the Nas.io pixel (added 2026-10-24). Nas.io runs
+//            the paid campaigns (Step 1 crash course, Match / Advanced
+//            Interviewing, etc.) and asked for this one pixel on the whole site
+//            so their ads can optimise on real site behaviour.
+//   LEGACY   1530314334871974 — "Solutions Engineering Team Meta Pixel", owned by
+//            the ad account (726533136594018, Research Catalyst portfolio) that
+//            ran the earlier Match ads. Kept firing so its history isn't cut off;
+//            remove it from $UW_META_PIXEL_IDS once that account is retired.
+//
+// fbq supports several init() calls: every track()/trackCustom() on the site
+// (PageView here, Lead/ViewContent/InitiateCheckout on the pages) goes to ALL
+// pixels listed below, so nothing else has to change when one is added/removed.
+$UW_META_PIXEL_IDS = array(
+  '1854932902054310', // Nas.io (primary)
+  '1530314334871974', // Solutions Engineering Team (legacy)
+);
+$UW_META_PIXEL_ID = $UW_META_PIXEL_IDS[0]; // kept for anything that reads the old name
 
 // Pages that already track their own conversions (match-membership) set this
 // to false before including, so the generic CTA handler below does not fire a
 // second Lead on top of theirs.
 $uw_pixel_cta_events = isset($uw_pixel_cta_events) ? $uw_pixel_cta_events : true;
-?>
-<!-- Meta Pixel Code -->
+?><!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,12 +35,14 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '<?php echo $UW_META_PIXEL_ID; ?>');
+<?php foreach ($UW_META_PIXEL_IDS as $uw_pid): ?>
+fbq('init', '<?php echo $uw_pid; ?>');
+<?php endforeach; ?>
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=<?php echo $UW_META_PIXEL_ID; ?>&ev=PageView&noscript=1"
-alt="" /></noscript>
+<noscript><?php foreach ($UW_META_PIXEL_IDS as $uw_pid): ?><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=<?php echo $uw_pid; ?>&ev=PageView&noscript=1"
+alt="" /><?php endforeach; ?></noscript>
 <!-- End Meta Pixel Code -->
 <?php if ($uw_pixel_cta_events): ?>
 <script>
