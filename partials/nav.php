@@ -13,6 +13,10 @@
             <span class="msp-nav__dd-name">Coaching Overview</span>
             <span class="msp-nav__dd-meta">Step 1, Step 2 CK &amp; Step 3</span>
           </a>
+          <a href="/step-1-live-high-yield-crash-course" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Step 1 Live Crash Course</span>
+            <span class="msp-nav__dd-meta">Live &middot; 7-day &middot; 70 hrs</span>
+          </a>
           <a href="/step-1-high-yield-crash-course" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Step 1 High Yield Crash Course</span>
             <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>

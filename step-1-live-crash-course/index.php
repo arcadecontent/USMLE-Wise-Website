@@ -346,28 +346,78 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
       <p style="text-align:center;max-width:54ch;margin:0 auto 40px;font-size:16px;line-height:1.6;color:var(--uw-ink-500)">Tap to play</p>
       <div class="cc-videos">
         <div class="cc-short-wrap" style="display:flex">
-          <a href="https://www.youtube.com/shorts/pcQuFkFmnAE" target="_blank" rel="noopener" data-video="short" style="position:relative;width:100%;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:9/16;cursor:pointer;display:block;text-decoration:none">
+          <button type="button" data-ytid="pcQuFkFmnAE" data-vertical="1" style="position:relative;width:100%;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:9/16;cursor:pointer;display:block;padding:0;text-align:left">
               <img src="https://i.ytimg.com/vi/pcQuFkFmnAE/oardefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42))"></div>
               <div style="position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.4);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)"><span style="width:6px;height:6px;border-radius:50%;background:var(--uw-red-400)"></span>Short</div>
               <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
-          </a>
+          </button>
         </div>
         <div style="display:flex;flex-direction:column;gap:18px">
-          <a href="https://www.youtube.com/watch?v=5qnypeUipdE" target="_blank" rel="noopener" data-video="va" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block;text-decoration:none">
+          <button type="button" data-ytid="5qnypeUipdE" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block;padding:0;text-align:left">
               <img src="https://i.ytimg.com/vi/5qnypeUipdE/hqdefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.34))"></div>
               <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
-          </a>
-          <a href="https://www.youtube.com/watch?v=yljBSeYYx6s" target="_blank" rel="noopener" data-video="vb" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block;text-decoration:none">
+          </button>
+          <button type="button" data-ytid="yljBSeYYx6s" style="position:relative;border:1px solid var(--uw-border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:16/9;cursor:pointer;display:block;padding:0;text-align:left">
               <img src="https://i.ytimg.com/vi/yljBSeYYx6s/hqdefault.jpg" alt="Student video review" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.34))"></div>
               <div style="position:absolute;inset:0;display:grid;place-items:center"><span style="width:66px;height:46px;background:#E32124;border-radius:12px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></div>
-          </a>
+          </button>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Video lightbox: orientation-aware (this page has no match.css, so it's
+       plain inline-styled, matching the rest of this page's convention). -->
+  <div id="ccVidLightbox" role="dialog" aria-modal="true" aria-label="Student video review" hidden style="position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;padding:clamp(20px,4vw,48px)">
+    <button type="button" id="ccVidLightboxClose" aria-label="Close video" style="position:absolute;top:20px;right:24px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:24px;line-height:1;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">&times;</button>
+    <div id="ccVidLightboxFrame" style="width:100%;max-width:960px;aspect-ratio:16/9">
+      <iframe id="ccVidLightboxIframe" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0" title="Student video review" style="width:100%;height:100%;border-radius:var(--r-lg)"></iframe>
+    </div>
+  </div>
+  <script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var lightbox = document.getElementById('ccVidLightbox');
+      var frame = document.getElementById('ccVidLightboxFrame');
+      var iframe = document.getElementById('ccVidLightboxIframe');
+      if (!lightbox || !frame || !iframe) return;
+
+      function open(ytid, vertical) {
+        if (vertical) {
+          frame.style.width = 'auto';
+          frame.style.maxWidth = '90vw';
+          frame.style.height = 'min(86vh, 780px)';
+          frame.style.aspectRatio = '9 / 16';
+        } else {
+          frame.style.width = '100%';
+          frame.style.maxWidth = '960px';
+          frame.style.height = 'auto';
+          frame.style.aspectRatio = '16 / 9';
+        }
+        iframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
+        lightbox.removeAttribute('hidden');
+        lightbox.focus();
+      }
+      function close() {
+        iframe.src = '';
+        lightbox.setAttribute('hidden', '');
+      }
+      document.querySelectorAll('[data-ytid]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          open(btn.dataset.ytid, btn.dataset.vertical === '1');
+        });
+      });
+      document.getElementById('ccVidLightboxClose').addEventListener('click', close);
+      lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) close();
+      });
+    });
+  })();
+  </script>
 
   <!-- COMPARE -->
   <section id="compare" style="background:var(--uw-surface);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">

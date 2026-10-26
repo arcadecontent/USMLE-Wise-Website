@@ -66,6 +66,34 @@
 .s1-curric--list .msp-svc:nth-last-child(-n+2) { border-bottom: 1px solid var(--uw-border); }
 .s1-curric--list .msp-svc:last-child { border-bottom: none; }
 
+/* ---------- SCHEDULE / TIMEZONE TABLE ----------
+   Used on live-cohort brochure pages to show session start/end times
+   converted across the timezones students actually join from. */
+.s1-sched {
+  max-width: 640px; margin: clamp(32px, 4vw, 48px) auto 0;
+  text-align: center;
+}
+.s1-sched__head {
+  font-family: var(--font-display); font-weight: 400; font-size: clamp(19px, 2vw, 23px);
+  color: var(--uw-ink-900); margin-bottom: 18px;
+}
+.s1-sched__table {
+  border: 1px solid var(--uw-border); border-radius: var(--r-lg);
+  overflow: hidden; text-align: left; background: var(--uw-surface);
+}
+.s1-sched__row {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 12px;
+  padding: 12px 18px; font-size: 14.5px; color: var(--uw-ink-800);
+  border-top: 1px solid var(--uw-border);
+}
+.s1-sched__row:first-child { border-top: none; }
+.s1-sched__row span:first-child { color: var(--uw-ink-600); }
+.s1-sched__row--head {
+  background: var(--uw-bg); font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--uw-ink-500);
+}
+.s1-sched__row--head span:first-child { color: var(--uw-ink-500); }
+
 /* ---------- INSTRUCTOR ---------- */
 .s1-founder {
   display: grid; grid-template-columns: 0.72fr 1.28fr;
@@ -165,6 +193,40 @@
   display: grid; place-items: center; box-shadow: 0 6px 20px rgba(0,0,0,.35);
 }
 @media (max-width: 760px) { .s1-videos { grid-template-columns: 1fr; } }
+
+/* ---------- VIDEO REVIEWS — bento variant ----------
+   For pages mixing a vertical (Shorts) review with horizontal ones. Reuses
+   the sitewide .msp-video-trigger/.msp-lightbox components (styles/match.css)
+   instead of the fixed-16:9 .s1-video above, so thumbnail and player shape
+   follow each video's real orientation rather than forcing everything into
+   a 16:9 box. */
+.s1-video-bento {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 18px;
+  margin-top: clamp(32px, 4vw, 44px);
+}
+.s1-video-bento__col { display: flex; flex-direction: column; gap: 18px; }
+.s1-video-bento .msp-video-trigger {
+  border: 1px solid var(--uw-border); box-shadow: var(--shadow-md); background: #000;
+}
+.s1-video-bento__col .msp-video-trigger { aspect-ratio: 16 / 9; }
+/* No fixed aspect-ratio here: grid stretches this column to match the
+   height of the two stacked 16:9 tiles beside it, which reads as a tall
+   portrait tile, matching the source video's real shape. */
+.s1-video-bento__vertical .msp-video-trigger { aspect-ratio: auto; height: 100%; }
+@media (max-width: 760px) {
+  .s1-video-bento { grid-template-columns: 1fr; }
+  .s1-video-bento__vertical .msp-video-trigger { aspect-ratio: 9 / 16; height: auto; max-width: 280px; margin-inline: auto; }
+}
+
+/* Lightbox frame, sized for a vertical video instead of the default 16:9. */
+.msp-lightbox__frame.is-vertical {
+  width: auto;
+  height: min(86vh, 780px);
+  max-width: 90vw;
+  aspect-ratio: 9 / 16;
+}
 
 /* ---------- FAQ ----------
    The boxed-card design and its open/close animation now live in the design

@@ -289,22 +289,71 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <span class="msp-eyebrow" style="justify-content:center">Watch their stories</span>
       <h2 id="videosTitle" class="msp-h2" style="margin-inline:auto;max-width:24ch">Hear it from students who passed.</h2>
     </div>
-    <div class="s1-videos reveal">
-      <a class="s1-video" href="https://www.youtube.com/shorts/SmDKOptBIV4" target="_blank" rel="noopener">
-        <img src="https://i.ytimg.com/vi/SmDKOptBIV4/oardefault.jpg" alt="Student video review" loading="lazy">
-        <span class="s1-video__play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></span>
-      </a>
-      <a class="s1-video" href="https://www.youtube.com/watch?v=5qnypeUipdE" target="_blank" rel="noopener">
-        <img src="https://i.ytimg.com/vi/5qnypeUipdE/hqdefault.jpg" alt="Student video review" loading="lazy">
-        <span class="s1-video__play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></span>
-      </a>
-      <a class="s1-video" href="https://www.youtube.com/watch?v=yljBSeYYx6s" target="_blank" rel="noopener">
-        <img src="https://i.ytimg.com/vi/yljBSeYYx6s/hqdefault.jpg" alt="Student video review" loading="lazy">
-        <span class="s1-video__play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></span>
-      </a>
+    <div class="s1-video-bento reveal">
+      <div class="s1-video-bento__vertical">
+        <button class="msp-video-trigger" data-ytid="SmDKOptBIV4" aria-label="Watch a student video review">
+          <img src="https://i.ytimg.com/vi/SmDKOptBIV4/oardefault.jpg" alt="Student video review" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
+          <span class="msp-video-trigger__play" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
+          </span>
+        </button>
+      </div>
+      <div class="s1-video-bento__col">
+        <button class="msp-video-trigger" data-ytid="5qnypeUipdE" aria-label="Watch a student video review">
+          <img src="https://i.ytimg.com/vi/5qnypeUipdE/hqdefault.jpg" alt="Student video review" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
+          <span class="msp-video-trigger__play" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
+          </span>
+        </button>
+        <button class="msp-video-trigger" data-ytid="yljBSeYYx6s" aria-label="Watch a student video review">
+          <img src="https://i.ytimg.com/vi/yljBSeYYx6s/hqdefault.jpg" alt="Student video review" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
+          <span class="msp-video-trigger__play" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Video lightbox: orientation-aware, so a vertical Short plays tall
+     instead of being letterboxed into a 16:9 frame. -->
+<div class="msp-lightbox" id="s1Lightbox" role="dialog" aria-modal="true" aria-label="Student video review" hidden>
+  <button class="msp-lightbox__close" aria-label="Close video">&times;</button>
+  <div class="msp-lightbox__frame" id="s1LightboxFrame">
+    <iframe id="s1LightboxIframe" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0" title="Student video review"></iframe>
+  </div>
+</div>
+<script>
+(function () {
+  var VERTICAL_IDS = ['SmDKOptBIV4'];
+  document.addEventListener('DOMContentLoaded', function () {
+    var lightbox = document.getElementById('s1Lightbox');
+    var frame = document.getElementById('s1LightboxFrame');
+    var iframe = document.getElementById('s1LightboxIframe');
+    if (!lightbox || !frame || !iframe) return;
+
+    function open(ytid) {
+      frame.classList.toggle('is-vertical', VERTICAL_IDS.indexOf(ytid) !== -1);
+      iframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
+      lightbox.removeAttribute('hidden');
+      lightbox.focus();
+    }
+    function close() {
+      iframe.src = '';
+      lightbox.setAttribute('hidden', '');
+    }
+    document.querySelectorAll('.s1-video-bento .msp-video-trigger').forEach(function (btn) {
+      btn.addEventListener('click', function () { open(btn.dataset.ytid); });
+    });
+    lightbox.querySelector('.msp-lightbox__close').addEventListener('click', close);
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) close();
+    });
+  });
+})();
+</script>
 
 <!-- ============== FAQ ============== -->
 <section class="msp-section" id="faq" aria-labelledby="faqTitle" style="background:var(--uw-surface-sunk);border-block:1px solid var(--uw-border)">
