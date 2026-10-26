@@ -371,6 +371,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
 
   <!-- Video lightbox: orientation-aware (this page has no match.css, so it's
        plain inline-styled, matching the rest of this page's convention). -->
+  <style>#ccVidLightbox[hidden]{display:none!important}</style>
   <div id="ccVidLightbox" role="dialog" aria-modal="true" aria-label="Student video review" hidden style="position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;padding:clamp(20px,4vw,48px)">
     <button type="button" id="ccVidLightboxClose" aria-label="Close video" style="position:absolute;top:20px;right:24px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:24px;line-height:1;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">&times;</button>
     <div id="ccVidLightboxFrame" style="width:100%;max-width:960px;aspect-ratio:16/9">
