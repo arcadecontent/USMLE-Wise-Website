@@ -996,7 +996,10 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </footer>
 
-<?php $whatsappMessage = 'I have a question about the USMLE Step 1 Mastery course.'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/whatsapp-float.php'; ?>
+<!-- No partials/whatsapp-float.php here on purpose: this page already has a
+     sticky mobile CTA bar (.cc-mobilebar above), and the floating WhatsApp
+     button stacked on top of it on small screens. WhatsApp is still reachable
+     via the nav, the sample-lesson section, and the contact section. -->
 
 </body>
 </html>
