@@ -24,6 +24,13 @@ $post = null;
 foreach ($blogPosts as $p) {
     if ($p['slug'] === $slugPath) { $post = $p; break; }
 }
+// Not a blog post: it may be a research award from the CRM. Only consulted
+// when nothing matched, so ordinary blog pages never trigger a CRM fetch.
+if ($post === null) {
+    foreach (usmlewise_crm_award_posts() as $p) {
+        if ($p['slug'] === $slugPath) { $post = $p; break; }
+    }
+}
 if ($post === null) {
     http_response_code(404);
     require $_SERVER['DOCUMENT_ROOT'] . '/404.php';
@@ -46,7 +53,7 @@ $fmtDate = function ($iso) {
 
 $isAward         = usmlewise_post_is_award($post);
 $pageTitle       = htmlspecialchars($post['title']) . ($isAward ? ' | USMLE Wise Research Awards' : ' | USMLE Wise Blog');
-$pageDescription = $post['excerpt'];
+$pageDescription = htmlspecialchars($post['excerpt'], ENT_QUOTES, 'UTF-8', false); // excerpts are typed in the CRM; head.php prints this raw
 $canonical       = 'https://usmlewise.com' . $canonicalPath;
 $bodyClass       = 'msp';
 $stylesheets     = ['/styles/blog.css', '/styles/blog-post.css'];
