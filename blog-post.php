@@ -24,6 +24,13 @@ $post = null;
 foreach ($blogPosts as $p) {
     if ($p['slug'] === $slugPath) { $post = $p; break; }
 }
+// Not a blog post: it may be a research award from the CRM. Only consulted
+// when nothing matched, so ordinary blog pages never trigger a CRM fetch.
+if ($post === null) {
+    foreach (usmlewise_crm_award_posts() as $p) {
+        if ($p['slug'] === $slugPath) { $post = $p; break; }
+    }
+}
 if ($post === null) {
     http_response_code(404);
     require $_SERVER['DOCUMENT_ROOT'] . '/404.php';
