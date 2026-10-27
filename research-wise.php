@@ -70,86 +70,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
-      <!-- ============== WHY IT'S HARD TO START ============== -->
-      <section class="msp-section rc-problems" aria-labelledby="problemsTitle">
-        <div class="msp-wrap">
-          <div class="rc-problems__head reveal">
-            <span class="msp-eyebrow">Why research stays undone</span>
-            <h2 id="problemsTitle" class="msp-h2">The questions that stop people before they start.</h2>
-          </div>
-          <div class="rc-problems__grid">
-            <div class="rc-problem rc-problem--blue reveal">
-              <div class="rc-problem__icon-wrap">
-                <i data-lucide="search" width="22" height="22"></i>
-              </div>
-              <span class="rc-problem__num">01</span>
-              <h3 class="rc-problem__head">"I don't know what to study"</h3>
-              <p>Weeks go by on a vague topic, or one that's already been done. We'll show you how to turn a topic into a real, checkable question.</p>
-            </div>
-            <div class="rc-problem rc-problem--amber reveal">
-              <div class="rc-problem__icon-wrap">
-                <i data-lucide="flask-conical" width="22" height="22"></i>
-              </div>
-              <span class="rc-problem__num">02</span>
-              <h3 class="rc-problem__head">"I have no lab and no mentor"</h3>
-              <p>Case reports, case series, and quality improvement projects need only what you already have access to as a student.</p>
-            </div>
-            <div class="rc-problem rc-problem--slate reveal">
-              <div class="rc-problem__icon-wrap">
-                <i data-lucide="scale" width="22" height="22"></i>
-              </div>
-              <span class="rc-problem__num">03</span>
-              <h3 class="rc-problem__head">"Is this research or quality improvement?"</h3>
-              <p>They look similar and they are not the same. Picking the wrong one means the wrong approval route, or a project nobody can publish.</p>
-            </div>
-            <div class="rc-problem rc-problem--teal reveal">
-              <div class="rc-problem__icon-wrap">
-                <i data-lucide="waypoints" width="22" height="22"></i>
-              </div>
-              <span class="rc-problem__num">04</span>
-              <h3 class="rc-problem__head">"There's too much free advice and no order"</h3>
-              <p>Scattered videos, no sequence, nobody to ask. We give you one path, start to finish, with a live person to ask.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== WHO IT'S FOR ============== -->
-      <section class="msp-section rc-for-whom" aria-labelledby="forWhomTitle">
-        <div class="msp-wrap">
-          <div class="rc-for-whom__inner">
-            <div class="rc-for-whom__copy reveal">
-              <span class="msp-eyebrow">Built for</span>
-              <h2 id="forWhomTitle" class="msp-h2">Your very first step into research, not your tenth.</h2>
-              <p class="msp-lede">
-                Research Wise is for people who haven't started yet. If you already
-                have a project running, our mentored programs like
-                <a href="/research-original">Original Research</a> or
-                <a href="/research-catalyst">Research Catalyst</a> are built for that stage.
-              </p>
-            </div>
-            <ol class="rc-for-whom__list">
-              <li class="reveal">
-                <span class="rc-whom-num">01</span>
-                <span class="rc-whom-item">You've never done research and don't know where to begin</span>
-              </li>
-              <li class="reveal">
-                <span class="rc-whom-num">02</span>
-                <span class="rc-whom-item">You want live teaching from someone who's done it, not a recorded course</span>
-              </li>
-              <li class="reveal">
-                <span class="rc-whom-num">03</span>
-                <span class="rc-whom-item">You don't have a lab, a mentor, or a dataset, and that's fine</span>
-              </li>
-              <li class="reveal">
-                <span class="rc-whom-num">04</span>
-                <span class="rc-whom-item">You want one clear next step, not a pile of unconnected videos</span>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
       <!-- ============== CURRICULUM: THREE LIVE SESSIONS ============== -->
       <section class="msp-section rc-curriculum" id="curriculum" aria-labelledby="curriculumTitle">
         <div class="msp-wrap">
@@ -205,6 +125,42 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <!-- ============== WHO IT'S FOR ============== -->
+      <section class="msp-section rc-for-whom" aria-labelledby="forWhomTitle">
+        <div class="msp-wrap">
+          <div class="rc-for-whom__inner">
+            <div class="rc-for-whom__copy reveal">
+              <span class="msp-eyebrow">Built for</span>
+              <h2 id="forWhomTitle" class="msp-h2">Your very first step into research, not your tenth.</h2>
+              <p class="msp-lede">
+                Research Wise is for people who haven't started yet. If you already
+                have a project running, our mentored programs like
+                <a href="/research-original">Original Research</a> or
+                <a href="/research-catalyst">Research Catalyst</a> are built for that stage.
+              </p>
+            </div>
+            <ol class="rc-for-whom__list">
+              <li class="reveal">
+                <span class="rc-whom-num">01</span>
+                <span class="rc-whom-item">You've never done research and don't know where to begin</span>
+              </li>
+              <li class="reveal">
+                <span class="rc-whom-num">02</span>
+                <span class="rc-whom-item">You want live teaching from someone who's done it, not a recorded course</span>
+              </li>
+              <li class="reveal">
+                <span class="rc-whom-num">03</span>
+                <span class="rc-whom-item">You don't have a lab, a mentor, or a dataset, and that's fine</span>
+              </li>
+              <li class="reveal">
+                <span class="rc-whom-num">04</span>
+                <span class="rc-whom-item">You want one clear next step, not a pile of unconnected videos</span>
+              </li>
+            </ol>
+          </div>
         </div>
       </section>
 
