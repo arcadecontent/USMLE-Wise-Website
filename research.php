@@ -422,7 +422,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
-                <img src="/assets/Photos/Team-Members/Barakat-Photo.jpeg" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
+                <img src="/assets/Photos/Team-Members/Muhammad-Barakat-Headshot.png" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
               </div>
               <div class="msp-mtr-e__body">
                 <div class="msp-mtr-e__header">

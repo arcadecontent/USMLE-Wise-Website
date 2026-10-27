@@ -194,10 +194,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <section style="background:var(--uw-blue-700);color:#fff;position:relative;overflow:hidden">
     <div class="dot-tex" style="position:absolute;inset:0;opacity:.8"></div>
     <div class="cc-results" style="position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:clamp(36px,4vw,52px) clamp(20px,5vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:32px 24px">
-      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1;color:var(--uw-success-300)">99.3%</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">First-attempt pass rate</div></div>
-      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">17,000+</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Students trained</div></div>
-      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">111</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Live sessions</div></div>
-      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span></div><div style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">270+</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Instructor Step 2 scores</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></span></div><div class="cc-stat-num" data-cu-to="99.3" data-cu-dec="1" data-cu-suf="%" style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1;color:var(--uw-success-300)">99.3%</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">First-attempt pass rate</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span></div><div class="cc-stat-num" data-cu-to="17000" data-cu-comma="1" data-cu-suf="+" style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">17,000+</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Students trained</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg></span></div><div class="cc-stat-num" data-cu-to="111" style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">111</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Live sessions</div></div>
+      <div style="text-align:center"><div style="display:flex;justify-content:center;margin-bottom:12px"><span style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span></div><div class="cc-stat-num" data-cu-to="270" data-cu-suf="+" style="font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1">270+</div><div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.4">Instructor Step 2 scores</div></div>
     </div>
   </section>
 
@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:16px 20px">
           <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300)">05</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6)">March 2027</span></div>
-          <div style="font-size:15.5px;line-height:1.5">Neurology <span style="display:inline-flex;align-items:center;font-size:10px;font-family:var(--font-mono);letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.12);color:rgba(255,255,255,.75);padding:2px 7px;border-radius:999px;margin-right:4px">completed</span>; psychiatry; musculoskeletal; dermatology <span style="display:inline-flex;align-items:center;font-size:10px;font-family:var(--font-mono);letter-spacing:.04em;text-transform:uppercase;background:rgba(74,222,128,.15);color:var(--uw-success-300);padding:2px 7px;border-radius:999px;margin-left:4px">begins</span></div>
+          <div style="font-size:15.5px;line-height:1.5">Neurology; psychiatry; musculoskeletal; dermatology <span style="display:inline-flex;align-items:center;font-size:10px;font-family:var(--font-mono);letter-spacing:.04em;text-transform:uppercase;background:rgba(74,222,128,.15);color:var(--uw-success-300);padding:2px 7px;border-radius:999px;margin-left:4px">begins</span></div>
         </div>
         <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:16px 20px">
           <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300)">06</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6)">April 2027</span></div>
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:16px 20px">
           <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px"><span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--uw-success-300)">07</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6)">May 2027</span></div>
-          <div style="font-size:15.5px;line-height:1.5">Microbiology <span style="display:inline-flex;align-items:center;font-size:10px;font-family:var(--font-mono);letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.12);color:rgba(255,255,255,.75);padding:2px 7px;border-radius:999px;margin-right:4px">completed</span>; biochemistry; general pharmacology</div>
+          <div style="font-size:15.5px;line-height:1.5">Microbiology; biochemistry; general pharmacology</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:28px;font-size:14px;color:rgba(255,255,255,.8)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>Every session is recorded and in your portal the same day.</div>
@@ -805,6 +805,58 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 
 </main>
+<script>
+(function () {
+  // Count-up animation for the results-bar stats. Markup already carries the
+  // correct final value as static text (no-JS / reduced-motion visitors see
+  // real numbers); this only resets to 0 and animates up right as each stat
+  // scrolls into view, so it never flashes "0" on first paint.
+  var els = document.querySelectorAll('.cc-stat-num');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function format(val, dec, comma, suf) {
+    var s = dec ? val.toFixed(dec) : String(Math.round(val));
+    if (comma) {
+      var parts = s.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      s = parts.join('.');
+    }
+    return s + (suf || '');
+  }
+
+  function animate(el) {
+    var to = parseFloat(el.getAttribute('data-cu-to'));
+    if (isNaN(to)) return;
+    var dec = parseInt(el.getAttribute('data-cu-dec') || '0', 10);
+    var comma = el.hasAttribute('data-cu-comma');
+    var suf = el.getAttribute('data-cu-suf') || '';
+    var duration = 1400;
+    var start = null;
+    el.textContent = format(0, dec, comma, suf);
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = format(to * eased, dec, comma, suf);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = format(to, dec, comma, suf);
+    }
+    requestAnimationFrame(step);
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animate(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  els.forEach(function (el) { observer.observe(el); });
+})();
+</script>
 <!-- Video review lightbox — the student reviews play here, on the page. -->
 <div id="ccVideoModal" class="cc-video-modal" hidden>
   <div class="cc-video-modal__backdrop" data-video-close></div>

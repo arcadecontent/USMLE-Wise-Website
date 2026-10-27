@@ -104,7 +104,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <p>With Muhammad Ahmad Barakat. Pool existing evidence into a rigorous review, a strong first publication that needs no new data collection.</p>
               </div>
             </div>
-            <p class="rw-next-note">Sunday, November 8, 15, and 22. Enrollment is open to everyone.</p>
+            <p class="rw-next-note">Sunday, November 15, 22, and 29. Enrollment is open to everyone.</p>
           </div>
 
           <!-- Price -->
@@ -211,7 +211,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="rc-mtr reveal">
               <div class="rc-mtr__photo">
-                <img src="/assets/Photos/Team-Members/Barakat-Photo.jpeg" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
+                <img src="/assets/Photos/Team-Members/Muhammad-Barakat-Headshot.png" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
               </div>
               <div class="rc-mtr__body">
                 <div class="rc-mtr__header">
@@ -284,7 +284,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <h2 class="rc-cta__head">Your first step into research<br>starts this November.</h2>
             <p class="rc-cta__sub">
               Reserve your spot in three live Sunday sessions starting November
-              8. No research experience needed, just a willingness to start.
+              15. No research experience needed, just a willingness to start.
             </p>
             <div class="rc-cta__actions">
               <a
