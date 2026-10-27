@@ -175,6 +175,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <article class="rc-mtr reveal">
               <div class="rc-mtr__photo">
+                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreeram" loading="lazy" decoding="async" />
+              </div>
+              <div class="rc-mtr__body">
+                <div class="rc-mtr__header">
+                  <span class="rc-mtr__role">Research Head</span>
+                  <h3 class="rc-mtr__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
+                  <span class="rc-mtr__prog">Chief Scientific Officer &amp; CRIST Project Lead &middot; USMLE Wise Research</span>
+                </div>
+                <ul class="rc-mtr__creds">
+                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
+                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
+                  <li>Study Lead, MyPACER Study</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="rc-mtr reveal">
+              <div class="rc-mtr__photo">
                 <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani Ravipati" loading="lazy" decoding="async" />
               </div>
               <div class="rc-mtr__body">
