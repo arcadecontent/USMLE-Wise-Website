@@ -53,7 +53,7 @@ $fmtDate = function ($iso) {
 
 $isAward         = usmlewise_post_is_award($post);
 $pageTitle       = htmlspecialchars($post['title']) . ($isAward ? ' | USMLE Wise Research Awards' : ' | USMLE Wise Blog');
-$pageDescription = $post['excerpt'];
+$pageDescription = htmlspecialchars($post['excerpt'], ENT_QUOTES, 'UTF-8', false); // excerpts are typed in the CRM; head.php prints this raw
 $canonical       = 'https://usmlewise.com' . $canonicalPath;
 $bodyClass       = 'msp';
 $stylesheets     = ['/styles/blog.css', '/styles/blog-post.css'];
