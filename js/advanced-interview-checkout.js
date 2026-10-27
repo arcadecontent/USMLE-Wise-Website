@@ -12,7 +12,7 @@
     if (!code) result.textContent = 'One-time payment: $399.00 USD.';
     else if (code === 'MATCH100') result.textContent = 'MATCH100: $100 off. Total: $299.00 USD. Verified at checkout.';
     else if (code === 'MATCH50') result.textContent = 'MATCH50: 50% off. Total: $199.50 USD. Verified at checkout.';
-    else if (code === 'MATCHME') result.textContent = 'MATCHME: 50% off. Total: $199.50 USD. Verified at checkout.';
+    else if (code === 'MATCHME') result.textContent = 'MATCHME: 50% off + a free 1-hour mock interview. Total: $199.50 USD. Verified at checkout.';
     else {
       result.textContent = 'This promo code is not valid. Check the code or clear it to continue.';
       input.setCustomValidity('Enter a valid promo code or clear this field.');
