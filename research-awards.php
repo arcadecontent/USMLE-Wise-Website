@@ -1,7 +1,7 @@
 <?php
 /**
  * Research Awards listing (/research-awards), reachable from Resources in the
- * nav. Shows the category: 'awards' write-ups from data/posts.php, which are
+ * nav. Shows the research-award write-ups from the CRM (data/awards.php), which are
  * deliberately excluded from the general blog listing at /blog. Individual
  * write-ups render at /research-awards/<slug> via blog-post.php.
  *
@@ -22,7 +22,7 @@ $scripts = [
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/posts.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
-$awardPosts = usmlewise_award_posts($blogPosts);
+$awardPosts = usmlewise_crm_award_posts();
 
 // Lead with the newest award, then grid the rest. With a single award that
 // leaves just the wide featured card, which reads better than one lone

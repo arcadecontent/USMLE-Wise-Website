@@ -1,7 +1,7 @@
 <?php
 /**
  * Awards carousel — shown on every research-program page.
- * Pulls the award write-ups from data/posts.php and renders them as a
+ * Pulls the award write-ups from the CRM (data/awards.php) and renders them as a
  * horizontally-scrolling row of plain blog cards, each linking to the full
  * write-up under /research-awards/<slug>. Renders nothing if there are none
  * yet. The full set lives on the /research-awards page.
@@ -9,7 +9,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/posts.php';
 
-$awardPosts = usmlewise_award_posts($blogPosts);
+$awardPosts = usmlewise_crm_award_posts();
 
 if (empty($awardPosts)) return;
 

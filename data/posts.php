@@ -8,7 +8,9 @@
  * `image` is optional — when empty, the listing renders a category-colored cover.
  * `body` is the full article HTML, rendered at /blog/<slug> by blog-post.php.
  *
- * `category: 'awards'` posts are research-award write-ups. They do NOT appear
+ * `category: 'awards'` posts are research-award write-ups. They no longer live
+ * in this file: they come from the CRM (data/awards.php, managed at
+ * https://team.manikmadaan.com/admin/research-awards). They do NOT appear
  * in the general blog listing -- they live on their own page at
  * /research-awards (research-awards.php) and surface in the awards carousel on
  * research pages (partials/awards-carousel.php). Use the helpers below rather
@@ -31,6 +33,8 @@ $blogCategories = [
 
 /** The category whose posts are award write-ups rather than blog articles. */
 const USMLEWISE_AWARDS_CATEGORY = 'awards';
+
+require_once __DIR__ . '/awards.php';
 
 function usmlewise_post_is_award(array $post): bool
 {
@@ -2564,27 +2568,6 @@ $blogPosts = [
               <li><strong>Decide early whether you are all-in on Orthopaedics.</strong> Unlike Dermatology applicants, most of this applicant pool — matched or not — ranked no backup specialty at all. If you want insurance, build it deliberately; it is not the norm in this data.</li>
             </ul>
             <p>Want a rank list, signaling strategy, and Step 2 CK target built around your actual numbers against this year's data? <a href="/coaching">Explore USMLE Wise coaching →</a></p>
-            HTML,
-    ],
-    [
-        'slug'     => 'acg-presidential-award-microbiota-restoration',
-        'title'    => 'ACG Presidential Award: Early Microbiota Restoration for C. difficile Infection',
-        'excerpt'  => "A systematic review and meta-analysis on early gut microbiota restoration for C. diff infection won a Presidential Award at ACG's 2026 Annual Scientific Meeting.",
-        'category' => 'awards',
-        'date'     => '2026-10-13',
-        'read'     => 3,
-        'author'   => 'USMLE Wise Team',
-        'featured' => false,
-        'image'    => '/assets/Photos/Thumbnails/acg-presidential-award-cdi-poster.jpeg',
-        'body'     => <<<'HTML'
-            <p>This poster presents a systematic review and meta-analysis examining whether restoring the gut microbiota early (at the first episode or first recurrence of C. difficile infection) improves outcomes compared with standard approaches. It pools data from randomized and comparative studies.</p>
-
-            <ul>
-              <li><strong>Poster:</strong> P5850 (Early Microbiota Restoration for Primary and First-Recurrent <em>Clostridioides difficile</em> Infection: A Systematic Review and Meta-Analysis of Randomized and Comparative Studies)</li>
-              <li><strong>Presenter:</strong> Jose Enrique Paredes Romero, MD, IESS Hospital del Norte Los Ceibos</li>
-              <li><strong>Award:</strong> ACG Presidential Award Winner</li>
-              <li><strong>Session:</strong> Tuesday Poster Session, Infections and Microbiome category, October 13, 2026, Exhibit Halls A&ndash;D, Level 3</li>
-            </ul>
             HTML,
     ],
 ];
