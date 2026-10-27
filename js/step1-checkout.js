@@ -5,7 +5,7 @@
   var form = document.getElementById('s1-checkout');
   if (!form) return;
   var PRICE = 499, VALUE = 1397;
-  var PROMOS = { STEP100: { off: 100, label: '$100 off' } };
+  var PROMOS = { STEP100: { off: 100, label: '$100 off' }, STEP50: { off: 200, label: '$200 off' } };
   var input = document.getElementById('ccPromo');
   var apply = document.getElementById('s1-promo-apply');
   var result = document.getElementById('s1-promo-result');
