@@ -485,12 +485,10 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px">
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="WDrpqKmLwLs" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="WDrpqKmLwLs" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/WDrpqKmLwLs/hqdefault.jpg" alt="Ali - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -499,12 +497,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="Ea1pD2xY0_s" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="Ea1pD2xY0_s" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/Ea1pD2xY0_s/hqdefault.jpg" alt="Hamna - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -513,12 +509,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="lmjpF2nrXOU" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="lmjpF2nrXOU" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/lmjpF2nrXOU/hqdefault.jpg" alt="SOAP match - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -527,12 +521,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="O4Gns55Brh0" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="O4Gns55Brh0" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/O4Gns55Brh0/hqdefault.jpg" alt="Shreya - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -541,12 +533,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="bz_R34QsKjk" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="bz_R34QsKjk" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/bz_R34QsKjk/hqdefault.jpg" alt="Dr. Yash - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -555,12 +545,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="64yfSkj4M_8" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="64yfSkj4M_8" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/64yfSkj4M_8/hqdefault.jpg" alt="Nathan - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -569,12 +557,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="HSsrZERcvbI" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="HSsrZERcvbI" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/HSsrZERcvbI/hqdefault.jpg" alt="Anjali - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -583,12 +569,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="F8E7lTvGKRU" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="F8E7lTvGKRU" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/F8E7lTvGKRU/hqdefault.jpg" alt="Lakshita - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -597,12 +581,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="LKF0UYfXyE0" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="LKF0UYfXyE0" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/LKF0UYfXyE0/hqdefault.jpg" alt="UK graduate - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -611,12 +593,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="8S2q-5Pb87k" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="8S2q-5Pb87k" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/8S2q-5Pb87k/hqdefault.jpg" alt="Pavani - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -625,12 +605,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="izwBvdQgVc8" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="izwBvdQgVc8" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/izwBvdQgVc8/hqdefault.jpg" alt="Dyan - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -639,12 +617,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="2pGb5xiKzdw" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="2pGb5xiKzdw" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/2pGb5xiKzdw/hqdefault.jpg" alt="Dr. Srusti - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -653,12 +629,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="ZynxmljOZDA" onClick="{{ playVideo }}" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
+        <div data-vid="ZynxmljOZDA" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
           <img src="https://img.youtube.com/vi/ZynxmljOZDA/hqdefault.jpg" alt="Hamit - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--uw-blue-600)" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg>
-            </div>
+            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
         </div>
         <div style="padding:18px 20px 20px">
@@ -671,6 +645,48 @@ document.addEventListener('DOMContentLoaded', function () {
       <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="300px,52px">Schedule my free Match consultation →</x-import></a>
     </div>
   </section>
+
+  <!-- Video lightbox: these [data-vid] cards had no working click handler
+       before (leftover "{{ playVideo }}" template syntax from the design
+       export, never wired to real JS) -- this makes them actually play. -->
+  <div class="msp-lightbox" id="matchLightbox" role="dialog" aria-modal="true" aria-label="Match story video" hidden>
+    <button class="msp-lightbox__close" aria-label="Close video">&times;</button>
+    <div class="msp-lightbox__frame">
+      <iframe id="matchLightboxIframe" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0" title="Match story video"></iframe>
+    </div>
+  </div>
+  <script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var lightbox = document.getElementById('matchLightbox');
+      var iframe = document.getElementById('matchLightboxIframe');
+      if (!lightbox || !iframe) return;
+
+      function open(ytid) {
+        iframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
+        lightbox.removeAttribute('hidden');
+        lightbox.focus();
+      }
+      function close() {
+        iframe.src = '';
+        lightbox.setAttribute('hidden', '');
+      }
+      document.querySelectorAll('[data-vid]').forEach(function (card) {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('click', function () { open(card.dataset.vid); });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card.dataset.vid); }
+        });
+      });
+      lightbox.querySelector('.msp-lightbox__close').addEventListener('click', close);
+      lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) close();
+      });
+    });
+  })();
+  </script>
 
   <!-- ============ COMPARE ============ -->
   <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-surface)">

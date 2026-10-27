@@ -33,7 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <div class="tp-hero__grid">
     <div class="tp-hero__photo">
       <?php if (!empty($teamMember['photo'])): ?>
-      <img src="<?php echo $teamMember['photo']; ?>" alt="<?php echo htmlspecialchars($tmName, ENT_QUOTES); ?>" loading="lazy" decoding="async" />
+      <img src="<?php echo $teamMember['photo']; ?>" alt="<?php echo htmlspecialchars($tmName, ENT_QUOTES); ?>" loading="lazy" decoding="async"<?php if (!empty($teamMember['photo_position'])): ?> style="object-position: <?php echo htmlspecialchars($teamMember['photo_position'], ENT_QUOTES); ?>"<?php endif; ?> />
       <?php else: ?>
       <div class="team-ava <?php echo usmlewise_team_ava_class($teamMember['slug']); ?>"><?php echo usmlewise_team_initials($tmName); ?></div>
       <?php endif; ?>

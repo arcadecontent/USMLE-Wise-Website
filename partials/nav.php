@@ -99,7 +99,7 @@
             <div class="msp-nav__dd-sub">
               <a href="/research-wise" class="msp-nav__dd-link">
                 <span class="msp-nav__dd-name">Research Wise</span>
-                <span class="msp-nav__dd-meta">Free &middot; Live webinar series</span>
+                <span class="msp-nav__dd-meta">Live &middot; 3 Sunday sessions</span>
               </a>
               <a href="/research-cohort" class="msp-nav__dd-link">
                 <span class="msp-nav__dd-name">Research Cohort Access</span>

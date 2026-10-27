@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="WDrpqKmLwLs" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/WDrpqKmLwLs/hqdefault.jpg" alt="Ali — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Super old-grad match</div>
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="Ea1pD2xY0_s" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/Ea1pD2xY0_s/hqdefault.jpg" alt="Hamna — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Super old-grad match</div>
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="lmjpF2nrXOU" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/lmjpF2nrXOU/hqdefault.jpg" alt="SOAP match — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Super old-grad match</div>
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="O4Gns55Brh0" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/O4Gns55Brh0/hqdefault.jpg" alt="Shreya — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Old grad · Post-SOAP</div>
@@ -556,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="bz_R34QsKjk" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/bz_R34QsKjk/hqdefault.jpg" alt="Dr. Yash — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Old grad · Post-SOAP</div>
@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="64yfSkj4M_8" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/64yfSkj4M_8/hqdefault.jpg" alt="Nathan — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Old grad · 5+ years since graduation</div>
@@ -576,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="HSsrZERcvbI" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/HSsrZERcvbI/hqdefault.jpg" alt="Anjali — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Matched with low scores · 218 on Step 2</div>
@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="F8E7lTvGKRU" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/F8E7lTvGKRU/hqdefault.jpg" alt="Lakshita — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Matched with low scores · 221 on Step 2</div>
@@ -596,7 +596,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="LKF0UYfXyE0" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/LKF0UYfXyE0/hqdefault.jpg" alt="UK graduate — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">International grad</div>
@@ -606,7 +606,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="8S2q-5Pb87k" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/8S2q-5Pb87k/hqdefault.jpg" alt="Pavani — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Matched with a Step 2 attempt</div>
@@ -616,7 +616,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="izwBvdQgVc8" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/izwBvdQgVc8/hqdefault.jpg" alt="Dyan — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Prestigious match · Albert Einstein</div>
@@ -626,7 +626,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="2pGb5xiKzdw" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/2pGb5xiKzdw/hqdefault.jpg" alt="Dr. Srusti — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Stellar match · Saint Vincent</div>
@@ -636,7 +636,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="uw-video-card" data-video-id="ZynxmljOZDA" role="button" tabindex="0" aria-label="Play video" style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;cursor:pointer">
           <div style="position:relative;width:100%;aspect-ratio:16/9;background:var(--uw-blue-500)">
             <img src="https://img.youtube.com/vi/ZynxmljOZDA/hqdefault.jpg" alt="Hamit — USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--shadow-md)"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--uw-red-500)" stroke="none"><path d="M8 5v14l11-7z"></path></svg></div>
+            <span class="yt-play" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
           </div>
           <div style="padding:14px 16px 16px">
             <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">Prestigious match · UPMC</div>
@@ -651,6 +651,46 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     </div>
   </section>
+
+  <!-- Video lightbox: .uw-video-card already had role="button"/tabindex but
+       no script on this page ever bound a click handler, so these never
+       played anything. This wires them up. -->
+  <div class="msp-lightbox" id="mentorshipLightbox" role="dialog" aria-modal="true" aria-label="Match story video" hidden>
+    <button class="msp-lightbox__close" aria-label="Close video">&times;</button>
+    <div class="msp-lightbox__frame">
+      <iframe id="mentorshipLightboxIframe" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0" title="Match story video"></iframe>
+    </div>
+  </div>
+  <script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var lightbox = document.getElementById('mentorshipLightbox');
+      var iframe = document.getElementById('mentorshipLightboxIframe');
+      if (!lightbox || !iframe) return;
+
+      function open(ytid) {
+        iframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
+        lightbox.removeAttribute('hidden');
+        lightbox.focus();
+      }
+      function close() {
+        iframe.src = '';
+        lightbox.setAttribute('hidden', '');
+      }
+      document.querySelectorAll('.uw-video-card[data-video-id]').forEach(function (card) {
+        card.addEventListener('click', function () { open(card.dataset.videoId); });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card.dataset.videoId); }
+        });
+      });
+      lightbox.querySelector('.msp-lightbox__close').addEventListener('click', close);
+      lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) close();
+      });
+    });
+  })();
+  </script>
 
   <section data-screen-label="The difference" class="msp-section" style="background:var(--uw-bg);border-bottom:1px solid var(--uw-border)">
     <div class="msp-wrap" style="max-width:980px;text-align:center;display:flex;flex-direction:column;align-items:center">

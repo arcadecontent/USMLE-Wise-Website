@@ -15,6 +15,9 @@
  *   sub          Secondary line under the name on the detail page
  *   photo        Absolute path under /assets, or null when no photo is on
  *                file yet — templates fall back to an initials avatar
+ *   photo_position  Optional CSS object-position override (e.g. 'right top')
+ *                for source photos where the subject isn't centered; falls
+ *                back to the default 'center top' crop
  *   card_line    One-line credential summary shown on the card
  *   card_bio     Optional short blurb for the leadership card; falls back to
  *                bio[0], which can read as repetitive next to the role label
@@ -347,6 +350,7 @@ function usmlewise_team_members(): array
             'role'      => 'Sales Intern',
             'sub'       => 'Sales, USMLE Wise',
             'photo'     => '/assets/Photos/Team-Members/Eman-Fatima.webp',
+            'photo_position' => 'right top',
             'card_line' => 'First-touch lead engagement &middot; CRM &amp; pipeline upkeep',
             'bio'       => [
                 "Eman Fatima is a Sales Intern at USMLE Wise, supporting the Sales team on first-touch engagement and pipeline upkeep.",
@@ -611,6 +615,7 @@ function usmlewise_team_members(): array
             'role'      => 'Coaching Manager',
             'sub'       => 'Coaching, USMLE Wise',
             'photo'     => '/assets/Photos/Team-Members/Shashank-Choti.webp',
+            'photo_position' => 'right top',
             'card_line' => 'Owns quality &amp; consistency of all coaching delivered to students',
             'bio'       => [
                 "Shashank Choti is Coaching Manager at USMLE Wise, owning the quality and consistency of all coaching delivered to students.",

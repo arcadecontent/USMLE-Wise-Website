@@ -1,6 +1,6 @@
 <?php
-$pageTitle = "Research Wise — Free Webinars for First-Time Researchers | USMLE Wise";
-$pageDescription = "Your first step into research. Two free live webinars with Dr. Kaushik for medical students and graduates who have never done research, then a $50 mentored beginner series.";
+$pageTitle = "Research Wise — Live Sessions for First-Time Researchers | USMLE Wise";
+$pageDescription = "Your first step into research. Three live Sunday sessions covering case reports and case series, original studies, and systematic reviews and meta-analyses, for $49, one-time.";
 $canonical = "https://usmlewise.com/research-wise";
 $bodyClass = "msp";
 $stylesheets = [
@@ -21,14 +21,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="msp-hero" aria-labelledby="heroTitle">
         <div class="msp-wrap msp-hero__grid">
           <div class="msp-hero__copy reveal">
-            <span class="rc-hero__badge">Free &middot; Two Live Webinars</span>
+            <span class="rc-hero__badge">Live &middot; 3 Sunday Sessions</span>
             <h1 id="heroTitle" class="msp-h1">Never done research?<br>This is <span class="msp-h1__accent">where you start.</span></h1>
             <p class="msp-lede">
-              Two free live webinars with Dr. Kaushik, built for medical students and
-              graduates who have never done research and don't know where to begin.
-              Turn a vague topic into a real question, learn the difference between
-              research and quality improvement, then continue into a mentored
-              beginner series.
+              Three live Sunday sessions for medical students and graduates who
+              have never done research and don't know where to begin: case
+              reports and case series, original studies, and systematic reviews
+              and meta-analyses. $49, one-time, for all three.
             </p>
             <div class="msp-cta-row">
               <a
@@ -36,7 +35,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 href="https://team.manikmadaan.com/guidance-call/book"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Reserve Your Free Seat</a
+                >Reserve Your Spot</a
               >
               <a class="btn btn--outline btn--xl" href="#curriculum">
                 See what's covered
@@ -136,7 +135,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </li>
               <li class="reveal">
                 <span class="rc-whom-num">02</span>
-                <span class="rc-whom-item">You want to try it live and free before committing to anything paid</span>
+                <span class="rc-whom-item">You want live teaching from someone who's done it, not a recorded course</span>
               </li>
               <li class="reveal">
                 <span class="rc-whom-num">03</span>
@@ -151,71 +150,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
-      <!-- ============== CURRICULUM: FREE WEBINARS ============== -->
+      <!-- ============== CURRICULUM: THREE LIVE SESSIONS ============== -->
       <section class="msp-section rc-curriculum" id="curriculum" aria-labelledby="curriculumTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">
-            <span class="msp-eyebrow">Free live webinars</span>
-            <h2 id="curriculumTitle" class="msp-h2">Two sessions. Everything beginner.</h2>
-            <p class="msp-sub">Both are taught live by Dr. Kaushik, about 60 minutes each, built to leave you with one useful thing and a clear next step.</p>
+            <span class="msp-eyebrow">Live &middot; 3 Sunday sessions</span>
+            <h2 id="curriculumTitle" class="msp-h2">Everything you need to start, in three sessions.</h2>
+            <p class="msp-sub">Each session is taught live by a mentor who has done it, built to leave you with a concrete next step toward your first publication.</p>
           </div>
 
-          <div class="rc-learn reveal">
-            <div class="rc-learn-cards rc-learn-cards--wise">
-              <div class="rc-learn-card">
-                <div class="rc-learn-card__body">
-                  <div class="rc-learn-card__icon"><i data-lucide="lightbulb" width="18" height="18"></i></div>
-                  <span class="rw-session-meta">Webinar 1 &middot; Free &middot; Live</span>
-                  <h3 class="rc-learn-card__head">How to Generate a Research Idea</h3>
-                  <ul class="rc-learn-card__list">
-                    <li>Turn a vague topic into a question you can study, with PICO</li>
-                    <li>Check in minutes whether it's already been done &mdash; PubMed, Cochrane, PROSPERO, ClinicalTrials.gov</li>
-                    <li>Stress-test an idea with the FINER criteria before you commit weeks to it</li>
-                    <li>Match your idea to the right starting study design</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="rc-learn-card">
-                <div class="rc-learn-card__body">
-                  <div class="rc-learn-card__icon"><i data-lucide="refresh-cw" width="18" height="18"></i></div>
-                  <span class="rw-session-meta">Webinar 2 &middot; Free &middot; Live</span>
-                  <h3 class="rc-learn-card__head">Quality Improvement Studies</h3>
-                  <ul class="rc-learn-card__list">
-                    <li>Quality improvement vs. research, and why it matters for ethics review</li>
-                    <li>The Model for Improvement and PDSA cycles</li>
-                    <li>Outcome, process, and balancing measures; reading a run chart</li>
-                    <li>Reporting your project with SQUIRE 2.0</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- What You Leave With -->
-          <div class="rc-receive reveal">
-            <span class="rc-sec-label">What You Leave With</span>
-            <div class="rc-receive__inner">
-              <ul class="rc-receive__list">
-                <li>A specific, checkable research question of your own</li>
-                <li>A clear answer on whether your idea is research or quality improvement</li>
-                <li>One concrete next step toward your first study</li>
-                <li>Direct access to ask Dr. Kaushik live, in both sessions</li>
-              </ul>
-              <div class="rc-receive__stat">
-                <span class="rc-receive__num">2</span>
-                <div>
-                  <span class="rc-receive__stat-label">Free live sessions</span>
-                  <span class="rc-receive__stat-sub">No experience needed. Come with a question, leave with a plan.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- What's Next: the beginner series -->
+          <!-- The three sessions -->
           <div class="rc-pub-types reveal">
-            <span class="rc-sec-label">After the Webinars</span>
-            <h3 class="msp-h3" style="margin:4px 0 4px;font-family:var(--font-display);font-weight:400;font-size:clamp(20px,2.2vw,26px);color:var(--uw-ink-900);">Continue into your first full study.</h3>
-            <p style="margin:0 0 4px;font-size:var(--fs-14);color:var(--uw-ink-600);max-width:62ch;">Three live Sunday sessions take you from the free webinars into an actual project, each led by a mentor who has done it.</p>
             <div class="rc-pub-types__grid">
               <div class="rc-pub-type rc-pub-type--blue">
                 <div class="rc-pub-type__icon-wrap">
@@ -239,23 +184,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <p>With Muhammad Ahmad Barakat. Pool existing evidence into a rigorous review, a strong first publication that needs no new data collection.</p>
               </div>
             </div>
-            <p class="rw-next-note">Dates are shared with webinar attendees first.</p>
+            <p class="rw-next-note">Sunday, November 8, 15, and 22. Enrollment is open to everyone.</p>
           </div>
 
-          <!-- Beginner Series Price -->
+          <!-- Price -->
           <div class="rc-payment reveal">
             <div class="rc-payment__inner">
               <div>
-                <span class="rc-sec-label">Beginner Series Investment</span>
-                <div class="rc-payment__price">$50</div>
-                <p class="rc-payment__note">One-time payment for all three live Sunday sessions, after you've attended the free webinars. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+                <span class="rc-sec-label">Investment</span>
+                <div class="rc-payment__price">$49</div>
+                <p class="rc-payment__note">One-time payment for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
               </div>
               <a
                 class="btn btn--primary"
                 href="https://team.manikmadaan.com/guidance-call/book"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Reserve Your Free Seat</a
+                >Reserve Your Spot</a
               >
             </div>
           </div>
@@ -271,24 +216,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <h2 id="mentorsTitle" class="msp-h2">Researchers who've published. Now helping you do the same.</h2>
           </div>
           <div class="rc-mtr-list">
-
-            <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo">
-                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreeram" loading="lazy" decoding="async" />
-              </div>
-              <div class="rc-mtr__body">
-                <div class="rc-mtr__header">
-                  <span class="rc-mtr__role">Webinar Host &amp; Research Head</span>
-                  <h3 class="rc-mtr__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
-                  <span class="rc-mtr__prog">Chief Scientific Officer &amp; CRIST Project Lead &middot; USMLE Wise Research</span>
-                </div>
-                <ul class="rc-mtr__creds">
-                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
-                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
-                  <li>Study Lead, MyPACER Study</li>
-                </ul>
-              </div>
-            </article>
 
             <article class="rc-mtr reveal">
               <div class="rc-mtr__photo">
@@ -350,26 +277,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
-                Is the webinar really free?
+                What does it cost?
               </button>
               <div class="accordion__body">
-                Yes. Both webinars are free, live, and open to anyone. There's no price or commitment attached to attending.
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                What if I can't attend live?
-              </button>
-              <div class="accordion__body">
-                Reserve your seat anyway. We send the replay and slide notes to everyone who registers, whether or not they attend live.
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                What happens after the two webinars?
-              </button>
-              <div class="accordion__body">
-                Research Wise continues into a beginner series: three live Sunday sessions covering case reports and case series, then original studies, systematic reviews, and meta-analyses. It's $50 one-time for all three sessions. Exact dates are shared with webinar attendees first.
+                $49, one-time, for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.
               </div>
             </div>
             <div class="accordion__item">
@@ -377,7 +288,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 How is this different from Research Cohort Access?
               </button>
               <div class="accordion__body">
-                Research Wise is the free starting point for people who haven't done research before. <a href="/research-cohort">Research Cohort Access</a> is a self-paced library for once you already understand the basics and are working on a real project.
+                Research Wise is the live starting point for people who haven't done research before. <a href="/research-cohort">Research Cohort Access</a> is a self-paced library for once you already understand the basics and are working on a real project.
               </div>
             </div>
             <div class="accordion__item">
@@ -396,10 +307,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="rc-cta-wrap">
         <div class="msp-wrap">
           <div class="rc-cta rc-cta-card reveal">
-            <h2 class="rc-cta__head">Your first step into research<br>starts with one free session.</h2>
+            <h2 class="rc-cta__head">Your first step into research<br>starts this November.</h2>
             <p class="rc-cta__sub">
-              Reserve a free seat in the next live webinar with Dr. Kaushik. No
-              experience, no cost, no commitment.
+              Reserve your spot in three live Sunday sessions starting November
+              8. No research experience needed, just a willingness to start.
             </p>
             <div class="rc-cta__actions">
               <a
@@ -407,7 +318,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 href="https://team.manikmadaan.com/guidance-call/book"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Reserve Your Free Seat</a
+                >Reserve Your Spot</a
               >
               <a class="btn btn--outline btn--xl rc-cta__outline" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
             </div>

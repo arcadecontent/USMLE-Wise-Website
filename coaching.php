@@ -465,28 +465,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg"
                   alt="Rana shares how she matched Internal Medicine at a top-20 program without U.S. clinical experience"
                   class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
+                <span class="yt-play">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
                 </span>
               </button>
               <div class="msp-slide__content">
@@ -527,28 +507,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg"
                   alt="Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale"
                   class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
+                <span class="yt-play">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
                 </span>
               </button>
               <div class="msp-slide__content">
@@ -590,28 +550,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg"
                   alt="Dr. Hamit C. shares how he matched at UPMC, PA"
                   class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
+                <span class="yt-play">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
                 </span>
               </button>
               <div class="msp-slide__content">
@@ -653,28 +593,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg"
                   alt="Dr. Yash shares how he matched in Los Angeles"
                   class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
+                <span class="yt-play">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
                 </span>
               </button>
               <div class="msp-slide__content">
@@ -715,28 +635,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg"
                   alt="Dr. Srishti Shankar shares how she matched at St. Vincent, MA"
                   class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-                <span class="msp-video-trigger__play" aria-hidden="true">
-                  <svg
-                    width="72"
-                    height="72"
-                    viewBox="0 0 72 72"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="36"
-                      fill="rgba(255,255,255,0.12)"
-                    />
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="rgba(255,255,255,0.92)"
-                    />
-                    <path d="M31 26l20 10-20 10V26z" fill="#1a3a7a" />
-                  </svg>
+                <span class="yt-play">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
                 </span>
               </button>
               <div class="msp-slide__content">

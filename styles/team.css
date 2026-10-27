@@ -128,7 +128,8 @@
    ============================================================ */
 .team-roster {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 260px));
+  justify-content: center;
   gap: clamp(18px, 2vw, 24px);
 }
 .team-card {

@@ -153,9 +153,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="LKF0UYfXyE0" aria-label="Play testimonial video: Dr. Ayra">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/LKF0UYfXyE0/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">
@@ -168,9 +168,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="Ea1pD2xY0_s" aria-label="Play testimonial video: Dr. Peracha">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/Ea1pD2xY0_s/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">
@@ -183,9 +183,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="HSsrZERcvbI" aria-label="Play testimonial video: Dr. Patel">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/HSsrZERcvbI/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">
@@ -198,9 +198,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="WDrpqKmLwLs" aria-label="Play testimonial video: Dr. Ali">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/WDrpqKmLwLs/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">
@@ -213,9 +213,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="F8E7lTvGKRU" aria-label="Play testimonial video: Rana">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">
@@ -228,9 +228,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="O4Gns55Brh0" aria-label="Play testimonial video: Dr. Shreya Sriram">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">
@@ -243,9 +243,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="ZynxmljOZDA" aria-label="Play testimonial video: Dr. Hamit C.">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">
@@ -258,9 +258,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="IEphKQwawzA" aria-label="Play testimonial video: Dr. Yash">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">
@@ -273,9 +273,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <button class="tsm-video-card__thumb msp-video-trigger" data-ytid="2pGb5xiKzdw" aria-label="Play testimonial video: Dr. Srishti Shankar">
                 <div class="tsm-video-card__poster">
                   <img class="msp-video-trigger__thumb" src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg" alt="" loading="lazy" />
-                  <div class="tsm-video-card__play">
-                    <i data-lucide="play" width="18" height="18"></i>
-                  </div>
+                  <span class="yt-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
+                  </span>
                 </div>
               </button>
               <div class="tsm-video-card__info">

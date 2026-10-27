@@ -2021,6 +2021,23 @@ svg.lucide {
   max-height: 240px;
 }
 
+/* ---------- YT-STYLE PLAY BUTTON (sitewide) ----------
+   The one play-button look every video thumbnail should use: a red rounded
+   rect + white triangle, like YouTube's own icon. Drop it inside whatever
+   centering wrapper the page already uses (flex/grid/absolute+transform);
+   it's a fixed-size, self-contained visual, not a positioning element. */
+.yt-play {
+  width: 60px;
+  height: 42px;
+  flex-shrink: 0;
+  background: var(--uw-red-500);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+}
+.yt-play svg { display: block; margin-left: 2px; }
+
 /* ============================================================
    MOBILE NAV — hamburger button + off-canvas drawer
    Shown at ≤940px. Injected into DOM via mobile-nav.js.

@@ -293,22 +293,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <div class="s1-video-bento__vertical">
         <button class="msp-video-trigger" data-ytid="SmDKOptBIV4" aria-label="Watch a student video review">
           <img src="https://i.ytimg.com/vi/SmDKOptBIV4/oardefault.jpg" alt="Student video review" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-          <span class="msp-video-trigger__play" aria-hidden="true">
-            <svg width="56" height="56" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
+          <span class="yt-play">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
           </span>
         </button>
       </div>
       <div class="s1-video-bento__col">
         <button class="msp-video-trigger" data-ytid="5qnypeUipdE" aria-label="Watch a student video review">
           <img src="https://i.ytimg.com/vi/5qnypeUipdE/hqdefault.jpg" alt="Student video review" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-          <span class="msp-video-trigger__play" aria-hidden="true">
-            <svg width="56" height="56" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
+          <span class="yt-play">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
           </span>
         </button>
         <button class="msp-video-trigger" data-ytid="yljBSeYYx6s" aria-label="Watch a student video review">
           <img src="https://i.ytimg.com/vi/yljBSeYYx6s/hqdefault.jpg" alt="Student video review" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-          <span class="msp-video-trigger__play" aria-hidden="true">
-            <svg width="56" height="56" viewBox="0 0 72 72" fill="none"><circle cx="36" cy="36" r="36" fill="rgba(255,255,255,0.12)"/><circle cx="36" cy="36" r="30" fill="rgba(255,255,255,0.92)"/><path d="M31 26l20 10-20 10V26z" fill="#1a3a7a"/></svg>
+          <span class="yt-play">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
           </span>
         </button>
       </div>

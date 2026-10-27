@@ -54,7 +54,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <a class="team-spot<?php echo ($i % 2 === 1) ? ' team-spot--flip' : ''; ?>" href="/team/<?php echo $slug; ?>">
         <div class="team-spot__photo">
           <?php if (!empty($m['photo'])): ?>
-          <img src="<?php echo $m['photo']; ?>" alt="<?php echo htmlspecialchars(strip_tags($m['name']), ENT_QUOTES); ?>" loading="lazy" decoding="async" />
+          <img src="<?php echo $m['photo']; ?>" alt="<?php echo htmlspecialchars(strip_tags($m['name']), ENT_QUOTES); ?>" loading="lazy" decoding="async"<?php if (!empty($m['photo_position'])): ?> style="object-position: <?php echo htmlspecialchars($m['photo_position'], ENT_QUOTES); ?>"<?php endif; ?> />
           <?php else: ?>
           <div class="team-ava <?php echo usmlewise_team_ava_class($slug); ?>"><?php echo usmlewise_team_initials($m['name']); ?></div>
           <?php endif; ?>
@@ -83,7 +83,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <a class="team-card" href="/team/<?php echo $slug; ?>">
         <div class="team-card__photo">
           <?php if (!empty($m['photo'])): ?>
-          <img src="<?php echo $m['photo']; ?>" alt="<?php echo htmlspecialchars(strip_tags($m['name']), ENT_QUOTES); ?>" loading="lazy" decoding="async" />
+          <img src="<?php echo $m['photo']; ?>" alt="<?php echo htmlspecialchars(strip_tags($m['name']), ENT_QUOTES); ?>" loading="lazy" decoding="async"<?php if (!empty($m['photo_position'])): ?> style="object-position: <?php echo htmlspecialchars($m['photo_position'], ENT_QUOTES); ?>"<?php endif; ?> />
           <?php else: ?>
           <div class="team-ava <?php echo usmlewise_team_ava_class($slug); ?>"><?php echo usmlewise_team_initials($m['name']); ?></div>
           <?php endif; ?>
@@ -115,7 +115,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <a class="team-card" href="/team/<?php echo $slug; ?>">
         <div class="team-card__photo">
           <?php if (!empty($m['photo'])): ?>
-          <img src="<?php echo $m['photo']; ?>" alt="<?php echo htmlspecialchars(strip_tags($m['name']), ENT_QUOTES); ?>" loading="lazy" decoding="async" />
+          <img src="<?php echo $m['photo']; ?>" alt="<?php echo htmlspecialchars(strip_tags($m['name']), ENT_QUOTES); ?>" loading="lazy" decoding="async"<?php if (!empty($m['photo_position'])): ?> style="object-position: <?php echo htmlspecialchars($m['photo_position'], ENT_QUOTES); ?>"<?php endif; ?> />
           <?php else: ?>
           <div class="team-ava <?php echo usmlewise_team_ava_class($slug); ?>"><?php echo usmlewise_team_initials($m['name']); ?></div>
           <?php endif; ?>

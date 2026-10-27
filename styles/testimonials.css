@@ -1543,27 +1543,15 @@
   object-fit: cover;
   display: block;
 }
-.tsm-video-card__play {
-  position: relative;
-  z-index: 1;
-}
 .tsm-video-card__thumb:hover .tsm-video-card__poster {
   background: var(--uw-ink-800);
 }
-.tsm-video-card__play {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, transform 0.22s var(--ease-out);
+.tsm-video-card__thumb .yt-play {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.22s var(--ease-out);
 }
-.tsm-video-card__thumb:hover .tsm-video-card__play {
-  background: rgba(255, 255, 255, 0.2);
+.tsm-video-card__thumb:hover .yt-play {
   transform: scale(1.08);
 }
 .tsm-video-card__info {
