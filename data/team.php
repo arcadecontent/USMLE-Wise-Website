@@ -609,6 +609,26 @@ function usmlewise_team_members(): array
 
         /* ---------------- Coaching ---------------- */
 
+        'janushree' => [
+            'group'     => 'coaching',
+            'name'      => 'Janushree',
+            'role'      => 'Coaching Team Lead',
+            'sub'       => 'ECFMG-Certified IMG &middot; 2027 Match Applicant',
+            'photo'     => '/assets/Photos/Team-Members/Janushree.jpg',
+            'card_line' => 'B.J. Medical College alumna &middot; Clinical experience at Baptist Hospital &amp; Cleveland Clinic',
+            'bio'       => [
+                "Janushree is Coaching Team Lead at USMLE Wise, an MBBS graduate of B.J. Medical College, India, and an ECFMG-certified international medical graduate now based in the United States, with professional interests spanning clinical medicine, medical research, and medical education.",
+                "She currently volunteers with the Laboratory Medicine Department at Mayo Clinic Florida, contributing to ongoing research projects. Her U.S. clinical experience includes exposure to Internal Medicine and Family Medicine at Baptist Memorial Hospital in Mississippi and Cleveland Clinic Florida, where she has worked alongside hospitalists and resident physicians.",
+                "At USMLE Wise, she teaches, guides, and supports students preparing for the USMLE examinations as a tutor and mentor. She also serves as Chair of the Medical Education Committee and contributes to the Research, Education, and Social Media teams.",
+            ],
+            'affiliations' => [
+                ['role' => 'Coaching Team Lead', 'org' => 'USMLE Wise'],
+                ['role' => 'Chair, Medical Education Committee', 'org' => 'USMLE Wise'],
+                ['role' => 'Volunteer, Laboratory Medicine', 'org' => 'Mayo Clinic Florida'],
+                ['role' => 'MBBS', 'org' => 'B.J. Medical College, India'],
+            ],
+        ],
+
         'shashank-choti' => [
             'group'     => 'coaching',
             'name'      => 'Shashank Choti',
