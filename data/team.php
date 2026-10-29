@@ -37,17 +37,17 @@ function usmlewise_team_members(): array
         'manik-madaan' => [
             'group'     => 'leadership',
             'name'      => 'Dr. Manik Madaan',
-            'role'      => 'Co-Founder',
+            'role'      => 'Volunteer Advisor',
             'sub'       => "The world's most-followed USMLE and Match expert",
             'photo'     => '/assets/Photos/Team-Members/Manik.jpg',
             'card_line' => 'Practicing U.S. physician &middot; 4 years on a Residency Selection Committee',
             'card_bio'  => "A practicing doctor in the U.S. who has served 4 years on a Residency Selection Committee, reviewing applications from the other side of the table.",
             'bio'       => [
-                "Dr. Manik Madaan is a co-founder of USMLE Wise and a practicing doctor in the United States. He has served four years on a Residency Selection Committee, reviewing applications from the other side of the table.",
+                "Dr. Manik Madaan is a volunteer advisor to USMLE Wise and a practicing doctor in the United States. He has served four years on a Residency Selection Committee, reviewing applications from the other side of the table.",
                 "That experience shapes how USMLE Wise advises applicants: not on what candidates assume programs want, but on what selection committees actually read, weigh, and remember.",
             ],
             'affiliations' => [
-                ['role' => 'Co-Founder', 'org' => 'USMLE Wise'],
+                ['role' => 'Volunteer Advisor', 'org' => 'USMLE Wise'],
                 ['role' => 'Residency Selection Committee (4 years)', 'org' => 'United States'],
             ],
         ],
@@ -482,7 +482,7 @@ function usmlewise_team_members(): array
             'name'      => 'Meghana Reddy',
             'role'      => 'Research Coordinator',
             'sub'       => 'Research Coordinator, USMLE Wise',
-            'photo'     => '/assets/Photos/Team-Members/Meghana-Reddy.webp',
+            'photo'     => '/assets/Photos/Team-Members/Meghana.jpeg',
             'card_line' => 'Keeps every research project on schedule across the team',
             'bio'       => [
                 "Meghana Reddy is Research Coordinator at USMLE Wise, keeping every student's research project on schedule by handling the logistics behind the mentorship.",
@@ -609,15 +609,15 @@ function usmlewise_team_members(): array
 
         /* ---------------- Coaching ---------------- */
 
-        'janushree' => [
+        'janushee' => [
             'group'     => 'coaching',
-            'name'      => 'Janushree',
+            'name'      => 'Janushee',
             'role'      => 'Coaching Team Lead',
             'sub'       => 'ECFMG-Certified IMG &middot; 2027 Match Applicant',
             'photo'     => '/assets/Photos/Team-Members/Janushree.jpg',
             'card_line' => 'B.J. Medical College alumna &middot; Clinical experience at Baptist Hospital &amp; Cleveland Clinic',
             'bio'       => [
-                "Janushree is Coaching Team Lead at USMLE Wise, an MBBS graduate of B.J. Medical College, India, and an ECFMG-certified international medical graduate now based in the United States, with professional interests spanning clinical medicine, medical research, and medical education.",
+                "Janushee is Coaching Team Lead at USMLE Wise, an MBBS graduate of B.J. Medical College, India, and an ECFMG-certified international medical graduate now based in the United States, with professional interests spanning clinical medicine, medical research, and medical education.",
                 "She currently volunteers with the Laboratory Medicine Department at Mayo Clinic Florida, contributing to ongoing research projects. Her U.S. clinical experience includes exposure to Internal Medicine and Family Medicine at Baptist Memorial Hospital in Mississippi and Cleveland Clinic Florida, where she has worked alongside hospitalists and resident physicians.",
                 "At USMLE Wise, she teaches, guides, and supports students preparing for the USMLE examinations as a tutor and mentor. She also serves as Chair of the Medical Education Committee and contributes to the Research, Education, and Social Media teams.",
             ],
