@@ -14,6 +14,7 @@ $scripts = [
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/team.php';
 $teamAll = usmlewise_team_members();
 $teamLeadership = array_filter($teamAll, fn($m) => usmlewise_team_in_groups($m, ['leadership']));
+$teamAdvisors   = array_filter($teamAll, fn($m) => usmlewise_team_in_groups($m, ['advisors']));
 $teamResearch   = array_filter($teamAll, fn($m) => usmlewise_team_in_groups($m, ['research']));
 
 /* Smaller departments (Match, Coaching, Marketing, Sales, and the back-office
@@ -51,6 +52,35 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
     <div class="team-spot-list reveal">
       <?php $i = 0; foreach ($teamLeadership as $slug => $m): ?>
+      <a class="team-spot<?php echo ($i % 2 === 1) ? ' team-spot--flip' : ''; ?>" href="/team/<?php echo $slug; ?>">
+        <div class="team-spot__photo">
+          <?php if (!empty($m['photo'])): ?>
+          <img src="<?php echo $m['photo']; ?>" alt="<?php echo htmlspecialchars(strip_tags($m['name']), ENT_QUOTES); ?>" loading="lazy" decoding="async"<?php if (!empty($m['photo_position'])): ?> style="object-position: <?php echo htmlspecialchars($m['photo_position'], ENT_QUOTES); ?>"<?php endif; ?> />
+          <?php else: ?>
+          <div class="team-ava <?php echo usmlewise_team_ava_class($slug); ?>"><?php echo usmlewise_team_initials($m['name']); ?></div>
+          <?php endif; ?>
+        </div>
+        <div class="team-spot__body">
+          <span class="team-spot__role"><?php echo $m['role']; ?></span>
+          <h3 class="team-spot__name"><?php echo $m['name']; ?></h3>
+          <span class="team-spot__sub"><?php echo $m['sub']; ?></span>
+          <p class="team-spot__bio"><?php echo $m['card_bio'] ?? $m['bio'][0]; ?></p>
+        </div>
+      </a>
+      <?php $i++; endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ADVISORS ============== -->
+<section class="msp-section" id="advisors" aria-labelledby="advisorsTitle">
+  <div class="msp-wrap">
+    <div class="msp-head reveal">
+      <h2 id="advisorsTitle" class="msp-h2">Backed by independent advisors.</h2>
+    </div>
+
+    <div class="team-spot-list reveal">
+      <?php $i = 0; foreach ($teamAdvisors as $slug => $m): ?>
       <a class="team-spot<?php echo ($i % 2 === 1) ? ' team-spot--flip' : ''; ?>" href="/team/<?php echo $slug; ?>">
         <div class="team-spot__photo">
           <?php if (!empty($m['photo'])): ?>

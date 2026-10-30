@@ -7,9 +7,9 @@
  * against it, so no new file or routing change is needed.
  *
  * Fields:
- *   group        'leadership' | 'research' | 'match' | 'coaching' | 'marketing'
- *                | 'sales' | 'operations' | 'tech' | 'admin' — which section
- *                the card appears in
+ *   group        'leadership' | 'advisors' | 'research' | 'match' | 'coaching'
+ *                | 'marketing' | 'sales' | 'operations' | 'tech' | 'admin' —
+ *                which section the card appears in
  *   name         Full display name
  *   role         Eyebrow above the name (detail page) and role line (card)
  *   sub          Secondary line under the name on the detail page
@@ -34,24 +34,6 @@ function usmlewise_team_members(): array
 
         /* ---------------- Leadership ---------------- */
 
-        'manik-madaan' => [
-            'group'     => 'leadership',
-            'name'      => 'Dr. Manik Madaan',
-            'role'      => 'Volunteer Advisor',
-            'sub'       => "The world's most-followed USMLE and Match expert",
-            'photo'     => '/assets/Photos/Team-Members/Manik.jpg',
-            'card_line' => 'Practicing U.S. physician &middot; 4 years on a Residency Selection Committee',
-            'card_bio'  => "A practicing doctor in the U.S. who has served 4 years on a Residency Selection Committee, reviewing applications from the other side of the table.",
-            'bio'       => [
-                "Dr. Manik Madaan is a volunteer advisor to USMLE Wise and a practicing doctor in the United States. He has served four years on a Residency Selection Committee, reviewing applications from the other side of the table.",
-                "That experience shapes how USMLE Wise advises applicants: not on what candidates assume programs want, but on what selection committees actually read, weigh, and remember.",
-            ],
-            'affiliations' => [
-                ['role' => 'Volunteer Advisor', 'org' => 'USMLE Wise'],
-                ['role' => 'Residency Selection Committee (4 years)', 'org' => 'United States'],
-            ],
-        ],
-
         'kaushik-sreerama-reddy' => [
             'group'     => 'leadership',
             'name'      => 'Dr. Kaushik Sreerama Reddy, MBBS',
@@ -69,6 +51,26 @@ function usmlewise_team_members(): array
                 ['role' => 'CRIST Project Lead', 'org' => 'USMLE Wise Research'],
                 ['role' => 'Lead Investigator', 'org' => 'Myositis Clinical Trials Consortium'],
                 ['role' => 'Study Lead', 'org' => 'MyPACER Study'],
+            ],
+        ],
+
+        /* ---------------- Advisors ---------------- */
+
+        'manik-madaan' => [
+            'group'     => 'advisors',
+            'name'      => 'Dr. Manik Madaan',
+            'role'      => 'Volunteer Advisor',
+            'sub'       => "The world's most-followed USMLE and Match expert",
+            'photo'     => '/assets/Photos/Team-Members/Manik.jpg',
+            'card_line' => 'Practicing U.S. physician &middot; 4 years on a Residency Selection Committee',
+            'card_bio'  => "A practicing doctor in the U.S. who has served 4 years on a Residency Selection Committee, reviewing applications from the other side of the table.",
+            'bio'       => [
+                "Dr. Manik Madaan is a volunteer advisor to USMLE Wise and a practicing doctor in the United States. He has served four years on a Residency Selection Committee, reviewing applications from the other side of the table.",
+                "That experience shapes how USMLE Wise advises applicants: not on what candidates assume programs want, but on what selection committees actually read, weigh, and remember.",
+            ],
+            'affiliations' => [
+                ['role' => 'Volunteer Advisor', 'org' => 'USMLE Wise'],
+                ['role' => 'Residency Selection Committee (4 years)', 'org' => 'United States'],
             ],
         ],
 
@@ -495,13 +497,13 @@ function usmlewise_team_members(): array
 
         'nikita-tompe' => [
             'group'     => 'research',
-            'name'      => 'Nikita Tompe',
+            'name'      => 'Dr. Nikita Tompe',
             'role'      => 'Research Intern',
             'sub'       => 'Research Intern (Projects), USMLE Wise',
             'photo'     => '/assets/Photos/Team-Members/Nikita-Tompe.webp',
             'card_line' => 'Literature searches, data organization &amp; reference management',
             'bio'       => [
-                "Nikita Tompe is a Research Intern at USMLE Wise, supporting the Research Lead, mentors, and students with literature searches and summaries, data organization, reference management, formatting, and proofreading.",
+                "Dr. Nikita Tompe is a Research Intern at USMLE Wise, supporting the Research Lead, mentors, and students with literature searches and summaries, data organization, reference management, formatting, and proofreading.",
                 "Nikita also tracks deadlines across projects, as a path toward Research Coordinator or Research Mentor.",
             ],
             'affiliations' => [
@@ -545,13 +547,13 @@ function usmlewise_team_members(): array
 
         'roohi' => [
             'group'     => 'match',
-            'name'      => 'Roohi',
+            'name'      => 'Dr. Roohi Khan',
             'role'      => 'Match Lead',
             'sub'       => 'Match, USMLE Wise',
             'photo'     => '/assets/Photos/Team-Members/Roohi.webp',
             'card_line' => 'Owns Match strategy &amp; delivery for every applicant',
             'bio'       => [
-                "Roohi is Match Lead at USMLE Wise, owning Match strategy and delivery for applicants and setting the playbook that mentors and coordinators follow.",
+                "Dr. Roohi Khan is Match Lead at USMLE Wise, owning Match strategy and delivery for applicants and setting the playbook that mentors and coordinators follow.",
                 "Roohi approves high-stakes client strategies, assigns clients to mentors, audits quality, keeps the team on ERAS and NRMP deadlines, and mentors on personal statements.",
             ],
             'affiliations' => [
@@ -562,8 +564,8 @@ function usmlewise_team_members(): array
         'tanishq' => [
             'group'     => 'match',
             'name'      => 'Dr. Tanishq',
-            'role'      => 'Match Mentor',
-            'sub'       => 'Match Mentor, ERAS CVs &amp; Program Signaling, USMLE Wise',
+            'role'      => 'Volunteer Match Mentor',
+            'sub'       => 'Volunteer Match Mentor, ERAS CVs &amp; Program Signaling, USMLE Wise',
             'photo'     => '/assets/Photos/Team-Members/Tanishq.webp',
             'card_line' => 'Primary strategist for an assigned roster of applicants',
             'bio'       => [
@@ -571,15 +573,15 @@ function usmlewise_team_members(): array
                 "Dr. Tanishq is the primary strategist for an assigned roster of residency applicants: running strategy calls, building program lists, keeping each client's portfolio current, and handing applicants to Interview Coaches when interview season starts.",
             ],
             'affiliations' => [
-                ['role' => 'Match Mentor', 'org' => 'USMLE Wise'],
+                ['role' => 'Volunteer Match Mentor', 'org' => 'USMLE Wise'],
             ],
         ],
 
         'meher' => [
             'group'     => 'match',
             'name'      => 'Dr. Meher',
-            'role'      => 'Match Mentor',
-            'sub'       => 'Match, USMLE Wise',
+            'role'      => 'Volunteer Match Mentor',
+            'sub'       => 'Volunteer Match Mentor, USMLE Wise',
             'photo'     => '/assets/Photos/Team-Members/Meher.webp',
             'card_line' => 'Primary strategist for an assigned roster of applicants',
             'bio'       => [
@@ -587,15 +589,15 @@ function usmlewise_team_members(): array
                 "Dr. Meher is the primary strategist for an assigned roster of residency applicants: running strategy calls, building program lists, keeping each client's portfolio current, and handing applicants to Interview Coaches when interview season starts.",
             ],
             'affiliations' => [
-                ['role' => 'Match Mentor', 'org' => 'USMLE Wise'],
+                ['role' => 'Volunteer Match Mentor', 'org' => 'USMLE Wise'],
             ],
         ],
 
         'saket' => [
             'group'     => 'match',
             'name'      => 'Dr. Saket',
-            'role'      => 'Match Mentor',
-            'sub'       => 'Match, USMLE Wise',
+            'role'      => 'Volunteer Match Mentor',
+            'sub'       => 'Volunteer Match Mentor, USMLE Wise',
             'photo'     => '/assets/Photos/Team-Members/Saket.webp',
             'card_line' => 'Primary strategist for an assigned roster of applicants',
             'bio'       => [
@@ -603,7 +605,7 @@ function usmlewise_team_members(): array
                 "Dr. Saket is the primary strategist for an assigned roster of residency applicants: running strategy calls, building program lists, keeping each client's portfolio current, and handing applicants to Interview Coaches when interview season starts.",
             ],
             'affiliations' => [
-                ['role' => 'Match Mentor', 'org' => 'USMLE Wise'],
+                ['role' => 'Volunteer Match Mentor', 'org' => 'USMLE Wise'],
             ],
         ],
 
@@ -611,13 +613,13 @@ function usmlewise_team_members(): array
 
         'janushee' => [
             'group'     => 'coaching',
-            'name'      => 'Janushee',
+            'name'      => 'Janushee Modi',
             'role'      => 'Coaching Team Lead',
             'sub'       => 'ECFMG-Certified IMG &middot; 2027 Match Applicant',
             'photo'     => '/assets/Photos/Team-Members/Janushree.jpg',
             'card_line' => 'B.J. Medical College alumna &middot; Clinical experience at Baptist Hospital &amp; Cleveland Clinic',
             'bio'       => [
-                "Janushee is Coaching Team Lead at USMLE Wise, an MBBS graduate of B.J. Medical College, India, and an ECFMG-certified international medical graduate now based in the United States, with professional interests spanning clinical medicine, medical research, and medical education.",
+                "Janushee Modi is Coaching Team Lead at USMLE Wise, an MBBS graduate of B.J. Medical College, India, and an ECFMG-certified international medical graduate now based in the United States, with professional interests spanning clinical medicine, medical research, and medical education.",
                 "She currently volunteers with the Laboratory Medicine Department at Mayo Clinic Florida, contributing to ongoing research projects. Her U.S. clinical experience includes exposure to Internal Medicine and Family Medicine at Baptist Memorial Hospital in Mississippi and Cleveland Clinic Florida, where she has worked alongside hospitalists and resident physicians.",
                 "At USMLE Wise, she teaches, guides, and supports students preparing for the USMLE examinations as a tutor and mentor. She also serves as Chair of the Medical Education Committee and contributes to the Research, Education, and Social Media teams.",
             ],
