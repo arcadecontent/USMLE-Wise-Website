@@ -38,7 +38,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <div class="msp-wrap msp-hero__grid">
     <div class="msp-hero__copy reveal">
       <h1 id="heroTitle" class="msp-h1">Doctors who've done it,<br><span class="msp-h1__accent">now guiding you through it.</span></h1>
-      <p class="msp-lede">USMLE Wise is led by physicians who went through the USMLE and Match themselves, backed by a full team: researchers with real publication records, Match and coaching staff who work your file directly, and the operations behind them.</p>
     </div>
   </div>
 </section>
@@ -170,7 +169,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <p class="rc-cta__sub">Book a free 30-minute call, or message us on WhatsApp with a question.</p>
       <div class="rc-cta__actions">
         <a class="btn btn--primary btn--lg" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
-        <a class="btn--outline-light btn--lg" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+        <a class="btn btn--outline-light btn--lg" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
       </div>
     </div>
   </div>

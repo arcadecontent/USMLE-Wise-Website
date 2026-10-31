@@ -230,11 +230,18 @@
   font-size: var(--fs-14);
   font-weight: 500;
   text-decoration: none;
-  transition: border-color 0.15s, color 0.15s;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
   display: inline-flex;
   align-items: center;
 }
-.btn--outline-light:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+/* Reverse the colors on hover (fill white, ink text) rather than just
+   brightening the outline -- and override a:not(.btn):hover's blue, which
+   would otherwise win since that rule targets any non-.btn link. */
+.btn--outline-light:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--uw-ink-900) !important;
+}
 
 /* Contained card rather than a full-bleed band: the gradient lives on the card
    itself, inset within .msp-wrap. Overrides .rc-cta's 600px text-column width,

@@ -84,7 +84,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <p class="rc-cta__sub">Book a free 30-minute call, or message us on WhatsApp with a question.</p>
       <div class="rc-cta__actions">
         <a class="btn btn--primary btn--lg" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a Free Guidance Call</a>
-        <a class="btn--outline-light btn--lg" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+        <a class="btn btn--outline-light btn--lg" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
       </div>
     </div>
   </div>
