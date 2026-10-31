@@ -105,6 +105,16 @@
 .post-body li { margin-bottom: var(--space-3); padding-left: 4px; }
 .post-body li::marker { color: var(--uw-blue-500); }
 
+/* Pictures placed in a post by the CRM's award editor arrive at their
+   uploaded width (up to 1600px); keep them inside the column. */
+.post-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-6) auto;
+  border-radius: var(--r-lg);
+}
+
 /* ---------- TABLES ---------- */
 /* Article bodies are authored as bare HTML, so these are element selectors.
    `border-collapse: separate` (not collapse) is required for the rounded
