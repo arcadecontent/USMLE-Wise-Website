@@ -332,7 +332,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <input id="rwPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 555 123 4567" required>
           </div>
           <div class="rw-field">
-            <div id="rwCard" class="rw-card"><div class="rw-card__loading">Loading secure card field…</div></div>
+            <span class="rw-label" id="rwCardNumberLabel">Card number</span>
+            <div id="rwCardNumber" class="rw-sel" aria-labelledby="rwCardNumberLabel"></div>
+          </div>
+          <div class="rw-row">
+            <div class="rw-field">
+              <span class="rw-label" id="rwCardExpiryLabel">Expiry date</span>
+              <div id="rwCardExpiry" class="rw-sel" aria-labelledby="rwCardExpiryLabel"></div>
+            </div>
+            <div class="rw-field">
+              <span class="rw-label" id="rwCardCvcLabel">Security code</span>
+              <div id="rwCardCvc" class="rw-sel" aria-labelledby="rwCardCvcLabel"></div>
+            </div>
           </div>
           <p class="rw-pay__error" id="rwPayError" role="alert" aria-live="polite"></p>
           <button class="btn btn--primary rw-pay__submit" id="rwPaySubmit" type="submit">Pay $49</button>
@@ -372,8 +383,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .rw-field input:focus{outline:none;border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
       .rw-field input[aria-invalid="true"]{border-color:#e32124;box-shadow:0 0 0 3px rgba(227,33,36,.12)}
       .rw-field small{display:block;margin-top:5px;font-size:12.5px;color:#6d7080}
-      .rw-card{min-height:52px}
-      .rw-card__loading{font-size:14px;color:#6d7080;border:1px dashed #d4d4cf;border-radius:8px;padding:14px 12px}
+      .rw-label{display:block;font-size:14px;font-weight:500;color:#32343f;margin-bottom:6px}
+      .rw-sel{box-sizing:border-box;min-height:45px;background:#fff;border:1px solid #d4d4cf;border-radius:8px;padding:12px;transition:border-color .15s,box-shadow .15s}
+      .rw-sel.StripeElement--focus{border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
+      .rw-sel.StripeElement--invalid{border-color:#e32124;box-shadow:0 0 0 3px rgba(227,33,36,.12)}
+      .rw-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
       .rw-pay__error{min-height:0;margin:4px 0 10px;font-size:14px;color:#a01517}
       .rw-pay__error:empty{display:none}
       .rw-pay__submit{width:100%;justify-content:center;font-size:16px;padding:14px 18px;margin-top:4px}
@@ -392,22 +406,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       var API = 'https://mastery.usmlewise.com/api/research-wise';
       // Publishable keys are public by design; this one belongs to the Stripe account Mastery charges.
       var STRIPE_KEY = 'pk_live_51QP4cwJDyWnuZEnfkf8zIUSEIgSpPgUPMyrg4m8UIeinhWBSeM0Do5lwYvffKwsjVj7DGUeJwLNUPKRiCD5yUd5P00yYL7zDFz';
-      var AMOUNT = 4900;
-      var APPEARANCE = {
-        theme: 'stripe',
-        variables: {
-          fontFamily: 'Geist, Inter, system-ui, sans-serif', fontSizeBase: '15px', borderRadius: '8px',
-          colorPrimary: '#2c3386', colorText: '#14151c', colorTextSecondary: '#6d7080', colorTextPlaceholder: '#9a9ca8',
-          colorDanger: '#a01517', colorBackground: '#ffffff', spacingUnit: '4px'
-        },
-        rules: {
-          '.Label': { fontSize: '14px', fontWeight: '500', color: '#32343f', marginBottom: '6px' },
-          '.Input': { border: '1px solid #d4d4cf', boxShadow: 'none', padding: '11px 12px' },
-          '.Input:focus': { borderColor: '#2c3386', boxShadow: '0 0 0 3px rgba(44,51,134,.18)' },
-          '.Input--invalid': { borderColor: '#e32124', boxShadow: '0 0 0 3px rgba(227,33,36,.12)' },
-          '.Tab': { border: '1px solid #d4d4cf', boxShadow: 'none' },
-          '.Tab--selected': { borderColor: '#2c3386', boxShadow: '0 0 0 1px #2c3386' }
-        }
+      var CARD_STYLE = {
+        base: { fontFamily: 'Geist, Inter, system-ui, sans-serif', fontSize: '15px', color: '#14151c', '::placeholder': { color: '#9a9ca8' } },
+        invalid: { color: '#a01517', iconColor: '#a01517' }
       };
 
       var dlg = document.getElementById('rwPay');
@@ -415,7 +416,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       var errorEl = document.getElementById('rwPayError');
       var submitBtn = document.getElementById('rwPaySubmit');
       var done = document.getElementById('rwPayDone');
-      var stripe = null, elements = null, ready = null, lastFocus = null;
+      var stripe = null, cardNumber = null, ready = null, lastFocus = null, cardErrors = {};
 
       // Stripe's script and card field load in the background as soon as the
       // page is idle, so the popup is ready the moment someone clicks.
@@ -430,16 +431,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           document.head.appendChild(s);
         }).then(function () {
           stripe = window.Stripe(STRIPE_KEY);
-          elements = stripe.elements({
-            mode: 'payment', amount: AMOUNT, currency: 'usd', paymentMethodTypes: ['card'], appearance: APPEARANCE,
-            fonts: [{ cssSrc: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap' }]
+          var elements = stripe.elements({ fonts: [{ cssSrc: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap' }] });
+          cardNumber = elements.create('cardNumber', { style: CARD_STYLE, showIcon: true, placeholder: '1234 1234 1234 1234' });
+          var parts = [[cardNumber, '#rwCardNumber'], [elements.create('cardExpiry', { style: CARD_STYLE }), '#rwCardExpiry'], [elements.create('cardCvc', { style: CARD_STYLE }), '#rwCardCvc']];
+          parts.forEach(function (p) {
+            p[0].mount(p[1]);
+            p[0].on('change', function (ev) {
+              cardErrors[p[1]] = ev.error ? ev.error.message : '';
+              showError(cardErrors['#rwCardNumber'] || cardErrors['#rwCardExpiry'] || cardErrors['#rwCardCvc'] || '');
+            });
           });
-          var card = elements.create('payment', {
-            layout: 'tabs',
-            fields: { billingDetails: { name: 'never', email: 'never', phone: 'never' } }
-          });
-          document.getElementById('rwCard').innerHTML = '';
-          card.mount('#rwCard');
         });
         ready.catch(function () { ready = null; });
         return ready;
@@ -500,23 +501,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         setBusy(true);
         var billing = { name: field('rwName').value.trim(), email: field('rwEmail').value.trim(), phone: field('rwPhone').value.trim() };
         prepare()
-          .then(function () { return elements.submit(); })
-          .then(function (res) {
-            if (res.error) throw res.error;
+          .then(function () {
             return fetch(API + '/intent', { method: 'POST' }).then(function (r) {
               return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Checkout is unavailable right now.'); return d; });
             });
           })
           .then(function (d) {
-            return stripe.confirmPayment({
-              elements: elements,
-              clientSecret: d.clientSecret,
-              confirmParams: {
-                return_url: location.origin + location.pathname + '?rw=paid',
-                payment_method_data: { billing_details: billing }
-              },
-              redirect: 'if_required'
-            });
+            return stripe.confirmCardPayment(d.clientSecret, { payment_method: { card: cardNumber, billing_details: billing } });
           })
           .then(function (res) {
             if (res.error) throw res.error;
