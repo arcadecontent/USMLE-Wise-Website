@@ -157,6 +157,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://usmlewise.com/research-masterclass</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://usmlewise.com/research-cohort</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>

@@ -312,6 +312,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
+            <article class="msp-sva-row reveal">
+              <div class="msp-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');"></div>
+              <div class="msp-sva-body">
+                <span class="msp-sva-eyebrow">06 &middot; Masterclass</span>
+                <h3 class="msp-sva-title">Research Masterclass</h3>
+                <div class="msp-sva-price">$49</div>
+                <p class="msp-sva-desc">How to find a research idea and complete an original study, start to finish, in just 1 month. No institutional access or approval required.</p>
+                <div class="msp-sva-ctas">
+                  <a href="/research-masterclass#fee" class="btn btn--primary btn--sm">Buy Now</a>
+                  <a href="/research-masterclass" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
