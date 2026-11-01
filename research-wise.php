@@ -431,7 +431,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         }).then(function () {
           stripe = window.Stripe(STRIPE_KEY);
           elements = stripe.elements({
-            mode: 'payment', amount: AMOUNT, currency: 'usd', appearance: APPEARANCE,
+            mode: 'payment', amount: AMOUNT, currency: 'usd', paymentMethodTypes: ['card'], appearance: APPEARANCE,
             fonts: [{ cssSrc: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap' }]
           });
           var card = elements.create('payment', {
