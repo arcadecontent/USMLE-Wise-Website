@@ -32,7 +32,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="msp-cta-row">
               <a
                 class="btn btn--primary btn--xl"
-                href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96"
+                href="#reserve"
+                data-rw-reserve
                 >Reserve Your Spot</a
               >
               <a class="btn btn--outline btn--xl" href="#curriculum">
@@ -40,6 +41,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <i data-lucide="arrow-down" class="ic-arrow" width="16" height="16"></i>
               </a>
             </div>
+            <p class="rw-free-module"><a href="/research-masterclass-module-1">Not sure yet? Try Module 1 free <span aria-hidden="true">&rarr;</span></a></p>
           </div>
         </div>
 
@@ -111,11 +113,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div>
                 <span class="rc-sec-label">Investment</span>
                 <div class="rc-payment__price">$49</div>
-                <p class="rc-payment__note">One-time payment for all three live Sunday sessions. Pay securely with Stripe, no signup needed first; your access is emailed to the address you use at checkout. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+                <p class="rc-payment__note">One-time payment for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
               </div>
               <a
                 class="btn btn--primary"
-                href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96"
+                href="#reserve"
+                data-rw-reserve
                 >Reserve Your Spot</a
               >
             </div>
@@ -285,7 +288,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rc-cta__actions">
               <a
                 class="btn btn--primary btn--xl"
-                href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96"
+                href="#reserve"
+                data-rw-reserve
                 >Reserve Your Spot</a
               >
               <a class="btn btn--outline btn--xl rc-cta__outline" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
@@ -295,6 +299,123 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </section>
 
     </main>
+
+    <!-- ============== RESERVE POPUP (Stripe embedded checkout via mastery.usmlewise.com) ============== -->
+    <div class="rw-pay" id="rwPay" role="dialog" aria-modal="true" aria-labelledby="rwPayTitle" hidden>
+      <div class="rw-pay__backdrop" data-rw-close></div>
+      <div class="rw-pay__panel">
+        <div class="rw-pay__head">
+          <div>
+            <span class="rw-pay__eyebrow">Research Wise &middot; $49 one-time</span>
+            <h2 id="rwPayTitle" class="rw-pay__title">Reserve your spot</h2>
+          </div>
+          <button type="button" class="rw-pay__close" data-rw-close aria-label="Close">&times;</button>
+        </div>
+        <p class="rw-pay__status" id="rwPayStatus" aria-live="polite"></p>
+        <div id="rwPayMount"></div>
+        <div class="rw-pay__done" id="rwPayDone" hidden>
+          <div class="rw-pay__tick" aria-hidden="true">&#10003;</div>
+          <h3>You're in. Thank you!</h3>
+          <p id="rwPayDoneText">Your payment is confirmed. We've emailed your receipt and the WhatsApp group link.</p>
+          <a class="btn btn--primary" id="rwPayGroup" href="#" target="_blank" rel="noopener noreferrer" hidden>Join the WhatsApp group</a>
+          <p class="rw-pay__fine">Session links and reminders are shared in the group. Sunday, November 15, 22 and 29.</p>
+        </div>
+      </div>
+    </div>
+    <style>
+      .rw-free-module{margin:14px 0 0;font-size:15px}
+      .rw-free-module a{color:var(--uw-blue-600);font-weight:600;text-decoration:none}
+      .rw-free-module a:hover{text-decoration:underline}
+      .rw-pay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px}
+      .rw-pay[hidden]{display:none}
+      .rw-pay__backdrop{position:absolute;inset:0;background:rgba(15,18,40,.55)}
+      .rw-pay__panel{position:relative;width:100%;max-width:560px;max-height:calc(100vh - 32px);overflow:auto;background:var(--uw-surface,#fff);border-radius:16px;padding:22px 22px 18px;box-shadow:0 24px 60px rgba(15,18,40,.3)}
+      .rw-pay__head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+      .rw-pay__eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--uw-red-500)}
+      .rw-pay__title{font-family:var(--font-display);font-size:28px;line-height:1.15;margin:4px 0 0;color:var(--uw-ink-900)}
+      .rw-pay__close{border:0;background:var(--uw-ink-75,#f1f2f6);color:var(--uw-ink-900);width:36px;height:36px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;flex:none}
+      .rw-pay__status{margin:0 0 8px;color:var(--uw-ink-600);font-size:15px}
+      .rw-pay__status:empty{display:none}
+      .rw-pay__status.is-error{color:var(--uw-red-700)}
+      .rw-pay__done{text-align:center;padding:12px 4px 6px}
+      .rw-pay__tick{width:56px;height:56px;border-radius:50%;background:var(--uw-success-500,#1f7a5a);color:#fff;font-size:30px;line-height:56px;margin:0 auto 12px}
+      .rw-pay__done h3{font-family:var(--font-display);font-size:26px;margin:0 0 8px;color:var(--uw-ink-900)}
+      .rw-pay__done p{color:var(--uw-ink-700);margin:0 0 16px}
+      .rw-pay__fine{font-size:14px;margin-top:14px!important}
+      body.rw-pay-open{overflow:hidden}
+    </style>
+    <script>
+    (function () {
+      var API = 'https://mastery.usmlewise.com/api/research-wise';
+      var dlg = document.getElementById('rwPay');
+      var statusEl = document.getElementById('rwPayStatus');
+      var mount = document.getElementById('rwPayMount');
+      var done = document.getElementById('rwPayDone');
+      var checkout = null, loading = false, lastFocus = null;
+
+      function setStatus(text, isError) {
+        statusEl.textContent = text || '';
+        statusEl.classList.toggle('is-error', !!isError);
+      }
+      function loadStripe() {
+        return new Promise(function (resolve, reject) {
+          if (window.Stripe) return resolve();
+          var s = document.createElement('script');
+          s.src = 'https://js.stripe.com/v3/';
+          s.onload = resolve;
+          s.onerror = function () { reject(new Error('Secure checkout could not load. Please check your connection and try again.')); };
+          document.head.appendChild(s);
+        });
+      }
+      function openDialog(e) {
+        e.preventDefault();
+        lastFocus = document.activeElement;
+        dlg.hidden = false;
+        document.body.classList.add('rw-pay-open');
+        dlg.querySelector('.rw-pay__close').focus();
+        if (checkout || loading || !done.hidden) return;
+        loading = true;
+        setStatus('Loading secure checkout…');
+        fetch(API + '/session', { method: 'POST' })
+          .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Checkout is unavailable right now.'); return d; }); })
+          .then(function (d) {
+            return loadStripe().then(function () {
+              var sessionId = String(d.clientSecret).split('_secret_')[0];
+              return window.Stripe(d.publishableKey).initEmbeddedCheckout({
+                fetchClientSecret: function () { return Promise.resolve(d.clientSecret); },
+                onComplete: function () { finish(sessionId); }
+              });
+            });
+          })
+          .then(function (c) { checkout = c; checkout.mount('#rwPayMount'); setStatus(''); })
+          .catch(function (err) { setStatus(err.message + ' You can also message us on WhatsApp at +1 919 201 5700.', true); })
+          .then(function () { loading = false; });
+      }
+      function finish(sessionId) {
+        if (checkout) { checkout.destroy(); checkout = null; }
+        mount.innerHTML = '';
+        done.hidden = false;
+        setStatus('');
+        fetch(API + '/confirm', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ sessionId: sessionId }) })
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (!d.paid) return;
+            if (d.email) document.getElementById('rwPayDoneText').textContent = 'Your payment is confirmed. We’ve emailed your receipt and the WhatsApp group link to ' + d.email + '.';
+            if (d.groupUrl) { var g = document.getElementById('rwPayGroup'); g.href = d.groupUrl; g.hidden = false; }
+          })
+          .catch(function () { /* the email still arrives via Stripe's webhook */ });
+      }
+      function closeDialog() {
+        dlg.hidden = true;
+        document.body.classList.remove('rw-pay-open');
+        if (lastFocus) lastFocus.focus();
+      }
+      document.querySelectorAll('[data-rw-reserve]').forEach(function (a) { a.addEventListener('click', openDialog); });
+      dlg.querySelectorAll('[data-rw-close]').forEach(function (el) { el.addEventListener('click', closeDialog); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden) closeDialog(); });
+      if (location.hash === '#reserve') document.querySelector('[data-rw-reserve]').click();
+    })();
+    </script>
 
     <!-- ============== FOOTER ============== -->
 

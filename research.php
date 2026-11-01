@@ -320,7 +320,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <div class="msp-sva-price">$49</div>
                 <p class="msp-sva-desc">Your first step into research. Three live Sunday sessions on case reports and case series, original studies, and systematic reviews and meta-analyses.</p>
                 <div class="msp-sva-ctas">
-                  <a href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96" class="btn btn--primary btn--sm">Buy Now</a>
+                  <a href="/research-wise#reserve" class="btn btn--primary btn--sm">Buy Now</a>
                   <a href="/research-wise" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
                 </div>
               </div>
