@@ -300,19 +300,45 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
     </main>
 
-    <!-- ============== RESERVE POPUP (Stripe embedded checkout via mastery.usmlewise.com) ============== -->
+    <!-- ============== RESERVE POPUP (on-page payment: our fields + Stripe's card field, via mastery.usmlewise.com) ============== -->
     <div class="rw-pay" id="rwPay" role="dialog" aria-modal="true" aria-labelledby="rwPayTitle" hidden>
       <div class="rw-pay__backdrop" data-rw-close></div>
       <div class="rw-pay__panel">
         <div class="rw-pay__head">
           <div>
-            <span class="rw-pay__eyebrow">Research Wise &middot; $49 one-time</span>
+            <span class="rw-pay__eyebrow">Research Wise</span>
             <h2 id="rwPayTitle" class="rw-pay__title">Reserve your spot</h2>
           </div>
           <button type="button" class="rw-pay__close" data-rw-close aria-label="Close">&times;</button>
         </div>
-        <p class="rw-pay__status" id="rwPayStatus" aria-live="polite"></p>
-        <div id="rwPayMount"></div>
+
+        <div class="rw-pay__summary">
+          <div><strong>3 live Sunday sessions</strong><span>November 15, 22 &amp; 29 &middot; one-time payment</span></div>
+          <b>$49</b>
+        </div>
+
+        <form id="rwPayForm" novalidate>
+          <div class="rw-field">
+            <label for="rwName">Full name</label>
+            <input id="rwName" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="rw-field">
+            <label for="rwEmail">Email</label>
+            <input id="rwEmail" name="email" type="email" autocomplete="email" inputmode="email" required>
+            <small>Your receipt and the WhatsApp group link are sent here.</small>
+          </div>
+          <div class="rw-field">
+            <label for="rwPhone">WhatsApp number</label>
+            <input id="rwPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 555 123 4567" required>
+          </div>
+          <div class="rw-field">
+            <div id="rwCard" class="rw-card"><div class="rw-card__loading">Loading secure card field…</div></div>
+          </div>
+          <p class="rw-pay__error" id="rwPayError" role="alert" aria-live="polite"></p>
+          <button class="btn btn--primary rw-pay__submit" id="rwPaySubmit" type="submit">Pay $49</button>
+          <p class="rw-pay__secure"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Secure payment by Stripe. Your card details never touch our servers.</p>
+        </form>
+
         <div class="rw-pay__done" id="rwPayDone" hidden>
           <div class="rw-pay__tick" aria-hidden="true">&#10003;</div>
           <h3>You're in. Thank you!</h3>
@@ -326,94 +352,194 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .rw-free-module{margin:14px 0 0;font-size:15px}
       .rw-free-module a{color:var(--uw-blue-600);font-weight:600;text-decoration:none}
       .rw-free-module a:hover{text-decoration:underline}
-      .rw-pay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px}
+      /* The popup stays light in dark mode so it matches Stripe's card field. */
+      .rw-pay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;color-scheme:light}
       .rw-pay[hidden]{display:none}
-      .rw-pay__backdrop{position:absolute;inset:0;background:rgba(15,18,40,.55)}
-      .rw-pay__panel{position:relative;width:100%;max-width:560px;max-height:calc(100vh - 32px);overflow:auto;background:var(--uw-surface,#fff);border-radius:16px;padding:22px 22px 18px;box-shadow:0 24px 60px rgba(15,18,40,.3)}
-      .rw-pay__head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
-      .rw-pay__eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--uw-red-500)}
-      .rw-pay__title{font-family:var(--font-display);font-size:28px;line-height:1.15;margin:4px 0 0;color:var(--uw-ink-900)}
-      .rw-pay__close{border:0;background:var(--uw-ink-75,#f1f2f6);color:var(--uw-ink-900);width:36px;height:36px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;flex:none}
-      .rw-pay__status{margin:0 0 8px;color:var(--uw-ink-600);font-size:15px}
-      .rw-pay__status:empty{display:none}
-      .rw-pay__status.is-error{color:var(--uw-red-700)}
-      .rw-pay__done{text-align:center;padding:12px 4px 6px}
-      .rw-pay__tick{width:56px;height:56px;border-radius:50%;background:var(--uw-success-500,#1f7a5a);color:#fff;font-size:30px;line-height:56px;margin:0 auto 12px}
-      .rw-pay__done h3{font-family:var(--font-display);font-size:26px;margin:0 0 8px;color:var(--uw-ink-900)}
-      .rw-pay__done p{color:var(--uw-ink-700);margin:0 0 16px}
+      .rw-pay__backdrop{position:absolute;inset:0;background:rgba(20,21,28,.55)}
+      .rw-pay__panel{position:relative;width:100%;max-width:480px;max-height:calc(100vh - 32px);overflow:auto;background:#fff;color:#14151c;border-radius:16px;padding:24px;box-shadow:0 24px 60px rgba(20,21,28,.3);font-family:var(--font-sans)}
+      .rw-pay__head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+      .rw-pay__eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#e32124}
+      .rw-pay__title{font-family:var(--font-display);font-size:28px;line-height:1.15;margin:4px 0 0;color:#14151c}
+      .rw-pay__close{border:0;background:#f5f5f7;color:#14151c;width:36px;height:36px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;flex:none}
+      .rw-pay__summary{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f5f5f7;border-radius:10px;padding:12px 14px;margin-bottom:18px}
+      .rw-pay__summary strong{display:block;font-size:15px;color:#14151c}
+      .rw-pay__summary span{font-size:13px;color:#6d7080}
+      .rw-pay__summary b{font-family:var(--font-display);font-size:26px;font-weight:600;color:#14151c}
+      .rw-field{margin-bottom:12px}
+      .rw-field label{display:block;font-size:14px;font-weight:500;color:#32343f;margin-bottom:6px}
+      .rw-field input{width:100%;box-sizing:border-box;font:inherit;font-size:15px;color:#14151c;background:#fff;border:1px solid #d4d4cf;border-radius:8px;padding:11px 12px;transition:border-color .15s,box-shadow .15s}
+      .rw-field input::placeholder{color:#9a9ca8}
+      .rw-field input:focus{outline:none;border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
+      .rw-field input[aria-invalid="true"]{border-color:#e32124;box-shadow:0 0 0 3px rgba(227,33,36,.12)}
+      .rw-field small{display:block;margin-top:5px;font-size:12.5px;color:#6d7080}
+      .rw-card{min-height:52px}
+      .rw-card__loading{font-size:14px;color:#6d7080;border:1px dashed #d4d4cf;border-radius:8px;padding:14px 12px}
+      .rw-pay__error{min-height:0;margin:4px 0 10px;font-size:14px;color:#a01517}
+      .rw-pay__error:empty{display:none}
+      .rw-pay__submit{width:100%;justify-content:center;font-size:16px;padding:14px 18px;margin-top:4px}
+      .rw-pay__submit[disabled]{opacity:.65;cursor:progress}
+      .rw-pay__secure{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px 0 0;font-size:12.5px;color:#6d7080;text-align:center}
+      .rw-pay__done{text-align:center;padding:8px 4px 4px}
+      .rw-pay__tick{width:56px;height:56px;border-radius:50%;background:#2f8a5a;color:#fff;font-size:30px;line-height:56px;margin:0 auto 12px}
+      .rw-pay__done h3{font-family:var(--font-display);font-size:26px;margin:0 0 8px;color:#14151c}
+      .rw-pay__done p{color:#32343f;margin:0 0 16px}
       .rw-pay__fine{font-size:14px;margin-top:14px!important}
       body.rw-pay-open{overflow:hidden}
+      @media (max-width:480px){.rw-pay{padding:0;align-items:flex-end}.rw-pay__panel{border-radius:16px 16px 0 0;max-height:94vh;padding:20px 16px}}
     </style>
     <script>
     (function () {
       var API = 'https://mastery.usmlewise.com/api/research-wise';
-      var dlg = document.getElementById('rwPay');
-      var statusEl = document.getElementById('rwPayStatus');
-      var mount = document.getElementById('rwPayMount');
-      var done = document.getElementById('rwPayDone');
-      var checkout = null, loading = false, lastFocus = null;
+      // Publishable keys are public by design; this one belongs to the Stripe account Mastery charges.
+      var STRIPE_KEY = 'pk_live_51QP4cwJDyWnuZEnfkf8zIUSEIgSpPgUPMyrg4m8UIeinhWBSeM0Do5lwYvffKwsjVj7DGUeJwLNUPKRiCD5yUd5P00yYL7zDFz';
+      var AMOUNT = 4900;
+      var APPEARANCE = {
+        theme: 'stripe',
+        variables: {
+          fontFamily: 'Geist, Inter, system-ui, sans-serif', fontSizeBase: '15px', borderRadius: '8px',
+          colorPrimary: '#2c3386', colorText: '#14151c', colorTextSecondary: '#6d7080', colorTextPlaceholder: '#9a9ca8',
+          colorDanger: '#a01517', colorBackground: '#ffffff', spacingUnit: '4px'
+        },
+        rules: {
+          '.Label': { fontSize: '14px', fontWeight: '500', color: '#32343f', marginBottom: '6px' },
+          '.Input': { border: '1px solid #d4d4cf', boxShadow: 'none', padding: '11px 12px' },
+          '.Input:focus': { borderColor: '#2c3386', boxShadow: '0 0 0 3px rgba(44,51,134,.18)' },
+          '.Input--invalid': { borderColor: '#e32124', boxShadow: '0 0 0 3px rgba(227,33,36,.12)' },
+          '.Tab': { border: '1px solid #d4d4cf', boxShadow: 'none' },
+          '.Tab--selected': { borderColor: '#2c3386', boxShadow: '0 0 0 1px #2c3386' }
+        }
+      };
 
-      function setStatus(text, isError) {
-        statusEl.textContent = text || '';
-        statusEl.classList.toggle('is-error', !!isError);
-      }
-      function loadStripe() {
-        return new Promise(function (resolve, reject) {
+      var dlg = document.getElementById('rwPay');
+      var form = document.getElementById('rwPayForm');
+      var errorEl = document.getElementById('rwPayError');
+      var submitBtn = document.getElementById('rwPaySubmit');
+      var done = document.getElementById('rwPayDone');
+      var stripe = null, elements = null, ready = null, lastFocus = null;
+
+      // Stripe's script and card field load in the background as soon as the
+      // page is idle, so the popup is ready the moment someone clicks.
+      function prepare() {
+        if (ready) return ready;
+        ready = new Promise(function (resolve, reject) {
           if (window.Stripe) return resolve();
           var s = document.createElement('script');
           s.src = 'https://js.stripe.com/v3/';
           s.onload = resolve;
           s.onerror = function () { reject(new Error('Secure checkout could not load. Please check your connection and try again.')); };
           document.head.appendChild(s);
+        }).then(function () {
+          stripe = window.Stripe(STRIPE_KEY);
+          elements = stripe.elements({
+            mode: 'payment', amount: AMOUNT, currency: 'usd', appearance: APPEARANCE,
+            fonts: [{ cssSrc: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap' }]
+          });
+          var card = elements.create('payment', {
+            layout: 'tabs',
+            fields: { billingDetails: { name: 'never', email: 'never', phone: 'never' } }
+          });
+          document.getElementById('rwCard').innerHTML = '';
+          card.mount('#rwCard');
         });
+        ready.catch(function () { ready = null; });
+        return ready;
       }
+      if ('requestIdleCallback' in window) window.requestIdleCallback(function () { prepare().catch(function () {}); }, { timeout: 2500 });
+      else setTimeout(function () { prepare().catch(function () {}); }, 1200);
+
+      function showError(text) { errorEl.textContent = text || ''; }
+      function setBusy(busy) { submitBtn.disabled = busy; submitBtn.textContent = busy ? 'Processing…' : 'Pay $49'; }
+
       function openDialog(e) {
-        e.preventDefault();
+        if (e) e.preventDefault();
         lastFocus = document.activeElement;
         dlg.hidden = false;
         document.body.classList.add('rw-pay-open');
-        dlg.querySelector('.rw-pay__close').focus();
-        if (checkout || loading || !done.hidden) return;
-        loading = true;
-        setStatus('Loading secure checkout…');
-        fetch(API + '/session', { method: 'POST' })
-          .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Checkout is unavailable right now.'); return d; }); })
-          .then(function (d) {
-            return loadStripe().then(function () {
-              var sessionId = String(d.clientSecret).split('_secret_')[0];
-              return window.Stripe(d.publishableKey).initEmbeddedCheckout({
-                fetchClientSecret: function () { return Promise.resolve(d.clientSecret); },
-                onComplete: function () { finish(sessionId); }
-              });
-            });
-          })
-          .then(function (c) { checkout = c; checkout.mount('#rwPayMount'); setStatus(''); })
-          .catch(function (err) { setStatus(err.message + ' You can also message us on WhatsApp at +1 919 201 5700.', true); })
-          .then(function () { loading = false; });
-      }
-      function finish(sessionId) {
-        if (checkout) { checkout.destroy(); checkout = null; }
-        mount.innerHTML = '';
-        done.hidden = false;
-        setStatus('');
-        fetch(API + '/confirm', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ sessionId: sessionId }) })
-          .then(function (r) { return r.json(); })
-          .then(function (d) {
-            if (!d.paid) return;
-            if (d.email) document.getElementById('rwPayDoneText').textContent = 'Your payment is confirmed. We’ve emailed your receipt and the WhatsApp group link to ' + d.email + '.';
-            if (d.groupUrl) { var g = document.getElementById('rwPayGroup'); g.href = d.groupUrl; g.hidden = false; }
-          })
-          .catch(function () { /* the email still arrives via Stripe's webhook */ });
+        if (done.hidden) document.getElementById('rwName').focus();
+        prepare().catch(function (err) { showError(err.message + ' You can also message us on WhatsApp at +1 919 201 5700.'); });
       }
       function closeDialog() {
         dlg.hidden = true;
         document.body.classList.remove('rw-pay-open');
         if (lastFocus) lastFocus.focus();
       }
+
+      function field(id) { return document.getElementById(id); }
+      function validate() {
+        var name = field('rwName'), email = field('rwEmail'), phone = field('rwPhone');
+        var checks = [
+          [name, name.value.trim().length >= 2, 'Please enter your full name.'],
+          [email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()), 'Please enter a valid email address.'],
+          [phone, phone.value.replace(/\D/g, '').length >= 7, 'Please enter your WhatsApp number, including country code.']
+        ];
+        for (var i = 0; i < checks.length; i++) {
+          checks[i][0].setAttribute('aria-invalid', checks[i][1] ? 'false' : 'true');
+          if (!checks[i][1]) { checks[i][0].focus(); return checks[i][2]; }
+        }
+        return '';
+      }
+
+      function finish(intentId) {
+        form.hidden = true;
+        done.hidden = false;
+        fetch(API + '/confirm', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ paymentIntentId: intentId }) })
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (!d.paid) return;
+            if (d.email) field('rwPayDoneText').textContent = 'Your payment is confirmed. We’ve emailed your receipt and the WhatsApp group link to ' + d.email + '.';
+            if (d.groupUrl) { var g = field('rwPayGroup'); g.href = d.groupUrl; g.hidden = false; }
+          })
+          .catch(function () { /* the email still goes out from the server's 15-minute check */ });
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        showError('');
+        var problem = validate();
+        if (problem) return showError(problem);
+        setBusy(true);
+        var billing = { name: field('rwName').value.trim(), email: field('rwEmail').value.trim(), phone: field('rwPhone').value.trim() };
+        prepare()
+          .then(function () { return elements.submit(); })
+          .then(function (res) {
+            if (res.error) throw res.error;
+            return fetch(API + '/intent', { method: 'POST' }).then(function (r) {
+              return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Checkout is unavailable right now.'); return d; });
+            });
+          })
+          .then(function (d) {
+            return stripe.confirmPayment({
+              elements: elements,
+              clientSecret: d.clientSecret,
+              confirmParams: {
+                return_url: location.origin + location.pathname + '?rw=paid',
+                payment_method_data: { billing_details: billing }
+              },
+              redirect: 'if_required'
+            });
+          })
+          .then(function (res) {
+            if (res.error) throw res.error;
+            var pi = res.paymentIntent;
+            if (pi && (pi.status === 'succeeded' || pi.status === 'processing')) finish(pi.id);
+            else throw new Error('The payment was not completed. Please try again.');
+          })
+          .catch(function (err) { showError((err && err.message) || 'Something went wrong. Please try again.'); setBusy(false); });
+      });
+
       document.querySelectorAll('[data-rw-reserve]').forEach(function (a) { a.addEventListener('click', openDialog); });
       dlg.querySelectorAll('[data-rw-close]').forEach(function (el) { el.addEventListener('click', closeDialog); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden) closeDialog(); });
-      if (location.hash === '#reserve') document.querySelector('[data-rw-reserve]').click();
+
+      // Back from a bank's verification page.
+      var params = new URLSearchParams(location.search);
+      if (params.get('payment_intent') && params.get('redirect_status') === 'succeeded') {
+        openDialog();
+        finish(params.get('payment_intent'));
+        history.replaceState(null, '', location.pathname);
+      } else if (location.hash === '#reserve') {
+        openDialog();
+      }
     })();
     </script>
 
