@@ -32,9 +32,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="msp-cta-row">
               <a
                 class="btn btn--primary btn--xl"
-                href="https://team.manikmadaan.com/guidance-call/book"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96"
                 >Reserve Your Spot</a
               >
               <a class="btn btn--outline btn--xl" href="#curriculum">
@@ -113,13 +111,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div>
                 <span class="rc-sec-label">Investment</span>
                 <div class="rc-payment__price">$49</div>
-                <p class="rc-payment__note">One-time payment for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+                <p class="rc-payment__note">One-time payment for all three live Sunday sessions. Pay securely with Stripe, no signup needed first; your access is emailed to the address you use at checkout. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
               </div>
               <a
                 class="btn btn--primary"
-                href="https://team.manikmadaan.com/guidance-call/book"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96"
                 >Reserve Your Spot</a
               >
             </div>
@@ -289,9 +285,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <div class="rc-cta__actions">
               <a
                 class="btn btn--primary btn--xl"
-                href="https://team.manikmadaan.com/guidance-call/book"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96"
                 >Reserve Your Spot</a
               >
               <a class="btn btn--outline btn--xl rc-cta__outline" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>

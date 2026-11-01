@@ -315,13 +315,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <article class="msp-sva-row reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">06 &middot; Masterclass</span>
-                <h3 class="msp-sva-title">Research Masterclass</h3>
+                <span class="msp-sva-eyebrow">06 &middot; Live &middot; 3 Sunday sessions</span>
+                <h3 class="msp-sva-title">Research Wise</h3>
                 <div class="msp-sva-price">$49</div>
-                <p class="msp-sva-desc">How to find a research idea and complete an original study, start to finish, in just 1 month. No institutional access or approval required.</p>
+                <p class="msp-sva-desc">Your first step into research. Three live Sunday sessions on case reports and case series, original studies, and systematic reviews and meta-analyses.</p>
                 <div class="msp-sva-ctas">
-                  <a href="/research-masterclass#fee" class="btn btn--primary btn--sm">Buy Now</a>
-                  <a href="/research-masterclass" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+                  <a href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96" class="btn btn--primary btn--sm">Buy Now</a>
+                  <a href="/research-wise" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
                 </div>
               </div>
             </article>
