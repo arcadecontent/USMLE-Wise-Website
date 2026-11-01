@@ -30,9 +30,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </p>
             <div class="msp-cta-row">
               <a class="btn btn--primary btn--xl" href="#fee">Buy Now &mdash; $49</a>
-              <a class="btn btn--outline btn--xl" href="#learn">
-                What you'll learn
-                <i data-lucide="arrow-down" class="ic-arrow" width="16" height="16"></i>
+              <a class="btn btn--outline btn--xl" href="/research-masterclass-module-1">
+                Try Module 1 free
+                <i data-lucide="arrow-right" class="ic-arrow" width="16" height="16"></i>
               </a>
             </div>
           </div>

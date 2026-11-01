@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QI Paper Workbench | USMLEWise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --uw-navy:#2c3386;
+  --uw-navy-ink:#1b1f55;
+  --uw-red:#e32124;
+  --uw-good:#1f7a5a;
+  --uw-bg:#f5f6fa;
+  --uw-surface:#ffffff;
+  --uw-sunk:#eceef6;
+  --uw-line:#d7dae9;
+  --uw-text:#1a1d3a;
+  --uw-muted:#5b6080;
+  --uw-on-navy:#ffffff;
+  --uw-good-bg:#e5f3ed;
+  --uw-bad-bg:#fde8e8;
+  --uw-focus:#e32124;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --uw-navy:#8f97f0;
+    --uw-navy-ink:#c9ccfa;
+    --uw-red:#ff6b6d;
+    --uw-good:#5fcf9f;
+    --uw-bg:#12142a;
+    --uw-surface:#1b1e3a;
+    --uw-sunk:#232748;
+    --uw-line:#343a66;
+    --uw-text:#eceefb;
+    --uw-muted:#a7abcc;
+    --uw-on-navy:#12142a;
+    --uw-good-bg:#173a31;
+    --uw-bad-bg:#45202a;
+    --uw-focus:#ff6b6d;
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--uw-bg);color:var(--uw-text)}
+.uw-wb{font-family:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;color:var(--uw-text)}
+.uw-wb h1,.uw-wb h2,.uw-wb h3{font-family:"Lora",Georgia,serif;color:var(--uw-text);margin:0;line-height:1.15}
+.uw-wb p{margin:0 0 .75rem}
+.uw-wb button{font:inherit;cursor:pointer}
+.uw-wb :focus-visible{outline:3px solid var(--uw-focus);outline-offset:2px}
+
+/* progress rail */
+.uw-rail{position:sticky;top:0;z-index:20;background:var(--uw-surface);border-bottom:1px solid var(--uw-line)}
+.uw-rail-in{max-width:980px;margin:0 auto;padding:.6rem 1.25rem;display:flex;gap:.5rem;align-items:center}
+.uw-rail-steps{display:flex;gap:.35rem;flex:1}
+.uw-rail-step{flex:1;border:0;background:none;padding:0;text-align:left;color:var(--uw-muted);font-size:.78rem}
+.uw-rail-bar{display:block;height:6px;border-radius:3px;background:var(--uw-sunk);margin-bottom:.3rem;overflow:hidden}
+.uw-rail-bar i{display:block;height:100%;width:0;background:var(--uw-navy);transition:width .4s}
+.uw-rail-step.is-done .uw-rail-bar i{background:var(--uw-good)}
+.uw-rail-step.is-done{color:var(--uw-text)}
+.uw-rail-name{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.uw-rail-score{font-weight:600;font-size:.9rem;white-space:nowrap;padding-left:.5rem}
+@media (max-width:640px){.uw-rail-name{display:none}}
+
+/* hero */
+.uw-hero{max-width:980px;margin:0 auto;padding:3rem 1.25rem 1.5rem;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
+.uw-hero h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:700;letter-spacing:-.01em}
+.uw-hero p{font-size:1.1rem;color:var(--uw-muted);max-width:34em;margin-top:1rem}
+.uw-hero-chart{width:100%;height:auto}
+.uw-hero-line{fill:none;stroke:var(--uw-navy);stroke-width:3;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:uw-draw 2.2s .3s ease-out forwards}
+.uw-hero-dot{fill:var(--uw-navy);opacity:0;animation:uw-fade .3s 2.3s forwards}
+.uw-hero-dot.is-sig{fill:var(--uw-red)}
+@keyframes uw-draw{to{stroke-dashoffset:0}}
+@keyframes uw-fade{to{opacity:1}}
+@media (max-width:760px){.uw-hero{grid-template-columns:1fr}}
+
+/* stations */
+.uw-main{max-width:980px;margin:0 auto;padding:0 1.25rem 4rem}
+.uw-st{background:var(--uw-surface);border:1px solid var(--uw-line);border-radius:14px;padding:1.75rem;margin-top:1.5rem;scroll-margin-top:70px}
+.uw-st-head{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1rem}
+.uw-st-num{flex:none;width:2.5rem;height:2.5rem;border-radius:50%;border:2px solid var(--uw-navy);color:var(--uw-navy);display:grid;place-items:center;font-weight:700;font-family:"Lora",Georgia,serif;font-size:1.15rem}
+.uw-st.is-done .uw-st-num{background:var(--uw-good);border-color:var(--uw-good);color:var(--uw-surface)}
+.uw-st h2{font-size:1.6rem}
+.uw-st-lead{color:var(--uw-muted);margin-top:.35rem;max-width:44em}
+.uw-pill{display:inline-block;margin-left:.6rem;font-family:"Geist",system-ui,sans-serif;font-size:.8rem;font-weight:600;padding:.15rem .6rem;border-radius:999px;background:var(--uw-sunk);color:var(--uw-muted);vertical-align:middle}
+.uw-pill.is-prog{background:var(--uw-sunk);color:var(--uw-navy)}
+.uw-pill.is-done{background:var(--uw-good-bg);color:var(--uw-good)}
+.uw-note{background:var(--uw-sunk);border-radius:8px;padding:.7rem .9rem;margin-bottom:1rem;font-size:.95rem}
+.uw-quick{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.uw-quick button{border:1.5px solid var(--uw-navy);background:var(--uw-surface);color:var(--uw-navy);border-radius:999px;padding:.3rem .8rem;font-size:.88rem;font-weight:500}
+.uw-meter{margin-top:.8rem}
+.uw-meter-row{display:flex;gap:4px}
+.uw-meter-row i{flex:1;height:12px;border-radius:3px;background:var(--uw-sunk);border:1px solid var(--uw-line)}
+.uw-meter-row i.on{background:var(--uw-navy);border-color:var(--uw-navy)}
+.uw-meter.is-sig .uw-meter-row i.on{background:var(--uw-red);border-color:var(--uw-red)}
+.uw-meter small{display:block;color:var(--uw-muted);margin-top:.3rem;font-size:.85rem}
+.uw-toast{position:fixed;right:1.2rem;top:3.6rem;z-index:30;background:var(--uw-navy);color:var(--uw-on-navy);font-weight:700;padding:.45rem .85rem;border-radius:999px;opacity:0;transform:translateY(-6px);transition:opacity .25s,transform .25s;pointer-events:none}
+.uw-toast.is-on{opacity:1;transform:none}
+.uw-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.uw-badge{border:1.5px dashed currentColor;border-radius:999px;padding:.25rem .75rem;font-size:.88rem;opacity:.45}
+.uw-badge.is-on{opacity:1;border-style:solid;font-weight:600}
+.uw-todo-bp{margin:.3rem 0 0;padding-left:1.1rem}
+.uw-todo-bp a{color:inherit}
+.uw-burst{position:fixed;inset:0;pointer-events:none;z-index:40}
+.uw-burst i{position:absolute;width:10px;height:10px;border-radius:50%;animation:uw-fall 1.6s ease-out forwards}
+@keyframes uw-fall{from{transform:translate(0,0);opacity:1}to{transform:translate(var(--dx),var(--dy));opacity:0}}
+.uw-own{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:.6rem}
+@media (max-width:760px){.uw-own{grid-template-columns:1fr}}
+
+.uw-btn{border:2px solid var(--uw-navy);background:var(--uw-navy);color:var(--uw-on-navy);border-radius:8px;padding:.55rem 1rem;font-weight:600}
+.uw-btn:disabled{opacity:.4;cursor:not-allowed}
+.uw-btn-ghost{background:transparent;color:var(--uw-navy)}
+.uw-row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:1rem}
+.uw-msg{min-height:1.5em;font-weight:500;margin-top:.75rem}
+.uw-msg.is-good{color:var(--uw-good)}
+.uw-msg.is-bad{color:var(--uw-red)}
+
+/* papers */
+.uw-papers{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.8rem}
+.uw-paper{text-align:left;background:var(--uw-surface);border:2px solid var(--uw-line);border-radius:10px;padding:1rem;color:var(--uw-text);display:flex;flex-direction:column;gap:.4rem}
+.uw-paper:hover{border-color:var(--uw-navy)}
+.uw-paper[aria-pressed="true"]{border-color:var(--uw-navy);background:var(--uw-sunk);box-shadow:inset 4px 0 0 var(--uw-navy)}
+.uw-paper b{font-family:"Lora",Georgia,serif;font-size:1.08rem;line-height:1.25}
+.uw-paper span{font-size:.88rem;color:var(--uw-muted)}
+.uw-ease{display:flex;gap:3px;align-items:center;font-size:.8rem;color:var(--uw-muted)}
+.uw-ease i{width:9px;height:9px;border-radius:2px;background:var(--uw-line)}
+.uw-ease i.on{background:var(--uw-navy)}
+.uw-papers a{font-size:.85rem;color:var(--uw-navy)}
+
+/* sorter */
+.uw-tray{display:flex;flex-wrap:wrap;gap:.5rem;min-height:3.2rem;padding:.75rem;background:var(--uw-sunk);border-radius:10px;border:2px dashed var(--uw-line)}
+.uw-tray.is-over{border-color:var(--uw-navy)}
+.uw-tray:empty::after{content:"All cards placed.";color:var(--uw-muted);font-size:.9rem;align-self:center}
+.uw-chip{border:1.5px solid var(--uw-line);background:var(--uw-surface);color:var(--uw-text);border-radius:8px;padding:.5rem .7rem;text-align:left;font-size:.92rem;max-width:100%;line-height:1.4}
+.uw-chip[aria-pressed="true"]{border-color:var(--uw-red);box-shadow:0 0 0 2px var(--uw-red)}
+.uw-chip.is-right{border-color:var(--uw-good);background:var(--uw-good-bg)}
+.uw-chip.is-wrong{border-color:var(--uw-red);background:var(--uw-bad-bg);animation:uw-shake .35s}
+@keyframes uw-shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.uw-buckets{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.7rem;margin-top:1rem}
+.uw-bucket{border:1.5px solid var(--uw-line);border-radius:10px;padding:.7rem;background:var(--uw-surface);display:flex;flex-direction:column;gap:.45rem;min-height:110px}
+.uw-bucket.is-target{border-color:var(--uw-navy);background:var(--uw-sunk)}
+.uw-bucket-h{border:0;background:none;text-align:left;padding:0;color:var(--uw-text)}
+.uw-bucket-h b{display:block;font-family:"Lora",Georgia,serif;font-size:1.02rem}
+.uw-bucket-h small{color:var(--uw-muted);font-size:.82rem}
+.uw-drop{display:flex;flex-direction:column;gap:.4rem}
+@media (max-width:640px){
+  .uw-buckets{grid-template-columns:1fr 1fr;gap:.5rem}
+  .uw-bucket{padding:.55rem;min-height:80px}
+  .uw-bucket-h small{display:none}
+  .uw-bucket .uw-chip{font-size:.82rem;padding:.4rem .5rem}
+  .uw-st{padding:1.2rem}
+}
+
+/* chart lab */
+.uw-lab{display:grid;grid-template-columns:1.5fr 1fr;gap:1.5rem}
+@media (max-width:820px){.uw-lab{grid-template-columns:1fr}}
+.uw-chart{width:100%;height:auto;background:var(--uw-surface);border:1px solid var(--uw-line);border-radius:10px}
+.uw-chart text{font-family:"Geist",system-ui,sans-serif;font-size:13px;fill:var(--uw-muted);paint-order:stroke;stroke:var(--uw-surface);stroke-width:4px;stroke-linejoin:round}
+.uw-sig{border-radius:8px;padding:.7rem .9rem;margin-top:.8rem;font-weight:600;background:var(--uw-sunk)}
+.uw-sig.is-on{background:var(--uw-bad-bg);color:var(--uw-red)}
+.uw-ctrl{margin-bottom:1rem}
+.uw-ctrl label{display:flex;justify-content:space-between;font-weight:500;font-size:.95rem}
+.uw-ctrl output{font-variant-numeric:tabular-nums;color:var(--uw-navy);font-weight:700}
+.uw-wb input[type=range]{width:100%;accent-color:var(--uw-navy);height:28px}
+.uw-todo{list-style:none;padding:0;margin:1rem 0 0}
+.uw-todo li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;color:var(--uw-muted)}
+.uw-todo li::before{content:"";flex:none;width:1.1rem;height:1.1rem;border-radius:4px;border:2px solid var(--uw-line);margin-top:.18rem}
+.uw-todo li.is-done{color:var(--uw-text)}
+.uw-todo li.is-done::before{background:var(--uw-good);border-color:var(--uw-good);box-shadow:inset 0 0 0 2px var(--uw-surface)}
+
+/* aim builder */
+.uw-aim{font-family:"Lora",Georgia,serif;font-size:clamp(1.2rem,2.6vw,1.55rem);line-height:1.4;padding:1.1rem 1.2rem;border-left:4px solid var(--uw-navy);background:var(--uw-sunk);border-radius:0 10px 10px 0;margin:1rem 0}
+.uw-aim mark{background:none;color:var(--uw-navy);font-weight:700;border-bottom:2px solid var(--uw-navy)}
+.uw-grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.5rem}
+@media (max-width:640px){.uw-grid2{grid-template-columns:1fr}}
+.uw-field label{display:block;font-weight:500;font-size:.95rem;margin-bottom:.3rem}
+.uw-field input[type=text],.uw-field select{width:100%;font:inherit;padding:.55rem .7rem;border:1.5px solid var(--uw-line);border-radius:8px;background:var(--uw-surface);color:var(--uw-text)}
+.uw-gap{display:flex;align-items:center;gap:.6rem;margin-top:.4rem}
+.uw-gap-track{flex:1;height:14px;border-radius:7px;background:var(--uw-sunk);position:relative}
+.uw-gap-fill{position:absolute;top:0;bottom:0;background:var(--uw-navy);border-radius:7px;opacity:.85}
+.uw-switches{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.5rem}
+@media (max-width:640px){.uw-switches{grid-template-columns:1fr}}
+.uw-switch{border:2px solid var(--uw-line);background:var(--uw-surface);border-radius:10px;padding:.8rem;text-align:left;color:var(--uw-text)}
+.uw-switch b{display:block;font-family:"Lora",Georgia,serif;font-size:1.1rem}
+.uw-switch small{color:var(--uw-muted)}
+.uw-switch[aria-pressed="true"]{border-color:var(--uw-good);background:var(--uw-good-bg)}
+.uw-h3{font-size:1.2rem;margin-top:1.6rem}
+
+/* quiz */
+.uw-q{border:1.5px solid var(--uw-line);border-radius:12px;padding:1.2rem}
+.uw-q-count{color:var(--uw-muted);font-size:.9rem}
+.uw-q-text{font-family:"Lora",Georgia,serif;font-size:1.3rem;line-height:1.35;margin:.4rem 0 1rem}
+.uw-opts{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+@media (max-width:640px){.uw-opts{grid-template-columns:1fr}}
+.uw-opt{border:1.5px solid var(--uw-line);background:var(--uw-surface);color:var(--uw-text);border-radius:8px;padding:.7rem;text-align:left;font-weight:500}
+.uw-opt.is-right{border-color:var(--uw-good);background:var(--uw-good-bg)}
+.uw-opt.is-wrong{border-color:var(--uw-red);background:var(--uw-bad-bg)}
+.uw-why{margin-top:.9rem;color:var(--uw-text);font-size:.95rem}
+
+/* blueprint */
+.uw-bp{background:var(--uw-navy-ink);color:var(--uw-bg);border-radius:14px;padding:2rem;margin-top:2rem}
+@media (prefers-color-scheme: dark){.uw-bp{background:var(--uw-sunk);color:var(--uw-text);border:1px solid var(--uw-line)}}
+.uw-bp h2{color:inherit;font-size:1.8rem}
+.uw-bp dl{display:grid;grid-template-columns:max-content 1fr;gap:.55rem 1.2rem;margin:1.2rem 0}
+.uw-bp dt{opacity:.75}
+.uw-bp dd{margin:0;font-weight:500}
+.uw-bp .uw-btn{background:var(--uw-bg);color:var(--uw-navy-ink);border-color:var(--uw-bg)}
+@media (prefers-color-scheme: dark){.uw-bp .uw-btn{background:var(--uw-navy);color:var(--uw-on-navy);border-color:var(--uw-navy)}}
+.uw-bp .uw-btn-ghost{background:transparent;color:inherit;border-color:currentColor}
+.uw-bp-done{display:none;font-family:"Lora",Georgia,serif;font-size:1.25rem;margin-top:.5rem}
+.uw-bp.is-complete .uw-bp-done{display:block}
+.uw-foot{max-width:980px;margin:0 auto;padding:0 1.25rem 3rem;color:var(--uw-muted);font-size:.85rem}
+.uw-foot a{color:var(--uw-navy)}
+
+@media (prefers-reduced-motion: reduce){
+  .uw-hero-line{animation:none;stroke-dashoffset:0}
+  .uw-hero-dot{animation:none;opacity:1}
+  .uw-chip.is-wrong{animation:none}
+  .uw-rail-bar i{transition:none}
+  .uw-toast{transition:none}
+  .uw-burst{display:none}
+}
+@media print{.uw-rail,.uw-hero-chart,.uw-st{display:none}.uw-bp{background:#fff;color:#000}}
+
+/* USMLE Wise course design system */
+:root{--uw-navy:#2c3386;--uw-navy-ink:#181c4d;--uw-red:#e32124;--uw-good:#1d5e3c;--uw-bg:#fafaf9;--uw-surface:#fff;--uw-sunk:#eef0fa;--uw-line:#e6e6e2;--uw-text:#20222b;--uw-muted:#4a4d5c;--uw-on-navy:#fff;--uw-good-bg:#e6f5ee;--uw-bad-bg:#fdecec;--uw-focus:#e32124;color-scheme:light}
+html{scroll-behavior:smooth}body{-webkit-font-smoothing:antialiased}.uw-wb{font-size:15px}.course-top{max-width:1200px;margin:auto;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--uw-navy);font-size:24px;font-weight:800;letter-spacing:-1px}.brand img{width:44px;height:44px}.brand-wise{font-weight:500}.brand small{display:block;font-size:8px;letter-spacing:2.2px}.course-label{font-size:10px;letter-spacing:1.8px;color:var(--uw-muted)}.course-label span{display:block;font-size:13px;letter-spacing:0;margin-top:3px;color:var(--uw-text)}.top-link{color:var(--uw-navy);text-decoration:none;font-weight:600;font-size:13px}.uw-rail{background:#fffffff5;backdrop-filter:blur(14px)}.uw-rail-in{max-width:1200px;padding:12px 32px;gap:20px}.uw-rail-steps{gap:18px}.uw-rail-name{font-weight:600;font-size:11px}.uw-rail-bar{height:4px;margin-bottom:8px}.uw-rail-step{border-radius:3px}.uw-rail-step.is-current .uw-rail-name{color:var(--uw-navy);text-decoration:underline;text-underline-offset:5px}.uw-rail-score{background:var(--uw-sunk);color:var(--uw-navy);border-radius:8px;padding:7px 10px;font-size:12px}.sticky-percent{font-size:13px;font-weight:700;color:var(--uw-navy)}.rail-overall{height:3px;background:var(--uw-line)}.rail-overall div{height:100%;background:var(--uw-red);width:0;transition:width .4s}.uw-hero{max-width:1200px;padding:64px 32px 42px;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.eyebrow{font-size:10px;letter-spacing:1.8px;font-weight:700;color:var(--uw-navy);margin-bottom:18px}.uw-hero h1{font-size:clamp(32px,4vw,51px);letter-spacing:-1.7px;line-height:1.15}.uw-hero h1 em{font-weight:500;color:var(--uw-navy)}.uw-hero p{font-size:16px;line-height:1.75;max-width:510px}.hero-visual{padding:28px 24px 20px;background:#f0f1f8;border-radius:24px;border:1px solid #e0e3f0;transform:rotate(-2deg)}.hero-visual .eyebrow{font-size:9px;letter-spacing:1.1px}.visual-caption{display:flex;justify-content:space-between;font-size:8px;letter-spacing:1px;color:var(--uw-muted);margin-top:14px}.uw-main{max-width:1200px;padding:0 32px 64px}.journey{display:grid;grid-template-columns:1.7fr 1fr;background:white;border:1px solid var(--uw-line);border-radius:20px;overflow:hidden;box-shadow:0 10px 35px #181c4d06}.journey-main{padding:28px 32px}.progress-title{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.progress-title h2{font-size:24px;max-width:360px}.progress-title strong{font-size:36px;color:var(--uw-navy);letter-spacing:-1px;font-variant-numeric:tabular-nums}.total-track{height:12px;border-radius:20px;background:var(--uw-sunk);overflow:hidden}.total-track div{height:100%;width:0;background:var(--uw-navy);border-radius:20px;transition:width .5s ease}.progress-meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--uw-muted);margin-top:10px}.milestones{display:flex;justify-content:space-between;gap:8px;margin-top:24px}.milestone{border:0;background:none;color:var(--uw-muted);padding:0;text-align:left;font-size:11px;flex:1}.milestone span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--uw-sunk);color:var(--uw-navy);font-size:11px;font-weight:700;margin-bottom:6px}.milestone.complete span{background:var(--uw-good);color:white}.journey-next{padding:28px 30px;background:var(--uw-navy-ink);color:white}.journey-next .eyebrow{color:#b0b9e4}.journey-next h3{color:white;font-size:23px}.journey-next p{font-size:13px;color:#d8ddf2;margin-top:10px;min-height:40px}.journey-next .uw-btn{width:100%;background:var(--uw-red);border-color:var(--uw-red);display:flex;justify-content:space-between}.journey-next small{display:block;font-size:10px;color:#d8ddf2;margin-top:12px}.section-intro{display:flex;gap:20px;align-items:center;margin:38px 0 0}.section-intro>span{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--uw-navy)}.section-intro p{margin:0;color:var(--uw-muted);font-size:13px}.section-intro button{margin-left:auto;background:white;color:var(--uw-navy);border:1px solid var(--uw-line);border-radius:8px;padding:7px 12px;font-size:12px}.section-intro button[aria-pressed=true]{background:var(--uw-sunk)}.uw-st{padding:32px;border-radius:18px;margin-top:22px;scroll-margin-top:100px;box-shadow:0 3px 12px #14151c03}.uw-st-head{border-bottom:1px solid var(--uw-line);padding-bottom:20px;margin-bottom:24px;gap:16px}.uw-st-num{border:0;background:var(--uw-sunk);border-radius:12px;width:42px;height:42px;font-family:Geist,system-ui;font-size:16px}.uw-st h2{font-size:25px}.uw-st-lead{font-size:14px;line-height:1.7;max-width:760px;margin-top:8px}.uw-pill{font-size:10px;letter-spacing:.3px;padding:4px 9px;vertical-align:middle}.uw-papers{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.uw-papers>div{display:flex;flex-direction:column}.uw-paper{width:100%;flex:1;padding:21px;gap:14px;border-width:1px;transition:transform .2s,box-shadow .2s}.uw-paper:hover{transform:translateY(-3px);box-shadow:0 8px 20px #2c338612}.uw-paper b{font-size:18px}.uw-paper span{font-size:12px}.uw-paper[aria-pressed=true]{border-color:var(--uw-navy);box-shadow:inset 0 3px var(--uw-navy)}.uw-papers a{font-size:11px;padding:7px 0}.uw-btn{border-radius:8px;font-size:13px;padding:11px 17px;transition:filter .2s}.uw-btn:hover{filter:brightness(1.1)}.uw-bp{padding:36px;border-radius:20px;background:var(--uw-navy-ink);color:#fff}.uw-bp h2{color:white}.uw-bp dd{overflow-wrap:anywhere}.uw-badge{font-size:11px}.uw-foot{max-width:1200px;font-size:11px;padding:0 32px 30px}.uw-toast{top:90px}.focus-mode .uw-st:not(.focus-active){display:none}.uw-field input[type=text],.uw-field select{padding:12px;font-size:14px}.uw-note{font-size:13px}.uw-bucket{padding:15px}.uw-q{padding:24px;background:#fafafb}.uw-opt{padding:16px}.uw-bp{scroll-margin-top:100px}
+@media(max-width:850px){.uw-hero{gap:25px;padding-top:36px}.journey{grid-template-columns:1fr}.journey-next p{min-height:0}.journey-next .uw-btn{max-width:340px}.uw-papers{grid-template-columns:repeat(2,minmax(0,1fr))}.course-label{display:none}.uw-rail-in{gap:10px}.uw-rail-steps{gap:9px}.uw-rail-name{font-size:10px}}
+@media(max-width:640px){.course-top{padding:18px}.brand{font-size:21px}.brand img{width:36px;height:36px}.top-link{font-size:11px}.uw-hero{padding:32px 18px 24px;grid-template-columns:1fr;gap:20px}.uw-hero h1{font-size:36px}.hero-visual{display:none}.uw-main{padding:0 14px 35px}.journey-main,.journey-next{padding:23px}.progress-title h2{font-size:21px}.progress-title strong{font-size:30px}.progress-meta{font-size:10px}.progress-meta span:last-child{display:none}.uw-rail-in{padding:10px 18px}.uw-rail-name{display:block;font-size:0}.uw-rail-name::first-letter{font-size:11px}.uw-rail-score{padding:5px 7px;font-size:11px}.milestone{font-size:10px}.section-intro{gap:10px;flex-wrap:wrap;margin-top:26px}.section-intro>span{font-size:9px}.section-intro p{display:none}.uw-st{padding:21px 16px;scroll-margin-top:90px}.uw-st h2{font-size:22px}.uw-pill{display:table;margin:8px 0 0}.uw-st-head{gap:12px}.uw-st-num{width:32px;height:32px;border-radius:8px}.uw-papers{grid-template-columns:1fr}.uw-paper{padding:18px}.uw-bp{padding:24px 20px}.uw-bp dl{grid-template-columns:1fr;gap:5px}.uw-bp dd{margin-bottom:12px}.uw-buckets{grid-template-columns:1fr}.uw-bucket-h small{display:block}.uw-foot{padding:0 20px 20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.uw-hero-line{stroke-dashoffset:0}.uw-hero-dot{opacity:1}}
+@media print{.course-top,.journey,.section-intro,.uw-hero,.uw-rail,.uw-toast,.uw-foot,.uw-bp .uw-row{display:none!important}.uw-main{padding:0}.uw-bp,.uw-bp h2{background:white;color:black}.uw-bp{border:0;padding:0}.uw-badge{opacity:1}}
+
+
+/* Guided run chart lab: local to station 3 */
+#st3 .uw-l-eyebrow{font-size:10px;letter-spacing:1.5px;font-weight:750;color:var(--uw-navy);text-transform:uppercase}
+#st3 h3{font-family:"Lora",Georgia,serif;font-size:20px;line-height:1.25;margin:5px 0 8px}
+#st3 .uw-l-demo-tag{display:inline-block;background:#fff1f1;color:#a3161a;font-family:Geist,system-ui;font-size:9px;letter-spacing:.7px;border-radius:4px;padding:4px 6px;margin-left:7px}
+#st3 .uw-l-scenario{display:grid;grid-template-columns:1fr 165px;gap:20px;background:#f2f3fa;border:1px solid #dfe2f1;border-radius:16px;padding:23px;margin-bottom:22px}
+#st3 .uw-l-scenario p{font-size:13px;line-height:1.7;margin:0;max-width:710px}
+#st3 .uw-l-equation{display:flex;flex-direction:column;justify-content:center;text-align:center;border:1px solid #dfe2ef;border-radius:12px;background:white;padding:12px}
+#st3 .uw-l-equation span,#st3 .uw-l-equation small{font-size:11px;color:var(--uw-muted)}
+#st3 .uw-l-equation strong{font-size:25px;color:var(--uw-navy);margin:3px 0}
+#st3 .uw-l-guide{border:1px solid var(--uw-line);border-radius:16px;overflow:hidden;margin-bottom:22px}
+#st3 .uw-l-guide-head{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:21px 23px 15px}
+#st3 .uw-l-guide-head h3{margin-bottom:0}
+#st3 .uw-l-count{border-radius:999px;background:#eef0fa;color:var(--uw-navy);font-size:11px;font-weight:700;padding:7px 10px;white-space:nowrap}
+#st3 .uw-l-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;padding:0 23px 17px}
+#st3 .uw-l-steps button{background:white;border:1px solid var(--uw-line);color:var(--uw-muted);font:600 10px/1.3 Geist,system-ui;padding:11px 6px;border-radius:8px;text-align:center;min-width:0}
+#st3 .uw-l-steps button b{display:block;font-size:13px;margin-bottom:4px}
+#st3 .uw-l-steps button[aria-current=step]{border:2px solid var(--uw-navy);background:var(--uw-sunk);color:var(--uw-navy);padding:10px 5px}
+#st3 .uw-l-lesson{padding:22px 24px;background:#f7f8fc;border-top:1px solid #e4e6f2}
+#st3 .uw-l-lesson p{font-size:13px;line-height:1.75}
+#st3 .uw-l-do{border-left:3px solid var(--uw-red);padding:10px 15px;background:white;margin:12px 0;border-radius:0 8px 8px 0}
+#st3 .uw-l-do span{font-weight:750;color:var(--uw-red);font-size:10px;letter-spacing:1.2px}
+#st3 .uw-l-do p{margin:4px 0 0}
+#st3 .uw-l-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:15px}
+#st3 .uw-l-row .uw-btn{font-size:12px;padding:10px 12px}
+#st3 .uw-l-workbench{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.85fr);gap:17px;align-items:start}
+#st3 .uw-l-graph-panel,#st3 .uw-l-controls{border:1px solid var(--uw-line);border-radius:15px;padding:20px;min-width:0}
+#st3 .uw-l-chart-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:12px}
+#st3 .uw-l-chart-head h3{font-size:18px}
+#st3 .uw-l-chart-head p{font-size:11px;color:var(--uw-muted);margin:0}
+#st3 .uw-l-smallbtn{font:600 11px/1.3 Geist,system-ui;background:white;color:var(--uw-navy);border:1px solid var(--uw-line);padding:9px 10px;border-radius:7px}
+#st3 .uw-l-smallbtn:hover{background:var(--uw-sunk)}
+#st3 .uw-chart{border:0;background:#fff;width:100%;height:auto;aspect-ratio:710/380;max-height:none}
+#st3 .uw-chart text{font-size:13px}
+#st3 .uw-chart [data-week]{cursor:pointer;outline:none}
+#st3 .uw-chart [data-week]:focus-visible{stroke:var(--uw-red);stroke-width:4px}
+#st3 .uw-l-legend{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--uw-muted);font-size:10px;margin:0 0 14px}
+#st3 .uw-l-legend span{display:inline-flex;gap:6px;align-items:center}
+#st3 .uw-l-key{display:inline-block;width:22px;height:0;border-top:3px solid var(--uw-navy)}
+#st3 .uw-l-key-median{border-top:2px dashed var(--uw-red)}
+#st3 .uw-l-key-change{border-top:2px dashed #6f77be}
+#st3 .uw-l-key-signal{width:10px;height:10px;background:#e32124;border:0;border-radius:50%}
+#st3 .uw-l-inspect{font-size:11px;border-radius:8px;background:#f6f7fa;border:1px solid #e9eaf0;padding:9px 12px;margin-bottom:12px;color:var(--uw-muted)}
+#st3 .uw-l-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#st3 .uw-l-metrics>div{border-radius:9px;background:var(--uw-sunk);padding:11px;min-width:0}
+#st3 .uw-l-metrics small{display:block;font-size:10px;color:var(--uw-muted)}
+#st3 .uw-l-metrics strong{display:block;font-size:23px;color:var(--uw-navy);line-height:1.2;margin:5px 0}
+#st3 .uw-l-metrics span{display:block;font-size:9px;color:var(--uw-muted);line-height:1.35}
+#st3 .uw-l-result{margin-top:15px;border-radius:9px;background:#f4f5f8;border-left:4px solid #9b9dae;padding:12px 14px;font-size:13px;font-weight:600;line-height:1.55}
+#st3 .uw-l-result.is-up{border-color:var(--uw-good);background:var(--uw-good-bg);color:#17543a}
+#st3 .uw-l-result.is-down,#st3 .uw-l-result.is-caution{border-color:var(--uw-red);background:var(--uw-bad-bg);color:#9c2428}
+#st3 .uw-meter{margin-top:12px}
+#st3 .uw-meter .uw-meter-row{gap:5px}
+#st3 .uw-meter .uw-meter-row i{height:9px}
+#st3 .uw-meter.is-sig .uw-meter-row i.on{background:var(--uw-good);border-color:var(--uw-good)}
+#st3 .uw-l-meaning{margin:10px 0 0;font-size:12px;line-height:1.65;color:var(--uw-text)}
+#st3 .uw-l-controls-head{padding-bottom:8px;border-bottom:1px solid var(--uw-line);margin-bottom:7px}
+#st3 .uw-l-controls-head p{font-size:11px;color:var(--uw-muted)}
+#st3 .uw-l-control{margin:0;padding:15px 0;border-bottom:1px solid var(--uw-line)}
+#st3 .uw-l-control label{font-size:12px;gap:5px;align-items:center}
+#st3 .uw-l-control output{white-space:nowrap;font-size:12px}
+#st3 .uw-l-control p{font-size:11px;line-height:1.65;color:var(--uw-muted);margin:7px 0}
+#st3 .uw-l-control small{font-size:10px;line-height:1.5;display:block;color:var(--uw-muted)}
+#st3 .uw-l-reroll{margin-top:17px;width:100%;font-size:11px;padding:10px}
+#st3 .uw-l-random-note{font-size:10px;color:var(--uw-muted);margin:9px 0 0;line-height:1.5}
+#st3 .uw-l-teacher{background:#1b2055;color:white;border-radius:15px;padding:24px;margin-top:22px}
+#st3 .uw-l-teacher h3{color:white}
+#st3 .uw-l-teacher .uw-l-eyebrow{color:#bec6f9}
+#st3 .uw-l-teacher .uw-l-teach-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+#st3 .uw-l-teacher .uw-l-teach-head p{font-size:12px;color:#d7dcf7}
+#st3 .uw-l-teach-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
+#st3 .uw-l-teach-grid>div{padding:18px;border:1px solid #454d89;border-radius:10px;background:#242b67}
+#st3 .uw-l-teach-grid p{font-size:13px;line-height:1.75;color:#fff;margin:8px 0 0}
+#st3 .uw-l-teach-tag{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#aebafc}
+#st3 .uw-l-teach-grid .uw-l-answer{border-top:1px solid #454d89;margin-top:14px;padding-top:10px;font-size:12px;color:#cbd5ff}
+#st3 .uw-l-teach-tip{margin-top:15px;font-size:12px;background:#303873;border-radius:8px;padding:12px 14px;line-height:1.55}
+#st3 .uw-l-teacher .uw-l-smallbtn{background:transparent;color:white;border-color:#707bb8;white-space:nowrap}
+#st3 .uw-l-experiments{border:1px solid var(--uw-line);border-radius:15px;margin-top:22px;overflow:hidden}
+#st3 .uw-l-experiments .uw-l-guide-head p{font-size:12px;color:var(--uw-muted);margin:5px 0 0}
+#st3 .uw-l-quest-list{margin:0;padding:0 22px 20px;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#st3 .uw-l-quest-list li{background:#f8f9fc;border:1px solid var(--uw-line);border-radius:10px;padding:15px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;position:relative}
+#st3 .uw-l-quest-list li.is-done{border-color:#9bcbb1;background:#eaf6ee}
+#st3 .uw-l-quest-list li.is-done:before{content:'✓';position:absolute;right:12px;top:9px;color:#217546;font-size:17px;font-weight:700}
+#st3 .uw-l-quest-list b{display:block;font-size:12px;padding-right:12px}
+#st3 .uw-l-quest-list p{font-size:11px;line-height:1.6;color:var(--uw-muted);margin:6px 0 0}
+#st3 .uw-l-quest-list button{align-self:flex-start}
+#st3 .uw-l-teachback{margin-top:22px;border:1px solid var(--uw-line);border-radius:15px;padding:24px}
+#st3 .uw-l-teachback>div>p{font-size:12px;color:var(--uw-muted)}
+#st3 .uw-l-choice{display:grid;gap:8px;margin:17px 0}
+#st3 .uw-l-choice button{border:1px solid var(--uw-line);background:white;border-radius:9px;padding:13px 16px;text-align:left;font-size:12px;line-height:1.5;color:var(--uw-text)}
+#st3 .uw-l-choice button.is-correct{border-color:var(--uw-good);background:var(--uw-good-bg)}
+#st3 .uw-l-choice button.is-incorrect{border-color:var(--uw-red);background:var(--uw-bad-bg)}
+#st3 .uw-l-feedback{min-height:1.1em;font-size:12px;line-height:1.5;margin-top:9px;color:var(--uw-navy)}
+#st3 .uw-l-writeup{background:#f4f5fb;padding:19px;border-radius:11px;margin-top:15px}
+#st3 .uw-l-writeup>p:not(.uw-l-feedback){font-size:13px;line-height:1.75;margin:8px 0}
+#st3 .uw-l-faq{border:1px solid var(--uw-line);border-radius:12px;margin-top:22px}
+#st3 .uw-l-faq>summary{cursor:pointer;font-weight:700;padding:17px 20px;font-size:13px;color:var(--uw-navy)}
+#st3 .uw-l-faq-grid{padding:0 20px 20px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+#st3 .uw-l-faq-grid>div{background:#f7f8fc;padding:13px;border-radius:8px}
+#st3 .uw-l-faq-grid b{font-size:12px}
+#st3 .uw-l-faq-grid p{font-size:11px;line-height:1.6;color:var(--uw-muted);margin:4px 0 0}
+#st3 .uw-l-method{font-size:11px;line-height:1.75;color:var(--uw-muted);margin:16px 0 0}
+#st3 .uw-l-method a{color:var(--uw-navy)}
+#st3 .uw-l-data-details{margin-top:12px;font-size:12px}
+#st3 .uw-l-data-details summary{cursor:pointer;color:var(--uw-navy);font-weight:600;padding:9px 3px}
+#st3 .uw-l-data-details summary span{color:var(--uw-muted);font-size:10px;font-weight:400}
+#st3 .uw-l-data-scroll{max-height:220px;overflow:auto}
+#st3 .uw-l-data-table{width:100%;border-collapse:collapse;font-size:11px}
+#st3 .uw-l-data-table th{position:sticky;top:0;background:var(--uw-sunk);text-align:left}
+#st3 .uw-l-data-table td,#st3 .uw-l-data-table th{border-bottom:1px solid var(--uw-line);padding:8px}
+@media(max-width:950px){#st3 .uw-l-workbench{grid-template-columns:1fr}#st3 .uw-l-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}#st3 .uw-l-controls-head,#st3 .uw-l-reroll,#st3 .uw-l-random-note{grid-column:1/-1}}
+@media(max-width:720px){#st3 .uw-l-scenario{grid-template-columns:1fr;padding:17px}#st3 .uw-l-equation{display:none}#st3 .uw-l-guide-head{padding:17px}#st3 .uw-l-steps{grid-template-columns:repeat(3,1fr);padding:0 15px 15px}#st3 .uw-l-workbench{gap:12px}#st3 .uw-l-controls{grid-template-columns:1fr}#st3 .uw-l-graph-panel,#st3 .uw-l-controls{padding:14px}#st3 .uw-l-chart-head{flex-direction:column}#st3 .uw-l-metrics strong{font-size:17px}#st3 .uw-l-lesson{padding:16px}#st3 .uw-l-teach-grid,#st3 .uw-l-faq-grid{grid-template-columns:1fr}#st3 .uw-l-quest-list{grid-template-columns:1fr;padding:0 15px 15px}#st3 .uw-l-teach-head{flex-direction:column}#st3 .uw-l-teacher{padding:17px}#st3 .uw-l-teachback{padding:18px}}
+@media print{#st3 .uw-l-controls,#st3 .uw-l-guide,#st3 .uw-l-choice,#st3 .uw-l-quest-list button{display:none!important}#st3{display:block!important}#st3 .uw-l-teacher{background:white;color:black}#st3 .uw-l-teacher h3,#st3 .uw-l-teach-grid p{color:black}}
+
+</style>
+</head>
+<body>
+<div class="uw-wb">
+
+<div class="course-top"><a class="brand" href="#courseHome"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwMCIgem9vbUFuZFBhbj0ibWFnbmlmeSIgdmlld0JveD0iMCAwIDE1MDAgMTQ5OS45OTk5MzMiIGhlaWdodD0iMjAwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgdmVyc2lvbj0iMS4wIj48cGF0aCBmaWxsPSIjMmMzMzg2IiBkPSJNIDc1MC4wNDI5NjkgMTUwMC4xMDkzNzUgQyAzMzYuNDY0ODQ0IDE1MDAuMTA5Mzc1IDAgMTE2My42NDQ1MzEgMCA3NTAuMDY2NDA2IEMgMCAzMzYuNDc2NTYyIDMzNi40NjQ4NDQgMC4wMTE3MTg4IDc1MC4wNDI5NjkgMC4wMTE3MTg4IEMgMTE2My42MjUgMC4wMTE3MTg4IDE1MDAuMTAxNTYyIDMzNi40NzY1NjIgMTUwMC4xMDE1NjIgNzUwLjA2NjQwNiBDIDE1MDAuMTAxNTYyIDExNjMuNjQ0NTMxIDExNjMuNjI1IDE1MDAuMTA5Mzc1IDc1MC4wNDI5NjkgMTUwMC4xMDkzNzUgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0gNzUwLjA0Mjk2OSA2NS41NzgxMjUgQyAzNzIuMjc3MzQ0IDY1LjU3ODEyNSA2NS41NzgxMjUgMzcyLjI3NzM0NCA2NS41NzgxMjUgNzUwLjA2NjQwNiBDIDY1LjU3ODEyNSAxMTI3LjgzMjAzMSAzNzIuMjc3MzQ0IDE0MzQuNTM1MTU2IDc1MC4wNDI5NjkgMTQzNC41MzUxNTYgQyAxMTI3LjgxMjUgMTQzNC41MzUxNTYgMTQzNC41MjM0MzggMTEyNy44MzIwMzEgMTQzNC41MjM0MzggNzUwLjA2NjQwNiBDIDE0MzQuNTIzNDM4IDM3Mi4yNzczNDQgMTEyNy44MTI1IDY1LjU3ODEyNSA3NTAuMDQyOTY5IDY1LjU3ODEyNSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+PHBhdGggZmlsbD0iI2UzMjEyNCIgZD0iTSA3NTAuMDQyOTY5IDE0MTUuNDI5Njg4IEMgMzgzLjE2NDA2MiAxNDE1LjQyOTY4OCA4NC42ODM1OTQgMTExNi45NDkyMTkgODQuNjgzNTk0IDc1MC4wNjY0MDYgQyA4NC42ODM1OTQgMzgzLjE3MTg3NSAzODMuMTY0MDYyIDg0LjY3OTY4OCA3NTAuMDQyOTY5IDg0LjY3OTY4OCBDIDExMTYuOTM3NSA4NC42Nzk2ODggMTQxNS40MTc5NjkgMzgzLjE3MTg3NSAxNDE1LjQxNzk2OSA3NTAuMDY2NDA2IEMgMTQxNS40MTc5NjkgMTExNi45NDkyMTkgMTExNi45Mzc1IDE0MTUuNDI5Njg4IDc1MC4wNDI5NjkgMTQxNS40Mjk2ODggIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0gMTM1OC4yMjI2NTYgNDgwLjI4NTE1NiBDIDEzMjkuMDc0MjE5IDQxNC44MzU5MzggMTI4OS42OTE0MDYgMzU0LjkxMDE1NiAxMjQyLjA2NjQwNiAzMDIuNTk3NjU2IEMgMTE5NC4wNjI1IDMwMi4zMDg1OTQgMTE1MC45Njg3NSAyOTkuMTQwNjI1IDExMTQuNTA3ODEyIDI5Mi45MDYyNSBMIDg5NC43MzgyODEgMTg2LjY3NTc4MSBDIDY5NC4xMDU0NjkgMTU0LjY0MDYyNSA2NDQuMTE3MTg4IDIxNi41OTM3NSA1NzMuMzI0MjE5IDI1OC42Mjg5MDYgTCA2NjcuNjY0MDYyIDM4OS43NSBMIDg5NC43MzgyODEgMzY4Ljk3MjY1NiBMIDExMDkuMDA3ODEyIDQ3NC41MDc4MTIgQyAxMTY1LjA1MDc4MSA0OTEuNTY2NDA2IDEyNjguOTMzNTk0IDQ5MS42Mjg5MDYgMTM1OC4yMjI2NTYgNDgwLjI4NTE1NiAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA0NzUuOTE0MDYyIDE0My44MjAzMTIgQyAyNDUuMzk4NDM4IDI0OC40Njg3NSA4NC42ODM1OTQgNDgwLjg1MTU2MiA4NC42ODM1OTQgNzUwLjA2NjQwNiBDIDg0LjY4MzU5NCAxMDMwLjU5Mzc1IDI1OS4xOTUzMTIgMTI3MS4xMjEwOTQgNTA1LjM1OTM3NSAxMzY4LjgwODU5NCBDIDcwMi45NzY1NjIgMTI5MC41IDg0Ni45OTYwOTQgMTA0OC4yNTc4MTIgODQ2Ljk5NjA5NCA3NjEuNDk2MDk0IEMgODQ2Ljk5NjA5NCA0NjAuNjY3OTY5IDY4OC41MTk1MzEgMjA4Ljc4OTA2MiA0NzUuOTE0MDYyIDE0My44MjAzMTIgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0gNDE1LjQ4ODI4MSA0OTEuNDQ5MjE5IEwgMzM5LjEzMjgxMiA0ODIuODEyNSBMIDI2Mi43NzczNDQgNTg0LjA3MDMxMiBMIDI5MS40NDUzMTIgNDc3LjA4NTkzOCBMIDIxNS41ODk4NDQgNDY3LjQ2MDkzOCBMIDMwOS42NjQwNjIgNDA5Ljk4NDM3NSBMIDMzOS4xMzI4MTIgMzAyLjc3NzM0NCBMIDM2OC42MDkzNzUgMzc0LjIyNjU2MiBMIDQ2Mi42NzE4NzUgMzE3LjU4NTkzOCBMIDM4Ni44MjAzMTIgNDE5LjIzODI4MSBMIDQxNS40ODgyODEgNDkxLjQ0OTIxOSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTSAzMTMuNDI1NzgxIDg4MS41MzkwNjIgTCAyMzcuMDc0MjE5IDg3Mi45MDIzNDQgTCAxNjAuNzE4NzUgOTc0LjE3NTc4MSBMIDE4OS4zODY3MTkgODY3LjE3OTY4OCBMIDExMy41MzEyNSA4NTcuNTYyNSBMIDIwNy42MDU0NjkgODAwLjA3ODEyNSBMIDIzNy4wNzQyMTkgNjkyLjg2NzE4OCBMIDI2Ni41MzkwNjIgNzY0LjMyMDMxMiBMIDM2MC42MTMyODEgNzA3LjY4NzUgTCAyODQuNzU3ODEyIDgwOS4zMzIwMzEgTCAzMTMuNDI1NzgxIDg4MS41MzkwNjIgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0gNDk0LjQyMTg3NSAxMTI2Ljk2ODc1IEwgNDE4LjA2NjQwNiAxMTE4LjMzNTkzOCBMIDM0MS43MjI2NTYgMTIxOS41OTM3NSBMIDM3MC4zOTA2MjUgMTExMi42MDkzNzUgTCAyOTQuNTM1MTU2IDExMDIuOTg0Mzc1IEwgMzg4LjU5NzY1NiAxMDQ1LjQ5NjA5NCBMIDQxOC4wNjY0MDYgOTM4LjI4OTA2MiBMIDQ0Ny41NDY4NzUgMTAwOS43NSBMIDU0MS42MDkzNzUgOTUzLjEwOTM3NSBMIDQ2NS43NTM5MDYgMTA1NC43NjE3MTkgTCA0OTQuNDIxODc1IDExMjYuOTY4NzUgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0gNjE3LjE3NTc4MSA2ODguNTMxMjUgTCA1NDAuODIwMzEyIDY3OS44OTQ1MzEgTCA0NjQuNDc2NTYyIDc4MS4xNjQwNjIgTCA0OTMuMTQ0NTMxIDY3NC4xNzk2ODggTCA0MTcuMjg5MDYyIDY2NC41NTQ2ODggTCA1MTEuMzUxNTYyIDYwNy4wNjY0MDYgTCA1NDAuODIwMzEyIDQ5OS44NTkzNzUgTCA1NzAuMjk2ODc1IDU3MS4zMjAzMTIgTCA2NjQuMzcxMDk0IDUxNC42Nzk2ODggTCA1ODguNTA3ODEyIDYxNi4zMjAzMTIgTCA2MTcuMTc1NzgxIDY4OC41MzEyNSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTSAxNDA4LjUxOTUzMSA2NTQuNDMzNTk0IEMgMTMxOS43NDYwOTQgNjYzLjQyMTg3NSAxMjMxLjg5ODQzOCA2NjUuNTM1MTU2IDExNTguNzMwNDY5IDY1Ny4yMTg3NSBMIDkxNy4xMTcxODggNTcyLjA0Njg3NSBMIDgzNS4wMjM0MzggNjIwLjEyODkwNiBMIDczOC45MTQwNjIgNzk1LjQ3MjY1NiBMIDg3MC40Mjk2ODggNzQ2LjU3MDMxMiBMIDExNjMuMzc4OTA2IDg0MC42ODc1IEMgMTIyMS40MDYyNSA4NDYuMTc1NzgxIDEzMzEuMTMyODEyIDg0MC44MDQ2ODggMTQxMC4zMTI1IDgzMi41NzQyMTkgQyAxNDEzLjY3MTg3NSA4MDUuNTM1MTU2IDE0MTUuNDE3OTY5IDc3OCAxNDE1LjQxNzk2OSA3NTAuMDY2NDA2IEMgMTQxNS40MTc5NjkgNzE3LjU5Mzc1IDE0MTMuMDQyOTY5IDY4NS42NzE4NzUgMTQwOC41MTk1MzEgNjU0LjQzMzU5NCAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTSAxMTIwLjE0ODQzOCA4ODQuODc1IEwgMTExOS4yNjE3MTkgODg0LjY1MjM0NCBMIDk4Ny43ODkwNjIgODY4LjI1MzkwNiBDIDk4MS43MTA5MzggODU2LjUxOTUzMSA5NzEuNDU3MDMxIDg0OS42Mjg5MDYgOTU5LjYyMTA5NCA4NDkuNjI4OTA2IEMgOTUxLjc2NTYyNSA4NDkuNjI4OTA2IDk0NC4zMzIwMzEgODUyLjc1MzkwNiA5MzguNzI2NTYyIDg1Ny45MDIzNDQgTCA4ODQuODEyNSA4MjUuMDE1NjI1IEwgODg0LjE0MDYyNSA4MjEuMTk5MjE5IEMgOTQxLjkyNTc4MSA3ODIuNTYyNSA5NTQuODU1NDY5IDcwMi44MTY0MDYgOTYzLjUzNTE1NiA2NDkuMjQyMTg4IEMgOTY0LjY2NDA2MiA2NDIuMjY5NTMxIDk2NS43MzA0NjkgNjM1LjY5MTQwNiA5NjYuNzk2ODc1IDYyOS44Mzk4NDQgTCA5NjcuMTkxNDA2IDYyNy42ODc1IEwgOTY2Ljg5NDUzMSA2MjUuNTIzNDM4IEMgOTY2LjMxNjQwNiA2MjEuMzk0NTMxIDk2NS45MjE4NzUgNjE3LjIwNzAzMSA5NjUuNTA3ODEyIDYxMi43NzM0MzggQyA5NjMuOTI5Njg4IDU5Ni4wNDI5NjkgOTYxLjk1NzAzMSA1NzUuMjIyNjU2IDk0OC42NjQwNjIgNTQxLjY1MjM0NCBMIDk0Ni44MTY0MDYgNTM3LjAwMzkwNiBMIDkzMS4zOTA2MjUgNTI4Ljc2MTcxOSBDIDkyOS45NzI2NTYgNTIxLjczNDM3NSA5MjYuNTkzNzUgNTE0LjA4MjAzMSA5MjEuMTk5MjE5IDUwNS42MzY3MTkgQyA5MjMuMzQzNzUgNDk2LjI3NzM0NCA5MjQuODk4NDM4IDQ4MS45NjA5MzggOTIzLjc3NzM0NCA0NjYuODUxNTYyIEMgOTcyLjcxNDg0NCAzOTIuMjU3ODEyIDk1MS45MjU3ODEgMzE0LjQ4NDM3NSA5MjAuODM1OTM4IDI4Mi40MjU3ODEgQyA4NzQuNzY5NTMxIDIzNC45NDE0MDYgODE4LjY0MDYyNSAyMjQuODI0MjE5IDc2OS42NTIzNDQgMjE5LjA3ODEyNSBMIDc2OS4xOTE0MDYgMjE5LjAxMTcxOSBMIDc2OC43MjI2NTYgMjE4Ljk5MjE4OCBDIDc2Mi4yMzA0NjkgMjE4LjY4MzU5NCA3NTUuNzI2NTYyIDIxOC41MjM0MzggNzQ5LjM4MjgxMiAyMTguNTIzNDM4IEMgNjU1LjM1MTU2MiAyMTguNTIzNDM4IDUzMS4xNzE4NzUgMjU0LjEyODkwNiA0NzMuNTM1MTU2IDQyMy44MTI1IEwgNDczLjQxNzk2OSA0MjQuMTc1NzgxIEwgNDczLjMxMjUgNDI0LjU0Njg3NSBDIDQ0Ny43Njk1MzEgNTE2LjM3NSA0NDguNzA3MDMxIDY1MC4zNzUgNDk5Ljg5MDYyNSA3MjguODA4NTk0IEMgNTIxLjIxNDg0NCA3NjEuNDcyNjU2IDU0OS4zMzU5MzggNzgxLjk3NjU2MiA1ODMuNjI1IDc4OS44ODY3MTkgTCA1ODQuOTAyMzQ0IDg4NC4wOTc2NTYgQyA1NjcuMDM1MTU2IDg5NC4zNjMyODEgNTQ3LjQwNjI1IDkxOC4wMzEyNSA1MzUuNjcxODc1IDkzMy42NDA2MjUgQyA1MzIuNDcyNjU2IDkzNy44OTQ1MzEgNTI3LjQ2MDkzOCA5NDQuNzkyOTY5IDUyMS45Mjk2ODggOTUzLjIxNDg0NCBDIDUwMi42MzI4MTIgOTY4Ljk0OTIxOSA0ODEuNzM0Mzc1IDk4NC4xNDA2MjUgNDYxLjEzNjcxOSA5OTkuMTA5Mzc1IEMgNDIwLjQ3NjU2MiAxMDI4LjY1MjM0NCAzODIuMDc0MjE5IDEwNTYuNTU0Njg4IDM1OS41MTU2MjUgMTA4Ni40MTQwNjIgQyAzMjMuMzA4NTk0IDExMzQuMzA0Njg4IDI4Ni40NjQ4NDQgMTIyMi45ODQzNzUgMjc3LjU1MDc4MSAxMjQ1LjA5NzY1NiBDIDQwMC40NDUzMTIgMTM2Mi40MzM1OTQgNTY2Ljg5ODQzOCAxNDM0LjUzNTE1NiA3NTAuMDQyOTY5IDE0MzQuNTM1MTU2IEMgMTAxMy4zNDM3NSAxNDM0LjUzNTE1NiAxMjQyLjA3ODEyNSAxMjg1LjUyMzQzOCAxMzU2LjU0Njg3NSAxMDY3LjMyMDMxMiBDIDEzMTIuMjgxMjUgOTgwLjIwNzAzMSAxMjI0LjY2Nzk2OSA5MTIuMzgyODEyIDExMjAuMTQ4NDM4IDg4NC44NzUgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyYzMzODYiIGQ9Ik0gMTM0OC41NzQyMTkgMTA4Mi4wODU5MzggQyAxMzAyLjU4OTg0NCA5ODMuNTk3NjU2IDEyMDguNTE1NjI1IDkyMi4yNDIxODggMTExNi42NzE4NzUgODk4LjA3NDIxOSBMIDk0Mi44NjMyODEgODc2LjQwMjM0NCBMIDg3Mi40MzM1OTQgODMzLjQ1NzAzMSBMIDg2OS4wOTc2NTYgODE0LjQxNzk2OSBDIDkzNi4wNzAzMTIgNzc3LjAxNTYyNSA5NDMuOTcyNjU2IDY3OC45NDUzMTIgOTUzLjM3NSA2MjcuMzg2NzE5IEMgOTUwLjUxNTYyNSA2MDYuNzM4MjgxIDk1MS45ODgyODEgNTg3LjA4OTg0NCA5MzUuOTc2NTYyIDU0Ni42ODM1OTQgTCA5MTguNDkyMTg4IDUzNy4zNDM3NSBDIDkxOC45MDYyNSA1MzAuMzM5ODQ0IDkxNS41MTU2MjUgNTIwLjg5NDUzMSA5MDYuMzI4MTI1IDUwNy45OTIxODggQyA5MDguNzE0ODQ0IDUwMi4xMjg5MDYgOTEyLjAxOTUzMSA0ODMuMjA3MDMxIDkwOS43MzgyODEgNDYzLjI2OTUzMSBDIDk1Ni41MzkwNjIgMzk1LjY4NzUgOTQwLjgxNjQwNiAzMjIuNjI4OTA2IDkxMS4wMzkwNjIgMjkxLjkyNTc4MSBDIDg2OC45Njg3NSAyNDguNTY2NDA2IDgxNy41MDc4MTIgMjM4LjQzNzUgNzY4LjA2MjUgMjMyLjYyNSBDIDY1Ni45Mjk2ODggMjI3LjE4NzUgNTQwLjc2NTYyNSAyNjguMzMyMDMxIDQ4Ni40NTcwMzEgNDI4LjIwNzAzMSBDIDQ1My41NzAzMTIgNTQ2LjQ2MDkzOCA0NjQuMzM1OTM4IDc1OS40MDYyNSA1OTcuMTA5Mzc1IDc3OC41NDI5NjkgTCA1OTguNjY3OTY5IDg5Mi4xOTkyMTkgQyA1NDcuMTY0MDYyIDk3Mi44MjAzMTIgNDE4LjA0Njg3NSAxMDMxLjU5Mzc1IDM3MC40MDIzNDQgMTA5NC42MzY3MTkgQyAzMzAuMzc4OTA2IDExNDcuNTg5ODQ0IDI4OC4yNTc4MTIgMTI1NS4wNzQyMTkgMjg4LjI1NzgxMiAxMjU1LjA3NDIxOSBDIDI4OC4yNTc4MTIgMTI1NS4wNzQyMTkgMjg4LjI1NzgxMiAxMjU1LjA4NTkzOCAyODguMjY1NjI1IDEyNTUuMDg1OTM4IEMgNDEwLjAyNzM0NCAxMzY2LjUwMzkwNiA1NzIuMTUyMzQ0IDE0MzQuNTM1MTU2IDc1MC4wNDI5NjkgMTQzNC41MzUxNTYgQyAxMDA3LjM2MzI4MSAxNDM0LjUzNTE1NiAxMjMxLjY2NDA2MiAxMjkyLjIwNzAzMSAxMzQ4LjU3NDIxOSAxMDgyLjA4NTkzOCAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTSA4OTYuODE2NDA2IDUzMC43NTM5MDYgTCA4ODYuNzQyMTg4IDUwNC43NjE3MTkgTCA4OTMuNDY4NzUgNDczLjczODI4MSBMIDg4Ni43NDIxODggNDY1LjM0NzY1NiBDIDg3OS41NDY4NzUgNDQ3LjM4NjcxOSA4ODUuMzEyNSA0NDAuODE2NDA2IDg3Ny4wNzQyMTkgNDM5LjI3MzQzOCBDIDg3MC4zMjQyMTkgNDM4LjAxNTYyNSA4NjAuNjY0MDYyIDQ0MS4yODUxNTYgODQ5LjAxMTcxOSA0NDYuOTA2MjUgQyA4NTAuMjY5NTMxIDQwNi4zNTkzNzUgODM1LjA4OTg0NCAzODQuOTMzNTk0IDgxOC43MTQ4NDQgMzcwLjQ1MzEyNSBDIDY4Ny4wNTg1OTQgMzY4LjM3NSA2NDQuMDMxMjUgNDU5LjgwNDY4OCA2MjcuNjMyODEyIDU2MC4xMDU0NjkgTCA1OTkuMTI1IDU0NS4wMTk1MzEgQyA1NzQuMTc5Njg4IDU3MS4xMDkzNzUgNTgzLjk0NTMxMiA2OTcuNzMwNDY5IDYzNS42NzE4NzUgNjQ4LjY5OTIxOSBDIDYzNi44NTU0NjkgNjY2LjM4NjcxOSA2MjQuNTYyNSA2ODEuNDA2MjUgNjExLjcxNDg0NCA2ODAuODU1NDY5IEwgNjE2Ljk5MjE4OCA5MjcuMTkxNDA2IEMgNjI1LjAxMTcxOSAxMDA0Ljg0NzY1NiA2MzUuMDIzNDM4IDEwNjYuODUxNTYyIDY2Ni45Mjk2ODggMTExNy40ODA0NjkgQyA2OTIuOTY0ODQ0IDEwNzQuMDM5MDYyIDcxNi40NDE0MDYgMTA0MS4yMjI2NTYgNzUwLjgyNDIxOSA5NjMuNDI5Njg4IEMgNzgxLjkyMTg3NSA4NjUuOTk2MDk0IDcwNC41NjI1IDg2OC4yMjI2NTYgNzA5LjM5NDUzMSA4MDIuMjE4NzUgQyA3MDkuMzk0NTMxIDgwMi4yMTg3NSA4MTIuMzA0Njg4IDgyNy43MzQzNzUgODU4LjMzMjAzMSA3OTQuNTk3NjU2IEMgNzcyLjc0MjE4OCA4MTAuMTY0MDYyIDcyMy4zMTY0MDYgODAxLjMzNTkzOCA2ODYuMzQzNzUgNzQ2LjI2OTUzMSBDIDg0MS4zOTg0MzggNzgwLjI4MTI1IDg4Ny4yMTA5MzggNzE3Ljk2NDg0NCA5MzEuMTk5MjE5IDY1NC4wMTk1MzEgTCA5MjUuMzI0MjE5IDU1Ny41ODk4NDQgTCA4OTYuODE2NDA2IDUzMC43NTM5MDYgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyYzMzODYiIGQ9Ik0gODU5LjUzNTE1NiA1MjIuNTk3NjU2IEMgNzgzLjE2Nzk2OSA1NDcuOTcyNjU2IDczNy4xNzU3ODEgNTYyLjY2NDA2MiA2OTcuMzQ3NjU2IDU3NS4xNjAxNTYgTCA2MTYuMjU3ODEyIDUyNS42MDU0NjkgTCA1OTguMjMwNDY5IDU0MS4zNzUgTCA2OTAuNTk3NjU2IDYwMS40NDkyMTkgTCA3MDcuODU5Mzc1IDY2MS41MTU2MjUgTCA2OTIuMTAxNTYyIDczNy4zNTkzNzUgTCA2MjEuMTI4OTA2IDY2Mi4zMTI1IEwgNjA1LjczNDM3NSA2NzYuNTM1MTU2IEwgNzA0LjYyODkwNiA3NzguNTUwNzgxIEMgODE0LjUxMTcxOSA4MTcuMDkzNzUgODQyLjk4ODI4MSA3NzUuODAwNzgxIDg5NC4wOTc2NTYgNzU2LjY3NTc4MSBMIDk0NS4xNjQwNjIgNjQxLjk5MjE4OCBDIDk0Ni40NDUzMTIgNTg0LjU5Mzc1IDkzNC42NTIzNDQgNTUzLjY2Nzk2OSA5MTYuNjI1IDUzNS4zNzEwOTQgTCA4NTkuNTM1MTU2IDUyMi41OTc2NTYgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0gNzY4LjA2MjUgMjQ5LjcxNDg0NCBDIDczNC4zMDg1OTQgMjUwLjA4OTg0NCA2MDEuNTExNzE5IDIzNy42MDU0NjkgNTIyLjkyOTY4OCAzOTIuMDQyOTY5IEMgNDU3LjExNzE4OCA1MjEuMzUxNTYyIDQ5MS4zMzk4NDQgNzQyLjUyNzM0NCA1OTcuMTA5Mzc1IDc1OC4yODUxNTYgTCA1OTEuNTg5ODQ0IDY2OC4yODUxNTYgQyA1NTcuMDM1MTU2IDYwMi43NjE3MTkgNTY1LjM5NDUzMSA1NTAuNjc5Njg4IDYwMy4zMTY0MDYgNTIzLjIwNzAzMSBDIDYxMi4xNDQ1MzEgNTAyLjE2MDE1NiA2MTYuMzIwMzEyIDQ4Ni44MDA3ODEgNjUxLjEyMTA5NCA0MzQuMDAzOTA2IEMgNjk0LjI3NzM0NCAzODIuNDE0MDYyIDcyMy44ODI4MTIgMzYwLjQ0MTQwNiA4MDkuNjIxMDk0IDM1NC43MTg3NSBDIDg2My42MTcxODggMzUzLjczODI4MSA4OTMuMzUxNTYyIDM4OC45NDE0MDYgODkyLjcxMDkzOCA0MTEuNjkxNDA2IEMgODk5Ljk5MjE4OCA0MjQuMjA3MDMxIDkwMC44Nzg5MDYgNDM3LjQ5MjE4OCA5MDEuODkwNjI1IDQ1Ni45MjU3ODEgQyA5MzAuMTc1NzgxIDM5NS45NzY1NjIgOTMwLjEzMjgxMiAzNDIuOTE3OTY5IDg5NC45ODQzNzUgMzAyLjgzMjAzMSBDIDg2MS41NzAzMTIgMjczLjE0MDYyNSA4MzAuNDEwMTU2IDI1Ny40MDIzNDQgNzY4LjA2MjUgMjQ5LjcxNDg0NCAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA3NzguNDU3MDMxIDQ2My4yNjk1MzEgQyA3NTMuMjY1NjI1IDQ3MC4yNzM0MzggNzQwLjE1MjM0NCA0NzEuODUxNTYyIDcyOC43NTM5MDYgNDcyLjY0MDYyNSBDIDcwNi44MjQyMTkgNDg5LjY4NzUgNjk1LjkxNzk2OSA1MDAuODM5ODQ0IDY5MC44MzIwMzEgNTAzLjUwMzkwNiBDIDY5NS42NDA2MjUgNTA0Ljk3NjU2MiA3MTIuNDMzNTk0IDQ5OS41MzkwNjIgNzM3LjkxNDA2MiA0ODUuMDYyNSBMIDc2OC4wNjI1IDQ4My41NTg1OTQgTCA3NzcuNjk5MjE5IDQ5NC4wNzAzMTIgQyA3NDIuOTY0ODQ0IDQ5Ni42ODM1OTQgNzIxLjQ0MTQwNiA1MDYuNDA2MjUgNzEyLjY2Nzk2OSA1MTcuMzc1IEwgNzQzLjQyNTc4MSA1MTEgQyA3NDUuMTYwMTU2IDUyMy4wMzUxNTYgNzYyLjc0MjE4OCA1MjguNTI3MzQ0IDc3OS45NDkyMTkgNTEzLjU4OTg0NCBDIDc4My4wNjI1IDUyMi4wMTE3MTkgNzU1LjU5NzY1NiA1MzQuNTcwMzEyIDc1Ni42MDE1NjIgNTQ1Ljg4MjgxMiBDIDc2Ni45NTMxMjUgNTQwLjY2MDE1NiA3NzguNDU3MDMxIDUzNS4yNzczNDQgNzk3Ljk3NjU2MiA1MjguNjAxNTYyIEwgNzk0Ljk4MDQ2OSA1MTAuNTg1OTM4IEwgODA1LjQ5MjE4OCA0NzkuMTg3NSBMIDc3OC40NTcwMzEgNDYzLjI2OTUzMSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA4NzIuNDAyMzQ0IDQ2My4yNjk1MzEgQyA4NTYuMjA3MDMxIDQ2Ni42NjAxNTYgODQ4LjQ1NzAzMSA0NzIuNTc4MTI1IDg0My4wMzEyNSA0NzkuMTg3NSBMIDgzOC41MjM0MzggNDk0LjA3MDMxMiBMIDg1NC4yODkwNjIgNTMzLjg2NzE4OCBMIDg2OS4zMjAzMTIgNTM1LjM3MTA5NCBMIDg1Mi4wNTA3ODEgNDkxLjA2MjUgTCA4NzEuMjczNDM4IDQ4MS4xMDU0NjkgQyA4ODguNjI4OTA2IDQ4OC40OTYwOTQgODk3LjkzNzUgNDkwLjg1MTU2MiA5MDMuODYzMjgxIDQ5MS4wNjI1IEwgODk5LjM0Mzc1IDQ2OC41MzUxNTYgTCA4NzIuNDAyMzQ0IDQ2My4yNjk1MzEgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyYzMzODYiIGQ9Ik0gODcxLjUxOTUzMSA0OTAuNjE3MTg4IEwgODQ2LjY3NTc4MSA0OTcuNDQ5MjE5IEwgODUzLjU0Mjk2OSA1MTMuNTg5ODQ0IEwgODY1LjE0NDUzMSA1MTIuNTAzOTA2IEwgODc4LjY0ODQzOCA1MjEuOTI5Njg4IEMgODg4LjU0Mjk2OSA1MjQuMTI1IDg5NC41NjY0MDYgNTE1Ljc0NjA5NCA5MDMuODYzMjgxIDUxOC44NDc2NTYgTCA4OTkuMzQzNzUgNTA0LjU4MjAzMSBMIDg3MS41MTk1MzEgNDkwLjYxNzE4OCAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA1ODcuMTIxMDk0IDU2MS42NTIzNDQgTCA1NzguNzEwOTM4IDU3Ni42NjQwNjIgTCA1OTguMjMwNDY5IDU3OC4xNzU3ODEgTCA1OTguMjMwNDY5IDU5MS42ODM1OTQgQyA1ODUuOTY4NzUgNjA3LjM0Mzc1IDU5OS4zNzEwOTQgNjE0Ljc4NTE1NiA2MTIuNTAzOTA2IDYxOC43MTA5MzggTCA2MDUgNTY2LjE0ODQzOCBMIDU4Ny4xMjEwOTQgNTYxLjY1MjM0NCAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTSA4NjEuMDU4NTk0IDUzNS4zNzEwOTQgTCA3MDQuODYzMjgxIDU5MC4xOTE0MDYgQyA3MTcuOTg4MjgxIDYyMy41MzkwNjIgNzI0Ljk0OTIxOSA2NDguNTE5NTMxIDcyNS44OTg0MzggNjY1LjI3NzM0NCBDIDcxMy42OTkyMTkgNzE2LjU4OTg0NCA3MDguNTkzNzUgNzM2LjM5ODQzOCA3MDMuMzU5Mzc1IDc1Ni42NzU3ODEgQyA3OTEuNzYxNzE5IDgwOC4xNzk2ODggODQxLjYyNSA3ODQuNTM1MTU2IDg5Ni4zNDc2NTYgNzcwLjQwNjI1IEMgOTE2LjYwNTQ2OSA3NDMuMTQ4NDM4IDkyOS41NzgxMjUgNjgxLjY2NDA2MiA5MzYuNDQ1MzEyIDYzMS40ODA0NjkgQyA5MzcuNjcxODc1IDYxMS4wMjM0MzggOTI2LjEwMTU2MiA1ODkuNTUwNzgxIDkxOS4xMjg5MDYgNTUxLjc1NzgxMiBMIDg2MS4wNTg1OTQgNTM1LjM3MTA5NCAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA4NzEuMTk5MjE5IDU0OC44Nzg5MDYgTCA4ODIuMDgyMDMxIDU3Mi4xNjQwNjIgTCA4NTYuNTUwNzgxIDU3MC42NjAxNTYgTCA3NjguMDYyNSA2MDEuNDQ5MjE5IEwgODU3LjI4NTE1NiA1ODYuNDI5Njg4IEwgODg2LjU4MjAzMSA1OTAuMTkxNDA2IEwgODg4LjgzMjAzMSA2MTEuMjAzMTI1IEwgOTI2LjM3ODkwNiA2MzEuNDgwNDY5IEwgOTA4LjM1MTU2MiA1NjEuNjUyMzQ0IEwgODcxLjE5OTIxOSA1NDguODc4OTA2ICIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjMmMzMzg2IiBkPSJNIDc2My41NjI1IDY1OC41MzEyNSBDIDc2My41NjI1IDY1OC41MzEyNSA4NzEuNDEwMTU2IDYyOC42MjUgODgxLjMzNTkzOCA2MzkgTCA4OTUuNTg5ODQ0IDY0NC4yNTM5MDYgTCA4OTQuODQzNzUgNjY5Ljc3NzM0NCBMIDg1NC43MjY1NjIgNjczLjUzMTI1IEwgNzg5LjcxNDg0NCA2OTguMzE2NDA2IEwgODU3LjI4NTE1NiA2ODQuMDQyOTY5IEwgODkwLjM0Mzc1IDY4Ni4zMDA3ODEgTCA4ODEuMzM1OTM4IDcyNC41ODU5MzggQyA4NjkuMDIzNDM4IDc1Mi4xNDQ1MzEgODU4IDc2Ni45MTAxNTYgODQ3LjIzMDQ2OSA3NzkuMTQ4NDM4IEMgODU0LjYwOTM3NSA3NzcuOTAyMzQ0IDg1OS43NTc4MTIgNzc4LjAzOTA2MiA4ODcuNjQ4NDM4IDc2NC4wMzEyNSBDIDkwMy40MjU3ODEgNzQwLjQ2MDkzOCA5MTcuNjI4OTA2IDY4MC43NzczNDQgOTIxLjg5MDYyNSA2NDAuNDkyMTg4IEwgODg0LjMzMjAzMSA2MjUuNDY4NzUgQyA4NTMuMzYzMjgxIDYxMi45NzI2NTYgNzQ3LjQ3NjU2MiA2NTYuOTQxNDA2IDc2My41NjI1IDY1OC41MzEyNSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTSA5MjEuMzkwNjI1IDEwMTAuMzM1OTM4IEwgODA0LjU4NTkzOCA5NTQuNDcyNjU2IEwgNjM3LjkyMTg3NSAxMTkwLjk5MjE4OCBMIDY1NS45ODA0NjkgMTE0Mi42MzI4MTIgQyA2MjguODA0Njg4IDEwODIuMDExNzE5IDYwNy44OTg0MzggMTAyMi40Njg3NSA1OTUuMzI4MTI1IDk0My44NTU0NjkgQyA1MjUuMzUxNTYyIDk5Ni43NTM5MDYgNDUzLjE1MjM0NCAxMDM0Ljg1OTM3NSAzODkuNDIxODc1IDExMDIuMDk3NjU2IEMgMzU0LjMyNDIxOSAxMTU2LjUgMzI4LjMzMjAzMSAxMjE0LjQ0NTMxMiAzMTIuNjE3MTg4IDEyNzYuMzMyMDMxIEMgMzM2LjI0MjE4OCAxMjk2LjAwMzkwNiAzNjEuMjIyNjU2IDEzMTQuMDg1OTM4IDM4Ny4zNzUgMTMzMC40Njg3NSBMIDQwNS4yMzA0NjkgMTIxNi43NTc4MTIgQyA0MTguNDE3OTY5IDEyODEuMTIxMDk0IDQzNC40OTYwOTQgMTMxNC42NjAxNTYgNDYwLjQwMjM0NCAxMzcwLjI1NzgxMiBDIDU0OC4zOTA2MjUgMTQxMS40NjQ4NDQgNjQ2LjUzNTE1NiAxNDM0LjUzNTE1NiA3NTAuMDQyOTY5IDE0MzQuNTM1MTU2IEMgODg0LjQzNzUgMTQzNC41MzUxNTYgMTAwOS44MjQyMTkgMTM5NS42ODM1OTQgMTExNS42MjUgMTMyOC42NDg0MzggQyAxMDk3LjA4NTkzOCAxMjYyLjM0Mzc1IDEwOTUuOTc2NTYyIDEyMDkuMzkwNjI1IDEwOTEuODA4NTk0IDExMzIuOTcyNjU2IEMgMTEyMC4wMTk1MzEgMTIwNC45ODgyODEgMTE0NS43MzQzNzUgMTI0Mi41NzgxMjUgMTE4Mi41NDY4NzUgMTI4MC4zOTQ1MzEgQyAxMjIxLjQ4MDQ2OSAxMjQ4LjU5Mzc1IDEyNTYuODQzNzUgMTIxMi42MDE1NjIgMTI4Ny45NjQ4NDQgMTE3My4xMDE1NjIgQyAxMzI3LjE0NDUzMSAxMTIzLjM1NTQ2OSAxMjYwLjYyODkwNiAxMDA0LjQyMTg3NSAxMjAyLjI2OTUzMSA5ODQuOTcyNjU2IEwgOTIxLjM5MDYyNSAxMDEwLjMzNTkzOCAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTSA4MTkuOTQ5MjE5IDk3MC4zMDQ2ODggTCA4ODIuMDM5MDYyIDg1NS45NzI2NTYgTCA4NzYuMzM1OTM4IDg0NS40NjA5MzggTCA4MDQuNTg1OTM4IDk1NC40NzI2NTYgTCA4MTkuOTQ5MjE5IDk3MC4zMDQ2ODggIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyYzMzODYiIGQ9Ik0gOTQyLjg2MzI4MSA4NzYuNDAyMzQ0IEMgODk5LjgwMDc4MSAxMDk4Ljg2NzE4OCA4NTUuMzM1OTM4IDEyMjMuNzEwOTM4IDc5NC4wMzEyNSAxMzIwLjg3NSBMIDgyMi43NzM0MzggMTMzOC4wMTk1MzEgQyA5MDIuOTg4MjgxIDEyMDMuOTMzNTk0IDkzNi4yMzA0NjkgMTA2Ny45MDYyNSA5NzcuMDMxMjUgODc3LjQ4ODI4MSBDIDk2OC4zMjAzMTIgODU1LjQ3MjY1NiA5NDYuNDMzNTk0IDg2Mi4xNzk2ODggOTQyLjg2MzI4MSA4NzYuNDAyMzQ0ICIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjMmMzMzg2IiBkPSJNIDgwNC41ODU5MzggMTI2NC4xOTE0MDYgQyA3NjMuODUxNTYyIDEyNjQuMTkxNDA2IDczMC43ODEyNSAxMjk3LjI3MzQzOCA3MzAuNzgxMjUgMTMzOC4wMTk1MzEgQyA3MzAuNzgxMjUgMTM3OC43MzQzNzUgNzYzLjg1MTU2MiAxNDExLjgwNDY4OCA4MDQuNTg1OTM4IDE0MTEuODA0Njg4IEMgODQ1LjMxMjUgMTQxMS44MDQ2ODggODc4LjM5NDUzMSAxMzc4LjczNDM3NSA4NzguMzk0NTMxIDEzMzguMDE5NTMxIEMgODc4LjM5NDUzMSAxMjk3LjI3MzQzOCA4NDUuMzEyNSAxMjY0LjE5MTQwNiA4MDQuNTg1OTM4IDEyNjQuMTkxNDA2ICIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNIDc3MC41NjY0MDYgMTM0Mi41MjczNDQgQyA3NzAuNTY2NDA2IDEzNjYuMDU4NTk0IDc4Ny45NzY1NjIgMTM4NS41NTQ2ODggODEwLjYwMTU2MiAxMzg4Ljc5Njg3NSBDIDc5OC42NzE4NzUgMTM4MC4zMzIwMzEgNzkwLjg3ODkwNiAxMzY2LjM5ODQzOCA3OTAuODc4OTA2IDEzNTAuNjY0MDYyIEMgNzkwLjg3ODkwNiAxMzI0LjgzOTg0NCA4MTEuODI4MTI1IDEzMDMuODkwNjI1IDgzNy42MjUgMTMwMy44OTA2MjUgQyA4MzkuODk4NDM4IDEzMDMuODkwNjI1IDg0Mi4xMjUgMTMwNC4wNzQyMTkgODQ0LjMxMjUgMTMwNC4zOTQ1MzEgQyA4MzYuNjc1NzgxIDEyOTguOTc2NTYyIDgyNy4zNzEwOTQgMTI5NS43NzczNDQgODE3LjMwNDY4OCAxMjk1Ljc3NzM0NCBDIDc5MS41MDc4MTIgMTI5NS43NzczNDQgNzcwLjU2NjQwNiAxMzE2LjczODI4MSA3NzAuNTY2NDA2IDEzNDIuNTI3MzQ0ICIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjMmMzMzg2IiBkPSJNIDYyNC42MjUgMTIwMi4yNTc4MTIgQyA2MTguMTc1NzgxIDExNzAuMjY1NjI1IDYxMC43NDYwOTQgMTA3MC41MTk1MzEgNTMyLjQ5MjE4OCAxMDM0Ljk2NDg0NCBDIDUyNi4yMjI2NTYgOTk1Ljc4NTE1NiA1ODQuOTI1NzgxIDk0My4wMTE3MTkgNjAyLjgyNDIxOSA4OTMuMDMxMjUgQyA1ODEuNjUyMzQ0IDg4NS41MTU2MjUgNDk0Ljc0MjE4OCA5OTkuMjY5NTMxIDUwNS4xOTkyMTkgMTAzNS40ODgyODEgQyA0NTQuODkwNjI1IDExMTYuNzg5MDYyIDQ2Mi4zMzIwMzEgMTE4Ni40ODA0NjkgNDc2LjI1MzkwNiAxMjQ2LjU0Njg3NSBDIDQ5My45NzI2NTYgMTMwOS44ODI4MTIgNTEzLjg3ODkwNiAxMzU4LjkxNDA2MiA1MzUgMTM5OS45Njg3NSBDIDU0Ny45NDE0MDYgMTQwNC4yNDYwOTQgNTYxLjA0Mjk2OSAxNDA4LjE2MDE1NiA1NzQuMzE2NDA2IDE0MTEuNjc1NzgxIEMgNTQ3LjQ5MjE4OCAxMzY1LjcwNzAzMSA1MjMuMTA5Mzc1IDEzMjAuNzAzMTI1IDUwMC4xMDU0NjkgMTIyNi4xNzE4NzUgQyA0NzYuMDc0MjE5IDExNDEuMDExNzE5IDUxOS4xMzI4MTIgMTA2NS4zMDQ2ODggNTE5LjEzMjgxMiAxMDY1LjMwNDY4OCBDIDU1OC42MTMyODEgMTA3My42MDkzNzUgNTgzLjE3NTc4MSAxMTMwLjU2MjUgNTk2LjU0Njg3NSAxMTg5Ljk0NTMxMiBMIDY1NC40MTQwNjIgMTQyNy44Mzk4NDQgQyA2NjQuMTY3OTY5IDE0MjkuMjAzMTI1IDY3My45ODgyODEgMTQzMC4zNzUgNjgzLjg4MjgxMiAxNDMxLjMzNTkzOCBMIDYyNC42MjUgMTIwMi4yNTc4MTIgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0gOTQyLjk1NzAzMSAxMDM2Ljc1MzkwNiBMIDk1NC43ODEyNSAxMDU5LjAxNTYyNSBDIDk2NS4xNTYyNSAxMDM2LjcyMjY1NiA5NzkuNDE3OTY5IDk1MC4zMjQyMTkgOTcwLjA4MjAzMSA5MDMuOTE3OTY5IEwgOTQyLjk1NzAzMSAxMDM2Ljc1MzkwNiAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA2OTUuMTkxNDA2IDEyNTkuNTUwNzgxIEMgNzY1Ljk4NDM3NSAxMTc0LjY5OTIxOSA4MzcuODU5Mzc1IDEwODIuMTI4OTA2IDkxMi45Njg3NSA5NjYuMjk2ODc1IEwgOTA3LjIzNDM3NSA5NDcuMTM2NzE5IEMgODMxLjA4OTg0NCAxMDcyLjYyODkwNiA3NjIuMjYxNzE5IDExNjkuNTUwNzgxIDY5NS4xOTE0MDYgMTI1OS41NTA3ODEgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0gODA3LjY5OTIxOSAzNjkuNzA3MDMxIEwgODI1Ljg4NjcxOSAzODYuNDU3MDMxIEMgODM1Ljg3ODkwNiAzNzcuOTA2MjUgODY1LjY1NjI1IDM5MC43NjE3MTkgODg0LjM1NTQ2OSA0MTcuNzg5MDYyIEMgODczLjc1NzgxMiAzODMuNjIxMDk0IDg0My4yODkwNjIgMzYyLjIzNDM3NSA4MDcuNjk5MjE5IDM2OS43MDcwMzEgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyYzMzODYiIGQ9Ik0gODg0LjM1NTQ2OSAzOTIuOTkyMTg4IEwgODkxLjg3MTA5NCA0MDMuOTcyNjU2IEMgOTAxLjczMDQ2OSAzOTMuMTY0MDYyIDkwNi4wMjczNDQgMzcyLjY2MDE1NiA5MDYuOTU3MDMxIDM0Ni4zMzk4NDQgQyA5MDAuNjk5MjE5IDM2OC40ODA0NjkgODkzLjU4NTkzOCAzODYuMTI1IDg4NC4zNTU0NjkgMzkyLjk5MjE4OCAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA4NDYuMDI3MzQ0IDM2NS40NDE0MDYgTCA4NTguNDU3MDMxIDM3MC40MTAxNTYgQyA4NjUuMjYxNzE5IDM2NS4xMjUgODcwLjczODI4MSAzNDkuOTQxNDA2IDg3NC42MzI4MTIgMzIyLjgyMDMxMiBDIDg2Ni4zMDQ2ODggMzQ2LjI1MzkwNiA4NTYuNzUzOTA2IDM2MC4zMTY0MDYgODQ2LjAyNzM0NCAzNjUuNDQxNDA2ICIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjMmMzMzg2IiBkPSJNIDc5MC4xMDkzNzUgMzYzLjIzODI4MSBMIDgwNS40OTIxODggMzYxLjAzMTI1IEMgODEzLjI2NTYyNSAzNTEuODM5ODQ0IDgxNy4yNzM0MzggMzMzLjEyODkwNiA4MTcuMzA0Njg4IDMwNC40NDE0MDYgQyA4MTIuNjkxNDA2IDMzNC42MjEwOTQgODAyLjk1NzAzMSAzNTIuNTk3NjU2IDc5MC4xMDkzNzUgMzYzLjIzODI4MSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA3MzguNjY3OTY5IDM3NS4xNDQ1MzEgTCA3NTYuMzA0Njg4IDM3MC40MTAxNTYgQyA3NjUuNjc1NzgxIDM1NS4yNSA3NzAuNjY0MDYyIDMzNS4wMDM5MDYgNzcyLjQ3NjU2MiAzMTEuMDYyNSBDIDc2My45MTQwNjIgMzQ1LjM2NzE4OCA3NTIuMTU2MjUgMzY0LjM1NTQ2OSA3MzguNjY3OTY5IDM3NS4xNDQ1MzEgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyYzMzODYiIGQ9Ik0gNjk2Ljc2OTUzMSAzOTQuODM1OTM4IEwgNzE0LjQxNDA2MiAzODcuNDkyMTg4IEMgNzIyLjEwMTU2MiAzNzQuMTgzNTk0IDcyNC4yNzczNDQgMzUyLjE3OTY4OCA3MjEuNzYxNzE5IDMyMi44MjAzMTIgQyA3MTkuNTMxMjUgMzU5LjI1IDcxMC4xODM1OTQgMzgxLjE5MTQwNiA2OTYuNzY5NTMxIDM5NC44MzU5MzggIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyYzMzODYiIGQ9Ik0gNjYyLjE2NDA2MiAzNjMuMjM4MjgxIEMgNjQ5LjI2NTYyNSAzODkuNTgyMDMxIDY0MS43MjY1NjIgNDE0LjgwNDY4OCA2NTcuMDc4MTI1IDQzNS4yNjE3MTkgTCA2NjguODQ3NjU2IDQyNC4yMzA0NjkgQyA2NTIuMzk4NDM4IDQxOC4yMzgyODEgNjU3LjQ3MjY1NiAzOTAuOTU3MDMxIDY2Mi4xNjQwNjIgMzYzLjIzODI4MSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA2MDQuOTAyMzQ0IDQyNC4yMzA0NjkgQyA2MDEuMDIzNDM4IDQ1MC4xNjc5NjkgNjEwLjQxNDA2MiA0ODAuMTU2MjUgNjI1LjQ5MjE4OCA0OTUuNTE5NTMxIEwgNjM1Ljc3NzM0NCA0NzEuMjc3MzQ0IEMgNjIxLjMzMjAzMSA0NjkuMDM5MDYyIDYwNy42MjEwOTQgNDQ2IDYwNC45MDIzNDQgNDI0LjIzMDQ2OSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA1ODIuMTMyODEyIDQ3Mi43MzgyODEgQyA1ODAuNzY1NjI1IDQ5OC4yODEyNSA1ODUuMTQ4NDM4IDUyMC4yMjI2NTYgNjA2LjM4NjcxOSA1MzEuNTM1MTU2IEwgNjEyLjI1IDUxNi4wOTc2NTYgQyA1OTcuNDUzMTI1IDUxNy4wNzgxMjUgNTg4LjQ2NDg0NCA0OTkuMTk5MjE5IDU4Mi4xMzI4MTIgNDcyLjczODI4MSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA1MzIuODg2NzE5IDYxNy41MjczNDQgQyA1NDkuODQ3NjU2IDY1MC4xNjAxNTYgNTY4LjczMDQ2OSA2NzEuOTg0Mzc1IDU5MS42ODM1OTQgNjcxLjE3MTg3NSBMIDU4OC43NDIxODggNjUwLjU5NzY1NiBDIDU2Ny41NjY0MDYgNjU2LjI0NjA5NCA1NDkuOTI1NzgxIDYzOC44OTA2MjUgNTMyLjg4NjcxOSA2MTcuNTI3MzQ0ICIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjMmMzMzg2IiBkPSJNIDUzMS43NTc4MTIgNjgxLjA5NzY1NiBDIDU2MS4wMzEyNSA3MDMuMzQ3NjU2IDU4Ny40Mjk2ODggNzE1LjAxMTcxOSA2MDcuODQ3NjU2IDcwNC40Njg3NSBMIDU5Ni4zODY3MTkgNjg3LjEzMjgxMiBDIDU3OS42NTYyNSA3MDEuMjgxMjUgNTU2LjI4OTA2MiA2OTMuMTM2NzE5IDUzMS43NTc4MTIgNjgxLjA5NzY1NiAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzJjMzM4NiIgZD0iTSA1MzYuMDQyOTY5IDk3Mi45NTcwMzEgQyA1MjIuMDU0Njg4IDEwNzQuMzc4OTA2IDU4Ny4zMzU5MzggMTI3Ny4yMTg3NSA1ODcuMzM1OTM4IDEyNzcuMjE4NzUgQyA1NDMuNzUgMTE4MC4yNzczNDQgNTEyLjI2OTUzMSAxMDYxLjkwNjI1IDUyMy4yMTg3NSA5ODUuNzg1MTU2IEwgNTM2LjA0Mjk2OSA5NzIuOTU3MDMxICIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48L3N2Zz4=" alt="USMLE Wise emblem"><span>USMLE<span class="brand-wise">WISE</span><small>LEARN WITH PURPOSE.</small></span></a><div class="course-label">RESEARCH CLASSROOM <span>Quality improvement</span></div><a class="top-link" href="#uwBp">My blueprint ↗</a></div>
+<div class="uw-toast" id="uwToast" aria-hidden="true"></div>
+<nav class="uw-rail" aria-label="Your progress">
+  <div class="rail-overall"><div id="stickyFill"></div></div><div class="uw-rail-in">
+    <div class="uw-rail-steps" id="uwRail"></div>
+    <span id="stickyPercent" class="sticky-percent">0%</span><div class="uw-rail-score" aria-live="polite"><span id="uwPts">0</span> pts</div>
+  </div>
+</nav>
+
+<header class="uw-hero" id="courseHome">
+  <div>
+    <div class="eyebrow">THE QI PAPER WORKBENCH</div><h1>Think like an editor.<br><em>Build like a researcher.</em></h1>
+    <p>Turn a published paper into a plan of your own. Explore SQUIRE 2.0, experiment with a run chart, and build your next quality improvement project.</p>
+  </div>
+  <div class="hero-visual"><div class="eyebrow">SMALL CHANGES. MEASURABLE PROGRESS.</div><svg class="uw-hero-chart" viewBox="0 0 420 220" role="img" aria-label="A run chart rising above its median after a change">
+    <line x1="20" y1="150" x2="410" y2="150" stroke="var(--uw-red)" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <line x1="175" y1="20" x2="175" y2="200" stroke="var(--uw-line)" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <text x="180" y="32" fill="var(--uw-muted)" font-size="12" font-family="Geist, system-ui">change introduced</text>
+    <text x="405" y="170" text-anchor="end" fill="var(--uw-red)" font-size="12" font-family="Geist, system-ui">baseline median</text>
+    <polyline class="uw-hero-line" points="25,160 50,140 75,165 100,145 125,158 150,148 200,120 225,104 250,96 275,84 300,78 325,70 350,62 375,58 400,52"/>
+    <g id="uwHeroDots"></g>
+  </svg><div class="visual-caption"><span>01 / OBSERVE</span><span>02 / IMPROVE</span><span>03 / MEASURE</span></div></div>
+</header>
+
+<main class="uw-main">
+<section class="journey" aria-label="Course completion"><div class="journey-main"><div class="eyebrow">YOUR LEARNING JOURNEY</div><div class="progress-title"><h2 id="journeyTitle">Your next project starts here.</h2><strong id="totalPercent">0%</strong></div><div class="total-track" id="totalProgress" role="progressbar" aria-label="Overall course completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="totalFill"></div></div><div class="progress-meta"><span id="stationCount">0 of 5 stations complete</span><span>Practice → feedback → progress</span></div><div id="milestones" class="milestones"></div></div><div class="journey-next"><div class="eyebrow">YOUR NEXT MOVE</div><h3 id="nextTitle">Pick your paper</h3><p id="nextDescription">Choose a real QI report to work through.</p><button class="uw-btn" id="continueLearning">Start learning <span aria-hidden="true">↗</span></button><small>Explore in any order. Points reward practice.</small></div></section><div class="section-intro"><span>THE WORKBENCH</span><p>Five stations. One project blueprint.</p><button id="focusToggle" aria-pressed="false">Focus view</button></div>
+
+<!-- Station 1 -->
+<section class="uw-st" id="st1" aria-labelledby="st1h">
+  <div class="uw-st-head">
+    <div class="uw-st-num" aria-hidden="true">1</div>
+    <div><h2 id="st1h">Pick your paper <span class="uw-pill" id="pill1">Not started</span></h2>
+    <p class="uw-st-lead">Each one is a real QI report. The squares show how easy the design is to copy. Open the paper in a new tab and keep it beside you.</p></div>
+  </div>
+  <div class="uw-st-body">
+    <div class="uw-papers" id="uwPapers"></div>
+  </div>
+</section>
+
+<!-- Station 2 -->
+<section class="uw-st" id="st2" aria-labelledby="st2h">
+  <div class="uw-st-head">
+    <div class="uw-st-num" aria-hidden="true">2</div>
+    <div><h2 id="st2h">Sort the paper into SQUIRE <span class="uw-pill" id="pill2">Not started</span></h2>
+    <p class="uw-st-lead">Tap a card, then tap the SQUIRE item it belongs to. On a computer you can also drag. Tap a placed card to send it back.</p></div>
+  </div>
+  <div class="uw-st-body">
+    <div class="uw-note" id="uwNoPaper">Pick a paper to start sorting. Tap one here or scroll up to station 1.<div class="uw-quick" id="uwQuick"></div></div>
+    <p id="uwSortTitle" style="font-weight:600"></p>
+    <div class="uw-tray" id="uwTray" aria-label="Cards to sort"></div>
+    <div class="uw-buckets" id="uwBuckets"></div>
+    <div class="uw-row">
+      <button class="uw-btn" id="uwSortCheck" disabled>Check my answers</button>
+      <button class="uw-btn uw-btn-ghost" id="uwSortHint">Show the SQUIRE questions</button>
+      <button class="uw-btn uw-btn-ghost" id="uwSortAgain" hidden>Sort another paper for bonus points</button>
+    </div>
+    <p class="uw-msg" id="uwSortMsg" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- Station 3: guided, evidence-informed run chart teaching lab -->
+<section class="uw-st" id="st3" aria-labelledby="st3h">
+  <div class="uw-st-head">
+    <div class="uw-st-num" aria-hidden="true">3</div>
+    <div><h2 id="st3h">Run chart lab <span class="uw-pill" id="pill3">Not started</span></h2>
+    <p class="uw-st-lead">A guided, hands-on lesson in reading a QI run chart, spotting change over time, and explaining what the data can and cannot prove.</p></div>
+  </div>
+  <div class="uw-st-body">
+    <div class="uw-l-scenario">
+      <div><div class="uw-l-eyebrow">YOUR CLINICAL CASE <span class="uw-l-demo-tag">ILLUSTRATIVE DATA</span></div>
+        <h3>Can we improve oxygen prescription documentation?</h3>
+        <p>A ward team checks the percentage of oxygen orders completed correctly each week. They introduce a standardized prescription prompt during a PDSA cycle. Can we see whether the process changes?</p></div>
+      <div class="uw-l-equation"><span>Each dot = 1 week</span><strong>24 weeks</strong><small>Higher compliance is better</small></div>
+    </div>
+
+    <div class="uw-l-guide" aria-label="Run chart guided lesson">
+      <div class="uw-l-guide-head"><div><span class="uw-l-eyebrow">FOLLOW THE LESSON</span><h3>Read it. Change it. Explain it.</h3></div><span id="uwGuideCount" class="uw-l-count">Lesson 1 of 6</span></div>
+      <div class="uw-l-steps" id="uwGuideSteps" role="group" aria-label="Choose teaching step"></div>
+      <div class="uw-l-lesson" id="uwLesson" aria-live="polite">
+        <span class="uw-l-eyebrow" id="uwLessonKicker">STEP 01</span>
+        <h3 id="uwLessonTitle">First, orient yourself to the chart</h3>
+        <p id="uwLessonBody"></p>
+        <div class="uw-l-do"><span>TRY THIS</span><p id="uwLessonTask"></p></div>
+        <div class="uw-l-row"><button type="button" class="uw-btn" id="uwLessonDemo">Show me an example</button><button type="button" class="uw-btn uw-btn-ghost" id="uwLessonBack">Previous</button><button type="button" class="uw-btn uw-btn-ghost" id="uwLessonNext">Next step</button></div>
+      </div>
+    </div>
+
+    <div class="uw-l-workbench">
+      <div class="uw-l-graph-panel">
+        <div class="uw-l-chart-head"><div><span class="uw-l-eyebrow">LIVE EXPERIMENT</span><h3>Weekly oxygen prescription compliance</h3><p id="uwChartSubtitle">Simulated example. Baseline compared with the period after a change.</p></div><button type="button" class="uw-l-smallbtn" id="uwChartReset">Reset example</button></div>
+        <svg class="uw-chart" id="uwChart" viewBox="0 0 710 380" role="img" aria-label="Run chart of simulated weekly oxygen prescription compliance, with baseline median and intervention marker"></svg>
+        <div class="uw-l-legend"><span><i class="uw-l-key uw-l-key-line"></i> Weekly compliance</span><span><i class="uw-l-key uw-l-key-median"></i> Baseline median</span><span><i class="uw-l-key uw-l-key-change"></i> PDSA begins</span><span><i class="uw-l-key uw-l-key-signal"></i> Shift points</span></div>
+        <div class="uw-l-inspect" id="uwInspect" aria-live="polite">Select a dot on the graph to inspect an individual week.</div>
+        <div class="uw-l-metrics">
+          <div><small>Baseline median</small><strong id="uwStatMedian">...</strong><span>middle of pre-change weeks</span></div>
+          <div><small>Latest week</small><strong id="uwStatLatest">...</strong><span>week 24 compliance</span></div>
+          <div><small>Post-change median</small><strong id="uwStatPost">...</strong><span>descriptive, not causal</span></div>
+        </div>
+        <div class="uw-l-result" id="uwSig" role="status" aria-live="polite">No signal yet.</div>
+        <div class="uw-meter" id="uwMeter" aria-hidden="true"><div class="uw-meter-row"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small id="uwMeterText">8 points are needed for the shift convention in this lab.</small></div>
+        <div class="uw-l-meaning" id="uwMeaning">Read the interpretation here after moving a slider.</div>
+        <details class="uw-l-data-details"><summary>See the actual 24 weekly values <span>Useful for teaching and verification</span></summary><div class="uw-l-data-scroll"><table class="uw-l-data-table"><thead><tr><th>Week</th><th>Compliance</th><th>Phase</th><th>Compared with baseline median</th></tr></thead><tbody id="uwWeekRows"></tbody></table></div></details>
+      </div>
+
+      <aside class="uw-l-controls" aria-label="Change the simulation">
+        <div class="uw-l-controls-head"><span class="uw-l-eyebrow">EXPERIMENT CONTROLS</span><h3>Change one thing at a time</h3><p>Keep other sliders fixed to see what each variable does.</p></div>
+        <div class="uw-ctrl uw-l-control"><label for="uwBase">1. Baseline compliance <output id="uwBaseO">40%</output></label><p>How often the ward gets the process right <strong>before</strong> the PDSA starts. This is the starting level.</p><input type="range" id="uwBase" min="10" max="70" value="40" step="1"><small>Example: 40% means about 4 in 10 prescriptions are correct.</small></div>
+        <div class="uw-ctrl uw-l-control"><label for="uwLift">2. Improvement after change <output id="uwLiftO">+0 pp</output></label><p>The model's added improvement once the change takes effect. <strong>pp</strong> means percentage points, not a relative percent increase.</p><input type="range" id="uwLift" min="0" max="50" value="0" step="1"><small>Example: 40% + 30 percentage points = 70%.</small></div>
+        <div class="uw-ctrl uw-l-control"><label for="uwWeek">3. When PDSA starts <output id="uwWeekO">week 13</output></label><p>The week when the team tests its first change. Weeks to the left are baseline observations.</p><input type="range" id="uwWeek" min="11" max="14" value="13" step="1"><small>We keep at least 10 pre-change points in this teaching example.</small></div>
+        <div class="uw-ctrl uw-l-control"><label for="uwNoise">4. Week-to-week variation <output id="uwNoiseO">up to ±6 pp</output></label><p>Routine fluctuations around the underlying level. More variation makes a small improvement harder to recognize.</p><input type="range" id="uwNoise" min="0" max="20" value="6" step="1"><small>Random deviations are bounded by this number, not guaranteed to reach it.</small></div>
+        <button type="button" class="uw-btn uw-btn-ghost uw-l-reroll" id="uwReroll">Simulate 24 new weeks (same settings)</button>
+        <p class="uw-l-random-note">Every dot is simulated. Re-running changes random variation, not the assumed improvement.</p>
+      </aside>
+    </div>
+
+    <div class="uw-l-teacher" id="uwTeacher">
+      <div class="uw-l-teach-head"><div><span class="uw-l-eyebrow">PRESENTER NOTES</span><h3>How to teach this step</h3><p>Use the script while the students watch the chart.</p></div><button type="button" class="uw-l-smallbtn" id="uwCopyTeacher">Copy talking points</button></div>
+      <div class="uw-l-teach-grid"><div><span class="uw-l-teach-tag">SAY THIS</span><p id="uwSayThis"></p></div><div><span class="uw-l-teach-tag">ASK THE ROOM</span><p id="uwAskThis"></p><p class="uw-l-answer" id="uwAnswerThis"></p></div></div>
+      <div class="uw-l-teach-tip" id="uwTakeaway"></div>
+    </div>
+
+    <div class="uw-l-experiments" id="uwExperiments"><div class="uw-l-guide-head"><div><span class="uw-l-eyebrow">THREE PRACTICE EXPERIMENTS</span><h3>Earn your Signal Hunter badge</h3><p>Try the experiments in order. The tracker recognizes them automatically as you change the chart.</p></div><span class="uw-l-count" id="uwQuestCount">0 of 3 complete</span></div>
+      <ol class="uw-l-quest-list" id="uwLabTodo"><li data-k="a"><div><b>01. Make a shift appear</b><p>Increase the modeled improvement until at least 8 post-change dots stay above the baseline median.</p></div><button type="button" class="uw-l-smallbtn" data-preset="shift">Show an example</button></li><li data-k="b"><div><b>02. Make the shift disappear</b><p>Reduce the improvement from a setting that showed a shift. Watch what happens to the evidence.</p></div><button type="button" class="uw-l-smallbtn" data-preset="no-shift">Show an example</button></li><li data-k="c"><div><b>03. Recover a shift despite variation</b><p>Set variation to at least 12 points, then increase improvement until you see a shift again.</p></div><button type="button" class="uw-l-smallbtn" data-preset="noisy-shift">Show an example</button></li></ol>
+    </div>
+
+    <div class="uw-l-teachback"><div><span class="uw-l-eyebrow">CHECK YOUR UNDERSTANDING</span><h3>What can you conclude from a shift?</h3><p>Award yourself the right interpretation before you present a results slide.</p></div>
+      <div class="uw-l-choice" id="uwLabChoices"><button type="button" data-answer="a">The PDSA definitely caused the improvement.</button><button type="button" data-answer="b">The series shows a non-random pattern. We should investigate whether the intervention or other factors explain it.</button><button type="button" data-answer="c">Each individual weekly point is statistically significant.</button></div><p id="uwLabFeedback" class="uw-l-feedback" aria-live="polite"></p>
+      <div class="uw-l-writeup"><span class="uw-l-eyebrow">AUTO-GENERATED RESULTS LANGUAGE</span><p id="uwResultSentence"></p><div class="uw-l-row"><button type="button" class="uw-btn" id="uwCopyResult">Copy interpretation</button><button type="button" class="uw-btn uw-btn-ghost" id="uwCopyLesson">Copy full 6-step teaching script</button></div><p class="uw-l-feedback" id="uwLabCopyMsg" aria-live="polite"></p></div>
+    </div>
+
+    <details class="uw-l-faq"><summary>Quick teaching reference: every term explained</summary>
+      <div class="uw-l-faq-grid"><div><b>Run chart</b><p>A measure plotted in time order. It helps reveal variation, possible shifts, and whether improvement lasts.</p></div><div><b>Baseline</b><p>The observations collected before a change is tested. This is the comparator, not the ultimate goal.</p></div><div><b>Median</b><p>The middle observation after sorting values. This lab fixes the pre-change median as a reference line.</p></div><div><b>PDSA cycle</b><p>Plan, Do, Study, Act: a structured small test of a proposed change, followed by learning and adaptation.</p></div><div><b>Shift</b><p>A string of observations on the same side of the median. We use an 8-point convention for this 24-point demonstration.</p></div><div><b>Common-cause variation</b><p>Normal variation within a process. A pattern may suggest another influence, but the graph alone cannot identify it.</p></div><div><b>Percentage point (pp)</b><p>The absolute difference between percentages. Moving from 40% to 70% equals +30 pp, or a 75% relative increase.</p></div><div><b>Run chart versus control chart</b><p>A run chart compares values over time with a median. A control chart also uses statistically calculated limits to analyze process variation.</p></div></div>
+    </details>
+    <p class="uw-l-method"><strong>Method and limitations.</strong> This is a simulated 24-week dataset, not a result from any of the papers above. For a 24-point chart, this lesson uses the 8-point shift convention from the IHI run-chart reference sheet. Other teaching resources use 6 points and guidance varies with dataset length. Points exactly on the median are skipped when counting a run. This lesson checks the shift rule only; it does not test trends, total numbers of runs, or unusual points. Signal detection is not proof of causation. In real projects, document denominators, measurement definitions, changes in patient mix and other concurrent events. <a href="https://www.ihi.org/sites/default/files/lms/legacy/education/IHIOpenSchool/Courses/Documents/11_RunChartRulesReferenceSheet.pdf" target="_blank" rel="noopener noreferrer">IHI run chart rules</a> · <a href="https://publications.aap.org/hospitalpediatrics/article/14/1/e83/196276/A-Practical-Guide-to-QI-Data-Analysis-Run-and" target="_blank" rel="noopener noreferrer">AAP clinical QI interpretation guide</a>.</p>
+  </div>
+</section>
+
+<!-- Station 4 -->
+<section class="uw-st" id="st4" aria-labelledby="st4h">
+  <div class="uw-st-head">
+    <div class="uw-st-num" aria-hidden="true">4</div>
+    <div><h2 id="st4h">Build your own project <span class="uw-pill" id="pill4">Not started</span></h2>
+    <p class="uw-st-lead">Now it is your turn. Write a SMART aim, run it through the 3M filter, then sort the measures for an example project.</p></div>
+  </div>
+  <div class="uw-st-body">
+    <div class="uw-grid2">
+      <div class="uw-field"><label for="uwVerb">Direction</label>
+        <select id="uwVerb"><option value="increase">Increase</option><option value="reduce">Reduce</option></select></div>
+      <div class="uw-field"><label for="uwWhat">What you will measure</label>
+        <input type="text" id="uwWhat" value="correctly prescribed oxygen" maxlength="80"></div>
+      <div class="uw-field"><label for="uwWhere">Where</label>
+        <input type="text" id="uwWhere" value="Ward 4" maxlength="60"></div>
+      <div class="uw-ctrl"><label for="uwWeeks">Weeks to reach target <output id="uwWeeksO"></output></label><input type="range" id="uwWeeks" min="4" max="24" value="10"></div>
+      <div class="uw-ctrl"><label for="uwB">Baseline today <output id="uwBO"></output></label><input type="range" id="uwB" min="0" max="100" value="40"></div>
+      <div class="uw-ctrl"><label for="uwT">Target <output id="uwTO"></output></label><input type="range" id="uwT" min="0" max="100" value="80"></div>
+    </div>
+    <div class="uw-gap" aria-hidden="true"><div class="uw-gap-track"><div class="uw-gap-fill" id="uwGapFill"></div></div><span id="uwGapTxt"></span></div>
+    <p class="uw-aim" id="uwAim" aria-live="polite"></p>
+    <p class="uw-msg" id="uwAimMsg" aria-live="polite"></p>
+
+    <h3 class="uw-h3">The 3M filter</h3>
+    <p class="uw-st-lead">Switch each one on only if it is honestly true for your project.</p>
+    <div class="uw-switches" id="uwSwitches">
+      <button class="uw-switch" aria-pressed="false" data-m="matters"><b>Matters</b><small>Affects patients, safety or staff time.</small></button>
+      <button class="uw-switch" aria-pressed="false" data-m="measurable"><b>Measurable</b><small>I can count it as a % or number this month.</small></button>
+      <button class="uw-switch" aria-pressed="false" data-m="mine"><b>Mine</b><small>I can see the data and change the process.</small></button>
+    </div>
+
+    <h3 class="uw-h3">Sort the measures</h3>
+    <p class="uw-st-lead">Example project: oxygen prescribing on a medical ward. Which kind of measure is each one? Editors always look for a balancing measure.</p>
+    <div class="uw-tray" id="uwMTray" aria-label="Measures to sort"></div>
+    <div class="uw-buckets" id="uwMBuckets"></div>
+    <div class="uw-row"><button class="uw-btn" id="uwMCheck" disabled>Check my measures</button></div>
+    <p class="uw-msg" id="uwMMsg" aria-live="polite"></p>
+
+    <h3 class="uw-h3">Now write your own measures</h3>
+    <p class="uw-st-lead">Optional, but it earns bonus points and goes into your blueprint. One of each.</p>
+    <div class="uw-own">
+      <div class="uw-field"><label for="uwOwnOut">Outcome measure</label><input type="text" id="uwOwnOut" maxlength="90" placeholder="e.g. % patients with..."></div>
+      <div class="uw-field"><label for="uwOwnPro">Process measure</label><input type="text" id="uwOwnPro" maxlength="90" placeholder="e.g. % charts with..."></div>
+      <div class="uw-field"><label for="uwOwnBal">Balancing measure</label><input type="text" id="uwOwnBal" maxlength="90" placeholder="e.g. minutes added to..."></div>
+    </div>
+  </div>
+</section>
+
+<!-- Station 5 -->
+<section class="uw-st" id="st5" aria-labelledby="st5h">
+  <div class="uw-st-head">
+    <div class="uw-st-num" aria-hidden="true">5</div>
+    <div><h2 id="st5h">Where would it go? <span class="uw-pill" id="pill5">Not started</span></h2>
+    <p class="uw-st-lead">Choosing the wrong journal is the fastest way to a desk rejection. Decide where each project belongs.</p></div>
+  </div>
+  <div class="uw-st-body">
+    <div class="uw-q" id="uwQuiz"></div>
+  </div>
+</section>
+
+<!-- Blueprint -->
+<section class="uw-bp" id="uwBp" aria-labelledby="uwBpH">
+  <h2 id="uwBpH">Your project blueprint</h2>
+  <p class="uw-bp-done" aria-live="polite">All five stations done. Send this aim to the one person who can approve your change.</p>
+  <div id="uwBpLeft"></div>
+  <div class="uw-badges" id="uwBadges"></div>
+  <dl>
+    <dt>Paper studied</dt><dd id="bpPaper">Not chosen yet</dd>
+    <dt>SQUIRE sort</dt><dd id="bpSort">Not done</dd>
+    <dt>Run chart lab</dt><dd id="bpLab">Not done</dd>
+    <dt>Your SMART aim</dt><dd id="bpAim">Not written yet</dd>
+    <dt>3M filter</dt><dd id="bpM">0 of 3</dd>
+    <dt>Your measures</dt><dd id="bpOwn">Not written yet</dd>
+    <dt>Journal fit</dt><dd id="bpQuiz">Not done</dd>
+  </dl>
+  <div class="uw-row">
+    <button class="uw-btn" id="uwCopy">Copy my blueprint</button>
+    <button class="uw-btn uw-btn-ghost" id="uwPrint">Print</button>
+    <button class="uw-btn uw-btn-ghost" id="uwReset">Start over</button>
+  </div>
+  <p class="uw-msg" id="uwCopyMsg" aria-live="polite"></p>
+</section>
+
+</main>
+
+<footer class="uw-foot">
+  <p>Paper summaries are paraphrased from PubMed abstracts. Read each full paper for its exact methods. SQUIRE 2.0: Ogrinc G et al. BMJ Qual Saf 2016;25:986-92, and the Explanation and Elaboration by Goodman D et al. BMJ Qual Saf 2016;25:e7. Run chart rules: Perla RJ et al. BMJ Qual Saf 2011;20:46-51. Nothing you enter is saved; closing the tab clears it.</p>
+</footer>
+
+<section class="uw-upsell" aria-labelledby="uwUpsellH" style="max-width:980px;margin:0 auto 4rem;padding:0 1.25rem"><div style="background:var(--uw-surface);border:1px solid var(--uw-line);border-radius:14px;padding:1.75rem;display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:center;justify-content:space-between"><div style="flex:1 1 320px"><div class="eyebrow">FREE MODULE 1 OF THE RESEARCH MASTERCLASS</div><h2 id="uwUpsellH" style="font-family:Lora,Georgia,serif;font-size:1.6rem;margin:.3rem 0 .5rem">Ready to finish a study of your own?</h2><p style="color:var(--uw-muted);margin:0">The full Research Masterclass shows you exactly how to complete an original research study, start to finish, in just 1 month. No institutional access or approval required. $49, one-time.</p></div><div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="uw-btn" style="text-decoration:none" href="https://mastery.usmlewise.com/checkout/course?courseId=cmvxuhfkn00u8dn45qzdv2p96">Get the full masterclass, $49</a><a class="uw-btn uw-btn-ghost" style="text-decoration:none" href="/research-masterclass">Learn more</a></div></div></section>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- data ---------- */
+var SQUIRE = [
+  {id:"s3", label:"3. Problem description", sub:"Why did you start? The local gap."},
+  {id:"s6", label:"6. Specific aims", sub:"What exactly were you trying to achieve?"},
+  {id:"s7", label:"7. Context", sub:"Where did it happen, and with whom?"},
+  {id:"s8", label:"8. Intervention", sub:"What did you change? Enough detail to copy."},
+  {id:"s10", label:"10. Measures", sub:"What did you count, and how?"},
+  {id:"s13", label:"13. Results", sub:"What happened over time?"}
+];
+
+var PAPERS = [
+  {id:"p1", title:"Informed consent in ENT surgery", place:"Rawalpindi, Pakistan, 2025", ease:5,
+   doi:"10.1136/bmjoq-2025-003523",
+   cards:{
+    s3:"Consent forms in a busy surgical unit often missed key parts, such as a written explanation of the procedure.",
+    s6:"Find the weak spots in the consent process, change them, then check again.",
+    s7:"An ENT department in a large public teaching hospital serving mostly low-income patients.",
+    s8:"Teaching sessions for doctors plus a new, more detailed consent form.",
+    s10:"Structured patient interviews and a questionnaire checking each part of consent, 40 patients per cycle.",
+    s13:"Incomplete forms fell from 15% to 0% between the first and second cycle."}},
+  {id:"p2", title:"SOAP format for ward-round notes", place:"New Delhi, India, 2022", ease:5,
+   doi:"10.1136/bmjoq-2021-001472",
+   cards:{
+    s3:"Ward-round notes were unstructured and differed from doctor to doctor, putting team communication at risk.",
+    s6:"Get paediatricians to write their ward-round notes in SOAP format.",
+    s7:"A paediatric department in a multidisciplinary hospital. COVID-19 arrived midway and changed priorities.",
+    s8:"Verbal reminders and individual feedback first, then a displayed SOAP acronym and visual reminders at handover.",
+    s10:"The percentage of ward-round notes written in SOAP format.",
+    s13:"Use rose from 13% to 90%, dropped to 45% during COVID-19, then recovered to a median of 84%."}},
+  {id:"p3", title:"Discharge summary completion", place:"Ile-Ife, Nigeria, 2026", ease:5,
+   doi:"10.1136/bmjoq-2025-003762",
+   cards:{
+    s3:"Discharge summaries were rarely written, weakening the handover from ward to clinic.",
+    s6:"Raise completion to at least 50% within 12 weeks.",
+    s7:"General surgery and neurosurgery units of a teaching hospital in a low-resource setting.",
+    s8:"Training at induction, a ready-made template, visual prompts and a named champion on each unit.",
+    s10:"Completion rate per discharge, plus a survey of trainees about what got in the way.",
+    s13:"Completion rose from 9% to 82%, beating the target in every cycle."}},
+  {id:"p4", title:"A leaflet for nerve block consent", place:"Dublin, Ireland, 2025", ease:4,
+   doi:"10.1136/bmjoq-2024-003241",
+   cards:{
+    s3:"Consent for nerve blocks is a growing source of claims, and patients may not remember the risks they were told.",
+    s6:"Test whether a patient information leaflet improves understanding and experience of consent.",
+    s7:"The anaesthesia department of a university hospital.",
+    s8:"A patient information leaflet added to the consent conversation.",
+    s10:"A structured in-person survey of 30 patients before and 30 patients after the leaflet.",
+    s13:"Patients recalled more risks and benefits and were more satisfied with consent."}},
+  {id:"p5", title:"Door-to-analgesia time in the ED", place:"Puducherry, India, 2024", ease:4,
+   doi:"10.1136/bmjoq-2024-002815",
+   cards:{
+    s3:"Patients with limb injuries triaged to lower-acuity areas waited a long time for their first painkiller.",
+    s6:"Cut the time to first analgesia by 30% from baseline within 8 weeks.",
+    s7:"A busy academic emergency department.",
+    s8:"Pain scores at triage, fast-tracking moderate to severe pain, resident sessions, a protocol and prescription audits.",
+    s10:"Minutes from arrival to the first analgesic dose.",
+    s13:"The median wait fell from 55.5 minutes to 15 minutes."}},
+  {id:"p6", title:"Safe injection practices in labour room", place:"New Delhi, India, 2025", ease:4,
+   doi:"10.1136/bmjoq-2024-002955",
+   cards:{
+    s3:"Unsafe injection habits put both patients and staff at risk of infection.",
+    s6:"Raise compliance with safe injection practice from 20% to 80% in 6 weeks.",
+    s7:"The labour room of a tertiary hospital, with nurses as the main team.",
+    s8:"Change ideas tested one by one across 12 PDSA cycles.",
+    s10:"A 15-step observation checklist based on WHO and CDC guidance, scored 1 or 0 per step.",
+    s13:"Median compliance reached 87%, then slipped to 67% later in the sustain phase."}}
+];
+
+var MEASURES = [
+  {id:"m1", text:"% of patients on oxygen with a correct prescription", answer:"out"},
+  {id:"m2", text:"% of patients whose oxygen saturation stayed in their target range", answer:"out"},
+  {id:"m3", text:"% of drug charts with the new oxygen box filled in", answer:"pro"},
+  {id:"m4", text:"% of ward doctors who attended the 10-minute teaching", answer:"pro"},
+  {id:"m5", text:"Extra minutes added to each admission clerking", answer:"bal"},
+  {id:"m6", text:"Number of other drug doses missed on the chart", answer:"bal"}
+];
+var MBUCKETS = [
+  {id:"out", label:"Outcome", sub:"Did care for the patient get better?"},
+  {id:"pro", label:"Process", sub:"Did staff actually do the new step?"},
+  {id:"bal", label:"Balancing", sub:"Did the change break something else?"}
+];
+
+var QUIZ = [
+  {q:"You measured oxygen prescribing once, presented it at the audit meeting, and stopped.",
+   a:"not", why:"An audit alone is a snapshot. BMJ Open Quality lists audit reports among the things it does not publish. Add a change and re-measure over time first."},
+  {q:"Three PDSA cycles on one ward, a run chart of weekly compliance, and a balancing measure.",
+   a:"bmjoq", why:"This is a classic quality improvement report. Its natural home is BMJ Open Quality."},
+  {q:"A randomised trial comparing two antibiotics for community-acquired pneumonia.",
+   a:"bmjopen", why:"This is clinical research, not QI. BMJ Open considers all research study types. BMJ Open Quality does not publish clinical research."},
+  {q:"A patient with a very unusual presentation of a common disease.",
+   a:"cases", why:"A single patient story is a case report. BMJ Open sends case reports to BMJ Case Reports."},
+  {q:"A formal pre-post evaluation with a control group across three hospitals and a full research protocol.",
+   a:"bmjopen", why:"A larger, formally designed evaluation fits BMJ Open as research. It is the stretch target, not the default."},
+  {q:"A new patient leaflet, tested in two cycles with a before-and-after patient survey.",
+   a:"bmjoq", why:"A local improvement tested in cycles is a QI report. The Dublin leaflet paper in station 1 did exactly this."}
+];
+var QOPTS = [
+  {id:"bmjoq", label:"BMJ Open Quality"},
+  {id:"bmjopen", label:"BMJ Open"},
+  {id:"cases", label:"BMJ Case Reports"},
+  {id:"not", label:"Not yet: add PDSA cycles"}
+];
+
+var STATIONS = ["Pick a paper","SQUIRE sort","Run chart lab","Your project","Journal fit"];
+var BADGES = [
+  {id:"eye", label:"Editor's eye", test:function(){return S.st[1].done;}},
+  {id:"second", label:"Second opinion", test:function(){return S.sorted.length>=2;}},
+  {id:"signal", label:"Signal hunter", test:function(){return S.st[2].done;}},
+  {id:"aim", label:"Aim architect", test:function(){return S.st[3].done;}},
+  {id:"own", label:"Measure maker", test:function(){return ownCount()===3;}},
+  {id:"match", label:"Journal matchmaker", test:function(){return S.quizBest===QUIZ.length;}}
+];
+
+/* ---------- state ---------- */
+var S;
+function freshState(){
+  return {paper:null, pts:0, sorted:[], sortTries:0, sortScore:null, hints:false,
+    st:[0,1,2,3,4].map(function(){return {done:false};}),
+    lab:{a:false,b:false,c:false,liftAtSignal:null},
+    m:{matters:false,measurable:false,mine:false}, aimTouched:false, aimOk:false, measuresOk:false,
+    ownPts:false, quizI:0, quizRight:0, quizRun:1, quizBest:null, badges:{}, celebrated:false};
+}
+
+var $ = function(id){return document.getElementById(id);};
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function paperById(id){return PAPERS.filter(function(x){return x.id===id;})[0];}
+var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+var toastT;
+function addPts(n,why){
+  S.pts+=n; $("uwPts").textContent=S.pts;
+  var t=$("uwToast"); t.textContent="+"+n+(why?" "+why:""); t.classList.add("is-on");
+  clearTimeout(toastT); toastT=setTimeout(function(){t.classList.remove("is-on");},1400);
+}
+
+/* ---------- progress: every station reports a fraction ---------- */
+function progress(i){
+  if(i===0) return S.paper?1:0;
+  if(i===1){ if(S.st[1].done||S.sorted.length) return 1; if(!sqS) return 0; return Math.max(sqS.placedRight()/6*0.99, sqS.placedCount()?0.05:0); }
+  if(i===2){ var n=(S.lab.a?1:0)+(S.lab.b?1:0)+(S.lab.c?1:0); return n/3; }
+  if(i===3){ var mN=(S.m.matters?1:0)+(S.m.measurable?1:0)+(S.m.mine?1:0);
+    var p=(S.aimOk&&S.aimTouched?1:0)+mN/3+(S.measuresOk?1:0); return p/3; }
+  if(i===4){ if(S.quizBest!==null) return 1; return S.quizI/QUIZ.length; }
+}
+function progText(i){
+  if(i===1 && !S.st[1].done && sqS) return sqS.placedRight()? sqS.placedRight()+" of 6 right" : sqS.placedCount()+" of 6 placed";
+  if(i===2) return ((S.lab.a?1:0)+(S.lab.b?1:0)+(S.lab.c?1:0))+" of 3 tasks";
+  if(i===3){ var parts=[]; if(!(S.aimOk&&S.aimTouched)) parts.push("aim"); if(!(S.m.matters&&S.m.measurable&&S.m.mine)) parts.push("3M"); if(!S.measuresOk) parts.push("measures"); return parts.length?"Still to do: "+parts.join(", "):""; }
+  if(i===4) return S.quizI+" of "+QUIZ.length+" answered";
+  return "In progress";
+}
+function refresh(){
+  for(var i=0;i<5;i++){
+    var f=progress(i);
+    if(f>=1 && !S.st[i].done){ S.st[i].done=true; onStationDone(i); }
+    var pill=$("pill"+(i+1)), st=$("st"+(i+1));
+    st.classList.toggle("is-done",S.st[i].done);
+    if(S.st[i].done){ pill.className="uw-pill is-done"; pill.textContent="Done"; }
+    else if(f>0){ pill.className="uw-pill is-prog"; pill.textContent=progText(i); }
+    else { pill.className="uw-pill"; pill.textContent="Not started"; }
+  }
+  renderRail(); renderBp(); renderJourney();
+}
+function onStationDone(i){
+  var bonus=[10,0,0,20,0][i]; if(bonus) addPts(bonus,["paper picked","","","project built",""][i]);
+}
+
+/* ---------- rail ---------- */
+function renderRail(){
+  var r=$("uwRail");
+  if(!r.children.length){
+    STATIONS.forEach(function(name,i){
+      var b=document.createElement("button"); b.className="uw-rail-step";
+      b.innerHTML='<span class="uw-rail-bar"><i></i></span><span class="uw-rail-name">'+(i+1)+". "+name+"</span>";
+      b.addEventListener("click",function(){ $("st"+(i+1)).scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"}); });
+      r.appendChild(b);
+    });
+  }
+  [].forEach.call(r.children,function(b,i){
+    var f=S.st[i].done?1:progress(i);
+    b.classList.toggle("is-done",S.st[i].done);
+    b.querySelector("i").style.width=Math.round(f*100)+"%";
+    b.setAttribute("aria-label","Go to station "+(i+1)+": "+STATIONS[i]+" ("+(S.st[i].done?"done":Math.round(f*100)+"% done")+")");
+  });
+}
+
+/* ---------- hero dots ---------- */
+(function(){
+  var pts=[[25,160],[50,140],[75,165],[100,145],[125,158],[150,148],[200,120],[225,104],[250,96],[275,84],[300,78],[325,70],[350,62],[375,58],[400,52]];
+  var h=""; pts.forEach(function(p,i){h+='<circle class="uw-hero-dot'+(i>=6?' is-sig':'')+'" cx="'+p[0]+'" cy="'+p[1]+'" r="4.5"/>';});
+  $("uwHeroDots").innerHTML=h;
+})();
+
+/* ---------- station 1 ---------- */
+function renderPapers(){
+  var wrap=$("uwPapers"); wrap.innerHTML="";
+  var q=$("uwQuick"); q.innerHTML="";
+  PAPERS.forEach(function(p){
+    var card=document.createElement("div");
+    var ease=""; for(var k=1;k<=5;k++) ease+='<i class="'+(k<=p.ease?'on':'')+'"></i>';
+    var b=document.createElement("button");
+    b.className="uw-paper"; b.setAttribute("aria-pressed", S.paper===p.id?"true":"false");
+    var tick = S.sorted.indexOf(p.id)>-1 ? ' <span>(sorted)</span>' : '';
+    b.innerHTML='<b>'+esc(p.title)+tick+'</b><span>'+esc(p.place)+'</span><span class="uw-ease" aria-label="Ease '+p.ease+' of 5">'+ease+' <span>&nbsp;ease to copy</span></span>';
+    b.addEventListener("click",function(){ choosePaper(p.id,true); });
+    card.appendChild(b);
+    var a=document.createElement("a"); a.href="https://doi.org/"+p.doi; a.target="_blank"; a.rel="noopener"; a.textContent="Open the paper (DOI)";
+    a.style.display="inline-block"; a.style.margin=".35rem 0 0 .2rem";
+    card.appendChild(a); wrap.appendChild(card);
+    var qb=document.createElement("button"); qb.textContent=p.title; qb.addEventListener("click",function(){choosePaper(p.id,false);}); q.appendChild(qb);
+  });
+}
+function choosePaper(id,scroll){
+  if(S.paper===id) { if(scroll) $("st2").scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"}); return; }
+  var mid = sqS && !sqS.finished && sqS.placedAny();
+  S.paper=id; renderPapers();
+  buildSquireSorter();
+  if(mid){ var m=$("uwSortMsg"); m.className="uw-msg"; m.textContent="New paper loaded. Your sort restarted with the new paper's cards."; }
+  refresh();
+  if(scroll) setTimeout(function(){ $("st2").scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"}); },200);
+}
+
+/* ---------- generic sorter ---------- */
+function Sorter(o){
+  var self=this;
+  this.o=o; this.place={}; this.sel=null; this.locked={}; this.tries=0; this.finished=false; this.flags={};
+  o.items.forEach(function(it){self.place[it.id]=null;});
+  this.order=shuffle(o.items.map(function(i){return i.id;}));
+  o.check.onclick=function(){self.check();};
+  o.tray.ondragover=function(e){e.preventDefault(); o.tray.classList.add("is-over");};
+  o.tray.ondragleave=function(){o.tray.classList.remove("is-over");};
+  o.tray.ondrop=function(e){e.preventDefault(); o.tray.classList.remove("is-over"); var id=e.dataTransfer.getData("text/plain"); if(id && self.place.hasOwnProperty(id) && !self.locked[id]){ self.place[id]=null; self.sel=null; self.render(); }};
+  this.render();
+}
+Sorter.prototype.item=function(id){return this.o.items.filter(function(i){return i.id===id;})[0];};
+Sorter.prototype.placedAny=function(){var s=this;return Object.keys(s.place).some(function(k){return s.place[k]!==null;});};
+Sorter.prototype.placedCount=function(){var s=this;return Object.keys(s.place).filter(function(k){return s.place[k]!==null;}).length;};
+Sorter.prototype.placedRight=function(){return Object.keys(this.locked).length;};
+Sorter.prototype.chip=function(id,state){
+  var self=this, it=this.item(id), b=document.createElement("button");
+  b.className="uw-chip"+(state?" "+state:""); b.textContent=it.text; b.draggable=!this.locked[id];
+  b.setAttribute("aria-pressed", this.sel===id?"true":"false");
+  if(this.locked[id]) b.setAttribute("aria-label",it.text+" (correct, locked)");
+  b.addEventListener("click",function(e){
+    e.stopPropagation();
+    if(self.locked[id]) return;
+    if(self.place[id]!==null){ self.place[id]=null; self.sel=null; }
+    else { self.sel = self.sel===id?null:id; }
+    self.render();
+  });
+  b.addEventListener("dragstart",function(e){ self.sel=id; e.dataTransfer.setData("text/plain",id); });
+  return b;
+};
+Sorter.prototype.drop=function(bid){
+  if(!this.sel) return;
+  this.place[this.sel]=bid; this.sel=null; this.render();
+};
+Sorter.prototype.render=function(){
+  var self=this, o=this.o;
+  o.tray.innerHTML="";
+  this.order.forEach(function(id){ if(self.place[id]===null) o.tray.appendChild(self.chip(id, self.flags[id])); });
+  o.buckets.innerHTML="";
+  o.bucketDefs.forEach(function(bd){
+    var box=document.createElement("div"); box.className="uw-bucket"+(self.sel?" is-target":"");
+    var h=document.createElement("button"); h.className="uw-bucket-h";
+    h.innerHTML="<b>"+esc(bd.label)+"</b><small>"+esc(bd.sub)+"</small>";
+    h.setAttribute("aria-label", (self.sel?"Place selected card in ":"")+bd.label);
+    h.addEventListener("click",function(){ self.drop(bd.id); });
+    box.addEventListener("dragover",function(e){ e.preventDefault(); });
+    box.addEventListener("drop",function(e){ e.preventDefault(); var id=e.dataTransfer.getData("text/plain"); if(id && !self.locked[id]){ self.sel=id; self.drop(bd.id);} });
+    box.addEventListener("click",function(){ self.drop(bd.id); });
+    box.appendChild(h);
+    var d=document.createElement("div"); d.className="uw-drop";
+    self.order.forEach(function(id){ if(self.place[id]===bd.id) d.appendChild(self.chip(id, self.locked[id]?"is-right":"")); });
+    box.appendChild(d);
+    o.buckets.appendChild(box);
+  });
+  var allPlaced=Object.keys(this.place).every(function(k){return self.place[k]!==null;});
+  o.check.disabled=!allPlaced || this.finished;
+  if(o.onChange) o.onChange();
+};
+Sorter.prototype.check=function(){
+  var self=this, wrong=0, total=this.o.items.length;
+  this.flags={}; this.tries++;
+  this.o.items.forEach(function(it){
+    if(self.place[it.id]===it.answer){ self.locked[it.id]=true; }
+    else { wrong++; self.place[it.id]=null; self.flags[it.id]="is-wrong"; }
+  });
+  if(wrong===0) this.finished=true;
+  this.render(); this.flags={};
+  if(wrong===0) this.o.onDone(this.tries); else this.o.onMiss(total-wrong,total);
+};
+
+/* ---------- station 2 ---------- */
+var sqS=null;
+function bucketDefs(){ return SQUIRE.map(function(s){return {id:s.id,label:s.label,sub:S.hints?s.sub:"Tap here to place"};}); }
+function buildSquireSorter(){
+  var p=paperById(S.paper);
+  $("uwNoPaper").hidden=!!p;
+  $("uwSortAgain").hidden=true;
+  if(!p){ $("uwTray").innerHTML=""; $("uwBuckets").innerHTML=""; $("uwSortTitle").textContent=""; $("uwSortCheck").disabled=true; sqS=null; return; }
+  $("uwSortTitle").textContent="Your paper: "+p.title+" ("+p.place+")";
+  $("uwSortMsg").textContent=""; $("uwSortMsg").className="uw-msg";
+  var items=SQUIRE.map(function(s){return {id:p.id+s.id, text:p.cards[s.id], answer:s.id};});
+  sqS=new Sorter({items:items, bucketDefs:bucketDefs(), tray:$("uwTray"), buckets:$("uwBuckets"), check:$("uwSortCheck"),
+    onChange:function(){ if(S) refresh(); },
+    onMiss:function(r,t){ var m=$("uwSortMsg"); m.className="uw-msg is-bad"; m.textContent=r+" of "+t+" right. Right cards are locked in. The rest went back to the tray."; },
+    onDone:function(tries){
+      var first=S.sorted.length===0;
+      if(S.sorted.indexOf(p.id)<0) S.sorted.push(p.id);
+      var pts = first ? (tries===1?30:tries===2?20:10) : 15;
+      addPts(pts, first?"SQUIRE sort":"bonus paper");
+      if(first) S.sortScore=(tries===1?"All 6 right first time":"All 6 right in "+tries+" tries")+" ("+p.title+")";
+      else S.sortScore=S.sorted.length+" papers sorted";
+      var m=$("uwSortMsg"); m.className="uw-msg is-good";
+      m.textContent=(first?S.sortScore:"Another paper sorted")+". +"+pts+" pts.";
+      $("uwSortAgain").hidden = S.sorted.length>=PAPERS.length;
+      renderPapers(); refresh();
+    }});
+}
+$("uwSortHint").addEventListener("click",function(){
+  S.hints=!S.hints;
+  this.textContent=S.hints?"Hide the SQUIRE questions":"Show the SQUIRE questions";
+  if(sqS){ sqS.o.bucketDefs=bucketDefs(); sqS.render(); }
+});
+$("uwSortAgain").addEventListener("click",function(){
+  var next=PAPERS.filter(function(p){return S.sorted.indexOf(p.id)<0;})[0];
+  if(next) choosePaper(next.id,false);
+});
+
+/* ---------- station 3: guided run chart classroom ---------- */
+var seed=7, labStep=0, selectedWeek=null;
+var SHIFT_RULE=8; // IHI reference-sheet convention for charts with >=20 total points.
+var LAB_LESSONS=[
+ {short:"Read axes", title:"Start with the clinical question", kicker:"01 / ORIENT", body:"A run chart puts time on the horizontal axis and a measured result on the vertical axis. Here, every dot represents one week's percentage of correctly documented oxygen prescriptions. The dots are connected in time order.", task:"Point at week 1 and week 24. Ask: what does the height of a dot tell us? Then click a dot to inspect its exact percentage.", preset:"baseline",say:"We are following one ward every week. Time runs left to right. The higher the dot, the greater the proportion of oxygen prescriptions documented correctly. Each dot is a weekly measurement, not an individual patient. We want to know whether this process improved after we tested a change.",ask:"What does a dot at 60% mean?",answer:"It means 60% of the orders measured in that week met the documented criteria. It does not mean 60 patients, and the denominator is not provided in this simulation.",takeaway:"Teach first: name the measure, its unit, its denominator and the time interval before interpreting a pattern."},
+ {short:"Baseline", title:"Understand the starting point and median", kicker:"02 / BASELINE", body:"The observations before the vertical PDSA marker form the baseline. We sort those pre-change observations and find the middle value: the baseline median. The red dashed horizontal line stays fixed as the comparison for later weeks.",task:"Set improvement to zero. Move baseline compliance from 40% to 55% and watch the red line move. Then reset the example if helpful.",preset:"baseline",say:"A baseline tells us how the system performed before our intervention. The median is the middle pre-change value, not a goal and not the average. We extend the baseline median into the post-change period to see whether points consistently lie on one side.",ask:"If the baseline median is 40%, is that the target?",answer:"No. It is a reference level describing typical pre-change performance. A project aim or target is set separately.",takeaway:"The median is calculated only from pre-change weeks here. Changing the intervention size does not recalculate the baseline."},
+ {short:"PDSA", title:"Introduce one improvement idea", kicker:"03 / CHANGE", body:"The vertical dashed line marks the week that a team begins a Plan-Do-Study-Act test. In this simulation, the change gradually takes effect over three weeks. The improvement slider adds percentage points to the underlying process level.",task:"Click the example to compare 40% baseline with a modeled +30 percentage-point change after week 13. Locate the PDSA line.",preset:"shift",say:"At week 13, we introduce a standardized oxygen-prescribing prompt. The model assumes that the process improves by 30 percentage points over a three-week rollout. Compare that with saying 30 percent improvement. Those are different numbers: 40 to 70 percent is +30 percentage points, equal to a 75 percent relative increase.",ask:"Does a dot rising after the PDSA mean the prompt caused it?",answer:"No. The timing is compatible with an effect, but patient mix, staffing, other initiatives and natural variation may also explain it.",takeaway:"A PDSA is a test of change. A chart helps us learn from it. We must investigate context and competing explanations."},
+ {short:"Spot shift", title:"Recognize a signal without overclaiming", kicker:"04 / SHIFT", body:"Normal processes fluctuate. A sustained string of points on the same side of a reference median may indicate non-random change. For this 24-point teaching chart, the threshold is 8 consecutive points above or below the median. Dots exactly on the median do not count.",task:"Watch the 8-block shift meter, then use the example. Green means a run of 8 or more above the median. A sustained run below would indicate deterioration for this measure.",preset:"shift",say:"Instead of comparing only week one with the last week, we look at the sequence. Eight successive points above our fixed baseline median meet the shift convention we selected for this 24-point chart. That is a signal worth investigating, not proof that the new prompt caused it.",ask:"Does one unusually high week establish improvement?",answer:"No. One point can be ordinary variation. This rule looks for a sustained sequence on one side of the median.",takeaway:"Some teaching resources use 6 points and others use 8 or more. Name your chosen rule and chart length when presenting."},
+ {short:"Variation", title:"Test whether the pattern holds under variation", kicker:"05 / VARIATION", body:"Variation is the up-and-down movement between weeks. Higher variation can obscure a modest underlying improvement. In this simplified model, the variation slider bounds randomly generated deviations around the process level.",task:"Try a high-variation example, then remove the improvement. Use 'simulate new weeks' to see that the precise dots change while the settings stay fixed. Complete the 3 experiments below.",preset:"noisy-shift",say:"Hospitals have busy days, different teams, and changing patient populations. Even when the underlying process improves, weekly measurements can bounce around. Look for a consistent pattern rather than a perfectly smooth line. Repeating the simulation illustrates why a single run chart deserves cautious interpretation.",ask:"If there is no 8-point shift, does that prove the PDSA failed?",answer:"No. The chart may be too noisy, the effect too small, the follow-up insufficient, or the measurement unstable. A negative rule check is not proof of no effect.",takeaway:"Real QI work also checks sampling, denominators, secular trends and potential confounders."},
+ {short:"Teach back", title:"Explain the result like a QI author", kicker:"06 / REPORT", body:"Read the automatically updated result statement. State the measure, baseline median, intervention timing, the run-chart rule, the observed pattern and the limitations. Be precise about the strength of the evidence.",task:"Answer the interpretation question below. Copy the result sentence for your SQUIRE Results section and use the speaker notes to present it.",preset:"shift",say:"Here is how I would write this in a paper: we monitored weekly compliance, introduced the change in a documented week, and compared post-change measurements with the pre-change median. We found or did not find a sustained shift under the stated rule. We would then assess other explanations before claiming the intervention was responsible.",ask:"Which wording is defensible: 'the PDSA definitely worked,' or 'the data show a non-random pattern after the change'?",answer:"The second wording. It reports the observed pattern without asserting causality that the simulation cannot establish.",takeaway:"SQUIRE reporting works best when observed results, intervention details, context, limitations and causal interpretation are clearly separated."}
+];
+function rng(s){return function(){s|=0;s=s+0x6D2B79F5|0;var t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function median(a){var b=a.slice().sort(function(x,y){return x-y;});var m=Math.floor(b.length/2);return b.length%2?b[m]:(b[m-1]+b[m])/2;}
+function chartData(){
+ var base=+$('uwBase').value,lift=+$('uwLift').value,wk=+$('uwWeek').value,noise=+$('uwNoise').value;
+ var r=rng(seed),pts=[];
+ for(var i=1;i<=24;i++){
+  var n=((r()+r()+r())/3-.5)*2*noise; // bounded within +/- selected noise level.
+  var ramp=i>=wk?Math.min(1,(i-wk+1)/3):0;
+  pts.push(Math.max(0,Math.min(100,Math.round(base+lift*ramp+n))));
+ }
+ var med=median(pts.slice(0,wk-1));
+ function best(side){var count=0,peak=0,indices=[],winner=[];
+  for(var j=wk-1;j<pts.length;j++){
+   var d=pts[j]-med;
+   if(d===0)continue; // median points are ignored rather than breaking a run.
+   if((d>0?1:-1)===side){count++;indices.push(j);}else{count=0;indices=[];}
+   if(count>peak){peak=count;winner=indices.slice();}
+  }
+  return {count:peak,idx:winner};
+ }
+ var above=best(1),below=best(-1);
+ return {pts:pts,med:med,postMed:median(pts.slice(wk-1)),wk:wk,up:above.count,down:below.count,upIdx:above.idx,downIdx:below.idx,noise:noise,lift:lift,base:base};
+}
+function formatP(v){return (Math.round(v*10)/10).toLocaleString(undefined,{maximumFractionDigits:1})+'%';}
+function interpretation(D){
+ var up=D.up>=SHIFT_RULE,down=D.down>=SHIFT_RULE;
+ if(up && D.lift===0) return {type:'caution',title:'Above-median shift, even with no modeled improvement',detail:'This sample happened to form an '+SHIFT_RULE+'-point run despite a zero improvement setting. A run-chart signal needs clinical interpretation and checks for alternative explanations.'};
+ if(up) return {type:'up',title:'Upward shift detected',detail:D.up+' consecutive post-change values are above the baseline median. This meets this lab’s '+SHIFT_RULE+'-point rule for a non-random pattern. It cannot establish causation.'};
+ if(down) return {type:'down',title:'Downward shift detected',detail:D.down+' consecutive post-change values are below the baseline median. Because higher compliance is better, this is a concerning pattern that merits investigation.'};
+ return {type:'none',title:'No '+SHIFT_RULE+'-point shift detected',detail:'Longest above-median run: '+D.up+'; longest below-median run: '+D.down+'. The absence of a shift is not proof that the intervention had no effect.'};
+}
+function resultText(D){
+ var i=interpretation(D),delta=Math.round((D.postMed-D.med)*10)/10;
+ var phrase=(delta>=0?'+':'')+delta+' percentage points';
+ var result='In a simulated 24-week series, the baseline median oxygen prescription compliance was '+formatP(D.med)+' across '+(D.wk-1)+' pre-change weeks. A PDSA change was introduced in week '+D.wk+'. The post-change median was '+formatP(D.postMed)+' ('+phrase+' relative to the baseline median). ';
+ if(i.type==='up')result+='Using the 8-point shift convention, '+D.up+' consecutive post-change observations lay above the baseline median, suggesting a non-random upward shift. ';
+ else if(i.type==='down')result+='Using the 8-point shift convention, '+D.down+' consecutive post-change observations lay below the median, suggesting a non-random downward shift. ';
+ else if(i.type==='caution')result+='An above-median run was observed despite zero modeled intervention effect, illustrating why a signal requires contextual interpretation. ';
+ else result+='No 8-point post-change shift was detected under the selected convention. ';
+ return result+'These illustrative data do not establish that the intervention caused any change; a real report should examine measurement validity, context and competing explanations.';
+}
+function drawChart(){
+ ['Base','Lift','Week','Noise'].forEach(function(k){var v=+$('uw'+k).value;$('uw'+k+'O').textContent=k==='Week'?'week '+v:k==='Lift'?'+'+v+' pp':k==='Noise'?'up to ±'+v+' pp':v+'%';});
+ var D=chartData(), svg=$('uwChart');
+ var L=63,R=678,T=42,B=321,X=function(i){return L+(R-L)*i/23;},Y=function(v){return B-(B-T)*(v/100);};
+ var cx=X(D.wk-1)-(R-L)/46,signalUp=D.up>=SHIFT_RULE,signalDown=D.down>=SHIFT_RULE;
+ var h='<rect x="'+L+'" y="'+T+'" width="'+(cx-L)+'" height="'+(B-T)+'" fill="#f8f9fc"/><rect x="'+cx+'" y="'+T+'" width="'+(R-cx)+'" height="'+(B-T)+'" fill="#eef0fa"/>';
+ [0,25,50,75,100].forEach(function(v){h+='<line x1="'+L+'" x2="'+R+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="#dde0eb" stroke-width="1"/><text x="'+(L-10)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+v+'%</text>';});
+ h+='<text x="'+(L+5)+'" y="'+(T-13)+'" style="fill:#575f85;font-size:12px;font-weight:700">BASELINE</text>';
+ h+='<text x="'+(R-5)+'" y="'+(T-13)+'" text-anchor="end" style="fill:#575f85;font-size:12px;font-weight:700">AFTER THE CHANGE</text>';
+ h+='<line x1="'+cx+'" x2="'+cx+'" y1="'+T+'" y2="'+B+'" stroke="#656da9" stroke-width="2" stroke-dasharray="5 5"/>';
+ h+='<text x="'+(cx+8)+'" y="'+(T+18)+'" style="fill:#40488c;font-weight:700">PDSA week '+D.wk+'</text>';
+ h+='<line x1="'+L+'" x2="'+R+'" y1="'+Y(D.med)+'" y2="'+Y(D.med)+'" stroke="var(--uw-red)" stroke-width="2" stroke-dasharray="7 5"/>';
+ h+='<rect x="'+(L+5)+'" y="'+(Y(D.med)-20)+'" rx="3" width="'+(104)+'" height="17" fill="white" opacity=".94"/>';
+ h+='<text x="'+(L+9)+'" y="'+(Y(D.med)-7)+'" style="fill:#c82126;font-size:12px;font-weight:700">Median '+formatP(D.med)+'</text>';
+ h+='<polyline points="'+D.pts.map(function(v,i){return X(i)+','+Y(v);}).join(' ')+'" fill="none" stroke="var(--uw-navy)" stroke-width="2.7" stroke-linejoin="round"/>';
+ D.pts.forEach(function(v,i){
+  var hot=(signalUp&&D.upIdx.indexOf(i)>=0)||(signalDown&&D.downIdx.indexOf(i)>=0),active=selectedWeek===i+1;
+  h+='<circle data-week="'+(i+1)+'" role="button" tabindex="0" aria-label="Select week '+(i+1)+', '+v+' percent compliance" cx="'+X(i)+'" cy="'+Y(v)+'" r="'+(active?9:hot?6.5:5)+'" fill="'+(hot?'var(--uw-red)':'var(--uw-navy)')+'" stroke="'+(active?'#16183e':'white')+'" stroke-width="'+(active?3:1.8)+'"><title>Week '+(i+1)+': '+v+'%</title></circle>';
+  if(i%3===0||i===23)h+='<text x="'+X(i)+'" y="'+(B+22)+'" text-anchor="middle">'+(i+1)+'</text>';
+ });
+ h+='<text x="'+((L+R)/2)+'" y="'+(B+49)+'" text-anchor="middle" style="fill:#51577e;font-weight:600">Week of measurement</text>';
+ h+='<text transform="translate(17,'+((T+B)/2)+') rotate(-90)" text-anchor="middle" style="fill:#51577e;font-size:12px;font-weight:600">Correct oxygen prescriptions (%)</text>';
+ svg.innerHTML=h;
+ $('uwChartSubtitle').textContent='Weeks 1–'+(D.wk-1)+' = baseline. Weeks '+D.wk+'–24 = post-change. Select a dot for the exact value.';
+ $('uwStatMedian').textContent=formatP(D.med);$('uwStatLatest').textContent=formatP(D.pts[23]);$('uwStatPost').textContent=formatP(D.postMed);
+ var o=interpretation(D),sig=$('uwSig');sig.className='uw-l-result'+(o.type!=='none'?' is-'+o.type:'');sig.textContent=o.title+'. '+o.detail;
+ var top=Math.max(D.up,D.down),bars=$('uwMeter').querySelectorAll('i');
+ [].forEach.call(bars,function(b,i){b.classList.toggle('on',i<Math.min(SHIFT_RULE,top));});
+ $('uwMeter').classList.toggle('is-sig',top>=SHIFT_RULE);
+ $('uwMeterText').textContent='Longest post-change run: '+top+' of '+SHIFT_RULE+' required (above: '+D.up+', below: '+D.down+'). Points on the median are ignored.';
+ $('uwMeaning').textContent=labStep===0?'Reading tip: higher dots mean more correct prescriptions, and horizontal distance shows the passage of weeks.':labStep===1?'Baseline tip: the red line is the middle of the pre-change values, fixed while the intervention is evaluated.':labStep===2?'Intervention tip: the vertical line marks timing, and the lift slider is an assumed effect in this model, not an effect estimated from a study.':labStep===3?'Shift tip: '+o.detail:labStep===4?'Variation tip: rerun the same settings to see a different noisy sample, then ask whether the pattern survives.':'Reporting tip: distinguish what was observed from why it happened. A signal does not prove a causal effect.';
+ $('uwWeekRows').innerHTML=D.pts.map(function(v,i){var side=v===D.med?'On median':v>D.med?'Above':'Below';return '<tr><td>'+(i+1)+'</td><td>'+v+'%</td><td>'+(i+1<D.wk?'Baseline':'After PDSA')+'</td><td>'+side+'</td></tr>';}).join('');
+ $('uwResultSentence').textContent=resultText(D);
+ if(selectedWeek!==null){var j=selectedWeek-1;if(j>=0&&j<24)$('uwInspect').textContent='Week '+selectedWeek+': '+D.pts[j]+'% compliance. '+(selectedWeek<D.wk?'Before the PDSA. ':'After the PDSA. ')+(D.pts[j]===D.med?'Exactly on the median; do not count this week in a run.':D.pts[j]>D.med?'Above the baseline median.':'Below the baseline median.');}
+ else $('uwInspect').textContent='Select any dot to inspect the exact week, percentage and relationship to the median.';
+ // Three sequential experiments, already part of the overall course progress.
+ if(signalUp && D.lift>0 && !S.lab.a){S.lab.a=true;S.lab.liftAtSignal=D.lift;addPts(10,'upward shift');}
+ if(signalUp && S.lab.a && !S.lab.b)S.lab.liftAtSignal=Math.max(S.lab.liftAtSignal,D.lift);
+ if(S.lab.a&&!S.lab.b&&!signalUp&&D.lift<S.lab.liftAtSignal){S.lab.b=true;addPts(10,'signal removed');}
+ if(S.lab.b&&!S.lab.c&&signalUp&&D.noise>=12&&D.lift>0){S.lab.c=true;addPts(15,'signal through variation');}
+ [].forEach.call($('uwLabTodo').children,function(li){li.classList.toggle('is-done',!!S.lab[li.getAttribute('data-k')]);});
+ $('uwQuestCount').textContent=((S.lab.a?1:0)+(S.lab.b?1:0)+(S.lab.c?1:0))+' of 3 complete';
+ refresh();
+}
+function applyLabPreset(name){
+ var v={baseline:[40,0,13,6],shift:[40,32,13,5],'no-shift':[40,0,13,5],'noisy-shift':[40,46,13,14]}[name]||[40,0,13,6];
+ ['uwBase','uwLift','uwWeek','uwNoise'].forEach(function(k,i){$(k).value=v[i];});seed=7;selectedWeek=null;drawChart();
+}
+function renderLabStep(){
+ var lesson=LAB_LESSONS[labStep];$('uwGuideCount').textContent='Lesson '+(labStep+1)+' of '+LAB_LESSONS.length;
+ $('uwLessonKicker').textContent=lesson.kicker;$('uwLessonTitle').textContent=lesson.title;$('uwLessonBody').textContent=lesson.body;$('uwLessonTask').textContent=lesson.task;
+ $('uwLessonDemo').textContent=labStep===5?'Load reporting example':labStep===4?'Show high-variation example':'Set up this example';
+ $('uwLessonBack').disabled=labStep===0;$('uwLessonNext').disabled=labStep===LAB_LESSONS.length-1;
+ $('uwLessonNext').textContent=labStep===LAB_LESSONS.length-2?'Final step':'Next step';
+ $('uwSayThis').textContent=lesson.say;$('uwAskThis').textContent=lesson.ask;$('uwAnswerThis').textContent='Suggested answer: '+lesson.answer;
+ $('uwTakeaway').textContent='Take-home message: '+lesson.takeaway;
+ [].forEach.call($('uwGuideSteps').children,function(b,i){if(i===labStep)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});
+ var D=chartData();$('uwMeaning').textContent=labStep===0?'Reading tip: the dots show weekly percentages.':labStep===1?'Baseline tip: use the fixed pre-change median as your reference.':labStep===2?'PDSA tip: note when the change began.':labStep===3?'Shift tip: a consistent sequence matters more than one impressive week.':labStep===4?'Variation tip: the same underlying change can look different across samples.':'Report tip: describe observations separately from causal explanations.';
+}
+function moveLabStep(n){labStep=Math.max(0,Math.min(LAB_LESSONS.length-1,n));renderLabStep();drawChart();}
+LAB_LESSONS.forEach(function(l,i){var b=document.createElement('button');b.type='button';b.innerHTML='<b>'+('0'+(i+1))+'</b>'+esc(l.short);b.onclick=function(){moveLabStep(i);};$('uwGuideSteps').appendChild(b);});
+$('uwLessonBack').onclick=function(){moveLabStep(labStep-1);};
+$('uwLessonNext').onclick=function(){moveLabStep(labStep+1);};
+$('uwLessonDemo').onclick=function(){applyLabPreset(LAB_LESSONS[labStep].preset);};
+$('uwChartReset').onclick=function(){applyLabPreset('baseline');};
+$('uwChart').addEventListener('click',function(e){var c=e.target.closest('[data-week]');if(c){selectedWeek=+c.getAttribute('data-week');drawChart();}});
+$('uwChart').addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.hasAttribute('data-week')){e.preventDefault();selectedWeek=+e.target.getAttribute('data-week');drawChart();var c=$('uwChart').querySelector('[data-week="'+selectedWeek+'"]');if(c)c.focus();}});
+['uwBase','uwLift','uwWeek','uwNoise'].forEach(function(id){$(id).addEventListener('input',drawChart);});
+$('uwReroll').onclick=function(){seed=Math.floor(Math.random()*1e6);drawChart();};
+$('uwLabTodo').addEventListener('click',function(e){var b=e.target.closest('[data-preset]');if(b)applyLabPreset(b.getAttribute('data-preset'));});
+$('uwLabChoices').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(this.children,function(c){c.classList.remove('is-correct','is-incorrect');});var ok=b.getAttribute('data-answer')==='b';b.classList.add(ok?'is-correct':'is-incorrect');$('uwLabFeedback').textContent=ok?'Correct. A signal indicates a pattern unlikely to be random under the selected rule; explaining its cause needs contextual evidence.':'Not quite. A run-chart signal does not identify the cause of a change and is not a significance test of every dot. Try the second answer.';});
+function copyLabText(txt,element){
+ var el=$(element);function good(){el.textContent='Copied to clipboard.';}
+ function fallback(){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}ta.remove();el.textContent=ok?'Copied to clipboard.':'Copy blocked by browser. Select the text on the page and copy manually.';}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(good,fallback);else fallback();
+}
+$('uwCopyResult').onclick=function(){copyLabText($('uwResultSentence').textContent,'uwLabCopyMsg');};
+$('uwCopyTeacher').onclick=function(){var l=LAB_LESSONS[labStep];copyLabText('USMLEWise presenter notes | '+l.title+'\n\nSAY: '+l.say+'\n\nASK: '+l.ask+'\n\nANSWER: '+l.answer+'\n\nTAKEAWAY: '+l.takeaway,'uwLabCopyMsg');};
+$('uwCopyLesson').onclick=function(){copyLabText('USMLEWise | Six-step run chart teaching script\n\n'+LAB_LESSONS.map(function(l,i){return (i+1)+'. '+l.title+'\nSAY: '+l.say+'\nASK: '+l.ask+'\nANSWER: '+l.answer+'\nTAKEAWAY: '+l.takeaway;}).join('\n\n')+'\n\nLIMITATION: This is simulated data. Document your chosen run-chart rule, and never equate a detected signal with proof of causation.','uwLabCopyMsg');};
+
+/* ---------- station 4 ---------- */
+function weeksDate(w){var d=new Date();d.setDate(d.getDate()+w*7);return d.toLocaleDateString(undefined,{day:"numeric",month:"long",year:"numeric"});}
+function renderAim(e){
+  if(e && e.isTrusted!==false) S.aimTouched=true;
+  var verb=$("uwVerb").value, what=$("uwWhat").value.trim(), where=$("uwWhere").value.trim();
+  var b=+$("uwB").value, t=+$("uwT").value, w=+$("uwWeeks").value;
+  $("uwBO").textContent=b+"%"; $("uwTO").textContent=t+"%"; $("uwWeeksO").textContent=w+" weeks";
+  var lo=Math.min(b,t), hi=Math.max(b,t);
+  $("uwGapFill").style.left=lo+"%"; $("uwGapFill").style.width=(hi-lo)+"%";
+  var diff=t-b; $("uwGapTxt").textContent=(diff>0?"+":"")+diff+" points";
+  $("uwAim").innerHTML="We will "+verb+" <mark>"+esc(what||"[what you measure]")+"</mark> from <mark>"+b+"%</mark> to <mark>"+t+"%</mark> in <mark>"+esc(where||"[where]")+"</mark> by <mark>"+weeksDate(w)+"</mark>.";
+  var msg=$("uwAimMsg"), ok=true, txt;
+  if(!what||!where){ ok=false; txt="Fill in what you measure and where."; }
+  else if(verb==="increase" && t<=b){ ok=false; txt="An increase needs a target above your baseline."; }
+  else if(verb==="reduce" && t>=b){ ok=false; txt="A reduction needs a target below your baseline."; }
+  else if(Math.abs(diff)<10){ ok=false; txt="A gap under 10 points is hard to tell apart from noise. Remember the run chart lab."; }
+  else if(!S.aimTouched){ txt="This is an example aim. Change it to your own project to finish this part."; }
+  else txt="Specific, measurable and time-bound. That is a SQUIRE item 6 aim.";
+  msg.className="uw-msg "+(ok&&S.aimTouched?"is-good":ok?"":"is-bad"); msg.textContent=txt;
+  S.aimOk=ok; refresh();
+}
+["uwVerb","uwWhat","uwWhere","uwB","uwT","uwWeeks"].forEach(function(id){ $(id).addEventListener("input",renderAim); $(id).addEventListener("change",renderAim); });
+[].forEach.call(document.querySelectorAll(".uw-switch"),function(b){
+  b.addEventListener("click",function(){
+    var k=b.getAttribute("data-m"); S.m[k]=!S.m[k]; b.setAttribute("aria-pressed",S.m[k]?"true":"false"); refresh();
+  });
+});
+var mS=null;
+function buildMeasureSorter(){
+  mS=new Sorter({items:MEASURES, bucketDefs:MBUCKETS, tray:$("uwMTray"), buckets:$("uwMBuckets"), check:$("uwMCheck"),
+    onMiss:function(r,t){ var m=$("uwMMsg"); m.className="uw-msg is-bad"; m.textContent=r+" of "+t+" right. Ask: does it describe the patient, the staff step, or a side effect?"; },
+    onDone:function(tries){ var p=tries===1?20:10; addPts(p,"measures"); S.measuresOk=true; var m=$("uwMMsg"); m.className="uw-msg is-good"; m.textContent="All measures sorted. +"+p+" pts. Now try writing your own below."; refresh(); }
+  });
+}
+function ownCount(){ return ["uwOwnOut","uwOwnPro","uwOwnBal"].filter(function(id){return $(id).value.trim().length>=8;}).length; }
+["uwOwnOut","uwOwnPro","uwOwnBal"].forEach(function(id){ $(id).addEventListener("input",function(){
+  if(ownCount()===3 && !S.ownPts){ S.ownPts=true; addPts(15,"own measures"); }
+  refresh();
+});});
+
+/* ---------- station 5 ---------- */
+function renderQuiz(){
+  var box=$("uwQuiz");
+  if(S.quizI>=QUIZ.length){
+    var first=S.quizBest===null;
+    S.quizBest=Math.max(S.quizBest||0,S.quizRight);
+    box.innerHTML='<p class="uw-q-text">'+S.quizRight+' of '+QUIZ.length+' right'+(first?'':' (best: '+S.quizBest+')')+'.</p><p>'+(S.quizRight===QUIZ.length?'Perfect. You can pick a journal like an editor.':'Retry for a perfect score and the Journal matchmaker badge. Retries do not add points.')+'</p>';
+    var again=document.createElement("button"); again.className="uw-btn uw-btn-ghost"; again.textContent="Try the questions again";
+    again.onclick=function(){ S.quizI=0; S.quizRight=0; S.quizRun++; renderQuiz(); };
+    box.appendChild(again); refresh(); return;
+  }
+  var it=QUIZ[S.quizI];
+  box.innerHTML='<div class="uw-q-count">Project '+(S.quizI+1)+' of '+QUIZ.length+(S.quizRun>1?' (retry, no points)':'')+'</div><p class="uw-q-text">'+esc(it.q)+'</p><div class="uw-opts" id="uwOpts"></div><div class="uw-why" id="uwWhy" aria-live="polite"></div>';
+  var opts=$("uwOpts"), answered=false;
+  if(S) refresh();
+  QOPTS.forEach(function(o){
+    var b=document.createElement("button"); b.className="uw-opt"; b.textContent=o.label;
+    b.onclick=function(){
+      if(answered) return; answered=true;
+      var right=o.id===it.a;
+      if(right){ S.quizRight++; if(S.quizRun===1) addPts(10,"right journal"); }
+      [].forEach.call(opts.children,function(c,ix){ if(QOPTS[ix].id===it.a) c.classList.add("is-right"); else if(c===b) c.classList.add("is-wrong"); c.setAttribute("aria-disabled","true"); });
+      var why=$("uwWhy"); why.innerHTML="<p><strong>"+(right?"Right.":"Not quite.")+"</strong> "+esc(it.why)+"</p>";
+      var n=document.createElement("button"); n.className="uw-btn"; n.textContent=S.quizI+1<QUIZ.length?"Next project":"See my score";
+      n.onclick=function(){ S.quizI++; renderQuiz(); };
+      why.appendChild(n); n.focus({preventScroll:true});
+      refresh();
+    };
+    opts.appendChild(b);
+  });
+}
+
+/* ---------- blueprint ---------- */
+function renderBp(){
+  var p=paperById(S.paper);
+  $("bpPaper").textContent=p?p.title+" ("+p.place+")":"Not chosen yet";
+  $("bpSort").textContent=S.sortScore||(sqS&&sqS.placedRight()?sqS.placedRight()+" of 6 right so far":"Not done");
+  var labN=(S.lab.a?1:0)+(S.lab.b?1:0)+(S.lab.c?1:0);
+  $("bpLab").textContent=labN===3?"All three run chart tasks done":labN+" of 3 tasks done";
+  $("bpAim").textContent=S.aimOk&&S.aimTouched?$("uwAim").textContent:"Not written yet";
+  var mc=["matters","measurable","mine"].filter(function(k){return S.m[k];});
+  $("bpM").textContent=mc.length+" of 3"+(mc.length?" ("+mc.join(", ")+")":"");
+  var own=[["Outcome","uwOwnOut"],["Process","uwOwnPro"],["Balancing","uwOwnBal"]].filter(function(x){return $(x[1]).value.trim();}).map(function(x){return x[0]+": "+$(x[1]).value.trim();});
+  $("bpOwn").textContent=own.length?own.join(". "):"Not written yet";
+  $("bpQuiz").textContent=S.quizBest!==null?"Best score "+S.quizBest+" of "+QUIZ.length:(S.quizI?S.quizI+" of "+QUIZ.length+" answered":"Not done");
+  var left=[]; for(var i=0;i<5;i++) if(!S.st[i].done) left.push('<li><a href="#st'+(i+1)+'">Station '+(i+1)+': '+STATIONS[i]+'</a></li>');
+  $("uwBpLeft").innerHTML=left.length?'<p style="margin:.6rem 0 0">Still open. You can do these in any order:</p><ul class="uw-todo-bp">'+left.join("")+'</ul>':"";
+  var bh=""; BADGES.forEach(function(bd){ var on=bd.test(); if(on && !S.badges[bd.id]){ S.badges[bd.id]=true; } bh+='<span class="uw-badge'+(on?' is-on':'')+'">'+esc(bd.label)+'</span>'; });
+  $("uwBadges").innerHTML=bh;
+  var all=S.st.every(function(x){return x.done;});
+  $("uwBp").classList.toggle("is-complete", all);
+  if(all && !S.celebrated){ S.celebrated=true; burst(); }
+}
+function burst(){
+  if(reduced) return;
+  var w=document.createElement("div"); w.className="uw-burst"; var h="";
+  var cols=["var(--uw-navy)","var(--uw-red)","var(--uw-good)"];
+  for(var i=0;i<40;i++){ var a=Math.random()*Math.PI*2, r=120+Math.random()*260;
+    h+='<i style="left:50%;top:40%;background:'+cols[i%3]+';--dx:'+Math.round(Math.cos(a)*r)+'px;--dy:'+Math.round(Math.sin(a)*r+120)+'px;animation-delay:'+(Math.random()*.2).toFixed(2)+'s"></i>'; }
+  w.innerHTML=h; document.body.appendChild(w); setTimeout(function(){ w.remove(); },2200);
+}
+$("uwCopy").addEventListener("click",function(){
+  var lines=["My QI project blueprint (USMLEWise)",""];
+  [].forEach.call(document.querySelectorAll("#uwBp dt"),function(dt){ lines.push(dt.textContent+": "+dt.nextElementSibling.textContent); });
+  var bs=BADGES.filter(function(b){return b.test();}).map(function(b){return b.label;});
+  lines.push("","Badges: "+(bs.length?bs.join(", "):"none yet"),"Points: "+S.pts);
+  var txt=lines.join("\n"), msg=$("uwCopyMsg");
+  function ok(){ msg.className="uw-msg is-good"; msg.textContent="Copied. Paste it into WhatsApp or your notes."; }
+  function fallback(){ var ta=document.createElement("textarea"); ta.value=txt; ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select(); var done=false; try{done=document.execCommand("copy");}catch(e){} document.body.removeChild(ta); if(done) ok(); else { msg.className="uw-msg is-bad"; msg.textContent="Copy is blocked here. Select the blueprint text and copy it by hand."; } }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(ok,fallback); } else fallback();
+});
+$("uwPrint").addEventListener("click",function(){ window.print(); });
+
+
+var nextStation=0;
+function renderJourney(){
+ var fractions=S.st.map(function(st,i){return st.done?1:progress(i);});
+ var count=S.st.filter(function(st){return st.done;}).length;
+ var pct=count===5?100:Math.min(99,Math.round(fractions.reduce(function(a,b){return a+b;},0)*20));
+ $("totalPercent").textContent=pct+"%"; $("stickyPercent").textContent=pct+"%";
+ $("totalFill").style.width=pct+"%";$("stickyFill").style.width=pct+"%";
+ $("totalProgress").setAttribute("aria-valuenow",pct);
+ $("totalProgress").setAttribute("aria-valuetext",pct+" percent; "+count+" of 5 stations complete");
+ $("stationCount").textContent=count+" of 5 stations complete";
+ $("journeyTitle").textContent=count===5?"Your blueprint is ready.":pct?"Keep building your momentum.":"Your next project starts here.";
+ nextStation=S.st.findIndex(function(st){return !st.done;});
+ var tips=["Choose a real QI report to work through.","Connect the paper to six SQUIRE reporting items.","Follow the six guided chart lessons and complete three shift experiments.","Shape your aim, check the 3M filter, and sort your measures.","Practice matching projects to journals."];
+ $("nextTitle").textContent=nextStation<0?"Review your blueprint":STATIONS[nextStation];
+ $("nextDescription").textContent=nextStation<0?"You completed all five stations. Copy or print your project plan.":tips[nextStation];
+ $("continueLearning").innerHTML=(nextStation<0?"View my blueprint":pct?"Continue learning":"Start learning")+' <span aria-hidden="true">↗</span>';
+ if(!$("milestones").children.length) STATIONS.forEach(function(name,i){var b=document.createElement("button");b.className="milestone";b.innerHTML='<span>'+(i+1)+'</span>'+esc(name);b.onclick=function(){visit(i);};$("milestones").appendChild(b);});
+ [].forEach.call($("milestones").children,function(b,i){b.classList.toggle("complete",S.st[i].done);b.querySelector("span").textContent=S.st[i].done?"✓":i+1;b.setAttribute("aria-label",STATIONS[i]+", "+Math.round(fractions[i]*100)+" percent complete");});
+}
+function visit(i){
+ document.querySelectorAll('.uw-st').forEach(function(el,j){el.classList.toggle('focus-active',i===j);});
+ var el=i<0?$("uwBp"):$("st"+(i+1)); el.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
+}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#st"]');if(a){e.preventDefault();visit(Number(a.getAttribute('href').slice(3))-1);}});
+$("continueLearning").onclick=function(){visit(nextStation);};
+$("focusToggle").onclick=function(){var active=this.getAttribute('aria-pressed')!=="true";this.setAttribute('aria-pressed',active);this.textContent=active?'Show all stations':'Focus view';document.body.classList.toggle('focus-mode',active);if(active)visit(nextStation<0?0:nextStation);};
+$("uwRail").addEventListener('click',function(e){var b=e.target.closest('button');if(b)visit(Array.from(this.children).indexOf(b));});
+if('IntersectionObserver' in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){var n=Number(entry.target.id.slice(2))-1;Array.from($("uwRail").children).forEach(function(b,i){b.classList.toggle('is-current',i===n);if(i===n)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -65% 0px'});document.querySelectorAll('.uw-st').forEach(function(el){observer.observe(el);});}
+
+/* ---------- init and reset ---------- */
+function initAll(){
+  document.body.classList.remove("focus-mode"); $("focusToggle").setAttribute("aria-pressed","false"); $("focusToggle").textContent="Focus view"; S=freshState(); seed=7; $("uwPts").textContent="0";
+  $("uwBase").value=35; $("uwLift").value=0; $("uwWeek").value=9; $("uwNoise").value=6;
+  $("uwVerb").value="increase"; $("uwWhat").value="correctly prescribed oxygen"; $("uwWhere").value="Ward 4";
+  $("uwB").value=40; $("uwT").value=80; $("uwWeeks").value=10;
+  ["uwOwnOut","uwOwnPro","uwOwnBal"].forEach(function(id){$(id).value="";});
+  [].forEach.call(document.querySelectorAll(".uw-switch"),function(b){ b.setAttribute("aria-pressed","false"); });
+  $("uwSortHint").textContent="Show the SQUIRE questions";
+  ["uwSortMsg","uwMMsg","uwCopyMsg"].forEach(function(id){ $(id).textContent=""; $(id).className="uw-msg"; });
+  renderPapers(); buildSquireSorter(); buildMeasureSorter();
+  drawChart(); renderAim(); renderQuiz(); refresh();
+}
+$("uwReset").addEventListener("click",function(){ initAll(); window.scrollTo({top:0,behavior:reduced?"auto":"smooth"}); });
+initAll();
+})();
+</script>
+</body>
+</html>
