@@ -432,7 +432,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         }).then(function () {
           stripe = window.Stripe(STRIPE_KEY);
           var elements = stripe.elements({ fonts: [{ cssSrc: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap' }] });
-          cardNumber = elements.create('cardNumber', { style: CARD_STYLE, showIcon: true, placeholder: '1234 1234 1234 1234' });
+          cardNumber = elements.create('cardNumber', { style: CARD_STYLE, showIcon: true, disableLink: true, placeholder: '1234 1234 1234 1234' });
           var parts = [[cardNumber, '#rwCardNumber'], [elements.create('cardExpiry', { style: CARD_STYLE }), '#rwCardExpiry'], [elements.create('cardCvc', { style: CARD_STYLE }), '#rwCardCvc']];
           parts.forEach(function (p) {
             p[0].mount(p[1]);
