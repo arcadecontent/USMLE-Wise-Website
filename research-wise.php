@@ -1,6 +1,6 @@
 <?php
-$pageTitle = "Research Wise — Live Sessions for First-Time Researchers | USMLE Wise";
-$pageDescription = "Your first step into research. Three live Sunday sessions covering case reports and case series, original studies, and systematic reviews and meta-analyses, for $49, one-time.";
+$pageTitle = "Research for USMLE: Start Research With No Experience | Research Wise";
+$pageDescription = "Three live Sundays to your first case report, study or review. Notes, PPTs and a certificate included. Built for medical students and IMGs who have never done research.";
 $canonical = "https://usmlewise.com/research-wise";
 $bodyClass = "msp";
 $stylesheets = [
@@ -13,6 +13,87 @@ $scripts = [
     "/js/research-catalyst.js",
     "/js/awards-carousel.js"
 ];
+
+/* ---------------------------------------------------------------------------
+   FAQ — one source of truth for the accordion and the FAQPage structured data
+   further down, so the two can never drift apart. Answers may carry links.
+   --------------------------------------------------------------------------- */
+$rwFaqs = [
+    [
+        'q' => 'What do I get?',
+        'a' => 'A live 3-hour mentor session every Sunday, structured notes and PPTs, a certificate of completion, a WhatsApp group and a concrete next step.',
+    ],
+    [
+        'q' => 'How long is each session?',
+        'a' => 'Three hours, live, on Sundays at 10 AM EST (19:00 Tbilisi).',
+    ],
+    [
+        'q' => 'Do I need any research experience to join?',
+        'a' => "No. Research Wise is built specifically for medical students and graduates who have never done research and don't know where to start. Come with a topic you're curious about; you don't need a plan yet.",
+    ],
+    [
+        'q' => 'Will I get a certificate?',
+        'a' => 'Yes, when you finish all three sessions.',
+    ],
+    [
+        'q' => 'Does this guarantee a publication?',
+        'a' => 'No. You leave with the skills and a clear next step, and acceptance depends on the journal.',
+    ],
+    [
+        'q' => 'Is research important for USMLE?',
+        'a' => "Research strengthens an IMG's residency application, and starting early gives you more time to finish a project.",
+    ],
+    [
+        'q' => 'How do I publish a case report as a medical student?',
+        'a' => 'You choose a case, outline it and submit it to a journal. Session 1 walks you through it step by step.',
+    ],
+    [
+        'q' => 'What does it cost?',
+        'a' => '$49, one-time, for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.',
+    ],
+    [
+        'q' => 'How is this different from Research Cohort Access?',
+        'a' => 'Research Wise is the live starting point for people who haven\'t done research before. <a href="/research-cohort">Research Cohort Access</a> is a self-paced library for once you already understand the basics and are working on a real project.',
+    ],
+    [
+        'q' => 'Can I join if I already have a research project running?',
+        'a' => "Research Wise is built for people who haven't started yet. If you already have a project running, <a href=\"/research-original\">Original Research</a> or <a href=\"/research-catalyst\">Research Catalyst</a> put a mentor directly on that work.",
+    ],
+];
+
+/* ---------------------------------------------------------------------------
+   Testimonials — layout from Chrisann, content from Barakat.
+
+   Both lists are empty until that content lands, and the whole section is
+   skipped while they are, so the page is safe to ship in the meantime.
+
+   Screenshots: drop the cropped images (no phone numbers, emails or other
+   private details) into /assets/Testimonials/Photos/Research-Wise/ and add a
+   row each. 'cap' is the caption shown under the tile: first name or initials,
+   university or country, and one true line on what the student did.
+
+       ['img' => '/assets/Testimonials/Photos/Research-Wise/01.webp',
+        'alt' => 'WhatsApp message from a Research Wise student',
+        'cap' => 'A. R., Georgia — wrote her first case report'],
+
+   Videos: 30 to 60 seconds, the student's face and voice, captioned, uploaded
+   to YouTube. 'yt' is the 11-character video id, 'thumb' a face thumbnail.
+
+       ['yt' => 'xxxxxxxxxxx', 'thumb' => '/assets/.../01-face.webp',
+        'name' => 'A. R.', 'line' => 'Wrote her first case report'],
+
+   Consent: every testimonial here needs a written message from the student
+   allowing their words, name or initials and photo on the page, kept in the
+   shared folder. Remove a testimonial the same day consent is withdrawn.
+   --------------------------------------------------------------------------- */
+$rwShots  = [];
+$rwVideos = [];
+
+/* Award carousel renders nothing when the CRM has no published awards; this
+   keeps the "Reserve your spot" button that follows it from being stranded. */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/data/posts.php';
+$rwHasAwards = !empty(usmlewise_crm_award_posts());
+
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
 <main>
@@ -21,7 +102,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="msp-hero" aria-labelledby="heroTitle">
         <div class="msp-wrap msp-hero__grid">
           <div class="msp-hero__copy reveal">
-            <span class="rc-hero__badge">Live &middot; 3 Sunday Sessions</span>
+            <span class="rc-hero__badge">Live &middot; 3 Sunday Sessions &middot; First 100 members at a special price</span>
             <h1 id="heroTitle" class="msp-h1">Never done research?<br>This is <span class="msp-h1__accent">where you start.</span></h1>
             <p class="msp-lede">
               Three live Sunday sessions for medical students and graduates who
@@ -29,6 +110,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               reports and case series, original studies, and systematic reviews
               and meta-analyses. $49, one-time, for all three.
             </p>
+            <p class="rw-hero-meta">Live mentor sessions every Sunday &middot; Structured notes and PPTs &middot; Certificate of completion</p>
             <div class="msp-cta-row">
               <a
                 class="btn btn--primary btn--xl"
@@ -70,12 +152,59 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
+      <!-- ============== WHAT YOU GET ============== -->
+      <section class="msp-section rw-get" id="what-you-get" aria-labelledby="getTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Included with your spot</span>
+            <h2 id="getTitle" class="msp-h2">What you get.</h2>
+          </div>
+
+          <div class="rw-get__grid">
+            <div class="rw-get-card reveal">
+              <span class="rw-get-card__icon"><i data-lucide="video" width="18" height="18"></i></span>
+              <h3 class="rw-get-card__head">Live 3-hour mentor session</h3>
+              <p>Every Sunday, with a mentor who has done the work.</p>
+            </div>
+            <div class="rw-get-card reveal">
+              <span class="rw-get-card__icon"><i data-lucide="file-text" width="18" height="18"></i></span>
+              <h3 class="rw-get-card__head">Structured notes</h3>
+              <p>Clear notes for every session to come back to.</p>
+            </div>
+            <div class="rw-get-card reveal">
+              <span class="rw-get-card__icon"><i data-lucide="presentation" width="18" height="18"></i></span>
+              <h3 class="rw-get-card__head">Structured PPTs</h3>
+              <p>The slides from every session.</p>
+            </div>
+            <div class="rw-get-card reveal">
+              <span class="rw-get-card__icon"><i data-lucide="award" width="18" height="18"></i></span>
+              <h3 class="rw-get-card__head">Certificate of completion</h3>
+              <p>For finishing all three sessions.</p>
+            </div>
+            <div class="rw-get-card reveal">
+              <span class="rw-get-card__icon"><i data-lucide="message-circle" width="18" height="18"></i></span>
+              <h3 class="rw-get-card__head">WhatsApp group</h3>
+              <p>Ask questions and stay in touch with other first-time researchers.</p>
+            </div>
+            <div class="rw-get-card reveal">
+              <span class="rw-get-card__icon"><i data-lucide="target" width="18" height="18"></i></span>
+              <h3 class="rw-get-card__head">A concrete next step</h3>
+              <p>You leave knowing what to do next toward your first publication.</p>
+            </div>
+          </div>
+
+          <div class="rw-cta-row reveal">
+            <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
+          </div>
+        </div>
+      </section>
+
       <!-- ============== CURRICULUM: THREE LIVE SESSIONS ============== -->
       <section class="msp-section rc-curriculum" id="curriculum" aria-labelledby="curriculumTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">
             <span class="msp-eyebrow">Live &middot; 3 Sunday sessions</span>
-            <h2 id="curriculumTitle" class="msp-h2">Everything you need to start, in three sessions.</h2>
+            <h2 id="curriculumTitle" class="msp-h2">How to do research for USMLE: the three Sundays.</h2>
             <p class="msp-sub">Each session is taught live by a mentor who has done it, built to leave you with a concrete next step toward your first publication.</p>
           </div>
 
@@ -86,46 +215,185 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="file-text" width="18" height="18"></i>
                 </div>
+                <span class="rw-session__meta">15 Nov &middot; 3 hours, live</span>
                 <h3 class="rc-pub-type__head">Case Reports &amp; Case Series</h3>
                 <p>With Shivani Ravipati. Learn to spot a publishable case, build it from what you already have access to, and get it ready to submit.</p>
+                <p class="rw-session__leave"><strong>You leave with:</strong> a case chosen and outlined for submission.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--emerald">
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="flask-conical" width="18" height="18"></i>
                 </div>
+                <span class="rw-session__meta">22 Nov &middot; 3 hours, live</span>
                 <h3 class="rc-pub-type__head">Original Studies</h3>
                 <p>With Muhammad Ahmad Barakat. Design and run a first original study, including how to work with the data you can realistically access as a student.</p>
+                <p class="rw-session__leave"><strong>You leave with:</strong> a first study design you can run with data you can reach.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--violet">
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="list-checks" width="18" height="18"></i>
                 </div>
+                <span class="rw-session__meta">29 Nov &middot; 3 hours, live</span>
                 <h3 class="rc-pub-type__head">Systematic Reviews &amp; Meta-Analyses</h3>
                 <p>With Muhammad Ahmad Barakat. Pool existing evidence into a rigorous review, a strong first publication that needs no new data collection.</p>
+                <p class="rw-session__leave"><strong>You leave with:</strong> a review question and a search plan, with no new data needed.</p>
               </div>
             </div>
             <p class="rw-next-note">Sunday, November 15, 22, and 29. Enrollment is open to everyone.</p>
           </div>
 
-          <!-- Price -->
-          <div class="rc-payment reveal">
-            <div class="rc-payment__inner">
-              <div>
-                <span class="rc-sec-label">Investment</span>
-                <div class="rc-payment__price">$49</div>
-                <p class="rc-payment__note">One-time payment for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
-              </div>
-              <a
-                class="btn btn--primary"
-                href="#reserve"
-                data-rw-reserve
-                >Reserve Your Spot</a
-              >
+        </div>
+      </section>
+
+      <!-- ============== WHO'S TEACHING: HOST + MENTORS ============== -->
+      <section class="msp-section rc-mentors" id="mentors" aria-labelledby="mentorsTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal" style="text-align:center;margin-inline:auto">
+            <span class="msp-eyebrow" style="justify-content:center">Who's teaching</span>
+            <h2 id="mentorsTitle" class="msp-h2" style="margin-inline:auto">Research for USMLE and residency, taught by the people who publish.</h2>
+          </div>
+
+          <!-- Host -->
+          <div class="rw-host reveal">
+            <div class="rw-host__photo">
+              <img src="/assets/Photos/Team-Members/Kaushik-Sreeram-Headshot.webp"
+                   alt="Dr. Kaushik Sreerama Reddy, Co-Founder and Chief Scientific Officer at USMLE Wise"
+                   width="320" height="320" loading="lazy" decoding="async" />
+            </div>
+            <div class="rw-host__name">Dr. Kaushik Sreerama Reddy, MBBS</div>
+            <div class="rw-host__role">Co-Founder &amp; Chief Scientific Officer, USMLE Wise</div>
+
+            <ul class="rw-host__creds">
+              <li>
+                <span class="rw-host__cred-role">Co-Founder &amp; Chief Scientific Officer</span>
+                <span class="rw-host__cred-org">USMLE Wise</span>
+              </li>
+              <li>
+                <span class="rw-host__cred-role">CRIST Project Lead</span>
+                <span class="rw-host__cred-org">USMLE Wise Research</span>
+              </li>
+              <li>
+                <span class="rw-host__cred-role">Lead Investigator</span>
+                <span class="rw-host__cred-org">Myositis Clinical Trials Consortium</span>
+              </li>
+              <li>
+                <span class="rw-host__cred-role">Study Lead</span>
+                <span class="rw-host__cred-org">MyPACER Study</span>
+              </li>
+            </ul>
+
+            <blockquote class="rw-host__note">
+              <p>Most students are told to do research and never shown where to begin. I built Research Wise for that moment. Over three Sundays we take you from a blank page to a case report, a study design or a review question, and you leave knowing exactly what to do next. If you have never done research, this is the place to start.</p>
+            </blockquote>
+
+            <div class="rw-cta-row">
+              <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
             </div>
           </div>
 
+          <!-- The mentors teaching the sessions -->
+          <h3 class="rw-mtr-sub reveal">Teaching the sessions</h3>
+          <div class="rc-mtr-list">
+
+            <article class="rc-mtr reveal">
+              <div class="rc-mtr__photo">
+                <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani Ravipati, Research and Publications Mentor at USMLE Wise" loading="lazy" decoding="async" />
+              </div>
+              <div class="rc-mtr__body">
+                <div class="rc-mtr__header">
+                  <span class="rc-mtr__role">Beginner Series &middot; Case Reports &amp; Case Series</span>
+                  <h4 class="rc-mtr__name">Shivani Ravipati</h4>
+                  <span class="rc-mtr__prog">Research &amp; Publications Mentor</span>
+                </div>
+                <ul class="rc-mtr__creds">
+                  <li>5 first-author publications &middot; 1 AHA poster presentation &middot; 8+ co-authored papers</li>
+                  <li>IRB-approved clinical trial lead for PRP research</li>
+                  <li>Actively guiding IMGs through research, steps and ERAS applications</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="rc-mtr reveal">
+              <div class="rc-mtr__photo">
+                <img src="/assets/Photos/Team-Members/Muhammad-Barakat-Headshot.png" alt="Muhammad Ahmad Barakat, Lead Principal Research Fellow at USMLE Wise" loading="lazy" decoding="async" />
+              </div>
+              <div class="rc-mtr__body">
+                <div class="rc-mtr__header">
+                  <span class="rc-mtr__role">Beginner Series &middot; Original Studies, Reviews &amp; Meta-Analyses</span>
+                  <h4 class="rc-mtr__name">Muhammad Ahmad Barakat</h4>
+                  <span class="rc-mtr__prog">Medical Student, Caucasus International University</span>
+                </div>
+                <ul class="rc-mtr__creds">
+                  <li>7 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
+                  <li>200+ students guided to publication across MEDICA SRA &amp; MEDMARK MRMS programs</li>
+                  <li>APA PsychSIGN International Student Liaison Research Chair 2026&ndash;2027</li>
+                </ul>
+              </div>
+            </article>
+
+          </div>
         </div>
       </section>
+
+      <!-- ============== RECOGNITION ============== -->
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
+      <?php if ($rwHasAwards): ?>
+      <div class="msp-wrap">
+        <div class="rw-cta-row rw-cta-row--tight reveal">
+          <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
+        </div>
+      </div>
+      <?php endif; ?>
+
+      <?php if ($rwShots || $rwVideos): ?>
+      <!-- ============== TESTIMONIALS ============== -->
+      <section class="msp-section rw-tst" id="testimonials" aria-labelledby="tstTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal" style="text-align:center;margin-inline:auto">
+            <span class="msp-eyebrow" style="justify-content:center">Student stories</span>
+            <h2 id="tstTitle" class="msp-h2" style="margin-inline:auto">Research for IMGs: what our students say.</h2>
+            <p class="rw-tst__by">Mentored by Dr. Kaushik Sreerama Reddy.</p>
+          </div>
+
+          <?php if ($rwShots): ?>
+          <ul class="rw-tst__wall reveal">
+            <?php foreach ($rwShots as $shot): ?>
+            <li class="rw-tst__tile">
+              <img src="<?php echo htmlspecialchars($shot['img']); ?>"
+                   alt="<?php echo htmlspecialchars($shot['alt']); ?>"
+                   loading="lazy" decoding="async" />
+              <p class="rw-tst__cap"><?php echo htmlspecialchars($shot['cap']); ?></p>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+          <?php endif; ?>
+
+          <?php if ($rwVideos): ?>
+          <h3 class="rw-tst__vid-head reveal">Hear it from them</h3>
+          <ul class="rw-tst__vids reveal">
+            <?php foreach ($rwVideos as $vid): ?>
+            <li class="rw-vid">
+              <button type="button" class="rw-vid__play" data-rw-yt="<?php echo htmlspecialchars($vid['yt']); ?>"
+                      aria-label="Play the video testimonial from <?php echo htmlspecialchars($vid['name']); ?>">
+                <img src="<?php echo htmlspecialchars($vid['thumb']); ?>"
+                     alt="<?php echo htmlspecialchars($vid['name']); ?>"
+                     loading="lazy" decoding="async" />
+                <span class="rw-vid__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </button>
+              <p class="rw-vid__cap"><strong><?php echo htmlspecialchars($vid['name']); ?></strong><?php echo htmlspecialchars($vid['line']); ?></p>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+          <?php endif; ?>
+
+          <div class="rw-cta-row reveal">
+            <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
+          </div>
+        </div>
+      </section>
+      <?php endif; ?>
 
       <!-- ============== WHO IT'S FOR ============== -->
       <section class="msp-section rc-for-whom" aria-labelledby="forWhomTitle">
@@ -135,7 +403,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <span class="msp-eyebrow">Built for</span>
               <h2 id="forWhomTitle" class="msp-h2">Your very first step into research, not your tenth.</h2>
               <p class="msp-lede">
-                Research Wise is for people who haven't started yet. If you already
+                Research opportunities for IMGs are hard to take up when you have
+                never published, so Research Wise is the on-ramp. If you already
                 have a project running, our mentored programs like
                 <a href="/research-original">Original Research</a> or
                 <a href="/research-catalyst">Research Catalyst</a> are built for that stage.
@@ -163,76 +432,36 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
-      <!-- ============== MENTORS ============== -->
-      <section class="msp-section rc-mentors" id="mentors" aria-labelledby="mentorsTitle">
+      <!-- ============== INVESTMENT ============== -->
+      <section class="msp-section rw-invest" id="investment" aria-labelledby="investTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">
-            <span class="msp-eyebrow">Who's teaching</span>
-            <h2 id="mentorsTitle" class="msp-h2">Researchers who've published. Now helping you do the same.</h2>
+            <span class="msp-eyebrow">Investment</span>
+            <h2 id="investTitle" class="msp-h2">Our first 100 members get a special price: $49, one time.</h2>
+            <p class="msp-sub">We want as many first-time researchers in the room as we can, so we are giving back to the community.</p>
           </div>
-          <div class="rc-mtr-list">
 
-            <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo">
-                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreeram" loading="lazy" decoding="async" />
+          <div class="rc-payment reveal">
+            <div class="rw-invest__inner">
+              <div class="rw-invest__price-col">
+                <div class="rc-payment__price">$49</div>
+                <p class="rc-payment__note">One-time payment for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+                <a class="btn btn--primary btn--lg rw-invest__btn" href="#reserve" data-rw-reserve>Reserve your spot</a>
               </div>
-              <div class="rc-mtr__body">
-                <div class="rc-mtr__header">
-                  <span class="rc-mtr__role">Research Head</span>
-                  <h3 class="rc-mtr__name">Dr. Kaushik Sreerama Reddy, MBBS</h3>
-                  <span class="rc-mtr__prog">Chief Scientific Officer &amp; CRIST Project Lead &middot; USMLE Wise Research</span>
-                </div>
-                <ul class="rc-mtr__creds">
-                  <li>Chief Scientific Officer &amp; CRIST Project Lead, USMLE Wise Research</li>
-                  <li>Lead Investigator, Myositis Clinical Trials Consortium</li>
-                  <li>Study Lead, MyPACER Study</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo">
-                <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani Ravipati" loading="lazy" decoding="async" />
-              </div>
-              <div class="rc-mtr__body">
-                <div class="rc-mtr__header">
-                  <span class="rc-mtr__role">Beginner Series &middot; Case Reports &amp; Case Series</span>
-                  <h3 class="rc-mtr__name">Shivani Ravipati</h3>
-                  <span class="rc-mtr__prog">Research &amp; Publications Mentor</span>
-                </div>
-                <ul class="rc-mtr__creds">
-                  <li>5 first-author publications &middot; 1 AHA poster presentation &middot; 8+ co-authored papers</li>
-                  <li>IRB-approved clinical trial lead for PRP research</li>
-                  <li>Actively guiding IMGs through research, steps and ERAS applications</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo">
-                <img src="/assets/Photos/Team-Members/Muhammad-Barakat-Headshot.png" alt="Muhammad Ahmad Barakat" loading="lazy" decoding="async" />
-              </div>
-              <div class="rc-mtr__body">
-                <div class="rc-mtr__header">
-                  <span class="rc-mtr__role">Beginner Series &middot; Original Studies, Reviews &amp; Meta-Analyses</span>
-                  <h3 class="rc-mtr__name">Muhammad Ahmad Barakat</h3>
-                  <span class="rc-mtr__prog">Medical Student, Caucasus International University</span>
-                </div>
-                <ul class="rc-mtr__creds">
-                  <li>7 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
-                  <li>200+ students guided to publication across MEDICA SRA &amp; MEDMARK MRMS programs</li>
-                  <li>APA PsychSIGN International Student Liaison Research Chair 2026&ndash;2027</li>
-                </ul>
-              </div>
-            </article>
-
+              <ul class="rw-ticks">
+                <li>Three live 3-hour sessions</li>
+                <li>Structured notes</li>
+                <li>Structured PPTs</li>
+                <li>Certificate of completion</li>
+                <li>WhatsApp group</li>
+                <li>A concrete next step</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- ============== FAQ ============== -->
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
-
       <section class="msp-section rc-faq" id="faq" aria-labelledby="faqTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">
@@ -240,41 +469,37 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
           </div>
           <div class="accordion accordion--faq rc-faq__accordion reveal">
+            <?php foreach ($rwFaqs as $faq): ?>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
-                Do I need any research experience to join?
+                <?php echo $faq['q']; ?>
               </button>
               <div class="accordion__body">
-                No. Research Wise is built specifically for medical students and graduates who have never done research and don't know where to start. Come with a topic you're curious about; you don't need a plan yet.
+                <?php echo $faq['a']; ?>
               </div>
             </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                What does it cost?
-              </button>
-              <div class="accordion__body">
-                $49, one-time, for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                How is this different from Research Cohort Access?
-              </button>
-              <div class="accordion__body">
-                Research Wise is the live starting point for people who haven't done research before. <a href="/research-cohort">Research Cohort Access</a> is a self-paced library for once you already understand the basics and are working on a real project.
-              </div>
-            </div>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                Can I join if I already have a research project running?
-              </button>
-              <div class="accordion__body">
-                Research Wise is built for people who haven't started yet. If you already have a project running, <a href="/research-original">Original Research</a> or <a href="/research-catalyst">Research Catalyst</a> put a mentor directly on that work.
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </section>
+      <script type="application/ld+json">
+      <?php
+      echo json_encode([
+          '@context'   => 'https://schema.org',
+          '@type'      => 'FAQPage',
+          'mainEntity' => array_map(static function (array $faq): array {
+              $plain = static function (string $html): string {
+                  return trim(preg_replace('/\s+/', ' ', strip_tags(html_entity_decode($html, ENT_QUOTES, 'UTF-8'))));
+              };
+              return [
+                  '@type'          => 'Question',
+                  'name'           => $plain($faq['q']),
+                  'acceptedAnswer' => ['@type' => 'Answer', 'text' => $plain($faq['a'])],
+              ];
+          }, $rwFaqs),
+      ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+      ?>
+      </script>
 
       <!-- ============== FINAL CTA ============== -->
       <section class="rc-cta-wrap">
@@ -299,6 +524,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </section>
 
     </main>
+
+    <!-- ============== MOBILE STICKY CTA ============== -->
+    <div class="rw-sticky" id="rwSticky">
+      <a class="btn btn--primary" href="#reserve" data-rw-reserve>Reserve your spot &middot; $49</a>
+    </div>
 
     <!-- ============== RESERVE POPUP (on-page payment: our fields + Stripe's card field, via mastery.usmlewise.com) ============== -->
     <div class="rw-pay" id="rwPay" role="dialog" aria-modal="true" aria-labelledby="rwPayTitle" hidden>
@@ -521,6 +751,32 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       document.querySelectorAll('[data-rw-reserve]').forEach(function (a) { a.addEventListener('click', openDialog); });
       dlg.querySelectorAll('[data-rw-close]').forEach(function (el) { el.addEventListener('click', closeDialog); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden) closeDialog(); });
+
+      // Mobile sticky CTA: slides up once the hero's own buttons have scrolled
+      // past, so it never sits on top of the button it duplicates.
+      var sticky = document.getElementById('rwSticky');
+      var heroCta = document.querySelector('.msp-hero .msp-cta-row');
+      if (sticky && heroCta && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          var en = entries[0];
+          sticky.classList.toggle('is-on', !en.isIntersecting && en.boundingClientRect.top < 0);
+        }, { threshold: 0 }).observe(heroCta);
+      } else if (sticky) {
+        sticky.classList.add('is-on');
+      }
+
+      // Video testimonials: the YouTube player only loads on click.
+      document.querySelectorAll('[data-rw-yt]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var frame = document.createElement('iframe');
+          frame.src = 'https://www.youtube-nocookie.com/embed/' + btn.getAttribute('data-rw-yt') + '?autoplay=1&rel=0';
+          frame.title = btn.getAttribute('aria-label') || 'Video testimonial';
+          frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+          frame.allowFullscreen = true;
+          frame.className = 'rw-vid__frame';
+          btn.replaceWith(frame);
+        });
+      });
 
       // Back from a bank's verification page.
       var params = new URLSearchParams(location.search);

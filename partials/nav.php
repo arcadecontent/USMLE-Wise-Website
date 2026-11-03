@@ -71,13 +71,9 @@
             <span class="msp-nav__dd-name">Research Catalyst</span>
             <span class="msp-nav__dd-meta">Flagship &middot; 12-month program</span>
           </a>
-          <a href="/research-original" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Original Research</span>
-            <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
-          </a>
           <a href="/research-coauthor" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Get Published</span>
-            <span class="msp-nav__dd-meta">Co-Author to Lead Author &middot; $300&ndash;$1,000</span>
+            <span class="msp-nav__dd-meta">4 packages &middot; $300&ndash;$1,000</span>
           </a>
           <a href="/research-junior-scientist" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Junior Scientist Program</span>

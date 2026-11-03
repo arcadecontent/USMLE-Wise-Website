@@ -707,7 +707,9 @@ function usmlewise_team_members(): array
             'photo'     => '/assets/Photos/Team-Members/Harshitha.webp',
             'card_line' => 'Keeps the administrative backbone of USMLE Wise running',
             'bio'       => [
-                "Harshitha is Admin at USMLE Wise, keeping the administrative backbone of the company running: shared calendars and scheduling, general inboxes, internal documents and records, trackers, CRM data cleanup, and SOP upkeep, so other teams can focus on their core work.",
+                "Harshitha serves as the Administrative Operations Coordinator at USMLE Wise, ensuring the smooth and efficient functioning of day-to-day business operations.",
+                "She oversees shared calendars and scheduling, manages general inboxes, maintains internal documentation and records, organizes operational trackers, ensures CRM data accuracy, and keeps SOPs updated.",
+                "By streamlining administrative processes and maintaining operational consistency, she enables other departments to focus on their core responsibilities while ensuring the organization stays structured, coordinated, and productive.",
             ],
             'affiliations' => [
                 ['role' => 'Admin', 'org' => 'USMLE Wise'],
@@ -722,7 +724,9 @@ function usmlewise_team_members(): array
             'photo'     => '/assets/Photos/Team-Members/Divya.webp',
             'card_line' => 'Keeps the administrative backbone of USMLE Wise running',
             'bio'       => [
-                "Divya is Admin at USMLE Wise, keeping the administrative backbone of the company running: shared calendars and scheduling, general inboxes, internal documents and records, trackers, CRM data cleanup, and SOP upkeep, so other teams can focus on their core work.",
+                "Divya serves as the Administrative Operations Coordinator at USMLE Wise, ensuring the smooth and efficient functioning of day-to-day business operations.",
+                "She oversees shared calendars and scheduling, manages general inboxes, maintains internal documentation and records, organizes operational trackers, ensures CRM data accuracy, and keeps SOPs updated.",
+                "By streamlining administrative processes and maintaining operational consistency, she enables other departments to focus on their core responsibilities while ensuring the organization stays structured, coordinated, and productive.",
             ],
             'affiliations' => [
                 ['role' => 'Admin', 'org' => 'USMLE Wise'],

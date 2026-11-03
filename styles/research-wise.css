@@ -3,6 +3,86 @@
    Page-specific additions on top of research-catalyst.css
    ============================================================ */
 
+/* ---- Hero: the one-line summary under the description ---- */
+.rw-hero-meta {
+  /* .msp-lede above already carries 32px of bottom margin; pull back to a
+     tighter 16px so the line reads as part of the same block. */
+  margin: -16px 0 var(--space-6);
+  font-size: var(--fs-14-5);
+  font-weight: 500;
+  color: var(--uw-ink-700);
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+/* ---- Shared: a centered button row under a section ---- */
+.rw-cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(28px, 3.5vw, 44px);
+}
+/* After the awards carousel, which already ends on a full section's padding:
+   pull the button back up into it instead of adding a second gap. */
+.rw-cta-row--tight { margin: clamp(-80px, -5vw, -36px) 0 clamp(28px, 3.5vw, 48px); }
+
+/* ---- WHAT YOU GET ---- */
+.rw-get__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.rw-get-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--uw-bg);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  padding: clamp(22px, 2.5vw, 32px);
+  transition: box-shadow var(--dur-med) var(--ease-out),
+              transform var(--dur-med) var(--ease-out),
+              border-color var(--dur-med) var(--ease-out);
+}
+.rw-get-card:hover {
+  border-color: oklch(88% 0.08 255);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.rw-get-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--uw-blue-50);
+  color: var(--uw-blue-600);
+  border: 1px solid oklch(88% 0.08 255);
+  margin-bottom: var(--space-2);
+}
+.rw-get-card__head {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  margin: 0;
+}
+.rw-get-card p {
+  font-size: var(--fs-14);
+  color: var(--uw-ink-600);
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 860px) {
+  .rw-get__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .rw-get__grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rw-get-card:hover { transform: none; }
+}
+
 /* ---- Note under the sessions grid ---- */
 .rw-next-note {
   margin-top: clamp(16px, 2vw, 24px);
@@ -11,6 +91,24 @@
   line-height: 1.6;
   text-align: center;
 }
+
+/* ---- Session cards: date + length, and the takeaway line ---- */
+.rw-session__meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+}
+.rw-session__leave {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid oklch(88% 0.08 255);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--uw-ink-700);
+}
+.rw-session__leave strong { font-weight: 600; color: var(--uw-ink-900); }
 
 /* ---- Session cards: light blue by default, dark blue on hover ----
    Overrides research-catalyst.css's --blue/--emerald/--violet tints;
@@ -32,8 +130,14 @@
               border-color var(--dur-med) var(--ease-out);
 }
 #curriculum .rc-pub-type__head,
-#curriculum .rc-pub-type p {
+#curriculum .rc-pub-type p,
+#curriculum .rw-session__meta,
+#curriculum .rw-session__leave strong {
   transition: color var(--dur-med) var(--ease-out);
+}
+#curriculum .rw-session__leave {
+  transition: color var(--dur-med) var(--ease-out),
+              border-color var(--dur-med) var(--ease-out);
 }
 #curriculum .rc-pub-type:hover {
   background: var(--uw-blue-600);
@@ -47,10 +151,292 @@
   border-color: #fff;
 }
 #curriculum .rc-pub-type:hover .rc-pub-type__head,
-#curriculum .rc-pub-type:hover p {
+#curriculum .rc-pub-type:hover p,
+#curriculum .rc-pub-type:hover .rw-session__leave strong {
   color: #fff;
 }
+#curriculum .rc-pub-type:hover .rw-session__meta { color: rgba(255,255,255,.65); }
+#curriculum .rc-pub-type:hover .rw-session__leave { border-top-color: rgba(255,255,255,.22); }
 @media (prefers-reduced-motion: reduce) {
   #curriculum .rc-pub-type { transition: background var(--dur-med) var(--ease-out), border-color var(--dur-med) var(--ease-out); }
   #curriculum .rc-pub-type:hover { transform: none; }
+}
+
+/* ---- HOST ----
+   Mirrors the Step 1 Crash Course instructor block: photo on top, name
+   beneath, credential figures in a row, then the first-person note. */
+.rw-host {
+  max-width: 820px;
+  margin: 0 auto clamp(56px, 7vw, 88px);
+  text-align: center;
+}
+.rw-host__photo {
+  width: clamp(160px, 20vw, 208px);
+  margin: 0 auto;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--uw-border);
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 1 / 1;
+}
+.rw-host__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.rw-host__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  letter-spacing: -0.015em;
+  margin-top: var(--space-5);
+}
+.rw-host__role {
+  font-size: var(--fs-14);
+  color: var(--uw-ink-500);
+  margin-top: 4px;
+}
+.rw-host__creds {
+  list-style: none;
+  margin: clamp(24px, 3vw, 32px) 0 0;
+  padding: clamp(18px, 2vw, 22px) 0;
+  border-block: 1px solid var(--uw-border);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4) clamp(16px, 2.5vw, 32px);
+}
+.rw-host__creds li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+.rw-host__creds li + li { border-left: 1px solid var(--uw-border); }
+.rw-host__cred-role {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+  line-height: 1.35;
+}
+.rw-host__cred-org {
+  font-size: 12.5px;
+  color: var(--uw-ink-500);
+  line-height: 1.4;
+}
+.rw-host__note {
+  margin: clamp(24px, 3vw, 32px) 0 0;
+  padding: 0;
+  border: 0;
+  text-align: left;
+}
+.rw-host__note p {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.6;
+  color: var(--uw-ink-700);
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .rw-host__creds { grid-template-columns: repeat(2, 1fr); }
+  .rw-host__creds li + li { border-left: 0; }
+  .rw-host__creds li:nth-child(even) { border-left: 1px solid var(--uw-border); }
+}
+@media (max-width: 420px) {
+  .rw-host__creds { grid-template-columns: 1fr; }
+  .rw-host__creds li:nth-child(even) { border-left: 0; }
+}
+
+/* Sub-head above the two session mentors */
+.rw-mtr-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+  margin: 0 0 var(--space-6);
+  text-align: center;
+}
+
+/* ---- TESTIMONIALS ---- */
+.rw-tst { background: var(--uw-ink-75); }
+.rw-tst__by {
+  font-size: var(--fs-14-5);
+  font-weight: 500;
+  color: var(--uw-ink-600);
+  margin: 0;
+}
+.rw-tst__wall {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 3 260px;
+  column-gap: clamp(12px, 1.5vw, 20px);
+}
+.rw-tst__tile {
+  break-inside: avoid;
+  margin-bottom: clamp(12px, 1.5vw, 20px);
+  background: var(--uw-bg);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.rw-tst__tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid var(--uw-border);
+}
+.rw-tst__cap {
+  margin: 0;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--uw-ink-600);
+}
+.rw-tst__vid-head {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--uw-ink-900);
+  letter-spacing: -0.015em;
+  margin: clamp(40px, 5vw, 64px) 0 var(--space-6);
+  text-align: center;
+}
+.rw-tst__vids {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.rw-vid { display: flex; flex-direction: column; gap: 10px; }
+.rw-vid__play {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--uw-ink-100);
+  aspect-ratio: 16 / 10;
+  cursor: pointer;
+}
+.rw-vid__play img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rw-vid__icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--uw-blue-500);
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.rw-vid__play:hover .rw-vid__icon { transform: scale(1.08); }
+.rw-vid__frame {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-lg);
+  display: block;
+}
+.rw-vid__cap {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--uw-ink-600);
+}
+.rw-vid__cap strong {
+  display: block;
+  font-weight: 600;
+  color: var(--uw-ink-900);
+}
+@media (max-width: 720px) {
+  .rw-tst__vids { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rw-vid__play:hover .rw-vid__icon { transform: none; }
+}
+
+/* ---- INVESTMENT ---- */
+.rw-invest__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+.rw-invest__btn { margin-top: var(--space-6); }
+.rw-ticks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.rw-ticks li {
+  position: relative;
+  padding-left: 30px;
+  font-size: var(--fs-base);
+  color: var(--uw-ink-700);
+  line-height: 1.45;
+}
+.rw-ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--uw-blue-50) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232c3386' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
+  border: 1px solid oklch(88% 0.08 255);
+  box-sizing: border-box;
+}
+@media (max-width: 720px) {
+  .rw-invest__inner { grid-template-columns: 1fr; }
+}
+
+/* ---- MOBILE STICKY CTA ----
+   Sits directly above the WhatsApp bar from partials/whatsapp-float.php
+   (36px tall at this breakpoint), which is why the offsets below stack on
+   top of it rather than starting at the viewport edge. */
+.rw-sticky { display: none; }
+@media (max-width: 640px) {
+  .rw-sticky {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(36px + env(safe-area-inset-bottom, 0px));
+    z-index: 89;
+    padding: 10px 16px;
+    background: var(--uw-bg);
+    border-top: 1px solid var(--uw-border);
+    box-shadow: 0 -6px 20px rgba(20, 21, 28, 0.10);
+    transform: translateY(130%);
+    transition: transform var(--dur-med) var(--ease-out);
+  }
+  .rw-sticky.is-on { transform: none; }
+  .rw-sticky .btn { width: 100%; justify-content: center; }
+  /* whatsapp-float.php already pads the body for its own bar; the Reserve bar
+     sits on top of that, so the extra clearance goes on the footer rather than
+     the body, which would show as a pale strip below the dark footer.
+     Scoped under body.msp to outrank blog.css, which redefines .msp-foot's
+     padding-block and is loaded after this file. */
+  body.msp .msp-foot { padding-bottom: calc(clamp(40px, 5vw, 64px) + 66px); }
+  /* The checkout popup locks scrolling; the bar behind it would just be noise. */
+  body.rw-pay-open .rw-sticky { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rw-sticky { transition: none; }
 }

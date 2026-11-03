@@ -24,8 +24,7 @@
           <span class="msp-foot__nav-label">Research</span>
           <a href="/research">Research Packages</a>
           <a href="/research-catalyst">Research Catalyst</a>
-          <a href="/research-original">Original Research</a>
-          <a href="/research-coauthor">Get Published (Co-Author to Lead Author)</a>
+          <a href="/research-coauthor">Get Published (Co-Author, Lead Author &amp; Original Research)</a>
           <a href="/research-junior-scientist">Junior Scientist Program</a>
           <a href="/research-j1-fellowship">J-1 Research Fellowship Placement</a>
           <a href="/research-networking">Strategic Networking Program</a>

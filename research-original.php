@@ -21,10 +21,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="msp-hero" aria-labelledby="heroTitle">
         <div class="msp-wrap msp-hero__grid">
           <div class="msp-hero__copy reveal">
+            <span class="msp-eyebrow">A Get Published package</span>
             <h1 id="heroTitle" class="msp-h1">One project. One mentor.<br><span class="msp-h1__accent">One publication.</span></h1>
             <p class="msp-lede">
               Full mentor guidance through a single case report or original study,
-              from the first concept call to an accepted manuscript.
+              from the first concept call to an accepted manuscript. The
+              first-author option inside
+              <a href="/research-coauthor">Get Published</a>.
             </p>
             <div class="msp-cta-row">
               <a
@@ -228,7 +231,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div>
                 <span class="rc-sec-label">Investment</span>
                 <div class="rc-payment__price">$699</div>
-                <p class="rc-payment__note">Covers 1:1 mentor sessions, topic and study design, ethics guidance, manuscript development, journal selection, and submission support for one project. Journal fees, if any, are separate. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+                <p class="rc-payment__note">Covers 1:1 mentor sessions, topic and study design, ethics guidance, manuscript development, journal selection, and submission support for one project. Journal fees, if any, are separate. This is one of four <a href="/research-coauthor#tiers">Get Published packages</a>, which start at $300 if you'd rather join a project that's already running. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
               </div>
               <a
                 class="btn btn--primary"

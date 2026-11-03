@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Get Your Research Paper Published — Co-Author to Lead Author | USMLE Wise";
-$pageDescription = "Get published as a co-author or lead author on a mentor-run research project, with an optional conference presentation. PubMed-indexed target. $300 to $1,000.";
+$pageDescription = "Get published as a co-author or lead author on a mentor-run research project, with an optional conference presentation, or as first author on your own case report or study. PubMed-indexed target. $300 to $1,000.";
 $canonical = "https://usmlewise.com/research-coauthor";
 $bodyClass = "msp";
 $stylesheets = [
@@ -24,9 +24,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <h1 id="heroTitle" class="msp-h1">Get published.<br><span class="msp-h1__accent">Pick your role.</span></h1>
             <p class="msp-lede">
               Get listed as an author on a paper submitted to a PubMed-indexed journal,
-              matched to a research project and mentor. Choose how much of the manuscript
-              you own: a defined contribution as co-author, the lead-author role, or lead
-              author plus a conference presentation.
+              with a mentor on the work. Choose how much of the manuscript you own: a
+              defined contribution as co-author, the lead-author role, lead author plus a
+              conference presentation, or first author on a project built around your own
+              idea.
             </p>
             <div class="msp-cta-row">
               <a
@@ -37,7 +38,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 >Book a Free Call</a
               >
               <a class="btn btn--outline btn--xl" href="#tiers">
-                Compare the tiers
+                Compare the four packages
                 <i data-lucide="arrow-down" class="ic-arrow" width="16" height="16"></i>
               </a>
             </div>
@@ -88,7 +89,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="msp-section rp-includes" id="includes" aria-labelledby="includesTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">
-            <span class="msp-eyebrow">Every tier</span>
+            <span class="msp-eyebrow">Every package</span>
             <h2 id="includesTitle" class="msp-h2">What's the same across every role.</h2>
             <p class="msp-lede">
               The role and the fee change. These three don't.
@@ -98,8 +99,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
             <div class="rp-include reveal">
               <div class="rp-include__icon"><i data-lucide="users" width="18" height="18"></i></div>
-              <h3 class="rp-include__head">Matched to a Research Project</h3>
-              <p>You're matched to a research project and mentor instead of having to find your own topic and dataset.</p>
+              <h3 class="rp-include__head">A Real Project, Not a Blank Page</h3>
+              <p>You're matched to a research project that already exists, or your mentor shapes your own idea into a feasible one on the Original Research package.</p>
             </div>
 
             <div class="rp-include reveal">
@@ -123,13 +124,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-wrap">
           <div class="msp-head reveal">
             <span class="msp-eyebrow">Pick your role</span>
-            <h2 id="tiersTitle" class="msp-h2">Three ways to get published.</h2>
+            <h2 id="tiersTitle" class="msp-h2">Four ways to get published.</h2>
             <p class="msp-lede">
               Your author position is agreed upfront, before you start, so there's no
               ambiguity about what you're earning.
             </p>
           </div>
-          <div class="rc-tiers">
+          <div class="rc-tiers rc-tiers--4">
 
             <div class="rc-tier reveal">
               <span class="rc-tier__name">Co-Author</span>
@@ -170,6 +171,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer">Book a Free Call</a>
             </div>
 
+            <div class="rc-tier reveal">
+              <span class="rc-tier__name">Original Research</span>
+              <div class="rc-tier__price">$699</div>
+              <p class="rc-tier__desc">First author on your own case report or original study, built from your idea rather than an existing project.</p>
+              <ul class="rc-tier__list">
+                <li>Topic selection and study design with your mentor</li>
+                <li>Ethics and IRB submission guidance</li>
+                <li>Manuscript development, journal selection, and submission support</li>
+                <li>2&ndash;4 months, excluding IRB review and data collection</li>
+              </ul>
+              <div class="rc-tier__ctas">
+                <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer">Book a Free Call</a>
+                <a href="/research-original" class="btn btn--ghost btn--sm">Full details <i data-lucide="arrow-right" width="14" height="14"></i></a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -202,18 +219,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
-                How is this different from Original Research?
+                What's the difference between the matched roles and Original Research?
               </button>
               <div class="accordion__body">
-                <a href="/research-original">Original Research</a> builds a project around your own idea, from concept to publication, with you as first author. All three roles here match you to a project instead: a faster, lower-cost way to add a genuine publication line.
+                Co-Author, Lead Author, and Lead Author + Conference place you on a project that already exists, with the topic and data in hand: the faster, lower-cost way to add a genuine publication line. <a href="/research-original">Original Research</a> builds a project around your own idea, from concept to publication, with you as first author.
               </div>
             </div>
             <div class="accordion__item">
               <button class="accordion__head" type="button">
-                What if I'd rather write my own systematic review or meta-analysis instead of being matched to a project?
+                What if I'd rather write my own systematic review or meta-analysis?
               </button>
               <div class="accordion__body">
-                That's a different path from the roles on this page; it means originating your own topic instead of being matched to one. Raise it with your mentor on the guidance call and they'll advise on the best fit for your timeline and goals.
+                Original Research covers case reports and original studies (observational, retrospective, or prospective). A systematic review or meta-analysis you originate yourself is a different path again. Raise it with your mentor on the guidance call and they'll advise on the best fit for your timeline and goals.
               </div>
             </div>
             <div class="accordion__item">
@@ -242,8 +259,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="rc-cta rc-cta-card reveal">
             <h2 class="rc-cta__head">Your published paper<br>starts with one call.</h2>
             <p class="rc-cta__sub">
-              Book a free 30-minute session. We'll match you to a project, walk
-              through the tiers, and set expectations before you commit.
+              Book a free 30-minute session. We'll walk through the four packages,
+              match you to a project or scope your own, and set expectations before
+              you commit.
             </p>
             <div class="rc-cta__actions">
               <a

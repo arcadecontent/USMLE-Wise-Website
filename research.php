@@ -245,10 +245,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <article class="msp-sva-row reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">01 &middot; Live &middot; Mentored</span>
+                <span class="msp-sva-eyebrow">01 &middot; Live &middot; Mentored &middot; 4 packages</span>
                 <h3 class="msp-sva-title">Get Published</h3>
                 <div class="msp-sva-price">$300&ndash;$1,000</div>
-                <p class="msp-sva-desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation. Listed on a paper submitted to a PubMed-indexed journal.</p>
+                <p class="msp-sva-desc">Four ways onto a paper submitted to a PubMed-indexed journal: co-author, lead author, lead author plus a conference presentation, or first author on your own case report or study.</p>
                 <div class="msp-sva-ctas">
                   <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
                   <a href="/research-coauthor" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
@@ -257,23 +257,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
 
             <article class="msp-sva-row msp-sva-row--flip reveal">
-              <div class="msp-sva-img" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp');"></div>
-              <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">02 &middot; Live</span>
-                <h3 class="msp-sva-title">Original Research</h3>
-                <div class="msp-sva-price">$699</div>
-                <p class="msp-sva-desc">Case report or original study with full mentor guidance through publication. Ideal for adding a first-author credit to your CV.</p>
-                <div class="msp-sva-ctas">
-                  <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-                  <a href="/research-original" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="msp-sva-row reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">03 &middot; Live &middot; 12-month program</span>
+                <span class="msp-sva-eyebrow">02 &middot; Live &middot; 12-month program</span>
                 <h3 class="msp-sva-title">Research Catalyst</h3>
                 <div class="msp-sva-price">$4,500</div>
                 <p class="msp-sva-desc">A fully guided 12-month pathway from zero to publication. Topic selection, study design, writing, and journal submission, all with your mentor.</p>
@@ -284,10 +270,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
-            <article class="msp-sva-row msp-sva-row--flip reveal">
+            <article class="msp-sva-row reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">04 &middot; Placement Service &middot; 12-month fellowship</span>
+                <span class="msp-sva-eyebrow">03 &middot; Placement Service &middot; 12-month fellowship</span>
                 <h3 class="msp-sva-title">J-1 Research Fellowship Placement</h3>
                 <div class="msp-sva-price">$20,000</div>
                 <p class="msp-sva-desc">End-to-end placement support for a 12-month J-1 research fellowship &mdash; institution matching, application guidance, visa documentation assistance, and relocation support.</p>
@@ -298,10 +284,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </div>
             </article>
 
-            <article class="msp-sva-row reveal">
+            <article class="msp-sva-row msp-sva-row--flip reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/kaitlyn-baker-vZJdYl5JVXY-unsplash.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">05 &middot; Live &middot; Per outreach cycle</span>
+                <span class="msp-sva-eyebrow">04 &middot; Live &middot; Per outreach cycle</span>
                 <h3 class="msp-sva-title">Strategic Networking Program</h3>
                 <div class="msp-sva-price">$1,500</div>
                 <p class="msp-sva-desc">We help you identify the exact faculty and Program Directors to target, so every conference conversation and cold email has a clear strategic purpose.</p>
@@ -315,7 +301,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <article class="msp-sva-row reveal">
               <div class="msp-sva-img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp');"></div>
               <div class="msp-sva-body">
-                <span class="msp-sva-eyebrow">06 &middot; Live &middot; 3 Sunday sessions</span>
+                <span class="msp-sva-eyebrow">05 &middot; Live &middot; 3 Sunday sessions</span>
                 <h3 class="msp-sva-title">Research Wise</h3>
                 <div class="msp-sva-price">$49</div>
                 <p class="msp-sva-desc">Your first step into research. Three live Sunday sessions on case reports and case series, original studies, and systematic reviews and meta-analyses.</p>
