@@ -67,25 +67,29 @@
             <span class="msp-nav__dd-name">Research Packages</span>
             <span class="msp-nav__dd-meta">All programs &amp; services</span>
           </a>
-          <a href="/research-catalyst" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Research Catalyst</span>
-            <span class="msp-nav__dd-meta">Flagship &middot; 12-month program</span>
-          </a>
           <a href="/research-coauthor" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Get Published</span>
             <span class="msp-nav__dd-meta">4 packages &middot; $300&ndash;$1,000</span>
           </a>
-          <a href="/research-junior-scientist" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Junior Scientist Program</span>
-            <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
+          <a href="/research-catalyst" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Research Catalyst</span>
+            <span class="msp-nav__dd-meta">Flagship &middot; 12-month program</span>
           </a>
           <a href="/research-j1-fellowship" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">J-1 Research Fellowship Placement</span>
             <span class="msp-nav__dd-meta">12-month &middot; Placement service</span>
           </a>
+          <a href="/research-wise" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Research Wise</span>
+            <span class="msp-nav__dd-meta">Live &middot; 3 Sunday sessions</span>
+          </a>
           <a href="/research-networking" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Strategic Networking Program</span>
             <span class="msp-nav__dd-meta">Live &middot; Per outreach cycle</span>
+          </a>
+          <a href="/research-junior-scientist" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Junior Scientist Program</span>
+            <span class="msp-nav__dd-meta">Live &middot; Mentored</span>
           </a>
           <div class="msp-nav__dd-item msp-nav__dd-item--has-sub">
             <button type="button" class="msp-nav__dd-sub-trigger" aria-haspopup="true">
@@ -93,10 +97,6 @@
               <i data-lucide="chevron-right" width="12" height="12" class="msp-nav__dd-sub-caret"></i>
             </button>
             <div class="msp-nav__dd-sub">
-              <a href="/research-wise" class="msp-nav__dd-link">
-                <span class="msp-nav__dd-name">Research Wise</span>
-                <span class="msp-nav__dd-meta">Live &middot; 3 Sunday sessions</span>
-              </a>
               <a href="/research-cohort" class="msp-nav__dd-link">
                 <span class="msp-nav__dd-name">Research Cohort Access</span>
                 <span class="msp-nav__dd-meta">Recorded &middot; Self-paced</span>
