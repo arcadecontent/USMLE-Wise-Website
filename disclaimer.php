@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <main>
       <div class="msp-policy">
         <h1>Disclaimer</h1>
-        <p class="msp-policy__meta">Last updated: July 2026</p>
+        <p class="msp-policy__meta">Last updated: November 2026</p>
 
         <p>This Disclaimer explains what our coaching, research mentorship, residency-match, fellowship placement, and rotation placement Services do &mdash; and do not &mdash; promise. It should be read together with our <a href="/terms">Terms &amp; Conditions</a> and <a href="/refund-policy">Refund &amp; Guarantee Policy</a>.</p>
 
@@ -33,6 +33,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
         <h2>5. Clinical Rotation Placements</h2>
         <p>Where we help place students at a clinical rotation, the rotation is hosted and supervised by an independent third-party physician, clinic, or institution &mdash; not by USMLE Wise. We do not control, and are not responsible for, that third party&rsquo;s supervision quality, accreditation status, scheduling, or conduct. You are responsible for confirming that any placement satisfies your own medical school&rsquo;s requirements before relying on it.</p>
+        <p>Specifically, in relation to rotations:</p>
+        <ul>
+          <li><strong>Letters of recommendation are performance-based and are never guaranteed</strong>, including on rotations advertised as including a letter. The supervising physician is under no obligation to write one or to share it with you, and the letterhead it arrives on is the physician&rsquo;s or site&rsquo;s choice.</li>
+          <li><strong>We cannot guarantee hospital-based exposure</strong> or any particular clinical experience unless we hold a direct contract with the hospital in question. Patient volume, case mix, procedures observed, and weekly schedule depend on what presents during your dates.</li>
+          <li><strong>We do not guarantee a residency interview or an NRMP match position</strong> as a result of any rotation.</li>
+          <li><strong>We are not a visa sponsor</strong> and hold no SEVIS accreditation. A program acceptance letter is not immigration advice and is not a guarantee of visa approval.</li>
+          <li><strong>Site and physician details may change without notice</strong>, including affiliated hospitals, procedures performed, schedule, and price. Supervising physicians are independent contractors, not our employees.</li>
+          <li><strong>Some placements are sourced through partner organizations</strong> rather than contracted by us directly. Where that is the case, we work through the partner&rsquo;s coordinator and do not have direct access to the physician or hospital coordinator.</li>
+          <li><strong>Neither USMLE Wise nor the host site provides malpractice coverage for you.</strong></li>
+        </ul>
+        <p>Our <a href="/rotation-terms">Clinical Rotation Terms</a> set all of this out in full, together with your obligations, scope-of-practice limits, and the applicable fees.</p>
 
         <h2>6. Research Program Outcomes</h2>
         <p>Our research mentorship programs (including the Junior Scientist Program, Research Catalyst, Original Research, and Systematic Review/Meta-Analysis programs) provide training, mentorship, and guided project work. They do not, and cannot, guarantee a publication, conference acceptance, or authorship credit &mdash; those depend on the work meeting the ICMJE authorship standard and on independent peer review.</p>

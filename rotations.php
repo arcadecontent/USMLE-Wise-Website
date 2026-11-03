@@ -550,6 +550,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 Availability varies throughout the year and depends on site capacity.
               </div>
             </div>
+            <div class="accordion__item">
+              <button class="accordion__head" type="button">
+                What are the terms for a placement?
+              </button>
+              <div class="accordion__body">
+                A $500 deposit secures your request and is refunded in full if we cannot
+                secure a matching placement within 5 business days. Once the host site
+                confirms, the deposit is non-refundable and the balance is due before you
+                start. Placements also involve background screening, document deadlines,
+                and strict scope-of-practice rules. Everything is set out in our
+                <a href="/rotation-terms">Clinical Rotation Terms</a>, which we recommend
+                reading before you enroll.
+              </div>
+            </div>
           </div>
         </div>
       </section>

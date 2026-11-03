@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <main>
       <div class="msp-policy">
         <h1>Refund &amp; Guarantee Policy</h1>
-        <p class="msp-policy__meta">Last updated: July 2026</p>
+        <p class="msp-policy__meta">Last updated: November 2026</p>
 
         <p>Several USMLE Wise programs include a specific guarantee or trial period. Because our programs differ in format &mdash; a one-time recorded course, a done-for-you editing package, or a multi-month mentorship &mdash; the guarantee attached to each one works differently. This page sets out exactly how each guarantee works and how to request a refund. This policy is part of our <a href="/terms">Terms &amp; Conditions</a>.</p>
 
@@ -39,7 +39,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p>Every Match package (LOR editing, ERAS/CV, Personal Statement, Interview Preparation, and bundled packages) includes a money-back guarantee tied to your first working session.</p>
         <ul>
           <li><strong>How it works:</strong> start with your first working session. If you feel the package isn&rsquo;t the right fit, tell us before or at that first session and we will refund you in full.</li>
-          <li><strong>After the first session:</strong> once work has proceeded past the first session, the package is no longer covered by this guarantee; any further refund request is handled case by case (see Section 5).</li>
+          <li><strong>After the first session:</strong> once work has proceeded past the first session, the package is no longer covered by this guarantee; any further refund request is handled case by case (see Section 6).</li>
         </ul>
 
         <h3>Match Edit Guarantee (Match Maximizer package only)</h3>
@@ -53,10 +53,21 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h3>Research Junior Scientist Program</h3>
         <p>Enrollment begins with a one-month trial and a deposit. If, by the end of that one-month trial, the program is not the right fit for your child, your deposit is refunded in full.</p>
 
-        <h2>5. All Other Programs</h2>
-        <p>Step 1 Mastery, NBME-Style Coaching (Step 1 &amp; Step 2), 1:1 Tutoring, Original Research, Systematic Review/Meta-Analysis, J-1 Research Fellowship Placement, and Clinical Rotation placements do not currently have a fixed, published refund schedule. Refund requests for these programs are reviewed case by case &mdash; contact <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with your situation and our team will work with you directly.</p>
+        <h2>5. Clinical Rotations</h2>
+        <p>Clinical rotation placements work differently from our other programs, because a placement commits a host site and a supervising physician to hold a spot for you. Rotations carry no pass guarantee, no first-session guarantee, and no trial period. Their refund rules are set out in full in our <a href="/rotation-terms">Clinical Rotation Terms</a>, and in summary:</p>
+        <ul>
+          <li><strong>Deposit:</strong> your $500 deposit is refunded in full if we cannot secure a placement matching your requirements within 5 business days. Once the host site confirms your placement, the deposit is non-refundable.</li>
+          <li><strong>After confirmation:</strong> rotation fees are not refundable, including for a placement you withdraw from, miss, or lose by missing a deadline or requirement.</li>
+          <li><strong>Visa denial:</strong> with proof of rejection, your deposit is refunded less a 5% card processing fee. Without proof, it converts to a 24-month account credit. Inpatient hospitalist placements are an exception: see the Clinical Rotation Terms before enrolling in one without a visa in hand.</li>
+          <li><strong>Medical emergency:</strong> partial refunds are considered case by case for a documented emergency affecting you or an immediate family member, processed within 30 days and subject to a deduction of up to 10%.</li>
+          <li><strong>Host site cancels:</strong> we re-place you and issue a credit of $100, $250, or $500 depending on how close to your start date the cancellation falls. Credits expire after 24 months.</li>
+          <li><strong>Change and late fees</strong> apply to date or site changes, late documents, acceptance letters, and program transfers. See the <a href="/rotation-terms">Clinical Rotation Terms</a> for the full schedule.</li>
+        </ul>
 
-        <h2>6. How to Request a Refund</h2>
+        <h2>6. All Other Programs</h2>
+        <p>Step 1 Mastery, NBME-Style Coaching (Step 1 &amp; Step 2), 1:1 Tutoring, Original Research, Systematic Review/Meta-Analysis, and J-1 Research Fellowship Placement do not currently have a fixed, published refund schedule. Refund requests for these programs are reviewed case by case &mdash; contact <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with your situation and our team will work with you directly.</p>
+
+        <h2>7. How to Request a Refund</h2>
         <p>Email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with:</p>
         <ul>
           <li>Your full name and the email address used at purchase</li>
@@ -65,10 +76,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li>Any supporting documentation required for that program&rsquo;s guarantee (for example, an official score report for the Crash Course guarantee)</li>
         </ul>
 
-        <h2>7. Changes to This Policy</h2>
+        <h2>8. Changes to This Policy</h2>
         <p>We may update this Refund &amp; Guarantee Policy from time to time, including as we add new programs or revise guarantee terms. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page. The guarantee terms in effect on the date of your purchase are the ones that apply to your enrollment.</p>
 
-        <h2>8. Contact Us</h2>
+        <h2>9. Contact Us</h2>
         <ul>
           <li>Email: <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--></li>
           <li>Website: <a href="/">usmlewise.com</a></li>

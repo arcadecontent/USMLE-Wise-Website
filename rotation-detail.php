@@ -82,6 +82,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="rot-feature__price"><?php echo $rdPrice; ?></div>
               <p class="rot-feature__deposit"><?php echo $rdParts((string) ($rd['deposit_line'] ?? ''), ' &middot; '); ?></p>
               <a class="btn btn--primary" href="<?php echo $rdAttr($rdCtaHref); ?>" target="_blank" rel="noopener noreferrer"><?php echo $rdEsc($rdCtaLabel); ?></a>
+              <p class="rot-feature__deposit">Deposit refundable until we confirm your placement. Read the <a href="/rotation-terms">Clinical Rotation Terms</a> before you enroll.</p>
             </div>
           </div>
 

@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <main>
       <div class="msp-policy">
         <h1>Terms &amp; Conditions</h1>
-        <p class="msp-policy__meta">Last updated: July 2026</p>
+        <p class="msp-policy__meta">Last updated: November 2026</p>
 
         <p>These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your access to and use of usmlewise.com (the &ldquo;Site&rdquo;) and the coaching, research mentorship, residency-match, and clinical-rotation placement services (the &ldquo;Services&rdquo;) offered by USMLE Wise (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;).</p>
 
@@ -59,6 +59,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
         <h2>9. Clinical Rotation Placements</h2>
         <p>Where we assist with placement at a clinical rotation site, the rotation itself is hosted and supervised by an independent third-party clinical site, physician, or institution &mdash; not by USMLE Wise. We help facilitate the placement, but we do not control, and are not responsible for, the third-party site&rsquo;s supervision, accreditation, scheduling, or day-to-day conduct. You are responsible for confirming that any placement satisfies your own school&rsquo;s requirements.</p>
+        <p>Because a rotation places you inside a working clinical environment with real patients, rotations carry their own detailed terms covering your obligations, scope of practice, background screening, fees and deadlines, visa documentation, and cancellations. Those terms are set out in full in our <a href="/rotation-terms">Clinical Rotation Terms</a>, which form part of these Terms and which you accept when you pay a rotation deposit. Where these Terms and the Clinical Rotation Terms differ on a point specific to rotations, the Clinical Rotation Terms control.</p>
 
         <h2>10. Intellectual Property</h2>
         <p>The Site, its design, branding, and all original content (excluding materials owned by third parties) are the property of USMLE Wise and are protected by applicable intellectual property laws. Nothing in these Terms transfers any ownership of that intellectual property to you.</p>

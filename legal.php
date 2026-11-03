@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Legal & Policies | USMLE Wise";
-$pageDescription = "USMLE Wise legal center — Privacy Policy, Terms & Conditions, Refund & Guarantee Policy, and Disclaimer.";
+$pageDescription = "USMLE Wise legal center — Privacy Policy, Terms & Conditions, Refund & Guarantee Policy, Clinical Rotation Terms, and Disclaimer.";
 $canonical = "https://usmlewise.com/legal";
 $bodyClass = "msp";
 $stylesheets = [
@@ -17,7 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h1>Legal &amp; Policies</h1>
         <p class="msp-policy__meta">USMLE Wise</p>
 
-        <p class="msp-policy__intro">Everything governing your use of usmlewise.com and our coaching, research, and residency-match services lives here. Pick a document below to read it in full.</p>
+        <p class="msp-policy__intro">Everything governing your use of usmlewise.com and our coaching, research, residency-match, and clinical rotation services lives here. Pick a document below to read it in full.</p>
 
         <div class="msp-legal-grid">
           <a class="msp-legal-card" href="/policy">
@@ -31,6 +31,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <a class="msp-legal-card" href="/refund-policy">
             <h2>Refund &amp; Guarantee Policy</h2>
             <p>How our pass guarantee, first-session guarantee, and program trial periods work, and how to request a refund.</p>
+          </a>
+          <a class="msp-legal-card" href="/rotation-terms">
+            <h2>Clinical Rotation Terms</h2>
+            <p>The detailed terms for rotation placements: your obligations, scope of practice, screening, fees and deadlines, visa documentation, and cancellations.</p>
           </a>
           <a class="msp-legal-card" href="/disclaimer">
             <h2>Disclaimer</h2>
