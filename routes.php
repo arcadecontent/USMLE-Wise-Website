@@ -35,8 +35,15 @@
         $redirect('/');
     }
 
+    // The sitemap is generated (rotation URLs come from the CRM), so the URL
+    // is no longer a real file and lands here.
+    if ($slug === 'sitemap.xml') {
+        require __DIR__ . '/sitemap.php';
+        exit;
+    }
+
     $pageFile = function (string $s): ?string {
-        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail', 'team-member'], true)) {
+        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail', 'team-member', 'sitemap'], true)) {
             return null;
         }
         if (is_file(__DIR__ . '/' . $s . '.php')) {

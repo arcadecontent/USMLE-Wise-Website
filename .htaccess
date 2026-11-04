@@ -2,6 +2,10 @@ RewriteEngine On
 Options -MultiViews
 DirectoryIndex index.php
 
+# The sitemap is generated (rotation URLs come from the CRM); production nginx
+# funnels the URL into index.php, which routes.php resolves the same way.
+RewriteRule ^sitemap\.xml$ /sitemap.php [L]
+
 # Serve extensionless URLs from matching .php file
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
