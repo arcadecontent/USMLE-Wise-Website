@@ -1,0 +1,355 @@
+/* ============================================================
+   USMLE Wise — Research Spotlight testimonial carousel
+   Used by partials/research-spotlight.php. Prefix: rsp-
+
+   One accepted abstract per slide. A navy record rail (headshot,
+   name, acceptance chip, abstract title, meeting) sits against the
+   quote on paper, so the proof and the words read as one object.
+   ============================================================ */
+
+.rsp-carousel {
+  position: relative;
+  margin-top: clamp(32px, 4vw, 52px);
+}
+
+/* ---------- Track ---------- */
+.rsp-track {
+  position: relative;
+  display: flex;
+  gap: clamp(16px, 2vw, 28px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.rsp-track::-webkit-scrollbar { display: none; }
+.rsp-track:focus-visible {
+  outline: 2px solid var(--uw-blue-500);
+  outline-offset: 6px;
+  border-radius: var(--r-2xl);
+}
+
+.rsp-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  display: flex;
+}
+
+/* ---------- Record ---------- */
+.rsp-record {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(250px, 0.64fr) 1.36fr;
+  background: var(--uw-surface);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- Rail (the acceptance record) ---------- */
+.rsp-record__rail {
+  position: relative;
+  isolation: isolate;
+  background: var(--uw-blue-800);
+  color: #fff;
+  padding: clamp(28px, 3.1vw, 42px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.2vw, 28px);
+}
+.rsp-record__rail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(90% 60% at 100% 0%, rgba(82, 96, 181, 0.45), transparent 70%),
+    radial-gradient(70% 50% at 0% 100%, rgba(227, 33, 36, 0.16), transparent 72%);
+}
+
+.rsp-person {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.8vw, 22px);
+}
+
+.rsp-person__photo {
+  position: relative;
+  width: clamp(92px, 9.5vw, 124px);
+  aspect-ratio: 1;
+  border-radius: var(--r-lg);
+  background: var(--uw-blue-700);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 10px 24px rgba(10, 12, 38, 0.38);
+}
+.rsp-person__photo img:not(.rsp-person__emblem) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+.rsp-person__photo--mono {
+  display: grid;
+  place-items: center;
+}
+.rsp-person__photo--mono span {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.4vw, 40px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--uw-blue-200);
+}
+.rsp-person__emblem {
+  position: absolute;
+  right: -11px;
+  bottom: -11px;
+  width: 34px;
+  height: 34px;
+  padding: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(10, 12, 38, 0.3);
+}
+
+.rsp-person__name {
+  font-family: var(--font-sans);
+  font-size: clamp(20px, 1.9vw, 25px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.rsp-chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--uw-red-500);
+  padding: 6px 10px;
+  border-radius: var(--r-xs);
+}
+
+.rsp-paper {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-14-5);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.74);
+  margin: 0;
+  padding-top: clamp(18px, 2vw, 24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.rsp-event {
+  margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+.rsp-event__name { color: var(--uw-blue-200); }
+.rsp-event__meta { color: rgba(255, 255, 255, 0.42); letter-spacing: 0.09em; }
+
+/* ---------- Quote (the words) ---------- */
+.rsp-record__quote {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(30px, 3.3vw, 46px) clamp(26px, 3.4vw, 54px) clamp(26px, 3vw, 40px);
+}
+
+.rsp-mark {
+  font-family: var(--font-display);
+  font-size: clamp(54px, 5.4vw, 78px);
+  font-weight: 600;
+  line-height: 0.62;
+  color: var(--uw-red-500);
+  margin: 0 0 clamp(14px, 1.6vw, 20px) -0.045em;
+}
+
+.rsp-quote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 64ch;
+}
+.rsp-quote p {
+  font-family: var(--font-display);
+  font-size: var(--fs-16-5);
+  line-height: 1.68;
+  color: var(--uw-ink-700);
+  margin: 0;
+}
+.rsp-quote p + p { margin-top: 1.05em; }
+
+.rsp-quote__pull {
+  font-size: clamp(21px, 2.1vw, 27px) !important;
+  line-height: 1.32 !important;
+  letter-spacing: -0.015em;
+  color: var(--uw-ink-900) !important;
+  margin-bottom: clamp(18px, 1.9vw, 24px) !important;
+}
+
+.rsp-attr {
+  margin-top: auto;
+  padding-top: clamp(22px, 2.5vw, 30px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-14);
+  color: var(--uw-ink-500);
+}
+.rsp-attr b { font-weight: 600; color: var(--uw-ink-800); }
+.rsp-attr__rule {
+  width: 28px;
+  height: 1px;
+  flex: none;
+  background: var(--uw-red-500);
+}
+
+/* ---------- Nav ---------- */
+.rsp-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 24px);
+  margin-top: clamp(20px, 2.4vw, 30px);
+}
+.rsp-nav__arrows { display: flex; gap: 10px; }
+
+.rsp-nav__btn {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--uw-border-strong);
+  background: var(--uw-surface);
+  color: var(--uw-ink-700);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out);
+}
+.rsp-nav__btn:hover:not(:disabled) {
+  color: var(--uw-blue-500);
+  border-color: var(--uw-blue-500);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.rsp-nav__btn:focus-visible {
+  outline: 2px solid var(--uw-blue-500);
+  outline-offset: 3px;
+}
+.rsp-nav__btn:disabled { opacity: 0.32; cursor: default; }
+
+.rsp-nav__hint {
+  display: none;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--uw-ink-400);
+}
+
+.rsp-nav__dots {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.rsp-dot {
+  width: 26px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.rsp-dot span {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: var(--r-pill);
+  background: var(--uw-ink-300);
+  transition: width var(--dur-med) var(--ease-out),
+              background-color var(--dur-med) var(--ease-out);
+}
+.rsp-dot:hover span { background: var(--uw-ink-500); }
+.rsp-dot[aria-current="true"] span {
+  width: 20px;
+  background: var(--uw-red-500);
+}
+.rsp-dot:focus-visible {
+  outline: 2px solid var(--uw-blue-500);
+  outline-offset: 1px;
+  border-radius: var(--r-xs);
+}
+
+.rsp-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1020px) {
+  .rsp-record { grid-template-columns: 1fr; }
+  .rsp-record__rail { gap: clamp(18px, 3vw, 24px); }
+  .rsp-person {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(18px, 3vw, 26px);
+  }
+  .rsp-person__photo { width: clamp(78px, 14vw, 104px); }
+  .rsp-person__id { min-width: 0; }
+  .rsp-event { margin-top: 0; }
+  .rsp-quote { max-width: none; }
+}
+
+@media (max-width: 720px) {
+  .rsp-nav { flex-wrap: wrap; }
+  .rsp-nav__hint { display: block; }
+  .rsp-nav__dots { margin-left: auto; }
+  .rsp-person__emblem { width: 28px; height: 28px; padding: 5px; right: -8px; bottom: -8px; }
+  .rsp-record__quote { padding-inline: clamp(22px, 6vw, 30px); }
+}
+
+@media (max-width: 520px) {
+  .rsp-person { align-items: flex-start; }
+  .rsp-person__name { margin-bottom: 10px; }
+  .rsp-chip { font-size: 9px; letter-spacing: 0.1em; }
+  .rsp-nav__arrows { order: 1; }
+  .rsp-nav__hint { order: 3; width: 100%; }
+  .rsp-nav__dots { order: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rsp-track { scroll-behavior: auto; }
+  .rsp-nav__btn:hover:not(:disabled) { transform: none; }
+}

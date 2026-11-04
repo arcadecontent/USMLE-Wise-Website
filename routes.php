@@ -59,10 +59,14 @@
         return $pageFile($s) !== null;
     };
 
-    // Rotation detail pages render from CRM data when the CRM has content for
-    // the slug (managed at team.manikmadaan.com/admin/rotations); the static
-    // rotation-*.php files remain as a fallback.
-    if (strpos($slug, 'rotation-') === 0 && preg_match('/\A[a-z0-9-]+\z/', $slug) === 1) {
+    // Every /rotation-<slug> is owned by the CRM (managed at
+    // team.manikmadaan.com/admin/rotations): the feed decides which placements
+    // exist. A slug the feed does not list is retired, and 410 Gone retires the
+    // URL with it, so a removal in the CRM is a removal from the site. There is
+    // deliberately no static-page fallback here; a stale rotation-<slug>.php
+    // would otherwise keep serving a placement we no longer offer.
+    // /rotation-terms is editorial, not a placement, so it is exempt.
+    if ($slug !== 'rotation-terms' && strpos($slug, 'rotation-') === 0 && preg_match('/\A[a-z0-9-]+\z/', $slug) === 1) {
         require_once __DIR__ . '/data/rotations.php';
         $rotationEntry = usmlewise_find_rotation_by_slug(substr($slug, strlen('rotation-')));
         if ($rotationEntry !== null && !empty($rotationEntry['detail'])) {
@@ -72,7 +76,19 @@
             require __DIR__ . '/rotation-detail.php';
             exit;
         }
-        $rotationEntry = null; // fall through to the static page, if any
+        // An empty payload means the CRM feed and every fallback failed. That is
+        // an outage, not a removal: answer 503 so the URL keeps its place in the
+        // index instead of telling search engines the rotation is gone for good.
+        $rotGoneSlug = $slug;
+        if (!usmlewise_rotations_payload()['rotations']) {
+            $rotGoneOutage = true;
+            http_response_code(503);
+            header('Retry-After: 1800');
+        } else {
+            http_response_code(410);
+        }
+        require __DIR__ . '/rotation-gone.php';
+        exit;
     }
 
     // Existing page: canonicalize (.html/.php suffix or trailing slash) or serve.

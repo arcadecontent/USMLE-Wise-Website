@@ -6,11 +6,13 @@ $bodyClass = "msp";
 $stylesheets = [
     "/styles/research.css",
     "/styles/blog.css",
-    "/styles/awards-carousel.css"
+    "/styles/awards-carousel.css",
+    "/styles/research-spotlight.css"
 ];
 $scripts = [
     "/js/research.js",
-    "/js/awards-carousel.js"
+    "/js/awards-carousel.js",
+    "/js/research-spotlight.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -598,7 +600,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <?php endif; ?>
 
       <!-- ============== 6. SOCIAL PROOF ============== -->
-      <!-- TODO: add 2–3 student testimonial quotes once copy is ready -->
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/research-spotlight.php'; ?>
 
 
 

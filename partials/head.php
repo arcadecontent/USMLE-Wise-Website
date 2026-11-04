@@ -15,6 +15,9 @@
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>" />
 <link rel="canonical" href="<?php echo $canonical; ?>" />
+<?php if (!empty($metaRobots)): ?>
+<meta name="robots" content="<?php echo $metaRobots; ?>" />
+<?php endif; ?>
 <meta property="og:type" content="website" />
 <meta property="og:title" content="<?php echo $pageTitle; ?>" />
 <meta property="og:description" content="<?php echo $pageDescription; ?>" />
