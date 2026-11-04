@@ -1,10 +1,15 @@
 <?php
 /**
- * Awards carousel — shown on every research-program page.
- * Pulls the award write-ups from the CRM (data/awards.php) and renders them as a
+ * Awards carousel — shown on the homepage and every research-program page.
+ * Pulls the award write-ups from data/awards.php and renders them as a
  * horizontally-scrolling row of plain blog cards, each linking to the full
  * write-up under /research-awards/<slug>. Renders nothing if there are none
  * yet. The full set lives on the /research-awards page.
+ *
+ * Any page including this must also register, in $stylesheets / $scripts:
+ *   /styles/blog.css  (the .blog-card styles the cards reuse)
+ *   /styles/awards-carousel.css
+ *   /js/awards-carousel.js
  */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/posts.php';
@@ -20,9 +25,6 @@ $fmtDate = function ($iso) {
 ?>
 <section class="msp-section awd-carousel" id="awards" aria-labelledby="awardsTitle">
   <div class="msp-wrap">
-    <?php if (!empty($awdSimpleHeader)): ?>
-    <h3 id="awardsTitle" class="lpx-svc-block__pkgtitle awd-carousel__simple-title reveal">Research Awards</h3>
-    <?php else: ?>
     <div class="msp-head reveal">
       <span class="msp-eyebrow">Recognition</span>
       <h2 id="awardsTitle" class="msp-h2">Awards that back our results.</h2>
@@ -31,20 +33,15 @@ $fmtDate = function ($iso) {
         <a href="/research-awards">See all research awards</a>
       </p>
     </div>
-    <?php endif; ?>
 
-    <?php if (!empty($awdSimpleHeader)): ?>
-    <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
-    <?php else: ?>
     <div class="awd-carousel__wrap reveal">
       <button class="awd-carousel__btn awd-carousel__btn--prev" type="button" aria-label="Previous award" aria-controls="awardsTrack" disabled>
         <i data-lucide="chevron-left" width="18" height="18"></i>
       </button>
 
       <ul class="awd-carousel__track" id="awardsTrack">
-    <?php endif; ?>
         <?php foreach ($awardPosts as $post): ?>
-        <?php if (empty($awdSimpleHeader)): ?><li class="awd-carousel__card"><?php endif; ?>
+        <li class="awd-carousel__card">
           <article class="blog-card" data-category="<?php echo htmlspecialchars($post['category']); ?>">
             <a class="blog-card__link" href="<?php echo htmlspecialchars(usmlewise_post_url($post)); ?>">
               <div class="blog-card__cover blog-cover--<?php echo htmlspecialchars($post['category']); ?>"
@@ -63,17 +60,13 @@ $fmtDate = function ($iso) {
               </div>
             </a>
           </article>
-        <?php if (empty($awdSimpleHeader)): ?></li><?php endif; ?>
+        </li>
         <?php endforeach; ?>
-    <?php if (!empty($awdSimpleHeader)): ?>
-    </div>
-    <?php else: ?>
       </ul>
 
       <button class="awd-carousel__btn awd-carousel__btn--next" type="button" aria-label="Next award" aria-controls="awardsTrack">
         <i data-lucide="chevron-right" width="18" height="18"></i>
       </button>
     </div>
-    <?php endif; ?>
   </div>
 </section>

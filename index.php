@@ -283,7 +283,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </div>
   </section>
 
-  <?php $awdSimpleHeader = true; include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
+  <!-- 5a · Research Awards -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
 
   <!-- 5b · Exam Prep -->
   <section class="lpx-svc-block" id="svc-examprep" aria-label="USMLE Exam Prep">
