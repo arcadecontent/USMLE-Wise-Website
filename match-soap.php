@@ -75,6 +75,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <a class="btn btn--outline btn--xl" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
           </div>
         </div>
+        <div class="msp-hero__frame-wrap reveal">
+          <div class="msp-hero__frame msp-hero__frame--type msp-hero__frame--3" role="img" aria-label="SOAP Match Support">
+            <span class="msp-hero__type-kicker">Match</span>
+            <span class="msp-hero__type-name">SOAP<br>Match<br>Support</span>
+            <span class="msp-hero__type-sub">Real-time scramble guidance</span>
+          </div>
+        </div>
       </div>
       <div class="msp-bar msp-wrap" aria-label="Track record">
         <div class="msp-bar__inner">
@@ -88,6 +95,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
     </section>
+
+    <!-- MATCHED AT -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/matched-ticker.php'; ?>
 
     <!-- PROBLEM FRAMING -->
     <section class="msp-section pg-about" aria-labelledby="problemTitle">

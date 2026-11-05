@@ -68,6 +68,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <a class="btn btn--outline btn--xl" href="/coaching">Back to Coaching</a>
           </div>
         </div>
+        <div class="msp-hero__frame-wrap reveal">
+          <div class="msp-hero__frame msp-hero__frame--type msp-hero__frame--2" role="img" aria-label="Step 1 Mastery">
+            <span class="msp-hero__type-kicker">Steps</span>
+            <span class="msp-hero__type-name">Step 1<br>Mastery</span>
+            <span class="msp-hero__type-sub">6-month &middot; From the basics</span>
+          </div>
+        </div>
       </div>
 
         <div class="msp-bar msp-wrap" aria-label="Track record">

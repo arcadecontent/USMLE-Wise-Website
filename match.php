@@ -33,35 +33,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     .mp-hero__tag span { font-size: 12.5px; color: rgba(255,255,255,.72); }
 
     /* matched-at strip */
-    .mp-matched { padding-block: clamp(28px, 4vw, 44px); border-bottom: 1px solid var(--uw-border); }
-    .mp-matched__label {
-      font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em;
-      text-transform: uppercase; color: var(--uw-ink-500); text-align: center; margin: 0 0 18px;
-    }
-    .mp-ticker {
-      overflow: hidden;
-      -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-              mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-    }
-    .mp-ticker__track { display: flex; width: max-content; animation: mp-ticker 45s linear infinite; }
-    .mp-ticker:hover .mp-ticker__track { animation-play-state: paused; }
-    .mp-matched__list {
-      list-style: none; margin: 0; padding: 0 clamp(14px, 2vw, 26px);
-      display: flex; flex: none; align-items: center;
-      gap: clamp(28px, 4vw, 56px);
-    }
-    .mp-matched__list img {
-      display: block; height: clamp(28px, 3vw, 38px); width: auto; max-width: 150px;
-      object-fit: contain; filter: grayscale(100%); opacity: .6;
-      mix-blend-mode: multiply; transition: opacity .2s ease, filter .2s ease;
-    }
-    .mp-matched__list li:hover img { filter: none; opacity: 1; }
-    @keyframes mp-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    @media (prefers-reduced-motion: reduce) {
-      .mp-ticker__track { animation: none; }
-      .mp-ticker { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
-    }
-
     /* founder story */
     .mp-story { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
     .mp-story__body p { font-size: clamp(16px, 1.4vw, 18px); color: var(--uw-ink-700); line-height: 1.75; margin: 0 0 var(--space-4); }
@@ -209,45 +180,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </section>
 
     <!-- MATCHED AT -->
-    <section class="mp-matched" aria-label="Where our students matched">
-      <div class="msp-wrap">
-        <p class="mp-matched__label">Our students have matched into</p>
-        <div class="mp-ticker"><div class="mp-ticker__track">
-        <ul class="mp-matched__list">
-          <li><img src="/match-membership-media/uploads/logos/harvard.svg" alt="Harvard" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/yale.svg" alt="Yale" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/jhu.png" alt="Johns Hopkins" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/stanford.svg" alt="Stanford" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/columbia.svg" alt="Columbia" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/mayo.svg" alt="Mayo Clinic" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/cornell.svg" alt="Cornell" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/penn.svg" alt="Penn" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/mountsinai.svg" alt="Mount Sinai" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/clevelandclinic.svg" alt="Cleveland Clinic" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/ucla.svg" alt="UCLA" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/duke.svg" alt="Duke" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/brown.svg" alt="Brown" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/emory.jpg" alt="Emory" loading="lazy" /></li>
-        </ul>
-        <ul class="mp-matched__list" aria-hidden="true">
-          <li><img src="/match-membership-media/uploads/logos/harvard.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/yale.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/jhu.png" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/stanford.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/columbia.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/mayo.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/cornell.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/penn.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/mountsinai.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/clevelandclinic.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/ucla.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/duke.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/brown.svg" alt="" loading="lazy" /></li>
-          <li><img src="/match-membership-media/uploads/logos/emory.jpg" alt="" loading="lazy" /></li>
-        </ul>
-      </div></div>
-      </div>
-    </section>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/matched-ticker.php'; ?>
 
     <!-- STORY -->
     <section class="msp-section mp-sunk" aria-labelledby="storyTitle">

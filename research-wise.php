@@ -102,15 +102,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="msp-hero" aria-labelledby="heroTitle">
         <div class="msp-wrap msp-hero__grid">
           <div class="msp-hero__copy reveal">
-            <span class="rc-hero__badge">Live &middot; 3 Sunday Sessions &middot; First 100 members at a special price</span>
-            <h1 id="heroTitle" class="msp-h1">Never done research?<br>This is <span class="msp-h1__accent">where you start.</span></h1>
+            <h1 id="heroTitle" class="msp-h1">Master case reports, original studies, systematic reviews and meta-analyses <span class="msp-h1__accent">in just 3 days of live training.</span></h1>
             <p class="msp-lede">
-              Three live Sunday sessions for medical students and graduates who
-              have never done research and don't know where to begin: case
-              reports and case series, original studies, and systematic reviews
-              and meta-analyses. $49, one-time, for all three.
+              A 9-hour live workshop taught from the basics by mentors who
+              publish. One 3-hour session every Sunday for 3 weeks.
             </p>
-            <p class="rw-hero-meta">Live mentor sessions every Sunday &middot; Structured notes and PPTs &middot; Certificate of completion</p>
             <div class="msp-cta-row">
               <a
                 class="btn btn--primary btn--xl"
@@ -118,10 +114,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 data-rw-reserve
                 >Reserve Your Spot</a
               >
-              <a class="btn btn--outline btn--xl" href="#curriculum">
-                See what's covered
-                <i data-lucide="arrow-down" class="ic-arrow" width="16" height="16"></i>
-              </a>
+              <a class="btn btn--outline btn--xl" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
             </div>
           </div>
         </div>
@@ -198,13 +191,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
-      <!-- ============== CURRICULUM: THREE LIVE SESSIONS ============== -->
+      <!-- ============== CURRICULUM: WHAT HAPPENS EACH DAY ============== -->
       <section class="msp-section rc-curriculum" id="curriculum" aria-labelledby="curriculumTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal">
-            <span class="msp-eyebrow">Live &middot; 3 Sunday sessions</span>
-            <h2 id="curriculumTitle" class="msp-h2">How to do research for USMLE: the three Sundays.</h2>
-            <p class="msp-sub">Each session is taught live by a mentor who has done it, built to leave you with a concrete next step toward your first publication.</p>
+            <span class="msp-eyebrow">What happens each day</span>
+            <h2 id="curriculumTitle" class="msp-h2">3 Sundays. 3 types of paper. 9 live hours.</h2>
           </div>
 
           <!-- The three sessions -->
@@ -214,33 +206,87 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="file-text" width="18" height="18"></i>
                 </div>
-                <span class="rw-session__meta">15 Nov &middot; 3 hours, live</span>
-                <h3 class="rc-pub-type__head">Case Reports &amp; Case Series</h3>
-                <p>With Shivani Ravipati. Learn to spot a publishable case, build it from what you already have access to, and get it ready to submit.</p>
-                <p class="rw-session__leave"><strong>You leave with:</strong> a case chosen and outlined for submission.</p>
+                <span class="rw-session__meta">Day 1 &middot; Sun, Nov 15<br>10 AM to 1 PM EST</span>
+                <h3 class="rc-pub-type__head">Master case reports and case series</h3>
+                <p class="rw-session__with">With Dr. Shivani Ravipati</p>
+                <p>Go from zero to your first case report, including how a case report is built section by section.</p>
+                <p class="rw-session__leave"><strong>You leave with:</strong> the step-by-step process to publish your first case report.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--emerald">
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="flask-conical" width="18" height="18"></i>
                 </div>
-                <span class="rw-session__meta">22 Nov &middot; 3 hours, live</span>
-                <h3 class="rc-pub-type__head">Original Studies</h3>
-                <p>With Muhammad Ahmad Barakat. Design and run a first original study, including how to work with the data you can realistically access as a student.</p>
-                <p class="rw-session__leave"><strong>You leave with:</strong> a first study design you can run with data you can reach.</p>
+                <span class="rw-session__meta">Day 2 &middot; Sun, Nov 22<br>10 AM to 1 PM EST</span>
+                <h3 class="rc-pub-type__head">Master original studies</h3>
+                <p class="rw-session__with">With Dr. Shivani Ravipati and Dr. Kaushik Sreeram</p>
+                <p>Design your first original study from scratch, using data you can actually get as a student.</p>
+                <p class="rw-session__leave"><strong>You leave with:</strong> a first study design you can run with data you can easily reach.</p>
               </div>
               <div class="rc-pub-type rc-pub-type--violet">
                 <div class="rc-pub-type__icon-wrap">
                   <i data-lucide="list-checks" width="18" height="18"></i>
                 </div>
-                <span class="rw-session__meta">29 Nov &middot; 3 hours, live</span>
-                <h3 class="rc-pub-type__head">Systematic Reviews &amp; Meta-Analyses</h3>
-                <p>With Muhammad Ahmad Barakat. Pool existing evidence into a rigorous review, a strong first publication that needs no new data collection.</p>
-                <p class="rw-session__leave"><strong>You leave with:</strong> a review question and a search plan, with no new data needed.</p>
+                <span class="rw-session__meta">Day 3 &middot; Sun, Nov 29<br>10 AM to 1 PM EST</span>
+                <h3 class="rc-pub-type__head">Master systematic reviews and meta-analyses</h3>
+                <p class="rw-session__with">With Muhammad Ahmad Barakat</p>
+                <p>Go from a review question to a finished systematic review and meta-analysis.</p>
+                <p class="rw-session__leave"><strong>You leave with:</strong> the step-by-step plan to publish your first systematic review and meta-analysis.</p>
               </div>
             </div>
-            <p class="rw-next-note">Sunday, November 15, 22, and 29. Enrollment is open to everyone.</p>
+            <p class="rw-next-note">Every day ends with live Q&amp;A.</p>
           </div>
 
+          <div class="rw-cta-row reveal">
+            <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve my spot &middot; $49</a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============== WORKSHOP DETAILS ============== -->
+      <section class="msp-section rw-details" id="details" aria-labelledby="detailsTitle">
+        <div class="msp-wrap">
+          <div class="msp-head reveal">
+            <span class="msp-eyebrow">Workshop details</span>
+            <h2 id="detailsTitle" class="msp-h2">Sessions start at 10 AM Eastern, every Sunday.</h2>
+          </div>
+
+          <dl class="rw-facts reveal">
+            <div class="rw-fact">
+              <dt>Dates</dt>
+              <dd>3 Sundays in a row: November 15, November 22 and November 29, 2026</dd>
+            </div>
+            <div class="rw-fact">
+              <dt>Time</dt>
+              <dd>10 AM to 1 PM EST, each Sunday</dd>
+            </div>
+            <div class="rw-fact">
+              <dt>Total</dt>
+              <dd>9 hours of live teaching</dd>
+            </div>
+            <div class="rw-fact">
+              <dt>Platform</dt>
+              <dd>Live on Zoom</dd>
+            </div>
+          </dl>
+
+          <div class="rw-tz reveal">
+            <table class="rw-tz__table">
+              <caption class="rw-tz__cap">Session times in your city</caption>
+              <thead>
+                <tr><th scope="col">Your city</th><th scope="col">Starts</th><th scope="col">Ends</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">New York (EST)</th><td>10:00 AM</td><td>1:00 PM</td></tr>
+                <tr><th scope="row">London (GMT)</th><td>3:00 PM</td><td>6:00 PM</td></tr>
+                <tr><th scope="row">Dubai (GST)</th><td>7:00 PM</td><td>10:00 PM</td></tr>
+                <tr><th scope="row">Tbilisi (GET)</th><td>7:00 PM</td><td>10:00 PM</td></tr>
+                <tr><th scope="row">Pakistan (PKT)</th><td>8:00 PM</td><td>11:00 PM</td></tr>
+                <tr><th scope="row">India (IST)</th><td>8:30 PM</td><td>11:30 PM</td></tr>
+                <tr><th scope="row">Nepal (NPT)</th><td>8:45 PM</td><td>11:45 PM</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 

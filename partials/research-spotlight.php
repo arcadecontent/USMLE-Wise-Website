@@ -21,8 +21,8 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/research-testimonials.php';
 
-// A page may set $rspOverride before including this to render its own set.
-// research-spotlight-preview.php uses it to show placeholder slides.
+// A page may set $rspOverride before including this to render its own set,
+// in the same shape as the data file, for a feed or a preview page.
 $rspItems = (isset($rspOverride) && is_array($rspOverride))
     ? array_values(array_filter(array_map('usmlewise_research_testimonial_normalize', $rspOverride)))
     : usmlewise_research_testimonials();

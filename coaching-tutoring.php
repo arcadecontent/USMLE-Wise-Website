@@ -70,6 +70,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <a class="btn btn--outline btn--xl" href="/coaching">Back to Coaching</a>
           </div>
         </div>
+        <div class="msp-hero__frame-wrap reveal">
+          <div class="msp-hero__frame msp-hero__frame--type msp-hero__frame--2" role="img" aria-label="1:1 Tutoring">
+            <span class="msp-hero__type-kicker">Steps</span>
+            <span class="msp-hero__type-name">1:1<br>Tutoring</span>
+            <span class="msp-hero__type-sub">Done-with-you</span>
+          </div>
+        </div>
       </div>
       <div class="msp-bar msp-wrap" aria-label="Track record">
         <div class="msp-bar__inner">

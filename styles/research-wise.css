@@ -3,18 +3,6 @@
    Page-specific additions on top of research-catalyst.css
    ============================================================ */
 
-/* ---- Hero: the one-line summary under the description ---- */
-.rw-hero-meta {
-  /* .msp-lede above already carries 32px of bottom margin; pull back to a
-     tighter 16px so the line reads as part of the same block. */
-  margin: -16px 0 var(--space-6);
-  font-size: var(--fs-14-5);
-  font-weight: 500;
-  color: var(--uw-ink-700);
-  line-height: 1.6;
-  max-width: 52ch;
-}
-
 /* ---- Shared: a centered button row under a section ---- */
 .rw-cta-row {
   display: flex;
@@ -100,6 +88,11 @@
   text-transform: uppercase;
   color: var(--uw-ink-500);
 }
+.rw-session__meta { line-height: 1.7; }
+.rw-session__with {
+  font-weight: 600;
+  color: var(--uw-ink-800);
+}
 .rw-session__leave {
   margin-top: auto;
   padding-top: 12px;
@@ -132,6 +125,7 @@
 #curriculum .rc-pub-type__head,
 #curriculum .rc-pub-type p,
 #curriculum .rw-session__meta,
+#curriculum .rw-session__with,
 #curriculum .rw-session__leave strong {
   transition: color var(--dur-med) var(--ease-out);
 }
@@ -169,6 +163,10 @@
   max-width: 820px;
   margin: 0 auto clamp(56px, 7vw, 88px);
   text-align: center;
+  background: var(--uw-ink-75);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 48px);
 }
 .rw-host__photo {
   width: clamp(160px, 20vw, 208px);
@@ -439,4 +437,75 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .rw-sticky { transition: none; }
+}
+
+/* ---- WORKSHOP DETAILS ---- */
+.rw-details { background: var(--uw-ink-75); }
+.rw-facts {
+  margin: 0 0 clamp(20px, 2.5vw, 32px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.rw-fact {
+  background: var(--uw-bg);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  padding: clamp(18px, 2vw, 26px);
+}
+.rw-fact dt {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--uw-blue-500);
+  margin-bottom: var(--space-2);
+}
+.rw-fact dd {
+  margin: 0;
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--uw-ink-900);
+  line-height: 1.45;
+}
+.rw-tz {
+  background: var(--uw-bg);
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+.rw-tz__table { width: 100%; border-collapse: collapse; }
+.rw-tz__cap {
+  text-align: left;
+  padding: clamp(16px, 2vw, 22px) clamp(16px, 2.5vw, 28px);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--uw-ink-900);
+  border-bottom: 1px solid var(--uw-border);
+}
+.rw-tz__table th,
+.rw-tz__table td {
+  text-align: left;
+  padding: 13px clamp(16px, 2.5vw, 28px);
+  font-size: var(--fs-14);
+  border-bottom: 1px solid var(--uw-border);
+}
+.rw-tz__table thead th {
+  background: var(--uw-ink-75);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--uw-ink-500);
+}
+.rw-tz__table tbody th { font-weight: 500; color: var(--uw-ink-800); }
+.rw-tz__table td { color: var(--uw-ink-700); font-variant-numeric: tabular-nums; }
+.rw-tz__table tbody tr:last-child th,
+.rw-tz__table tbody tr:last-child td { border-bottom: 0; }
+@media (max-width: 900px) {
+  .rw-facts { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .rw-facts { grid-template-columns: 1fr; }
 }

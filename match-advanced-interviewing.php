@@ -251,6 +251,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </section>
 
+    <!-- MATCHED AT -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/matched-ticker.php'; ?>
+
     <!-- PROBLEM -->
     <section class="msp-section ai-problem" aria-labelledby="problemTitle">
       <div class="msp-wrap ai-panel">

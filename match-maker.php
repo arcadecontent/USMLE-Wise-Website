@@ -232,6 +232,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </section>
 
+    <!-- MATCHED AT -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/matched-ticker.php'; ?>
+
     <!-- PROBLEM FRAMING -->
     <section class="msp-section pg-about" aria-labelledby="problemTitle">
       <div class="msp-wrap">

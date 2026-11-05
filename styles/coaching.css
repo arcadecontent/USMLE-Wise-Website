@@ -1422,3 +1422,55 @@
     max-width: 62ch;
   }
 }
+
+/* Typographic hero frame (no photo): .msp-hero__frame--type + --1/--2/--3 colour */
+.msp-hero__frame--type {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: clamp(24px, 3vw, 40px);
+  color: #fff;
+  background: linear-gradient(150deg, #0d2a52 0%, #0a1b33 100%);
+}
+.msp-hero__frame--type::before {
+  content: "";
+  position: absolute;
+  right: -30%;
+  top: -18%;
+  width: 90%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 66%);
+  pointer-events: none;
+}
+.msp-hero__frame--2 { background: linear-gradient(150deg, #12356b 0%, #0a1b33 100%); }
+.msp-hero__frame--3 { background: linear-gradient(150deg, #8a1224 0%, #0a1b33 88%); }
+.msp-hero__type-kicker {
+  position: absolute;
+  top: clamp(24px, 3vw, 40px);
+  left: clamp(24px, 3vw, 40px);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.msp-hero__type-name {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 700;
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+}
+.msp-hero__type-sub {
+  position: relative;
+  font-size: clamp(13px, 1.15vw, 15.5px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  padding-top: 14px;
+  border-top: 2px solid var(--uw-red-500, #e5383b);
+}

@@ -102,6 +102,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <a class="btn btn--outline btn--xl" href="/match">Back to Match</a>
           </div>
         </div>
+        <div class="msp-hero__frame-wrap reveal">
+          <div class="msp-hero__frame msp-hero__frame--type msp-hero__frame--1" role="img" aria-label="Interview Prep">
+            <span class="msp-hero__type-kicker">Match</span>
+            <span class="msp-hero__type-name">Interview<br>Prep</span>
+            <span class="msp-hero__type-sub">Mock interviews &middot; Strategy</span>
+          </div>
+        </div>
       </div>
       <div class="msp-bar msp-wrap" aria-label="Track record">
         <div class="msp-bar__inner">
@@ -115,6 +122,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
     </section>
+
+    <!-- MATCHED AT -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/matched-ticker.php'; ?>
 
     <!-- PROBLEM FRAMING -->
     <section class="msp-section pg-about" aria-labelledby="problemTitle">
