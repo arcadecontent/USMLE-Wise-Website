@@ -102,11 +102,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="msp-hero" aria-labelledby="heroTitle">
         <div class="msp-wrap msp-hero__grid">
           <div class="msp-hero__copy reveal">
+            <span class="msp-eyebrow rw-level">Basics of Research &middot; Level 1 Workshop</span>
             <h1 id="heroTitle" class="msp-h1">Master case reports, original studies, systematic reviews and meta-analyses <span class="msp-h1__accent">in just 3 days of live training.</span></h1>
             <p class="msp-lede">
               A 9-hour live workshop taught from the basics by mentors who
               publish. One 3-hour session every Sunday for 3 weeks.
             </p>
+            <p class="rw-beginner"><strong>Built for absolute beginners.</strong> No research idea, institutional access, IRB approval or professor connections needed.</p>
             <div class="msp-cta-row">
               <a
                 class="btn btn--primary btn--xl"
@@ -116,7 +118,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               >
               <a class="btn btn--outline btn--xl" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
             </div>
+            <p class="rw-assure"><i data-lucide="shield-check" width="18" height="18" aria-hidden="true"></i><span>One-time $49. Covered by our <a href="/refund-policy">Refund &amp; Guarantee Policy</a>.</span></p>
           </div>
+        </div>
+
+        <div class="msp-wrap">
+          <ol class="rw-hero-days reveal" aria-label="The three live sessions">
+            <li><span class="rw-hero-days__k">Day 1</span><span class="rw-hero-days__d">Sunday, Nov 15</span><span class="rw-hero-days__t">Case reports and case series</span><span class="rw-hero-days__m">10 AM to 1 PM EST</span></li>
+            <li><span class="rw-hero-days__k">Day 2</span><span class="rw-hero-days__d">Sunday, Nov 22</span><span class="rw-hero-days__t">Original studies</span><span class="rw-hero-days__m">10 AM to 1 PM EST</span></li>
+            <li><span class="rw-hero-days__k">Day 3</span><span class="rw-hero-days__d">Sunday, Nov 29</span><span class="rw-hero-days__t">Systematic reviews and meta-analyses</span><span class="rw-hero-days__m">10 AM to 1 PM EST</span></li>
+          </ol>
         </div>
 
         <div class="msp-bar msp-wrap" aria-label="Track record">
@@ -140,6 +151,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <b data-count="65" data-suffix="+">65+</b>
               <span>Projects mentored</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== RECOGNITION ============== -->
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
+      <?php if ($rwHasAwards): ?>
+      <div class="msp-wrap">
+        <div class="rw-cta-row rw-cta-row--tight reveal">
+          <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
+        </div>
+      </div>
+      <?php endif; ?>
+
+      <!-- ============== THE PROBLEM ============== -->
+      <section class="msp-section rw-problem" id="problem" aria-labelledby="problemTitle">
+        <div class="msp-wrap">
+          <div class="rw-problem__inner">
+            <h2 id="problemTitle" class="msp-h2 reveal">Residency programs want research. <span class="msp-h1__accent">Nobody shows you how to start.</span></h2>
+            <ul class="rw-problem__list">
+              <li class="reveal">You don't know whether your first paper should be a case report, a study, or a review.</li>
+              <li class="reveal">You don't have a lab, a mentor, or a dataset.</li>
+              <li class="reveal">Months pass, and the research section of your CV is still empty.</li>
+            </ul>
+            <p class="rw-problem__turn reveal">Every researcher started with one first project.<br><strong>In 3 days, you'll have yours.</strong></p>
           </div>
         </div>
       </section>
@@ -185,8 +221,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </div>
           </div>
 
-          <div class="rw-cta-row reveal">
-            <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
+          <div class="rc-payment rw-offer reveal" id="investment">
+            <span class="rw-offer__tag">Our first 100 members get a special price</span>
+            <div class="rc-payment__price">$49</div>
+            <p class="rc-payment__note">One-time payment for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
+            <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve my spot &middot; $49</a>
           </div>
         </div>
       </section>
@@ -380,16 +419,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
-      <!-- ============== RECOGNITION ============== -->
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
-      <?php if ($rwHasAwards): ?>
-      <div class="msp-wrap">
-        <div class="rw-cta-row rw-cta-row--tight reveal">
-          <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
-        </div>
-      </div>
-      <?php endif; ?>
-
       <?php if ($rwShots || $rwVideos): ?>
       <!-- ============== TESTIMONIALS ============== -->
       <section class="msp-section rw-tst" id="testimonials" aria-labelledby="tstTitle">
@@ -473,35 +502,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <span class="rc-whom-item">You want one clear next step, not a pile of unconnected videos</span>
               </li>
             </ol>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== INVESTMENT ============== -->
-      <section class="msp-section rw-invest" id="investment" aria-labelledby="investTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Investment</span>
-            <h2 id="investTitle" class="msp-h2">Our first 100 members get a special price: $49, one time.</h2>
-            <p class="msp-sub">We want as many first-time researchers in the room as we can, so we are giving back to the community.</p>
-          </div>
-
-          <div class="rc-payment reveal">
-            <div class="rw-invest__inner">
-              <div class="rw-invest__price-col">
-                <div class="rc-payment__price">$49</div>
-                <p class="rc-payment__note">One-time payment for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
-                <a class="btn btn--primary btn--lg rw-invest__btn" href="#reserve" data-rw-reserve>Reserve your spot</a>
-              </div>
-              <ul class="rw-ticks">
-                <li>Three live 3-hour sessions</li>
-                <li>Structured notes</li>
-                <li>Structured PPTs</li>
-                <li>Certificate of completion</li>
-                <li>WhatsApp group</li>
-                <li>A concrete next step</li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
