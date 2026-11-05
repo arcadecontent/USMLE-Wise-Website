@@ -101,7 +101,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
   <!-- ============== 3 · THE PROBLEM ============== -->
   <section class="lpx-section lpx-problem" id="problem" aria-labelledby="problemTitle">
-    <div class="lpx-wrap">
+    <div class="lpx-wrap lpx-problem__split">
       <div class="lpx-problem__hd reveal">
         <h2 id="problemTitle" class="lpx-h2">
           Hard enough with help. Brutal without it.
@@ -114,38 +114,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           The problem isn't your effort. It's having no roadmap.
         </p>
       </div>
-      <ol class="lpx-pain-grid reveal">
-        <li class="lpx-pain-card" style="background-image: url('assets/Photos/surface-XHSYzoIC_SM-unsplash.webp')">
-          <div class="lpx-pain-card__inner">
-            <p class="lpx-pain-card__txt">Unsure how to build a strong residency application</p>
-          </div>
-        </li>
-        <li class="lpx-pain-card" style="background-image: url('assets/Photos/calendar.webp')">
-          <div class="lpx-pain-card__inner">
-            <p class="lpx-pain-card__txt">Confused about ERAS timelines and requirements</p>
-          </div>
-        </li>
-        <li class="lpx-pain-card" style="background-image: url('assets/Photos/frustrated.webp')">
-          <div class="lpx-pain-card__inner">
-            <p class="lpx-pain-card__txt">Struggling to improve USMLE scores</p>
-          </div>
-        </li>
-        <li class="lpx-pain-card" style="background-image: url('assets/Photos/mentorship.webp')">
-          <div class="lpx-pain-card__inner">
-            <p class="lpx-pain-card__txt">No mentorship or accountability</p>
-          </div>
-        </li>
-        <li class="lpx-pain-card" style="background-image: url('assets/Photos/money.webp')">
-          <div class="lpx-pain-card__inner">
-            <p class="lpx-pain-card__txt">Wasting money on the wrong resources</p>
-          </div>
-        </li>
-        <li class="lpx-pain-card" style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')">
-          <div class="lpx-pain-card__inner">
-            <p class="lpx-pain-card__txt">Fear of not matching after years of effort</p>
-          </div>
-        </li>
-      </ol>
+      <div class="lpx-pain-visual reveal" style="background-image: url('assets/Photos/frustrated.webp')">
+        <ol class="lpx-pain-list">
+          <li class="lpx-pain-item"><span class="lpx-pain-item__n">01</span><span>Unsure how to build a strong residency application</span></li>
+          <li class="lpx-pain-item"><span class="lpx-pain-item__n">02</span><span>Confused about ERAS timelines and requirements</span></li>
+          <li class="lpx-pain-item"><span class="lpx-pain-item__n">03</span><span>Struggling to improve USMLE scores</span></li>
+          <li class="lpx-pain-item"><span class="lpx-pain-item__n">04</span><span>No mentorship or accountability</span></li>
+          <li class="lpx-pain-item"><span class="lpx-pain-item__n">05</span><span>Wasting money on the wrong resources</span></li>
+          <li class="lpx-pain-item"><span class="lpx-pain-item__n">06</span><span>Fear of not matching after years of effort</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -510,7 +488,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
       <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
         <article class="lpx-svc-card">
-          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/high-school-student.webp')"></div>
+          <div class="lpx-svc-card__img lpx-thumb lpx-thumb--1" role="img" aria-label="ERAS CV Lite Edit">
+            <span class="lpx-thumb__kicker">ERAS CV</span>
+            <span class="lpx-thumb__name">Lite Edit</span>
+            <span class="lpx-thumb__sub">2-hour live rebuild</span>
+          </div>
           <div class="lpx-svc-card__body">
             <span class="lpx-svc-card__eyebrow">Live &middot; 2-hour session</span>
             <h4 class="lpx-svc-card__title">Lite Edit</h4>
@@ -524,7 +506,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </article>
 
         <article class="lpx-svc-card">
-          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/team-young-specialist-doctors-vertical-crop.webp')"></div>
+          <div class="lpx-svc-card__img lpx-thumb lpx-thumb--2" role="img" aria-label="ERAS CV Signature Surgery">
+            <span class="lpx-thumb__kicker">ERAS CV</span>
+            <span class="lpx-thumb__name">Signature Surgery</span>
+            <span class="lpx-thumb__sub">Full CV + coherence check</span>
+          </div>
           <div class="lpx-svc-card__body">
             <span class="lpx-svc-card__eyebrow">Live &middot; Most popular</span>
             <h4 class="lpx-svc-card__title">Signature Surgery</h4>
@@ -538,7 +524,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </article>
 
         <article class="lpx-svc-card">
-          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/ny-im-student-travel.webp')"></div>
+          <div class="lpx-svc-card__img lpx-thumb lpx-thumb--3" role="img" aria-label="ERAS CV Strategic Surgery">
+            <span class="lpx-thumb__kicker">ERAS CV</span>
+            <span class="lpx-thumb__name">Strategic Surgery</span>
+            <span class="lpx-thumb__sub">CV + signaling strategy</span>
+          </div>
           <div class="lpx-svc-card__body">
             <span class="lpx-svc-card__eyebrow">Live &middot; Comprehensive</span>
             <h4 class="lpx-svc-card__title">Strategic Surgery</h4>

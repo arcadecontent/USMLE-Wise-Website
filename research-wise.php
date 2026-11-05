@@ -123,7 +123,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <i data-lucide="arrow-down" class="ic-arrow" width="16" height="16"></i>
               </a>
             </div>
-            <p class="rw-free-module"><a href="/research-masterclass-module-1">Not sure yet? Try Module 1 free <span aria-hidden="true">&rarr;</span></a></p>
           </div>
         </div>
 
@@ -590,9 +589,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </div>
     <style>
-      .rw-free-module{margin:14px 0 0;font-size:15px}
-      .rw-free-module a{color:var(--uw-blue-600);font-weight:600;text-decoration:none}
-      .rw-free-module a:hover{text-decoration:underline}
       /* The popup stays light in dark mode so it matches Stripe's card field. */
       .rw-pay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;color-scheme:light}
       .rw-pay[hidden]{display:none}

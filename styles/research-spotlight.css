@@ -2,21 +2,36 @@
    USMLE Wise — Research Spotlight testimonial carousel
    Used by partials/research-spotlight.php. Prefix: rsp-
 
-   One accepted abstract per slide. A navy record rail (headshot,
+   One accepted abstract per slide. A pale record rail (headshot,
    name, acceptance chip, abstract title, meeting) sits against the
    quote on paper, so the proof and the words read as one object.
+
+   Nothing in the rail shares a row with anything else at this width.
+   The status, the name and the abstract title are all open-ended
+   strings, and the column is only about 280px: side by side they each
+   wrap to three lines and the block turns to mush. Stacked, a long name
+   costs one extra line and nothing else moves.
+
+   Legibility on the navy comes from alpha, not hue. No text sits below
+   0.62 opacity: the earlier 0.42 meeting line measured about 3.7:1,
+   under AA for 10px type.
+
+   Quotes render in full. Slides are equal height so the card does not
+   resize when you press next, which means the longest quote in the set
+   sets the height of all of them. See the recommended length in
+   data/research-testimonials.php.
    ============================================================ */
 
 .rsp-carousel {
   position: relative;
-  margin-top: clamp(32px, 4vw, 52px);
+  margin-top: clamp(24px, 3vw, 40px);
 }
 
 /* ---------- Track ---------- */
 .rsp-track {
   position: relative;
   display: flex;
-  gap: clamp(16px, 2vw, 28px);
+  gap: clamp(14px, 1.8vw, 24px);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -44,7 +59,7 @@
 .rsp-record {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(250px, 0.64fr) 1.36fr;
+  grid-template-columns: minmax(250px, 0.62fr) 1.38fr;
   background: var(--uw-surface);
   border: 1px solid var(--uw-border);
   border-radius: var(--r-2xl);
@@ -53,15 +68,19 @@
 }
 
 /* ---------- Rail (the acceptance record) ---------- */
+/* Three blocks flowing from the top: who (headshot, name, acceptance),
+   what the work was, where it is being presented. One rule, between the
+   person and the work. An earlier version pushed the meeting to the bottom
+   with an auto margin, which opened a gap in the middle of the rail. */
 .rsp-record__rail {
   position: relative;
   isolation: isolate;
   background: var(--uw-blue-800);
-  color: #fff;
-  padding: clamp(28px, 3.1vw, 42px);
+  padding: clamp(24px, 2.5vw, 34px);
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 2.2vw, 28px);
+  align-items: flex-start;
+  gap: clamp(18px, 1.9vw, 24px);
 }
 .rsp-record__rail::before {
   content: "";
@@ -69,25 +88,45 @@
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(90% 60% at 100% 0%, rgba(82, 96, 181, 0.45), transparent 70%),
-    radial-gradient(70% 50% at 0% 100%, rgba(227, 33, 36, 0.16), transparent 72%);
+    radial-gradient(90% 60% at 100% 0%, rgba(82, 96, 181, 0.42), transparent 70%),
+    radial-gradient(70% 50% at 0% 100%, rgba(227, 33, 36, 0.14), transparent 72%);
+}
+
+/* Outlined, not a solid red block. At 38 characters the acceptance wraps
+   to two lines, and two solid lines of red is a lot of shouting for the
+   top of a card that has a red quote mark coming up next to it. */
+.rsp-chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--uw-red-200);
+  background: rgba(227, 33, 36, 0.12);
+  border: 1px solid rgba(227, 33, 36, 0.45);
+  padding: 5px 10px;
+  border-radius: var(--r-xs);
 }
 
 .rsp-person {
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 1.8vw, 22px);
+  align-items: flex-start;
+  gap: clamp(13px, 1.4vw, 17px);
+  max-width: 100%;
 }
 
 .rsp-person__photo {
-  position: relative;
-  width: clamp(92px, 9.5vw, 124px);
+  flex: none;
+  width: clamp(72px, 6.8vw, 94px);
   aspect-ratio: 1;
   border-radius: var(--r-lg);
   background: var(--uw-blue-700);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 10px 24px rgba(10, 12, 38, 0.38);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 20px rgba(10, 12, 38, 0.36);
 }
-.rsp-person__photo img:not(.rsp-person__emblem) {
+.rsp-person__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -100,124 +139,104 @@
 }
 .rsp-person__photo--mono span {
   font-family: var(--font-display);
-  font-size: clamp(30px, 3.4vw, 40px);
+  font-size: clamp(25px, 2.4vw, 31px);
   font-weight: 400;
   letter-spacing: 0.02em;
   color: var(--uw-blue-200);
 }
-.rsp-person__emblem {
-  position: absolute;
-  right: -11px;
-  bottom: -11px;
-  width: 34px;
-  height: 34px;
-  padding: 6px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 3px 10px rgba(10, 12, 38, 0.3);
+
+.rsp-person__id {
+  min-width: 0;
+  max-width: 100%;
 }
 
+/* A long name wraps down the full column instead of into a 170px gutter,
+   and anywhere-wrapping stops one unbroken token widening the grid. */
 .rsp-person__name {
   font-family: var(--font-sans);
-  font-size: clamp(20px, 1.9vw, 25px);
+  font-size: clamp(19px, 1.7vw, 23px);
   font-weight: 600;
   letter-spacing: -0.015em;
-  line-height: 1.2;
+  line-height: 1.25;
   color: #fff;
-  margin: 0 0 12px;
-}
-
-.rsp-chip {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.13em;
-  line-height: 1.5;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--uw-red-500);
-  padding: 6px 10px;
-  border-radius: var(--r-xs);
+  margin: 0 0 11px;
+  overflow-wrap: anywhere;
 }
 
 .rsp-paper {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: var(--fs-14-5);
+  font-size: var(--fs-15-5);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 255, 255, 0.82);
   margin: 0;
-  padding-top: clamp(18px, 2vw, 24px);
+  padding-top: clamp(16px, 1.7vw, 21px);
   border-top: 1px solid rgba(255, 255, 255, 0.16);
+  overflow-wrap: anywhere;
+  width: 100%;
 }
 
 .rsp-event {
-  margin: auto 0 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   line-height: 1.6;
 }
-.rsp-event__name { color: var(--uw-blue-200); }
-.rsp-event__meta { color: rgba(255, 255, 255, 0.42); letter-spacing: 0.09em; }
+.rsp-event__name { color: var(--uw-blue-200); font-weight: 500; }
+.rsp-event__meta { color: rgba(255, 255, 255, 0.62); letter-spacing: 0.07em; }
 
 /* ---------- Quote (the words) ---------- */
 .rsp-record__quote {
   display: flex;
   flex-direction: column;
-  padding: clamp(30px, 3.3vw, 46px) clamp(26px, 3.4vw, 54px) clamp(26px, 3vw, 40px);
+  padding: clamp(24px, 2.5vw, 34px) clamp(24px, 2.9vw, 44px) clamp(20px, 2.2vw, 30px);
 }
 
 .rsp-mark {
   font-family: var(--font-display);
-  font-size: clamp(54px, 5.4vw, 78px);
+  font-size: clamp(40px, 3.8vw, 56px);
   font-weight: 600;
   line-height: 0.62;
   color: var(--uw-red-500);
-  margin: 0 0 clamp(14px, 1.6vw, 20px) -0.045em;
+  margin: 0 0 clamp(6px, 0.9vw, 11px) -0.045em;
 }
 
+/* Quotes render in full. Slides are equal height, so the longest quote in
+   the set sets the height of all of them. */
 .rsp-quote {
   margin: 0;
   padding: 0;
   border: 0;
   max-width: 64ch;
+  font-size: var(--fs-16-5);
 }
 .rsp-quote p {
   font-family: var(--font-display);
-  font-size: var(--fs-16-5);
-  line-height: 1.68;
+  font-size: inherit;
+  line-height: 1.6;
   color: var(--uw-ink-700);
   margin: 0;
 }
-.rsp-quote p + p { margin-top: 1.05em; }
-
-.rsp-quote__pull {
-  font-size: clamp(21px, 2.1vw, 27px) !important;
-  line-height: 1.32 !important;
-  letter-spacing: -0.015em;
-  color: var(--uw-ink-900) !important;
-  margin-bottom: clamp(18px, 1.9vw, 24px) !important;
-}
+.rsp-quote p + p { margin-top: 0.78em; }
 
 .rsp-attr {
   margin-top: auto;
-  padding-top: clamp(22px, 2.5vw, 30px);
+  padding-top: clamp(18px, 2vw, 24px);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 11px;
   font-family: var(--font-sans);
   font-size: var(--fs-14);
   color: var(--uw-ink-500);
 }
 .rsp-attr b { font-weight: 600; color: var(--uw-ink-800); }
 .rsp-attr__rule {
-  width: 28px;
+  width: 24px;
   height: 1px;
   flex: none;
   background: var(--uw-red-500);
@@ -227,14 +246,14 @@
 .rsp-nav {
   display: flex;
   align-items: center;
-  gap: clamp(16px, 2vw, 24px);
-  margin-top: clamp(20px, 2.4vw, 30px);
+  gap: clamp(14px, 1.8vw, 22px);
+  margin-top: clamp(16px, 1.9vw, 24px);
 }
-.rsp-nav__arrows { display: flex; gap: 10px; }
+.rsp-nav__arrows { display: flex; gap: 9px; }
 
 .rsp-nav__btn {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -257,6 +276,8 @@
   outline: 2px solid var(--uw-blue-500);
   outline-offset: 3px;
 }
+/* The arrows wrap rather than disabling at the ends, because autoplay
+   loops and a dead arrow next to a looping carousel reads wrong. */
 .rsp-nav__btn:disabled { opacity: 0.32; cursor: default; }
 
 .rsp-nav__hint {
@@ -318,35 +339,58 @@
 }
 
 /* ---------- Responsive ---------- */
+/* Below this the two columns can no longer both hold their line length,
+   so the rail becomes a header strip above the quote. */
 @media (max-width: 1020px) {
   .rsp-record { grid-template-columns: 1fr; }
-  .rsp-record__rail { gap: clamp(18px, 3vw, 24px); }
-  .rsp-person {
-    flex-direction: row;
-    align-items: center;
-    gap: clamp(18px, 3vw, 26px);
-  }
-  .rsp-person__photo { width: clamp(78px, 14vw, 104px); }
-  .rsp-person__id { min-width: 0; }
-  .rsp-event { margin-top: 0; }
   .rsp-quote { max-width: none; }
 }
 
-@media (max-width: 720px) {
-  .rsp-nav { flex-wrap: wrap; }
-  .rsp-nav__hint { display: block; }
-  .rsp-nav__dots { margin-left: auto; }
-  .rsp-person__emblem { width: 28px; height: 28px; padding: 5px; right: -8px; bottom: -8px; }
-  .rsp-record__quote { padding-inline: clamp(22px, 6vw, 30px); }
+/* Tablet only. The rail spans the whole card here, so the headshot can
+   share a row with the name and acceptance without squeezing either.
+   Below 720px that width is gone again and they go back to stacking. */
+@media (min-width: 721px) and (max-width: 1020px) {
+  .rsp-person {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(16px, 2.6vw, 22px);
+  }
+  .rsp-person__name { max-width: 34ch; }
 }
 
+/* Phone and small tablet. Everything loses a step: the record is a
+   single column here, so every pixel saved is a pixel of thumb travel.
+   The cap grows in em because the lines are narrower: the same cap would
+   show noticeably less of the quote than it does on a wide screen. */
+@media (max-width: 720px) {
+  .rsp-carousel { margin-top: clamp(20px, 5vw, 28px); }
+  .rsp-record { border-radius: var(--r-xl); }
+  .rsp-record__rail { padding: clamp(20px, 4.8vw, 26px); gap: 16px; }
+  .rsp-record__quote { padding: clamp(20px, 4.8vw, 26px) clamp(20px, 4.8vw, 26px) clamp(18px, 4vw, 22px); }
+
+  .rsp-person__photo { width: 64px; }
+  .rsp-person__photo--mono span { font-size: 21px; }
+  .rsp-person__name { font-size: 18px; margin-bottom: 9px; }
+  .rsp-chip { font-size: 9px; letter-spacing: 0.1em; padding: 4px 8px; }
+  .rsp-paper { font-size: var(--fs-14-5); padding-top: 15px; }
+  .rsp-event { font-size: 9px; gap: 4px; }
+
+  .rsp-mark { font-size: 34px; margin-bottom: 4px; }
+  .rsp-quote { font-size: var(--fs-15-5); }
+  .rsp-quote p { line-height: 1.58; }
+  .rsp-quote p + p { margin-top: 0.7em; }
+  .rsp-attr { padding-top: 16px; gap: 9px; }
+
+  .rsp-nav { margin-top: 14px; gap: 12px; }
+  .rsp-nav__hint { display: block; }
+  .rsp-nav__btn { width: 38px; height: 38px; }
+}
+
+/* At this width the hint cannot share a row with the arrows and the
+   dots, and a row of its own is not worth 30px on a phone. */
 @media (max-width: 520px) {
-  .rsp-person { align-items: flex-start; }
-  .rsp-person__name { margin-bottom: 10px; }
-  .rsp-chip { font-size: 9px; letter-spacing: 0.1em; }
-  .rsp-nav__arrows { order: 1; }
-  .rsp-nav__hint { order: 3; width: 100%; }
-  .rsp-nav__dots { order: 2; }
+  .rsp-nav__hint { display: none; }
+  .rsp-dot { width: 30px; height: 34px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

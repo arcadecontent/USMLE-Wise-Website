@@ -41,10 +41,6 @@
             <span class="msp-nav__dd-name">1:1 Tutoring</span>
             <span class="msp-nav__dd-meta">Done-with-you</span>
           </a>
-          <a href="/mastery" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Our Mastery</span>
-            <span class="msp-nav__dd-meta">Full course library</span>
-          </a>
         </div>
       </div>
       <div class="msp-nav__item msp-nav__item--has-dd">
@@ -164,6 +160,10 @@
           <a href="/conference-finder" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Conference Finder</span>
             <span class="msp-nav__dd-meta">Find a conference to submit to</span>
+          </a>
+          <a href="/mastery" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Mastery Platform</span>
+            <span class="msp-nav__dd-meta">Full course library</span>
           </a>
         </div>
       </div>

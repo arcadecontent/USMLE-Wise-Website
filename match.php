@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <!-- Video lightbox: these [data-vid] cards had no working click handler
        before (leftover "{{ playVideo }}" template syntax from the design
        export, never wired to real JS) -- this makes them actually play. -->
-  <div class="msp-lightbox" id="matchLightbox" role="dialog" aria-modal="true" aria-label="Match story video" hidden>
+  <div class="msp-lightbox" id="matchLightbox" role="dialog" aria-modal="true" aria-label="Match story video" style="display:none">
     <button class="msp-lightbox__close" aria-label="Close video">&times;</button>
     <div class="msp-lightbox__frame">
       <iframe id="matchLightboxIframe" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0" title="Match story video"></iframe>
@@ -664,12 +664,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       function open(ytid) {
         iframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
-        lightbox.removeAttribute('hidden');
+        lightbox.style.display = 'flex';
         lightbox.focus();
       }
       function close() {
         iframe.src = '';
-        lightbox.setAttribute('hidden', '');
+        lightbox.style.display = 'none';
       }
       document.querySelectorAll('[data-vid]').forEach(function (card) {
         card.setAttribute('role', 'button');
@@ -682,7 +682,7 @@ document.addEventListener('DOMContentLoaded', function () {
       lightbox.querySelector('.msp-lightbox__close').addEventListener('click', close);
       lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) close();
+        if (e.key === 'Escape' && lightbox.style.display !== 'none') close();
       });
     });
   })();
