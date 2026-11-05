@@ -275,7 +275,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="j1-cta-wrap">
         <div class="msp-wrap">
           <div class="rc-cta j1-cta-card reveal">
-            <span class="msp-eyebrow msp-eyebrow--light">Start your placement</span>
             <h2 class="rc-cta__head">Your fellowship placement<br>starts here.</h2>
             <p class="rc-cta__sub">
               Book a free 30-minute call. We'll review your background, discuss fit,

@@ -770,7 +770,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <section data-screen-label="Still have questions" class="uw-sec" style="padding:0 24px 88px;background:var(--uw-bg)">
     <div class="msp-wrap" style="max-width:640px;text-align:center;display:flex;flex-direction:column;align-items:center">
-      <span class="msp-eyebrow" style="justify-content:center;color:var(--uw-ink-500)">Still have questions?</span>
       <h3 style="font-family:var(--font-display);font-weight:400;font-size:32px;line-height:1.15;letter-spacing:-0.02em;margin:16px 0 0;color:var(--uw-ink-900)">Reach out before you decide.</h3>
       <p style="font-size:16px;line-height:1.6;color:var(--uw-ink-600);max-width:52ch;margin:18px 0 0;text-wrap:pretty">Not sure this is right for where you are in your Match journey? Message us. We’ll give you a straight answer about your best next step, even if that answer is to wait a cycle.</p>
       <div style="display:flex;justify-content:center;margin-top:24px">

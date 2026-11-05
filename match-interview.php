@@ -294,7 +294,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="pg-cta-wrap">
       <div class="msp-wrap">
         <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
-          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
           <h2 id="ctaTitle" class="msp-h2">Approach ranking season with absolute confidence.</h2>
           <p class="msp-sub">Book a free guidance call and we'll map out exactly what your interview preparation should look like — based on your specialty, your timeline, and where you need the most work.</p>
           <div class="msp-cta-row">

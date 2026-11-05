@@ -404,7 +404,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <section class="s1-cta-wrap">
   <div class="msp-wrap">
     <div class="s1-cta-card reveal" aria-labelledby="ctaTitle">
-      <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
       <h2 id="ctaTitle" class="msp-h2">Ready to build the score you're proud of?</h2>
       <p class="msp-sub">Enroll today and get instant access to all 7 modules, the Rapid Review notes, and the N+1 framework that carries straight into Step&nbsp;3.</p>
       <div class="msp-cta-row">

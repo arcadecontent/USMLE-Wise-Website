@@ -147,7 +147,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="pg-cta-wrap">
       <div class="msp-wrap">
         <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
-          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
           <h2 id="ctaTitle" class="msp-h2">Your LORs can be stronger. Let's make them stronger.</h2>
           <p class="msp-sub">Book a free guidance call or reach out directly to get started with LOR Editing before your deadline.</p>
           <div class="msp-cta-row">

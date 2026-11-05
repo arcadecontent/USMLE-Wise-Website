@@ -159,7 +159,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="pg-cta-wrap">
       <div class="msp-wrap">
         <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
-          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
           <h2 id="ctaTitle" class="msp-h2">Stop practising in isolation. Start training the way the exam tests.</h2>
           <p class="msp-sub">Book a free guidance call and we'll walk you through the session format, the schedule, and whether NBME Style Coaching is the right fit for where you are in your prep.</p>
           <div class="msp-cta-row">

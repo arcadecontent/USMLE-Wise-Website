@@ -129,7 +129,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </section>
     <section class="pg-cta-dark" aria-labelledby="ctaTitle">
       <div class="msp-wrap">
-        <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
         <h2 id="ctaTitle" class="msp-h2">Your exam date is set. Make these 10 days count.</h2>
         <p class="msp-sub">Book a free guidance call to map out your final review window and find out if this course fits your timeline.</p>
         <div class="msp-cta-row">

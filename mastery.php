@@ -458,7 +458,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="mst-cta-wrap">
         <div class="msp-wrap">
           <div class="mst-cta-card reveal" aria-labelledby="ctaTitle">
-            <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
             <h2 id="ctaTitle" class="msp-h2">Ready to find your course?</h2>
             <p class="msp-sub">Book a free guidance call and we'll map your timeline, then point you to exactly the right course, or combination of courses, in Our Mastery.</p>
             <div class="msp-cta-row">

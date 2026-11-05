@@ -884,7 +884,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="ec-cta-wrap">
         <div class="msp-wrap">
           <div class="ec-cta-card reveal" aria-labelledby="ctaTitle">
-            <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
             <h2 id="ctaTitle" class="msp-h2">Your CV is the first thing they read. Make it the reason they call you.</h2>
             <p class="msp-sub">48 hours. One live session. A CV that finally sounds like the doctor you actually are.</p>
             <div class="msp-cta-row">

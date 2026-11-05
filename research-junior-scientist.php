@@ -1170,7 +1170,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-wrap">
           <div class="msp-cta-a reveal">
             <div class="msp-cta-a__content">
-              <span class="msp-eyebrow msp-eyebrow--light">Applications open late summer</span>
               <h2 id="ctaTitle" class="msp-h2 msp-h2--invert">
                 Time is the<br /><em>real advantage.</em>
               </h2>

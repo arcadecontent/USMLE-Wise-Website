@@ -763,6 +763,12 @@
 
 /* ---- FAQ ---- */
 .rc-faq .msp-head { text-align: center; margin-left: auto; margin-right: auto; }
+/* .msp-h2 is capped at 22ch and .msp-lede at 52ch, so centering the head's text
+   is not enough: the heading box itself stays flush left and a short title sits
+   left of the eyebrow above it. Center the boxes too. */
+.rc-faq .msp-head .msp-h2,
+.rc-faq .msp-head .msp-lede,
+.rc-faq .msp-head .msp-sub { margin-inline: auto; }
 /* The boxed-card FAQ design this used to duplicate now lives in the design
    system as .accordion--faq (shared by every FAQ in the header nav), which
    also supplies the max-width and centering. Nothing page-specific is left,

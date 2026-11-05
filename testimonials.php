@@ -434,7 +434,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </p>
             </div>
             <div class="msp-cta-a__content">
-              <span class="msp-eyebrow msp-eyebrow--light">Ready to start</span>
               <h2 id="ctaTitle" class="msp-h2 msp-h2--invert">
                 The Match is not a lottery.<br /><em>It is a strategy.</em>
               </h2>

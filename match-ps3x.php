@@ -259,7 +259,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="pg-cta-wrap">
       <div class="msp-wrap">
         <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
-          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
           <h2 id="ctaTitle" class="msp-h2">Your story is worth telling well. Let's make sure it is.</h2>
           <p class="msp-sub">Book a free guidance call and we'll look at your background, your target specialty, and what your personal statement needs to accomplish.</p>
           <div class="msp-cta-row">

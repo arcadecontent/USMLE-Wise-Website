@@ -210,7 +210,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="pg-cta-wrap">
       <div class="msp-wrap">
         <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
-          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
           <h2 id="ctaTitle" class="msp-h2">If SOAP is happening, reach out now.</h2>
           <p class="msp-sub">Text us on WhatsApp or book a call — whichever is faster for you right now. We'll start on your application strategy immediately.</p>
           <div class="msp-cta-row">

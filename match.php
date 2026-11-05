@@ -1,936 +1,588 @@
 <?php
 /*
-  HAND-EDITED, same treatment as match-mentorship.php: this copy swaps the
-  page's own inline <head>/nav for the site's shared partials/head.php +
-  partials/nav.php + footer.php, so the header/footer always match the rest
-  of the site (they used to be a hardcoded, stale copy that drifted out of
-  sync with partials/nav.php and was missing several dropdown items) and the
-  page behaves like a normal match-*.php page (title, canonical, global
-  nav/footer, GA4).
-
-  The x-dc/dc-runtime section below is otherwise untouched, aside from
-  rewriting every relative asset URL (uploads/..., _ds/..., ./image-slot.js)
-  to an absolute /match-media/... path, since dropping the page's own
-  <base href="/match-media/"> tag (replaced by partials/head.php, which has
-  no base tag) would otherwise break them.
-
-  DROPPING THAT <base> ALSO BROKE THE FOUR <x-import image-slot> PHOTOS,
-  which is why they are now plain <img> tags. Those slots never had their
-  image in the HTML: the component fetched match-media/.image-slots.state.json
-  (a design-tool sidecar) and read the photo out of it as a base64 data URL.
-  That fetch is DOCUMENT-RELATIVE — `fetch('.image-slots.state.json')` — so
-  the old <base href="/match-media/"> was the only reason it ever resolved.
-  Without it the request went to /.image-slots.state.json, 404'd, and all
-  four slots silently fell back to their "Drop a photo" placeholder.
-
-  So the four photos were extracted out of that sidecar into real files
-  (match-media/uploads/slot-*.webp) and are now ordinary <img> tags. Three
-  of them carried a pan/zoom crop in the sidecar, reproduced here as
-  `transform:translate(x%,y%) scale(s)` on top of object-fit:cover — that is
-  exactly what the component's _applyView() computed (cover baseline × s,
-  centred at 50+x / 50+y percent of the frame), so they frame identically.
-  The sidecar and image-slot.js are now unused by this page; leave them in
-  place for the standalone landing pages, which still rely on them.
-
-  match.php already carries a `$preview` prop in its data-dc-script block
-  near the end of the file, so support.js's boot() never appends the
-  FULL_PAGE_CSS rule that breaks the sticky nav on pages without one (see
-  the long comment in match-mentorship.php for the full mechanism) — no
-  height:auto override is needed here the way it is there.
+  Match overview (/match). Rebuilt from scratch in the site's own components
+  (match.css .msp-* system + page-local .mp-* blocks). Replaced the original
+  design-tool page, which is archived outside the web root.
 */
 $pageTitle = "Match Support | USMLE Wise";
-$pageDescription = "Done-for-you Match support built by former program directors and residency selection committee members: ERAS, personal statement, letters, signaling, and interview prep, engineered into one coherent story.";
+$pageDescription = "Done-for-you Match support from former residency selection committee members: ERAS CV, personal statement, letters, signaling, and interview prep built into one story. Three packages, money-back guaranteed.";
 $canonical = "https://usmlewise.com/match";
 $bodyClass = "msp";
-$stylesheets = ["/styles/match.css"];
+$stylesheets = [
+    "/styles/match.css"
+];
+$scripts = [
+    "/js/match.js"
+];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  if (window.lucide && typeof window.lucide.createIcons === 'function') {
-    window.lucide.createIcons();
-  }
-  var nav = document.getElementById('mspNav');
-  if (nav) {
-    var onScroll = function () {
-      nav.classList.toggle('is-stuck', window.scrollY > 12);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-});
-</script>
-<script src="/match-media/support.js"></script>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/fonts.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/colors.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/typography.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/spacing.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/tokens/base.css">
-<link rel="stylesheet" href="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/styles.css">
-<script src="/match-media/_ds/usmle-wise-design-system-d852a588-293b-4391-a210-99ffdc2ba2d2/_ds_bundle.js"></script>
 <style>
-  body{margin:0}
-  .mp{font-family:var(--font-sans);color:var(--uw-ink-800);background:var(--uw-surface);overflow-x:hidden}
-  .mp a{color:var(--uw-blue-600);text-decoration:none}
-  .mp a:hover{color:var(--uw-red-500)}
-  .mp em{font-style:italic;color:var(--uw-red-500)}
-  .mp details>summary{list-style:none;cursor:pointer}
-  .mp details>summary::-webkit-details-marker{display:none}
-  .mp input,.mp textarea{font-family:var(--font-sans)}
-  .mp input::placeholder,.mp textarea::placeholder{color:var(--uw-ink-400)}
-  .mp details[open] .mp-faq-icon{transform:rotate(45deg)}
-  @keyframes mpFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  @keyframes mpMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  .mp-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-  .mp-marquee-track{display:flex;width:max-content;animation:mpMarquee 32s linear infinite}
-  .mp-marquee:hover .mp-marquee-track{animation-play-state:paused}
-  .mp-testi-grid{column-count:3;column-gap:12px}
-  @media(max-width:820px){.mp-testi-grid{column-count:2}}
-  @media(max-width:520px){.mp-testi-grid{column-count:1}}
-  .mp-cmp{max-width:920px;margin:0 auto;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:grid;grid-template-columns:minmax(110px,.7fr) 1fr 1fr}
-  .mp-cmp-head,.mp-cmp-row{display:contents}
-  .mp-cmp-hcell{padding:14px 18px;background:var(--uw-bg);border-bottom:1px solid var(--uw-border);font-family:var(--font-display);font-weight:600;font-size:var(--fs-md);color:var(--uw-ink-600)}
-  .mp-cmp-hcell.wise{background:var(--uw-blue-50);color:var(--uw-blue-700)}
-  .mp-cmp-hcell.feat{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--uw-ink-500);font-weight:400;display:flex;align-items:center}
-  .mp-cmp-feat{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--uw-ink-500);display:flex;align-items:center;padding:16px 18px;border-top:1px solid var(--uw-border)}
-  .mp-cmp-wise{display:flex;gap:9px;align-items:flex-start;padding:16px 18px;background:var(--uw-blue-50);font-size:var(--fs-14);line-height:1.45;color:var(--uw-ink-800);border-top:1px solid var(--uw-border)}
-  .mp-cmp-other{display:flex;gap:9px;align-items:flex-start;padding:16px 18px;font-size:var(--fs-14);line-height:1.45;color:var(--uw-ink-500);border-top:1px solid var(--uw-border)}
-  .mp-cmp-cell{display:flex;gap:9px;align-items:flex-start}
-  .mp-cmp-minilabel{display:none}
-  @media(max-width:640px){
-    .mp-cmp{display:block;border:none;border-radius:0;max-width:440px}
-    .mp-cmp-head{display:none}
-    .mp-cmp-row{display:block;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:14px}
-    .mp-cmp-feat{border-top:none;background:var(--uw-blue-700);color:#fff;font-size:12px;letter-spacing:.1em;padding:12px 16px}
-    .mp-cmp-wise,.mp-cmp-other{border-top:1px solid var(--uw-border);flex-direction:column;gap:7px;padding:14px 16px;font-size:var(--fs-14-5)}
-    .mp-cmp-minilabel{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:600}
-    .mp-cmp-wise .mp-cmp-minilabel{color:var(--uw-blue-700)}
-    .mp-cmp-other .mp-cmp-minilabel{color:var(--uw-ink-500)}
-  }
+    /* ---- Match Packages page ---- */
+    .mp-sunk { background: var(--uw-surface-sunk); border-block: 1px solid var(--uw-border); }
+    .mp-h2--wide { max-width: 30ch; }
+
+    /* hero portrait */
+    .mp-hero__frame { position: relative; }
+    .mp-hero__tag {
+      position: absolute; left: 16px; right: 16px; bottom: 16px;
+      background: rgba(8,17,31,.82); color: #fff;
+      border-radius: var(--r-xl); padding: 14px 18px;
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    }
+    .mp-hero__tag b { display: block; font-size: var(--fs-14-5, 14.5px); font-weight: 600; }
+    .mp-hero__tag span { font-size: 12.5px; color: rgba(255,255,255,.72); }
+
+    /* matched-at strip */
+    .mp-matched { padding-block: clamp(28px, 4vw, 44px); border-bottom: 1px solid var(--uw-border); }
+    .mp-matched__label {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--uw-ink-500); text-align: center; margin: 0 0 18px;
+    }
+    .mp-ticker {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+              mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    }
+    .mp-ticker__track { display: flex; width: max-content; animation: mp-ticker 45s linear infinite; }
+    .mp-ticker:hover .mp-ticker__track { animation-play-state: paused; }
+    .mp-matched__list {
+      list-style: none; margin: 0; padding: 0 clamp(14px, 2vw, 26px);
+      display: flex; flex: none; align-items: center;
+      gap: clamp(28px, 4vw, 56px);
+    }
+    .mp-matched__list img {
+      display: block; height: clamp(28px, 3vw, 38px); width: auto; max-width: 150px;
+      object-fit: contain; filter: grayscale(100%); opacity: .6;
+      mix-blend-mode: multiply; transition: opacity .2s ease, filter .2s ease;
+    }
+    .mp-matched__list li:hover img { filter: none; opacity: 1; }
+    @keyframes mp-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .mp-ticker__track { animation: none; }
+      .mp-ticker { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+    }
+
+    /* founder story */
+    .mp-story { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+    .mp-story__body p { font-size: clamp(16px, 1.4vw, 18px); color: var(--uw-ink-700); line-height: 1.75; margin: 0 0 var(--space-4); }
+    .mp-story__pull {
+      font-family: var(--font-display); font-style: italic;
+      font-size: clamp(20px, 2.2vw, 26px) !important; line-height: 1.45;
+      color: var(--uw-ink-900) !important;
+      border-left: 2px solid var(--uw-blue-500); padding-left: clamp(18px, 2.4vw, 28px);
+    }
+    .mp-story__body .mp-story__who { font-size: 13.5px; color: var(--uw-ink-500); margin: var(--space-5) 0 0; }
+    .mp-story__who b { display: block; color: var(--uw-ink-900); font-size: var(--fs-base); margin-bottom: 2px; }
+    .mp-story__img { border-radius: var(--r-2xl); overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow-lg); }
+    .mp-story__img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+    /* cards */
+    .mp-grid { display: grid; gap: clamp(14px, 2vw, 22px); }
+    .mp-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .mp-card {
+      display: flex; flex-direction: column; gap: 12px;
+      background: var(--uw-surface); border: 1px solid var(--uw-border);
+      border-radius: var(--r-xl); padding: clamp(22px, 2.6vw, 32px);
+    }
+    .mp-card--sunk { background: var(--uw-surface-sunk); }
+    .mp-card__icon {
+      width: 42px; height: 42px; border-radius: 11px; background: var(--uw-blue-50);
+      display: grid; place-items: center; color: var(--uw-blue-600); flex-shrink: 0;
+    }
+    .mp-card__no { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--uw-red-500); }
+    .mp-card__title { font-size: var(--fs-16-5, 16.5px); font-weight: 600; color: var(--uw-ink-900); margin: 0; letter-spacing: -.01em; }
+    .mp-card__body { font-size: var(--fs-14-5, 14.5px); color: var(--uw-ink-600); line-height: 1.7; margin: 0; }
+    .mp-note { margin: clamp(24px, 3vw, 36px) 0 0; font-size: var(--fs-14); color: var(--uw-ink-500); }
+
+    /* who we help */
+    .mp-who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--uw-border); border: 1px solid var(--uw-border); border-radius: var(--r-xl); overflow: hidden; }
+    .mp-who__item { background: var(--uw-surface); padding: clamp(22px, 2.6vw, 32px); }
+    .mp-who__item h3 { font-size: var(--fs-16-5, 16.5px); font-weight: 600; color: var(--uw-ink-900); margin: 0 0 8px; }
+    .mp-who__item p { font-size: var(--fs-14-5, 14.5px); color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
+
+    /* packages: reuse .msp-tier rows */
+    .mp-tier__value { font-size: 12.5px; color: var(--uw-ink-500); margin: 0; }
+    .mp-tier__fit { font-size: 13.5px; color: var(--uw-ink-600); line-height: 1.5; margin: 0; }
+    .mp-tier__feat-head {
+      grid-column: 1 / -1; font-family: var(--font-mono); font-size: 10.5px;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--uw-ink-500); padding-left: 0 !important;
+    }
+    .mp-tier__feat-head::before { content: none !important; }
+    .mp-tier__unit { font-family: var(--font-sans); font-size: var(--fs-14); font-weight: 400; letter-spacing: 0; color: var(--uw-ink-500); }
+    .mp-tier__guar {
+      grid-column: 1 / -1; margin-top: 4px; padding: 12px 16px; border-radius: var(--r-lg, 12px);
+      background: var(--uw-blue-50); color: var(--uw-ink-800, var(--uw-ink-700)); font-weight: 500;
+    }
+    .mp-tier__guar::before { content: none !important; }
+    .mp-tier__guar { padding-left: 16px !important; }
+
+    /* guarantees */
+    .mp-guar { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(14px, 2vw, 22px); }
+
+    /* stories */
+    .mp-video { display: block; text-decoration: none; color: inherit; }
+    .mp-video__thumb { position: relative; border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 16 / 9; background: var(--uw-ink-100); }
+    .mp-video__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+    .mp-video:hover .mp-video__thumb img { transform: scale(1.03); }
+    .mp-video__play {
+      position: absolute; inset: 0; display: grid; place-items: center;
+    }
+    .mp-video__play i {
+      width: 56px; height: 56px; border-radius: 50%; background: rgba(8,17,31,.78);
+      color: #fff; display: grid; place-items: center;
+    }
+    .mp-video__tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--uw-red-500); margin: 14px 0 4px; display: block; }
+    .mp-video__name { font-size: var(--fs-base); font-weight: 600; color: var(--uw-ink-900); }
+    .mp-video__name span { font-weight: 400; color: var(--uw-ink-500); }
+    .mp-more { margin-top: clamp(28px, 4vw, 44px); }
+
+    /* comparison */
+    .mp-compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .mp-compare-scroll .msp-compare { display: block; min-width: 640px; margin-top: 0; }
+
+    /* team */
+    .mp-team__img { aspect-ratio: 1 / 1; border-radius: var(--r-xl); overflow: hidden; background: var(--uw-ink-100); }
+    .mp-team__img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .mp-team__role { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--uw-red-500); margin: 16px 0 4px; display: block; }
+    .mp-team h3 { font-size: var(--fs-md); font-weight: 600; color: var(--uw-ink-900); margin: 0 0 6px; }
+    .mp-team p { font-size: var(--fs-14-5, 14.5px); color: var(--uw-ink-600); line-height: 1.65; margin: 0; }
+
+    /* faq + cta */
+    .mp-faq { max-width: 760px; margin: 0 auto; }
+    .mp-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
+    .mp-cta-card {
+      background: #08111f; border: 1px solid rgba(255,255,255,.08);
+      border-radius: clamp(20px, 2.4vw, 28px); box-shadow: var(--shadow-lg);
+      padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px); text-align: center;
+    }
+    .mp-cta-card .msp-h2 { color: #fff; max-width: 22ch; margin-inline: auto; margin-bottom: 0; }
+    .mp-cta-card .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin: clamp(14px,2vw,20px) auto 0; }
+    .mp-cta-card .msp-cta-row { justify-content: center; margin: clamp(28px,4vw,44px) auto 0; }
+    .mp-cta-card .btn--outline {
+      border-color: rgba(255,255,255,.4) !important; color: #fff !important; background: transparent !important;
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+    }
+    .mp-cta-card .btn--outline:hover { background: #fff !important; border-color: #fff !important; color: #08111f !important; }
+
+    @media (max-width: 900px) {
+      .mp-story { grid-template-columns: 1fr; }
+      .mp-story__img { max-width: 360px; }
+      .mp-grid--3, .mp-who { grid-template-columns: 1fr; }
+      .mp-guar { grid-template-columns: 1fr; }
+    }
 </style>
-</helmet>
-<div class="mp">
 
-  <!-- ============ HERO ============ -->
-  <section style="padding:clamp(52px,8vw,92px) 20px clamp(40px,6vw,64px);background:radial-gradient(760px 420px at 50% -8%, var(--uw-blue-50), transparent), var(--uw-surface)">
-    <div style="max-width:820px;margin:0 auto;text-align:center;animation:mpFade .5s var(--ease-out) both">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);display:inline-flex;align-items:center;gap:8px;margin-bottom:20px"><span style="width:7px;height:7px;border-radius:50%;background:var(--uw-red-500)"></span>USMLE Wise Match Packages</div>
-      <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(42px,7vw,60px);line-height:1.06;letter-spacing:-0.02em;margin:0 auto;color:var(--uw-ink-900);max-width:16ch">Match into your dream residency in just&nbsp;<em>one attempt</em>.</h1>
-      <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.6;color:var(--uw-ink-600);max-width:60ch;margin:22px auto 0">Done-for-you Match support, built by former program directors and residency selection committee members. We engineer every piece of your application, ERAS, personal statement, letters, signals, and interviews, into one coherent story. Make this your first and last Match season.</p>
-      <div style="display:flex;justify-content:center;margin-top:30px">
-        <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="300px,52px">Schedule my free Match consultation →</x-import></a>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:26px">
-        <sc-if value="{{ showStars }}" hint-placeholder-val="{{ true }}">
-        <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 8px;color:var(--uw-ink-700);font-size:13.5px;text-align:center">
-          <span style="display:inline-flex;color:var(--uw-warning-500)" aria-label="5 out of 5 stars">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
-          </span>
-          <span>Trusted by <b style="color:var(--uw-ink-900)"><span data-count="100000" data-suffix="+">100,000+</span></b> students and doctors</span>
+<main>
+
+    <!-- HERO -->
+    <section class="msp-hero" aria-labelledby="heroTitle">
+      <div class="msp-wrap msp-hero__grid">
+        <div class="msp-hero__copy reveal">
+          <h1 id="heroTitle" class="msp-h1">Match into your dream residency in <em>one attempt</em>.</h1>
+          <p class="msp-lede">Done-for-you Match support from former residency selection committee members. We build your ERAS CV, personal statement, letters, signals, and interviews into one coherent story, so this is your first and last Match season.</p>
+          <div class="msp-cta-row">
+            <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Schedule a Free Consultation</a>
+            <a class="btn btn--outline btn--xl" href="#packages">See Packages</a>
+          </div>
         </div>
-        </sc-if>
-        <div style="font-size:12.5px;color:var(--uw-ink-500)">Every package is money-back guaranteed</div>
+        <div class="msp-hero__frame-wrap reveal">
+          <div class="msp-hero__frame mp-hero__frame">
+            <img src="/match-media/uploads/slot-team-manik.webp" alt="Dr. Manik Madaan" width="574" height="574" />
+            <div class="mp-hero__tag">
+              <b>Dr. Manik Madaan</b>
+              <span>4 years on a residency selection committee</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+      <div class="msp-bar msp-wrap" aria-label="Track record">
+        <div class="msp-bar__inner">
+          <div class="msp-stat reveal"><b data-count="88" data-suffix="%">88%</b><span>Student match rate</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b data-count="2" data-suffix="x">2x</b><span>More interviews</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b data-count="220" data-suffix="+">220+</b><span>Physician advisors</span></div>
+          <div class="msp-divider" aria-hidden="true"></div>
+          <div class="msp-stat reveal"><b data-count="1700" data-suffix="+">1,700+</b><span>Student reviews</span></div>
+        </div>
+      </div>
+    </section>
 
-  <!-- ============ MATCHED AT ============ -->
-  <section style="padding:clamp(40px,6vw,60px) 20px;background:var(--uw-bg);border-top:1px solid var(--uw-border)">
-    <div style="max-width:900px;margin:0 auto;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-ink-500);margin-bottom:22px">Our students have matched into top U.S. programs</div>
-      <div class="mp-marquee">
-        <div class="mp-marquee-track" style="font-family:var(--font-display);font-size:clamp(16px,2.4vw,21px);color:var(--uw-ink-700);letter-spacing:-0.01em">
-          <span style="display:flex;align-items:center;gap:12px;padding-right:12px"><span>Harvard</span><span style="color:var(--uw-red-500)">&bull;</span><span>Yale</span><span style="color:var(--uw-red-500)">&bull;</span><span>Johns Hopkins</span><span style="color:var(--uw-red-500)">&bull;</span><span>Stanford</span><span style="color:var(--uw-red-500)">&bull;</span><span>Columbia</span><span style="color:var(--uw-red-500)">&bull;</span><span>Mayo Clinic</span><span style="color:var(--uw-red-500)">&bull;</span><span>Cornell</span><span style="color:var(--uw-red-500)">&bull;</span><span>Penn</span><span style="color:var(--uw-red-500)">&bull;</span><span>Mount Sinai</span><span style="color:var(--uw-red-500)">&bull;</span><span>Cleveland Clinic</span><span style="color:var(--uw-red-500)">&bull;</span><span>UCLA</span><span style="color:var(--uw-red-500)">&bull;</span><span>Duke</span><span style="color:var(--uw-red-500)">&bull;</span><span>Brown</span><span style="color:var(--uw-red-500)">&bull;</span><span>Emory</span><span style="color:var(--uw-red-500)">&bull;</span></span>
-          <span style="display:flex;align-items:center;gap:12px;padding-right:12px" aria-hidden="true"><span>Harvard</span><span style="color:var(--uw-red-500)">&bull;</span><span>Yale</span><span style="color:var(--uw-red-500)">&bull;</span><span>Johns Hopkins</span><span style="color:var(--uw-red-500)">&bull;</span><span>Stanford</span><span style="color:var(--uw-red-500)">&bull;</span><span>Columbia</span><span style="color:var(--uw-red-500)">&bull;</span><span>Mayo Clinic</span><span style="color:var(--uw-red-500)">&bull;</span><span>Cornell</span><span style="color:var(--uw-red-500)">&bull;</span><span>Penn</span><span style="color:var(--uw-red-500)">&bull;</span><span>Mount Sinai</span><span style="color:var(--uw-red-500)">&bull;</span><span>Cleveland Clinic</span><span style="color:var(--uw-red-500)">&bull;</span><span>UCLA</span><span style="color:var(--uw-red-500)">&bull;</span><span>Duke</span><span style="color:var(--uw-red-500)">&bull;</span><span>Brown</span><span style="color:var(--uw-red-500)">&bull;</span><span>Emory</span><span style="color:var(--uw-red-500)">&bull;</span></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ THE EMAIL / FOUNDER ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-blue-800);color:#fff;position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:18px 18px;pointer-events:none"></div>
-    <div style="max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-300);margin-bottom:18px">The email no one wants to open</div>
-      <h2 style="font-family: var(--font-display); font-weight: 400; font-size: clamp(28px,4.6vw,44px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 22px; color: var(--uw-bg)">"We regret to inform you, you did not match."</h2>
-      <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.65;color:rgba(255,255,255,.82);max-width:58ch;margin:0 auto 16px">Every year, thousands of brilliant applicants open Match Day to the same line.</p>
-      <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.65;color:rgba(255,255,255,.82);max-width:58ch;margin:0 auto 34px">They were smart enough. They worked hard enough. Their application just never lined up with the criteria programs score them on, and their story didn't add up to the people deciding.</p>
-
-      <div style="width:188px;height:188px;margin:0 auto 24px;border-radius:50%;overflow:hidden;box-shadow:var(--shadow-lg);border:4px solid rgba(255,255,255,.25)">
-        <img src="/match-media/uploads/slot-founder.webp" alt="Dr. Manik Madaan" width="188" height="188" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
-      </div>
-      <div style="font-size:clamp(15px,2.4vw,18px);line-height:1.7;color:rgba(255,255,255,.82);max-width:60ch;margin:0 auto;display:flex;flex-direction:column;gap:18px;text-align:left">
-        <p style="margin:0;text-align:center">I'm Dr. Manik Madaan, and I've watched too many brilliant applicants go unmatched, some for five, six, seven seasons in a row. A capable applicant with a weak application, passed over because a program never got to see who they were. It broke my heart every time.</p>
-        <p style="margin:0;text-align:center">I spent about four years serving on a residency selection committee, and I've worked with multiple program directors, so I know what happens on the other side. I saw exactly what they select for, and turned it into a process: the 3X framework, the criteria programs use to choose who to interview and rank. Then I started crafting whole applications around it, in one place.</p>
-        <div style="margin:0;text-align:center"><div>Since then, applicants who went unmatched for years have matched. First-time applicants match into their dream residency, even in highly competitive programs and specialties, on their first attempt.</div></div>
-        <div style="margin:0;color:#fff;font-family:var(--font-display);font-size:clamp(18px,2.8vw,22px);line-height:1.5;text-align:center"><div>You've done the hard part. Your application should do you justice.</div></div>
-      </div>
-      <div style="margin-top:22px;font-size:14px;color:rgba(255,255,255,.7)">
-        <div style="font-weight:600;color:#fff">Dr. Manik Madaan</div>
-        <div>Contributor, USMLE Wise</div>
-        <div style="margin-top:2px;color:rgba(255,255,255,.55)">World's most-followed USMLE and Match expert · 700,000+ followers · close to 12,000 students mentored to match</div>
-      </div>
-      <div style="display:flex;justify-content:center;margin-top:30px">
-        <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="300px,52px">Schedule my free Match consultation →</x-import></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 3X FRAMEWORK ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-bg);border-top:1px solid var(--uw-border)">
-    <div style="max-width:760px;margin:0 auto 44px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">The 3X framework</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 20px;color:var(--uw-ink-900)">We build your application to the 3X framework</h2>
-      <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.6;color:var(--uw-ink-600);max-width:58ch;margin:0 auto">Programs judge your whole application against a fixed set of criteria. We write every piece to all three lenses, so a committee reads one clear, trustworthy story across every document.</p>
-    </div>
-    <div style="max-width:1040px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px;text-align:left">
-        <div style="width:44px;height:44px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg></div>
-        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--uw-blue-500);margin-bottom:12px">01</div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:20px;margin:0 0 10px;color:var(--uw-ink-900)">AAMC holistic review</h3>
-        <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Your experiences, attributes, competencies, and metrics, tied into one story that backs up the scores already on your file. <span style="color:var(--uw-ink-400)">(EACM)</span></p>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px;text-align:left">
-        <div style="width:44px;height:44px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></div>
-        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--uw-blue-500);margin-bottom:12px">02</div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:20px;margin:0 0 10px;color:var(--uw-ink-900)">PCM-6 communication</h3>
-        <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Six things a strong application carries at once: logical clarity, emotional truth, values, imagination, momentum, and likeability.</p>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px;text-align:left">
-        <div style="width:44px;height:44px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg></div>
-        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--uw-blue-500);margin-bottom:12px">03</div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:20px;margin:0 0 10px;color:var(--uw-ink-900)">ACGME core competencies</h3>
-        <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Your CV, statement, and interview answers quietly show patient care, knowledge, professionalism, and teamwork, the traits every program is required to evaluate.</p>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:34px">
-      <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="300px,52px">Schedule my free Match consultation →</x-import></a>
-    </div>
-  </section>
-
-  <!-- ============ OUTCOMES ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-surface)">
-    <div style="max-width:760px;margin:0 auto 40px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">The outcomes</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0;color:var(--uw-ink-900)">Physician-level guidance that takes you from anxious to ready.</h2>
-    </div>
-    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
-      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:32px 24px;text-align:center">
-        <div style="font-family:var(--font-display);font-size:clamp(44px,7vw,60px);line-height:1;color:var(--uw-blue-500);letter-spacing:-0.02em"><span data-count="2" data-suffix="x">2x</span></div>
-        <div style="font-weight:600;font-size:16px;color:var(--uw-ink-900);margin-top:10px">your interviews</div>
-        <p style="margin:8px 0 0;font-size:14px;line-height:1.55;color:var(--uw-ink-600)">Invites from programs our students had written off.</p>
-      </div>
-      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:32px 24px;text-align:center">
-        <div style="font-family:var(--font-display);font-size:clamp(44px,7vw,60px);line-height:1;color:var(--uw-blue-500);letter-spacing:-0.02em"><span data-count="88" data-suffix="%">88%</span></div>
-        <div style="font-weight:600;font-size:16px;color:var(--uw-ink-900);margin-top:10px">2.6x the match odds</div>
-        <p style="margin:8px 0 0;font-size:14px;line-height:1.55;color:var(--uw-ink-600)">Our students match at about 88%, roughly 2.6x the average IMG match rate, and close to the 92% that US MDs and DOs see.</p>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:34px">
-      <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="300px,52px">Schedule my free Match consultation →</x-import></a>
-    </div>
-  </section>
-
-  <!-- ============ TESTIMONIALS ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-bg);border-top:1px solid var(--uw-border)">
-    <div style="max-width:760px;margin:0 auto 44px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">What our students say</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0;color:var(--uw-ink-900)">Applications rebuilt. Seasons ended.</h2>
-    </div>
-    <div style="max-width:1040px;margin:0 auto;max-height:78vh;overflow-y:auto;border-radius:var(--r-lg);border:1px solid var(--uw-border);padding:16px;background:var(--uw-surface)">
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin:2px 0 12px">Match day</div>
-      <div class="mp-testi-grid" style="margin-bottom:8px">
-        <img src="/match-media/uploads/Instagram%20Photo%20Download%20(2).jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Instagram%20Photo%20660329525.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/656425718_17890021239448701_3488419753803306264_n.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Instagram%20Photo%20Download%20(1).jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Instagram%20Photo%20656292960.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/WhatsApp%20Image%20Apr%204%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/WhatsApp%20Image%20Apr%204%202026%20(1).jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/WhatsApp%20Image%20May%2016%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/WhatsApp%20Image%20Apr%2015%202026.jpeg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Instagram%20Photo%20657845911.jpg" alt="USMLE Wise applicant who matched" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-      </div>
-      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-500);margin:0 0 12px;padding-top:16px;border-top:1px solid var(--uw-border)">In their words</div>
-      <div class="mp-testi-grid">
-        <img src="/match-media/uploads/Zeel%20Patel.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/1.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/2.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/3.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/4.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/5.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/6.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/7.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/8.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/9.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/10.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/11.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/12.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/13.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Allegheny%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Anjali.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Ayesha%20Surgery.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Ayra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Bardia.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/EM_Anniesha.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Guy%20Advanced%20Intereviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Guy%20UOH.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Hamna.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Joycine%20matched.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Lakshita%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Logesh.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Mounika.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Nancy.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Naz%20advanced%20interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Neuro.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Niyati%20Off%20Cycle.png" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Okkes.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Paranshi%20IM.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Pavani.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Praneet.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Psych%20match.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Rasmitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Ravindra.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/SOAP%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Saint%20Vincnent%20R.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Screenshot_20260703_032742_Instagram~2.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Shiv.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Shreya%20FM%20Match.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/SidNath.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Sinmmer.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Smit.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Sonia%201%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Sonia%202%20Advanced%20Interviewing.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Soura%20Psych.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Swathi.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/UIC%20Peoria.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Unknown%201.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Unknown%203.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Unkown%202.jpg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/Yog%2014.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-        <img src="/match-media/uploads/babitha.jpeg" alt="USMLE Wise student match testimonial" loading="lazy" style="width:100%;display:block;margin-bottom:12px;border-radius:var(--r-md);break-inside:avoid">
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:34px">
-      <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="300px,52px">Schedule my free Match consultation →</x-import></a>
-    </div>
-  </section>
-
-  <!-- ============ WHO WE HELP ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-surface)">
-    <div style="max-width:720px;margin:0 auto 44px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">Who we help</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0;color:var(--uw-ink-900)">No matter where you are in your Match journey, we can help.</h2>
-    </div>
-    <div style="max-width:1040px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
-      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;text-align:left">
-        <div style="width:42px;height:42px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:14px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:18px;margin:0 0 8px;color:var(--uw-ink-900)">First-time applicants</h3>
-        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--uw-ink-600)">Make this your first and last Match, done right from the start.</p>
-      </div>
-      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;text-align:left">
-        <div style="width:42px;height:42px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:14px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"></path></svg></div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:18px;margin:0 0 8px;color:var(--uw-ink-900)">IMG applicants</h3>
-        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--uw-ink-600)">Your international training is an advantage, and we show programs why.</p>
-      </div>
-      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;text-align:left">
-        <div style="width:42px;height:42px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:14px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"></path><path d="M5 10a7 7 0 0 0 14 0V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2Z"></path><circle cx="18" cy="16" r="3"></circle></svg></div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:18px;margin:0 0 8px;color:var(--uw-ink-900)">DO applicants</h3>
-        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--uw-ink-600)">A clear COMLEX and USMLE playbook, built for the DO path.</p>
-      </div>
-      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;text-align:left">
-        <div style="width:42px;height:42px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:14px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:18px;margin:0 0 8px;color:var(--uw-ink-900)">Older graduates</h3>
-        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--uw-ink-600)">A gap since graduation, handled so programs stay focused on your strengths.</p>
-      </div>
-      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;text-align:left">
-        <div style="width:42px;height:42px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:14px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.11"></path></svg></div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:18px;margin:0 0 8px;color:var(--uw-ink-900)">Competitive specialties</h3>
-        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--uw-ink-600)">Advanced strategy for the most competitive fields.</p>
-      </div>
-      <div style="background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:26px;text-align:left">
-        <div style="width:42px;height:42px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:14px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.74L3 8"></path><polyline points="3 3 3 8 8 8"></polyline></svg></div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:18px;margin:0 0 8px;color:var(--uw-ink-900)">Reapplicants</h3>
-        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--uw-ink-600)">Your last cycle, rebuilt into a sharper, stronger application.</p>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:34px">
-      <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="300px,52px">Schedule my free Match consultation →</x-import></a>
-    </div>
-  </section>
-
-  <!-- ============ PRICING ============ -->
-  <section id="pricing" style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-surface)">
-    <div style="max-width:760px;margin:0 auto 44px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">Choose your package</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 20px;color:var(--uw-ink-900)">One framework. Three levels of support.</h2>
-      <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.6;color:var(--uw-ink-600);max-width:60ch;margin:0 auto">Every package rebuilds your ERAS CV and personal statement to the 3X framework, aligns your letters and signals, and preps you for interviews. Every one includes 100% human editing by physicians, no AI, and a money-back guarantee.</p>
-    </div>
-    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;align-items:stretch">
-
-      <!-- Maximizer (left) -->
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:30px 26px;text-align:left;display:flex;flex-direction:column">
-        <div style="font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--uw-ink-700)">USMLE Match Maximizer</div>
-        <div style="font-family:var(--font-display);font-size:40px;color:var(--uw-ink-900);margin:8px 0 2px;letter-spacing:-0.02em">$6,999</div>
-        <div style="font-size:13.5px;color:var(--uw-ink-500);min-height:52px">Best for reapplicants, applicants with red flags, or an older year of graduation.</div>
-        <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-400);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--uw-border)">What's included</div>
-        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px;flex:1">
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>100% human editing by physicians, no AI</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Physician advisor</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Up to 2 ERAS CV revisions</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Unlimited personal statement revisions</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Live 4-hour session</b> - your editor builds your CV and statement with you</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Match membership</b> - all 9+ courses ($399 value), including the <b>Ultimate Guide to Signaling &amp; Program List Creation</b>, interview prep, and research placement</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Up to <b>4 hours of mock interviews</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Advanced Interviewing course ($500 value)</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Weekly 1:1 hour with your advisor, through Match day</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Deep 3-hour</b> profile review and strategy</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>We build your full program list for you</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>We do all your signaling for you, across every specialty</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Support across up to 2 specialties</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>4 LoR revisions</b> and <b>3 letters of intent</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Dedicated SOAP and scramble support</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Unlimited WhatsApp access, 24/7 support</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>2 to 4 day turnaround</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-900);background:var(--uw-red-50);border-radius:var(--r-sm);padding:9px 10px;margin-top:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Match edit guarantee:</b> if you don't match, we keep working with you for as many cycles as it takes, until you do</span></li>
+    <!-- MATCHED AT -->
+    <section class="mp-matched" aria-label="Where our students matched">
+      <div class="msp-wrap">
+        <p class="mp-matched__label">Our students have matched into</p>
+        <div class="mp-ticker"><div class="mp-ticker__track">
+        <ul class="mp-matched__list">
+          <li><img src="/match-membership-media/uploads/logos/harvard.svg" alt="Harvard" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/yale.svg" alt="Yale" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/jhu.png" alt="Johns Hopkins" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/stanford.svg" alt="Stanford" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/columbia.svg" alt="Columbia" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/mayo.svg" alt="Mayo Clinic" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/cornell.svg" alt="Cornell" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/penn.svg" alt="Penn" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/mountsinai.svg" alt="Mount Sinai" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/clevelandclinic.svg" alt="Cleveland Clinic" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/ucla.svg" alt="UCLA" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/duke.svg" alt="Duke" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/brown.svg" alt="Brown" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/emory.jpg" alt="Emory" loading="lazy" /></li>
         </ul>
-        <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="outline" size="lg" full-width="{{ true }}" hint-size="100%,52px">Secure my residency spot →</x-import></a>
-      </div>
-
-      <!-- Pro (highlighted, center) -->
-      <div style="background:var(--uw-blue-500);border-radius:var(--r-lg);padding:30px 26px;text-align:left;display:flex;flex-direction:column;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow-xl)">
-        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.1) 1px,transparent 1px);background-size:16px 16px;pointer-events:none"></div>
-        <div style="position:relative;z-index:1;display:flex;flex-direction:column;height:100%">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-            <div style="font-weight:600;font-size:14px;letter-spacing:.02em;color:#fff">USMLE Match Pro</div>
-            <span style="background:var(--uw-red-500);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:999px">Most popular</span>
-          </div>
-          <div style="font-family:var(--font-display);font-size:40px;color:#fff;margin:8px 0 2px;letter-spacing:-0.02em">$3,999</div>
-          <div style="font-size:13.5px;color:rgba(255,255,255,.72);min-height:52px">Best for most applicants who want their whole strategy handled.</div>
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2)">What's included</div>
-          <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px;flex:1">
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>100% human editing by physicians, no AI</span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Physician advisor</span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Up to 2 ERAS CV revisions</b></span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Up to 3 personal statement revisions</b></span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Live 2-hour session</b> - your editor builds your documents with you</span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Match membership</b> - all 9+ courses ($399 value), including the <b>Ultimate Guide to Signaling &amp; Program List Creation</b>, interview prep, and research placement</span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Up to 2 hours of mock interviews</span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Advanced Interviewing course ($500 value)</span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Weekly 1:1 hour with your advisor, through Match day</b></span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>1 to 2 hour profile review, then your strategy</span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>We build your program list for one specialty, with you</b></span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>We do your program signaling for you</b></span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>WhatsApp access to your advisor</span></li>
-            <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.92)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>2 to 4 day turnaround</span></li>
-          </ul>
-          <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" full-width="{{ true }}" hint-size="100%,52px">Secure my residency spot →</x-import></a>
-        </div>
-      </div>
-
-      <!-- Essentials (right) -->
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:30px 26px;text-align:left;display:flex;flex-direction:column">
-        <div style="font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--uw-ink-700)">Essentials Starter</div>
-        <div style="font-family:var(--font-display);font-size:40px;color:var(--uw-ink-900);margin:8px 0 2px;letter-spacing:-0.02em">$1,749</div>
-        <div style="font-size:13.5px;color:var(--uw-ink-500);min-height:52px">Best for a strong applicant who mainly needs sharp documents.</div>
-        <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--uw-ink-400);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--uw-border)">What's included</div>
-        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px;flex:1">
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>100% human editing by physicians, no AI</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Physician advisor</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Up to 2 ERAS CV revisions</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Up to 2 personal statement revisions</b></span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Live 1-hour session</b> - minimum - your editor builds your CV and PS with you</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Match membership</b> - all 9+ courses ($399 value), including the <b>Ultimate Guide to Signaling &amp; Program List Creation</b>, interview prep, and research placement</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>1-hour mock interview</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Advanced Interviewing course ($500 value)</span></li>
-          <li style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--uw-ink-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>2 to 4 day turnaround</span></li>
+        <ul class="mp-matched__list" aria-hidden="true">
+          <li><img src="/match-membership-media/uploads/logos/harvard.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/yale.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/jhu.png" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/stanford.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/columbia.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/mayo.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/cornell.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/penn.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/mountsinai.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/clevelandclinic.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/ucla.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/duke.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/brown.svg" alt="" loading="lazy" /></li>
+          <li><img src="/match-membership-media/uploads/logos/emory.jpg" alt="" loading="lazy" /></li>
         </ul>
-        <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="secondary" size="lg" full-width="{{ true }}" hint-size="100%,52px">Secure my residency spot →</x-import></a>
+      </div></div>
       </div>
-    </div>
-    <p style="text-align:center;font-size:14px;color:var(--uw-ink-500);margin:26px auto 0;max-width:50ch">Prefer to pay in installments? Book a free call and we'll set up a plan. Start with a free consultation, and we'll help you choose the right one.</p>
-  </section>
+    </section>
 
-  <!-- ============ GUARANTEES ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-bg);border-top:1px solid var(--uw-border)">
-    <div style="max-width:760px;margin:0 auto 40px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">Our guarantees</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0;color:var(--uw-ink-900)">The risk is on us, not you.</h2>
-    </div>
-    <div style="max-width:880px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px;text-align:left">
-        <div style="width:42px;height:42px;border-radius:var(--r-md);background:var(--uw-success-50);color:var(--uw-success-500);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:19px;margin:0 0 10px;color:var(--uw-ink-900)">Money-back guarantee, on every package</h3>
-        <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">It starts with your first working session. If you don't feel it's right for you, tell us and we'll refund you in full.</p>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px;text-align:left">
-        <div style="width:42px;height:42px;border-radius:var(--r-md);background:var(--uw-blue-50);color:var(--uw-blue-500);display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg></div>
-        <h3 style="font-family:var(--font-display);font-weight:600;font-size:19px;margin:0 0 10px;color:var(--uw-ink-900)">Match edit guarantee, on Maximizer</h3>
-        <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">If you don't match this cycle, we keep working with you at no extra cost, editing and re-strategizing for as many cycles as it takes, until you match. The final Match decision sits with the programs, so we commit to the work and stay with you the whole way.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ VIDEO STORIES ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-surface)">
-    <div style="max-width:760px;margin:0 auto 48px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">In their words</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 18px;color:var(--uw-ink-900)">Hear how they got there.</h2>
-      <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.6;color:var(--uw-ink-600);max-width:58ch;margin:0 auto">Old grads, low scores, second attempts, prestigious programs - every path to the Match, told by the doctors who walked it.</p>
-    </div>
-    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px">
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="WDrpqKmLwLs" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/WDrpqKmLwLs/hqdefault.jpg" alt="Ali - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
+    <!-- STORY -->
+    <section class="msp-section mp-sunk" aria-labelledby="storyTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Why we do this</span>
+          <h2 id="storyTitle" class="msp-h2 mp-h2--wide">The email no one wants to open: &ldquo;We regret to inform you, you did not match.&rdquo;</h2>
+        </div>
+        <div class="mp-story">
+          <div class="mp-story__body reveal">
+            <p>Every year, thousands of capable applicants open Match Day to that same line. They worked hard enough. Their application just never lined up with what programs actually score.</p>
+            <p>I'm Dr. Manik Madaan. I spent about four years on a residency selection committee, so I know what happens on the other side. I turned what programs select for into a process, the 3X framework, and built whole applications around it. Applicants who were unmatched for years have matched since, and first-timers have landed their dream residency, even in competitive specialties.</p>
+            <p class="mp-story__pull">You've done the hard part. Your application should do you justice.</p>
+            <p class="mp-story__who"><b>Dr. Manik Madaan</b> Contributor, USMLE Wise &middot; 700,000+ followers &middot; close to 12,000 students mentored</p>
+          </div>
+          <div class="mp-story__img reveal">
+            <img src="/match-media/uploads/slot-team-manik.webp" alt="Dr. Manik Madaan" width="574" height="574" loading="lazy" />
           </div>
         </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Super old-grad match</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Ali <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
       </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="Ea1pD2xY0_s" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/Ea1pD2xY0_s/hqdefault.jpg" alt="Hamna - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
+    </section>
+
+    <!-- 3X FRAMEWORK -->
+    <section class="msp-section" aria-labelledby="fwTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">The 3X framework</span>
+          <h2 id="fwTitle" class="msp-h2 mp-h2--wide">Every document is written to three lenses.</h2>
+          <p class="msp-sub">Programs judge your whole application against a fixed set of criteria. We build each piece to all three, so a committee reads one clear, trustworthy story from your CV to your interview.</p>
+        </div>
+        <div class="mp-grid mp-grid--3">
+          <div class="mp-card mp-card--sunk reveal">
+            <div class="mp-card__icon"><i data-lucide="layers" width="21" height="21"></i></div>
+            <span class="mp-card__no">01</span>
+            <p class="mp-card__title">AAMC holistic review</p>
+            <p class="mp-card__body">Your experiences, attributes, competencies, and metrics tied into one story that backs up the scores already on your file.</p>
+          </div>
+          <div class="mp-card mp-card--sunk reveal">
+            <div class="mp-card__icon"><i data-lucide="message-square-heart" width="21" height="21"></i></div>
+            <span class="mp-card__no">02</span>
+            <p class="mp-card__title">PCM-6 communication</p>
+            <p class="mp-card__body">Six things a strong application carries at once: logical clarity, emotional truth, values, imagination, momentum, and likeability.</p>
+          </div>
+          <div class="mp-card mp-card--sunk reveal">
+            <div class="mp-card__icon"><i data-lucide="stethoscope" width="21" height="21"></i></div>
+            <span class="mp-card__no">03</span>
+            <p class="mp-card__title">ACGME core competencies</p>
+            <p class="mp-card__body">Your CV, statement, and answers quietly show patient care, knowledge, professionalism, and teamwork, the traits every program must evaluate.</p>
           </div>
         </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Super old-grad match</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Hamna <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">FM</span></div>
+        <p class="mp-note reveal">Result: our students match at about 88%, roughly 2.6x the average IMG rate and close to the 92% of US MDs and DOs.</p>
+      </div>
+    </section>
+
+    <!-- WHO WE HELP -->
+    <section class="msp-section mp-sunk" aria-labelledby="whoTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Who we help</span>
+          <h2 id="whoTitle" class="msp-h2 mp-h2--wide">Wherever you are in your Match journey.</h2>
+        </div>
+        <div class="mp-who reveal">
+          <div class="mp-who__item"><h3>First-time applicants</h3><p>Done right from the start, so this is your first and last Match.</p></div>
+          <div class="mp-who__item"><h3>IMG applicants</h3><p>Your international training is an advantage, and we show programs why.</p></div>
+          <div class="mp-who__item"><h3>DO applicants</h3><p>A clear COMLEX and USMLE playbook built for the DO path.</p></div>
+          <div class="mp-who__item"><h3>Older graduates</h3><p>A gap since graduation, handled so programs focus on your strengths.</p></div>
+          <div class="mp-who__item"><h3>Competitive specialties</h3><p>Advanced strategy for the most competitive fields.</p></div>
+          <div class="mp-who__item"><h3>Reapplicants</h3><p>Your last cycle, rebuilt into a sharper, stronger application.</p></div>
         </div>
       </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="lmjpF2nrXOU" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/lmjpF2nrXOU/hqdefault.jpg" alt="SOAP match - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="msp-section" id="packages" aria-labelledby="pkgTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Choose your package</span>
+          <h2 id="pkgTitle" class="msp-h2 mp-h2--wide">One framework. Three levels of support.</h2>
+          <p class="msp-sub">Every package rebuilds your ERAS CV and personal statement to the 3X framework, with 100% human editing by physicians (no AI) and a money-back guarantee.</p>
+        </div>
+
+        <div class="msp-pricing__rows">
+
+          <div class="msp-tier reveal">
+            <div class="msp-tier__info">
+              <span class="msp-tier__name">Essentials Starter</span>
+              <div class="msp-tier__price">$1,749</div>
+              <p class="mp-tier__fit">For a strong applicant who mainly needs sharp documents.</p>
+              <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Get Started</a>
+            </div>
+            <ul class="msp-tier__features">
+              <li>Physician advisor</li>
+              <li>Up to 2 ERAS CV revisions</li>
+              <li>Up to 2 personal statement revisions</li>
+              <li>Live 1-hour session to build your CV and PS together</li>
+              <li>1-hour mock interview</li>
+              <li>Match membership: 9+ courses ($399 value)</li>
+              <li>Advanced Interviewing course ($500 value)</li>
+              <li>2 to 4 day turnaround</li>
+            </ul>
+          </div>
+
+          <div class="msp-tier msp-tier--featured reveal">
+            <div class="msp-tier__info">
+              <span class="msp-tier__badge">Most popular</span>
+              <span class="msp-tier__name">Match Pro</span>
+              <div class="msp-tier__price">$3,999</div>
+              <p class="mp-tier__fit">For most applicants who want their whole strategy handled.</p>
+              <a class="btn btn--primary btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Secure My Spot</a>
+            </div>
+            <ul class="msp-tier__features">
+              <li class="mp-tier__feat-head">Everything in Essentials, plus:</li>
+              <li>Live 2-hour session</li>
+              <li>Up to 3 personal statement revisions</li>
+              <li>Weekly 1:1 hour with your advisor, through Match day</li>
+              <li>1 to 2 hour profile review, then your strategy</li>
+              <li>Program list built with you for one specialty</li>
+              <li>We do your program signaling for you</li>
+              <li>Up to 2 hours of mock interviews</li>
+              <li>WhatsApp access to your advisor</li>
+            </ul>
+          </div>
+
+          <div class="msp-tier reveal">
+            <div class="msp-tier__info">
+              <span class="msp-tier__name">Match Maximizer</span>
+              <div class="msp-tier__price">$6,999</div>
+              <p class="mp-tier__fit">For reapplicants, applicants with red flags, or an older year of graduation.</p>
+              <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Secure My Spot</a>
+            </div>
+            <ul class="msp-tier__features">
+              <li class="mp-tier__feat-head">Everything in Pro, plus:</li>
+              <li>Live 4-hour session</li>
+              <li>Unlimited personal statement revisions</li>
+              <li>Deep 3-hour profile review and strategy</li>
+              <li>We build your full program list for you</li>
+              <li>We do all your signaling, across every specialty</li>
+              <li>Support across up to 2 specialties</li>
+              <li>Up to 4 hours of mock interviews</li>
+              <li>4 LoR revisions and 3 letters of intent</li>
+              <li>Dedicated SOAP and scramble support</li>
+              <li>Unlimited WhatsApp access, 24/7</li>
+              <li class="mp-tier__guar">Match edit guarantee: if you don't match, we keep working with you for as many cycles as it takes.</li>
+            </ul>
+          </div>
+
+        </div>
+        <p class="msp-pricing__note reveal">Prefer installments? Book a free call and we'll set up a plan. We'll also help you choose the right package.</p>
+      </div>
+    </section>
+
+    <!-- GUARANTEES -->
+    <section class="msp-section mp-sunk" aria-labelledby="guarTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Our guarantees</span>
+          <h2 id="guarTitle" class="msp-h2 mp-h2--wide">The risk is on us, not you.</h2>
+        </div>
+        <div class="mp-guar">
+          <div class="mp-card reveal">
+            <div class="mp-card__icon"><i data-lucide="shield-check" width="21" height="21"></i></div>
+            <p class="mp-card__title">Money-back guarantee, on every package</p>
+            <p class="mp-card__body">It starts with your first working session. If you don't feel it's right for you, tell us and we'll refund you in full.</p>
+          </div>
+          <div class="mp-card reveal">
+            <div class="mp-card__icon"><i data-lucide="refresh-cw" width="21" height="21"></i></div>
+            <p class="mp-card__title">Match edit guarantee, on Maximizer</p>
+            <p class="mp-card__body">If you don't match this cycle, we keep editing and re-strategizing at no extra cost, for as many cycles as it takes. The final decision sits with programs, so we commit to the work and stay with you the whole way.</p>
           </div>
         </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Super old-grad match</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">SOAP match <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">SOAP</span></div>
+      </div>
+    </section>
+
+    <!-- STORIES -->
+    <section class="msp-section" aria-labelledby="storiesTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">In their words</span>
+          <h2 id="storiesTitle" class="msp-h2 mp-h2--wide">Old grads, low scores, second attempts. Every path, told by the doctor who walked it.</h2>
+        </div>
+        <div class="mp-grid mp-grid--3">
+          <a class="mp-video reveal" href="https://www.youtube.com/watch?v=WDrpqKmLwLs" target="_blank" rel="noopener noreferrer">
+            <div class="mp-video__thumb">
+              <img src="https://img.youtube.com/vi/WDrpqKmLwLs/hqdefault.jpg" alt="" loading="lazy" />
+              <span class="mp-video__play"><i data-lucide="play" width="22" height="22"></i></span>
+            </div>
+            <span class="mp-video__tag">Old-grad match</span>
+            <span class="mp-video__name">Ali <span>&middot; Internal Medicine</span></span>
+          </a>
+          <a class="mp-video reveal" href="https://www.youtube.com/watch?v=HSsrZERcvbI" target="_blank" rel="noopener noreferrer">
+            <div class="mp-video__thumb">
+              <img src="https://img.youtube.com/vi/HSsrZERcvbI/hqdefault.jpg" alt="" loading="lazy" />
+              <span class="mp-video__play"><i data-lucide="play" width="22" height="22"></i></span>
+            </div>
+            <span class="mp-video__tag">Matched with a 218 on Step 2</span>
+            <span class="mp-video__name">Anjali <span>&middot; Internal Medicine</span></span>
+          </a>
+          <a class="mp-video reveal" href="https://www.youtube.com/watch?v=izwBvdQgVc8" target="_blank" rel="noopener noreferrer">
+            <div class="mp-video__thumb">
+              <img src="https://img.youtube.com/vi/izwBvdQgVc8/hqdefault.jpg" alt="" loading="lazy" />
+              <span class="mp-video__play"><i data-lucide="play" width="22" height="22"></i></span>
+            </div>
+            <span class="mp-video__tag">Prestigious match &middot; Albert Einstein</span>
+            <span class="mp-video__name">Dyan <span>&middot; Internal Medicine</span></span>
+          </a>
+        </div>
+        <div class="mp-more reveal">
+          <a href="/testimonials" class="btn btn--ghost btn--sm">See all student stories <i data-lucide="arrow-right" width="14" height="14"></i></a>
         </div>
       </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="O4Gns55Brh0" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/O4Gns55Brh0/hqdefault.jpg" alt="Shreya - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="msp-section mp-sunk" aria-labelledby="compareTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Why students choose us</span>
+          <h2 id="compareTitle" class="msp-h2 mp-h2--wide">USMLE Wise vs other services.</h2>
+        </div>
+        <div class="mp-compare-scroll reveal">
+          <div class="msp-compare">
+            <table class="msp-compare__table" role="table">
+              <thead>
+                <tr>
+                  <th class="msp-compare__feat-col" scope="col">Feature</th>
+                  <th class="msp-compare__col--featured" scope="col"><span class="msp-compare__tier-name">USMLE Wise</span></th>
+                  <th scope="col"><span class="msp-compare__tier-name">Other services</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Risk to start</td><td class="msp-compare__col--featured">A free first session, no deposit to begin</td><td>Pay upfront before you speak to anyone</td></tr>
+                <tr><td>How we work</td><td class="msp-compare__col--featured">Live sessions where we build it together</td><td>You send documents and wait for edits</td></tr>
+                <tr><td>Scope</td><td class="msp-compare__col--featured">CV, PS, letters, signals, and interviews as one story</td><td>Edits in fragments you stitch together</td></tr>
+                <tr><td>Advisors</td><td class="msp-compare__col--featured">220+ physicians who are IMGs, US MDs, and DOs</td><td>Mostly US advisors, often not physicians</td></tr>
+                <tr><td>Support</td><td class="msp-compare__col--featured">Direct WhatsApp access to your advisor</td><td>An AI chatbot or a ticket queue</td></tr>
+                <tr><td>Flexibility</td><td class="msp-compare__col--featured">Change advisors, schedule across time zones, move hours</td><td>Fixed advisor, rigid packages</td></tr>
+                <tr><td>Courses</td><td class="msp-compare__col--featured">9+ courses, from personal statement to research</td><td>No extras</td></tr>
+                <tr><td>Guarantee</td><td class="msp-compare__col--featured">Money-back on every package, match edit guarantee on Maximizer</td><td>Often none</td></tr>
+                <tr><td>Reviews</td><td class="msp-compare__col--featured">1,700+ reviews</td><td>A handful of unverified reviews</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Old grad · Post-SOAP</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Shreya <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">FM</span></div>
-        </div>
       </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="bz_R34QsKjk" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/bz_R34QsKjk/hqdefault.jpg" alt="Dr. Yash - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
+    </section>
+
+    <!-- TEAM -->
+    <section class="msp-section" aria-labelledby="teamTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">Meet the team</span>
+          <h2 id="teamTitle" class="msp-h2 mp-h2--wide">You work with doctors who've done it.</h2>
+          <p class="msp-sub">Led by the most-followed USMLE and Match expert in the world, alongside a program director who has matched hundreds of residents and a research faculty background from Duke and UPMC.</p>
+        </div>
+        <div class="mp-grid mp-grid--3 mp-team">
+          <div class="reveal">
+            <div class="mp-team__img"><img src="/match-media/uploads/slot-team-manik.webp" alt="Dr. Manik Madaan" width="574" height="574" loading="lazy" /></div>
+            <span class="mp-team__role">Contributor</span>
+            <h3>Dr. Manik Madaan</h3>
+            <p>A doctor in the U.S. who served 4 years on a residency selection committee.</p>
+          </div>
+          <div class="reveal">
+            <div class="mp-team__img"><img src="/match-media/uploads/slot-team-kothari.webp" alt="Dr. Nayan K. Kothari" width="360" height="371" loading="lazy" /></div>
+            <span class="mp-team__role">Overseeing committee head</span>
+            <h3>Dr. Nayan K. Kothari</h3>
+            <p>Program Director, Internal Medicine, Rutgers-RWJ. Chair, Dept. of Medicine, Saint Peter's (1996-2025). Reviewed thousands of CVs and matched hundreds of residents.</p>
+          </div>
+          <div class="reveal">
+            <div class="mp-team__img"><img src="/match-media/uploads/slot-team-kaushik.webp" alt="Dr. Kaushik Sreeram" width="574" height="574" loading="lazy" /></div>
+            <span class="mp-team__role">Founder</span>
+            <h3>Dr. Kaushik Sreeram</h3>
+            <p>Former infectious disease and opioid researcher at Duke University and UPMC.</p>
           </div>
         </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Old grad · Post-SOAP</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Dr. Yash <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
       </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="64yfSkj4M_8" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/64yfSkj4M_8/hqdefault.jpg" alt="Nathan - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
+    </section>
+
+    <!-- FAQ -->
+    <section class="msp-section mp-sunk" id="faq" aria-labelledby="faqTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal" style="margin-inline:auto;text-align:center">
+          <span class="msp-eyebrow">F.A.Q</span>
+          <h2 id="faqTitle" class="msp-h2" style="margin-inline:auto">Questions, answered honestly.</h2>
+        </div>
+        <div class="mp-faq accordion accordion--faq reveal">
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">Which package is right for me?</button>
+            <div class="accordion__body">Essentials suits a strong applicant who mostly needs sharp documents. Pro fits most people who want full strategy and a weekly mentor. Maximizer is for applicants with red flags, or anyone who wants everything done end to end. Not sure? Book a free call and we'll tell you honestly.</div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">What does the money-back guarantee cover?</button>
+            <div class="accordion__body">Start with your first working session. If you don't feel it's right for you, tell us and we'll refund you in full.</div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">What is the match edit guarantee?</button>
+            <div class="accordion__body">On Match Maximizer, if you don't match this cycle we keep working with you at no extra cost, for as many cycles as it takes. The final Match decision sits with the programs, so we commit to the work and stay with you the whole way.</div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">Who works on my application?</button>
+            <div class="accordion__body">Physicians who matched in the U.S., sat on residency selection committees, and edit to the same criteria programs score you on. Every editor is a doctor, and every edit is done by a human.</div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">How do I get started?</button>
+            <div class="accordion__body">Start with a free Match consultation. We review your profile, answer your questions, and recommend the right package. No deposit is needed to book the call.</div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">Do you help with program signaling and geographic preferences?</button>
+            <div class="accordion__body">Yes. Pro and Maximizer include personalized signaling, and Maximizer includes done-for-you signals.</div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">Can I pay in installments?</button>
+            <div class="accordion__body">Yes. Book a free call and we'll set up a plan.</div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__head" type="button">Does this work for IMGs, US IMGs, MDs, and DOs?</button>
+            <div class="accordion__body">Yes. We work with all four, and we tailor the strategy to your profile and your red flags.</div>
           </div>
         </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Old grad · 5+ years since graduation</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Nathan <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
       </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="HSsrZERcvbI" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/HSsrZERcvbI/hqdefault.jpg" alt="Anjali - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="mp-cta-wrap">
+      <div class="msp-wrap">
+        <div class="mp-cta-card reveal" aria-labelledby="ctaTitle">
+          <h2 id="ctaTitle" class="msp-h2">Make this your final Match.</h2>
+          <p class="msp-sub">Your Match comes down to how well your hard work is presented. Let's engineer every piece of it. Book a free consultation and we'll give you a straight answer on your best next step.</p>
+          <div class="msp-cta-row">
+            <a class="btn btn--primary btn--xl" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Schedule a Free Consultation</a>
+            <a class="btn btn--outline btn--xl" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
           </div>
         </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Matched with low scores · 218 on Step 2</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Anjali <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
       </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="F8E7lTvGKRU" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/F8E7lTvGKRU/hqdefault.jpg" alt="Lakshita - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
-          </div>
-        </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Matched with low scores · 221 on Step 2</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Lakshita <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="LKF0UYfXyE0" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/LKF0UYfXyE0/hqdefault.jpg" alt="UK graduate - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
-          </div>
-        </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">International grad</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">UK graduate <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="8S2q-5Pb87k" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/8S2q-5Pb87k/hqdefault.jpg" alt="Pavani - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
-          </div>
-        </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Matched with a Step 2 attempt</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Pavani <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">FM</span></div>
-        </div>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="izwBvdQgVc8" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/izwBvdQgVc8/hqdefault.jpg" alt="Dyan - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
-          </div>
-        </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Prestigious match · Albert Einstein</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Dyan <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="2pGb5xiKzdw" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/2pGb5xiKzdw/hqdefault.jpg" alt="Dr. Srusti - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
-          </div>
-        </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">STELLAR MATCH · SAINT VINCENT</div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Dr. Srusti <span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column">
-        <div data-vid="ZynxmljOZDA" style="position:relative;cursor:pointer;aspect-ratio:4/3;background:#000">
-          <img src="https://img.youtube.com/vi/ZynxmljOZDA/hqdefault.jpg" alt="Hamit - USMLE Wise match story" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none">
-            <span class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span>
-          </div>
-        </div>
-        <div style="padding:18px 20px 20px">
-          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-blue-500);margin-bottom:8px">Prestigious match&nbsp;<span style="letter-spacing: 1.05px;">· UPMC</span></div>
-          <div style="font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--uw-ink-900)">Hamit<span style="display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--uw-blue-600);background:var(--uw-blue-50);border:1px solid var(--uw-blue-100);border-radius:var(--r-xs);padding:2px 6px;vertical-align:middle;margin-left:6px">IM</span></div>
-        </div>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:38px">
-      <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="lg" hint-size="300px,52px">Schedule my free Match consultation →</x-import></a>
-    </div>
-  </section>
+    </section>
 
-  <!-- Video lightbox: these [data-vid] cards had no working click handler
-       before (leftover "{{ playVideo }}" template syntax from the design
-       export, never wired to real JS) -- this makes them actually play. -->
-  <div class="msp-lightbox" id="matchLightbox" role="dialog" aria-modal="true" aria-label="Match story video" style="display:none">
-    <button class="msp-lightbox__close" aria-label="Close video">&times;</button>
-    <div class="msp-lightbox__frame">
-      <iframe id="matchLightboxIframe" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0" title="Match story video"></iframe>
-    </div>
-  </div>
-  <script>
-  (function () {
-    document.addEventListener('DOMContentLoaded', function () {
-      var lightbox = document.getElementById('matchLightbox');
-      var iframe = document.getElementById('matchLightboxIframe');
-      if (!lightbox || !iframe) return;
-
-      function open(ytid) {
-        iframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
-        lightbox.style.display = 'flex';
-        lightbox.focus();
-      }
-      function close() {
-        iframe.src = '';
-        lightbox.style.display = 'none';
-      }
-      document.querySelectorAll('[data-vid]').forEach(function (card) {
-        card.setAttribute('role', 'button');
-        card.setAttribute('tabindex', '0');
-        card.addEventListener('click', function () { open(card.dataset.vid); });
-        card.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card.dataset.vid); }
-        });
-      });
-      lightbox.querySelector('.msp-lightbox__close').addEventListener('click', close);
-      lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && lightbox.style.display !== 'none') close();
-      });
-    });
-  })();
-  </script>
-
-  <!-- ============ COMPARE ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-surface)">
-    <div style="max-width:760px;margin:0 auto 40px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px"><div>Why Students Choose Us</div></div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0;color:var(--uw-ink-900)">USMLE Wise vs other services</h2>
-    </div>
-    <div class="mp-cmp">
-        <div class="mp-cmp-head">
-          <div class="mp-cmp-hcell feat">Features</div>
-          <div class="mp-cmp-hcell wise">USMLE Wise</div>
-          <div class="mp-cmp-hcell">Other services</div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Risk to start</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>A free first session, with no deposit to begin</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>Pay upfront before you speak to anyone</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">How we work</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Live, done-with-you sessions where we build your application together</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>You send documents and wait for edits</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Scope</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Every piece engineered into one story: CV, PS, letters, signals, interviews</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>Edits in fragments you stitch together</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Built by</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>The world's most-followed USMLE and Match expert</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>Often limited hands-on Match experience</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Advisors</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>220+ physician advisors who are IMGs, US MDs, and DOs</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>Mostly US advisors, often not physicians</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Support</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Direct WhatsApp support from your advisor</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>An AI chatbot or a ticket queue</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Flexibility</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Change advisors any time, schedule across time zones, move hours as needed</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>Fixed advisor, rigid packages, set hours</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Courses</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Access to 9+ courses, from personal statement and ERAS to research</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>No extras</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Match guarantee</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Backed by our match edit guarantee on Maximizer</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>Often none</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Money back</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>100% money-back guarantee after your first session</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>No guarantee</span></span></div>
-        </div>
-        <div class="mp-cmp-row">
-          <div class="mp-cmp-feat">Reviews</div>
-          <div class="mp-cmp-wise"><span class="mp-cmp-minilabel">USMLE Wise</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>1,700+ reviews</span></span></div>
-          <div class="mp-cmp-other"><span class="mp-cmp-minilabel">Other services</span><span class="mp-cmp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--uw-ink-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18M6 6l12 12"></path></svg><span>A handful of unverified reviews</span></span></div>
-        </div>
-      </div>
-  </section>
-
-  <!-- ============ MEET THE TEAM ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-bg);border-top:1px solid var(--uw-border)">
-    <div style="max-width:760px;margin:0 auto 44px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">Meet the team</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 18px;color:var(--uw-ink-900)">You work with doctors who've done it.</h2>
-      <p style="font-size:clamp(15px,2vw,17px);line-height:1.55;color:var(--uw-ink-700);margin:0">Led by the world's most-followed USMLE and Match expert, alongside a program director who has matched hundreds of residents and a research faculty background from Duke and UPMC.</p>
-    </div>
-    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px">
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px">
-        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><img src="/match-media/uploads/slot-team-manik.webp" alt="Dr. Manik Madaan" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transform:translate(-0.97%,15.7%) scale(1.293)"></div>
-        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:10px">Contributor</div>
-        <h3 style="font-family:var(--font-display);font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-0.01em;margin:0 0 12px;color:var(--uw-ink-900)"><b>Dr. Manik Madaan</b></h3>
-        <p style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-700);margin:0">The world's most-followed USMLE and Match expert, and a doctor in the U.S. <br>Served 4 Years In Residency Selection Committee</p>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px">
-        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><img src="/match-media/uploads/slot-team-kothari.webp" alt="Dr. Kothari" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transform:translate(0%,2.82%)"></div>
-        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:10px">Overseeing committee head</div>
-        <h3 style="font-family:var(--font-display);font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-0.01em;margin:0 0 12px;color:var(--uw-ink-900)"><b>Dr. Nayan K. Kothari</b></h3>
-        <p style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-700);margin:0">Program Director, Internal Medicine, Rutgers-RWJ Medical School. Chair, Dept. of Medicine, Saint Peter's (1996-2025). Reviewed thousands of CVs and matched hundreds of residents.</p>
-      </div>
-      <div style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:28px">
-        <div style="width:100%;height:280px;margin-bottom:22px;border-radius:var(--r-md);overflow:hidden;background:var(--uw-bg)"><img src="/match-media/uploads/slot-team-kaushik.webp" alt="Dr. Kaushik Sreeram" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transform:translate(3.44%,-9.96%) scale(1.203)"></div>
-        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:10px">Founder</div>
-        <h3 style="font-family:var(--font-display);font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-0.01em;margin:0 0 12px;color:var(--uw-ink-900)"><b>Dr. Kaushik Sreeram</b></h3>
-        <p style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-700);margin:0">Former Infectious Disease and opioid researcher at Duke University and UPMC.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-bg);border-top:1px solid var(--uw-border)">
-    <div style="max-width:720px;margin:0 auto 40px;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">FAQ</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0;color:var(--uw-ink-900)">Questions, answered honestly.</h2>
-    </div>
-    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px">
-      <details style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:0 20px">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--uw-ink-900)"><span>Which package is right for me?</span><span class="mp-faq-icon" style="flex-shrink:0;color:var(--uw-blue-500);transition:transform .2s var(--ease-out);font-size:22px;line-height:1;font-weight:400">+</span></summary>
-        <div style="padding:0 0 20px;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Essentials suits a strong applicant who mostly needs sharp documents. Pro fits most people who want full strategy and a weekly mentor. Maximizer is for applicants with red flags or those who want everything done end to end. Not sure? Book a free call and we'll tell you honestly.</div>
-      </details>
-      <details style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:0 20px">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--uw-ink-900)"><span>What does the money-back guarantee cover?</span><span class="mp-faq-icon" style="flex-shrink:0;color:var(--uw-blue-500);transition:transform .2s var(--ease-out);font-size:22px;line-height:1;font-weight:400">+</span></summary>
-        <div style="padding:0 0 20px;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Start with your first working session. If you don't feel it's right for you, tell us and we'll refund you in full.</div>
-      </details>
-      <details style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:0 20px">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--uw-ink-900)"><span>What is the match edit guarantee?</span><span class="mp-faq-icon" style="flex-shrink:0;color:var(--uw-blue-500);transition:transform .2s var(--ease-out);font-size:22px;line-height:1;font-weight:400">+</span></summary>
-        <div style="padding:0 0 20px;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">On Match Maximizer, if you don't match this cycle we keep working with you at no extra cost, for as many cycles as it takes, until you match. The final Match decision sits with the programs, so we commit to the work and stay with you the whole way.</div>
-      </details>
-      <details style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:0 20px">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--uw-ink-900)"><span>Who works on my application?</span><span class="mp-faq-icon" style="flex-shrink:0;color:var(--uw-blue-500);transition:transform .2s var(--ease-out);font-size:22px;line-height:1;font-weight:400">+</span></summary>
-        <div style="padding:0 0 20px;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Physicians who matched in the U.S., sat on residency selection committees, and edit to the same criteria programs score you on. Every editor is a doctor, and every edit is done by a human.</div>
-      </details>
-      <details style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:0 20px">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--uw-ink-900)"><span>How do I get started?</span><span class="mp-faq-icon" style="flex-shrink:0;color:var(--uw-blue-500);transition:transform .2s var(--ease-out);font-size:22px;line-height:1;font-weight:400">+</span></summary>
-        <div style="padding:0 0 20px;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Start with a free Match consultation. We review your profile, answer your questions, and recommend the right package. No deposit to book the call.</div>
-      </details>
-      <details style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:0 20px">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--uw-ink-900)"><span>Do you help with program signaling and geographic preferences?</span><span class="mp-faq-icon" style="flex-shrink:0;color:var(--uw-blue-500);transition:transform .2s var(--ease-out);font-size:22px;line-height:1;font-weight:400">+</span></summary>
-        <div style="padding:0 0 20px;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Yes. Pro and Maximizer include personalized signaling, and Maximizer includes done-for-you signals.</div>
-      </details>
-      <details style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:0 20px">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--uw-ink-900)"><span>Can I pay in installments?</span><span class="mp-faq-icon" style="flex-shrink:0;color:var(--uw-blue-500);transition:transform .2s var(--ease-out);font-size:22px;line-height:1;font-weight:400">+</span></summary>
-        <div style="padding:0 0 20px;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Yes. Book a free call and we'll set up a plan.</div>
-      </details>
-      <details style="background:var(--uw-surface);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:0 20px">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--uw-ink-900)"><span>Does this work for IMGs, US IMGs, MDs, and DOs?</span><span class="mp-faq-icon" style="flex-shrink:0;color:var(--uw-blue-500);transition:transform .2s var(--ease-out);font-size:22px;line-height:1;font-weight:400">+</span></summary>
-        <div style="padding:0 0 20px;font-size:14.5px;line-height:1.6;color:var(--uw-ink-600)">Yes. We work with all four, and we tailor the strategy to your profile and your red flags.</div>
-      </details>
-    </div>
-  </section>
-
-  <!-- ============ FINAL CTA ============ -->
-  <section id="consult" style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-blue-500);color:#fff;position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.1) 1px,transparent 1px);background-size:18px 18px;pointer-events:none"></div>
-    <div style="max-width:720px;margin:0 auto;text-align:center;position:relative;z-index:1">
-      <h2 style="font-family: var(--font-display); font-weight: 400; font-size: clamp(30px,5vw,48px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 18px; color: var(--surface-card)">Make this your final match.</h2>
-      <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.6;color:rgba(255,255,255,.82);max-width:52ch;margin:0 auto 30px">Your Match comes down to how well your hard work is presented. Let's engineer every piece of it.</p>
-      <div style="display:flex;justify-content:center">
-        <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="primary" size="xl" hint-size="320px,56px">Schedule my free Match consultation →</x-import></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" style="padding:clamp(56px,8vw,96px) 20px;background:var(--uw-surface)">
-    <div style="max-width:640px;margin:0 auto;text-align:center">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:16px">Still have questions?</div>
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,4.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 18px;color:var(--uw-ink-900)">Talk to our team.</h2>
-      <p style="font-size:clamp(15px,2.4vw,18px);line-height:1.6;color:var(--uw-ink-600);max-width:50ch;margin:0 auto 26px">Honest guidance on your application and your Match strategy. We'll give you a straight answer about your best next step.</p>
-      <div style="display:flex;justify-content:center;margin-bottom:14px">
-        <a href="https://wa.me/19192015700" target="_blank" rel="noopener" style="text-decoration:none"><x-import component-from-global-scope="USMLEWiseDesignSystem_d852a5.Button" variant="secondary" size="lg" hint-size="220px,52px">Chat on WhatsApp</x-import></a>
-      </div>
-      <div style="font-size:13.5px;color:var(--uw-ink-500);margin-bottom:34px">Prefer email? Write to <!--email_off--><a href="mailto:support@usmlewise.com" style="color:var(--uw-red-500);font-weight:600;text-decoration:none">support@usmlewise.com</a><!--/email_off--> or send us a message below.</div>
-
-      <form onsubmit="{{ onSubmit }}" style="text-align:left;display:flex;flex-direction:column;gap:14px;background:var(--uw-bg);border:1px solid var(--uw-border);border-radius:var(--r-lg);padding:clamp(22px,4vw,32px)">
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700)">Full name
-          <input type="text" name="name" required="" placeholder="Your full name" style="border:1px solid var(--uw-border-strong);border-radius:var(--r-md);padding:11px 13px;font-size:15px;color:var(--uw-ink-900);background:var(--uw-surface);outline:none">
-        </label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700)">Email
-          <input type="email" name="email" required="" placeholder="you@email.com" style="border:1px solid var(--uw-border-strong);border-radius:var(--r-md);padding:11px 13px;font-size:15px;color:var(--uw-ink-900);background:var(--uw-surface);outline:none">
-        </label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700)">Subject
-          <input type="text" name="subject" placeholder="What's this about?" style="border:1px solid var(--uw-border-strong);border-radius:var(--r-md);padding:11px 13px;font-size:15px;color:var(--uw-ink-900);background:var(--uw-surface);outline:none">
-        </label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--uw-ink-700)">Message
-          <textarea name="message" rows="4" placeholder="Tell us about your profile and where you are in the process" style="border:1px solid var(--uw-border-strong);border-radius:var(--r-md);padding:11px 13px;font-size:15px;color:var(--uw-ink-900);background:var(--uw-surface);outline:none;resize:vertical"></textarea>
-        </label>
-        <button type="submit" style="margin-top:4px;background:var(--uw-red-500);color:#fff;border:none;border-radius:var(--r-md);padding:13px 20px;font-size:15px;font-weight:600;font-family:var(--font-sans);cursor:pointer">Send message</button>
-        <div style="font-size:12.5px;color:var(--uw-success-500);min-height:16px">{{ formMsg }}</div>
-      </form>
-    </div>
-  </section>
-
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;$preview&quot;: { &quot;width&quot;: 1200, &quot;height&quot;: 3600 },
-  &quot;bookingUrl&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;#contact&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Links&quot;, &quot;label&quot;: &quot;Consultation CTA link&quot; },
-  &quot;whatsappUrl&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://wa.me/&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Links&quot;, &quot;label&quot;: &quot;WhatsApp link&quot; },
-  &quot;showStarRating&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Hero&quot;, &quot;label&quot;: &quot;Show star rating line&quot; }
-}">
-class Component extends DCLogic {
-  state = { formMsg: "" };
-
-  renderVals() {
-    return {
-      bookingUrl: this.props.bookingUrl ?? "#contact",
-      whatsappUrl: this.props.whatsappUrl ?? "https://wa.me/",
-      showStars: this.props.showStarRating ?? true,
-      formMsg: this.state.formMsg,
-      playVideo: (e) => {
-        const w = e.currentTarget.closest("[data-vid]");
-        if (!w) return;
-        const id = w.getAttribute("data-vid");
-        w.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="USMLE Wise match story" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe>';
-      },
-      onSubmit: (e) => {
-        e.preventDefault();
-        this.setState({ formMsg: "Thanks - we'll be in touch within one business day." });
-        try { e.target.reset(); } catch (_) {}
-      },
-    };
-  }
-
-  componentDidMount() {
-    this.initCountUp();
-  }
-
-  initCountUp() {
-    const els = Array.from(document.querySelectorAll("[data-count]"));
-    if (!els.length) return;
-    const fmt = (n) => Math.round(n).toLocaleString("en-US");
-    const run = (el) => {
-      const to = parseFloat(el.dataset.count);
-      const suf = el.dataset.suffix || "";
-      const dur = 1700, start = performance.now();
-      const ease = (t) => 1 - Math.pow(1 - t, 3);
-      const tick = (now) => {
-        const p = Math.min(1, (now - start) / dur);
-        el.textContent = fmt(to * ease(p)) + suf;
-        if (p < 1) requestAnimationFrame(tick);
-        else el.textContent = fmt(to) + suf;
-      };
-      requestAnimationFrame(tick);
-    };
-    els.forEach((el) => { el.textContent = "0" + (el.dataset.suffix || ""); });
-    if (!("IntersectionObserver" in window)) { els.forEach(run); return; }
-    const io = new IntersectionObserver((ents) => {
-      ents.forEach((e) => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
-    }, { threshold: 0.5 });
-    els.forEach((el) => io.observe(el));
-  }
-}
-</script>
+</main>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>

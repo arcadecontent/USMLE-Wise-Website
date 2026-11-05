@@ -220,7 +220,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="pg-cta-wrap">
       <div class="msp-wrap">
         <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
-          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
           <h2 id="ctaTitle" class="msp-h2">Spend every signal like it matters.</h2>
           <p class="msp-sub">Book a free guidance call and we'll map your specialty, your competitiveness, and exactly how your signals should be allocated.</p>
           <div class="msp-cta-row">

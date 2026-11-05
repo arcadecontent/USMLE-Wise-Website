@@ -138,7 +138,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <!-- ============== CTA ============== -->
       <section class="csa-cta">
         <div class="msp-wrap">
-          <span class="msp-eyebrow">Start your story</span>
           <h2 class="csa-cta__head">Your path through the Match<br />starts with one conversation.</h2>
           <p class="csa-cta__sub">Book a free guidance call. We'll look at your profile and tell you exactly where the gaps are.</p>
           <div class="csa-cta__actions">

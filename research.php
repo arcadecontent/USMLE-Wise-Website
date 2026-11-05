@@ -678,7 +678,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </p>
             </div>
             <div class="msp-cta-a__content">
-              <span class="msp-eyebrow msp-eyebrow--light">Start publishing</span>
               <h2 id="ctaTitle" class="msp-h2 msp-h2--invert">
                 Your first publication<br /><em>starts here.</em>
               </h2>

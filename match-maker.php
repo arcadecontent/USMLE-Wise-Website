@@ -464,7 +464,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="pg-cta-wrap">
       <div class="msp-wrap">
         <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">
-          <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
           <h2 id="ctaTitle" class="msp-h2">See your real odds before you spend a dollar on ERAS.</h2>
           <p class="msp-sub">Build your profile in a few minutes and get the free program list. Upgrade to the personalized list whenever you're ready.</p>
           <div class="msp-cta-row">

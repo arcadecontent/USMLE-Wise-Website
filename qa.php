@@ -419,7 +419,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <section class="qa-cta" aria-labelledby="qaCtaTitle">
         <div class="msp-wrap">
           <div class="qa-cta__inner reveal">
-            <span class="msp-eyebrow">Still have a question?</span>
             <h2 id="qaCtaTitle" class="qa-cta__title">
               We're one message away.
             </h2>

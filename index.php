@@ -847,7 +847,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <section class="lpx-section lpx-final" id="book">
     <div class="lpx-wrap">
       <div class="lpx-final__card reveal" aria-labelledby="finalTitle">
-        <span class="msp-eyebrow msp-eyebrow--light">Get started</span>
         <h2 id="finalTitle" class="lpx-final__title">Your residency journey gets easier when you stop doing it alone.</h2>
         <p class="lpx-final__sub">Get expert guidance, a clear roadmap, and support from mentors who understand the IMG journey from the inside.</p>
         <div class="lpx-final__actions">

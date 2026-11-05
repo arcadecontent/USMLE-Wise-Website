@@ -379,7 +379,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               </p>
             </div>
             <div class="msp-cta-a__content">
-              <span class="msp-eyebrow msp-eyebrow--light">Enrollment open</span>
               <h2 id="ctaTitle" class="msp-h2 msp-h2--invert">
                 Rotations are currently<br /><em>open for enrollment.</em>
               </h2>
