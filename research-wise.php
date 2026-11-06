@@ -1,532 +1,390 @@
 <?php
 $pageTitle = "Research for USMLE: Start Research With No Experience | Research Wise";
-$pageDescription = "Three live Sundays to your first case report, study or review. Notes, PPTs and a certificate included. Built for medical students and IMGs who have never done research.";
+$pageDescription = "A 9-hour live workshop over 3 Sundays: master case reports, original studies, systematic reviews and meta-analyses. Built for absolute beginners.";
 $canonical = "https://usmlewise.com/research-wise";
 $bodyClass = "msp";
 $stylesheets = [
     "/styles/research-catalyst.css",
     "/styles/research-wise.css",
-    "/styles/blog.css",
-    "/styles/awards-carousel.css"
+    "/styles/blog.css"
 ];
 $scripts = [
-    "/js/research-catalyst.js",
-    "/js/awards-carousel.js"
+    "/js/research-catalyst.js"
 ];
 
-/* ---------------------------------------------------------------------------
-   FAQ — one source of truth for the accordion and the FAQPage structured data
-   further down, so the two can never drift apart. Answers may carry links.
-   --------------------------------------------------------------------------- */
+/* FAQ: one source for the accordion and the FAQPage structured data. */
 $rwFaqs = [
     [
-        'q' => 'What do I get?',
-        'a' => 'A live 3-hour mentor session every Sunday, structured notes and PPTs, a certificate of completion, a WhatsApp group and a concrete next step.',
+        'q' => 'Do I need any research experience?',
+        'a' => 'No. The workshop is built for absolute beginners. You don\'t need a research idea, institutional access, IRB approval or professor connections to join.',
     ],
     [
-        'q' => 'How long is each session?',
-        'a' => 'Three hours, live, on Sundays at 10 AM EST (19:00 Tbilisi).',
-    ],
-    [
-        'q' => 'Do I need any research experience to join?',
-        'a' => "No. Research Wise is built specifically for medical students and graduates who have never done research and don't know where to start. Come with a topic you're curious about; you don't need a plan yet.",
-    ],
-    [
-        'q' => 'Will I get a certificate?',
-        'a' => 'Yes, when you finish all three sessions.',
+        'q' => 'Are the sessions recorded?',
+        'a' => 'Yes. Every session is recorded, so if you can\'t attend live, you still get full access to the recordings.',
     ],
     [
         'q' => 'Does this guarantee a publication?',
-        'a' => 'No. You leave with the skills and a clear next step, and acceptance depends on the journal.',
+        'a' => 'No. You leave with the skills, a real first project, and a clear next step. Acceptance depends on the journal.',
     ],
     [
-        'q' => 'Is research important for USMLE?',
-        'a' => "Research strengthens an IMG's residency application, and starting early gives you more time to finish a project.",
+        'q' => 'Will research help my residency application?',
+        'a' => 'Yes. Programs look at research when they review applications, especially for IMGs. Starting early gives you more time to finish a project before you apply.',
     ],
     [
-        'q' => 'How do I publish a case report as a medical student?',
-        'a' => 'You choose a case, outline it and submit it to a journal. Session 1 walks you through it step by step.',
+        'q' => 'Will I get a certificate?',
+        'a' => 'Yes, when you finish all 3 days.',
     ],
     [
-        'q' => 'What does it cost?',
-        'a' => '$49, one-time, for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.',
+        'q' => 'I already have a project running. Is this for me?',
+        'a' => 'Research Wise is for your first project. If you\'re already working on one, Original Research or Research Catalyst puts a mentor directly on your work.',
     ],
     [
         'q' => 'How is this different from Research Cohort Access?',
-        'a' => 'Research Wise is the live starting point for people who haven\'t done research before. <a href="/research-cohort">Research Cohort Access</a> is a self-paced library for once you already understand the basics and are working on a real project.',
-    ],
-    [
-        'q' => 'Can I join if I already have a research project running?',
-        'a' => "Research Wise is built for people who haven't started yet. If you already have a project running, <a href=\"/research-original\">Original Research</a> or <a href=\"/research-catalyst\">Research Catalyst</a> put a mentor directly on that work.",
+        'a' => 'Research Wise is the live starting point. Research Cohort Access is a self-paced library for once you know the basics and have a project underway.',
     ],
 ];
-
-/* ---------------------------------------------------------------------------
-   Testimonials — layout from Chrisann, content from Barakat.
-
-   Both lists are empty until that content lands, and the whole section is
-   skipped while they are, so the page is safe to ship in the meantime.
-
-   Screenshots: drop the cropped images (no phone numbers, emails or other
-   private details) into /assets/Testimonials/Photos/Research-Wise/ and add a
-   row each. 'cap' is the caption shown under the tile: first name or initials,
-   university or country, and one true line on what the student did.
-
-       ['img' => '/assets/Testimonials/Photos/Research-Wise/01.webp',
-        'alt' => 'WhatsApp message from a Research Wise student',
-        'cap' => 'A. R., Georgia — wrote her first case report'],
-
-   Videos: 30 to 60 seconds, the student's face and voice, captioned, uploaded
-   to YouTube. 'yt' is the 11-character video id, 'thumb' a face thumbnail.
-
-       ['yt' => 'xxxxxxxxxxx', 'thumb' => '/assets/.../01-face.webp',
-        'name' => 'A. R.', 'line' => 'Wrote her first case report'],
-
-   Consent: every testimonial here needs a written message from the student
-   allowing their words, name or initials and photo on the page, kept in the
-   shared folder. Remove a testimonial the same day consent is withdrawn.
-   --------------------------------------------------------------------------- */
-$rwShots  = [];
-$rwVideos = [];
-
-/* Award carousel renders nothing when the CRM has no published awards; this
-   keeps the "Reserve your spot" button that follows it from being stranded. */
-require_once $_SERVER['DOCUMENT_ROOT'] . '/data/posts.php';
-$rwHasAwards = !empty(usmlewise_crm_award_posts());
 
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
 <main>
 
-      <!-- ============== HERO ============== -->
-      <section class="msp-hero" aria-labelledby="heroTitle">
-        <div class="msp-wrap msp-hero__grid">
-          <div class="msp-hero__copy reveal">
-            <span class="msp-eyebrow rw-level">Basics of Research &middot; Level 1 Workshop</span>
-            <h1 id="heroTitle" class="msp-h1">Master case reports, original studies, systematic reviews and meta-analyses <span class="msp-h1__accent">in just 3 days of live training.</span></h1>
-            <p class="msp-lede">
-              A 9-hour live workshop taught from the basics by mentors who
-              publish. One 3-hour session every Sunday for 3 weeks.
-            </p>
-            <p class="rw-beginner"><strong>Built for absolute beginners.</strong> No research idea, institutional access, IRB approval or professor connections needed.</p>
-            <div class="msp-cta-row">
-              <a
-                class="btn btn--primary btn--xl"
-                href="#reserve"
-                data-rw-reserve
-                >Reserve Your Spot</a
-              >
-              <a class="btn btn--outline btn--xl" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
-            </div>
-            <p class="rw-assure"><i data-lucide="shield-check" width="18" height="18" aria-hidden="true"></i><span>One-time $49. Covered by our <a href="/refund-policy">Refund &amp; Guarantee Policy</a>.</span></p>
+<div class="rw">
+
+  
+
+  <!-- HERO -->
+  <section class="rw-hero" style="position:relative;overflow:hidden;isolation:isolate;padding:clamp(48px,7vw,88px) clamp(20px,5vw,48px) clamp(56px,7vw,88px);background:radial-gradient(1000px 520px at 88% -8%, var(--uw-blue-50), transparent), radial-gradient(700px 420px at 0% 30%, var(--uw-red-50), transparent 70%), var(--uw-surface)">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden">
+      <div class="rw-wall" style="position:absolute;left:50%;top:50%;width:150%;transform:translate(-50%,-50%) rotate(-8deg);display:grid;grid-template-columns:repeat(5,1fr);gap:18px;opacity:.22;filter:saturate(.7)"><img src="/assets/research-wise/award-1.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-2.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-3.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-4.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-5.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-5.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-4.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-1.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-3.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-2.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-2.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-3.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-1.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-5.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-4.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 62% 58% at 50% 42%, rgba(255,255,255,.97) 35%, rgba(255,255,255,.82) 62%, rgba(255,255,255,.45) 100%)"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(to bottom, rgba(255,255,255,0), #fff)"></div>
+      <div style="position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--uw-blue-500) 0 70%,var(--uw-red-500) 70% 100%)"></div>
+    </div>
+    <div style="max-width:960px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <div class="rw-lbl" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:24px;padding:6px 6px 6px 18px;border-radius:999px;background:#fff;border:1px solid var(--uw-blue-100);box-shadow:var(--shadow-md);font-family:var(--font-mono);font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap"><span style="color:var(--uw-blue-600)">Basics of Research</span><span style="padding:6px 12px;border-radius:999px;background:var(--uw-blue-500);color:#fff;letter-spacing:.1em">Level 1 Workshop</span></div>
+      <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(32px,5vw,56px);line-height:1.12;letter-spacing:-0.015em;color:var(--uw-ink-900);margin:0;max-width:900px;text-wrap:balance">Master case reports, original studies, systematic reviews and meta-analyses <span style="color:var(--uw-blue-500)">in just <em style="color:var(--uw-red-500);font-style:italic">3&nbsp;days</em> of live training.</span></h1>
+      <p style="margin:20px 0 0;max-width:640px;font-size:clamp(16px,1.6vw,18.5px);line-height:1.6;color:var(--uw-ink-600);text-wrap:pretty">A 9-hour live workshop taught from the basics by mentors who publish. One 3-hour session every Sunday for 3 weeks.</p>
+      <div style="margin-top:22px;max-width:640px;padding:14px 20px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--uw-border);box-shadow:var(--shadow-sm);font-size:15.5px;line-height:1.55;color:var(--uw-ink-700);text-wrap:pretty"><strong style="font-weight:600;color:var(--uw-blue-600)">Built for absolute beginners.</strong> No research idea, institutional access, IRB approval or professor connections needed.</div>
+
+      <a class="rwh1" href="#reserve" data-rw-reserve style="margin-top:28px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 34px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600;box-shadow:0 10px 24px rgba(227,33,36,.22)">Reserve my spot · $49</a>
+      <div style="margin-top:16px;display:flex;align-items:flex-start;justify-content:center;gap:8px;max-width:560px;font-size:14.5px;line-height:1.5;color:var(--uw-ink-700);text-wrap:pretty">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        <span>100% money-back satisfaction guarantee. If you're not satisfied, you get your money back.</span>
+      </div>
+      <div style="position:relative;width:100%;max-width:880px;margin-top:40px">
+        <div class="rw-3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border:1px solid var(--uw-border);border-top:4px solid var(--uw-blue-500);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden;text-align:left">
+          <div class="rw-dc-col" style="padding:24px 26px;display:flex;flex-direction:column;gap:6px">
+            <span style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;color:var(--uw-red-500);font-weight:600">DAY 1</span>
+            <span style="font-family:var(--font-display);font-size:24px;line-height:1.2;color:var(--uw-blue-500)">Sunday, Nov 15</span>
+            <span style="font-size:15px;line-height:1.4;color:var(--uw-ink-800);font-weight:500">Master case reports and case series</span>
+            <span style="font-size:13.5px;color:var(--uw-ink-500)">10 AM to 1 PM EST</span>
           </div>
-        </div>
-
-        <div class="msp-wrap">
-          <ol class="rw-hero-days reveal" aria-label="The three live sessions">
-            <li><span class="rw-hero-days__k">Day 1</span><span class="rw-hero-days__d">Sunday, Nov 15</span><span class="rw-hero-days__t">Case reports and case series</span><span class="rw-hero-days__m">10 AM to 1 PM EST</span></li>
-            <li><span class="rw-hero-days__k">Day 2</span><span class="rw-hero-days__d">Sunday, Nov 22</span><span class="rw-hero-days__t">Original studies</span><span class="rw-hero-days__m">10 AM to 1 PM EST</span></li>
-            <li><span class="rw-hero-days__k">Day 3</span><span class="rw-hero-days__d">Sunday, Nov 29</span><span class="rw-hero-days__t">Systematic reviews and meta-analyses</span><span class="rw-hero-days__m">10 AM to 1 PM EST</span></li>
-          </ol>
-        </div>
-
-        <div class="msp-bar msp-wrap" aria-label="Track record">
-          <div class="msp-bar__inner">
-            <div class="msp-stat reveal">
-              <b data-count="90" data-suffix="+">90+</b>
-              <span>Students &amp; professionals guided</span>
-            </div>
-            <div class="msp-divider" aria-hidden="true"></div>
-            <div class="msp-stat reveal">
-              <b data-count="30" data-suffix="+">30+</b>
-              <span>Publications &amp; presentations</span>
-            </div>
-            <div class="msp-divider" aria-hidden="true"></div>
-            <div class="msp-stat reveal">
-              <b data-count="10" data-suffix="+">10+</b>
-              <span>Active projects running</span>
-            </div>
-            <div class="msp-divider" aria-hidden="true"></div>
-            <div class="msp-stat reveal">
-              <b data-count="65" data-suffix="+">65+</b>
-              <span>Projects mentored</span>
-            </div>
+          <div class="rw-dc-col" style="padding:24px 26px;display:flex;flex-direction:column;gap:6px;border-left:1px solid var(--uw-border)">
+            <span style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;color:var(--uw-red-500);font-weight:600">DAY 2</span>
+            <span style="font-family:var(--font-display);font-size:24px;line-height:1.2;color:var(--uw-blue-500)">Sunday, Nov 22</span>
+            <span style="font-size:15px;line-height:1.4;color:var(--uw-ink-800);font-weight:500">Master original studies</span>
+            <span style="font-size:13.5px;color:var(--uw-ink-500)">10 AM to 1 PM EST</span>
           </div>
-        </div>
-      </section>
-
-      <!-- ============== RECOGNITION ============== -->
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
-      <?php if ($rwHasAwards): ?>
-      <div class="msp-wrap">
-        <div class="rw-cta-row rw-cta-row--tight reveal">
-          <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
+          <div class="rw-dc-col" style="padding:24px 26px;display:flex;flex-direction:column;gap:6px;border-left:1px solid var(--uw-border)">
+            <span style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;color:var(--uw-red-500);font-weight:600">DAY 3</span>
+            <span style="font-family:var(--font-display);font-size:24px;line-height:1.2;color:var(--uw-blue-500)">Sunday, Nov 29</span>
+            <span style="font-size:15px;line-height:1.4;color:var(--uw-ink-800);font-weight:500">Master systematic reviews and meta-analyses</span>
+            <span style="font-size:13.5px;color:var(--uw-ink-500)">10 AM to 1 PM EST</span>
+          </div>
         </div>
       </div>
-      <?php endif; ?>
 
-      <!-- ============== THE PROBLEM ============== -->
-      <section class="msp-section rw-problem" id="problem" aria-labelledby="problemTitle">
-        <div class="msp-wrap">
-          <div class="rw-problem__inner">
-            <h2 id="problemTitle" class="msp-h2 reveal">Residency programs want research. <span class="msp-h1__accent">Nobody shows you how to start.</span></h2>
-            <ul class="rw-problem__list">
-              <li class="reveal">You don't know whether your first paper should be a case report, a study, or a review.</li>
-              <li class="reveal">You don't have a lab, a mentor, or a dataset.</li>
-              <li class="reveal">Months pass, and the research section of your CV is still empty.</li>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="background:var(--uw-surface);border-top:1px solid var(--uw-border);border-bottom:1px solid var(--uw-border);padding:clamp(44px,6vw,72px) clamp(20px,5vw,48px)">
+    <div class="rw-stats" style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));text-align:center;align-items:center">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;" class="rw-stat"><span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-0.02em;color:var(--uw-blue-500);font-variant-numeric:tabular-nums"><span data-rw-count="90">90</span>+</span><span style="font-size:15px;line-height:1.45;color:var(--uw-ink-500);max-width:16ch;text-wrap:balance">Students &amp; professionals guided</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;border-left:1px solid var(--uw-border);" class="rw-stat"><span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-0.02em;color:var(--uw-blue-500);font-variant-numeric:tabular-nums"><span data-rw-count="30">30</span>+</span><span style="font-size:15px;line-height:1.45;color:var(--uw-ink-500);max-width:16ch;text-wrap:balance">Publications &amp; presentations</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;border-left:1px solid var(--uw-border);" class="rw-stat"><span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-0.02em;color:var(--uw-blue-500);font-variant-numeric:tabular-nums"><span data-rw-count="10">10</span>+</span><span style="font-size:15px;line-height:1.45;color:var(--uw-ink-500);max-width:16ch;text-wrap:balance">Active projects running</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;border-left:1px solid var(--uw-border);" class="rw-stat"><span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-0.02em;color:var(--uw-blue-500);font-variant-numeric:tabular-nums"><span data-rw-count="65">65</span>+</span><span style="font-size:15px;line-height:1.45;color:var(--uw-ink-500);max-width:16ch;text-wrap:balance">Projects mentored</span></div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section id="results" style="scroll-margin-top:64px;padding:clamp(64px,8vw,96px) clamp(20px,5vw,48px);background:#fff;border-top:1px solid var(--uw-border)">
+    <div style="max-width:1000px;margin:0 auto">
+      <div style="text-align:center">
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">From our students</div>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0;text-wrap:balance">From students <em style="font-style:italic;color:var(--uw-blue-500)">who started here.</em></h2>
+      </div>
+      <div style="margin-top:40px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
+        <span style="font-family:var(--font-display);font-size:22px;color:var(--uw-blue-600)">Awards our students won this year</span>
+        <a class="rwh2" href="/research-awards" style="display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:600;color:var(--uw-blue-500)">See all research awards<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      </div>
+      <div class="rw-aw-row" style="margin:20px calc(-1 * clamp(20px,5vw,48px)) 0;padding:4px clamp(20px,5vw,48px) 16px;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:clamp(20px,5vw,48px);-webkit-overflow-scrolling:touch">
+        <div class="rwh3 rw-aw" style="flex:none;width:300px;scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;background:var(--uw-blue-50)"><img src="/assets/research-wise/award-1.webp" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+            <span style="position:absolute;top:12px;left:12px;padding:4px 10px;border-radius:999px;background:var(--uw-blue-500);color:#fff;font-size:12px;font-weight:600;pointer-events:none">Top 65 of 1,300 posters</span></div>
+          <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">AMA Research Challenge 2026</span>
+            <span style="font-family:var(--font-display);font-size:19px;line-height:1.25;color:var(--uw-ink-900)">Diarrhoea Screening at the Doorstep</span>
+            <span style="font-size:14px;line-height:1.5;color:var(--uw-ink-600);text-wrap:pretty">A field study of WHO-defined diarrhoea screening during India's Pulse Polio campaign.</span>
+            <a class="rwh2" href="/research-awards/ama-research-challenge-2026-diarrhoea-doorstep-screening" style="margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--uw-blue-500)">Read more<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+        </div>
+        <div class="rwh3 rw-aw" style="flex:none;width:300px;scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;background:var(--uw-blue-50)"><img src="/assets/research-wise/award-2.webp" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+            <span style="position:absolute;top:12px;left:12px;padding:4px 10px;border-radius:999px;background:var(--uw-blue-500);color:#fff;font-size:12px;font-weight:600;pointer-events:none">Presidential Award</span></div>
+          <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">ACG 2026 Annual Scientific Meeting</span>
+            <span style="font-family:var(--font-display);font-size:19px;line-height:1.25;color:var(--uw-ink-900)">Early Microbiota Restoration for C. difficile Infection</span>
+            <span style="font-size:14px;line-height:1.5;color:var(--uw-ink-600);text-wrap:pretty">A systematic review and meta-analysis on early gut microbiota restoration for C. diff infection.</span>
+            <a class="rwh2" href="/research-awards/acg-presidential-award-microbiota-restoration" style="margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--uw-blue-500)">Read more<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+        </div>
+        <div class="rwh3 rw-aw" style="flex:none;width:300px;scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;background:var(--uw-blue-50)"><img src="/assets/research-wise/award-3.webp" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+            <span style="position:absolute;top:12px;left:12px;padding:4px 10px;border-radius:999px;background:var(--uw-blue-500);color:#fff;font-size:12px;font-weight:600;pointer-events:none">Best Poster Presentation</span></div>
+          <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">AACP 2026</span>
+            <span style="font-family:var(--font-display);font-size:19px;line-height:1.25;color:var(--uw-ink-900)">LGBTQIA+ Mental Health in Delhi</span>
+            <span style="font-size:14px;line-height:1.5;color:var(--uw-ink-600);text-wrap:pretty">A cross-sectional study of depression, suicidal ideation, and perceived discrimination.</span>
+            <a class="rwh2" href="/research-awards/aacp-2026-best-poster-lgbtq-mental-health-delhi" style="margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--uw-blue-500)">Read more<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+        </div>
+        <div class="rwh3 rw-aw" style="flex:none;width:300px;scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;background:var(--uw-blue-50)"><img src="/assets/research-wise/award-4.webp" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+            <span style="position:absolute;top:12px;left:12px;padding:4px 10px;border-radius:999px;background:var(--uw-blue-500);color:#fff;font-size:12px;font-weight:600;pointer-events:none">Second Prize</span></div>
+          <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">7th Annual Neuro-Oncology Symposium 2026</span>
+            <span style="font-family:var(--font-display);font-size:19px;line-height:1.25;color:var(--uw-ink-900)">Place of Death Among US Brain Tumour Decedents</span>
+            <span style="font-size:14px;line-height:1.5;color:var(--uw-ink-600);text-wrap:pretty">A CDC WONDER joinpoint analysis of where US brain tumour patients die.</span>
+            <a class="rwh2" href="/research-awards/7anos-2026-second-prize-place-of-death-brain-tumour" style="margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--uw-blue-500)">Read more<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+        </div>
+        <div class="rwh3 rw-aw" style="flex:none;width:300px;scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;background:var(--uw-blue-50)"><img src="/assets/research-wise/award-5.webp" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+            <span style="position:absolute;top:12px;left:12px;padding:4px 10px;border-radius:999px;background:var(--uw-blue-500);color:#fff;font-size:12px;font-weight:600;pointer-events:none">Second Place</span></div>
+          <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--uw-red-500)">ACP Illinois Chapter 2026</span>
+            <span style="font-family:var(--font-display);font-size:19px;line-height:1.25;color:var(--uw-ink-900)">Heparin Resistance in Cardiac Surgery</span>
+            <span style="font-size:14px;line-height:1.5;color:var(--uw-ink-600);text-wrap:pretty">A systematic review and proportion meta-analysis of heparin resistance during cardiopulmonary bypass.</span>
+            <a class="rwh2" href="/research-awards/acp-illinois-2026-second-place-heparin-resistance" style="margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--uw-blue-500)">Read more<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section style="padding:clamp(64px,8vw,96px) clamp(20px,5vw,48px);background:#fff">
+    <div style="max-width:1000px;margin:0 auto;text-align:center">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">The problem</div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0 auto;max-width:760px;text-wrap:balance">Residency programs want research. <span style="color:var(--uw-blue-500)">Nobody shows you how to start.</span></h2>
+      <div class="rw-3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px;text-align:left">
+        <div style="display:flex;gap:12px;align-items:flex-start;padding:22px;border-radius:var(--r-lg);background:var(--uw-red-50);border:1px solid var(--uw-red-100)"><span style="flex:none;width:28px;height:28px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></span><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800);text-wrap:pretty">You don't know whether your first paper should be a case report, a study, or a review.</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start;padding:22px;border-radius:var(--r-lg);background:var(--uw-red-50);border:1px solid var(--uw-red-100)"><span style="flex:none;width:28px;height:28px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></span><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800);text-wrap:pretty">You don't have a lab, a mentor, or a dataset.</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start;padding:22px;border-radius:var(--r-lg);background:var(--uw-red-50);border:1px solid var(--uw-red-100)"><span style="flex:none;width:28px;height:28px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></span><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800);text-wrap:pretty">Months pass, and the research section of your CV is still empty.</span></div>
+      </div>
+      <div class="dot-tex" style="margin-top:28px;padding:clamp(28px,4vw,40px) clamp(20px,4vw,40px);border-radius:var(--r-lg);background-color:var(--uw-blue-500);display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:var(--font-display);font-size:clamp(22px,2.6vw,30px);line-height:1.25;color:#fff;text-wrap:balance">Every researcher started with one first project.</span>
+        <span style="font-family:var(--font-display);font-style:italic;font-size:clamp(22px,2.6vw,30px);line-height:1.25;color:var(--uw-success-300)">In 3 days, you'll have yours.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EACH DAY -->
+  <section id="days" style="scroll-margin-top:64px;padding:clamp(64px,8vw,96px) clamp(20px,5vw,48px);background:var(--uw-blue-50);border-top:1px solid var(--uw-blue-100)">
+    <div style="max-width:960px;margin:0 auto">
+      <div style="text-align:center">
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">What happens each day</div>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0;text-wrap:balance">3 Sundays. 3 types of paper. <em style="font-style:italic;color:var(--uw-red-500)">9 live hours.</em></h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-top:40px">
+        <div class="rw-day" style="display:grid;grid-template-columns:200px minmax(0,1fr);padding:0;overflow:hidden;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
+          <div class="rw-day-left" style="display:flex;flex-direction:column;justify-content:center;gap:6px;padding:28px 24px;background:var(--uw-blue-50);border-right:1px solid var(--uw-blue-100)">
+            <span style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;color:var(--uw-red-500);font-weight:600">DAY 1</span>
+            <span style="font-family:var(--font-display);font-size:24px;line-height:1.2;color:var(--uw-blue-500)">Sun, Nov 15</span>
+            <span style="font-size:13.5px;color:var(--uw-ink-500)">10 AM to 1 PM EST</span>
+          </div>
+          <div class="rw-day-right" style="padding:28px;display:flex;flex-direction:column;gap:8px">
+            <h3 style="font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.4vw,26px);line-height:1.2;color:var(--uw-ink-900);margin:0">Master case reports and case series</h3>
+            <span style="font-size:14px;color:var(--uw-ink-500)">With Shivani Ravipati</span>
+            <p style="margin:4px 0 0;font-size:15.5px;line-height:1.6;color:var(--uw-ink-700);text-wrap:pretty">Go from zero to your first case report, including how a case report is built section by section.</p>
+            <div style="margin-top:8px;padding:12px 16px;border-radius:var(--r-md);background:var(--uw-blue-50);font-size:14.5px;line-height:1.5;color:var(--uw-blue-700)"><strong style="font-weight:600">You leave with:</strong> the step-by-step process to publish your first case report.</div>
+          </div>
+        </div>
+        <div class="rw-day" style="display:grid;grid-template-columns:200px minmax(0,1fr);padding:0;overflow:hidden;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
+          <div class="rw-day-left" style="display:flex;flex-direction:column;justify-content:center;gap:6px;padding:28px 24px;background:var(--uw-blue-50);border-right:1px solid var(--uw-blue-100)">
+            <span style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;color:var(--uw-red-500);font-weight:600">DAY 2</span>
+            <span style="font-family:var(--font-display);font-size:24px;line-height:1.2;color:var(--uw-blue-500)">Sun, Nov 22</span>
+            <span style="font-size:13.5px;color:var(--uw-ink-500)">10 AM to 1 PM EST</span>
+          </div>
+          <div class="rw-day-right" style="padding:28px;display:flex;flex-direction:column;gap:8px">
+            <h3 style="font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.4vw,26px);line-height:1.2;color:var(--uw-ink-900);margin:0">Master original studies</h3>
+            <span style="font-size:14px;color:var(--uw-ink-500)">With Muhammad Ahmad Barakat</span>
+            <p style="margin:4px 0 0;font-size:15.5px;line-height:1.6;color:var(--uw-ink-700);text-wrap:pretty">Design your first original study from scratch, using data you can actually get as a student.</p>
+            <div style="margin-top:8px;padding:12px 16px;border-radius:var(--r-md);background:var(--uw-blue-50);font-size:14.5px;line-height:1.5;color:var(--uw-blue-700)"><strong style="font-weight:600">You leave with:</strong> a first study design you can run with data you can easily reach.</div>
+          </div>
+        </div>
+        <div class="rw-day" style="display:grid;grid-template-columns:200px minmax(0,1fr);padding:0;overflow:hidden;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
+          <div class="rw-day-left" style="display:flex;flex-direction:column;justify-content:center;gap:6px;padding:28px 24px;background:var(--uw-blue-50);border-right:1px solid var(--uw-blue-100)">
+            <span style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;color:var(--uw-red-500);font-weight:600">DAY 3</span>
+            <span style="font-family:var(--font-display);font-size:24px;line-height:1.2;color:var(--uw-blue-500)">Sun, Nov 29</span>
+            <span style="font-size:13.5px;color:var(--uw-ink-500)">10 AM to 1 PM EST</span>
+          </div>
+          <div class="rw-day-right" style="padding:28px;display:flex;flex-direction:column;gap:8px">
+            <h3 style="font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.4vw,26px);line-height:1.2;color:var(--uw-ink-900);margin:0">Master systematic reviews and meta-analyses</h3>
+            <span style="font-size:14px;color:var(--uw-ink-500)">With Muhammad Ahmad Barakat</span>
+            <p style="margin:4px 0 0;font-size:15.5px;line-height:1.6;color:var(--uw-ink-700);text-wrap:pretty">Go from a review question to a finished systematic review and meta-analysis.</p>
+            <div style="margin-top:8px;padding:12px 16px;border-radius:var(--r-md);background:var(--uw-blue-50);font-size:14.5px;line-height:1.5;color:var(--uw-blue-700)"><strong style="font-weight:600">You leave with:</strong> the step-by-step plan to publish your first systematic review and meta-analysis.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px">
+        <span style="font-size:14px;color:var(--uw-ink-500)">Every day ends with live Q&amp;A.</span>
+        <a class="rwh1" href="#reserve" data-rw-reserve style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Reserve my spot · $49</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section id="details" style="scroll-margin-top:64px;padding:clamp(64px,8vw,96px) clamp(20px,5vw,48px);background:#fff;border-top:1px solid var(--uw-border)">
+    <div style="max-width:1000px;margin:0 auto">
+      <div style="text-align:center">
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">Workshop details</div>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0;text-wrap:balance">Sessions start at 10 AM Eastern, every Sunday.</h2>
+      </div>
+      <div class="rw-2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,56px);margin-top:44px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:22px">
+          <div style="padding-left:16px;border-left:3px solid var(--uw-blue-500);display:flex;flex-direction:column;gap:4px"><span style="font-size:12.5px;color:var(--uw-ink-500)">Dates</span><span style="font-size:16.5px;font-weight:600;line-height:1.45;color:var(--uw-ink-900)">3 Sundays in a row: November 15, November 22 and November 29, 2026</span></div>
+          <div style="padding-left:16px;border-left:3px solid var(--uw-blue-500);display:flex;flex-direction:column;gap:4px"><span style="font-size:12.5px;color:var(--uw-ink-500)">Time</span><span style="font-size:16.5px;font-weight:600;line-height:1.45;color:var(--uw-ink-900)">10 AM to 1 PM EST, each Sunday</span></div>
+          <div style="padding-left:16px;border-left:3px solid var(--uw-blue-500);display:flex;flex-direction:column;gap:4px"><span style="font-size:12.5px;color:var(--uw-ink-500)">Total</span><span style="font-size:16.5px;font-weight:600;line-height:1.45;color:var(--uw-ink-900)">9 hours of live teaching</span></div>
+          <div style="padding-left:16px;border-left:3px solid var(--uw-blue-500);display:flex;flex-direction:column;gap:4px"><span style="font-size:12.5px;color:var(--uw-ink-500)">Platform</span><span style="font-size:16.5px;font-weight:600;line-height:1.45;color:var(--uw-ink-900)">Live on Zoom</span></div>
+        </div>
+        <div style="border:1px solid var(--uw-border);border-radius:var(--r-lg);overflow:hidden">
+          <table class="rw-tz" style="width:100%;border-collapse:collapse;font-size:15px">
+            <thead><tr style="background:var(--uw-blue-50)"><th style="text-align:left;padding:13px 18px;font-weight:600;font-size:13px;color:var(--uw-blue-700)">Your city</th><th style="text-align:left;padding:13px 18px;font-weight:600;font-size:13px;color:var(--uw-blue-700)">Starts</th><th style="text-align:left;padding:13px 18px;font-weight:600;font-size:13px;color:var(--uw-blue-700)">Ends</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-weight:600;color:var(--uw-ink-900)">New York (EST)</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">10:00 AM</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">1:00 PM</td></tr>
+              <tr><td style="padding:13px 18px;border-top:1px solid var(--uw-border)">London (GMT)</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">3:00 PM</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">6:00 PM</td></tr>
+              <tr><td style="padding:13px 18px;border-top:1px solid var(--uw-border)">Dubai (GST)</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">7:00 PM</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">10:00 PM</td></tr>
+              <tr><td style="padding:13px 18px;border-top:1px solid var(--uw-border)">Tbilisi (GET)</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">7:00 PM</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">10:00 PM</td></tr>
+              <tr><td style="padding:13px 18px;border-top:1px solid var(--uw-border)">Pakistan (PKT)</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">8:00 PM</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">11:00 PM</td></tr>
+              <tr><td style="padding:13px 18px;border-top:1px solid var(--uw-border)">India (IST)</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">8:30 PM</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">11:30 PM</td></tr>
+              <tr><td style="padding:13px 18px;border-top:1px solid var(--uw-border)">Nepal (NPT)</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">8:45 PM</td><td style="padding:13px 18px;border-top:1px solid var(--uw-border);font-variant-numeric:tabular-nums">11:45 PM</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="mentors" style="scroll-margin-top:64px;padding:clamp(64px,8vw,96px) clamp(20px,5vw,48px);background:var(--uw-blue-50);border-top:1px solid var(--uw-blue-100)">
+    <div style="max-width:1000px;margin:0 auto">
+      <div style="text-align:center">
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">Who's teaching</div>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0;text-wrap:balance">Taught by researchers <em style="font-style:italic;color:var(--uw-blue-500)">who publish.</em></h2>
+      </div>
+      <div class="rw-founder" style="margin-top:40px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:center;padding:clamp(22px,3vw,36px);background:#fff;border:1px solid var(--uw-border);border-top:3px solid var(--uw-blue-500);border-radius:var(--r-lg);box-shadow:var(--shadow-sm)">
+        <img src="/assets/research-wise/kaushik.webp" alt="Dr. Kaushik Sreerama Reddy" style="width:180px;height:180px;object-fit:cover;object-position:top;border-radius:var(--r-lg);display:block;background:var(--uw-blue-50)">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:20px;font-weight:600;color:var(--uw-ink-900)">Dr. Kaushik Sreerama Reddy</span>
+          <span style="font-size:14px;line-height:1.55;color:var(--uw-ink-500);text-wrap:pretty">Co-Founder and Chief Scientific Officer, USMLE Wise · Lead Investigator, Myositis Clinical Trials Consortium · Study Lead, MyPACER Study</span>
+          <p style="margin:10px 0 0;font-family:var(--font-display);font-size:clamp(18px,1.9vw,21px);line-height:1.5;color:var(--uw-blue-600);text-wrap:pretty">"Most students are told to do research and never shown where to begin. I built Research Wise for that moment. Over 3 days, you go from a blank page to a real first project, and you leave knowing exactly what to do next."</p>
+        </div>
+      </div>
+      <div class="rw-mentors" style="margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
+          <img src="/assets/research-wise/mentor-2.webp" alt="Shivani Ravipati" style="flex:none;width:104px;height:104px;object-fit:cover;object-position:top;border-radius:var(--r-md);display:block;background:var(--uw-blue-50)">
+          <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+            <span style="font-size:18px;font-weight:600;color:var(--uw-ink-900)">Shivani Ravipati</span>
+            <span style="align-self:flex-start;padding:3px 10px;border-radius:999px;background:var(--uw-blue-50);color:var(--uw-blue-600);font-size:12.5px;font-weight:600">Teaches Day 1</span>
+            <ul style="margin:6px 0 0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:5px;font-size:14.5px;line-height:1.45;color:var(--uw-ink-700)">
+              <li>5 first-author publications</li><li>8+ co-authored papers</li><li>1 AHA poster presentation</li><li>IRB-approved clinical trial lead for PRP research</li><li>Actively guiding IMGs through research, Steps and ERAS applications</li>
             </ul>
-            <p class="rw-problem__turn reveal">Every researcher started with one first project.<br><strong>In 3 days, you'll have yours.</strong></p>
           </div>
         </div>
-      </section>
-
-      <!-- ============== WHAT YOU GET ============== -->
-      <section class="msp-section rw-get" id="what-you-get" aria-labelledby="getTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Included with your spot</span>
-            <h2 id="getTitle" class="msp-h2">What you get.</h2>
-          </div>
-
-          <div class="rw-get__grid">
-            <div class="rw-get-card reveal">
-              <span class="rw-get-card__icon"><i data-lucide="video" width="18" height="18"></i></span>
-              <h3 class="rw-get-card__head">Live 3-hour mentor session</h3>
-              <p>Every Sunday, with a mentor who has done the work.</p>
-            </div>
-            <div class="rw-get-card reveal">
-              <span class="rw-get-card__icon"><i data-lucide="file-text" width="18" height="18"></i></span>
-              <h3 class="rw-get-card__head">Structured notes</h3>
-              <p>Clear notes for every session to come back to.</p>
-            </div>
-            <div class="rw-get-card reveal">
-              <span class="rw-get-card__icon"><i data-lucide="presentation" width="18" height="18"></i></span>
-              <h3 class="rw-get-card__head">Structured PPTs</h3>
-              <p>The slides from every session.</p>
-            </div>
-            <div class="rw-get-card reveal">
-              <span class="rw-get-card__icon"><i data-lucide="award" width="18" height="18"></i></span>
-              <h3 class="rw-get-card__head">Certificate of completion</h3>
-              <p>For finishing all three sessions.</p>
-            </div>
-            <div class="rw-get-card reveal">
-              <span class="rw-get-card__icon"><i data-lucide="message-circle" width="18" height="18"></i></span>
-              <h3 class="rw-get-card__head">WhatsApp group</h3>
-              <p>Ask questions and stay in touch with other first-time researchers.</p>
-            </div>
-            <div class="rw-get-card reveal">
-              <span class="rw-get-card__icon"><i data-lucide="target" width="18" height="18"></i></span>
-              <h3 class="rw-get-card__head">A concrete next step</h3>
-              <p>You leave knowing what to do next toward your first publication.</p>
-            </div>
-          </div>
-
-          <div class="rc-payment rw-offer reveal" id="investment">
-            <span class="rw-offer__tag">Our first 100 members get a special price</span>
-            <div class="rc-payment__price">$49</div>
-            <p class="rc-payment__note">One-time payment for all three live Sunday sessions. See our <a href="/refund-policy">Refund &amp; Guarantee Policy</a> for how refunds are handled.</p>
-            <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve my spot &middot; $49</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== CURRICULUM: WHAT HAPPENS EACH DAY ============== -->
-      <section class="msp-section rc-curriculum" id="curriculum" aria-labelledby="curriculumTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">What happens each day</span>
-            <h2 id="curriculumTitle" class="msp-h2">3 Sundays. 3 types of paper. 9 live hours.</h2>
-          </div>
-
-          <!-- The three sessions -->
-          <div class="rc-pub-types reveal">
-            <div class="rc-pub-types__grid">
-              <div class="rc-pub-type rc-pub-type--blue">
-                <div class="rc-pub-type__icon-wrap">
-                  <i data-lucide="file-text" width="18" height="18"></i>
-                </div>
-                <span class="rw-session__meta">Day 1 &middot; Sun, Nov 15<br>10 AM to 1 PM EST</span>
-                <h3 class="rc-pub-type__head">Master case reports and case series</h3>
-                <p class="rw-session__with">With Dr. Shivani Ravipati</p>
-                <p>Go from zero to your first case report, including how a case report is built section by section.</p>
-                <p class="rw-session__leave"><strong>You leave with:</strong> the step-by-step process to publish your first case report.</p>
-              </div>
-              <div class="rc-pub-type rc-pub-type--emerald">
-                <div class="rc-pub-type__icon-wrap">
-                  <i data-lucide="flask-conical" width="18" height="18"></i>
-                </div>
-                <span class="rw-session__meta">Day 2 &middot; Sun, Nov 22<br>10 AM to 1 PM EST</span>
-                <h3 class="rc-pub-type__head">Master original studies</h3>
-                <p class="rw-session__with">With Dr. Shivani Ravipati and Dr. Kaushik Sreeram</p>
-                <p>Design your first original study from scratch, using data you can actually get as a student.</p>
-                <p class="rw-session__leave"><strong>You leave with:</strong> a first study design you can run with data you can easily reach.</p>
-              </div>
-              <div class="rc-pub-type rc-pub-type--violet">
-                <div class="rc-pub-type__icon-wrap">
-                  <i data-lucide="list-checks" width="18" height="18"></i>
-                </div>
-                <span class="rw-session__meta">Day 3 &middot; Sun, Nov 29<br>10 AM to 1 PM EST</span>
-                <h3 class="rc-pub-type__head">Master systematic reviews and meta-analyses</h3>
-                <p class="rw-session__with">With Muhammad Ahmad Barakat</p>
-                <p>Go from a review question to a finished systematic review and meta-analysis.</p>
-                <p class="rw-session__leave"><strong>You leave with:</strong> the step-by-step plan to publish your first systematic review and meta-analysis.</p>
-              </div>
-            </div>
-            <p class="rw-next-note">Every day ends with live Q&amp;A.</p>
-          </div>
-
-          <div class="rw-cta-row reveal">
-            <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve my spot &middot; $49</a>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ============== WORKSHOP DETAILS ============== -->
-      <section class="msp-section rw-details" id="details" aria-labelledby="detailsTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">Workshop details</span>
-            <h2 id="detailsTitle" class="msp-h2">Sessions start at 10 AM Eastern, every Sunday.</h2>
-          </div>
-
-          <dl class="rw-facts reveal">
-            <div class="rw-fact">
-              <dt>Dates</dt>
-              <dd>3 Sundays in a row: November 15, November 22 and November 29, 2026</dd>
-            </div>
-            <div class="rw-fact">
-              <dt>Time</dt>
-              <dd>10 AM to 1 PM EST, each Sunday</dd>
-            </div>
-            <div class="rw-fact">
-              <dt>Total</dt>
-              <dd>9 hours of live teaching</dd>
-            </div>
-            <div class="rw-fact">
-              <dt>Platform</dt>
-              <dd>Live on Zoom</dd>
-            </div>
-          </dl>
-
-          <div class="rw-tz reveal">
-            <table class="rw-tz__table">
-              <caption class="rw-tz__cap">Session times in your city</caption>
-              <thead>
-                <tr><th scope="col">Your city</th><th scope="col">Starts</th><th scope="col">Ends</th></tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">New York (EST)</th><td>10:00 AM</td><td>1:00 PM</td></tr>
-                <tr><th scope="row">London (GMT)</th><td>3:00 PM</td><td>6:00 PM</td></tr>
-                <tr><th scope="row">Dubai (GST)</th><td>7:00 PM</td><td>10:00 PM</td></tr>
-                <tr><th scope="row">Tbilisi (GET)</th><td>7:00 PM</td><td>10:00 PM</td></tr>
-                <tr><th scope="row">Pakistan (PKT)</th><td>8:00 PM</td><td>11:00 PM</td></tr>
-                <tr><th scope="row">India (IST)</th><td>8:30 PM</td><td>11:30 PM</td></tr>
-                <tr><th scope="row">Nepal (NPT)</th><td>8:45 PM</td><td>11:45 PM</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== WHO'S TEACHING: HOST + MENTORS ============== -->
-      <section class="msp-section rc-mentors" id="mentors" aria-labelledby="mentorsTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal" style="text-align:center;margin-inline:auto">
-            <span class="msp-eyebrow" style="justify-content:center">Who's teaching</span>
-            <h2 id="mentorsTitle" class="msp-h2" style="margin-inline:auto">Research for USMLE and residency, taught by the people who publish.</h2>
-          </div>
-
-          <!-- Host -->
-          <div class="rw-host reveal">
-            <div class="rw-host__photo">
-              <img src="/assets/Photos/Team-Members/Kaushik-Sreeram-Headshot.webp"
-                   alt="Dr. Kaushik Sreerama Reddy, Co-Founder and Chief Scientific Officer at USMLE Wise"
-                   width="320" height="320" loading="lazy" decoding="async" />
-            </div>
-            <div class="rw-host__name">Dr. Kaushik Sreerama Reddy, MBBS</div>
-            <div class="rw-host__role">Co-Founder &amp; Chief Scientific Officer, USMLE Wise</div>
-
-            <ul class="rw-host__creds">
-              <li>
-                <span class="rw-host__cred-role">Co-Founder &amp; Chief Scientific Officer</span>
-                <span class="rw-host__cred-org">USMLE Wise</span>
-              </li>
-              <li>
-                <span class="rw-host__cred-role">CRIST Project Lead</span>
-                <span class="rw-host__cred-org">USMLE Wise Research</span>
-              </li>
-              <li>
-                <span class="rw-host__cred-role">Lead Investigator</span>
-                <span class="rw-host__cred-org">Myositis Clinical Trials Consortium</span>
-              </li>
-              <li>
-                <span class="rw-host__cred-role">Study Lead</span>
-                <span class="rw-host__cred-org">MyPACER Study</span>
-              </li>
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
+          <img src="/assets/research-wise/mentor-3.webp" alt="Muhammad Ahmad Barakat" style="flex:none;width:104px;height:104px;object-fit:cover;object-position:top;border-radius:var(--r-md);display:block;background:var(--uw-blue-50)">
+          <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+            <span style="font-size:18px;font-weight:600;color:var(--uw-ink-900)">Muhammad Ahmad Barakat</span>
+            <span style="align-self:flex-start;padding:3px 10px;border-radius:999px;background:var(--uw-blue-50);color:var(--uw-blue-600);font-size:12.5px;font-weight:600">Teaches Days 2 and 3</span>
+            <ul style="margin:6px 0 0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:5px;font-size:14.5px;line-height:1.45;color:var(--uw-ink-700)">
+              <li>7 published papers</li><li>2 conference papers</li><li>7 co-author posters</li><li>200+ students guided to publication across MEDICA SRA &amp; MEDMARK MRMS programs</li><li>APA PsychSIGN International Student Liaison Research Chair 2026-2027</li>
             </ul>
-
-            <blockquote class="rw-host__note">
-              <p>Most students are told to do research and never shown where to begin. I built Research Wise for that moment. Over three Sundays we take you from a blank page to a case report, a study design or a review question, and you leave knowing exactly what to do next. If you have never done research, this is the place to start.</p>
-            </blockquote>
-
-            <div class="rw-cta-row">
-              <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
-            </div>
-          </div>
-
-          <!-- The mentors teaching the sessions -->
-          <h3 class="rw-mtr-sub reveal">Teaching the sessions</h3>
-          <div class="rc-mtr-list">
-
-            <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo">
-                <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani Ravipati, Research and Publications Mentor at USMLE Wise" loading="lazy" decoding="async" />
-              </div>
-              <div class="rc-mtr__body">
-                <div class="rc-mtr__header">
-                  <span class="rc-mtr__role">Beginner Series &middot; Case Reports &amp; Case Series</span>
-                  <h4 class="rc-mtr__name">Shivani Ravipati</h4>
-                  <span class="rc-mtr__prog">Research &amp; Publications Mentor</span>
-                </div>
-                <ul class="rc-mtr__creds">
-                  <li>5 first-author publications &middot; 1 AHA poster presentation &middot; 8+ co-authored papers</li>
-                  <li>IRB-approved clinical trial lead for PRP research</li>
-                  <li>Actively guiding IMGs through research, steps and ERAS applications</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="rc-mtr reveal">
-              <div class="rc-mtr__photo">
-                <img src="/assets/Photos/Team-Members/Muhammad-Barakat-Headshot.png" alt="Muhammad Ahmad Barakat, Lead Principal Research Fellow at USMLE Wise" loading="lazy" decoding="async" />
-              </div>
-              <div class="rc-mtr__body">
-                <div class="rc-mtr__header">
-                  <span class="rc-mtr__role">Beginner Series &middot; Original Studies, Reviews &amp; Meta-Analyses</span>
-                  <h4 class="rc-mtr__name">Muhammad Ahmad Barakat</h4>
-                  <span class="rc-mtr__prog">Medical Student, Caucasus International University</span>
-                </div>
-                <ul class="rc-mtr__creds">
-                  <li>7 published papers &middot; 2 conference papers &middot; 7 co-author posters</li>
-                  <li>200+ students guided to publication across MEDICA SRA &amp; MEDMARK MRMS programs</li>
-                  <li>APA PsychSIGN International Student Liaison Research Chair 2026&ndash;2027</li>
-                </ul>
-              </div>
-            </article>
-
           </div>
         </div>
-      </section>
+      </div>
+      <div style="margin-top:36px;text-align:center"><a class="rwh1" href="#reserve" data-rw-reserve style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Reserve my spot · $49</a></div>
+    </div>
+  </section>
 
-      <?php if ($rwShots || $rwVideos): ?>
-      <!-- ============== TESTIMONIALS ============== -->
-      <section class="msp-section rw-tst" id="testimonials" aria-labelledby="tstTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal" style="text-align:center;margin-inline:auto">
-            <span class="msp-eyebrow" style="justify-content:center">Student stories</span>
-            <h2 id="tstTitle" class="msp-h2" style="margin-inline:auto">Research for IMGs: what our students say.</h2>
-            <p class="rw-tst__by">Mentored by Dr. Kaushik Sreerama Reddy.</p>
-          </div>
-
-          <?php if ($rwShots): ?>
-          <ul class="rw-tst__wall reveal">
-            <?php foreach ($rwShots as $shot): ?>
-            <li class="rw-tst__tile">
-              <img src="<?php echo htmlspecialchars($shot['img']); ?>"
-                   alt="<?php echo htmlspecialchars($shot['alt']); ?>"
-                   loading="lazy" decoding="async" />
-              <p class="rw-tst__cap"><?php echo htmlspecialchars($shot['cap']); ?></p>
-            </li>
-            <?php endforeach; ?>
-          </ul>
-          <?php endif; ?>
-
-          <?php if ($rwVideos): ?>
-          <h3 class="rw-tst__vid-head reveal">Hear it from them</h3>
-          <ul class="rw-tst__vids reveal">
-            <?php foreach ($rwVideos as $vid): ?>
-            <li class="rw-vid">
-              <button type="button" class="rw-vid__play" data-rw-yt="<?php echo htmlspecialchars($vid['yt']); ?>"
-                      aria-label="Play the video testimonial from <?php echo htmlspecialchars($vid['name']); ?>">
-                <img src="<?php echo htmlspecialchars($vid['thumb']); ?>"
-                     alt="<?php echo htmlspecialchars($vid['name']); ?>"
-                     loading="lazy" decoding="async" />
-                <span class="rw-vid__icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                </span>
-              </button>
-              <p class="rw-vid__cap"><strong><?php echo htmlspecialchars($vid['name']); ?></strong><?php echo htmlspecialchars($vid['line']); ?></p>
-            </li>
-            <?php endforeach; ?>
-          </ul>
-          <?php endif; ?>
-
-          <div class="rw-cta-row reveal">
-            <a class="btn btn--primary btn--lg" href="#reserve" data-rw-reserve>Reserve your spot</a>
-          </div>
+  <!-- OFFER -->
+  <section id="reserve" class="rw-offer" style="scroll-margin-top:64px;padding:clamp(64px,8vw,96px) clamp(20px,5vw,48px);background:var(--uw-blue-50);border-top:1px solid var(--uw-blue-100)">
+    <div style="max-width:640px;margin:0 auto">
+      <div style="text-align:center">
+        <div id="offer-top" class="rw-offer-eb" style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">What you get</div>
+        <h2 class="rw-offer-h" style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0;text-wrap:balance">Inside the <em style="font-style:italic;color:var(--uw-blue-500)">Basics of Research</em> Level 1 Workshop</h2>
+      </div>
+      <div class="rw-offer-card" style="margin-top:36px;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--uw-border)">
+        <div style="background:#fff;padding:8px clamp(20px,4vw,32px)">
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">9 hours of live teaching across 3 days, with Q&amp;A at the end of each day, plus recordings of every session</span></div>
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)"><strong style="font-weight:600;color:var(--uw-ink-900)">Master 3 types of studies:</strong> case reports and case series, original studies, and systematic reviews and meta-analyses</span></div>
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">Structured notes, so you can follow every step again when you sit down to write</span></div>
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">A certificate of completion for finishing all 3 days</span></div>
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">A WhatsApp group of first-time researchers, where you can ask any question</span></div>
         </div>
-      </section>
-      <?php endif; ?>
-
-      <!-- ============== WHO IT'S FOR ============== -->
-      <section class="msp-section rc-for-whom" aria-labelledby="forWhomTitle">
-        <div class="msp-wrap">
-          <div class="rc-for-whom__inner">
-            <div class="rc-for-whom__copy reveal">
-              <span class="msp-eyebrow">Built for</span>
-              <h2 id="forWhomTitle" class="msp-h2">Your very first step into research, not your tenth.</h2>
-              <p class="msp-lede">
-                Research opportunities for IMGs are hard to take up when you have
-                never published, so Research Wise is the on-ramp. If you already
-                have a project running, our mentored programs like
-                <a href="/research-original">Original Research</a> or
-                <a href="/research-catalyst">Research Catalyst</a> are built for that stage.
-              </p>
-            </div>
-            <ol class="rc-for-whom__list">
-              <li class="reveal">
-                <span class="rc-whom-num">01</span>
-                <span class="rc-whom-item">You've never done research and don't know where to begin</span>
-              </li>
-              <li class="reveal">
-                <span class="rc-whom-num">02</span>
-                <span class="rc-whom-item">You want live teaching from someone who's done it, not a recorded course</span>
-              </li>
-              <li class="reveal">
-                <span class="rc-whom-num">03</span>
-                <span class="rc-whom-item">You don't have a lab, a mentor, or a dataset, and that's fine</span>
-              </li>
-              <li class="reveal">
-                <span class="rc-whom-num">04</span>
-                <span class="rc-whom-item">You want one clear next step, not a pile of unconnected videos</span>
-              </li>
-            </ol>
-          </div>
+        <div id="checkout" class="dot-tex" style="scroll-margin-top:90px;background-color:var(--uw-blue-500);padding:clamp(28px,4vw,40px) clamp(20px,4vw,36px);text-align:center;display:flex;flex-direction:column;align-items:center">
+          <span class="rw-pl" style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-success-300)">Launch price for our first 100 members</span>
+          <span class="rw-price" style="margin-top:10px;font-family:var(--font-display);font-size:clamp(64px,9vw,88px);line-height:1;color:#fff;letter-spacing:-0.02em">$49</span>
+          <span class="rw-once" style="margin-top:8px;font-size:14px;color:var(--uw-blue-100)">One time, for all 3 days</span>
+          <a class="rwh1" id="checkout-btn" href="#reserve" data-rw-reserve style="margin-top:22px;width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:center;height:56px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600">Reserve my spot · $49</a>
+          <span style="margin-top:12px;font-size:13px;line-height:1.5;color:var(--uw-blue-100);text-wrap:pretty">After checkout, we'll email your receipt and add you to the platform and the WhatsApp group.</span>
         </div>
-      </section>
-
-      <!-- ============== FAQ ============== -->
-      <section class="msp-section rc-faq" id="faq" aria-labelledby="faqTitle">
-        <div class="msp-wrap">
-          <div class="msp-head reveal">
-            <span class="msp-eyebrow">F.A.Q</span>
-            <h2 id="faqTitle" class="msp-h2">Your questions, answered.</h2>
-          </div>
-          <div class="accordion accordion--faq rc-faq__accordion reveal">
-            <?php foreach ($rwFaqs as $faq): ?>
-            <div class="accordion__item">
-              <button class="accordion__head" type="button">
-                <?php echo $faq['q']; ?>
-              </button>
-              <div class="accordion__body">
-                <?php echo $faq['a']; ?>
-              </div>
-            </div>
-            <?php endforeach; ?>
-          </div>
+      </div>
+      <div class="rw-guar" style="margin-top:20px;display:flex;gap:20px;align-items:center;padding:22px 24px;background:#fff;border:1.5px solid var(--uw-success-400);border-radius:var(--r-lg)">
+        <span style="flex:none;width:76px;height:76px;border-radius:50%;background:var(--uw-blue-500);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:22px">100%</span>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:17px;font-weight:600;color:var(--uw-ink-900)">The satisfaction guarantee</span>
+          <span style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-600);text-wrap:pretty">Attend the first day. If you're not satisfied, email us within 24 hours of attending and get your money back.</span>
         </div>
-      </section>
+      </div>    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="scroll-margin-top:64px;padding:clamp(64px,8vw,96px) clamp(20px,5vw,48px);background:#fff;border-top:1px solid var(--uw-border)">
+    <div style="max-width:760px;margin:0 auto">
+      <div style="text-align:center">
+        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">FAQ</div>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0">Your questions, answered.</h2>
+      </div>
+      <div style="margin-top:36px;border-top:1px solid var(--uw-border)">
+        <?php foreach ($rwFaqs as $i => $faq): $open = ($i === 0); ?>
+          <div class="rw-faq" style="border-bottom:1px solid var(--uw-border)">
+            <button type="button" class="rw-faq__btn" aria-expanded="<?php echo $open ? 'true' : 'false'; ?>" aria-controls="rwFaq<?php echo $i; ?>" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;background:none;border:0;cursor:pointer;text-align:left;font:inherit;font-size:16.5px;font-weight:600;color:var(--uw-ink-900)">
+              <span><?php echo $faq['q']; ?></span>
+              <span class="rw-faq__sign" aria-hidden="true" style="flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--uw-border);display:flex;align-items:center;justify-content:center;color:var(--uw-blue-500);font-size:18px;line-height:1;font-weight:400"><?php echo $open ? '&minus;' : '+'; ?></span>
+            </button>
+            <p id="rwFaq<?php echo $i; ?>" class="rw-faq__a" <?php echo $open ? '' : 'hidden'; ?> style="margin:0;padding:0 44px 22px 0;font-size:15.5px;line-height:1.6;color:var(--uw-ink-600);text-wrap:pretty"><?php echo $faq['a']; ?></p>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="dot-tex" style="background-color:var(--uw-blue-800);padding:clamp(72px,9vw,112px) clamp(20px,5vw,48px);text-align:center">
+    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center">
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.2vw,48px);line-height:1.15;letter-spacing:-0.02em;color:#fff;margin:0;text-wrap:balance">Day 1 starts Sunday, November 15, 2026.</h2>
+      <p style="margin:14px 0 0;font-size:17px;color:var(--uw-blue-100)">Then Sunday, November 22, and Sunday, November 29.</p>
+      <p style="margin:14px 0 0;max-width:560px;font-size:16px;line-height:1.6;color:#fff;text-wrap:pretty">3 Sundays from now, you'll have your first research project underway. $49, with a full refund if you're not satisfied.</p>
+      <div style="margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+        <a class="rwh1" href="#reserve" data-rw-reserve style="display:inline-flex;align-items:center;height:54px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16.5px;font-weight:600">Reserve my spot · $49</a>
+        <a class="rwh4" href="https://wa.me/19192015700" style="display:inline-flex;align-items:center;gap:8px;height:54px;padding:0 26px;border-radius:var(--r-md);border:1.5px solid rgba(255,255,255,.7);color:#fff;font-size:16.5px;font-weight:600">Text us a question</a>
+      </div>
+    </div>
+  </section>
+
+  </div>
       <script type="application/ld+json">
       <?php
       echo json_encode([
@@ -546,27 +404,44 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       ?>
       </script>
 
-      <!-- ============== FINAL CTA ============== -->
-      <section class="rc-cta-wrap">
-        <div class="msp-wrap">
-          <div class="rc-cta rc-cta-card reveal">
-            <h2 class="rc-cta__head">Your first step into research<br>starts this November.</h2>
-            <p class="rc-cta__sub">
-              Reserve your spot in three live Sunday sessions starting November
-              15. No research experience needed, just a willingness to start.
-            </p>
-            <div class="rc-cta__actions">
-              <a
-                class="btn btn--primary btn--xl"
-                href="#reserve"
-                data-rw-reserve
-                >Reserve Your Spot</a
-              >
-              <a class="btn btn--outline btn--xl rc-cta__outline" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <script>
+      (function () {
+        document.querySelectorAll('.rw-faq__btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var open = btn.getAttribute('aria-expanded') === 'true';
+            document.querySelectorAll('.rw-faq__btn').forEach(function (b) {
+              b.setAttribute('aria-expanded', 'false');
+              b.querySelector('.rw-faq__sign').innerHTML = '+';
+              document.getElementById(b.getAttribute('aria-controls')).hidden = true;
+            });
+            if (!open) {
+              btn.setAttribute('aria-expanded', 'true');
+              btn.querySelector('.rw-faq__sign').innerHTML = '&minus;';
+              document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
+            }
+          });
+        });
+        var nums = document.querySelectorAll('[data-rw-count]');
+        if (!nums.length) return;
+        function run() {
+          var t0 = null;
+          function step(ts) {
+            if (t0 === null) t0 = ts;
+            var p = Math.min((ts - t0) / 1400, 1), e = 1 - Math.pow(1 - p, 3);
+            nums.forEach(function (n) { n.textContent = Math.round(+n.dataset.rwCount * e); });
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) return;
+        var io = new IntersectionObserver(function (es) {
+          if (es.some(function (x) { return x.isIntersecting; })) { io.disconnect(); run(); }
+        }, { threshold: 0.35 });
+        io.observe(nums[0].closest('section') || nums[0]);
+      })();
+      </script>
 
     </main>
 

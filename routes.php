@@ -43,7 +43,7 @@
     }
 
     $pageFile = function (string $s): ?string {
-        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail', 'team-member', 'sitemap'], true)) {
+        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail', 'team-member', 'sitemap', 'wiki-section', 'wiki-article', 'wiki-search-index'], true)) {
             return null;
         }
         if (is_file(__DIR__ . '/' . $s . '.php')) {
@@ -250,6 +250,27 @@
     // Prefix rules
     if (strpos($slug, 'payment-confirmation') === 0) {
         $redirect('/');
+    }
+    // Wiki: /wiki is wiki.php (resolved above as an ordinary page). Sections and
+    // articles render from Markdown in wiki-content/ via the two templates; the
+    // templates 404 themselves when the section or article does not exist.
+    if ($slug === 'wiki/search-index.json') {
+        require __DIR__ . '/wiki-search-index.php';
+        exit;
+    }
+    if (strpos($slug, 'wiki/') === 0) {
+        $rest = substr($slug, strlen('wiki/'));
+        if (preg_match('#\A([a-z0-9-]+)(?:/([a-z0-9-]+))?\z#', $rest, $wm)) {
+            $wikiSection = $wm[1];
+            $wikiSlug    = $wm[2] ?? null;
+            $canon = '/wiki/' . $wikiSection . ($wikiSlug !== null ? '/' . $wikiSlug : '');
+            if ($hadExtension || $reqPath !== $canon) {
+                $redirect($canon);
+            }
+            require __DIR__ . ($wikiSlug === null ? '/wiki-section.php' : '/wiki-article.php');
+            exit;
+        }
+        $redirect('/wiki');
     }
     if (strpos($slug, 'blog/') === 0) {
         $rest = substr($slug, strlen('blog/'));
