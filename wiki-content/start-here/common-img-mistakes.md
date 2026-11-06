@@ -55,7 +55,7 @@ The most costly IMG mistakes are usually not about intelligence or effort. They 
 
 ## Strategy and mindset
 
-**Treating averages as a promise.** In the 2026 Main Residency Match, NRMP reported PGY-1 match rates of 70.0 percent for U.S. citizen IMGs and 56.4 percent for non-U.S. citizen IMGs among applicants who ranked programs. Those averages hide huge variation (see [IMG match statistics](/wiki/start-here/img-match-statistics)).
+**Treating averages as a promise.** In the {{fact:nrmp_match_year}} Main Residency Match, NRMP reported PGY-1 match rates of {{fact:us_img_match_rate}} percent for U.S. citizen IMGs and {{fact:nonus_img_match_rate}} percent for non-U.S. citizen IMGs among applicants who ranked programs. Those averages hide huge variation (see [IMG match statistics](/wiki/start-here/img-match-statistics)).
 
 **No plan B.** Decide before the season what you will do if you do not match: SOAP, a reapplication, research, or a different route. See [if you do not match](/wiki/interviews-match/if-you-do-not-match) and [reapplicant strategy](/wiki/application/reapplicant-strategy).
 

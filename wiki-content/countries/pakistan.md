@@ -38,7 +38,7 @@ Pakistan has long been one of the most common countries of origin for IMGs seeki
 
 ## What the data does and does not say
 
-NRMP defines IMGs by where the school is located and reports "non-U.S. IMGs" as a single group. Its 2026 Main Residency Match report says 16,154 active applicants were IMGs (U.S. citizen and non-U.S. citizen combined), but it does not list results for graduates of Pakistani schools.
+NRMP defines IMGs by where the school is located and reports "non-U.S. IMGs" as a single group. Its {{fact:nrmp_match_year}} Main Residency Match report says {{fact:img_active_applicants}} active applicants were IMGs (U.S. citizen and non-U.S. citizen combined), but it does not list results for graduates of Pakistani schools.
 
 One published source does count Pakistani applicants. A JAMA Network Open study linked ECFMG applicant records to the AMA Physician Masterfile and reported 9,066 ECFMG applicants who were citizens of Pakistan from 2009 to 2018, using citizenship at entry to medical school. That is a count of applicants over a decade, not Match results, and it covers citizenship, not school location. We could not open ECFMG's own tables, so we do not give a current annual figure. See also [IMG match statistics](/wiki/start-here/img-match-statistics).
 

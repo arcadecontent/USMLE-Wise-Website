@@ -10,7 +10,7 @@ keywords: [personal statement, residency personal statement, eras personal state
 service: match-ps3x
 related: [application/eras-experiences-section, application/myeras-walkthrough, application/letters-of-recommendation, interviews-match/common-interview-questions]
 key_facts:
-  - MyERAS allows personal statements of up to 28,000 characters in the 2027 cycle, but a limit is not a target.
+  - MyERAS allows personal statements of up to {{fact:eras_ps_char_limit}} characters in the {{fact:eras_cycle_year}} cycle, but a limit is not a target.
   - You can create as many statements as you like and assign one to each program.
   - A statement can be edited after assignment, but programs may not see the update.
   - There is no official required length or format beyond the character limit.
@@ -38,7 +38,7 @@ A residency personal statement is a short essay that tells programs who you are,
 From the AAMC 2027 applicant user guide:
 
 - You create statements in the **Documents** area of MyERAS. Each has a title (only you see it) and content (programs see it).
-- The limit is **28,000 characters**, including letters, numbers, spaces and punctuation.
+- The limit is **{{fact:eras_ps_char_limit}} characters**, including letters, numbers, spaces and punctuation.
 - You can create **any number** of statements, and you assign **one statement per program**.
 - Writing outside MyERAS should be done in a **plain text editor**, because text from word processors can bring formatting characters that do not paste cleanly.
 - The preview shows the statement as programs will see it, including the page count.
@@ -113,7 +113,7 @@ Do not write ten customized statements that you cannot proofread. Quality contro
 - Spending the first half on why you want to leave your country.
 - Listing achievements already on the CV.
 - Submitting without a native or highly fluent proofreader's pass.
-- Treating the 28,000-character limit as a requirement.
+- Treating the {{fact:eras_ps_char_limit}}-character limit as a requirement.
 
 ## When to finish
 

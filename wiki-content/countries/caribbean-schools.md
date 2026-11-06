@@ -39,8 +39,8 @@ If you are a US citizen at a Caribbean medical school, you are an international 
 
 NRMP defines a **U.S. IMG** as a US citizen who is enrolled in or graduated from a medical school outside the US that is not accredited by the LCME (Liaison Committee on Medical Education) or COCA (Commission on Osteopathic College Accreditation). The Caribbean is not a separate category. In the 2026 Main Residency Match:
 
-- 4,210 U.S. IMGs submitted rank order lists and 2,949 matched to a PGY-1 position, a rate of 70.0 percent.
-- 11,944 non-U.S. citizen IMGs submitted rank order lists and 6,733 matched (56.4 percent).
+- {{fact:us_img_ranked}} U.S. IMGs submitted rank order lists and {{fact:us_img_matched}} matched to a PGY-1 position, a rate of {{fact:us_img_match_rate}} percent.
+- {{fact:nonus_img_ranked}} non-U.S. citizen IMGs submitted rank order lists and {{fact:nonus_img_matched}} matched ({{fact:nonus_img_match_rate}} percent).
 - NRMP says the number of U.S. IMGs who ranked fell by 838, or 16.6 percent, between 2022 and 2026.
 
 We found no match figure for Caribbean schools or the region as a whole in the reports we downloaded, and NRMP's Charting Outcomes reports group applicants by specialty and Match status, not by school. Be sceptical of any school that advertises "Match rates" without defining who is counted (all enrollees, graduates who applied, or only those who ranked). See [IMG match statistics](/wiki/start-here/img-match-statistics).

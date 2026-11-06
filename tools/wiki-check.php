@@ -150,6 +150,22 @@ foreach ($all as $key => $a) {
             }
         }
     }
+    // A figure that lives in data/wiki-facts.php must not also be typed into prose,
+    // or it will drift out of date on this one page. Lines carrying the marker
+    // <!-- fact-ok --> are deliberate exceptions (for example a historical comparison).
+    foreach (explode("\n", $body) as $bodyLine) {
+        if (strpos($bodyLine, '<!-- fact-ok -->') !== false) {
+            continue;
+        }
+        $bare = preg_replace('/\{\{fact:[a-z0-9_]+\}\}/', '', $bodyLine);
+        foreach ($facts as $fid => $f) {
+            foreach ($f['guard'] ?? [] as $literal) {
+                if (strpos($bare, $literal) !== false) {
+                    $warn($key, "figure '$literal' is typed here but lives in data/wiki-facts.php as '$fid' (use {{fact:$fid}})");
+                }
+            }
+        }
+    }
     // Thin pages hurt more than they help.
     $words = str_word_count(strip_tags($body));
     if ($a['section'] === 'glossary') {

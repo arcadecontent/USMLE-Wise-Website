@@ -10,7 +10,7 @@ keywords: [img match rate, match statistics, nrmp, charting outcomes, non-us img
 service: match
 related: [choosing-a-specialty, internal-medicine, family-medicine, pediatrics, psychiatry, pathology, physical-medicine-and-rehabilitation]
 key_facts:
-  - In the 2026 Main Residency Match, the PGY-1 match rate was 70.0 percent for U.S. citizen IMGs and 56.4 percent for non-U.S. citizen IMGs (NRMP).
+  - In the {{fact:nrmp_match_year}} Main Residency Match, the PGY-1 match rate was {{fact:us_img_match_rate}} percent for U.S. citizen IMGs and {{fact:nonus_img_match_rate}} percent for non-U.S. citizen IMGs (NRMP).
   - In 2026, 52.8 percent of matched non-U.S. citizen IMGs obtained positions in Internal Medicine.
   - A match rate is not your personal chance. It is an average over very different applicants.
   - NRMP publishes new figures every year, so always check the latest report.
@@ -20,7 +20,7 @@ sources:
   - NRMP Residency Data Reports | https://www.nrmp.org/match-data-analytics/residency-data-reports/
 faq:
   - q: What is the IMG match rate?
-    a: In the 2026 Main Residency Match, NRMP reported a PGY-1 match rate of 70.0 percent for U.S. citizen IMGs and 56.4 percent for non-U.S. citizen IMGs, among applicants who submitted a rank order list.
+    a: In the {{fact:nrmp_match_year}} Main Residency Match, NRMP reported a PGY-1 match rate of {{fact:us_img_match_rate}} percent for U.S. citizen IMGs and {{fact:nonus_img_match_rate}} percent for non-U.S. citizen IMGs, among applicants who submitted a rank order list.
   - q: Which specialty has the best match rate for IMGs?
     a: NRMP's 2026 Charting Outcomes report for non-U.S. citizen IMGs shows Pediatrics with the highest rate of matching to the preferred specialty (68.5 percent), but that is not a prediction for any one applicant.
   - q: Why do match rates differ between sources?
@@ -29,7 +29,7 @@ faq:
     a: No. Positions, applicant numbers and program behavior change every cycle. Treat the figures as a snapshot and read the newest NRMP report.
 ---
 
-The short answer: IMGs match at lower rates than US medical graduates, and the gap is large. In the 2026 Main Residency Match, the NRMP reported a PGY-1 match rate of 70.0 percent for U.S. citizen IMGs and 56.4 percent for non-U.S. citizen IMGs, compared with 93.5 percent for U.S. MD seniors and 93.2 percent for U.S. DO seniors. These are averages. They do not tell you your own chance, and this page explains how to read them.
+The short answer: IMGs match at lower rates than US medical graduates, and the gap is large. In the {{fact:nrmp_match_year}} Main Residency Match, the NRMP reported a PGY-1 match rate of {{fact:us_img_match_rate}} percent for U.S. citizen IMGs and {{fact:nonus_img_match_rate}} percent for non-U.S. citizen IMGs, compared with 93.5 percent for U.S. MD seniors and 93.2 percent for U.S. DO seniors. These are averages. They do not tell you your own chance, and this page explains how to read them.
 
 ## The headline numbers (2026 Match)
 
@@ -39,8 +39,8 @@ All figures below come from the NRMP's *Results and Data: 2026 Main Residency Ma
 |---|---|---|---|
 | U.S. MD seniors | 20,934 | 19,567 | 93.5% |
 | U.S. DO seniors | 8,503 | 7,928 | 93.2% |
-| U.S. citizen IMGs | 4,210 | 2,949 | 70.0% |
-| Non-U.S. citizen IMGs | 11,944 | 6,733 | 56.4% |
+| U.S. citizen IMGs | {{fact:us_img_ranked}} | {{fact:us_img_matched}} | {{fact:us_img_match_rate}}% |
+| Non-U.S. citizen IMGs | {{fact:nonus_img_ranked}} | {{fact:nonus_img_matched}} | {{fact:nonus_img_match_rate}}% |
 
 "Active applicants" means people who submitted a certified rank order list. Between 2022 and 2026, NRMP reports that the number of non-U.S. citizen IMGs who submitted a rank order list grew by about 52 percent, while the number of U.S. citizen IMGs declined, so competition among non-U.S. citizen IMGs has been rising.
 

@@ -60,7 +60,7 @@ Higher education, medical education, postgraduate training, interruptions or ext
 
 ### Experience
 
-Up to 10 selected experiences, up to 3 of which can be marked most meaningful, plus an optional Impactful Experiences question and a short Hobbies and Interests field. This is the section applicants most underuse. It has its own page: [writing the Experiences section](/wiki/application/eras-experiences-section).
+Up to {{fact:eras_experiences_max}} selected experiences, up to {{fact:eras_most_meaningful_max}} of which can be marked most meaningful, plus an optional Impactful Experiences question and a short Hobbies and Interests field. This is the section applicants most underuse. It has its own page: [writing the Experiences section](/wiki/application/eras-experiences-section).
 
 ### Licenses and Certifications
 

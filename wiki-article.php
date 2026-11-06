@@ -135,9 +135,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <?php else: ?>
         <li><i data-lucide="hourglass" width="16" height="16" aria-hidden="true"></i> Awaiting expert review</li>
         <?php endif; ?>
-        <?php if (!empty($article['updated'])): ?>
-        <li><i data-lucide="refresh-cw" width="16" height="16" aria-hidden="true"></i> Updated <?php echo htmlspecialchars(usmlewise_wiki_fmt_date($article['updated'])); ?></li>
-        <?php endif; ?>
         <li><i data-lucide="clock" width="16" height="16" aria-hidden="true"></i> <?php echo $minutes; ?> min read</li>
       </ul>
     </div>

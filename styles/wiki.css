@@ -275,7 +275,8 @@ a.wk-card:hover { border-color: var(--uw-blue-300); box-shadow: 0 8px 24px rgba(
 .wk-callout--key .wk-callout__label     { color: var(--uw-blue-700); }
 
 /* Facts and glossary terms */
-.wk-fact { font-weight: 600; }
+/* A verified figure reads as plain text; its source shows on hover (title attribute). */
+.wk-fact { font-weight: inherit; }
 .wk-fact--unverified { background: var(--uw-warning-50); outline: 1px dashed var(--uw-warning-500); border-radius: 3px; padding: 0 3px; }
 .wk-fact--missing { background: var(--uw-danger-100); color: var(--uw-danger-700); padding: 0 4px; border-radius: 3px; }
 .wk-fact--check { font-weight: 500; }

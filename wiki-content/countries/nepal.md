@@ -36,7 +36,7 @@ If you graduated from a medical school in Nepal, start with one question: does y
 
 ## What the published data say about IMGs from Nepal
 
-NRMP reports IMGs by citizenship, not by country of medical school. In the 2026 Main Residency Match, 11,944 non-U.S. citizen IMGs submitted rank order lists and 6,733 matched to a PGY-1 position, a match rate of 56.4 percent. NRMP's July 2026 Charting Outcomes report for non-U.S. IMGs breaks results down by preferred specialty, not by country.
+NRMP reports IMGs by citizenship, not by country of medical school. In the {{fact:nrmp_match_year}} Main Residency Match, {{fact:nonus_img_ranked}} non-U.S. citizen IMGs submitted rank order lists and {{fact:nonus_img_matched}} matched to a PGY-1 position, a match rate of {{fact:nonus_img_match_rate}} percent. NRMP's July {{fact:nrmp_match_year}} Charting Outcomes report for non-U.S. IMGs breaks results down by preferred specialty, not by country.
 
 We found no Nepal-specific match number in the NRMP reports we downloaded. ECFMG's certification fact sheet reports totals only. We do not quote a Nepal figure, and we suggest you distrust any that lacks a named source and year. See [IMG match statistics](/wiki/start-here/img-match-statistics) for how to read what is published.
 

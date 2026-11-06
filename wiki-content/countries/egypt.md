@@ -37,7 +37,7 @@ Egyptian graduates are a recurring group among IMG applicants to US residency, b
 
 ## What the data does and does not say
 
-NRMP defines IMGs by school location and reports "non-U.S. IMGs" as one group. Its 2026 Main Residency Match report says 16,154 active applicants were IMGs (U.S. citizen and non-U.S. citizen combined), with no country breakdown.
+NRMP defines IMGs by school location and reports "non-U.S. IMGs" as one group. Its {{fact:nrmp_match_year}} Main Residency Match report says {{fact:img_active_applicants}} active applicants were IMGs (U.S. citizen and non-U.S. citizen combined), with no country breakdown.
 
 A JAMA Network Open study that linked ECFMG applicant records to the AMA Physician Masterfile reported 4,181 ECFMG applicants who were Egyptian citizens from 2009 to 2018, counted by citizenship at entry to medical school. That is a decade of applicants, not Match outcomes, and not a count by school location. ECFMG's own tables were not accessible to us, so we give no current annual figure. See [IMG match statistics](/wiki/start-here/img-match-statistics) for how to read the national numbers.
 

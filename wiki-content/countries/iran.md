@@ -36,7 +36,7 @@ Iranian medical graduates face two separate questions: whether their school and 
 
 ## What the published data say about IMGs from Iran
 
-NRMP counts IMGs by citizenship, not by country of medical school. In the 2026 Main Residency Match, 11,944 non-U.S. citizen IMGs submitted rank order lists and 6,733 matched to PGY-1 positions (56.4 percent). Those figures include all nationalities. We found no Iran-specific figure in NRMP's Match reports or in ECFMG's fact sheet (which gives only global totals). We do not quote one. See [IMG match statistics](/wiki/start-here/img-match-statistics).
+NRMP counts IMGs by citizenship, not by country of medical school. In the {{fact:nrmp_match_year}} Main Residency Match, {{fact:nonus_img_ranked}} non-U.S. citizen IMGs submitted rank order lists and {{fact:nonus_img_matched}} matched to PGY-1 positions ({{fact:nonus_img_match_rate}} percent). Those figures include all nationalities. We found no Iran-specific figure in NRMP's Match reports or in ECFMG's fact sheet (which gives only global totals). We do not quote one. See [IMG match statistics](/wiki/start-here/img-match-statistics).
 
 ## Checking school eligibility
 

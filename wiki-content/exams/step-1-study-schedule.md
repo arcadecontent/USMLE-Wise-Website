@@ -36,7 +36,7 @@ Step 1 is reported as pass/fail only (since {{fact:step1_pass_fail_since}}), and
 
 ## What you are preparing for
 
-According to USMLE's Step 1 page, exams on or after May 14, 2026 use 14 blocks of up to 20 questions, 30 minutes each, in one 8-hour session, with a minimum of 55 minutes of break time. Earlier dates used seven 60-minute blocks. Confirm the format for your test date on the official page. Practice in blocks of that length so the timing is familiar.
+According to USMLE's Step 1 page, exams on or after {{fact:usmle_step1_new_format_date}} use {{fact:step1_block_count}} blocks of up to 20 questions, {{fact:usmle_block_minutes}} minutes each, in one {{fact:step1_session_hours}}-hour session, with a minimum of {{fact:usmle_min_break_minutes}} minutes of break time. Earlier dates used seven 60-minute blocks. Confirm the format for your test date on the official page. Practice in blocks of that length so the timing is familiar.
 
 ## The method
 

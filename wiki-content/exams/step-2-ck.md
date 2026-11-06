@@ -12,7 +12,7 @@ related: [step-1, step-3, when-to-take-each-step, step-2-ck-score-and-what-it-me
 key_facts:
   - Step 2 CK still reports a three-digit score, and the minimum passing score is {{fact:step2ck_passing_standard}}.
   - It is required for ECFMG certification, together with Step 1.
-  - The exam format was restructured for test dates on or after May 7, 2026 (more, shorter blocks).
+  - The exam format was restructured for test dates on or after {{fact:usmle_step2ck_new_format_date}} (more, shorter blocks).
   - You get {{fact:usmle_attempts_per_step}} attempts per Step in total, with timing rules between attempts.
 sources:
   - USMLE Step 2 CK exam page | https://www.usmle.org/step-exams/step-2-ck
@@ -48,7 +48,7 @@ The official content outline groups items by organ system, physician task and di
 
 Step 2 CK is a single-day, computer-based exam taken at a Prometric test center, with multiple-choice questions divided into timed blocks and scheduled breaks.
 
-> [!CHANGED] For test dates on or after May 7, 2026, USMLE restructured the exam into more, shorter blocks with a different amount of break time and a shorter optional tutorial. Older prep advice that describes the previous layout may no longer match. Check the current numbers on the official Step 2 CK page.
+> [!CHANGED] For test dates on or after {{fact:usmle_step2ck_new_format_date}}, USMLE restructured the exam into more, shorter blocks with a different amount of break time and a shorter optional tutorial. Older prep advice that describes the previous layout may no longer match. Check the current numbers on the official Step 2 CK page.
 
 Because block length and count have changed, practice with timed blocks that match the current structure and build stamina for a full day.
 

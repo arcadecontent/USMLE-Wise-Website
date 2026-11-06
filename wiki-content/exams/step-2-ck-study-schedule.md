@@ -11,7 +11,7 @@ service: coaching-step23-mastery
 related: [step-2-ck, step-2-ck-score-and-what-it-means, nbme-self-assessments, question-banks-compared, how-long-to-study]
 key_facts:
   - Step 2 CK still reports a three-digit score, so unlike Step 1 it can differentiate your application.
-  - Exams on or after May 7, 2026 use 16 blocks of up to 20 questions, 30 minutes each, per USMLE.
+  - Exams on or after {{fact:usmle_step2ck_new_format_date}} use {{fact:step2ck_block_count}} blocks of up to 20 questions, {{fact:usmle_block_minutes}} minutes each, per USMLE.
   - The three timelines are examples for different starting points, not predictions.
   - Use independent self-assessments to track trend, and define your date-change rule before you start.
 sources:
@@ -34,7 +34,7 @@ Step 2 CK rewards broad, applied clinical reasoning, and because it still report
 
 ## Know the format and standard
 
-USMLE's Step 2 CK page lists the format for exams on or after May 7, 2026 as 16 blocks, each 30 minutes with up to 20 questions, in one 9-hour session, with a minimum of 55 minutes of break time. Earlier dates used eight 60-minute blocks. Confirm your format on the official page. The minimum passing score is currently {{fact:step2ck_passing_standard}} for exams on or after July 1, 2025, according to USMLE. You are limited to {{fact:usmle_attempts_per_step}} attempts per Step.
+USMLE's Step 2 CK page lists the format for exams on or after {{fact:usmle_step2ck_new_format_date}} as {{fact:step2ck_block_count}} blocks, each {{fact:usmle_block_minutes}} minutes with up to 20 questions, in one {{fact:step2ck_session_hours}}-hour session, with a minimum of {{fact:usmle_min_break_minutes}} minutes of break time. Earlier dates used eight 60-minute blocks. Confirm your format on the official page. The minimum passing score is currently {{fact:step2ck_passing_standard}} for exams on or after July 1, 2025, according to USMLE. You are limited to {{fact:usmle_attempts_per_step}} attempts per Step.
 
 ## What differs from Step 1
 

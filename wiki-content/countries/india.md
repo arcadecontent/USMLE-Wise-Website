@@ -38,7 +38,7 @@ Graduates of Indian medical schools are among the largest IMG groups applying fo
 
 ## What the data does and does not say
 
-The NRMP counts applicants by type, not by country. In its 2026 Main Residency Match report, an IMG is defined by where the school is located, and "non-U.S. IMGs" (non-U.S. citizens who attended a school outside the US and Canada that is not accredited by the LCME or AOA COCA) are reported as one category. The same report says 16,154 active applicants in 2026 were IMGs, counting both U.S. citizen IMGs and non-U.S. IMGs. It does not list Match results for graduates of Indian schools, and neither do the Charting Outcomes reports we reviewed.
+The NRMP counts applicants by type, not by country. In its {{fact:nrmp_match_year}} Main Residency Match report, an IMG is defined by where the school is located, and "non-U.S. IMGs" (non-U.S. citizens who attended a school outside the US and Canada that is not accredited by the LCME or AOA COCA) are reported as one category. The same report says {{fact:img_active_applicants}} active applicants in {{fact:nrmp_match_year}} were IMGs, counting both U.S. citizen IMGs and non-U.S. IMGs. It does not list Match results for graduates of Indian schools, and neither do the Charting Outcomes reports we reviewed.
 
 ECFMG also tracks applicants by school, but we could not open any country-level tables (ecfmg.org returns errors to automated tools). If you need a figure, ask ECFMG or cite a published study with its year, and do not rely on forum posts. For what the numbers mean for your odds, see [IMG match statistics](/wiki/start-here/img-match-statistics).
 

@@ -58,7 +58,7 @@ Your content checklist should come from the official source. USMLE publishes con
 
 ### Notes on a few criteria
 
-**Question style.** Exam items are clinical vignettes that ask you to recognize a presentation and reason about mechanism, diagnosis or management. Questions that test isolated recall are less useful practice. Since 2026, Step 1 and Step 2 CK also use shorter 30-minute blocks in the current format, so check that the bank lets you practice in similar blocks.
+**Question style.** Exam items are clinical vignettes that ask you to recognize a presentation and reason about mechanism, diagnosis or management. Questions that test isolated recall are less useful practice. Since 2026, Step 1 and Step 2 CK also use shorter {{fact:usmle_block_minutes}}-minute blocks in the current format, so check that the bank lets you practice in similar blocks.
 
 **Explanations.** In our opinion this is the most important criterion for IMGs studying alone. If you cannot understand why you were wrong, the bank is a testing tool, not a teaching tool.
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * Wiki hub, served at /wiki. Sections come from data/wiki.php; the article
- * counts and "recently updated" list come from the Markdown in wiki-content/.
+ * counts come from the Markdown in wiki-content/.
  */
 
 require_once __DIR__ . '/data/wiki.php';
@@ -12,11 +12,6 @@ $counts   = [];
 foreach ($listed as $a) {
     $counts[$a['section']] = ($counts[$a['section']] ?? 0) + 1;
 }
-
-// Newest first, glossary stubs left out of "recently updated".
-$recent = array_filter($listed, fn($a) => $a['section'] !== 'glossary');
-usort($recent, fn($x, $y) => strcmp($y['updated'] ?? '', $x['updated'] ?? ''));
-$recent = array_slice($recent, 0, 8);
 
 $journey = ['start-here', 'exams', 'ecfmg', 'application', 'interviews-match', 'visas'];
 
@@ -42,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <div class="msp-wrap">
       <p class="wk-eyebrow">USMLE Wise Wiki</p>
       <h1 class="wk-hero__title">Everything an IMG needs to know to reach a US residency.</h1>
-      <p class="wk-hero__sub">Exams, ECFMG, the application, the Match, research, clinical experience and visas. Every page is sourced to the official rule-makers and dated, and each one shows whether an expert has reviewed it yet.</p>
+      <p class="wk-hero__sub">Exams, ECFMG, the application, the Match, research, clinical experience and visas. Every page is sourced to the official rule-makers, and each one shows whether an expert has reviewed it yet.</p>
       <?php $wikiSearchSize = 'lg'; include __DIR__ . '/partials/wiki-search.php'; ?>
     </div>
   </section>
@@ -83,29 +78,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </div>
   </section>
 
-  <?php if ($recent): ?>
-  <section class="wk-recent" aria-labelledby="wk-recent-h">
-    <div class="msp-wrap">
-      <h2 id="wk-recent-h" class="wk-h2">Recently updated</h2>
-      <ul class="wk-list">
-        <?php foreach ($recent as $a): ?>
-        <li>
-          <a href="<?php echo usmlewise_wiki_url($a); ?>">
-            <span class="wk-list__t"><?php echo htmlspecialchars($a['title']); ?></span>
-            <span class="wk-list__m"><?php echo htmlspecialchars($sections[$a['section']]['title'] ?? ''); ?> &middot; <?php echo htmlspecialchars(usmlewise_wiki_fmt_date($a['updated'] ?? '')); ?></span>
-          </a>
-        </li>
-        <?php endforeach; ?>
-      </ul>
-    </div>
-  </section>
-  <?php endif; ?>
-
   <section class="wk-promise">
     <div class="msp-wrap">
       <div class="wk-promise__panel">
         <h2 class="wk-h2">How we keep this accurate</h2>
-        <p>Every fee, date and rule links to its primary source (USMLE, NBME, ECFMG, NRMP, AAMC, the US State Department, USCIS). Pages show their update date and, once reviewed, who reviewed them and when. They are re-checked on a fixed schedule. Visa pages are information, not legal advice.</p>
+        <p>Every fee, date and rule links to its primary source (USMLE, NBME, ECFMG, NRMP, AAMC, the US State Department, USCIS). Reviewed pages show who reviewed them and when, and pages are re-checked on a fixed schedule. Visa pages are information, not legal advice.</p>
       </div>
     </div>
   </section>

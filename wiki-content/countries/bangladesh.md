@@ -35,7 +35,7 @@ If you graduated from a medical school in Bangladesh, the most important check i
 
 ## What the published data say about IMGs from Bangladesh
 
-NRMP counts IMGs by citizenship, not by country of medical school. In the 2026 Main Residency Match, 4,210 U.S. citizen IMGs and 11,944 non-U.S. citizen IMGs submitted rank order lists, and 2,949 and 6,733 of them matched to a PGY-1 position (70.0 and 56.4 percent). NRMP's 2026 Charting Outcomes report for non-U.S. IMGs also groups applicants by specialty and Match status, not by country.
+NRMP counts IMGs by citizenship, not by country of medical school. In the {{fact:nrmp_match_year}} Main Residency Match, {{fact:us_img_ranked}} U.S. citizen IMGs and {{fact:nonus_img_ranked}} non-U.S. citizen IMGs submitted rank order lists, and {{fact:us_img_matched}} and {{fact:nonus_img_matched}} of them matched to a PGY-1 position ({{fact:us_img_match_rate}} and {{fact:nonus_img_match_rate}} percent). NRMP's {{fact:nrmp_match_year}} Charting Outcomes report for non-U.S. IMGs also groups applicants by specialty and Match status, not by country.
 
 We found no Bangladesh-specific match figure in the NRMP reports we downloaded or in ECFMG's certification fact sheet, which reports totals only (13,431 physicians from 1,628 schools in 146 countries certified in 2024). So we do not quote one. Be wary of any site that does without naming its source and year. For how to read the numbers you do have, see [IMG match statistics](/wiki/start-here/img-match-statistics).
 

@@ -11,7 +11,7 @@ service: match-lor
 related: [application/myeras-walkthrough, application/eras-timeline, clinical-experience/turning-usce-into-a-letter, clinical-experience/usce-explained, ecfmg/eras-token]
 key_facts:
   - Authors upload letters through the AAMC Letter Writer Portal; you cannot upload a letter you waived your right to see.
-  - In the 2027 cycle you can assign up to 4 letters to each program.
+  - In the {{fact:eras_cycle_year}} cycle you can assign up to {{fact:eras_letters_per_program}} letters to each program.
   - Each letter request has a unique Letter ID that works once, so never copy one request form to several authors.
   - Letter assignments to programs you have already applied to cannot be changed.
 sources:
@@ -21,11 +21,11 @@ sources:
   - AAMC: ERAS for Letter Writers | https://www.aamc.org/services/eras-institutions/eras-letter-writers
 faq:
   - q: How many letters of recommendation do I need?
-    a: Each program sets its own requirement, usually on its website or FREIDA listing, and ERAS lets you assign up to 4 letters to a program in the 2027 cycle. Check each program's stated minimum and mix.
+    a: Each program sets its own requirement, usually on its website or FREIDA listing, and ERAS lets you assign up to {{fact:eras_letters_per_program}} letters to a program in the {{fact:eras_cycle_year}} cycle. Check each program's stated minimum and mix.
   - q: Should I waive my right to see my letters?
     a: Most applicants waive, because programs tend to trust confidential letters more. It is your choice, but a waiver is permanent for that letter: you cannot view it under any circumstances.
   - q: Can I send the same letters to every program?
-    a: Yes. Once a letter is uploaded you can assign it to any saved or applied-to program, up to 4 letters per program. You can also assign different letter sets to different specialties.
+    a: Yes. Once a letter is uploaded you can assign it to any saved or applied-to program, up to {{fact:eras_letters_per_program}} letters per program. You can also assign different letter sets to different specialties.
   - q: Can the MSPE count as one of my letters?
     a: The MSPE is a separate document, not a letter of recommendation. Check each program's instructions to see whether they also require a department chair letter.
 ---

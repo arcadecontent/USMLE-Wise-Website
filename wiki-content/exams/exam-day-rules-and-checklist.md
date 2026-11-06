@@ -69,7 +69,7 @@ If you need an item not on the list for a medical reason, request a test accommo
 ## Breaks
 
 - You may leave your seat **only when the break screen is visible**.
-- As of the exam pages we reviewed in November 2026, Step 1 and Step 2 CK list a minimum of 55 minutes of break time for test dates under the new format (on or after May 14, 2026 for Step 1; on or after May 7, 2026 for Step 2 CK). Step 3 lists at least 55 minutes on Day 1 and at least 45 minutes on Day 2. Confirm the number for your test date on the Step exam page.
+- As of the exam pages we reviewed in November 2026, Step 1 and Step 2 CK list a minimum of {{fact:usmle_min_break_minutes}} minutes of break time for test dates under the new format (on or after {{fact:usmle_step1_new_format_date}} for Step 1; on or after {{fact:usmle_step2ck_new_format_date}} for Step 2 CK). Step 3 lists at least {{fact:usmle_min_break_minutes}} minutes on Day 1 and at least 45 minutes on Day 2. Confirm the number for your test date on the Step exam page.
 - Time between blocks counts as break time, whether or not you leave your seat. If you finish a block or the tutorial early, the unused time is added to your break time.
 - If you exceed your break time, the excess is deducted from your testing time.
 - You may use your phone only outside the secure testing area during an authorized break. You cannot access your locker or phone during an unauthorized break.
@@ -77,7 +77,7 @@ If you need an item not on the list for a medical reason, request a test accommo
 
 Because Step 1 and Step 2 CK moved to shorter blocks in 2026, there are more transitions between blocks. Plan your breaks on the day: when you will eat, drink and rest.
 
-> [!CHANGED] Step 1 (for test dates on or after May 14, 2026) and Step 2 CK (on or after May 7, 2026) use shorter 30-minute blocks according to USMLE's exam pages. Older guides describe 60-minute blocks. Use the current USMLE page for your format.
+> [!CHANGED] Step 1 (for test dates on or after {{fact:usmle_step1_new_format_date}}) and Step 2 CK (on or after {{fact:usmle_step2ck_new_format_date}}) use shorter {{fact:usmle_block_minutes}}-minute blocks according to USMLE's exam pages. Older guides describe 60-minute blocks. Use the current USMLE page for your format.
 
 ## Conduct and confidentiality
 

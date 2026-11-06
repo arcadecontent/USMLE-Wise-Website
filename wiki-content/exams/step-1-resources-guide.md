@@ -44,9 +44,9 @@ What that means in practice (opinion, based on how the exam is structured):
 
 ## Start with the official materials
 
-USMLE publishes the content outline, a description of question formats, and an interactive test that shows the software. A new interactive test matching the format from May 14, 2026 is available on the USMLE site. Use the official outline as the scope of your studying, not a third-party summary, and use the interactive test to learn the interface so test day has fewer surprises.
+USMLE publishes the content outline, a description of question formats, and an interactive test that shows the software. A new interactive test matching the format from {{fact:usmle_step1_new_format_date}} is available on the USMLE site. Use the official outline as the scope of your studying, not a third-party summary, and use the interactive test to learn the interface so test day has fewer surprises.
 
-> [!CHANGED] Step 1 uses shorter 30-minute blocks for exams on or after May 14, 2026, according to USMLE. Check that any pacing advice or practice tool you use matches the current format. See the [policy tracker](/wiki/exams/usmle-policy-changes-tracker).
+> [!CHANGED] Step 1 uses shorter {{fact:usmle_block_minutes}}-minute blocks for exams on or after {{fact:usmle_step1_new_format_date}}, according to USMLE. Check that any pacing advice or practice tool you use matches the current format. See the [policy tracker](/wiki/exams/usmle-policy-changes-tracker).
 
 ## Resource types by purpose
 
@@ -65,7 +65,7 @@ USMLE publishes the content outline, a description of question formats, and an i
 3. **Make questions your main study method.** Choose one question bank and work through it in mixed, timed blocks. The [question bank comparison](/wiki/exams/question-banks-compared) explains how to choose.
 4. **Add recall tools where they help.** Flashcards are best for stable facts, such as drugs and microbiology, that questions keep exposing.
 5. **Reassess on a schedule.** Repeat self-assessments every few weeks, not daily, and use trends to decide whether to book or move your exam date.
-6. **Run full-length simulations near the end.** Practice the day structure and pacing for the 30-minute block format.
+6. **Run full-length simulations near the end.** Practice the day structure and pacing for the {{fact:usmle_block_minutes}}-minute block format.
 
 For an actual calendar, see the [Step 1 study schedule](/wiki/exams/step-1-study-schedule) and [how long to study](/wiki/exams/how-long-to-study).
 

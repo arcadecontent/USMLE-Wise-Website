@@ -10,7 +10,7 @@ keywords: [eras experiences, most meaningful experiences, impactful experiences,
 service: match-eras-cv
 related: [application/myeras-walkthrough, application/personal-statement-guide, research/how-programs-view-research, clinical-experience/turning-usce-into-a-letter]
 key_facts:
-  - In the 2027 MyERAS cycle you can list up to 10 experiences and flag up to 3 as most meaningful.
+  - In the {{fact:eras_cycle_year}} MyERAS cycle you can list up to {{fact:eras_experiences_max}} experiences and flag up to {{fact:eras_most_meaningful_max}} as most meaningful.
   - Programs see your most meaningful experiences above the rest, then experiences grouped by type.
   - AAMC asks for introspection in the most meaningful entries: why it mattered and how it changed you.
   - The Impactful Experiences question is optional and should not repeat your personal statement.
@@ -20,7 +20,7 @@ sources:
   - AAMC: Program signaling for the 2027 MyERAS application season | https://students-residents.aamc.org/applying-residencies-eras/program-signaling-2027-myeras-application-season
 faq:
   - q: How many experiences can I list on ERAS?
-    a: In the 2027 cycle, up to 10 selected experiences, of which up to 3 can be marked most meaningful. Limits are set by AAMC each cycle, so confirm them in the current user guide.
+    a: In the {{fact:eras_cycle_year}} cycle, up to {{fact:eras_experiences_max}} selected experiences, of which up to {{fact:eras_most_meaningful_max}} can be marked most meaningful. Limits are set by AAMC each cycle, so confirm them in the current user guide.
   - q: Should I use all 10 slots?
     a: Not automatically. Fill them with experiences that show different sides of you, but do not pad with trivial entries. A short, strong list reads better than a padded one.
   - q: Where do observerships and research go?
@@ -29,7 +29,7 @@ faq:
     a: No. AAMC says programs do not expect everyone to answer. It is for major obstacles you overcame, and anything you write can be discussed in interviews.
 ---
 
-The Experiences section is where you tell programs what you did and who you are beyond scores. In the 2027 MyERAS cycle you can enter up to **10 experiences**, mark up to **3 as most meaningful**, optionally answer the **Impactful Experiences** question, and add a short Hobbies and Interests entry. Programs read it, and AAMC reports that a large majority of program directors surveyed used the most meaningful experiences when deciding whom to interview.
+The Experiences section is where you tell programs what you did and who you are beyond scores. In the {{fact:eras_cycle_year}} MyERAS cycle you can enter up to **{{fact:eras_experiences_max}} experiences**, mark up to **{{fact:eras_most_meaningful_max}} as most meaningful**, optionally answer the **Impactful Experiences** question, and add a short Hobbies and Interests entry. Programs read it, and AAMC reports that a large majority of program directors surveyed used the most meaningful experiences when deciding whom to interview.
 
 > [!NOTE] These limits come from the AAMC 2027 materials. If you are applying in a different cycle, check the current user guide, because AAMC adjusts the Experiences section regularly.
 

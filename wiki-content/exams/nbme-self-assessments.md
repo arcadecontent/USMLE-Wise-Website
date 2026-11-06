@@ -59,7 +59,7 @@ Older NBME guides state that the self-assessment is provided for educational pur
 - **Exam version.** Different forms and different content mixes give different results.
 - **Conditions.** Fatigue, timing, noise and nerves matter.
 - **Familiarity.** Repeating an assessment after reviewing it inflates results.
-- **Scale and format changes.** USMLE changed the Step 2 CK format for test dates on or after May 7, 2026, so older reports of how a given assessment felt may not match.
+- **Scale and format changes.** USMLE changed the Step 2 CK format for test dates on or after {{fact:usmle_step2ck_new_format_date}}, so older reports of how a given assessment felt may not match.
 - **Measurement error.** Every score has a margin.
 
 ## How to use assessments well

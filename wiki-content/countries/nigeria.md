@@ -38,7 +38,7 @@ Nigerian graduates face two issues that other country guides in this series do n
 
 ## What the data does and does not say
 
-NRMP defines IMGs by school location and reports non-U.S. IMGs as one group. Its 2026 Main Residency Match report says 16,154 active applicants were IMGs (U.S. citizen and non-U.S. citizen combined), with no country breakdown.
+NRMP defines IMGs by school location and reports non-U.S. IMGs as one group. Its {{fact:nrmp_match_year}} Main Residency Match report says {{fact:img_active_applicants}} active applicants were IMGs (U.S. citizen and non-U.S. citizen combined), with no country breakdown.
 
 A JAMA Network Open study that linked ECFMG applicant records to the AMA Physician Masterfile reported 4,167 ECFMG applicants who were citizens of Nigeria from 2009 to 2018, counted by citizenship at entry to medical school. That is a count of applicants over ten years, not Match outcomes. We could not open ECFMG's own tables, so we give no current annual figure. See [IMG match statistics](/wiki/start-here/img-match-statistics).
 

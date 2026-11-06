@@ -36,7 +36,7 @@ A good backup specialty is one you would accept, can support with real evidence,
 
 ## Why a backup is part of planning
 
-NRMP's 2026 figures show how much risk IMGs carry. The PGY-1 match rate among active applicants was 56.4 percent for non-U.S. citizen IMGs and 70.0 percent for U.S. citizen IMGs, against 93.5 percent for U.S. MD seniors ([IMG match rates by specialty](/wiki/specialties/img-match-rates-by-specialty)). Specialties differ widely. For example, non-U.S. citizen IMGs filled 30.8 percent of categorical Internal Medicine positions but 2.7 percent of OB-GYN positions and 2.9 percent of Emergency Medicine positions in 2026. If your first choice is one of the narrower specialties, a backup is a normal part of the plan.
+NRMP's {{fact:nrmp_match_year}} figures show how much risk IMGs carry. The PGY-1 match rate among active applicants was {{fact:nonus_img_match_rate}} percent for non-U.S. citizen IMGs and {{fact:us_img_match_rate}} percent for U.S. citizen IMGs, against 93.5 percent for U.S. MD seniors ([IMG match rates by specialty](/wiki/specialties/img-match-rates-by-specialty)). Specialties differ widely. For example, non-U.S. citizen IMGs filled 30.8 percent of categorical Internal Medicine positions but 2.7 percent of OB-GYN positions and 2.9 percent of Emergency Medicine positions in {{fact:nrmp_match_year}}. If your first choice is one of the narrower specialties, a backup is a normal part of the plan.
 
 CORD's 2026 guide for IMGs applying to Emergency Medicine tells realistic applicants to apply broadly in EM and also to other specialties, and not to count on scrambling into the specialty later through SOAP ([Emergency Medicine for IMGs](/wiki/specialties/emergency-medicine)).
 

@@ -10,7 +10,7 @@ keywords: [did not match, unmatched, soap, reapply, backup plan, img, reapplican
 service: match-soap
 related: [soap-explained, match-week-timeline, application/reapplicant-strategy, rank-order-list-strategy, specialties/choosing-a-specialty]
 key_facts:
-  - Not matching is common among IMGs: in 2026, NRMP reported match rates of 70.0 percent (U.S. citizen IMGs) and 56.4 percent (non-U.S. citizen IMGs).
+  - Not matching is common among IMGs: in {{fact:nrmp_match_year}}, NRMP reported match rates of {{fact:us_img_match_rate}} percent (U.S. citizen IMGs) and {{fact:nonus_img_match_rate}} percent (non-U.S. citizen IMGs).
   - If you are SOAP-eligible, SOAP begins in Match Week, and you can act within days.
   - Your decisions in the first week matter, but so does a calm plan for the next 12 months.
   - Reapplying works best when you change something specific in the application, not just resubmit.
@@ -25,7 +25,7 @@ faq:
   - q: Can I still do SOAP if I did not rank any programs?
     a: Yes, if you are registered and otherwise eligible. NRMP says you do not have to have submitted a rank order list to be SOAP-eligible.
   - q: How many IMGs do not match each year?
-    a: In 2026, NRMP reported that 70.0 percent of U.S. citizen IMGs and 56.4 percent of non-U.S. citizen IMGs who submitted a rank order list matched, meaning many did not. Placement through SOAP raised those rates.
+    a: In {{fact:nrmp_match_year}}, NRMP reported that {{fact:us_img_match_rate}} percent of U.S. citizen IMGs and {{fact:nonus_img_match_rate}} percent of non-U.S. citizen IMGs who submitted a rank order list matched, meaning many did not. Placement through SOAP raised those rates.
   - q: Should I reapply to the same specialty?
     a: It depends on your profile and what you can improve. Look honestly at the reasons for the result before choosing. See the reapplicant strategy guide.
 ---
@@ -34,7 +34,7 @@ If you did not match, you have a short window to act and then a longer window to
 
 ## First, the context
 
-Not matching is common among IMGs. In NRMP's 2026 Main Residency Match, among applicants who submitted a rank order list, 70.0 percent of U.S. citizen IMGs and 56.4 percent of non-U.S. citizen IMGs matched, compared with 93.5 percent of U.S. MD seniors. Many more IMGs register but do not submit a rank order list. For the data and definitions, see [IMG match rates by specialty](/wiki/specialties/img-match-rates-by-specialty).
+Not matching is common among IMGs. In NRMP's {{fact:nrmp_match_year}} Main Residency Match, among applicants who submitted a rank order list, {{fact:us_img_match_rate}} percent of U.S. citizen IMGs and {{fact:nonus_img_match_rate}} percent of non-U.S. citizen IMGs matched, compared with 93.5 percent of U.S. MD seniors. Many more IMGs register but do not submit a rank order list. For the data and definitions, see [IMG match rates by specialty](/wiki/specialties/img-match-rates-by-specialty).
 
 It is not a verdict on your ability to practice medicine. It is a statement that the combination of your application and the seats available did not line up this cycle.
 

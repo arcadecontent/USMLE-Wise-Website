@@ -36,7 +36,7 @@ Filipino graduates have a long history in US medicine, but official US data does
 
 ## What the data does and does not say
 
-NRMP defines IMGs by where the school is located and reports non-U.S. IMGs as one group. Its 2026 Main Residency Match report says 16,154 active applicants were IMGs (U.S. citizen and non-U.S. citizen combined), with no country breakdown. We found no ECFMG or NRMP table with a current count for graduates of Philippine schools that we could open (ecfmg.org returns errors to automated tools), so we give none. Note that many Filipino physicians in the US trained decades ago; current applicant numbers are not the same as the size of that workforce. See [IMG match statistics](/wiki/start-here/img-match-statistics).
+NRMP defines IMGs by where the school is located and reports non-U.S. IMGs as one group. Its {{fact:nrmp_match_year}} Main Residency Match report says {{fact:img_active_applicants}} active applicants were IMGs (U.S. citizen and non-U.S. citizen combined), with no country breakdown. We found no ECFMG or NRMP table with a current count for graduates of Philippine schools that we could open (ecfmg.org returns errors to automated tools), so we give none. Note that many Filipino physicians in the US trained decades ago; current applicant numbers are not the same as the size of that workforce. See [IMG match statistics](/wiki/start-here/img-match-statistics).
 
 ## Checking your school's eligibility
 

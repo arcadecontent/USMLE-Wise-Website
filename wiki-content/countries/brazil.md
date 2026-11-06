@@ -35,7 +35,7 @@ For Brazilian graduates, the key question is whether your school's ECFMG Sponsor
 
 ## What the published data say about IMGs from Brazil
 
-NRMP counts IMGs by citizenship, not by country of medical school. In the 2026 Main Residency Match, 11,944 non-U.S. citizen IMGs submitted rank order lists and 6,733 matched to PGY-1 positions (56.4 percent). A Brazilian citizen would be counted in the non-U.S. IMG group, but NRMP does not publish a Brazil breakdown in the reports we downloaded. ECFMG's fact sheet gives only global totals. We do not quote a Brazil figure. See [IMG match statistics](/wiki/start-here/img-match-statistics).
+NRMP counts IMGs by citizenship, not by country of medical school. In the {{fact:nrmp_match_year}} Main Residency Match, {{fact:nonus_img_ranked}} non-U.S. citizen IMGs submitted rank order lists and {{fact:nonus_img_matched}} matched to PGY-1 positions ({{fact:nonus_img_match_rate}} percent). A Brazilian citizen would be counted in the non-U.S. IMG group, but NRMP does not publish a Brazil breakdown in the reports we downloaded. ECFMG's fact sheet gives only global totals. We do not quote a Brazil figure. See [IMG match statistics](/wiki/start-here/img-match-statistics).
 
 ## Checking school eligibility
 

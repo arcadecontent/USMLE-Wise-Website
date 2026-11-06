@@ -10,7 +10,7 @@ keywords: [should i do residency in the us, pros and cons, img decision, us resi
 related: [imgs-roadmap, how-long-does-it-take, total-cost-of-matching, img-match-statistics, visas/j1-vs-h1b]
 key_facts:
   - US residency is a long, uncertain, expensive pathway, and many qualified IMGs do not match in a given year.
-  - In the 2026 Main Residency Match, NRMP reported a PGY-1 match rate of 56.4 percent for non-U.S. citizen IMGs who ranked programs.
+  - In the {{fact:nrmp_match_year}} Main Residency Match, NRMP reported a PGY-1 match rate of {{fact:nonus_img_match_rate}} percent for non-U.S. citizen IMGs who ranked programs.
   - ACGME limits resident clinical and educational work to 80 hours per week, averaged over four weeks.
   - Visa type affects your options after training, so read the J-1 and H-1B pages before you commit.
 sources:
@@ -53,7 +53,7 @@ These are common reasons people choose US training. Whether they apply to you de
 
 ## Honest cons
 
-- **Uncertainty is built in.** In the 2026 Main Residency Match, NRMP reported PGY-1 match rates of 70.0 percent for U.S. citizen IMGs and 56.4 percent for non-U.S. citizen IMGs among applicants who submitted a rank order list (see [IMG match statistics](/wiki/start-here/img-match-statistics)). Those are averages, but they show the risk is real.
+- **Uncertainty is built in.** In the {{fact:nrmp_match_year}} Main Residency Match, NRMP reported PGY-1 match rates of {{fact:us_img_match_rate}} percent for U.S. citizen IMGs and {{fact:nonus_img_match_rate}} percent for non-U.S. citizen IMGs among applicants who submitted a rank order list (see [IMG match statistics](/wiki/start-here/img-match-statistics)). Those are averages, but they show the risk is real.
 - **A rank-and-match system means you do not choose.** You apply, programs interview and rank you, and you may end up in a specialty or city you would not have chosen.
 - **Long hours.** ACGME requires that clinical and educational work be limited to 80 hours per week, averaged over four weeks. That is a ceiling, not a typical week, and it applies to residents in all specialties.
 - **Years of delayed income and savings.** Exam fees, travel for clinical experience, application and interview costs add up before your first paycheck.

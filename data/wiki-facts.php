@@ -17,6 +17,10 @@
  *               tools/wiki-check.php FAILS the build when a PUBLISHED article
  *               uses a fact that is unverified or empty.
  *
+ *   guard       Optional list of literal strings (e.g. '70.0%'). tools/wiki-check.php warns
+ *               when one appears typed into an article, so a figure that lives here
+ *               cannot quietly drift out of sync on a single page.
+ *
  * Do not put an unconfirmed number in `value` and mark it verified. An empty
  * value is always better than a wrong fee or deadline on a page people use to
  * plan an immigration and exam timeline.
@@ -113,6 +117,167 @@ function usmlewise_wiki_facts(): array
             'url'        => 'https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees.html',
             'checked_on' => '',
             'verified'   => false,
+        ],
+
+        /* ---------------- Latest NRMP Main Residency Match results (IMGs) ---------------- */
+        'nrmp_match_year' => [
+            'value'      => '2026',
+            'source'     => 'NRMP: Results and Data, Main Residency Match',
+            'url'        => 'https://www.nrmp.org/match-data/2026/05/results-and-data-2026-main-residency-match/',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the NRMP 2026 Results and Data PDF by several writers; the figures agree and are arithmetically consistent. Update this together with the figures below each year.
+        ],
+        'us_img_ranked' => [
+            'value'      => '4,210',
+            'source'     => 'NRMP: Results and Data, Main Residency Match',
+            'url'        => 'https://www.nrmp.org/match-data/2026/05/results-and-data-2026-main-residency-match/',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the NRMP 2026 Results and Data PDF by several writers; the figures agree and are arithmetically consistent
+            'guard'      => ['4,210'],
+        ],
+        'us_img_matched' => [
+            'value'      => '2,949',
+            'source'     => 'NRMP: Results and Data, Main Residency Match',
+            'url'        => 'https://www.nrmp.org/match-data/2026/05/results-and-data-2026-main-residency-match/',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the NRMP 2026 Results and Data PDF by several writers; the figures agree and are arithmetically consistent
+            'guard'      => ['2,949'],
+        ],
+        'us_img_match_rate' => [
+            'value'      => '70.0',
+            'source'     => 'NRMP: Results and Data, Main Residency Match',
+            'url'        => 'https://www.nrmp.org/match-data/2026/05/results-and-data-2026-main-residency-match/',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the NRMP 2026 Results and Data PDF by several writers; the figures agree and are arithmetically consistent (2,949 / 4,210)
+            'guard'      => ['70.0%', '70.0 percent'],
+        ],
+        'nonus_img_ranked' => [
+            'value'      => '11,944',
+            'source'     => 'NRMP: Results and Data, Main Residency Match',
+            'url'        => 'https://www.nrmp.org/match-data/2026/05/results-and-data-2026-main-residency-match/',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the NRMP 2026 Results and Data PDF by several writers; the figures agree and are arithmetically consistent
+            'guard'      => ['11,944'],
+        ],
+        'nonus_img_matched' => [
+            'value'      => '6,733',
+            'source'     => 'NRMP: Results and Data, Main Residency Match',
+            'url'        => 'https://www.nrmp.org/match-data/2026/05/results-and-data-2026-main-residency-match/',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the NRMP 2026 Results and Data PDF by several writers; the figures agree and are arithmetically consistent
+            'guard'      => ['6,733'],
+        ],
+        'nonus_img_match_rate' => [
+            'value'      => '56.4',
+            'source'     => 'NRMP: Results and Data, Main Residency Match',
+            'url'        => 'https://www.nrmp.org/match-data/2026/05/results-and-data-2026-main-residency-match/',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the NRMP 2026 Results and Data PDF by several writers; the figures agree and are arithmetically consistent (6,733 / 11,944)
+            'guard'      => ['56.4%', '56.4 percent'],
+        ],
+        'img_active_applicants' => [
+            'value'      => '16,154',
+            'source'     => 'NRMP: Results and Data, Main Residency Match',
+            'url'        => 'https://www.nrmp.org/match-data/2026/05/results-and-data-2026-main-residency-match/',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the NRMP 2026 Results and Data PDF by several writers; the figures agree and are arithmetically consistent (4,210 + 11,944)
+            'guard'      => ['16,154'],
+        ],
+
+        /* ---------------- ERAS limits for the current application cycle (AAMC) ---------------- */
+        'eras_cycle_year' => [
+            'value'      => '2027',
+            'source'     => 'AAMC: MyERAS Applicant User Guide',
+            'url'        => 'https://students-residents.aamc.org/media/16871/download',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the AAMC MyERAS applicant user guide by the application writers. Update with the limits below when AAMC publishes the next cycle.
+        ],
+        'eras_experiences_max' => [
+            'value'      => '10',
+            'source'     => 'AAMC: MyERAS Applicant User Guide',
+            'url'        => 'https://students-residents.aamc.org/applying-residencies-eras/publication-chapters/experience',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the AAMC MyERAS applicant user guide by the application writers
+        ],
+        'eras_most_meaningful_max' => [
+            'value'      => '3',
+            'source'     => 'AAMC: MyERAS Applicant User Guide',
+            'url'        => 'https://students-residents.aamc.org/applying-residencies-eras/publication-chapters/experience',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the AAMC MyERAS applicant user guide by the application writers
+        ],
+        'eras_letters_per_program' => [
+            'value'      => '4',
+            'source'     => 'AAMC: MyERAS Applicant User Guide',
+            'url'        => 'https://students-residents.aamc.org/media/16871/download',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the AAMC MyERAS applicant user guide by the application writers
+        ],
+        'eras_ps_char_limit' => [
+            'value'      => '28,000',
+            'source'     => 'AAMC: MyERAS Applicant User Guide',
+            'url'        => 'https://students-residents.aamc.org/media/16871/download',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the AAMC MyERAS applicant user guide by the application writers
+            'guard'      => ['28,000'],
+        ],
+
+        /* ---------------- Current USMLE exam format (Step 1 and Step 2 CK) ---------------- */
+        'usmle_step1_new_format_date' => [
+            'value'      => 'May 14, 2026',
+            'source'     => 'USMLE.org: Step 1 exam page',
+            'url'        => 'https://www.usmle.org/step-exams/step-1',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the usmle.org Step 1 and Step 2 CK pages by the exam writers
+        ],
+        'usmle_step2ck_new_format_date' => [
+            'value'      => 'May 7, 2026',
+            'source'     => 'USMLE.org: Step 2 CK exam page',
+            'url'        => 'https://www.usmle.org/step-exams/step-2-ck',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the usmle.org Step 1 and Step 2 CK pages by the exam writers
+        ],
+        'step1_block_count' => [
+            'value'      => '14',
+            'source'     => 'USMLE.org: Step 1 exam page',
+            'url'        => 'https://www.usmle.org/step-exams/step-1',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the usmle.org Step 1 and Step 2 CK pages by the exam writers
+        ],
+        'step2ck_block_count' => [
+            'value'      => '16',
+            'source'     => 'USMLE.org: Step 2 CK exam page',
+            'url'        => 'https://www.usmle.org/step-exams/step-2-ck',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the usmle.org Step 1 and Step 2 CK pages by the exam writers
+        ],
+        'usmle_block_minutes' => [
+            'value'      => '30',
+            'source'     => 'USMLE.org: Step 1 exam page',
+            'url'        => 'https://www.usmle.org/step-exams/step-1',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the usmle.org Step 1 and Step 2 CK pages by the exam writers
+        ],
+        'usmle_min_break_minutes' => [
+            'value'      => '55',
+            'source'     => 'USMLE.org: Step 1 exam page',
+            'url'        => 'https://www.usmle.org/step-exams/step-1',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the usmle.org Step 1 and Step 2 CK pages by the exam writers
+        ],
+        'step1_session_hours' => [
+            'value'      => '8',
+            'source'     => 'USMLE.org: Step 1 exam page',
+            'url'        => 'https://www.usmle.org/step-exams/step-1',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the usmle.org Step 1 and Step 2 CK pages by the exam writers
+        ],
+        'step2ck_session_hours' => [
+            'value'      => '9',
+            'source'     => 'USMLE.org: Step 2 CK exam page',
+            'url'        => 'https://www.usmle.org/step-exams/step-2-ck',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // read from the usmle.org Step 1 and Step 2 CK pages by the exam writers
         ],
     ];
 }
