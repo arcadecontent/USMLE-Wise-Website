@@ -8,7 +8,7 @@ order: 3
 group: Core guides
 keywords: [how to get usce, observership application, imgs, verify observership, pay to play, red flags]
 service: clinical-rotations
-related: [usce-explained, observership-vs-externship-vs-hands-on, turning-usce-into-a-letter, application/identifying-img-friendly-programs]
+related: [usce-explained, observership-vs-externship-vs-hands-on, turning-usce-into-a-letter, application/identifying-img-friendly-programs, telehealth-and-virtual-usce]
 key_facts:
   - The main routes are direct requests to hospitals and physicians, institutional programs, personal networks and, with care, third-party placement providers.
   - A legitimate placement names a supervising physician and a host institution you can verify independently.

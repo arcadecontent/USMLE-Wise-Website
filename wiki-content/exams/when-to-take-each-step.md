@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 4
 group: Planning your exams
 keywords: [step order, when to take step 2 ck, usmle sequencing, step 3 timing, img exam planning]
-related: [step-1, step-2-ck, step-3, usmle-eligibility-for-imgs, application/eras-timeline]
+related: [step-1, step-2-ck, step-3, usmle-eligibility-for-imgs, application/eras-timeline, ecfmg/certification-validity-and-expiry]
 key_facts:
   - The usual order is Step 1, then Step 2 CK, then Step 3, but the Bulletin requires only that Step 3 comes after passing Steps 1 and 2 CK.
   - Step 2 CK should usually have a result before application season, because programs read the score.

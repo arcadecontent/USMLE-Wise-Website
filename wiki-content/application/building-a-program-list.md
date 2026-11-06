@@ -34,6 +34,8 @@ The best program list for an IMG is built by **eliminating programs that cannot 
 
 > [!NOTE] This is a practical method, not an official procedure. The data sources it points to are real, but the tiers and rules of thumb are opinion.
 
+> [!NOTE] For the 2027 Match, NRMP says Emergency Medicine and Obstetrics and Gynecology programs use ResidencyCAS rather than ERAS, and all other specialties use ERAS. If you are applying to either of those two specialties, the ERAS steps, fees and signaling described on this page may not apply to them. Read the [Emergency Medicine](/wiki/specialties/emergency-medicine) and [OB-GYN](/wiki/specialties/obstetrics-and-gynecology) guides, and confirm the current system with NRMP.
+
 ## Step 1: Write down your profile
 
 Before opening a database, write one page with:

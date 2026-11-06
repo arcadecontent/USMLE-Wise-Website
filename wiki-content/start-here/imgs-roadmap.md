@@ -8,7 +8,7 @@ order: 1
 group: Orientation
 keywords: [img roadmap, how to match as an img, usmle timeline, ecfmg certification, residency application, step by step]
 service: match
-related: [how-long-does-it-take, total-cost-of-matching, exams/when-to-take-each-step, application/eras-timeline, ecfmg/ecfmg-certification-overview]
+related: [how-long-does-it-take, total-cost-of-matching, exams/when-to-take-each-step, application/eras-timeline, ecfmg/ecfmg-certification-overview, is-the-us-right-for-you]
 key_facts:
   - The core path is exams (Step 1 and Step 2 CK), ECFMG certification, a US residency application through ERAS, interviews, and the Match.
   - Most IMGs plan for several calendar years of preparation, but your own timeline depends on your graduation date, scores and experience.
@@ -112,3 +112,7 @@ For a realistic time estimate, read [how long it takes](/wiki/start-here/how-lon
 The exams, ECFMG certification and the Match are official requirements. Typical timing, how much experience to gather and how many programs to target are common practice, not rules. Our view (opinion): start earlier than feels necessary, keep a single tracker of documents and deadlines, and revisit your plan after each exam result rather than committing to a fixed calendar.
 
 > [!NOTE] Policies and portals change. In January 2026, registration and administration of USMLE services for IMGs moved to FSMB, while ECFMG continues to determine eligibility for ECFMG certification. Always confirm current steps on the official sites before you act.
+
+## Guides for your country
+
+If you are applying from a specific country, the [country guides](/wiki/countries) cover school eligibility checks, test-center planning and visa notes for graduates from India, Pakistan, Egypt, Nigeria, the Philippines, Bangladesh, Nepal, Iran, Brazil and the Caribbean.

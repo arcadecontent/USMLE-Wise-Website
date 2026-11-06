@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 18
 group: Documents and red flags
 keywords: [preliminary year, transitional year, advanced program, supplemental rank order list, pgy-1, prelim, imgs, visa]
-related: [specialties/categorical-vs-preliminary, application/applying-to-multiple-specialties, interviews-match/rank-order-list-strategy, interviews-match/soap-explained, visas/j1-vs-h1b]
+related: [specialties/categorical-vs-preliminary, application/applying-to-multiple-specialties, interviews-match/rank-order-list-strategy, interviews-match/soap-explained, visas/j1-vs-h1b, interviews-match/prelim-to-categorical]
 key_facts:
   - NRMP classifies programs as categorical, preliminary (one-year transitional or specialty programs), advanced (start after required preliminary training) and physician positions.
   - If you match to an advanced program, you need a separate first-year position; supplemental rank order lists link preliminary programs to advanced programs on your primary list.

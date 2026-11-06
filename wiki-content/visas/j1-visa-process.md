@@ -63,7 +63,7 @@ When ECFMG approves your sponsorship, it issues the DS-2019, which lists your pr
 
 ### 5. Pay required fees and complete the visa application
 
-You will pay several fees, which can include the SEVIS fee, the visa application fee and fees charged by the sponsor. Do not rely on a number from a blog. The visa application fee is on the [State Department fee page](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees.html) (current reference: {{fact:j1_visa_fee}}), and other fees are listed by the agency that charges them. Then complete the DS-160 online application and schedule an interview at a US embassy or consulate.
+You will pay several fees, which can include the SEVIS fee, the visa application fee and fees charged by the sponsor. Do not rely on a number from a blog. The visa application fee is on the [State Department fee page](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees.html) ({{fact:j1_visa_fee}}), and other fees are listed by the agency that charges them. Then complete the DS-160 online application and schedule an interview at a US embassy or consulate.
 
 ### 6. Visa interview
 

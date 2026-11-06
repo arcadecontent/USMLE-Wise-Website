@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 11
 group: Problems and policies
 keywords: [name mismatch, ecfmg name change, passport, medical diploma, scheduling permit, fsmb, documents]
-related: [common-ecfmg-delays, epic-credential-verification, myintealth-account, ecfmg-certification-overview, exams/scheduling-with-prometric]
+related: [common-ecfmg-delays, epic-credential-verification, myintealth-account, ecfmg-certification-overview, exams/scheduling-with-prometric, irregular-behavior-policy]
 key_facts:
   - Your name of record in ECFMG systems should match your current, unexpired passport; if it does not, ECFMG has a formal name-change process.
   - The name on your USMLE scheduling permit must match your test center ID, and a mismatch can mean you are not allowed to test.

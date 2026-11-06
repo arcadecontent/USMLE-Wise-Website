@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 4
 group: Core guides
 keywords: [accreditation requirement, wfme, recognized accrediting agency, ecfmg 2024, medical school accreditation, sponsor note]
-related: [world-directory-and-school-eligibility, ecfmg-certification-overview, epic-credential-verification]
+related: [world-directory-and-school-eligibility, ecfmg-certification-overview, epic-credential-verification, countries/caribbean-schools]
 key_facts:
   - ECFMG requires that medical schools be accredited by an agency recognized by the World Federation for Medical Education (WFME).
   - The requirement was announced in 2010 and its start date was moved to 2024.

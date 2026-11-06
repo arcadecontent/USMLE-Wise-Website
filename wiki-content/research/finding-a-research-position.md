@@ -8,7 +8,7 @@ order: 2
 group: Core guides
 keywords: [research position, research volunteer, research assistant, imgs, cold email, mentor, authorship]
 service: research
-related: [why-research-matters-for-imgs, how-programs-view-research, application/eras-experiences-section, clinical-experience/how-to-get-usce]
+related: [why-research-matters-for-imgs, how-programs-view-research, application/eras-experiences-section, clinical-experience/how-to-get-usce, research-years-and-gaps]
 key_facts:
   - The main routes are direct outreach to investigators, institutional research offices and programs, networks, and remote or retrospective projects.
   - Authorship follows contribution, using ICMJE criteria that most journals apply.

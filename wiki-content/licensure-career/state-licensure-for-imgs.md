@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 1
 group: Licensure
 keywords: [state medical license, training license, resident permit, full license, unrestricted license, imgs, state medical board, fsmb, postgraduate training, acgme]
-related: [step-3-and-licensure, exams/step-3, exams/usmle-attempt-limits-and-retakes, visas/step-3-and-h1b-timing, visas/h1b-for-residents]
+related: [step-3-and-licensure, exams/step-3, exams/usmle-attempt-limits-and-retakes, visas/step-3-and-h1b-timing, visas/h1b-for-residents, alternative-licensure-pathways]
 key_facts:
   - Medical licenses are issued by state medical boards, not by the federal government, ECFMG or the USMLE program.
   - Most boards issue a limited training license or permit for residency, which is different from the full license needed to practice independently.

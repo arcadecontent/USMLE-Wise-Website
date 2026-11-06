@@ -77,3 +77,11 @@ Graduates of US and Canadian schools accredited by the usual US bodies do not go
 ## What comes next
 
 If your school and year are eligible, move on to [credential verification through EPIC](/wiki/ecfmg/epic-credential-verification). If you are unsure how the accreditation requirement applies, read the [accreditation guide](/wiki/ecfmg/accreditation-requirement). The [overview](/wiki/ecfmg/ecfmg-certification-overview) shows how it all fits.
+
+## Country guides
+
+Eligibility checks, test-center planning and visa notes differ by country. If your school is in one of these countries, start with its guide:
+
+- [India](/wiki/countries/india), [Pakistan](/wiki/countries/pakistan), [Bangladesh](/wiki/countries/bangladesh) and [Nepal](/wiki/countries/nepal)
+- [Egypt](/wiki/countries/egypt), [Nigeria](/wiki/countries/nigeria) and [Iran](/wiki/countries/iran)
+- [The Philippines](/wiki/countries/philippines), [Brazil](/wiki/countries/brazil) and [Caribbean medical schools](/wiki/countries/caribbean-schools)

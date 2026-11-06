@@ -8,7 +8,7 @@ order: 1
 group: Core guides
 keywords: [choose specialty, img specialty, competitiveness, backup plan, residency, nrmp data]
 service: match
-related: [img-match-rates-by-specialty, internal-medicine, family-medicine, pediatrics, psychiatry]
+related: [img-match-rates-by-specialty, internal-medicine, family-medicine, pediatrics, psychiatry, pathology, physical-medicine-and-rehabilitation]
 key_facts:
   - Choose on three questions: do you want the work, can your profile compete, and can you train there on your visa.
   - In the 2026 Match, NRMP reported 52.8 percent of matched non-U.S. citizen IMGs in Internal Medicine.
@@ -30,6 +30,8 @@ faq:
 ---
 
 The best way to choose a specialty is to answer three questions in order: do you want the work, can your profile compete for it, and can you actually train there on your visa. Most IMGs start with the second question and ignore the first, which is a mistake because you will spend at least three years doing the work. Use the framework below, and check every claim against the latest [NRMP data](/wiki/specialties/img-match-rates-by-specialty).
+
+> [!NOTE] For the 2027 Match, NRMP says Emergency Medicine and Obstetrics and Gynecology programs use ResidencyCAS rather than ERAS, and all other specialties use ERAS. If you are applying to either of those two specialties, the ERAS steps, fees and signaling described on this page may not apply to them. Read the [Emergency Medicine](/wiki/specialties/emergency-medicine) and [OB-GYN](/wiki/specialties/obstetrics-and-gynecology) guides, and confirm the current system with NRMP.
 
 ## Step 1: Fit, before competitiveness
 

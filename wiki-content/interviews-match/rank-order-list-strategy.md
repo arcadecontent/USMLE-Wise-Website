@@ -8,7 +8,7 @@ order: 3
 group: The Match
 keywords: [rank order list, rol, ranking programs, match strategy, true preference, couples, certify, nrmp]
 service: match
-related: [how-the-match-algorithm-works, interview-season-overview, match-week-timeline, if-you-do-not-match]
+related: [how-the-match-algorithm-works, interview-season-overview, match-week-timeline, if-you-do-not-match, couples-match]
 key_facts:
   - Rank programs in the order you truly prefer them: the algorithm is applicant-proposing, so honest ranking is the best strategy for an individual applicant.
   - Rank every program you would be willing to train in, because leaving one off only removes an option.

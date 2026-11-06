@@ -100,3 +100,5 @@ Do not rely on third-party estimates of how long administrative processing takes
 6. **Have a plan B.** See what your program does if your visa is delayed.
 
 > [!IMG TIP] If your visa is late, tell the program coordinator and the international office early. Programs have seen delays before and may have options, such as a later start, that they cannot offer if they hear about it at the last minute.
+
+Country-specific notes, including current entry restrictions that may affect some nationalities, are in the [country guides](/wiki/countries).

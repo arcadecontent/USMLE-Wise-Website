@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 1
 group: Core guides
 keywords: [ecfmg certification, ecfmg certificate, img requirements, intealth, usmle, pathways, world directory]
-related: [myintealth-account, world-directory-and-school-eligibility, epic-credential-verification, eras-token, exams/usmle-eligibility-for-imgs]
+related: [myintealth-account, world-directory-and-school-eligibility, epic-credential-verification, eras-token, exams/usmle-eligibility-for-imgs, certification-validity-and-expiry]
 key_facts:
   - ECFMG Certification is required for IMGs to enter ACGME-accredited residency in the US.
   - The core requirements are an eligible medical school, verified medical education credentials, passing USMLE Step 1 and Step 2 CK, and meeting the clinical and communication skills requirement through a Pathway.

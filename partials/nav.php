@@ -153,6 +153,10 @@
       <div class="msp-nav__item msp-nav__item--has-dd">
         <a href="/match-maker">Tools <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
         <div class="msp-nav__dropdown">
+          <a href="/mastery" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Mastery Platform</span>
+            <span class="msp-nav__dd-meta">Full course library</span>
+          </a>
           <a href="/match-maker" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Match Maker</span>
             <span class="msp-nav__dd-meta">Program list &amp; odds tool &middot; $100</span>
@@ -160,10 +164,6 @@
           <a href="/conference-finder" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Conference Finder</span>
             <span class="msp-nav__dd-meta">Find a conference to submit to</span>
-          </a>
-          <a href="/mastery" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Mastery Platform</span>
-            <span class="msp-nav__dd-meta">Full course library</span>
           </a>
         </div>
       </div>

@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 5
 group: Going deeper
 keywords: [case report, CARE guideline, patient consent, de-identification, HIPAA, clinical vignette, imgs, publication]
-related: [how-to-publish, posters-and-conferences, predatory-journals, authorship-and-author-order, how-programs-view-research]
+related: [how-to-publish, posters-and-conferences, predatory-journals, authorship-and-author-order, how-programs-view-research, pubmed-and-orcid-setup]
 key_facts:
   - The CARE guideline is the standard reporting checklist for case reports and is listed by the EQUATOR Network.
   - ICMJE says patients have a right to privacy that should not be violated without informed consent, and consent should be written and archived.

@@ -9,7 +9,7 @@ group: Residency visas
 keywords: [j-1, h-1b, visa, residency, ecfmg sponsorship, 212e, conrad 30, two year rule]
 service: match
 legal: true
-related: []
+related: [visas/j1-visa-process, visas/h1b-for-residents, visas/two-year-home-residency-rule, visas/conrad-30-waiver, visas/visa-policy-changes-tracker]
 key_facts:
   - The J-1 is sponsored by ECFMG, and most IMG residents train on it.
   - The H-1B is sponsored by the residency program or hospital, and not every program offers it.
@@ -45,33 +45,33 @@ Most IMGs who match into residency need a visa to train in the United States. Th
 | After training | Usually a two-year home-country physical presence requirement, unless waived | No home-country requirement |
 | Path to a green card | Requires a waiver first, often with a service commitment | More direct, allows dual intent |
 | Family | J-2 dependents | H-4 dependents |
-| Typical limit | Length of the training program, up to a maximum set by the rules | Initial period with extensions up to a statutory limit |
+| Typical limit | The length of the training program, within the maximum the J-1 rules allow for medical training | An initial period with extensions up to a statutory limit |
 
 Treat the table as orientation, not a rule book. Details change and many cases have exceptions.
 
 ## How the J-1 works for residents
 
-The J-1 exchange visitor program is the route most IMG residents use. ECFMG is the sponsor for physicians entering graduate medical education, and the process starts after you match.
+The J-1 exchange visitor program is the route most IMG residents use. ECFMG is the sponsor for physicians entering graduate medical education, and the process starts after you match. The full steps are in the [J-1 visa process](/wiki/visas/j1-visa-process).
 
 - ECFMG typically requires evidence that you meet its requirements, including a statement from the health ministry of your home country in the usual cases (the "Statement of Need"). Requirements and exceptions change, so check ECFMG's current instructions.
 - The program submits information so ECFMG can issue the DS-2019 form, which you use to apply for the visa.
-- You pay fees to the government and to the sponsor. See the current figures at the sources below: visa fees, {{fact:j1_visa_fee}}.
+- You pay fees to the government and to the sponsor. Visa fees: {{fact:j1_visa_fee}}.
 
 ### The two-year home-country requirement
 
 Most J-1 physicians are subject to Section 212(e) of the Immigration and Nationality Act. Unless you obtain a waiver, you must return to your home country for two years before you can change status to certain other visas, apply for permanent residence, or return as H or L status.
 
-Common waiver routes exist, including state-based programs such as Conrad 30 that exchange a period of service in an underserved area for a waiver. They have limits on numbers, location and timing and are competitive in some places.
+Waiver routes exist, including state-based programs such as Conrad 30 that exchange a period of service in an underserved area for a waiver. They have limits on numbers, location and timing, and Conrad 30 in particular depends on a federal sunset date whose current status you should check before you rely on it. See the [two-year home residency rule](/wiki/visas/two-year-home-residency-rule), [J-1 waiver options](/wiki/visas/j1-waiver-options) and the [Conrad 30 page](/wiki/visas/conrad-30-waiver).
 
 > [!WARNING] Do not assume you can waive the requirement later without a plan. Waiver programs have eligibility rules and service commitments, and your specialty and location can affect your options.
 
 ## How the H-1B works for residents
 
-The H-1B is an employment visa. Your program sponsors you as an employee, which means they must be willing, financially able and administratively set up to file.
+The H-1B is an employment visa. Your program sponsors you as an employee, which means they must be willing, financially able and administratively set up to file. See the [H-1B guide for residents](/wiki/visas/h1b-for-residents) and [cap-exempt employers](/wiki/visas/h1b-cap-exempt-employers).
 
 - Many programs do not sponsor H-1B because of cost, legal workload or institutional policy.
 - Most H-1B residents need to have passed all required USMLE Steps, including Step 3, before the petition can be filed, because licensing requirements apply.
-- Some employers are exempt from the annual H-1B cap, such as many universities and affiliated non-profit hospitals. Whether your employer is exempt affects timing and feasibility: {{fact:h1b_cap_exempt_note}}.
+- Some employers are exempt from the annual H-1B cap, such as many universities and affiliated non-profit hospitals. Whether your employer is exempt affects timing and feasibility, so ask the program (see [cap-exempt employers](/wiki/visas/h1b-cap-exempt-employers)).
 - The H-1B allows dual intent, so you can pursue permanent residence while on the visa.
 
 ## How to decide
@@ -82,7 +82,7 @@ The H-1B is an employment visa. Your program sponsors you as an employee, which 
 4. **Think about your family.** Dependent rules and work authorization differ.
 5. **Ask each program directly.** Contact the program coordinator or the international office with specific questions rather than relying on a general list.
 
-> [!IMG TIP] Many IMGs apply only to H-1B programs because they prefer to avoid the home-country requirement, then discover the list is short. A broader plan that includes J-1 programs, with a clear view of waiver options, often gives more interviews. Weigh that against your goals.
+> [!IMG TIP] Many IMGs apply only to H-1B programs because they prefer to avoid the home-country requirement, then discover the list is short. A broader plan that includes J-1 programs, with a clear view of waiver options, can widen the number of programs you are able to apply to. Weigh that against your goals.
 
 ## Questions to ask programs
 
@@ -94,8 +94,15 @@ The H-1B is an employment visa. Your program sponsors you as an employee, which 
 
 ## Other visas you may encounter
 
-- **B-1/B-2 visitor visas** are used for short-term visits such as interviews and some observerships. They do not allow you to work.
-- **O-1** is for people with extraordinary ability and is uncommon for residents.
+- **B-1/B-2 visitor visas** are used for short-term visits such as interviews and some observerships. They do not allow you to work. See [B-1/B-2 for interviews and exams](/wiki/visas/b1-b2-for-interviews-and-exams).
+- **O-1** is for people with extraordinary ability and is uncommon for residents. See [the O-1 guide](/wiki/visas/o-1-visa-for-physicians).
 - **Green card holders and US citizens** do not need a residency visa.
 
-Each of these deserves its own guide, which this wiki will add.
+## Go deeper
+
+- [Your visa timeline after the Match](/wiki/visas/visa-timeline-after-the-match) and [visa delays and backup plans](/wiki/visas/visa-delays-and-backup-plans)
+- [Step 3 and H-1B timing](/wiki/visas/step-3-and-h1b-timing)
+- [Green card paths for physicians](/wiki/visas/green-card-for-physicians)
+- [Bringing your family: J-2 and H-4](/wiki/visas/dependents-j2-and-h4)
+- [Preparing for your visa interview](/wiki/visas/visa-interview-preparation)
+- [Visa policy changes tracker](/wiki/visas/visa-policy-changes-tracker)

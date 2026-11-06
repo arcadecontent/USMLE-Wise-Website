@@ -8,7 +8,7 @@ order: 7
 group: Money
 keywords: [resident salary, stipend, benefits, health insurance, parental leave, aamc survey, deductions, relocation, pgy]
 legal: true
-related: [arrival-checklist, taxes-for-j1-and-h1b-residents, housing-for-residents, banking-and-credit, application/eras-and-match-costs]
+related: [arrival-checklist, taxes-for-j1-and-h1b-residents, housing-for-residents, banking-and-credit, application/eras-and-match-costs, culture-and-work-differences]
 key_facts:
   - Residents are paid on a pay scale by PGY level, set by each institution, so compare programs instead of relying on a national figure.
   - The AAMC publishes an annual Survey of Resident/Fellow Stipends and Benefits, and the 2025 short version did not ask about benefits.

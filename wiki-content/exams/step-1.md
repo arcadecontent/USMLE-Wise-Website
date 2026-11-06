@@ -8,7 +8,7 @@ order: 1
 group: The three Steps
 keywords: [step 1, usmle step 1, pass fail, eligibility, registration, prometric, imgs]
 service: coaching-step1-mastery
-related: [application/eras-timeline]
+related: [exams/usmle-eligibility-for-imgs, exams/scheduling-with-prometric, exams/usmle-attempt-limits-and-retakes, exams/step-1-study-schedule, exams/step-2-ck, application/eras-timeline]
 key_facts:
   - Step 1 is reported as pass/fail only, since {{fact:step1_pass_fail_since}}.
   - It is a one-day, computer-based multiple-choice exam taken at a Prometric test center.
@@ -24,7 +24,7 @@ faq:
   - q: Can I retake Step 1 if I pass and want a higher result?
     a: No. USMLE does not allow retaking a Step you have already passed. Check the current Bulletin for the exact rule before you plan around it.
   - q: Should IMGs take Step 1 or Step 2 CK first?
-    a: Step 1 is the usual first exam because it is required for Step 2 CK eligibility in most cases, and its content underpins Step 2. Confirm the current eligibility requirements for your situation in the Bulletin.
+    a: Most candidates take Step 1 first because its content underpins Step 2 CK. The USMLE eligibility rules do not set a required order between the two, but Step 3 requires both. See when to take each Step, and confirm the current rules in the Bulletin.
   - q: How long should I study for Step 1?
     a: It depends on your starting point and how recently you did basic sciences. Many IMGs plan several months of dedicated study. Use self-assessment results, not a fixed number of weeks, to decide when you are ready.
 ---
@@ -35,7 +35,7 @@ USMLE Step 1 is the first of the three exams you must pass to become eligible fo
 
 Pass/fail does not make the exam easier or less important. It changes what the result tells programs.
 
-- **It is a gate.** No pass, no Step 2 CK in most cases, no ECFMG certification, no ERAS application.
+- **It is a gate.** No pass, no Step 3, no ECFMG certification, and programs expect to see a pass on your application.
 - **A fail is visible.** A failed attempt appears on your transcript, and program directors read it as a risk signal.
 - **Less differentiation, more weight on everything else.** With no score to compare, programs use Step 2 CK, US clinical experience, letters, research and the rest of your application to separate candidates.
 
@@ -69,7 +69,7 @@ IMGs do not apply to NBME. As of the 2026 transition, the general sequence is:
 - **Fee:** the examination fee changes over time and may include extra charges depending on your test region: {{fact:step_exam_fee}}.
 - **Where:** Prometric test centers operate in the United States and in many other countries. Seats can be scarce in popular locations and months, so check availability before you apply.
 - **When:** schedule as soon as your permit is issued if the dates you want are limited.
-- **Travel:** if you must travel to test, read the [[usce]] and visa guidance early, because a visitor visa application can take longer than the exam registration.
+- **Travel:** if you must travel to test, read the [B-1/B-2 visitor visa guide](/wiki/visas/b1-b2-for-interviews-and-exams) early, because a visitor visa application can take longer than the exam registration.
 
 ## Scoring, results and attempts
 
@@ -111,4 +111,4 @@ Adjust the length of each phase to your baseline. If you graduated some time ago
 
 ## What comes next
 
-After Step 1 you move on to Step 2 CK, then Step 3, alongside ECFMG certification requirements. Your Step 2 CK performance and your US clinical experience will do most of the work of setting you apart. See the [ERAS timeline](/wiki/application/eras-timeline) to understand how your exam dates fit into an application season.
+After Step 1 you move on to Step 2 CK, then Step 3, alongside ECFMG certification requirements (see [when to take each Step](/wiki/exams/when-to-take-each-step)). If you do not pass, read [what to do after failing a Step](/wiki/exams/what-to-do-after-failing-a-step). Your Step 2 CK performance and your US clinical experience will do most of the work of setting you apart. See the [ERAS timeline](/wiki/application/eras-timeline) to understand how your exam dates fit into an application season.

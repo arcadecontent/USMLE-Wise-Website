@@ -33,6 +33,8 @@ ERAS and NRMP are the two big charges of application season, and both depend on 
 
 > [!NOTE] We do not print amounts because the AAMC and NRMP revise them each season. Use the AAMC fee page and the MyERAS fee calculator for ERAS, and the [NRMP fee page](https://www.nrmp.org/intro-to-the-match/match-fees/) for the Match.
 
+> [!NOTE] For the 2027 Match, NRMP says Emergency Medicine and Obstetrics and Gynecology programs use ResidencyCAS rather than ERAS, and all other specialties use ERAS. If you are applying to either of those two specialties, the ERAS steps, fees and signaling described on this page may not apply to them. Read the [Emergency Medicine](/wiki/specialties/emergency-medicine) and [OB-GYN](/wiki/specialties/obstetrics-and-gynecology) guides, and confirm the current system with NRMP.
+
 ## ERAS: what is charged
 
 | Fee | How it works | Scales with |

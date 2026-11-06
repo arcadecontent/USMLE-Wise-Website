@@ -73,7 +73,7 @@ The State Department's Waiver Review Division makes the recommendation on most w
 
 Conrad 30 lets a state health department sponsor a limited number of J-1 physicians per year for a waiver. According to USCIS, the physician must agree to a full-time clinical contract in H-1B status at a facility in or serving a designated shortage area, for a minimum period set out on the USCIS page, and must obtain sponsorship from the state. Each state sets its own priorities and sponsors a limited number of physicians, so competition and rules differ by state and year.
 
-Because the program has needed periodic renewal by Congress and its authorization status has been uncertain, treat it as one possible route and not a guaranteed one. A dedicated guide to Conrad 30 and other waiver routes is planned; for now, use the USCIS page above and your state health department's own instructions.
+Because the program has needed periodic renewal by Congress and its authorization status has been uncertain, treat it as one possible route and not a guaranteed one. See the [Conrad 30 guide](/wiki/visas/conrad-30-waiver) and [J-1 waiver options](/wiki/visas/j1-waiver-options) for the routes in detail, and use the USCIS page above and your state health department's own instructions for current rules.
 
 > [!WARNING] Do not assume a waiver will be available when you need it. Eligibility, service commitments, location, specialty and timing all matter, and some J-1 physicians find the options narrower than they expected. Ask programs whether residents have successfully obtained waivers, and have a backup plan.
 

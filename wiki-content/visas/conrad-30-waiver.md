@@ -8,7 +8,7 @@ order: 9
 group: After residency
 keywords: [conrad 30, conrad state 30, j-1 waiver, 214(l), hpsa, flex slots, h-1b, three year service, 212(e)]
 legal: true
-related: [two-year-home-residency-rule, j1-waiver-options, h1b-cap-exempt-employers, green-card-for-physicians, visa-policy-changes-tracker]
+related: [two-year-home-residency-rule, j1-waiver-options, h1b-cap-exempt-employers, green-card-for-physicians, visa-policy-changes-tracker, glossary/conrad-30]
 key_facts:
   - Conrad 30 lets a state health department recommend a J-1 physician for a waiver of the two-year home-country requirement, in exchange for at least three years of full-time work in H-1B status at a qualifying facility.
   - Each state can request up to 30 waivers per fiscal year, and each state writes its own rules, deadlines and priorities.

@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 14
 group: Strategy
 keywords: [categorical, preliminary, transitional year, advanced position, joint a/p, pgy-1, img, match]
-related: [backup-specialties, choosing-a-specialty, general-surgery, application/preliminary-and-transitional-years, glossary/categorical]
+related: [backup-specialties, choosing-a-specialty, general-surgery, application/preliminary-and-transitional-years, glossary/categorical, interviews-match/prelim-to-categorical]
 key_facts:
   - A categorical position gives the full training needed for board certification in a specialty; a preliminary position is a one-year first year that does not.
   - Advanced positions start the year after the Match and require one or more years of preliminary training first, so those applicants need a separate first-year position.

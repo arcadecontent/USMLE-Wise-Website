@@ -8,7 +8,7 @@ order: 15
 group: Preparing for the exams
 keywords: [step 1 study schedule, dedicated study, study plan, 3 month plan, 6 month plan, 12 month plan, error log, self assessment]
 service: coaching-step1-mastery
-related: [step-1, how-long-to-study, question-banks-compared, nbme-self-assessments, when-to-take-each-step]
+related: [step-1, how-long-to-study, question-banks-compared, nbme-self-assessments, when-to-take-each-step, step-1-resources-guide]
 key_facts:
   - A good plan is built from phases, checkpoints and an error log, not from a fixed number of weeks.
   - The three timelines here are examples for different starting points, not recommendations or predictions.

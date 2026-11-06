@@ -53,7 +53,7 @@ These are not fixed numbers on an official card: they combine federal rules, sta
 
 ## Cap-exempt versus cap-subject employers
 
-Most H-1B petitions are limited by an annual cap, with registration and selection each spring. Certain employers are exempt, including many universities, non-profit entities affiliated with universities and some non-profit research organizations. For residency, that is often the difference between filing at any time and being tied to a once-a-year process that does not match a July start. USCIS describes the categories on its [H-1B specialty occupations page](https://www.uscis.gov/working-in-the-united-states/h-1b-specialty-occupations); for the current summary used on this wiki, see {{fact:h1b_cap_exempt_note}}.
+Most H-1B petitions are limited by an annual cap, with registration and selection each spring. Certain employers are exempt, including many universities, non-profit entities affiliated with universities and some non-profit research organizations. For residency, that is often the difference between filing at any time and being tied to a once-a-year process that does not match a July start. USCIS describes the categories on its [H-1B specialty occupations page](https://www.uscis.gov/working-in-the-united-states/h-1b-specialty-occupations); see also [cap-exempt employers](/wiki/visas/h1b-cap-exempt-employers).
 
 > [!NOTE] A new weighted selection system, based on wage level, applied to cap-subject registrations beginning with the fiscal year 2027 cap season (USCIS [cap season page](https://www.uscis.gov/working-in-the-united-states/temporary-workers/h-1b-specialty-occupations/h-1b-cap-season)). It concerns cap-subject employers; ask your program whether it is cap-exempt rather than assuming either way.
 

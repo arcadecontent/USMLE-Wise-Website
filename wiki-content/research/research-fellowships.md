@@ -9,7 +9,7 @@ group: Going deeper
 keywords: [research fellowship, research year, postdoctoral, research scholar, j-1 research, unpaid research, imgs, visa]
 service: research
 legal: true
-related: [finding-a-research-position, why-research-matters-for-imgs, how-programs-view-research, visas/j1-visa-process, visas/two-year-home-residency-rule]
+related: [finding-a-research-position, why-research-matters-for-imgs, how-programs-view-research, visas/j1-visa-process, visas/two-year-home-residency-rule, research-years-and-gaps]
 key_facts:
   - "Research fellowship" has no single meaning: some are paid appointments, some are unpaid volunteer roles, and some are fee-based programs.
   - Being paid in the US generally requires work authorization, and a visitor visa does not allow employment.

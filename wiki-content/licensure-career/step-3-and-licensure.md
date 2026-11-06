@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 2
 group: Licensure
 keywords: [step 3, licensure, state medical board, usmle time limit, seven year rule, attempt limit, full license, img, fsmb]
-related: [state-licensure-for-imgs, exams/step-3, exams/usmle-attempt-limits-and-retakes, exams/when-to-take-each-step, visas/step-3-and-h1b-timing]
+related: [state-licensure-for-imgs, exams/step-3, exams/usmle-attempt-limits-and-retakes, exams/when-to-take-each-step, visas/step-3-and-h1b-timing, ecfmg/certification-validity-and-expiry]
 key_facts:
   - Step 3 is the last USMLE exam, and state medical boards generally look for all three Steps before issuing a full license.
   - USMLE recommends that boards require Steps 1, 2 and 3 to be passed within a seven-year period, and the USMLE site says most licensing authorities do, but states set their own limits.

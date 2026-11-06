@@ -8,7 +8,7 @@ order: 7
 group: The Match
 keywords: [thank you note, post-interview communication, letter of intent, rank commitment, nrmp code of conduct, program signals, second look]
 service: match-interview
-related: [interview-season-overview, rank-order-list-strategy, questions-to-ask-programs, how-the-match-algorithm-works, managing-interview-invitations]
+related: [interview-season-overview, rank-order-list-strategy, questions-to-ask-programs, how-the-match-algorithm-works, managing-interview-invitations, second-looks-and-visits]
 key_facts:
   - NRMP's code of conduct lets applicants and programs exchange clarifying information after interviews, but not contact meant to influence or learn rankings.
   - Programs cannot ask you to reveal your ranking, other interviews, or signals, or imply that ranking depends on a statement of intent.

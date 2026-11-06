@@ -8,7 +8,7 @@ order: 2
 group: Core guides
 keywords: [img match rate, match statistics, nrmp, charting outcomes, non-us img, specialty, fill rate]
 service: match
-related: [choosing-a-specialty, internal-medicine, family-medicine, pediatrics, psychiatry]
+related: [choosing-a-specialty, internal-medicine, family-medicine, pediatrics, psychiatry, pathology, physical-medicine-and-rehabilitation]
 key_facts:
   - In the 2026 Main Residency Match, the PGY-1 match rate was 70.0 percent for U.S. citizen IMGs and 56.4 percent for non-U.S. citizen IMGs (NRMP).
   - In 2026, 52.8 percent of matched non-U.S. citizen IMGs obtained positions in Internal Medicine.

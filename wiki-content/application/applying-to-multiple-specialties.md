@@ -32,6 +32,8 @@ faq:
 
 Yes, you can apply to more than one specialty, and many applicants do. **Each specialty is its own set of applications, with its own fees, signals and tailored documents, but you rank everything on one NRMP rank list.** The mechanics are manageable; the hard parts are cost, time and telling two honest stories.
 
+> [!NOTE] For the 2027 Match, NRMP says Emergency Medicine and Obstetrics and Gynecology programs use ResidencyCAS rather than ERAS, and all other specialties use ERAS. If you are applying to either of those two specialties, the ERAS steps, fees and signaling described on this page may not apply to them. Read the [Emergency Medicine](/wiki/specialties/emergency-medicine) and [OB-GYN](/wiki/specialties/obstetrics-and-gynecology) guides, and confirm the current system with NRMP.
+
 ## How common it is
 
 AMA, citing AAMC ERAS data, reports that about 42% of applicants applied to more than one specialty in the 2026 cycle. Among IMGs the share was about 19.2%. Cross-applicants submitted more applications on average (130.5 versus 114.3 for IMGs overall). Internal medicine, family medicine and transitional year were the most common specialties applicants cross-applied to. This is descriptive data, not proof that cross-applying helps or hurts.

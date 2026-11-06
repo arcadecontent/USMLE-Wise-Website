@@ -34,6 +34,8 @@ A program signal lets you tell a specific residency program, at the moment you a
 
 > [!NOTE] Signal counts, tiers and participating programs change by cycle. The figures here are from AAMC's 2027 materials. Always check AAMC's current table before you plan.
 
+> [!NOTE] For the 2027 Match, NRMP says Emergency Medicine and Obstetrics and Gynecology programs use ResidencyCAS rather than ERAS, and all other specialties use ERAS. If you are applying to either of those two specialties, the ERAS steps, fees and signaling described on this page may not apply to them. Read the [Emergency Medicine](/wiki/specialties/emergency-medicine) and [OB-GYN](/wiki/specialties/obstetrics-and-gynecology) guides, and confirm the current system with NRMP.
+
 ## How signaling works (rules)
 
 - You can send signals only for specialties you apply to and to **participating programs**. You cannot signal a program that has chosen not to take part.

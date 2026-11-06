@@ -8,7 +8,7 @@ order: 2
 group: Building the application
 keywords: [myeras, eras application, application sections, experiences, scholarly work, geographic preferences, documents, imgs]
 service: match-eras-cv
-related: [application/eras-timeline, application/eras-experiences-section, application/personal-statement-guide, application/letters-of-recommendation, ecfmg/eras-token]
+related: [application/eras-timeline, application/eras-experiences-section, application/personal-statement-guide, application/letters-of-recommendation, ecfmg/eras-token, mspe-and-transcripts-for-imgs]
 key_facts:
   - MyERAS has an Application part (sections you fill in) and a Documents part (personal statement, letters, transcripts, MSPE).
   - IMGs need an ERAS token from ECFMG / Intealth before they can register in MyERAS.
@@ -33,6 +33,8 @@ faq:
 The MyERAS application has two halves: an **Application** you fill in (personal details, education, experiences, scholarly work, specialty questions) and a **Documents** area where you manage your personal statement, letters of recommendation, USMLE transcript, MSPE and medical school transcript. You then certify and submit. This guide follows the order of AAMC's 2027 MyERAS Applicant User Guide, so you can open it beside this page.
 
 > [!NOTE] Section names, limits and options are set by AAMC and change between cycles. Treat the numbers below as the 2027 cycle's, and check the current user guide if you are reading this for a later season. For the calendar, see the [ERAS timeline](/wiki/application/eras-timeline).
+
+> [!NOTE] For the 2027 Match, NRMP says Emergency Medicine and Obstetrics and Gynecology programs use ResidencyCAS rather than ERAS, and all other specialties use ERAS. If you are applying to either of those two specialties, the ERAS steps, fees and signaling described on this page may not apply to them. Read the [Emergency Medicine](/wiki/specialties/emergency-medicine) and [OB-GYN](/wiki/specialties/obstetrics-and-gynecology) guides, and confirm the current system with NRMP.
 
 ## Before you start: token and registration
 

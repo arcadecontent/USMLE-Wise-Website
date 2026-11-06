@@ -8,7 +8,7 @@ order: 10
 group: Choosing programs
 keywords: [program filters, application screening, eras filters, usmle cutoff, visa filter, years since graduation, signals, imgs]
 service: match
-related: [application/identifying-img-friendly-programs, application/building-a-program-list, application/program-signaling-explained, application/myeras-walkthrough]
+related: [application/identifying-img-friendly-programs, application/building-a-program-list, application/program-signaling-explained, application/myeras-walkthrough, glossary/yog]
 key_facts:
   - Programs can filter applicants inside ERAS, including by program signals and by geographic and setting preferences.
   - AAMC tells programs not to use signals in isolation as a screening tool, but some programs may.

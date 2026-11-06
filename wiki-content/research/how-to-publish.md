@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 6
 group: Going deeper
 keywords: [publish a paper, peer review, manuscript submission, cover letter, revision, EQUATOR, reporting guidelines, PubMed]
-related: [case-reports, predatory-journals, authorship-and-author-order, posters-and-conferences, how-programs-view-research]
+related: [case-reports, predatory-journals, authorship-and-author-order, posters-and-conferences, how-programs-view-research, pubmed-and-orcid-setup]
 key_facts:
   - Match the study type to its reporting guideline (for example CARE, STROBE, PRISMA, CONSORT) before you write.
   - Submit to one journal at a time and disclose related prior reports, preprints and conference abstracts in the cover letter.

@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 1
 group: The Match
 keywords: [residency interviews, interview season, nrmp rules, invitations, virtual interview, imgs, match participation agreement]
-related: [common-interview-questions, rank-order-list-strategy, how-the-match-algorithm-works, application/eras-timeline, application/program-signaling-explained]
+related: [common-interview-questions, rank-order-list-strategy, how-the-match-algorithm-works, application/eras-timeline, application/program-signaling-explained, second-looks-and-visits]
 key_facts:
   - Interview invitations come from programs after they review your ERAS application, and many IMGs receive fewer than they apply for.
   - NRMP rules expect applicants to accept only interviews they intend to keep and to give one to two weeks' notice when cancelling.

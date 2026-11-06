@@ -32,6 +32,8 @@ faq:
 
 Nobody can give you a trustworthy single number, because the right count depends on your specialty, your profile and how many programs can actually consider you. The reliable approach is to **count eligible programs, not total programs**, then balance your chances and your budget.
 
+> [!NOTE] For the 2027 Match, NRMP says Emergency Medicine and Obstetrics and Gynecology programs use ResidencyCAS rather than ERAS, and all other specialties use ERAS. If you are applying to either of those two specialties, the ERAS steps, fees and signaling described on this page may not apply to them. Read the [Emergency Medicine](/wiki/specialties/emergency-medicine) and [OB-GYN](/wiki/specialties/obstetrics-and-gynecology) guides, and confirm the current system with NRMP.
+
 ## What the published data say
 
 NRMP's 2025 Charting Outcomes applicant survey reports several patterns that matter here:
