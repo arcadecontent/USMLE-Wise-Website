@@ -54,7 +54,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
   <!-- HERO -->
   <section class="rw-hero" style="position:relative;overflow:hidden;isolation:isolate;padding:clamp(48px,7vw,88px) clamp(20px,5vw,48px) clamp(56px,7vw,88px);background:radial-gradient(1000px 520px at 88% -8%, var(--uw-blue-50), transparent), radial-gradient(700px 420px at 0% 30%, var(--uw-red-50), transparent 70%), var(--uw-surface)">
-    <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden">
+    <div class="rw-wall-clip" aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden">
       <div class="rw-wall" style="position:absolute;left:50%;top:50%;width:150%;transform:translate(-50%,-50%) rotate(-8deg);display:grid;grid-template-columns:repeat(5,1fr);gap:18px;opacity:.22;filter:saturate(.7)"><img src="/assets/research-wise/award-1.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-2.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-3.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-4.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-5.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-5.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-4.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-1.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-3.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-2.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-2.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-3.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-1.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-5.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"><img src="/assets/research-wise/award-4.webp" alt="" loading="eager" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 20px rgba(24,28,77,.18)"></div>
       <div style="position:absolute;inset:0;background:radial-gradient(ellipse 62% 58% at 50% 42%, rgba(255,255,255,.97) 35%, rgba(255,255,255,.82) 62%, rgba(255,255,255,.45) 100%)"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(to bottom, rgba(255,255,255,0), #fff)"></div>
@@ -98,7 +98,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   </section>
 
   <!-- STATS -->
-  <section style="background:var(--uw-surface);border-top:1px solid var(--uw-border);border-bottom:1px solid var(--uw-border);padding:clamp(44px,6vw,72px) clamp(20px,5vw,48px)">
+  <section class="rw-stats-sec" style="background:var(--uw-surface);border-top:1px solid var(--uw-border);border-bottom:1px solid var(--uw-border);padding:clamp(44px,6vw,72px) clamp(20px,5vw,48px)">
     <div class="rw-stats" style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));text-align:center;align-items:center">
       <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;" class="rw-stat"><span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-0.02em;color:var(--uw-blue-500);font-variant-numeric:tabular-nums"><span data-rw-count="90">90</span>+</span><span style="font-size:15px;line-height:1.45;color:var(--uw-ink-500);max-width:16ch;text-wrap:balance">Students &amp; professionals guided</span></div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;border-left:1px solid var(--uw-border);" class="rw-stat"><span style="font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-0.02em;color:var(--uw-blue-500);font-variant-numeric:tabular-nums"><span data-rw-count="30">30</span>+</span><span style="font-size:15px;line-height:1.45;color:var(--uw-ink-500);max-width:16ch;text-wrap:balance">Publications &amp; presentations</span></div>
@@ -293,9 +293,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
       <div class="rw-mentors" style="margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
-        <div style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
+        <div class="rw-mentor" style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
           <img src="/assets/research-wise/mentor-2.webp" alt="Shivani Ravipati" style="flex:none;width:104px;height:104px;object-fit:cover;object-position:top;border-radius:var(--r-md);display:block;background:var(--uw-blue-50)">
-          <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+          <div class="rw-mentor__body" style="display:flex;flex-direction:column;gap:8px;min-width:0">
             <span style="font-size:18px;font-weight:600;color:var(--uw-ink-900)">Shivani Ravipati</span>
             <span style="align-self:flex-start;padding:3px 10px;border-radius:999px;background:var(--uw-blue-50);color:var(--uw-blue-600);font-size:12.5px;font-weight:600">Teaches Day 1</span>
             <ul style="margin:6px 0 0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:5px;font-size:14.5px;line-height:1.45;color:var(--uw-ink-700)">
@@ -303,9 +303,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </ul>
           </div>
         </div>
-        <div style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
+        <div class="rw-mentor" style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
           <img src="/assets/research-wise/mentor-3.webp" alt="Muhammad Ahmad Barakat" style="flex:none;width:104px;height:104px;object-fit:cover;object-position:top;border-radius:var(--r-md);display:block;background:var(--uw-blue-50)">
-          <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+          <div class="rw-mentor__body" style="display:flex;flex-direction:column;gap:8px;min-width:0">
             <span style="font-size:18px;font-weight:600;color:var(--uw-ink-900)">Muhammad Ahmad Barakat</span>
             <span style="align-self:flex-start;padding:3px 10px;border-radius:999px;background:var(--uw-blue-50);color:var(--uw-blue-600);font-size:12.5px;font-weight:600">Teaches Days 2 and 3</span>
             <ul style="margin:6px 0 0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:5px;font-size:14.5px;line-height:1.45;color:var(--uw-ink-700)">
@@ -377,7 +377,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.2vw,48px);line-height:1.15;letter-spacing:-0.02em;color:#fff;margin:0;text-wrap:balance">Day 1 starts Sunday, November 15, 2026.</h2>
       <p style="margin:14px 0 0;font-size:17px;color:var(--uw-blue-100)">Then Sunday, November 22, and Sunday, November 29.</p>
       <p style="margin:14px 0 0;max-width:560px;font-size:16px;line-height:1.6;color:#fff;text-wrap:pretty">3 Sundays from now, you'll have your first research project underway. $49, with a full refund if you're not satisfied.</p>
-      <div style="margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+      <div class="rw-final-ctas" style="margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
         <a class="rwh1" href="#reserve" data-rw-reserve style="display:inline-flex;align-items:center;height:54px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16.5px;font-weight:600">Reserve my spot · $49</a>
         <a class="rwh4" href="https://wa.me/19192015700" style="display:inline-flex;align-items:center;gap:8px;height:54px;padding:0 26px;border-radius:var(--r-md);border:1.5px solid rgba(255,255,255,.7);color:#fff;font-size:16.5px;font-weight:600">Text us a question</a>
       </div>
@@ -444,11 +444,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </script>
 
     </main>
-
-    <!-- ============== MOBILE STICKY CTA ============== -->
-    <div class="rw-sticky" id="rwSticky">
-      <a class="btn btn--primary" href="#reserve" data-rw-reserve>Reserve your spot &middot; $49</a>
-    </div>
 
     <!-- ============== RESERVE POPUP (on-page payment: our fields + Stripe's card field, via mastery.usmlewise.com) ============== -->
     <div class="rw-pay" id="rwPay" role="dialog" aria-modal="true" aria-labelledby="rwPayTitle" hidden>
@@ -546,7 +541,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       .rw-pay__done p{color:#32343f;margin:0 0 16px}
       .rw-pay__fine{font-size:14px;margin-top:14px!important}
       body.rw-pay-open{overflow:hidden}
-      @media (max-width:480px){.rw-pay{padding:0;align-items:flex-end}.rw-pay__panel{border-radius:16px 16px 0 0;max-height:94vh;padding:20px 16px}}
+      @media (max-width:480px){.rw-pay{padding:0;align-items:flex-end}.rw-pay__panel{border-radius:16px 16px 0 0;max-height:94vh;max-height:94dvh;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px))}.rw-field input{font-size:16px}}
     </style>
     <script>
     (function () {
@@ -554,7 +549,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       // Publishable keys are public by design; this one belongs to the Stripe account Mastery charges.
       var STRIPE_KEY = 'pk_live_51QP4cwJDyWnuZEnfkf8zIUSEIgSpPgUPMyrg4m8UIeinhWBSeM0Do5lwYvffKwsjVj7DGUeJwLNUPKRiCD5yUd5P00yYL7zDFz';
       var CARD_STYLE = {
-        base: { fontFamily: 'Geist, Inter, system-ui, sans-serif', fontSize: '15px', color: '#14151c', '::placeholder': { color: '#9a9ca8' } },
+        base: { fontFamily: 'Geist, Inter, system-ui, sans-serif', fontSize: '16px', color: '#14151c', '::placeholder': { color: '#9a9ca8' } },
         invalid: { color: '#a01517', iconColor: '#a01517' }
       };
 
@@ -668,19 +663,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       document.querySelectorAll('[data-rw-reserve]').forEach(function (a) { a.addEventListener('click', openDialog); });
       dlg.querySelectorAll('[data-rw-close]').forEach(function (el) { el.addEventListener('click', closeDialog); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden) closeDialog(); });
-
-      // Mobile sticky CTA: slides up once the hero's own buttons have scrolled
-      // past, so it never sits on top of the button it duplicates.
-      var sticky = document.getElementById('rwSticky');
-      var heroCta = document.querySelector('.msp-hero .msp-cta-row');
-      if (sticky && heroCta && 'IntersectionObserver' in window) {
-        new IntersectionObserver(function (entries) {
-          var en = entries[0];
-          sticky.classList.toggle('is-on', !en.isIntersecting && en.boundingClientRect.top < 0);
-        }, { threshold: 0 }).observe(heroCta);
-      } else if (sticky) {
-        sticky.classList.add('is-on');
-      }
 
       // Video testimonials: the YouTube player only loads on click.
       document.querySelectorAll('[data-rw-yt]').forEach(function (btn) {

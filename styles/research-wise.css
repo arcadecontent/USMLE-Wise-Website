@@ -7,7 +7,15 @@
 .rw section { scroll-margin-top: 84px; }
 .rw button { font-family: inherit; }
 
-  .rw { font-family: var(--font-sans); color: var(--uw-ink-800); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  .rw { font-family: var(--font-sans); color: var(--uw-ink-800); -webkit-font-smoothing: antialiased; overflow-x: hidden; overflow-x: clip; }
+  /* The hero's decorative award wall is a rotated grid 1.5x to 2.6x the screen
+     width. overflow:hidden alone has let transformed layers leak on iOS Safari,
+     and Safari before 16 ignores overflow-x:clip (hence the hidden fallback
+     above), so it is clipped three ways. */
+  .rw-wall-clip { contain: paint; -webkit-clip-path: inset(0); clip-path: inset(0); }
+  .rw-hero { contain: paint; }
+  /* Swiping the awards row past its end shouldn't drag the page sideways. */
+  .rw-aw-row { overscroll-behavior-x: contain; }
   .rw a { color: inherit; text-decoration: none; }
   .rw a.rw-link { color: var(--uw-blue-500); text-decoration: underline; text-underline-offset: 3px; }
   .rw a.rw-link:hover { color: var(--uw-red-500); }
@@ -50,43 +58,41 @@
     .rw-tz td, .rw-tz th { padding: 11px 12px !important; font-size: 14px !important; }
   }
 
+/* ---- PHONES ----
+   Inline styles carry the desktop design, so these overrides need !important. */
+@media (max-width: 640px) {
+  /* Desktop section rhythm (64-96px) leaves long empty stretches on a phone. */
+  .rw > section:not(.rw-hero) { padding-top: 52px !important; padding-bottom: 52px !important; }
+  .rw > section.rw-stats-sec { padding-top: 36px !important; padding-bottom: 36px !important; }
+
+  /* Hero schedule strip: the full breakdown sits further down, so keep this compact. */
+  .rw-dc-col { padding: 14px 18px !important; gap: 2px !important; }
+  .rw-dc-col > span:nth-child(2) { font-size: 20px !important; }
+
+  /* Stats: top-align so the numbers sit on one line even when labels wrap differently. */
+  .rw-stats { align-items: start !important; }
+  .rw-stat > span:last-child { font-size: 14px !important; max-width: none !important; }
+
+  /* Every primary CTA gets the same full-width thumb target. */
+  .rw .rwh1, .rw .rwh4 { width: 100%; max-width: 420px; box-sizing: border-box; justify-content: center; }
+  .rw-final-ctas { width: 100%; flex-direction: column; align-items: center; }
+
+  /* Mentor cards: small photo beside the name, credentials list at full width
+     instead of squeezed into the column next to the photo. */
+  .rw-mentor { display: grid !important; grid-template-columns: 72px minmax(0, 1fr); column-gap: 16px !important; row-gap: 6px !important; align-items: center !important; padding: 20px !important; }
+  .rw-mentor > img { grid-column: 1; grid-row: 1 / span 2; width: 72px !important; height: 72px !important; }
+  .rw-mentor__body { display: contents !important; }
+  .rw-mentor__body > span:first-child { grid-column: 2; grid-row: 1; align-self: end; }
+  .rw-mentor__body > span:nth-child(2) { grid-column: 2; grid-row: 2; align-self: start; justify-self: start; }
+  .rw-mentor__body > ul { grid-column: 1 / -1; grid-row: 3; margin-top: 10px !important; }
+
+  /* FAQ answers can use the full width; the +/- column only matters for the question row. */
+  .rw-faq__a { padding-right: 0 !important; }
+}
+
 .rw .rwh1:hover{background:var(--uw-red-600)!important;box-shadow:var(--shadow-red)!important}
 .rw .rwh2:hover{color:var(--uw-red-500)!important}
 .rw .rwh3:hover{box-shadow:var(--shadow-md)!important;transform:translateY(-2px)!important}
 .rw .rwh4:hover{background:rgba(255,255,255,.08)!important;border-color:#fff!important}
 
-/* ---- MOBILE STICKY CTA ----
-   Sits directly above the WhatsApp bar from partials/whatsapp-float.php
-   (36px tall at this breakpoint), which is why the offsets below stack on
-   top of it rather than starting at the viewport edge. */
-.rw-sticky { display: none; }
-@media (max-width: 640px) {
-  .rw-sticky {
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: calc(36px + env(safe-area-inset-bottom, 0px));
-    z-index: 89;
-    padding: 10px 16px;
-    background: var(--uw-bg);
-    border-top: 1px solid var(--uw-border);
-    box-shadow: 0 -6px 20px rgba(20, 21, 28, 0.10);
-    transform: translateY(130%);
-    transition: transform var(--dur-med) var(--ease-out);
-  }
-  .rw-sticky.is-on { transform: none; }
-  .rw-sticky .btn { width: 100%; justify-content: center; }
-  /* whatsapp-float.php already pads the body for its own bar; the Reserve bar
-     sits on top of that, so the extra clearance goes on the footer rather than
-     the body, which would show as a pale strip below the dark footer.
-     Scoped under body.msp to outrank blog.css, which redefines .msp-foot's
-     padding-block and is loaded after this file. */
-  body.msp .msp-foot { padding-bottom: calc(clamp(40px, 5vw, 64px) + 66px); }
-  /* The checkout popup locks scrolling; the bar behind it would just be noise. */
-  body.rw-pay-open .rw-sticky { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .rw-sticky { transition: none; }
-}
 
