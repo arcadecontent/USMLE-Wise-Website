@@ -60,6 +60,11 @@ $canonical       = $abs;
 $bodyClass       = 'msp wk';
 $stylesheets     = ['/styles/blog.css', '/styles/wiki.css']; // blog.css carries the shared nav and footer styles
 $scripts         = ['/js/blog.js', '/js/wiki.js']; // blog.js drives the sticky nav state
+$toolName = (isset($article['tool']) && preg_match('/\A[a-z0-9-]+\z/', $article['tool'])
+    && is_file(__DIR__ . '/partials/wiki-tool-' . $article['tool'] . '.php')) ? $article['tool'] : null;
+if ($toolName !== null) {
+    $scripts[] = '/js/wiki-tool-' . $toolName . '.js';
+}
 $unreviewed = !$isDraft && !usmlewise_wiki_is_reviewed($article);
 if ($isDraft) {
     $metaRobots = 'noindex, nofollow';
@@ -168,6 +173,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </ul>
       </section>
       <?php endif; ?>
+
+      <?php if ($toolName !== null): include __DIR__ . '/partials/wiki-tool-' . $toolName . '.php'; endif; ?>
 
       <div class="wk-prose">
         <?php echo $rendered['html']; ?>

@@ -58,6 +58,13 @@ function usmlewise_wiki_sections(): array
             'intro' => 'If you are an international medical graduate (IMG) thinking about training in the United States, begin here. These guides lay out the whole journey in order, so you know what comes next and what to ignore for now.',
             'review_days' => 180,
         ],
+        'tools' => [
+            'title' => 'Tools',
+            'icon'  => 'calendar-range',
+            'blurb' => 'Interactive planners that turn the guides into a plan for your own situation.',
+            'intro' => 'Planning tools built on the guides in this wiki. They run in your browser, store nothing, and link back to the guide behind every step.',
+            'review_days' => 180,
+        ],
         'exams' => [
             'title' => 'USMLE Exams',
             'icon'  => 'file-check-2',

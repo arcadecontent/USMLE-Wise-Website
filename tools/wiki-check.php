@@ -95,6 +95,14 @@ foreach ($all as $key => $a) {
         }
     }
 
+    // Embedded tool.
+    if (!empty($a['tool'])) {
+        $tn = (string) $a['tool'];
+        if (!preg_match('/\A[a-z0-9-]+\z/', $tn) || !is_file(__DIR__ . '/../partials/wiki-tool-' . $tn . '.php') || !is_file(__DIR__ . '/../js/wiki-tool-' . $tn . '.js')) {
+            $err($key, "tool '$tn' needs partials/wiki-tool-$tn.php and js/wiki-tool-$tn.js");
+        }
+    }
+
     // Service CTA.
     if (!empty($a['service']) && !isset($services[$a['service']])) {
         $err($key, "unknown service '{$a['service']}' (see usmlewise_wiki_services)");
@@ -170,7 +178,7 @@ foreach ($all as $key => $a) {
     $words = str_word_count(strip_tags($body));
     if ($a['section'] === 'glossary') {
         if ($words < 40) { $warn($key, "only $words words (glossary entries should be ~100-300)"); }
-    } elseif ($words < 600) {
+    } elseif ($words < 600 && $a['section'] !== 'tools') {
         $warn($key, "only $words words (reference guides should be substantive, ~900+)");
     }
 }
