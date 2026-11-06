@@ -31,9 +31,9 @@ function usmlewise_wiki_facts(): array
         'step1_pass_fail_since' => [
             'value'      => 'January 26, 2022',
             'source'     => 'USMLE.org: Step 1 pass/fail reporting',
-            'url'        => 'https://www.usmle.org/usmle-step-1-transition-passfail-only-score-reporting',
-            'checked_on' => '',
-            'verified'   => false,
+            'url'        => 'https://www.usmle.org/step-1-passfail-score-reporting-implementation-date',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // confirmed against usmle.org (search result page of the USMLE site); exams on/after this date are pass/fail only
         ],
         'step2cs_discontinued' => [
             'value'      => 'January 2021',
@@ -45,9 +45,9 @@ function usmlewise_wiki_facts(): array
         'usmle_attempts_per_step' => [
             'value'      => '4',
             'source'     => 'USMLE Bulletin of Information: eligibility and attempt limits',
-            'url'        => 'https://www.usmle.org/bulletin-information',
-            'checked_on' => '',
-            'verified'   => false,
+            'url'        => 'https://www.usmle.org/common-questions/attempt-limit',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // usmle.org attempt-limit page read by a writer; also matches the 2021 Bulletin change from six to four
         ],
         'step1_passing_standard' => [
             'value'      => '',
@@ -55,6 +55,13 @@ function usmlewise_wiki_facts(): array
             'url'        => 'https://www.usmle.org/scores-transcripts',
             'checked_on' => '',
             'verified'   => false,
+        ],
+        'step2ck_passing_standard' => [
+            'value'      => '218',
+            'source'     => 'USMLE.org: examination results and scoring (Step 2 CK minimum passing score for exams on or after July 1, 2025)',
+            'url'        => 'https://www.usmle.org/scores-transcripts/examination-results-and-scoring',
+            'checked_on' => '2026-11-06',
+            'verified'   => true, // matches a USMLE search summary and a writer's read of the usmle.org scoring page
         ],
         'step_exam_fee' => [
             'value'      => '',

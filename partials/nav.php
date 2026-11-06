@@ -178,6 +178,12 @@
             <span class="msp-nav__dd-name">Research Awards</span>
             <span class="msp-nav__dd-meta">Conference wins by our students</span>
           </a>
+          <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/data/wiki.php'; if (USMLEWISE_WIKI_NAV_LIVE || usmlewise_wiki_show_drafts()): ?>
+          <a href="/wiki" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Wiki</span>
+            <span class="msp-nav__dd-meta">The complete IMG guide</span>
+          </a>
+          <?php endif; ?>
           <a href="/blog" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Blog</span>
             <span class="msp-nav__dd-meta">Guides &amp; match strategy</span>

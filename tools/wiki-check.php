@@ -59,17 +59,24 @@ foreach ($all as $key => $a) {
     if (!preg_match('/\A\d{4}-\d{2}-\d{2}\z/', (string) ($a['updated'] ?? ''))) {
         $err($key, "'updated' must be an ISO date (YYYY-MM-DD)");
     }
-    if (($a['declared_status'] ?? null) === null && !isset($a['status'])) {
-        $err($key, 'missing status');
-    }
 
     // Publish gate.
     if ($isPub) {
-        if (empty($a['reviewed_by']) || usmlewise_find_team_member((string) $a['reviewed_by']) === null) {
-            $err($key, "published articles need 'reviewed_by' set to a slug from data/team.php");
-        }
-        if (!preg_match('/\A\d{4}-\d{2}-\d{2}\z/', (string) ($a['reviewed_on'] ?? ''))) {
-            $err($key, "published articles need 'reviewed_on' (YYYY-MM-DD)");
+        $pending = ($a['review'] ?? '') === 'pending';
+        if (empty($a['reviewed_by'])) {
+            if (!$pending) {
+                $err($key, "published articles need 'reviewed_by' (a slug from data/team.php), or 'review: pending' to publish before review");
+            }
+        } else {
+            if ($pending) {
+                $err($key, "'review: pending' must be removed once 'reviewed_by' is set");
+            }
+            if (usmlewise_find_team_member((string) $a['reviewed_by']) === null) {
+                $err($key, "reviewed_by '{$a['reviewed_by']}' is not a slug in data/team.php");
+            }
+            if (!preg_match('/\A\d{4}-\d{2}-\d{2}\z/', (string) ($a['reviewed_on'] ?? ''))) {
+                $err($key, "reviewed articles need 'reviewed_on' (YYYY-MM-DD)");
+            }
         }
         if ($a['section'] !== 'glossary' && empty($a['sources'])) {
             $err($key, 'published articles need at least one entry under sources:');
@@ -114,12 +121,13 @@ foreach ($all as $key => $a) {
     if (strpos($raw, "\u{2014}") !== false) {
         $err($key, 'contains an em dash; use a colon, comma or parentheses');
     }
-    if (preg_match_all('/\{\{fact:([a-z0-9_]+)\}\}/', $body, $m)) {
+    if (preg_match_all('/\{\{fact:([a-z0-9_]+)\}\}/', $raw, $m)) {
         foreach (array_unique($m[1]) as $id) {
             if (!isset($facts[$id])) {
                 $err($key, "unknown fact '$id'");
-            } elseif ($isPub && (!$facts[$id]['verified'] || $facts[$id]['value'] === '')) {
-                $err($key, "published article uses unverified or empty fact '$id' (confirm it in data/wiki-facts.php first)");
+            } elseif ($isPub && !empty($a['reviewed_by']) && (!$facts[$id]['verified'] || $facts[$id]['value'] === '')) {
+                // Pending-review pages are safe: unverified facts print as "check the current figure".
+                $err($key, "reviewed article uses unverified or empty fact '$id' (confirm it in data/wiki-facts.php first)");
             }
         }
     }

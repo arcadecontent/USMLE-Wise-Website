@@ -21,6 +21,24 @@ require_once __DIR__ . '/wiki-facts.php';
 
 const USMLEWISE_WIKI_DIR = __DIR__ . '/../wiki-content';
 
+/**
+ * Launch switch for the site-wide "Wiki" links in the nav and footer. Leave
+ * false until the first articles are reviewed and published; flip to true in the
+ * same commit that publishes them. (On localhost the links always show, so the
+ * team can preview.) The wiki URLs themselves need no flag: with nothing
+ * published, /wiki and every section 404 on the live site.
+ */
+const USMLEWISE_WIKI_NAV_LIVE = true;
+
+/**
+ * Publishing without review. An article may carry `status: published` and
+ * `review: pending` (no reviewed_by). It is live, but shows a visible notice
+ * that it has not been reviewed by a USMLE Wise expert, and never claims a
+ * reviewer. Set this to true to also keep such pages out of search engines
+ * (noindex) until they are reviewed.
+ */
+const USMLEWISE_WIKI_NOINDEX_UNREVIEWED = false;
+
 /* ------------------------------------------------------------------ */
 /* Sections                                                            */
 /* ------------------------------------------------------------------ */
@@ -269,6 +287,12 @@ function usmlewise_wiki_all(): array
     return $all;
 }
 
+/** True when a named team member has signed off on the article. */
+function usmlewise_wiki_is_reviewed(array $a): bool
+{
+    return !empty($a['reviewed_by']);
+}
+
 function usmlewise_wiki_visible(array $a): bool
 {
     return $a['status'] === 'published' || usmlewise_wiki_show_drafts();
@@ -333,7 +357,7 @@ function usmlewise_wiki_slugify(string $text): string
     return trim($t, '-') ?: 'section';
 }
 
-/** term slug => short definition, from the glossary articles' description. */
+/** term slug => ['def' => short definition, 'title' => display name], from the glossary articles. */
 function usmlewise_wiki_glossary(): array
 {
     static $g = null;
@@ -341,7 +365,7 @@ function usmlewise_wiki_glossary(): array
         $g = [];
         foreach (usmlewise_wiki_all() as $a) {
             if ($a['section'] === 'glossary') {
-                $g[$a['slug']] = (string) ($a['description'] ?? '');
+                $g[$a['slug']] = ['def' => (string) ($a['description'] ?? ''), 'title' => $a['title']];
             }
         }
     }
@@ -362,7 +386,9 @@ function usmlewise_wiki_apply_facts(string $md): array
         $f = $facts[$id];
         $src = htmlspecialchars($f['source']);
         $url = htmlspecialchars($f['url']);
-        if ($f['value'] === '') {
+        // Unverified figures are never printed on the live site: readers get a
+        // link to the primary source instead of a number nobody has confirmed.
+        if ($f['value'] === '' || (!$f['verified'] && !usmlewise_wiki_show_drafts())) {
             return '<a class="wk-fact wk-fact--check" href="' . $url . '" target="_blank" rel="noopener noreferrer" title="Source: ' . $src . '">check the current figure</a>';
         }
         $cls = 'wk-fact' . ($f['verified'] ? '' : ' wk-fact--unverified');
@@ -372,17 +398,31 @@ function usmlewise_wiki_apply_facts(string $md): array
     return [$out, $used];
 }
 
+/**
+ * Plain-text version of the fact replacer, for frontmatter fields (key_facts,
+ * faq answers, JSON-LD) that are escaped rather than rendered as HTML.
+ */
+function usmlewise_wiki_facts_text(string $text): string
+{
+    $facts = usmlewise_wiki_facts();
+    return preg_replace_callback('/\{\{fact:([a-z0-9_]+)\}\}/', function ($m) use ($facts) {
+        $f = $facts[$m[1]] ?? null;
+        $show = $f !== null && $f['value'] !== '' && ($f['verified'] || usmlewise_wiki_show_drafts());
+        return $show ? $f['value'] : 'see the current official figure';
+    }, $text);
+}
+
 /** Replace [[term]] / [[term|label]] with glossary links. */
 function usmlewise_wiki_apply_glossary(string $md): string
 {
     $g = usmlewise_wiki_glossary();
     return preg_replace_callback('/\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/', function ($m) use ($g) {
         $term  = $m[1];
-        $label = $m[2] ?? ucwords(str_replace('-', ' ', $term));
+        $label = $m[2] ?? ($g[$term]['title'] ?? ucwords(str_replace('-', ' ', $term)));
         if (!isset($g[$term])) {
             return htmlspecialchars($label);
         }
-        return '<a class="wk-term" href="/wiki/glossary/' . $term . '" data-def="' . htmlspecialchars($g[$term], ENT_QUOTES) . '">' . htmlspecialchars($label) . '</a>';
+        return '<a class="wk-term" href="/wiki/glossary/' . $term . '" data-def="' . htmlspecialchars($g[$term]['def'], ENT_QUOTES) . '">' . htmlspecialchars($label) . '</a>';
     }, $md);
 }
 
@@ -392,13 +432,15 @@ function usmlewise_wiki_apply_glossary(string $md): string
  */
 function usmlewise_wiki_render(array $article): array
 {
-    require_once __DIR__ . '/../lib/Parsedown.php';
-    require_once __DIR__ . '/../lib/ParsedownExtra.php';
-
     [$md, $facts] = usmlewise_wiki_apply_facts($article['body']);
     $md = usmlewise_wiki_apply_glossary($md);
 
+    // Parsedown 1.7 predates PHP 8.4's "implicit nullable" deprecation, which is
+    // raised while the class files compile, so the requires must sit inside
+    // the suppressed region too.
     $prev = error_reporting(error_reporting() & ~E_DEPRECATED);
+    require_once __DIR__ . '/../lib/Parsedown.php';
+    require_once __DIR__ . '/../lib/ParsedownExtra.php';
     $pd = new ParsedownExtra();
     $pd->setSafeMode(false);
     $html = $pd->text($md);

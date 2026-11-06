@@ -5,7 +5,20 @@ on:
     branches: [ main ]
 
 jobs:
+  # A malformed or unreviewed-but-published wiki article must never reach the
+  # live site, so the wiki validator gates the deploy.
+  validate-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - name: Validate wiki content
+        run: php tools/wiki-check.php
+
   deploy:
+    needs: validate-wiki
     runs-on: ubuntu-latest
     steps:
       - name: SSH Deploy
@@ -122,7 +135,7 @@ jobs:
             # Every page in the release, so newly added pages are covered
             # automatically. Templates that need parameters are skipped.
             PAGES=$(cd "$REL_PATH" && ls *.php 2>/dev/null | sed 's/\.php$//' \
-              | grep -vE '^(index|404|500|blog-post|rotation-detail|_deploy-marker)$')
+              | grep -vE '^(index|404|500|blog-post|rotation-detail|wiki-section|wiki-article|wiki-search-index|_deploy-marker)$')
 
             STALE=""
             CHECKED=0

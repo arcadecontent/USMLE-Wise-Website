@@ -13,6 +13,11 @@ RewriteRule ^(.+?)/?$ $1.php [L]
 
 ErrorDocument 404 /404.php
 
+# Wiki source files (Markdown, including unreviewed drafts) are rendered by
+# wiki-article.php and must never be served raw. On production nginx add the
+# equivalent:  location ^~ /wiki-content/ { return 404; }
+RewriteRule ^wiki-content/ - [R=404,L]
+
 # ---- Performance: long-lived caching for static assets (Apache/dev only;
 # ---- production nginx sets its own expires — keep behavior equivalent) ----
 <IfModule mod_expires.c>

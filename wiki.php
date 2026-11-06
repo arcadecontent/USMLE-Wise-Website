@@ -21,28 +21,28 @@ $recent = array_slice($recent, 0, 8);
 $journey = ['start-here', 'exams', 'ecfmg', 'application', 'interviews-match', 'visas'];
 
 $pageTitle       = 'USMLE Wise Wiki: The IMG Guide to the USMLE, ECFMG, ERAS, the Match and Visas';
-$pageDescription = 'Free, sourced and expert-reviewed guides for international medical graduates: USMLE exams, ECFMG certification, the residency application, the Match, research, clinical experience and visas.';
+$pageDescription = 'Free, sourced guides for international medical graduates: USMLE exams, ECFMG certification, the residency application, the Match, research, clinical experience and visas.';
 $canonical       = 'https://usmlewise.com/wiki';
 $bodyClass       = 'msp wk';
-$stylesheets     = ['/styles/wiki.css'];
-$scripts         = ['/js/wiki.js'];
+$stylesheets     = ['/styles/blog.css', '/styles/wiki.css']; // blog.css carries the shared nav and footer styles
+$scripts         = ['/js/blog.js', '/js/wiki.js']; // blog.js drives the sticky nav state
 if (!$listed) {
-    $metaRobots = 'noindex, follow'; // nothing published yet; keep the empty hub out of search
+    // Nothing published yet: the wiki does not exist on the live site.
+    http_response_code(404);
+    require __DIR__ . '/404.php';
+    exit;
 }
 
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
 <main>
 
-  <?php if (usmlewise_wiki_show_drafts()): ?>
-  <div class="wk-draftbar">Preview mode: draft articles are visible. They are hidden on the live site until reviewed and published.</div>
-  <?php endif; ?>
 
   <section class="wk-hero">
     <div class="msp-wrap">
       <p class="wk-eyebrow">USMLE Wise Wiki</p>
       <h1 class="wk-hero__title">Everything an IMG needs to know to reach a US residency.</h1>
-      <p class="wk-hero__sub">Exams, ECFMG, the application, the Match, research, clinical experience and visas. Every page is sourced to the official rule-makers, dated, and reviewed by a named person.</p>
+      <p class="wk-hero__sub">Exams, ECFMG, the application, the Match, research, clinical experience and visas. Every page is sourced to the official rule-makers and dated, and each one shows whether an expert has reviewed it yet.</p>
       <?php $wikiSearchSize = 'lg'; include __DIR__ . '/partials/wiki-search.php'; ?>
     </div>
   </section>
@@ -105,8 +105,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <div class="msp-wrap">
       <div class="wk-promise__panel">
         <h2 class="wk-h2">How we keep this accurate</h2>
-        <p>Every fee, date and rule links to its primary source (USMLE, NBME, ECFMG, NRMP, AAMC, the US State Department, USCIS). Pages show who reviewed them and when, and are re-checked on a fixed schedule. Visa pages are information, not legal advice.</p>
-        <a class="btn btn--outline" href="/wiki/start-here/editorial-policy">Read our editorial policy</a>
+        <p>Every fee, date and rule links to its primary source (USMLE, NBME, ECFMG, NRMP, AAMC, the US State Department, USCIS). Pages show their update date and, once reviewed, who reviewed them and when. They are re-checked on a fixed schedule. Visa pages are information, not legal advice.</p>
       </div>
     </div>
   </section>

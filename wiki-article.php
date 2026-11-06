@@ -46,16 +46,25 @@ foreach ($siblings as $i => $s) {
 }
 
 $faq = array_values(array_filter((array) ($article['faq'] ?? []), fn($f) => is_array($f) && !empty($f['q']) && !empty($f['a'])));
+foreach ($faq as &$faqItem) {
+    $faqItem['q'] = usmlewise_wiki_facts_text($faqItem['q']);
+    $faqItem['a'] = usmlewise_wiki_facts_text($faqItem['a']);
+}
+unset($faqItem);
+$keyFacts = array_map('usmlewise_wiki_facts_text', (array) ($article['key_facts'] ?? []));
 
 // ---- Page chrome ----
 $pageTitle       = htmlspecialchars($article['title']) . ' | USMLE Wise Wiki';
 $pageDescription = htmlspecialchars((string) ($article['description'] ?? ''), ENT_QUOTES, 'UTF-8', false);
 $canonical       = $abs;
 $bodyClass       = 'msp wk';
-$stylesheets     = ['/styles/wiki.css'];
-$scripts         = ['/js/wiki.js'];
+$stylesheets     = ['/styles/blog.css', '/styles/wiki.css']; // blog.css carries the shared nav and footer styles
+$scripts         = ['/js/blog.js', '/js/wiki.js']; // blog.js drives the sticky nav state
+$unreviewed = !$isDraft && !usmlewise_wiki_is_reviewed($article);
 if ($isDraft) {
     $metaRobots = 'noindex, nofollow';
+} elseif ($unreviewed && USMLEWISE_WIKI_NOINDEX_UNREVIEWED) {
+    $metaRobots = 'noindex, follow';
 }
 
 // ---- Structured data ----
@@ -152,11 +161,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
     <article class="wk-article">
 
-      <?php if (!empty($article['key_facts'])): ?>
+      <?php if ($keyFacts): ?>
       <section class="wk-keyfacts" aria-label="Key facts">
         <h2 class="wk-keyfacts__h">Key facts</h2>
         <ul>
-          <?php foreach ((array) $article['key_facts'] as $kf): ?>
+          <?php foreach ($keyFacts as $kf): ?>
           <li><?php echo htmlspecialchars($kf); ?></li>
           <?php endforeach; ?>
         </ul>
@@ -166,6 +175,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <div class="wk-prose">
         <?php echo $rendered['html']; ?>
       </div>
+
+      <?php if ($unreviewed): ?>
+      <aside class="wk-callout wk-callout--changed" role="note">
+        <span class="wk-callout__label">Review pending</span>
+        <p>This page has not yet been reviewed by a USMLE Wise expert. It is written from official sources, but confirm every fee, date and requirement against the sources listed below before you act on it.</p>
+      </aside>
+      <?php endif; ?>
 
       <?php if ($section['slug'] === 'visas' || !empty($article['legal'])): ?>
       <p class="wk-legal">This page is general information, not legal advice. Immigration rules change often and individual circumstances differ. Confirm your situation with your sponsor, the relevant government agency, or a qualified immigration attorney before acting. See our <a href="/disclaimer">disclaimer</a>.</p>

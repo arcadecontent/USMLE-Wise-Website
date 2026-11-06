@@ -27,16 +27,13 @@ $pageTitle       = htmlspecialchars($section['title']) . ' | USMLE Wise Wiki';
 $pageDescription = htmlspecialchars($section['blurb']);
 $canonical       = 'https://usmlewise.com/wiki/' . $section['slug'];
 $bodyClass       = 'msp wk';
-$stylesheets     = ['/styles/wiki.css'];
-$scripts         = ['/js/wiki.js'];
+$stylesheets     = ['/styles/blog.css', '/styles/wiki.css']; // blog.css carries the shared nav and footer styles
+$scripts         = ['/js/blog.js', '/js/wiki.js']; // blog.js drives the sticky nav state
 
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
 <main>
 
-  <?php if (usmlewise_wiki_show_drafts()): ?>
-  <div class="wk-draftbar">Preview mode: draft articles are visible. They are hidden on the live site until reviewed and published.</div>
-  <?php endif; ?>
 
   <section class="wk-hero wk-hero--section">
     <div class="msp-wrap">

@@ -64,6 +64,28 @@ foreach (usmlewise_rotations_payload()['rotations'] as $rotation) {
     $rotationPaths[] = '/rotation-' . $rotation['slug'];
 }
 
+// Wiki: published articles only (never drafts, even when previewing locally),
+// with the article's real `updated` date as <lastmod>. The hub and a section
+// page are listed once they have at least one published article behind them.
+require_once __DIR__ . '/data/wiki.php';
+$wikiEntries = []; // [path, lastmod, priority]
+$wikiSectionDates = [];
+foreach (usmlewise_wiki_all() as $wikiArticle) {
+    if ($wikiArticle['status'] !== 'published') {
+        continue;
+    }
+    $d = (string) ($wikiArticle['updated'] ?? '');
+    $wikiEntries[] = [usmlewise_wiki_url($wikiArticle), $d, $wikiArticle['section'] === 'glossary' ? '0.4' : '0.7'];
+    $s = $wikiArticle['section'];
+    $wikiSectionDates[$s] = max($wikiSectionDates[$s] ?? '', $d);
+}
+if ($wikiEntries) {
+    foreach ($wikiSectionDates as $s => $d) {
+        $wikiEntries[] = ['/wiki/' . $s, $d, '0.8'];
+    }
+    $wikiEntries[] = ['/wiki', max($wikiSectionDates), '0.9'];
+}
+
 header('Content-Type: application/xml; charset=UTF-8');
 
 $esc = static function (string $v): string {
@@ -78,6 +100,17 @@ foreach ($curatedPages as [$path, $lastmod, $changefreq, $priority]) {
     echo '    <loc>', $esc($base . $path), '</loc>', "\n";
     echo '    <lastmod>', $esc($lastmod), '</lastmod>', "\n";
     echo '    <changefreq>', $esc($changefreq), '</changefreq>', "\n";
+    echo '    <priority>', $esc($priority), '</priority>', "\n";
+    echo '  </url>', "\n";
+}
+
+foreach ($wikiEntries as [$path, $lastmod, $priority]) {
+    echo '  <url>', "\n";
+    echo '    <loc>', $esc($base . $path), '</loc>', "\n";
+    if ($lastmod !== '') {
+        echo '    <lastmod>', $esc($lastmod), '</lastmod>', "\n";
+    }
+    echo '    <changefreq>monthly</changefreq>', "\n";
     echo '    <priority>', $esc($priority), '</priority>', "\n";
     echo '  </url>', "\n";
 }

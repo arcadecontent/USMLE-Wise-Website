@@ -48,6 +48,7 @@
           <a href="/">Home</a>
           <a href="/rotations">Rotations</a>
           <a href="/testimonials">Stories</a>
+          <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/data/wiki.php'; if (USMLEWISE_WIKI_NAV_LIVE || usmlewise_wiki_show_drafts()): ?><a href="/wiki">Wiki</a><?php endif; ?>
           <a href="/blog">Blog</a>
           <a href="/qa">FAQ</a>
           <a href="/team">Our Team</a>
