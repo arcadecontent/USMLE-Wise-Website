@@ -23,18 +23,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p>Cookies are small text files stored on your device when you visit a website. They can be used to remember information about your visit, or to help site owners understand how their site is used. Websites can also save small pieces of data in your browser&rsquo;s local storage and session storage, which work in a similar way. Local storage stays until you clear your browser data, and session storage is cleared when you close the tab.</p>
 
         <h2>2. Your Choices</h2>
-        <p>When you first visit usmlewise.com, a banner asks whether to allow analytics and advertising. Both are off until you allow them. You can choose Accept all, Reject all, or Customize to pick one. We remember your choice for 180 days and then ask again.</p>
-        <p>You can change your mind at any time with the Cookie settings link in the footer of any page. If you turn a category off, we delete the cookies and stored identifiers it set and reload the page without it.</p>
-        <p>The banner appears on the main pages of the site. A few standalone enrollment and campaign pages do not show it, and the tools described in Sections 4 and 5 run on those pages without a prompt.</p>
+        <p>Analytics and advertising are on by default when you visit usmlewise.com, and you can turn either one off at any time. Open Cookie settings in the footer of any page, then choose Reject all, or Customize to switch off just one. We remember your choice for 180 days.</p>
+        <p>If you turn a category off, we delete the cookies and stored identifiers it set and reload the page without it. You can turn it back on from the same place.</p>
+        <p>Cookie settings are available on the main pages of the site. A few standalone enrollment and campaign pages do not offer them, and the tools described in Sections 4 and 5 run on those pages without a prompt. You can also block these tools in your browser settings (see Section 8).</p>
 
         <h2>3. Necessary Cookies</h2>
         <p>We set one cookie of our own, and it is always on because the site needs it to remember what you asked for:</p>
         <ul>
-          <li><strong>uw_consent:</strong> remembers whether you allowed analytics and advertising (for example, v1.analytics=1.advertising=0). It is a first-party cookie that lasts 180 days and is not used to track you.</li>
+          <li><strong>uw_consent:</strong> remembers your choice if you change it in Cookie settings (for example, v1.analytics=1.advertising=0). It is a first-party cookie that lasts 180 days and is not used to track you.</li>
         </ul>
 
         <h2>4. Analytics</h2>
-        <p>If you allow analytics, we use two kinds of analytics to understand how the site is used: Google Analytics, and a simple analytics tool of our own. Neither runs until you allow it.</p>
+        <p>Unless you turn analytics off, we use two kinds of analytics to understand how the site is used: Google Analytics, and a simple analytics tool of our own.</p>
         <p><strong>Google Analytics</strong> sets cookies that we use to understand aggregate site traffic (for example, which pages are visited and how many people visit).</p>
         <ul>
           <li><strong>_ga, _ga_*:</strong> set by Google Analytics (GA4) to distinguish visitors and sessions. They last up to two years. We use them in aggregate, not to identify you individually.</li>
@@ -49,7 +49,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p>Each event we record includes the page, the page that referred you, the type of event, the time, the label of a button you clicked, your browser&rsquo;s user-agent string, and any campaign tags. It does not include your name, email address or phone number. This data stays on our own server and is not shared with advertisers.</p>
 
         <h2>5. Advertising Cookies</h2>
-        <p>If you allow advertising, our site loads Meta Pixels so that we and our advertising partners can measure how our advertising performs and show relevant ads to people who have visited us. The pixels belong to advertising accounts used for our campaigns, including accounts run by agencies and partners that manage some of our paid campaigns. They record page views and key actions, such as clicking a booking or WhatsApp button, submitting a form, or starting a checkout.</p>
+        <p>Unless you turn advertising off, our site loads Meta Pixels so that we and our advertising partners can measure how our advertising performs and show relevant ads to people who have visited us. The pixels belong to advertising accounts used for our campaigns, including accounts run by agencies and partners that manage some of our paid campaigns. They record page views and key actions, such as clicking a booking or WhatsApp button, submitting a form, or starting a checkout.</p>
         <ul>
           <li><strong>_fbp:</strong> set by Meta (Facebook) to identify browsers for advertising measurement and retargeting. It typically lasts about 90 days.</li>
         </ul>

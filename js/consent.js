@@ -3,8 +3,13 @@
 
    Loaded synchronously from partials/head.php, before any tracker.
    Analytics (Google Analytics, js/uw-track.js) and advertising (Meta
-   Pixels) only start after the visitor allows them. Nothing else on the
-   site depends on this file, and if it fails to load nothing tracks.
+   Pixels) are controlled here. Nothing else on the site depends on this
+   file, and if it fails to load nothing tracks.
+
+   MODE (see OPT_IN below): the site currently runs OPT-OUT. No popup is
+   shown and tracking is on by default; the footer "Cookie settings" link
+   still lets a visitor turn it off. Set OPT_IN = true to go back to the
+   opt-in banner (nothing tracks until the visitor accepts).
 
    API (window.uwConsent):
      onGrant(category, fn)  run fn once the category is allowed; runs right
@@ -31,6 +36,10 @@
   var VERSION = 1;
   var MAX_AGE_DAYS = 180;
   var CATEGORIES = ['analytics', 'advertising'];
+
+  /* false: no popup, tracking on by default, visitors can opt out from the
+     footer. true: show the banner and track only after the visitor accepts. */
+  var OPT_IN = false;
 
   /* What each category leaves behind in the browser, so it can be removed
      when the visitor says no (including leftovers from visits made before
@@ -104,6 +113,7 @@
 
   /* ------------------------------------------------------------ state */
   var state = parse(readCookie(COOKIE));      // null until the visitor chooses
+  if (!state && !OPT_IN) state = { analytics: true, advertising: true };   // default on; nothing is stored until they choose
   var ran = { analytics: false, advertising: false };
   var waiting = { analytics: [], advertising: [] };
   var revokers = { analytics: [], advertising: [] };
@@ -183,7 +193,7 @@
           '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
         '</button>' +
       '</div>' +
-      '<p class="uw-consent__text">We use cookies and similar technologies to understand how our site is used and to measure our ads. Analytics and advertising stay off unless you allow them, and you can change your mind any time with Cookie settings in the footer. See our <a href="/cookie-policy">Cookie Policy</a>.</p>' +
+      '<p class="uw-consent__text">We use cookies and similar technologies to understand how our site is used and to measure our ads. ' + (OPT_IN ? 'Analytics and advertising stay off unless you allow them' : 'Analytics and advertising are on by default and you can turn them off here') + ', and you can change your mind any time with Cookie settings in the footer. See our <a href="/cookie-policy">Cookie Policy</a>.</p>' +
       '<div class="uw-consent__panel" id="uw-consent-panel" hidden>' +
         row('Necessary', 'Remembers this choice, keeps payments secure and filters out spam. Always on.', null) +
         row('Analytics', 'Google Analytics and our own analytics show us which pages and buttons people use.', 'analytics') +

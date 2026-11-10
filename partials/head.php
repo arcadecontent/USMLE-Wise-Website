@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Cookie consent: analytics and advertising stay off until the visitor allows them (js/consent.js). -->
+<!-- Cookie consent (js/consent.js): runs opt-out, no popup; tracking is on by default and the footer Cookie settings link turns it off. Flip OPT_IN in consent.js to restore the banner. -->
 <script src="<?php echo asset_url('/js/consent.js'); ?>"></script>
 <script>
   /* If consent.js could not load, fail closed: nothing tracks. */
