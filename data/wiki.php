@@ -162,22 +162,41 @@ function usmlewise_wiki_section(string $slug): ?array
 /* Services (contextual call to action)                                */
 /* ------------------------------------------------------------------ */
 
-/** frontmatter `service:` key => [label, url, one-line pitch]. */
+/**
+ * Service catalogue: frontmatter `service:` key => [label, url, one-line pitch].
+ *
+ * Used by the call to action at the foot of an article and by the self-evaluation
+ * tool (partials/wiki-tool-evaluation.php prints this map as JSON for the script).
+ * Rules for entries:
+ *   - Link only to pages that are live. The /coaching-step1-mastery, /coaching-step23-mastery,
+ *     /coaching-tutoring and /coaching-step1-review pages are "Coming soon" placeholders,
+ *     so they are deliberately not listed here. Add them once they sell something.
+ *   - Take the pitch from that page's own description. Do not state prices (they differ
+ *     between pages and change) and do not repeat outcome or guarantee claims.
+ */
 function usmlewise_wiki_services(): array
 {
     return [
-        'coaching'               => ['USMLE Coaching', '/coaching', 'One-to-one mentorship for Step 1, Step 2 CK and Step 3.'],
-        'coaching-step1-mastery' => ['Step 1 Mastery', '/coaching-step1-mastery', 'A structured Step 1 plan with a mentor who tracks your progress.'],
-        'coaching-step23-mastery'=> ['Step 2 and 3 Mastery', '/coaching-step23-mastery', 'NBME-style coaching built around your weak areas.'],
-        'match'                  => ['Match Mentorship', '/match', 'Guidance from profile review to rank list.'],
-        'match-eras-cv'          => ['ERAS CV Review', '/match-eras-cv', 'Expert feedback on your ERAS experiences and CV.'],
-        'match-lor'              => ['Letter of Recommendation Editing', '/match-lor', 'Help getting letters that actually help your application.'],
-        'match-ps3x'             => ['Personal Statement Support', '/match-ps3x', 'Draft, revise and polish your personal statement.'],
-        'match-interview'        => ['Interview Preparation', '/match-interview', 'Mock interviews and feedback before the real ones.'],
-        'match-signaling'        => ['Program Signaling Strategy', '/match-signaling', 'Use your signals where they count.'],
-        'match-soap'             => ['SOAP Match Support', '/match-soap', 'Support through SOAP week if you do not match.'],
-        'clinical-rotations'     => ['US Clinical Rotations', '/clinical-rotations', 'Placements that can turn into real letters of recommendation.'],
-        'research'               => ['Research Programs', '/research', 'Mentored research projects for IMGs.'],
+        'coaching'           => ['USMLE Coaching', '/coaching', 'Live and recorded USMLE coaching for Step 1, Step 2 CK and Step 3.'],
+        'step-1-crash-course'=> ['Step 1 High Yield Crash Course', '/step-1-high-yield-crash-course', 'A recorded 10-day, 60-hour course covering the high-yield Step 1 subjects.'],
+        'step-2-crash-course'=> ['Step 2 High Yield Crash Course', '/step-2-live-crash-course', 'A recorded 7-module, 70-hour course covering the high-yield Step 2 CK subjects.'],
+        'step-3-crash-course'=> ['Step 3 High Yield Crash Course', '/step-3-live-crash-course', 'A recorded 8-module, 80-hour course covering Step 3, with a full module on CCS.'],
+        'match'              => ['Match Support', '/match', 'Done-for-you Match support that ties your CV, personal statement, letters, signaling and interview prep into one story.'],
+        'match-mentorship'   => ['Match Mentorship', '/match-mentorship', 'Recorded masterclasses on the personal statement, ERAS CV, signaling, interviews and SOAP.'],
+        'match-maker'        => ['Match Maker', '/match-maker', 'A self-serve tool that scores residency programs against your profile and plans your signals.'],
+        'match-eras-cv'      => ['ERAS CV Rebuild', '/match-eras-cv', 'A live, line-by-line ERAS CV rebuild with a physician who has sat on selection committees.'],
+        'match-lor'          => ['Letter of Recommendation Editing', '/match-lor', 'Strategic editing and review of your letters before they are submitted.'],
+        'match-ps3x'         => ['Personal Statement Mentorship', '/match-ps3x', 'Physician-guided strategy, story development and editing across three sessions.'],
+        'match-interview'    => ['Interview Preparation', '/match-interview', 'Mock interviews, peer buddy sessions and a large interview question bank.'],
+        'match-signaling'    => ['Program Signaling Strategy', '/match-signaling', 'Personalized program selection and a strategy session for placing your signals.'],
+        'match-soap'         => ['SOAP Match Support', '/match-soap', 'Real-time SOAP application strategy and scramble support.'],
+        'clinical-rotations' => ['US Clinical Rotations', '/clinical-rotations', 'Browse US clinical rotation placements for IMGs by specialty, state, price and setting.'],
+        'research'           => ['Research Guidance', '/research', 'Research opportunity matching, publication strategy and help building your academic profile.'],
+        'research-wise'      => ['Research Wise', '/research-wise', 'A 9-hour live workshop for beginners starting research from scratch.'],
+        'research-cohort'    => ['Research Cohort Access', '/research-cohort', 'Nine recorded, self-paced sessions on study design, writing, publishing and conferences.'],
+        'research-coauthor'  => ['Co-Author to Lead Author', '/research-coauthor', 'Get published on a mentor-run project, or as first author on your own case report.'],
+        'research-original'  => ['Original Research Mentorship', '/research-original', 'Mentor guidance through a single case report or original study.'],
+        'research-catalyst'  => ['Research Catalyst', '/research-catalyst', 'A 12-month publication mentorship.'],
     ];
 }
 

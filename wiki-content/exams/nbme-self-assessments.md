@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 9
 group: Preparing for the exams
 keywords: [nbme self assessment, uwsa, comprehensive clinical science, readiness, score prediction, step 2 ck, step 1]
-service: coaching-step23-mastery
+service: coaching
 related: [step-1, step-2-ck, when-to-take-each-step, what-to-do-after-failing-a-step, step-2-ck-score-and-what-it-means, glossary/uwsa]
 key_facts:
   - NBME offers official self-assessments for Step 1, Step 2 CK and Step 3.

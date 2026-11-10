@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 16
 group: Preparing for the exams
 keywords: [step 2 ck study schedule, step 2 ck plan, clinical rotations, dedicated study, nbme ccse, error log, study timeline]
-service: coaching-step23-mastery
+service: step-2-crash-course
 related: [step-2-ck, step-2-ck-score-and-what-it-means, nbme-self-assessments, question-banks-compared, how-long-to-study]
 key_facts:
   - Step 2 CK still reports a three-digit score, so unlike Step 1 it can differentiate your application.

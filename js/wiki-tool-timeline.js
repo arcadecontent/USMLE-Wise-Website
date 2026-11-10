@@ -215,10 +215,13 @@
     return KEYS.some(function (k) { return q.get(k) !== null; });
   }
 
-  function writeUrl(s) {
+  /* The plan is never written into the address bar automatically: analytics tools
+     record the page address, so answers must not appear there unless the visitor
+     chooses to copy a link. */
+  function buildUrl(s) {
     var q = new URLSearchParams();
     KEYS.forEach(function (k) { q.set(k, s[k]); });
-    try { history.replaceState(null, '', window.location.pathname + '?' + q.toString()); } catch (e) { /* ignore */ }
+    return window.location.origin + window.location.pathname + '?' + q.toString();
   }
 
   function statusOf(due, now) {
@@ -283,7 +286,6 @@
 
     out.innerHTML = html;
     actions.hidden = false;
-    if (!first) writeUrl(s);
   }
 
   /* ---- Events ---- */
@@ -302,8 +304,7 @@
   var copyBtn = root.querySelector('[data-copy]');
   var copied = root.querySelector('[data-copied]');
   copyBtn.addEventListener('click', function () {
-    writeUrl(readForm());
-    var url = window.location.href;
+    var url = buildUrl(readForm());
     var done = function () { copied.hidden = false; setTimeout(function () { copied.hidden = true; }, 2000); };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); });

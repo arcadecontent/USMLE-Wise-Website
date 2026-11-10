@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 17
 group: Preparing for the exams
 keywords: [step 3 study plan, ccs cases, primum ccs, foundations of independent practice, advanced clinical medicine, step 3 schedule, residency]
-service: coaching-step23-mastery
+service: step-3-crash-course
 related: [step-3, visas/step-3-and-h1b-timing, when-to-take-each-step, question-banks-compared, how-long-to-study]
 key_facts:
   - Step 3 is a two-day exam: Foundations of Independent Practice on Day 1 and Advanced Clinical Medicine, including case simulations, on Day 2.

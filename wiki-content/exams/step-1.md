@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 1
 group: The three Steps
 keywords: [step 1, usmle step 1, pass fail, eligibility, registration, prometric, imgs]
-service: coaching-step1-mastery
+service: step-1-crash-course
 related: [exams/usmle-eligibility-for-imgs, exams/scheduling-with-prometric, exams/usmle-attempt-limits-and-retakes, exams/step-1-study-schedule, exams/step-2-ck, application/eras-timeline]
 key_facts:
   - Step 1 is reported as pass/fail only, since {{fact:step1_pass_fail_since}}.

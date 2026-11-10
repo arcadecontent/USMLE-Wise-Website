@@ -8,7 +8,7 @@ order: 1
 group: Orientation
 keywords: [img roadmap, how to match as an img, usmle timeline, ecfmg certification, residency application, step by step]
 service: match
-related: [how-long-does-it-take, total-cost-of-matching, exams/when-to-take-each-step, application/eras-timeline, ecfmg/ecfmg-certification-overview, is-the-us-right-for-you]
+related: [how-long-does-it-take, total-cost-of-matching, exams/when-to-take-each-step, application/eras-timeline, ecfmg/ecfmg-certification-overview, is-the-us-right-for-you, tools/self-evaluation]
 key_facts:
   - The core path is exams (Step 1 and Step 2 CK), ECFMG certification, a US residency application through ERAS, interviews, and the Match.
   - Most IMGs plan for several calendar years of preparation, but your own timeline depends on your graduation date, scores and experience.

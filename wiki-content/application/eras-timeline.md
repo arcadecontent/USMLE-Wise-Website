@@ -8,7 +8,7 @@ order: 1
 group: Planning
 keywords: [eras, eras timeline, residency application, token, mspe, match, nrmp, imgs]
 service: match
-related: [ecfmg/eras-token, application/myeras-walkthrough, interviews-match/interview-season-overview, interviews-match/match-week-timeline, visas/visa-timeline-after-the-match]
+related: [ecfmg/eras-token, application/myeras-walkthrough, interviews-match/interview-season-overview, interviews-match/match-week-timeline, visas/visa-timeline-after-the-match, tools/self-evaluation]
 key_facts:
   - IMGs get an ERAS token through ECFMG / Intealth before they can register in MyERAS.
   - ERAS opens for application building before it opens for submission, so you can prepare early.

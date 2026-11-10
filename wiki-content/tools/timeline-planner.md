@@ -4,15 +4,15 @@ description: Pick your residency start and answer a few questions to get a dated
 status: published
 review: pending
 updated: 2026-11-06
-order: 1
+order: 2
 keywords: [timeline planner, application timeline, eras timeline, img roadmap, residency start, planner, checklist]
 tool: timeline
 service: match
-related: [application/eras-timeline, start-here/imgs-roadmap, start-here/how-long-does-it-take, exams/when-to-take-each-step, ecfmg/ecfmg-certification-timeline]
+related: [tools/self-evaluation, application/eras-timeline, start-here/imgs-roadmap, start-here/how-long-does-it-take, exams/when-to-take-each-step, ecfmg/ecfmg-certification-timeline]
 key_facts:
   - It works backward from July of the year you want to start residency.
   - Dates are the usual shape of the season plus planning buffers, not official deadlines.
-  - Everything runs in your browser. Nothing you select is sent or stored.
+  - Your selections stay in your browser. They are not sent to us or stored.
   - Each step links to the guide behind it.
 sources:
   - AAMC: ERAS for applicants | https://students-residents.aamc.org/applying-residency-eras/applying-residency-eras
@@ -26,7 +26,7 @@ faq:
   - q: The planner says my critical steps are already past. Should I give up on this cycle?
     a: Not automatically. It means the usual order of events leaves little room. Some applicants still apply with an exam result pending or a thinner file. A later cycle with a stronger application is often the better choice, and the planner can show you that timeline.
   - q: Does it save my answers?
-    a: No. Your answers stay in your browser. If you copy the link, your selections are encoded in the web address so you can bookmark or share the plan.
+    a: No. Your answers stay in your browser and are not sent to us. If you choose Copy a link, your selections are put into that link so you can bookmark or share the plan. Share it only with people you trust, because anything in a web address can be recorded by whoever opens it.
 ---
 
 Residency applications run on a calendar that does not wait for you. This planner turns that calendar into a checklist for your situation: choose the July you want to start training, tell it where you are with exams, ECFMG, experience and letters, and it lists what is left, in date order, with a link to the guide for each step.

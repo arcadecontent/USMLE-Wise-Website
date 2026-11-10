@@ -17,7 +17,7 @@ reviewed_on: 2026-11-06        # required to publish
 order: 1                       # optional: position within the section
 group: Core guides             # optional: heading to group under on the section page
 keywords: [step 1, usmle, pass fail]
-service: coaching-step1-mastery   # optional call to action, see usmlewise_wiki_services()
+service: step-1-crash-course      # optional call to action, see usmlewise_wiki_services()
 legal: true                    # optional: show the "not legal advice" note (automatic in /visas)
 tool: timeline                 # optional: embed an interactive tool (partials/wiki-tool-<name>.php + js/wiki-tool-<name>.js)
 related: [step-2-ck, application/eras-timeline]   # same-section slug or section/slug

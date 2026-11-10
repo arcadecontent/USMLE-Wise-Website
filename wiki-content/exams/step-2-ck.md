@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 2
 group: The three Steps
 keywords: [step 2 ck, usmle step 2, clinical knowledge, passing score, img registration, format change 2026]
-service: coaching-step23-mastery
+service: step-2-crash-course
 related: [step-1, step-3, when-to-take-each-step, step-2-ck-score-and-what-it-means, nbme-self-assessments]
 key_facts:
   - Step 2 CK still reports a three-digit score, and the minimum passing score is {{fact:step2ck_passing_standard}}.

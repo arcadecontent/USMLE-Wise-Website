@@ -199,7 +199,8 @@ function usmlewise_wiki_plan(): array
         ['countries', 'brazil',                         'IMGs From Brazil: Schools, Test Centers and Visa Notes', 3],
         ['countries', 'caribbean-schools',              'Caribbean Medical Schools: What IMGs Should Know', 3],
 
-        /* ---------------- Tools (1) ---------------- */
+        /* ---------------- Tools (2) ---------------- */
+        ['tools', 'self-evaluation',  'IMG Readiness Self-Evaluation', 3],
         ['tools', 'timeline-planner', 'IMG Application Timeline Planner', 3],
 
         /* ---------------- Glossary (25) ---------------- */

@@ -7,7 +7,7 @@ updated: 2026-11-06
 order: 3
 group: Orientation
 keywords: [how long img, timeline to residency, usmle timeline, ecfmg timeline, gap years, img planning]
-related: [imgs-roadmap, total-cost-of-matching, exams/when-to-take-each-step, application/eras-timeline, ecfmg/ecfmg-certification-overview]
+related: [imgs-roadmap, total-cost-of-matching, exams/when-to-take-each-step, application/eras-timeline, ecfmg/ecfmg-certification-overview, tools/self-evaluation]
 key_facts:
   - There is no official duration: the time depends on your starting point, exam results and how many application cycles you need.
   - Preparation is commonly measured in years, not months, and the application itself runs about a year from preparation to Match.
