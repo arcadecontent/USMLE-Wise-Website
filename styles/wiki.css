@@ -128,22 +128,53 @@
 
 /* ---------- Journey strip ---------- */
 .wk-journey { padding-block: var(--space-8) var(--space-6); }
+/* One connected stepper: equal columns joined by a line, inside a single panel. */
 .wk-journey__list {
-  list-style: none; margin: 0; padding: 0;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: var(--space-3);
+  list-style: none; margin: 0;
+  padding: clamp(20px, 2.5vw, 32px);
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+  background: var(--uw-surface); border: 1px solid var(--uw-border); border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(15, 18, 51, .05);
+}
+.wk-journey__step { position: relative; min-width: 0; }
+/* connector from this step's circle to the next one */
+.wk-journey__step:not(:last-child)::after {
+  content: ""; position: absolute; top: 17px; left: 44px; right: 8px; height: 2px;
+  background: var(--uw-blue-100); border-radius: 2px;
 }
 .wk-journey__list a {
-  display: flex; align-items: center; gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  background: var(--uw-surface); border: 1px solid var(--uw-border); border-radius: 12px;
-  text-decoration: none; color: var(--uw-ink-800); font-weight: 500;
-  transition: border-color .15s, box-shadow .15s;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  padding-right: var(--space-4);
+  text-decoration: none; color: var(--uw-ink-800);
 }
-.wk-journey__list a:hover { border-color: var(--uw-blue-300); box-shadow: var(--shadow-sm); }
 .wk-journey__n {
-  flex: none; width: 28px; height: 28px; border-radius: 50%;
-  display: inline-grid; place-items: center;
+  flex: none; width: 36px; height: 36px; border-radius: 50%;
+  display: inline-grid; place-items: center; margin-bottom: var(--space-3);
   background: var(--uw-blue-500); color: #fff; font-size: var(--fs-sm); font-weight: 600;
+  box-shadow: 0 0 0 4px var(--uw-surface), 0 0 0 5px var(--uw-blue-100);
+  transition: background-color .15s, transform .15s;
+}
+.wk-journey__t { font-weight: 600; font-size: var(--fs-md); color: var(--uw-ink-900); line-height: 1.3; }
+.wk-journey__s { font-size: var(--fs-sm); color: var(--uw-ink-500); line-height: 1.4; }
+.wk-journey__list a:hover .wk-journey__n,
+.wk-journey__list a:focus-visible .wk-journey__n { background: var(--uw-red-500); transform: scale(1.06); }
+.wk-journey__list a:hover .wk-journey__t { color: var(--uw-blue-600); text-decoration: underline; text-underline-offset: 3px; }
+.wk-journey__list a:focus-visible { outline: 2px solid var(--uw-blue-400); outline-offset: 4px; border-radius: 8px; }
+
+/* Tablet: two rows of three, no connector at the end of a row */
+@media (max-width: 1023px) {
+  .wk-journey__list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: var(--space-6); }
+  .wk-journey__step:nth-child(3n)::after { display: none; }
+}
+/* Phone: vertical timeline */
+@media (max-width: 639px) {
+  .wk-journey__list { grid-template-columns: 1fr; row-gap: 0; }
+  .wk-journey__step { padding-bottom: var(--space-5); }
+  .wk-journey__step:last-child { padding-bottom: 0; }
+  .wk-journey__step:nth-child(3n)::after { display: block; }
+  .wk-journey__step:not(:last-child)::after { top: 44px; bottom: 4px; left: 17px; right: auto; width: 2px; height: auto; }
+  .wk-journey__list a { display: grid; grid-template-columns: 36px 1fr; column-gap: var(--space-4); row-gap: 2px; padding-right: 0; }
+  .wk-journey__n { grid-row: span 2; margin-bottom: 0; }
 }
 
 /* ---------- Cards ---------- */

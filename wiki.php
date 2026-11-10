@@ -13,7 +13,16 @@ foreach ($listed as $a) {
     $counts[$a['section']] = ($counts[$a['section']] ?? 0) + 1;
 }
 
-$journey = ['start-here', 'exams', 'ecfmg', 'application', 'interviews-match', 'visas'];
+// The path strip on the hub: [section slug, short label, one-line summary].
+// Labels are kept short so every step fits on one line at desktop width.
+$journey = [
+    ['start-here',       'Start here',  'Roadmap, cost and timing'],
+    ['exams',            'USMLE exams', 'Step 1, Step 2 CK, Step 3'],
+    ['ecfmg',            'ECFMG',       'Eligibility and credentials'],
+    ['application',      'Application', 'ERAS, letters and signals'],
+    ['interviews-match', 'The Match',   'Interviews, ranking, SOAP'],
+    ['visas',            'Visas',       'J-1, H-1B and timing'],
+];
 
 $pageTitle       = 'USMLE Wise Wiki: The IMG Guide to the USMLE, ECFMG, ERAS, the Match and Visas';
 $pageDescription = 'Free, sourced guides for international medical graduates: USMLE exams, ECFMG certification, the residency application, the Match, research, clinical experience and visas.';
@@ -46,11 +55,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <div class="msp-wrap">
       <h2 id="wk-journey-h" class="wk-h2">The path, in order</h2>
       <ol class="wk-journey__list">
-        <?php foreach ($journey as $i => $slug): $s = $sections[$slug]; ?>
-        <li>
+        <?php foreach ($journey as $i => [$slug, $label, $sub]): ?>
+        <li class="wk-journey__step">
           <a href="/wiki/<?php echo $slug; ?>">
-            <span class="wk-journey__n"><?php echo $i + 1; ?></span>
-            <span class="wk-journey__t"><?php echo htmlspecialchars($s['title']); ?></span>
+            <span class="wk-journey__n" aria-hidden="true"><?php echo $i + 1; ?></span>
+            <span class="wk-journey__t"><?php echo htmlspecialchars($label); ?></span>
+            <span class="wk-journey__s"><?php echo htmlspecialchars($sub); ?></span>
           </a>
         </li>
         <?php endforeach; ?>
