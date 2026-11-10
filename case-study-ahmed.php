@@ -17,7 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <!-- ============== BREADCRUMB ============== -->
       <div class="csa-breadcrumb">
         <div class="msp-wrap csa-breadcrumb__inner">
-          <a href="/testimonials">Student Stories</a>
+          <a href="/testimonials">Testimonials</a>
           <span class="csa-breadcrumb__sep"><i data-lucide="chevron-right" width="14" height="14"></i></span>
           <span class="csa-breadcrumb__current">Dr. Ahmed A.</span>
         </div>

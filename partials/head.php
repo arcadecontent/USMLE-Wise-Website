@@ -3,15 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Google tag (gtag.js) — GA4, migrated from old site -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MMVZ5WKY2"></script>
+<!-- Cookie consent: analytics and advertising stay off until the visitor allows them (js/consent.js). -->
+<script src="<?php echo asset_url('/js/consent.js'); ?>"></script>
 <script>
+  /* If consent.js could not load, fail closed: nothing tracks. */
+  window.uwConsent = window.uwConsent || { onGrant: function () {}, onRevoke: function () {}, has: function () { return false; }, open: function () {}, status: function () { return null; } };
+
+  /* Google tag (gtag.js), GA4: loaded only once analytics is allowed. */
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1MMVZ5WKY2');
+  uwConsent.onGrant('analytics', function () {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-1MMVZ5WKY2';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-1MMVZ5WKY2');
+  });
+  uwConsent.onRevoke('analytics', function () {
+    /* Google's documented switch: gtag.js sends nothing more for this ID. */
+    window['ga-disable-G-1MMVZ5WKY2'] = true;
+  });
+
+  /* Our own analytics beacon (js/uw-track.js): same rule. */
+  uwConsent.onGrant('analytics', function () {
+    var s = document.createElement('script');
+    s.src = '<?php echo asset_url('/js/uw-track.js'); ?>';
+    document.head.appendChild(s);
+  });
 </script>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/meta-pixel.php'; ?>
+<?php $uw_pixel_consent_gated = true; include $_SERVER['DOCUMENT_ROOT'] . '/partials/meta-pixel.php'; ?>
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>" />
 <link rel="canonical" href="<?php echo $canonical; ?>" />
@@ -40,6 +61,7 @@ function asset_url($path) {
 }
 ?>
 <link rel="stylesheet" href="<?php echo asset_url('/assets/usmle-design-system/styles.css'); ?>" />
+<link rel="stylesheet" href="<?php echo asset_url('/styles/consent.css'); ?>" />
 <?php if (!empty($stylesheets)) foreach ($stylesheets as $css): ?>
 <link rel="stylesheet" href="<?php echo asset_url($css); ?>" />
 <?php endforeach; ?>
@@ -48,7 +70,6 @@ function asset_url($path) {
 <script src="<?php echo asset_url($js); ?>" defer></script>
 <?php endforeach; ?>
 <script src="<?php echo asset_url('/js/mobile-nav.js'); ?>" defer></script>
-<script src="<?php echo asset_url('/js/uw-track.js'); ?>" defer></script>
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : ''; ?>">
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/nav.php'; ?>

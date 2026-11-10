@@ -107,7 +107,11 @@
     var lightbox = document.getElementById('mspLightbox');
     var lbIframe = document.getElementById('mspLightboxIframe');
     if (lightbox && lbIframe) {
+      // YouTube Shorts: sized as a tall frame instead of letterboxed in 16:9.
+      var VERTICAL_IDS = ['IEphKQwawzA', 'pcQuFkFmnAE', 'izwBvdQgVc8', 'SmDKOptBIV4'];
+      var lbFrame = lightbox.querySelector('.msp-lightbox__frame');
       function openLightbox(ytid) {
+        if (lbFrame) lbFrame.classList.toggle('is-vertical', VERTICAL_IDS.indexOf(ytid) !== -1);
         lbIframe.referrerPolicy = 'strict-origin-when-cross-origin';
         lbIframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
         lightbox.removeAttribute('hidden');
@@ -129,6 +133,48 @@
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) closeLightbox();
       });
+    }
+
+    /* ---- 6b. Screenshot wall: category filter + "Show more" ----
+       Without JS every screenshot is simply visible. With JS the wall starts
+       at one batch and grows on request, so ~100 images are not all queued up
+       front. */
+    var wall = document.getElementById('tsmWall');
+    var moreWrap = document.getElementById('tsmMoreWrap');
+    var moreBtn = document.getElementById('tsmMore');
+    if (wall && moreWrap && moreBtn) {
+      var shots = Array.prototype.slice.call(wall.querySelectorAll('.tsm-screenshot'));
+      var chips = Array.prototype.slice.call(document.querySelectorAll('[data-tsm-filter]'));
+      var BATCH = 24;
+      var cat = 'all';
+      var shown = BATCH;
+
+      var renderWall = function () {
+        var matching = shots.filter(function (el) { return cat === 'all' || el.dataset.cat === cat; });
+        shots.forEach(function (el) { el.hidden = true; });
+        matching.forEach(function (el, i) { el.hidden = i >= shown; });
+        var left = matching.length - shown;
+        moreWrap.hidden = left <= 0;
+        moreBtn.textContent = 'Show ' + Math.min(BATCH, Math.max(left, 0)) + ' more';
+      };
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          cat = chip.dataset.tsmFilter;
+          shown = BATCH;
+          chips.forEach(function (c) {
+            var on = c === chip;
+            c.classList.toggle('is-active', on);
+            c.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+          renderWall();
+        });
+      });
+      moreBtn.addEventListener('click', function () {
+        shown += BATCH;
+        renderWall();
+      });
+      renderWall();
     }
 
     /* ---- 7. Anchor scroll with sticky-nav offset ---- */

@@ -1595,7 +1595,58 @@
 }
 .tsm-screenshot img {
   width: 100%;
+  height: auto;
   display: block;
+}
+.tsm-screenshot[hidden] { display: none; }
+
+/* Category chips above the wall. */
+.tsm-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: calc(-1 * clamp(16px, 2.5vw, 32px)) 0 clamp(24px, 3vw, 36px);
+}
+.tsm-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--uw-border);
+  border-radius: 999px;
+  background: var(--uw-surface);
+  color: var(--uw-ink-700);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.tsm-filter__btn span {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--uw-ink-500);
+  font-variant-numeric: tabular-nums;
+}
+.tsm-filter__btn:hover { border-color: var(--uw-blue-500); color: var(--uw-blue-600); }
+.tsm-filter__btn.is-active {
+  background: var(--uw-blue-500);
+  border-color: var(--uw-blue-500);
+  color: #fff;
+}
+.tsm-filter__btn.is-active span { color: rgba(255, 255, 255, .8); }
+.tsm-filter__btn:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 2px; }
+
+.tsm-more { display: flex; justify-content: center; margin-top: clamp(20px, 3vw, 36px); }
+.tsm-more[hidden] { display: none; }
+
+/* Lightbox frame for a vertical video (a YouTube Short). */
+.msp-lightbox__frame.is-vertical {
+  width: auto;
+  height: min(86vh, 780px);
+  max-width: 90vw;
+  aspect-ratio: 9 / 16;
 }
 
 @media (max-width: 960px) { .tsm-screenshots__grid { column-count: 3; } }
@@ -1634,4 +1685,30 @@
     grid-area: 2 / 2 / 3 / 3;
     max-width: 62ch;
   }
+}
+
+/* ---------- FINAL CTA (same card as the other service pages) ---------- */
+.tsm-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
+.tsm-cta-card {
+  background: #08111f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: clamp(20px, 2.4vw, 28px);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
+  text-align: center;
+}
+.tsm-cta-card .msp-h2 { color: #fff; text-align: center; max-width: 20ch; margin-inline: auto; margin-bottom: 0; }
+.tsm-cta-card .msp-sub { color: rgba(255, 255, 255, .65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px, 2vw, 20px); text-align: center; }
+.tsm-cta-card .msp-cta-row { justify-content: center; margin-inline: auto; margin-top: clamp(28px, 4vw, 44px); }
+.tsm-cta-card .btn--outline {
+  border-color: rgba(255, 255, 255, .4) !important;
+  color: #fff !important;
+  background: transparent !important;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+.tsm-cta-card .btn--outline:hover {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #08111f !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12) !important;
 }

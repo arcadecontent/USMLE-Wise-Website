@@ -42,6 +42,11 @@
   } catch (e) { /* no UTM support, fine */ }
 
   function send(event, extra) {
+    /* Main-site pages load js/consent.js. If analytics has been withdrawn
+       (the page is about to reload without it), send nothing, not even the
+       time-on-page beacon on unload. Pages that do not load the consent
+       script, such as the landing pages, are unaffected. */
+    if (window.uwConsent && !window.uwConsent.has('analytics')) return;
     var payload = { e: event, p: page, v: vid, s: sid };
     if (utm) payload.u = utm;
     if (extra) for (var k in extra) payload[k] = extra[k];

@@ -388,7 +388,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </a>
         </div>
         <div class="mp-more reveal">
-          <a href="/testimonials" class="btn btn--ghost btn--sm">See all student stories <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          <a href="/testimonials" class="btn btn--ghost btn--sm">See all testimonials <i data-lucide="arrow-right" width="14" height="14"></i></a>
         </div>
       </div>
     </section>

@@ -710,7 +710,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   </div>
                 </div>
                 <div class="msp-tier__price">$1,500<span class="ec-tier__price-unit">/session</span></div>
-                <p class="msp-tier__sub">The founder, personally. Limited seats, serious applicants only.</p>
+                <p class="msp-tier__sub">Our volunteer advisor, personally. Limited seats, serious applicants only.</p>
                 <a class="btn btn--outline btn--sm ec-tier-cta" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Request a Seat</a>
               </div>
               <div class="ec-tier__detail">

@@ -47,13 +47,14 @@
           <span class="msp-foot__nav-label">Site</span>
           <a href="/">Home</a>
           <a href="/rotations">Rotations</a>
-          <a href="/testimonials">Stories</a>
+          <a href="/testimonials">Testimonials</a>
           <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/data/wiki.php'; if (USMLEWISE_WIKI_NAV_LIVE || usmlewise_wiki_show_drafts()): ?><a href="/wiki">Wiki</a><?php endif; ?>
           <a href="/blog">Blog</a>
           <a href="/qa">FAQ</a>
           <a href="/team">Our Team</a>
           <a href="/contact">Contact Us</a>
           <a href="/legal">Legal &amp; Policies</a>
+          <button type="button" class="msp-foot__consent" data-uw-consent-open hidden>Cookie settings</button>
         </div>
       </nav>
     </div>

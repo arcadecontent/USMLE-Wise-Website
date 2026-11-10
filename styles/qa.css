@@ -141,8 +141,13 @@
 /* ---------- 1 · HERO ---------- */
 .msp-hero {
   background: var(--uw-bg);
-  padding-block-start: clamp(64px, 10vw, 128px);
-  padding-block-end: clamp(32px, 4vw, 56px);
+  /* tight under the header to maximise above-the-fold space */
+  padding-block-start: clamp(28px, 3.5vw, 48px);
+  padding-block-end: clamp(20px, 2.5vw, 32px);
+}
+.msp-hero .msp-bar {
+  margin-top: clamp(28px, 3.5vw, 44px);
+  padding-block: clamp(20px, 2.5vw, 32px);
 }
 .msp-hero__grid {
   display: grid;
@@ -1290,7 +1295,7 @@
   text-align: center;
 }
 .qa-hero__inner {
-  max-width: 680px;
+  max-width: 780px;
   margin-inline: auto;
 }
 .qa-hero__title {
@@ -1306,7 +1311,8 @@
   font-size: clamp(15px, 2vw, 17px);
   color: var(--uw-ink-500);
   line-height: 1.6;
-  margin: 0 0 clamp(32px, 5vw, 52px);
+  max-width: 680px;
+  margin: 0 auto clamp(32px, 5vw, 52px);
 }
 .qa-hero__jumps {
   display: flex;
@@ -1407,6 +1413,26 @@
   gap: 12px;
   justify-content: center;
 }
+
+/* ---------- ANSWER FORMATTING ----------
+   Answers carry links and short lists (price lists, program maps). The base
+   accordion styles nothing inside the body, so links get an underline (they
+   sit in grey copy and would otherwise read as plain text) and lists get a
+   normal indent. */
+.qa-section .accordion__body a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.qa-section .accordion__body ul {
+  margin: 10px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+.qa-section .accordion__body ul:last-child { margin-bottom: 0; }
+.qa-section .accordion__body li { margin: 0 0 6px; }
+.qa-section .accordion__body li:last-child { margin-bottom: 0; }
+.qa-section .accordion__body strong { color: var(--uw-ink-800); font-weight: 600; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 760px) {

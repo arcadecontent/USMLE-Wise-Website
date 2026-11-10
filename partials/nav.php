@@ -171,7 +171,7 @@
         <a href="/testimonials">Resources <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
         <div class="msp-nav__dropdown">
           <a href="/testimonials" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Stories</span>
+            <span class="msp-nav__dd-name">Testimonials</span>
             <span class="msp-nav__dd-meta">Real IMG match outcomes</span>
           </a>
           <a href="/research-awards" class="msp-nav__dd-link">
@@ -194,7 +194,7 @@
           </a>
           <a href="/team" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Our Team</span>
-            <span class="msp-nav__dd-meta">Meet the mentors &amp; founders</span>
+            <span class="msp-nav__dd-meta">Meet the mentors &amp; team</span>
           </a>
           <a href="/contact" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Contact Us</span>

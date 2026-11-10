@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Legal & Policies | USMLE Wise";
-$pageDescription = "USMLE Wise legal center — Privacy Policy, Terms & Conditions, Refund & Guarantee Policy, Clinical Rotation Terms, and Disclaimer.";
+$pageDescription = "USMLE Wise legal center: Privacy Policy, Terms & Conditions, Refund & Guarantee Policy, Clinical Rotation Terms, and Disclaimer.";
 $canonical = "https://usmlewise.com/legal";
 $bodyClass = "msp";
 $stylesheets = [
@@ -22,7 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-legal-grid">
           <a class="msp-legal-card" href="/policy">
             <h2>Privacy Policy</h2>
-            <p>What information we collect, how we use it, and your rights regarding your data.</p>
+            <p>What information we collect, including student enrollment and webinar registration data, how we use it, and your rights regarding your data.</p>
           </a>
           <a class="msp-legal-card" href="/terms">
             <h2>Terms &amp; Conditions</h2>
@@ -42,7 +42,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </a>
           <a class="msp-legal-card" href="/cookie-policy">
             <h2>Cookie Policy</h2>
-            <p>Which cookies usmlewise.com sets (just Google Analytics), and how to manage them.</p>
+            <p>Which cookies and similar technologies usmlewise.com uses for analytics and advertising, and how to manage them.</p>
           </a>
         </div>
 

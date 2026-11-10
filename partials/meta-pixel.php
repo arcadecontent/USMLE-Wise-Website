@@ -25,7 +25,42 @@ $UW_META_PIXEL_ID = $UW_META_PIXEL_IDS[0]; // kept for anything that reads the o
 // to false before including, so the generic CTA handler below does not fire a
 // second Lead on top of theirs.
 $uw_pixel_cta_events = isset($uw_pixel_cta_events) ? $uw_pixel_cta_events : true;
-?><!-- Meta Pixel Code -->
+
+// partials/head.php (every main-site page) sets this to true so the pixels
+// only load once the visitor allows advertising cookies (js/consent.js).
+// Anything that includes this file directly, such as the standalone landing
+// pages, leaves it unset and gets exactly the markup it always had.
+$uw_pixel_consent_gated = isset($uw_pixel_consent_gated) ? $uw_pixel_consent_gated : false;
+?><?php if ($uw_pixel_consent_gated): ?><!-- Meta Pixel Code (loads only after advertising is allowed) -->
+<script>
+(function () {
+  /* Until then fbq is a harmless no-op, so pages that call it directly
+     (Lead, ViewContent and so on) never throw and nothing is sent. */
+  window.fbq = function () {};
+  uwConsent.onGrant('advertising', function () {
+    /* Remove the stand-in so the real snippet below installs itself. */
+    window.fbq = undefined;
+    window._fbq = undefined;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+<?php foreach ($UW_META_PIXEL_IDS as $uw_pid): ?>
+    fbq('init', '<?php echo $uw_pid; ?>');
+<?php endforeach; ?>
+    fbq('track', 'PageView');
+  });
+  uwConsent.onRevoke('advertising', function () {
+    try { window.fbq('consent', 'revoke'); } catch (e) { /* ignore */ }
+  });
+})();
+</script>
+<!-- End Meta Pixel Code -->
+<?php else: ?><!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -44,6 +79,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=<?php echo $uw_pid; ?>&ev=PageView&noscript=1"
 alt="" /><?php endforeach; ?></noscript>
 <!-- End Meta Pixel Code -->
+<?php endif; ?>
 <?php if ($uw_pixel_cta_events): ?>
 <script>
 /* Lead on the outbound conversion CTAs. The Match pages' on-page form is a

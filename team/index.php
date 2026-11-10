@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Our Team | USMLE Wise";
-$pageDescription = "Meet the full USMLE Wise team: co-founders Dr. Manik Madaan and Dr. Kaushik Sreeram, the research faculty behind every publication, and the Match, coaching, and student-success staff guiding IMGs end to end.";
+$pageDescription = "Meet the full USMLE Wise team: co-founder Dr. Kaushik Sreerama Reddy, volunteer advisor Dr. Manik Madaan, the research faculty behind every publication, and the Match, coaching, and student-success staff guiding IMGs end to end.";
 $canonical = "https://usmlewise.com/team";
 $bodyClass = "msp";
 $stylesheets = [

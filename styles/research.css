@@ -213,8 +213,13 @@
 /* ---------- 1 · HERO ---------- */
 .msp-hero {
   background: var(--uw-bg);
-  padding-block-start: clamp(64px, 10vw, 128px);
-  padding-block-end: clamp(32px, 4vw, 56px);
+  /* tight under the header to maximise above-the-fold space */
+  padding-block-start: clamp(28px, 3.5vw, 48px);
+  padding-block-end: clamp(20px, 2.5vw, 32px);
+}
+.msp-hero .msp-bar {
+  margin-top: clamp(28px, 3.5vw, 44px);
+  padding-block: clamp(20px, 2.5vw, 32px);
 }
 .msp-hero__grid {
   display: grid;
