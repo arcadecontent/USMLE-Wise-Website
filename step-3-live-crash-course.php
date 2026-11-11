@@ -22,7 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <h1 id="heroTitle" class="msp-h1">USMLE Step&nbsp;3 Crash Course: pass in <em>80 hours</em>.</h1>
       <p class="msp-lede">80 hours of recorded, high-yield instruction from a team of 270+ scorers, including a full module on CCS. Finish the course, and if you don't pass, you get your money back.</p>
       <div class="msp-cta-row">
-        <a class="btn btn--primary btn--xl" href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener noreferrer">Enroll Now</a>
+        <a data-checkout class="btn btn--primary btn--xl" href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener noreferrer">Enroll Now</a>
         <a class="btn btn--outline btn--xl" href="#curriculum">See the Curriculum</a>
       </div>
     </div>
@@ -253,9 +253,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
       <div class="s1-offer__pay">
-        <div class="s1-offer__price">$499</div>
+        <div class="s1-offer__price" id="s3-price">$499</div>
         <p class="s1-offer__price-note">One time &middot; Lifetime access</p>
-        <a class="btn btn--primary btn--xl" href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener noreferrer" style="width:100%">Enroll Now</a>
+        <a data-checkout class="btn btn--primary btn--xl" href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener noreferrer" style="width:100%">Enroll Now</a>
+        <form id="s3-promo-form" novalidate>
+          <div class="s1-promo">
+            <input id="s3-promo" class="s1-promo__input" type="text" maxlength="80" autocomplete="off" spellcheck="false" placeholder="Promo code" aria-label="Promo code" aria-describedby="s3-promo-result">
+            <button type="submit" class="s1-promo__apply">Apply</button>
+          </div>
+          <p id="s3-promo-result" class="s1-promo__result" role="status" aria-live="polite">Have a promo code? Enter it above and press Apply.</p>
+        </form>
         <div class="s1-offer__guarantee">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
           <span>Watch the first module risk-free. Finish the course and don't pass? Full refund.</span>
@@ -409,7 +416,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <h2 id="ctaTitle" class="msp-h2">Ready to build the score you're proud of?</h2>
       <p class="msp-sub">Enroll today and get instant access to all 8 modules, the Rapid Review notes, and a full module dedicated to CCS.</p>
       <div class="msp-cta-row">
-        <a class="btn btn--primary btn--xl" href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener noreferrer">Enroll Now</a>
+        <a data-checkout class="btn btn--primary btn--xl" href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener noreferrer">Enroll Now</a>
         <a class="btn btn--outline btn--xl" href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
       </div>
     </div>
@@ -417,5 +424,41 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 </section>
 
 </main>
+
+<script>
+(function () {
+  // Promo code: STEP100 takes $100 off and pre-fills the code at Stripe checkout,
+  // on every Enroll button. The code itself must exist in Stripe (same as the
+  // standalone Step 3 page).
+  var STRIPE = 'https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c';
+  var DEFAULT_MSG = 'Have a promo code? Enter it above and press Apply.';
+  var form = document.getElementById('s3-promo-form');
+  var input = document.getElementById('s3-promo');
+  var msg = document.getElementById('s3-promo-result');
+  var priceEl = document.getElementById('s3-price');
+  if (!form || !input || !msg) return;
+  function setApplied(on) {
+    if (priceEl) priceEl.textContent = on ? '$399' : '$499';
+    var url = on ? STRIPE + '?prefilled_promo_code=STEP100' : STRIPE;
+    document.querySelectorAll('[data-checkout]').forEach(function (a) { a.setAttribute('href', url); });
+  }
+  function say(text, cls) {
+    msg.textContent = text;
+    msg.className = 's1-promo__result' + (cls ? ' ' + cls : '');
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var code = input.value.trim().toUpperCase();
+    input.value = code;
+    if (code === 'STEP100') { setApplied(true); say('STEP100 applied. You save $100: total $399. Applied at checkout.', 'is-ok'); }
+    else { setApplied(false); say(code ? "That code isn't valid." : 'Enter a promo code.', 'is-bad'); }
+  });
+  input.addEventListener('input', function () {
+    // Editing the field un-applies the code until Apply is pressed again.
+    setApplied(false);
+    say(DEFAULT_MSG, '');
+  });
+})();
+</script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>

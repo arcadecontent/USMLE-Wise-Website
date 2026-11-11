@@ -161,6 +161,30 @@
 .s1-offer__guarantee { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--uw-success-700, #1a7f4b); margin-top: 16px; }
 .s1-offer__guarantee svg { flex-shrink: 0; }
 
+/* Promo code field in the offer box (driven by js/step2-checkout.js) */
+.s1-promo {
+  display: flex; align-items: center; gap: 6px; margin-top: 14px;
+  padding: 5px 5px 5px 14px; border: 1px solid var(--uw-border-strong, var(--uw-border));
+  border-radius: var(--r-md); background: var(--uw-surface); text-align: left;
+}
+.s1-promo:focus-within { border-color: var(--uw-blue-500); box-shadow: 0 0 0 3px var(--uw-blue-50); }
+.s1-promo__input {
+  flex: 1; min-width: 0; height: 38px; padding: 0; border: 0; background: transparent;
+  color: var(--uw-ink-900); font: inherit; font-size: 15px; outline: none; text-transform: uppercase;
+}
+.s1-promo__input::placeholder { text-transform: none; color: var(--uw-ink-400); }
+.s1-promo__apply {
+  all: unset; box-sizing: border-box; flex: none; height: 38px; padding: 0 18px; border-radius: 6px;
+  background: var(--uw-ink-900); color: #fff; font-size: 14.5px; font-weight: 600; cursor: pointer;
+  transition: background var(--dur-fast, .15s);
+}
+.s1-promo__apply:hover { background: var(--uw-blue-700); }
+.s1-promo__apply:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 2px; }
+.s1-promo__result { min-height: 1.4em; margin: 10px 0 0; font-size: 13px; line-height: 1.4; text-align: left; color: var(--uw-ink-500); }
+.s1-promo__result.is-ok { color: var(--uw-success-700, #1a7f4b); }
+.s1-promo__result.is-bad { color: var(--uw-red-600, #c62828); }
+
+
 /* ---------- STUDENT RESULTS MARQUEE ---------- */
 .s1-marquee-mask {
   position: relative; margin-top: clamp(32px, 4vw, 44px);

@@ -9,7 +9,8 @@ $stylesheets = [
     "/styles/crash-course-brochure.css"
 ];
 $scripts = [
-    "/js/research-catalyst.js"
+    "/js/research-catalyst.js",
+    "/js/step2-checkout.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -248,11 +249,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
       <div class="s1-offer__pay">
-        <div class="s1-offer__price">$499</div>
+        <div class="s1-offer__price" id="s2-price">$499</div>
         <p class="s1-offer__price-note">One time &middot; Lifetime access</p>
-        <form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="width:100%">
+        <form id="s2-checkout" action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="width:100%">
           <input type="hidden" name="courseId" value="cmtb3d8b90n2oqyu2t9a69zlc">
           <button type="submit" class="cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--xl" style="width:100%">Enroll Now</span></button>
+          <div class="s1-promo">
+            <input id="s2-promo" class="s1-promo__input" name="promo" type="text" maxlength="80" autocomplete="off" spellcheck="false" placeholder="Promo code" aria-label="Promo code" aria-describedby="s2-promo-result">
+            <button type="button" id="s2-promo-apply" class="s1-promo__apply">Apply</button>
+          </div>
+          <p id="s2-promo-result" class="s1-promo__result" aria-live="polite">One-time payment. Any promo code is verified at checkout.</p>
         </form>
         <div class="s1-offer__guarantee">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
