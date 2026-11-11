@@ -172,12 +172,6 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Standalone landing page: fewer footer nav columns than the site-wide footer
      this was copied from, so space-between leaves a large gap. */
   .msp-foot__top { justify-content: flex-start; gap: clamp(48px, 8vw, 120px); }
-  /* Sticky mobile CTA bar, shown only under 880px (this page has no bottom nav otherwise). */
-  .cc-mobilebar { display: none; }
-  @media (max-width: 880px) {
-    .cc { padding-bottom: 78px; }
-    .cc-mobilebar { display: flex !important; }
-  }
 </style>
 </head>
 <body>
@@ -858,25 +852,6 @@ document.addEventListener('DOMContentLoaded', function () {
       </a>
     </div>
   </section>
-
-  <footer style="background:var(--uw-blue-900);color:rgba(255,255,255,.7);padding:clamp(40px,5vw,56px) clamp(20px,5vw,48px)">
-    <div style="max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
-      <img src="/assets/usmle-design-system/assets/Logo-Horizontal-Dark.svg" alt="USMLE Wise" style="height:30px">
-      <div style="font-size:12px;color:rgba(255,255,255,.5);max-width:52ch">© 2026 USMLE Wise. Not endorsed by or affiliated with the NBME or the USMLE program.</div>
-    </div>
-  </footer>
-
-  <!-- STICKY MOBILE CTA BAR (kept from the previous page and identical to Step 2's; not part of the design file) -->
-  <div class="cc-mobilebar" style="position:fixed;left:0;right:0;bottom:0;z-index:50;align-items:center;justify-content:space-between;gap:14px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--uw-border);box-shadow:0 -8px 26px rgba(15,18,51,.12)">
-    <div style="line-height:1.12">
-      <div style="display:flex;align-items:baseline;gap:8px">
-        <s style="font-size:14px;color:var(--uw-ink-400);text-decoration-thickness:1.5px">$999</s>
-        <span style="font-family:var(--font-display);font-size:26px;font-weight:600;color:var(--uw-ink-900)">$499</span>
-      </div>
-      <div style="font-size:11.5px;color:var(--uw-ink-500);margin-top:1px">One time &middot; Lifetime access</div>
-    </div>
-    <a href="#offer" style="flex:none"><span class="btn btn--primary btn--lg">Save my seat</span></a>
-  </div>
 
 </div>
 

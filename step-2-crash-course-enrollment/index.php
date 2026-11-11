@@ -176,12 +176,6 @@ document.addEventListener('DOMContentLoaded', function () {
   .cc-video-modal__close:hover { background: rgba(255,255,255,.26); }
   /* Standalone landing page: fewer footer nav columns than the site-wide footer. */
   .msp-foot__top { justify-content: flex-start; gap: clamp(48px, 8vw, 120px); }
-  /* Sticky mobile CTA bar, shown only under 880px (this page has no bottom nav otherwise). */
-  .cc-mobilebar { display: none; }
-  @media (max-width: 880px) {
-    .cc { padding-bottom: 78px; }
-    .cc-mobilebar { display: flex !important; }
-  }
 
   .cc-hv1:hover { background:#1DB954 !important; }
   .cc-hv2:hover { background:var(--uw-red-600) !important; }
@@ -573,7 +567,6 @@ document.addEventListener('DOMContentLoaded', function () {
           <div style="display:flex;flex-wrap:wrap;gap:8px;min-width:0"><span class="cc-subj" style="flex:3.5 1 auto;min-width:0;display:flex;align-items:center;gap:9px;font-size:15px;line-height:1.3;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:11px 16px 11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.72)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg>Ethics<b style="margin-left:auto;padding-left:12px;font-family:var(--font-mono);font-size:12.5px;font-weight:400;color:var(--uw-success-300);white-space:nowrap">3.5h</b></span><span class="cc-subj" style="flex:2.5 1 auto;min-width:0;display:flex;align-items:center;gap:9px;font-size:15px;line-height:1.3;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:11px 16px 11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.72)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>Biostatistics<b style="margin-left:auto;padding-left:12px;font-family:var(--font-mono);font-size:12.5px;font-weight:400;color:var(--uw-success-300);white-space:nowrap">2.5h</b></span><span class="cc-subj" style="flex:2 1 auto;min-width:0;display:flex;align-items:center;gap:9px;font-size:15px;line-height:1.3;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:11px 16px 11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.72)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.92 4.92 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"></path><path d="M10 2c1 .5 2 2 2 5"></path></svg>Nutrition<b style="margin-left:auto;padding-left:12px;font-family:var(--font-mono);font-size:12.5px;font-weight:400;color:var(--uw-success-300);white-space:nowrap">2h</b></span></div>
         </div>
       </div>
-      </div>
 
       <p style="display:flex;align-items:center;justify-content:center;gap:10px;margin:clamp(28px,3.4vw,38px) 0 0;font-size:15.5px;color:rgba(255,255,255,.8)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
@@ -882,21 +875,18 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </section>
 
-  <!-- STICKY MOBILE CTA BAR -->
-  <div class="cc-mobilebar" style="position:fixed;left:0;right:0;bottom:0;z-index:50;align-items:center;justify-content:space-between;gap:14px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--uw-border);box-shadow:0 -8px 26px rgba(15,18,51,.12)">
-    <div style="line-height:1.12">
-      <div style="display:flex;align-items:baseline;gap:8px">
-        <s style="font-size:14px;color:var(--uw-ink-400);text-decoration-thickness:1.5px">$999</s>
-        <span style="font-family:var(--font-display);font-size:26px;font-weight:600;color:var(--uw-ink-900)">$499</span>
-      </div>
-      <div style="font-size:11.5px;color:var(--uw-ink-500);margin-top:1px">One time &middot; Lifetime access</div>
-    </div>
-    <a href="#offer" style="flex:none"><span class="btn btn--primary btn--lg">Save my seat</span></a>
-  </div>
-
 </div>
 
 
+
+<!-- Video review lightbox: the student reviews play here, on the page. -->
+<div id="ccVideoModal" class="cc-video-modal" hidden>
+  <div class="cc-video-modal__backdrop" data-video-close></div>
+  <div class="cc-video-modal__dialog" role="dialog" aria-modal="true" aria-label="Student video review">
+    <button type="button" class="cc-video-modal__close" data-video-close aria-label="Close video">&times;</button>
+    <div class="cc-video-modal__frame"></div>
+  </div>
+</div>
 
 <script>
 (function () {
