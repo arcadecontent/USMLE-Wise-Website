@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <p style="text-align:center;font-family:var(--font-display);font-size:clamp(22px,2.6vw,30px);font-weight:400;font-style:italic;letter-spacing:-0.01em;color:var(--uw-success-700);margin:clamp(30px,3.6vw,40px) 0 0">Zero risk. Pure results.</p>
-      <div style="margin-top:24px;text-align:center"><form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="display:inline-block"><input type="hidden" name="courseId" value="cmtb3d8b90n2oqyu2t9a69zlc"><button type="submit" class="cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--lg">Start risk-free</span></button></form></div>
+      <div style="margin-top:24px;text-align:center"><a href="#offer"><span class="btn btn--primary btn--lg">Start risk-free</span></a></div>
     </div>
   </section>
 
@@ -623,7 +623,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </tbody>
         </table>
       </div>
-      <div style="display:flex;justify-content:center;margin-top:clamp(28px,3.4vw,40px)"><form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="display:inline-block"><input type="hidden" name="courseId" value="cmtb3d8b90n2oqyu2t9a69zlc"><button type="submit" class="cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--xl">Save my seat</span></button></form></div>
+      <div style="display:flex;justify-content:center;margin-top:clamp(28px,3.4vw,40px)"><a href="#offer"><span class="btn btn--primary btn--xl">Save my seat</span></a></div>
     </div>
   </section>
 
@@ -859,7 +859,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <p style="font-size:clamp(16.5px,1.7vw,19px);line-height:1.62;color:rgba(255,255,255,.82);margin:0 auto 18px;max-width:58ch">Every week on old material is a week training for an exam that doesn't exist anymore.</p>
       <p style="font-size:clamp(16.5px,1.7vw,19px);line-height:1.62;color:rgba(255,255,255,.82);margin:0 auto;max-width:58ch">8 days from now, you either walk in hoping you studied the right things, or you walk in knowing what's coming.</p>
       <div style="height:clamp(30px,3.8vw,44px)"></div>
-      <form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank" style="display:inline-block"><input type="hidden" name="courseId" value="cmtb3d8b90n2oqyu2t9a69zlc"><button type="submit" class="cc-checkout-btn" data-cta="checkout"><span class="btn btn--primary btn--xl">Save my seat</span></button></form>
+      <a href="#offer"><span class="btn btn--primary btn--xl">Save my seat</span></a>
     </div>
   </section>
 

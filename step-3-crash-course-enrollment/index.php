@@ -509,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <p style="text-align:center;font-family:var(--font-display);font-size:clamp(22px,2.6vw,30px);font-weight:400;font-style:italic;letter-spacing:-0.01em;color:var(--uw-success-700);margin:clamp(30px,3.6vw,40px) 0 0">Zero risk. Pure results.</p>
-      <div style="margin-top:24px;text-align:center"><a href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener"><span class="btn btn--primary btn--lg">Start risk-free</span></a></div>
+      <div style="margin-top:24px;text-align:center"><a href="#offer"><span class="btn btn--primary btn--lg">Start risk-free</span></a></div>
     </div>
   </section>
 
@@ -615,7 +615,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </table>
       </div>
       <div style="display:flex;justify-content:center;margin-top:clamp(32px,4vw,44px)">
-        <a data-checkout href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener"><span class="btn btn--primary btn--xl">Save my seat</span></a>
+        <a href="#offer"><span class="btn btn--primary btn--xl">Save my seat</span></a>
       </div>
     </div>
   </section>
@@ -837,7 +837,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <p style="font-size:clamp(16.5px,1.7vw,19px);line-height:1.62;color:rgba(255,255,255,.82);margin:0 auto 18px;max-width:58ch">Every week on old material is a week training for an exam that doesn't exist anymore.</p>
       <p style="font-size:clamp(16.5px,1.7vw,19px);line-height:1.62;color:rgba(255,255,255,.82);margin:0 auto;max-width:58ch">9 days from now, you either walk in hoping you studied the right things, or you walk in knowing what's coming.</p>
       <div style="height:clamp(30px,3.8vw,44px)"></div>
-      <a href="https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c" target="_blank" rel="noopener"><span class="btn btn--primary btn--xl">Save my seat</span></a>
+      <a href="#offer"><span class="btn btn--primary btn--xl">Save my seat</span></a>
     </div>
   </section>
 
