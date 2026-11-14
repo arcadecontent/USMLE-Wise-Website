@@ -187,33 +187,62 @@
     }
   }
 
-  function loadQuote(code) {
-    return post('/quote', { courseId: courseId, promo: code || '' }).then(function (q) {
-      if (q.product !== courseId) return quote;
-      quote = q;
-      renderPrice();
-      return q;
+  // Each course's base price and its valid codes (as SHA-256 of "<courseId>:<CODE>")
+  // are fetched once, in the background when the page loads. Applying a code is
+  // then a local lookup with no server round trip. The server still prices the
+  // actual charge from the code when the payment starts.
+  var bases = {};
+  function loadBase(id) {
+    if (!bases[id]) {
+      bases[id] = post('/quote', { courseId: id, promo: '' });
+      bases[id].catch(function () { delete bases[id]; });
+    }
+    return bases[id];
+  }
+  function baseQuote(b) { return { product: b.product, courseId: b.courseId, amount: b.amount, originalAmount: b.originalAmount, code: '', perk: null }; }
+  function sha256(text) {
+    var bytes = new TextEncoder().encode(text);
+    return crypto.subtle.digest('SHA-256', bytes).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+    });
+  }
+  // Resolves to the quote for this code, or null when the code is not valid.
+  function lookupPromo(id, code) {
+    return loadBase(id).then(function (b) {
+      if (!b.promos || !window.crypto || !crypto.subtle) {
+        // Older browsers: ask the server instead.
+        return post('/quote', { courseId: id, promo: code }).catch(function () { return null; });
+      }
+      return sha256(b.courseId + ':' + code).then(function (h) {
+        var hit = b.promos[h];
+        return hit ? { product: b.product, courseId: b.courseId, amount: hit.amount, originalAmount: b.originalAmount, code: code, perk: hit.perk } : null;
+      });
     });
   }
 
-  function applyPromo() {
+  function applyPromo(quiet) {
     var code = promoIn.value.trim().toUpperCase();
-    if (!code) { setPromoMsg('Enter a promo code first.', true); promoIn.focus(); return Promise.resolve(false); }
-    promoApply.disabled = true;
-    setPromoMsg('Checking code…');
-    return loadQuote(code)
-      .then(function () { setPromoMsg(''); return true; })
-      .catch(function (err) { setPromoMsg(err.message || 'This promo code is not valid.', true); return false; })
-      .then(function (ok) { promoApply.disabled = false; return ok; });
+    var id = courseId;
+    if (!code) { if (!quiet) { setPromoMsg('Enter a promo code first.', true); promoIn.focus(); } return Promise.resolve(false); }
+    return lookupPromo(id, code).then(function (q) {
+      if (id !== courseId || promoIn.value.trim().toUpperCase() !== code) return false;
+      if (!q) { if (!quiet) setPromoMsg('This promo code is not valid for this course.', true); return false; }
+      quote = q;
+      setPromoMsg('');
+      renderPrice();
+      return true;
+    }).catch(function () {
+      if (!quiet) setPromoMsg('Could not check the code. Please try again.', true);
+      return false;
+    });
   }
 
   function removePromo() {
     promoIn.value = '';
     setPromoMsg('');
-    quote = quote ? { courseId: courseId, amount: quote.originalAmount, originalAmount: quote.originalAmount, code: '', perk: null } : null;
+    if (quote) quote = { product: quote.product, courseId: quote.courseId, amount: quote.originalAmount, originalAmount: quote.originalAmount, code: '', perk: null };
     renderPrice();
     promoIn.focus();
-    loadQuote('').catch(function () {});
   }
 
   function track(event, data) {
@@ -239,8 +268,12 @@
     document.body.classList.add('cp-open');
     $('cpName').focus();
     track('InitiateCheckout', { content_name: c.item, currency: 'USD', value: c.price / 100 });
-    if (promoIn.value) applyPromo();
-    else loadQuote('').catch(function () {});
+    var opening = id;
+    loadBase(id).then(function (b) {
+      if (courseId !== opening) return;
+      if (!quote) { quote = baseQuote(b); renderPrice(); }
+      if (promoIn.value) applyPromo();
+    }).catch(function () {});
     prepare().catch(function (err) { showError(err.message + ' You can also message us on WhatsApp at +1 919 201 5700.'); });
   }
 
@@ -325,9 +358,9 @@
     });
   });
 
-  promoApply.addEventListener('click', applyPromo);
+  promoApply.addEventListener('click', function () { applyPromo(false); });
   promoIn.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); applyPromo(); } });
-  promoIn.addEventListener('input', function () { setPromoMsg(''); });
+  promoIn.addEventListener('input', function () { setPromoMsg(''); applyPromo(true); });
   $('cpPromoRemove').addEventListener('click', removePromo);
   dlg.querySelectorAll('[data-cp-close]').forEach(function (el) { el.addEventListener('click', closeDialog); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden && !busy && ccMenu.hidden) closeDialog(); });
@@ -360,8 +393,14 @@
     openDialog(id, (p && p.value.trim().toUpperCase()) || linkPromo);
   });
 
+  function productOnPage(id) {
+    if (id === 'step3-live') return !!document.querySelector('a[href*="' + STEP3_LINK + '"]');
+    return Array.prototype.some.call(document.forms, function (f) { return courseOf(f) === id; });
+  }
   var onPage = Array.prototype.some.call(document.forms, function (f) { return !!courseOf(f); }) || !!document.querySelector('a[href*="' + STEP3_LINK + '"]');
   if (onPage) {
+    // Prices and codes load right away (tiny request); Stripe loads when the page is idle.
+    Object.keys(COURSES).forEach(function (id) { if (productOnPage(id)) loadBase(id).catch(function () {}); });
     if ('requestIdleCallback' in window) window.requestIdleCallback(function () { prepare().catch(function () {}); }, { timeout: 2500 });
     else setTimeout(function () { prepare().catch(function () {}); }, 1200);
   }
