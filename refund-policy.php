@@ -45,7 +45,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h3>Match Edit Guarantee (Match Maximizer package only)</h3>
         <p>The Match Maximizer package includes a Match Edit Guarantee: if you do not match in a given cycle, we continue editing and re-strategizing your materials for as many cycles as it takes, at no extra cost. This is a guarantee of continued service, not a cash refund &mdash; the final Match decision rests with residency programs, not with us.</p>
 
-        <h2>4. Multi-Month &amp; Cohort Programs &mdash; Trial Periods</h2>
+        <h2>4. Research &amp; Cohort Programs</h2>
+
+        <h3 id="research-wise">Research Wise (3-Sunday live workshop)</h3>
+        <p>Research Wise is a one-time paid workshop with a short refund window tied to the first live session.</p>
+        <ul>
+          <li><strong>Refund window:</strong> attend the first live session (Day 1 of your cohort). If you are not satisfied, you may request a full refund within 24 hours of attending it.</li>
+          <li><strong>How to request:</strong> email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> from the address you used at purchase, with your full name.</li>
+          <li><strong>After that window:</strong> no refund is available. This applies whether or not you attend the remaining sessions, and whether you watch the live sessions or the recordings.</li>
+        </ul>
 
         <h3>Research Catalyst (12-month program)</h3>
         <p>Enrollment begins with a $1,500 payment, which secures your place and covers the first 6-week trial period. The remaining program balance only becomes due after that 6-week trial, once you&rsquo;ve confirmed the program is the right fit. If you decide not to continue after the trial period, you simply are not charged the remaining balance and your participation ends at that point.</p>
