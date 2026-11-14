@@ -37,7 +37,13 @@
       </div>
       <div class="cp-field">
         <label for="cpPhone">WhatsApp number</label>
-        <input id="cpPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 555 123 4567" required>
+        <div class="cp-phone">
+          <div class="cp-cc">
+            <span class="cp-cc__show" id="cpCountryShow" aria-hidden="true">🇺🇸 +1</span>
+            <select id="cpCountry" aria-label="Country code" autocomplete="tel-country-code"></select>
+          </div>
+          <input id="cpPhone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="Phone number" required>
+        </div>
       </div>
 
       <div class="cp-field">
@@ -123,6 +129,13 @@
   .cp-sel.StripeElement--focus{border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
   .cp-sel.StripeElement--invalid{border-color:#e32124;box-shadow:0 0 0 3px rgba(227,33,36,.12)}
   .cp-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cp-phone{display:flex;gap:8px}
+  .cp-phone input{flex:1;min-width:0}
+  .cp-cc{position:relative;flex:none;width:112px;box-sizing:border-box;border:1px solid #d4d4cf;border-radius:8px;background:#fff;transition:border-color .15s,box-shadow .15s}
+  .cp-cc:focus-within{border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
+  .cp-cc__show{display:flex;align-items:center;height:100%;padding:0 26px 0 12px;font-size:15px;color:#14151c;white-space:nowrap;pointer-events:none}
+  .cp-cc::after{content:"";position:absolute;right:11px;top:50%;width:7px;height:7px;margin-top:-6px;border-right:1.5px solid #6d7080;border-bottom:1.5px solid #6d7080;transform:rotate(45deg);pointer-events:none}
+  .cp-cc select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px}
   .cp__error{margin:4px 0 10px;font-size:14px;color:#a01517}
   .cp__error:empty{display:none}
   .cp__submit{width:100%;justify-content:center;font-size:16px;padding:14px 18px;margin-top:4px}

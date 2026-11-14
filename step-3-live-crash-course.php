@@ -461,4 +461,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 })();
 </script>
 
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/course-pay.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>

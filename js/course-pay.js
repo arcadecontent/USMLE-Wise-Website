@@ -13,15 +13,49 @@
   // Publishable keys are public by design; this one belongs to the Stripe account Mastery charges.
   var STRIPE_KEY = 'pk_live_51QP4cwJDyWnuZEnfkf8zIUSEIgSpPgUPMyrg4m8UIeinhWBSeM0Do5lwYvffKwsjVj7DGUeJwLNUPKRiCD5yUd5P00yYL7zDFz';
   var COURSES = {
-    cmtb3d8b90n2oqyu2t9a69zlc: { eyebrow: 'Step 2 CK Crash Course', item: 'Step 2 Ultra High-Yield Crash Course', sub: 'One-time payment · instant Mastery access', price: 49900 },
+    // Step 2 and Step 3 sell this month's live cohort (Mastery src/lib/cohorts.ts) plus the recorded Step 2/3 course.
+    'step2-live': { eyebrow: 'Step 2 CK Live Crash Course', item: 'Step 2 Live Crash Course', sub: 'This month’s cohort + recorded course · instant Mastery access', price: 49900 },
+    'step3-live': { eyebrow: 'Step 3 Live Crash Course', item: 'Step 3 Live Crash Course', sub: 'This month’s cohort + recorded course · instant Mastery access', price: 49900 },
     cdbu1brx0peuyo75xzpwjcota: { eyebrow: 'Step 1 Live Crash Course', item: 'Step 1 Live Crash Course', sub: 'One-time payment · instant Mastery access', price: 49900 }
   };
+  // [ISO code, dial code, name]. The first block is the countries most of our students call from.
+  var COUNTRIES = 'US 1 United States|CA 1 Canada|PK 92 Pakistan|IN 91 India|GB 44 United Kingdom|AE 971 United Arab Emirates|SA 966 Saudi Arabia|EG 20 Egypt|NG 234 Nigeria|BD 880 Bangladesh|NP 977 Nepal|LK 94 Sri Lanka|AF 93 Afghanistan|AL 355 Albania|DZ 213 Algeria|AR 54 Argentina|AM 374 Armenia|AU 61 Australia|AT 43 Austria|AZ 994 Azerbaijan|BH 973 Bahrain|BY 375 Belarus|BE 32 Belgium|BZ 501 Belize|BO 591 Bolivia|BA 387 Bosnia and Herzegovina|BR 55 Brazil|BG 359 Bulgaria|KH 855 Cambodia|CM 237 Cameroon|CL 56 Chile|CN 86 China|CO 57 Colombia|CR 506 Costa Rica|HR 385 Croatia|CU 53 Cuba|CY 357 Cyprus|CZ 420 Czechia|DK 45 Denmark|DO 1 Dominican Republic|EC 593 Ecuador|SV 503 El Salvador|EE 372 Estonia|ET 251 Ethiopia|FI 358 Finland|FR 33 France|GE 995 Georgia|DE 49 Germany|GH 233 Ghana|GR 30 Greece|GT 502 Guatemala|GY 592 Guyana|HT 509 Haiti|HN 504 Honduras|HK 852 Hong Kong|HU 36 Hungary|IS 354 Iceland|ID 62 Indonesia|IR 98 Iran|IQ 964 Iraq|IE 353 Ireland|IL 972 Israel|IT 39 Italy|JM 1 Jamaica|JP 81 Japan|JO 962 Jordan|KZ 7 Kazakhstan|KE 254 Kenya|KW 965 Kuwait|KG 996 Kyrgyzstan|LV 371 Latvia|LB 961 Lebanon|LY 218 Libya|LT 370 Lithuania|LU 352 Luxembourg|MY 60 Malaysia|MV 960 Maldives|MT 356 Malta|MU 230 Mauritius|MX 52 Mexico|MD 373 Moldova|MN 976 Mongolia|MA 212 Morocco|MM 95 Myanmar|NL 31 Netherlands|NZ 64 New Zealand|NI 505 Nicaragua|MK 389 North Macedonia|NO 47 Norway|OM 968 Oman|PS 970 Palestine|PA 507 Panama|PY 595 Paraguay|PE 51 Peru|PH 63 Philippines|PL 48 Poland|PT 351 Portugal|PR 1 Puerto Rico|QA 974 Qatar|RO 40 Romania|RU 7 Russia|RW 250 Rwanda|RS 381 Serbia|SG 65 Singapore|SK 421 Slovakia|SI 386 Slovenia|SO 252 Somalia|ZA 27 South Africa|KR 82 South Korea|ES 34 Spain|SD 249 Sudan|SE 46 Sweden|CH 41 Switzerland|SY 963 Syria|TW 886 Taiwan|TJ 992 Tajikistan|TZ 255 Tanzania|TH 66 Thailand|TT 1 Trinidad and Tobago|TN 216 Tunisia|TR 90 Turkey|TM 993 Turkmenistan|UG 256 Uganda|UA 380 Ukraine|UY 598 Uruguay|UZ 998 Uzbekistan|VE 58 Venezuela|VN 84 Vietnam|YE 967 Yemen|ZM 260 Zambia|ZW 263 Zimbabwe'.split('|').map(function (c) { var p = c.split(' '); return [p[0], p[1], p.slice(2).join(' ')]; });
   var CARD_STYLE = {
     base: { fontFamily: 'Geist, Inter, system-ui, sans-serif', fontSize: '15px', color: '#14151c', '::placeholder': { color: '#9a9ca8' } },
     invalid: { color: '#a01517', iconColor: '#a01517' }
   };
 
   function $(id) { return document.getElementById(id); }
+
+  // WhatsApp number in two parts: country code picker + the local number.
+  var countrySel = $('cpCountry'), countryShow = $('cpCountryShow');
+  function flag(iso) { return iso.replace(/./g, function (ch) { return String.fromCodePoint(127397 + ch.charCodeAt(0)); }); }
+  COUNTRIES.forEach(function (c, i) {
+    var o = document.createElement('option');
+    o.value = c[0];
+    o.textContent = flag(c[0]) + ' ' + c[2] + ' (+' + c[1] + ')';
+    countrySel.appendChild(o);
+    if (i === 11) { var sep = document.createElement('option'); sep.disabled = true; sep.textContent = '──────────'; countrySel.appendChild(sep); }
+  });
+  function dialCode() { for (var i = 0; i < COUNTRIES.length; i++) if (COUNTRIES[i][0] === countrySel.value) return COUNTRIES[i][1]; return '1'; }
+  function showCountry() { countryShow.textContent = flag(countrySel.value) + ' +' + dialCode(); }
+  (function guessCountry() {
+    var region = '';
+    try { region = (new Intl.Locale(navigator.language)).maximize().region || ''; } catch (e) { region = (navigator.language.split('-')[1] || ''); }
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { /* ignore */ }
+    var byZone = { 'Asia/Karachi': 'PK', 'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA', 'Africa/Cairo': 'EG', 'Africa/Lagos': 'NG', 'Asia/Dhaka': 'BD', 'Asia/Kathmandu': 'NP', 'Europe/London': 'GB' };
+    var pick = byZone[tz] || region.toUpperCase() || 'US';
+    countrySel.value = COUNTRIES.some(function (c) { return c[0] === pick; }) ? pick : 'US';
+    showCountry();
+  })();
+  countrySel.addEventListener('change', function () { showCountry(); $('cpPhone').focus(); });
+  // Full international number, e.g. "+92 3001234567". A number typed with its own "+" is kept as typed.
+  function fullPhone() {
+    var raw = $('cpPhone').value.trim();
+    if (raw.charAt(0) === '+') return '+' + raw.replace(/\D/g, '');
+    return '+' + dialCode() + ' ' + raw.replace(/\D/g, '').replace(/^0+/, '');
+  }
   var form = $('cpForm'), done = $('cpDone'), errorEl = $('cpError'), submitBtn = $('cpSubmit');
   var promoIn = $('cpPromo'), promoApply = $('cpPromoApply'), promoBox = $('cpPromoBox'), promoOn = $('cpPromoOn'), promoMsg = $('cpPromoMsg');
   var stripe = null, cardNumber = null, ready = null, lastFocus = null, cardErrors = {};
@@ -98,7 +132,7 @@
 
   function loadQuote(code) {
     return post('/quote', { courseId: courseId, promo: code || '' }).then(function (q) {
-      if (q.courseId !== courseId) return quote;
+      if (q.product !== courseId) return quote;
       quote = q;
       renderPrice();
       return q;
@@ -164,7 +198,7 @@
     var checks = [
       [name, name.value.trim().length >= 2, 'Please enter your full name.'],
       [email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()), 'Please enter a valid email address.'],
-      [phone, phone.value.replace(/\D/g, '').length >= 7, 'Please enter your WhatsApp number, including country code.']
+      [phone, phone.value.replace(/\D/g, '').replace(/^0+/, '').length >= 6, 'Please enter your WhatsApp number.']
     ];
     for (var i = 0; i < checks.length; i++) {
       checks[i][0].setAttribute('aria-invalid', checks[i][1] ? 'false' : 'true');
@@ -202,7 +236,7 @@
     pendingPromo.then(function (ok) {
       if (!ok) return showError('Fix or remove the promo code to continue.');
       setBusy(true);
-      var billing = { name: $('cpName').value.trim(), email: $('cpEmail').value.trim(), phone: $('cpPhone').value.trim() };
+      var billing = { name: $('cpName').value.trim(), email: $('cpEmail').value.trim(), phone: fullPhone() };
       var paid = 0;
       prepare()
         .then(function () {
@@ -231,11 +265,24 @@
 
   // Take over the page's Mastery buy forms. Runs after each form's own submit
   // handlers, so a form that blocks itself (e.g. a bad code) stays blocked.
+  // Old buy forms name the recorded Step 2/3 course; they now sell the Step 2 cohort.
+  var FORM_PRODUCT = { cmtb3d8b90n2oqyu2t9a69zlc: 'step2-live' };
+  // Step 3 pages link to this Stripe payment link; clicks open the popup instead.
+  var STEP3_LINK = 'buy.stripe.com/eVq9AUe5sfTDbx6604es03c';
   function courseOf(f) {
     if (!f || !/\/api\/checkout\/single-course/.test(f.getAttribute('action') || '')) return null;
     var input = f.querySelector('input[name="courseId"]');
-    return input && Object.prototype.hasOwnProperty.call(COURSES, input.value) ? input.value : null;
+    var id = input ? (FORM_PRODUCT[input.value] || input.value) : '';
+    return Object.prototype.hasOwnProperty.call(COURSES, id) ? id : null;
   }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="' + STEP3_LINK + '"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    var code = '';
+    try { code = new URL(a.href).searchParams.get('prefilled_promo_code') || ''; } catch (err) { /* no code */ }
+    openDialog('step3-live', code.toUpperCase() || linkPromo);
+  });
   document.addEventListener('submit', function (e) {
     var id = courseOf(e.target);
     if (!id || e.defaultPrevented) return;
@@ -244,7 +291,7 @@
     openDialog(id, (p && p.value.trim().toUpperCase()) || linkPromo);
   });
 
-  var onPage = Array.prototype.some.call(document.forms, function (f) { return !!courseOf(f); });
+  var onPage = Array.prototype.some.call(document.forms, function (f) { return !!courseOf(f); }) || !!document.querySelector('a[href*="' + STEP3_LINK + '"]');
   if (onPage) {
     if ('requestIdleCallback' in window) window.requestIdleCallback(function () { prepare().catch(function () {}); }, { timeout: 2500 });
     else setTimeout(function () { prepare().catch(function () {}); }, 1200);
