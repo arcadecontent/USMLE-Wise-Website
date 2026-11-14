@@ -85,6 +85,7 @@
       <div class="cp__tick" aria-hidden="true">&#10003;</div>
       <h3>You're enrolled. Thank you!</h3>
       <p id="cpDoneText">Your payment is confirmed. We've emailed your receipt and your login for <a class="cp-link" href="https://mastery.usmlewise.com" target="_blank" rel="noopener">our learning platform</a>.</p>
+      <a class="cp-wa" id="cpDoneGroup" href="#" target="_blank" rel="noopener" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Join the cohort WhatsApp group</a>
       <a class="btn btn--primary" id="cpDoneGo" href="https://mastery.usmlewise.com/login" target="_blank" rel="noopener">Open our learning platform</a>
       <p class="cp__fine">Can't find the email? Check spam, or message us on <a href="https://wa.me/19192015700" target="_blank" rel="noopener">WhatsApp</a>.</p>
     </div>
@@ -160,6 +161,10 @@
   .cp__done h3{font-family:var(--font-display);font-size:26px;margin:0 0 8px;color:#14151c}
   .cp__done p{color:#32343f;margin:0 0 16px}
   .cp__fine{font-size:14px;margin-top:14px!important}
+  .cp-wa{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;margin:0 0 10px;padding:13px 18px;border-radius:8px;background:#25D366;color:#fff;font-weight:600;font-size:15.5px;text-decoration:none}
+  .cp-wa[hidden]{display:none}
+  .cp-wa:hover{background:#1DB954}
+  #cpDoneGo{width:100%;justify-content:center;box-sizing:border-box}
   .cp__fine a,.cp-link{color:#2c3386;font-weight:600;text-decoration:underline}
   body.cp-open{overflow:hidden}
   @media (max-width:480px){.cp{padding:0;align-items:flex-end}.cp__panel{border-radius:16px 16px 0 0;max-height:94vh;padding:20px 16px}}
