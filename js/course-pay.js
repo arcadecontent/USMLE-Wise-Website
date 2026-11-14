@@ -14,8 +14,9 @@
   var STRIPE_KEY = 'pk_live_51QP4cwJDyWnuZEnfkf8zIUSEIgSpPgUPMyrg4m8UIeinhWBSeM0Do5lwYvffKwsjVj7DGUeJwLNUPKRiCD5yUd5P00yYL7zDFz';
   var COURSES = {
     // Step 2 and Step 3 sell this month's live cohort (Mastery src/lib/cohorts.ts) plus the recorded Step 2/3 course.
-    'step2-live': { eyebrow: 'Step 2 CK Live Crash Course', item: 'Step 2 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
-    'step3-live': { eyebrow: 'Step 3 Live Crash Course', item: 'Step 3 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
+    // Both sell the same combined Step 2/3 cohort.
+    'step2-live': { eyebrow: 'Step 2/3 Live Crash Course', item: 'Step 2/3 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
+    'step3-live': { eyebrow: 'Step 2/3 Live Crash Course', item: 'Step 2/3 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
     cdbu1brx0peuyo75xzpwjcota: { eyebrow: 'Step 1 Live Crash Course', item: 'Step 1 Live Crash Course', sub: 'One-time payment', price: 49900 }
   };
   // [ISO code, dial code, name]. The first block is the countries most of our students call from.
@@ -258,6 +259,7 @@
     $('cpItemSub').textContent = c.sub;
     form.hidden = false;
     done.hidden = true;
+    $('cpDoneGroup').hidden = true;
     quote = null;
     showError('');
     setPromoMsg('');
@@ -322,6 +324,7 @@
         if (d.newAccount) doneText('Your payment is confirmed and your course is unlocked on ', PLATFORM, '. We’ve emailed ' + d.email + ' a link to set your password and start learning, plus your receipt.');
         else doneText('Your payment is confirmed and the course is now in your account on ', PLATFORM, ' (' + d.email + '). Sign in with your usual password. Your receipt is in your inbox.');
         $('cpDoneGo').textContent = d.newAccount ? 'Open our learning platform' : 'Sign in to our learning platform';
+        if (d.groupUrl) { var g = $('cpDoneGroup'); g.href = d.groupUrl; g.hidden = false; }
       })
       .catch(function () { /* access is still granted by Mastery's 15-minute check */ });
   }
