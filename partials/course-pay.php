@@ -21,7 +21,7 @@
 
     <form id="cpForm" novalidate>
       <div class="cp__summary">
-        <div><strong id="cpItem">Course</strong><span id="cpItemSub">One-time payment &middot; instant Mastery access</span></div>
+        <div><strong id="cpItem">Course</strong><span><span id="cpItemSub">One-time payment</span> &middot; instant access on <a class="cp-link" href="https://mastery.usmlewise.com" target="_blank" rel="noopener">our learning platform</a></span></div>
         <div class="cp__price"><s id="cpWas" hidden></s><b id="cpPrice"></b></div>
       </div>
       <p class="cp__perk" id="cpPerk" hidden></p>
@@ -33,7 +33,7 @@
       <div class="cp-field">
         <label for="cpEmail">Email</label>
         <input id="cpEmail" name="email" type="email" autocomplete="email" inputmode="email" required>
-        <small>Your receipt and Mastery login are sent here. Already a student? Use your Mastery email.</small>
+        <small>Your receipt and your login for <a class="cp-link" href="https://mastery.usmlewise.com" target="_blank" rel="noopener">our learning platform</a> are sent here. Already have an account there? Use the same email.</small>
       </div>
       <div class="cp-field">
         <label for="cpPhone">WhatsApp number</label>
@@ -84,8 +84,8 @@
     <div class="cp__done" id="cpDone" hidden>
       <div class="cp__tick" aria-hidden="true">&#10003;</div>
       <h3>You're enrolled. Thank you!</h3>
-      <p id="cpDoneText">Your payment is confirmed. We've emailed your receipt and your Mastery login.</p>
-      <a class="btn btn--primary" id="cpDoneGo" href="https://mastery.usmlewise.com/login" target="_blank" rel="noopener">Go to Mastery</a>
+      <p id="cpDoneText">Your payment is confirmed. We've emailed your receipt and your login for <a class="cp-link" href="https://mastery.usmlewise.com" target="_blank" rel="noopener">our learning platform</a>.</p>
+      <a class="btn btn--primary" id="cpDoneGo" href="https://mastery.usmlewise.com/login" target="_blank" rel="noopener">Open our learning platform</a>
       <p class="cp__fine">Can't find the email? Check spam, or message us on <a href="https://wa.me/19192015700" target="_blank" rel="noopener">WhatsApp</a>.</p>
     </div>
   </div>
@@ -160,7 +160,7 @@
   .cp__done h3{font-family:var(--font-display);font-size:26px;margin:0 0 8px;color:#14151c}
   .cp__done p{color:#32343f;margin:0 0 16px}
   .cp__fine{font-size:14px;margin-top:14px!important}
-  .cp__fine a{color:#2c3386;font-weight:600}
+  .cp__fine a,.cp-link{color:#2c3386;font-weight:600;text-decoration:underline}
   body.cp-open{overflow:hidden}
   @media (max-width:480px){.cp{padding:0;align-items:flex-end}.cp__panel{border-radius:16px 16px 0 0;max-height:94vh;padding:20px 16px}}
 </style>
