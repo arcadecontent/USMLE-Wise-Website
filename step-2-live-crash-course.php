@@ -425,4 +425,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
 </main>
 
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/course-pay.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/footer.php'; ?>

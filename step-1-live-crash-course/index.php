@@ -1338,6 +1338,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
   });
 })();
 </script>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/course-pay.php'; ?>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
