@@ -28,28 +28,85 @@
   function $(id) { return document.getElementById(id); }
 
   // WhatsApp number in two parts: country code picker + the local number.
-  var countrySel = $('cpCountry'), countryShow = $('cpCountryShow');
+  var country = 'US';
+  var ccBtn = $('cpCountryBtn'), ccShow = $('cpCountryShow'), ccMenu = $('cpCountryMenu'), ccSearch = $('cpCountrySearch'), ccList = $('cpCountryList');
+  var ccShown = [], ccActive = 0;
   function flag(iso) { return iso.replace(/./g, function (ch) { return String.fromCodePoint(127397 + ch.charCodeAt(0)); }); }
-  COUNTRIES.forEach(function (c, i) {
-    var o = document.createElement('option');
-    o.value = c[0];
-    o.textContent = flag(c[0]) + ' ' + c[2] + ' (+' + c[1] + ')';
-    countrySel.appendChild(o);
-    if (i === 11) { var sep = document.createElement('option'); sep.disabled = true; sep.textContent = '──────────'; countrySel.appendChild(sep); }
+  function findCountry(iso) { for (var i = 0; i < COUNTRIES.length; i++) if (COUNTRIES[i][0] === iso) return COUNTRIES[i]; return null; }
+  function dialCode() { var c = findCountry(country); return c ? c[1] : '1'; }
+  function setCountry(iso) { if (findCountry(iso)) country = iso; ccShow.textContent = flag(country) + ' +' + dialCode(); }
+
+  // Searchable list: matches country name, 2-letter code, or dialling code ("92", "+92").
+  function renderCountries() {
+    var q = ccSearch.value.trim().toLowerCase();
+    var digits = q.replace(/^\+/, '');
+    var byCode = /^\d+$/.test(digits);
+    ccShown = !q ? COUNTRIES.slice() : COUNTRIES.filter(function (c) {
+      if (byCode) return c[1].indexOf(digits) === 0;
+      var name = c[2].toLowerCase();
+      return name.indexOf(q) === 0 || name.indexOf(' ' + q) !== -1 || c[0].toLowerCase() === q;
+    });
+    if (byCode) ccShown.sort(function (a, b) { return (a[1] === digits ? 0 : 1) - (b[1] === digits ? 0 : 1); });
+    ccList.innerHTML = '';
+    if (!ccShown.length) {
+      var none = document.createElement('li'); none.className = 'cp-cc__empty'; none.textContent = 'No country found'; ccList.appendChild(none);
+    }
+    ccShown.forEach(function (c, i) {
+      var li = document.createElement('li');
+      li.id = 'cpCc-' + c[0];
+      li.setAttribute('role', 'option');
+      li.setAttribute('aria-selected', c[0] === country ? 'true' : 'false');
+      li.appendChild(document.createTextNode(flag(c[0]) + ' ' + c[2]));
+      var b = document.createElement('b'); b.textContent = '+' + c[1]; li.appendChild(b);
+      li.addEventListener('mousedown', function (e) { e.preventDefault(); chooseCountry(c[0]); });
+      li.addEventListener('mousemove', function () { if (ccActive !== i) markActive(i); });
+      ccList.appendChild(li);
+      // A divider after the most common countries, only on the full list.
+      if (!q && i === 11) { var sep = document.createElement('li'); sep.className = 'cp-cc__sep'; sep.setAttribute('aria-hidden', 'true'); ccList.appendChild(sep); }
+    });
+    var sel = q ? 0 : Math.max(0, ccShown.findIndex(function (c) { return c[0] === country; }));
+    markActive(sel);
+  }
+  function markActive(i) {
+    ccActive = i;
+    Array.prototype.forEach.call(ccList.querySelectorAll('[role="option"]'), function (li, n) { li.classList.toggle('is-active', n === i); });
+    var c = ccShown[i];
+    var li = c && $('cpCc-' + c[0]);
+    if (li) { ccSearch.setAttribute('aria-activedescendant', li.id); li.scrollIntoView({ block: 'nearest' }); }
+    else ccSearch.removeAttribute('aria-activedescendant');
+  }
+  function openCountries() {
+    ccMenu.hidden = false;
+    ccBtn.setAttribute('aria-expanded', 'true');
+    ccSearch.value = '';
+    renderCountries();
+    ccSearch.focus();
+  }
+  function closeCountries(refocus) {
+    if (ccMenu.hidden) return;
+    ccMenu.hidden = true;
+    ccBtn.setAttribute('aria-expanded', 'false');
+    if (refocus) ccBtn.focus();
+  }
+  function chooseCountry(iso) { setCountry(iso); closeCountries(false); $('cpPhone').focus(); }
+  ccBtn.addEventListener('click', function () { if (ccMenu.hidden) openCountries(); else closeCountries(true); });
+  ccSearch.addEventListener('input', renderCountries);
+  ccSearch.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown') { e.preventDefault(); if (ccShown.length) markActive(Math.min(ccShown.length - 1, ccActive + 1)); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (ccShown.length) markActive(Math.max(0, ccActive - 1)); }
+    else if (e.key === 'Enter') { e.preventDefault(); if (ccShown[ccActive]) chooseCountry(ccShown[ccActive][0]); }
+    else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeCountries(true); }
+    else if (e.key === 'Tab') closeCountries(false);
   });
-  function dialCode() { for (var i = 0; i < COUNTRIES.length; i++) if (COUNTRIES[i][0] === countrySel.value) return COUNTRIES[i][1]; return '1'; }
-  function showCountry() { countryShow.textContent = flag(countrySel.value) + ' +' + dialCode(); }
+  document.addEventListener('mousedown', function (e) { if (!ccMenu.hidden && !ccMenu.parentNode.contains(e.target)) closeCountries(false); });
   (function guessCountry() {
     var region = '';
     try { region = (new Intl.Locale(navigator.language)).maximize().region || ''; } catch (e) { region = (navigator.language.split('-')[1] || ''); }
     var tz = '';
     try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { /* ignore */ }
     var byZone = { 'Asia/Karachi': 'PK', 'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA', 'Africa/Cairo': 'EG', 'Africa/Lagos': 'NG', 'Asia/Dhaka': 'BD', 'Asia/Kathmandu': 'NP', 'Europe/London': 'GB' };
-    var pick = byZone[tz] || region.toUpperCase() || 'US';
-    countrySel.value = COUNTRIES.some(function (c) { return c[0] === pick; }) ? pick : 'US';
-    showCountry();
+    setCountry(byZone[tz] || region.toUpperCase() || 'US');
   })();
-  countrySel.addEventListener('change', function () { showCountry(); $('cpPhone').focus(); });
   // Full international number, e.g. "+92 3001234567". A number typed with its own "+" is kept as typed.
   function fullPhone() {
     var raw = $('cpPhone').value.trim();
@@ -188,6 +245,7 @@
   }
 
   function closeDialog() {
+    closeCountries(false);
     dlg.hidden = true;
     document.body.classList.remove('cp-open');
     if (lastFocus && lastFocus.focus) lastFocus.focus();
@@ -261,7 +319,7 @@
   promoIn.addEventListener('input', function () { setPromoMsg(''); });
   $('cpPromoRemove').addEventListener('click', removePromo);
   dlg.querySelectorAll('[data-cp-close]').forEach(function (el) { el.addEventListener('click', closeDialog); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden && !busy) closeDialog(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden && !busy && ccMenu.hidden) closeDialog(); });
 
   // Take over the page's Mastery buy forms. Runs after each form's own submit
   // handlers, so a form that blocks itself (e.g. a bad code) stays blocked.

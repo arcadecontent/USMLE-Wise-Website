@@ -39,8 +39,11 @@
         <label for="cpPhone">WhatsApp number</label>
         <div class="cp-phone">
           <div class="cp-cc">
-            <span class="cp-cc__show" id="cpCountryShow" aria-hidden="true">🇺🇸 +1</span>
-            <select id="cpCountry" aria-label="Country code" autocomplete="tel-country-code"></select>
+            <button type="button" class="cp-cc__btn" id="cpCountryBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="cpCountryMenu"><span class="cp-sr">Country code: </span><span id="cpCountryShow">🇺🇸 +1</span></button>
+            <div class="cp-cc__menu" id="cpCountryMenu" hidden>
+              <input type="text" id="cpCountrySearch" placeholder="Search country or code" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="cpCountryList" aria-autocomplete="list" aria-label="Search country or code">
+              <ul id="cpCountryList" role="listbox" aria-label="Countries"></ul>
+            </div>
           </div>
           <input id="cpPhone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="Phone number" required>
         </div>
@@ -133,9 +136,20 @@
   .cp-phone input{flex:1;min-width:0}
   .cp-cc{position:relative;flex:none;width:112px;box-sizing:border-box;border:1px solid #d4d4cf;border-radius:8px;background:#fff;transition:border-color .15s,box-shadow .15s}
   .cp-cc:focus-within{border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
-  .cp-cc__show{display:flex;align-items:center;height:100%;padding:0 26px 0 12px;font-size:15px;color:#14151c;white-space:nowrap;pointer-events:none}
+  .cp-cc__btn{all:unset;box-sizing:border-box;display:flex;align-items:center;width:100%;height:100%;min-height:45px;padding:0 26px 0 12px;font-size:15px;color:#14151c;white-space:nowrap;cursor:pointer;border-radius:8px}
+  .cp-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .cp-cc__menu{position:absolute;left:-1px;top:calc(100% + 6px);z-index:5;width:300px;max-width:calc(100vw - 48px);background:#fff;border:1px solid #d4d4cf;border-radius:10px;box-shadow:0 12px 32px rgba(20,21,28,.18);padding:8px}
+  .cp-cc__menu[hidden]{display:none}
+  .cp-cc__menu input{width:100%;box-sizing:border-box;font:inherit;font-size:15px;border:1px solid #d4d4cf;border-radius:8px;padding:9px 11px;margin:0 0 6px}
+  .cp-cc__menu input:focus{outline:none;border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
+  .cp-cc__menu ul{list-style:none;margin:0;padding:0;max-height:240px;overflow:auto}
+  .cp-cc__menu li{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:6px;font-size:14.5px;color:#14151c;cursor:pointer}
+  .cp-cc__menu li b{margin-left:auto;font-weight:500;color:#6d7080}
+  .cp-cc__menu li.is-active{background:#eef0fb}
+  .cp-cc__menu li[aria-selected="true"]{font-weight:600}
+  .cp-cc__menu li.cp-cc__empty{color:#6d7080;cursor:default}
+  .cp-cc__menu li.cp-cc__sep{padding:0;margin:4px 0;height:1px;background:#e6e6e2;cursor:default}
   .cp-cc::after{content:"";position:absolute;right:11px;top:50%;width:7px;height:7px;margin-top:-6px;border-right:1.5px solid #6d7080;border-bottom:1.5px solid #6d7080;transform:rotate(45deg);pointer-events:none}
-  .cp-cc select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px}
   .cp__error{margin:4px 0 10px;font-size:14px;color:#a01517}
   .cp__error:empty{display:none}
   .cp__submit{width:100%;justify-content:center;font-size:16px;padding:14px 18px;margin-top:4px}
