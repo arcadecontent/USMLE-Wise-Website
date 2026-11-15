@@ -282,7 +282,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0;text-wrap:balance">Taught by researchers <em style="font-style:italic;color:var(--uw-blue-500)">who publish.</em></h2>
       </div>
       <div class="rw-founder" style="margin-top:40px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:center;padding:clamp(22px,3vw,36px);background:#fff;border:1px solid var(--uw-border);border-top:3px solid var(--uw-blue-500);border-radius:var(--r-lg);box-shadow:var(--shadow-sm)">
-        <img src="/assets/research-wise/kaushik.webp" alt="Dr. Kaushik Sreerama Reddy" style="width:180px;height:180px;object-fit:cover;object-position:top;border-radius:var(--r-lg);display:block;background:var(--uw-blue-50)">
+        <img src="/assets/Photos/Team-Members/Kaushik-Sreerama-Reddy-2026.webp" alt="Dr. Kaushik Sreerama Reddy" style="width:180px;height:180px;object-fit:cover;object-position:top;border-radius:var(--r-lg);display:block;background:var(--uw-blue-50)">
         <div style="display:flex;flex-direction:column;gap:8px">
           <span style="font-size:20px;font-weight:600;color:var(--uw-ink-900)">Dr. Kaushik Sreerama Reddy</span>
           <span style="font-size:14px;line-height:1.55;color:var(--uw-ink-500);text-wrap:pretty">Co-Founder and Chief Scientific Officer, USMLE Wise · Lead Investigator, Myositis Clinical Trials Consortium · Study Lead, MyPACER Study</span>

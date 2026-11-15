@@ -610,6 +610,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </section>
 
+      <!-- ============== 1. AWARDS (right after hero, as early proof) ============== -->
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
+
       <!-- ============== 1A. THE REAL PROBLEM ============== -->
       <section class="msp-section msp-problem" aria-labelledby="probTitle">
         <div class="msp-wrap">
@@ -799,7 +802,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="jsp-story__inner">
             <div class="jsp-story__aside reveal">
               <div class="jsp-story__ava">
-                <img src="/assets/Photos/Team-Members/Kaushik-Sreeram.webp" alt="Kaushik Sreerama Reddy" loading="lazy" decoding="async" />
+                <img src="/assets/Photos/Team-Members/Kaushik-Sreerama-Reddy-2026.webp" alt="Kaushik Sreerama Reddy" loading="lazy" decoding="async" style="object-position:center 20%" />
               </div>
               <p class="jsp-story__name">Kaushik Sreerama Reddy, MBBS</p>
               <p class="jsp-story__role">Chief Scientific Officer, USMLE Wise &amp; CRIST &middot; Director of Operations &amp; Lead Investigator, MCTC &middot; Published author</p>
@@ -1039,8 +1042,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </section>
 
       <!-- ============== 6. FAQ ============== -->
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
-
       <section class="msp-section msp-faq" id="faq" aria-labelledby="faqTitle">
         <div class="msp-wrap">
           <div class="msp-head reveal" style="max-width:68ch;margin-inline:auto;text-align:center">
