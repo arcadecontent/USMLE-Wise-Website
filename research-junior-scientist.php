@@ -1118,7 +1118,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="jsp-fellow__card-head">
                 <span class="jsp-fellow__badge">CRIST Research Fellowship &middot; high school</span>
                 <div class="jsp-fellow__price">
-                  <span class="jsp-fellow__amount">$4,000</span>
+                  <span class="jsp-fellow__amount">$4,500</span>
                   <span class="jsp-fellow__currency">USD &middot; full program</span>
                 </div>
                 <p class="jsp-fellow__tagline">A year-long, mentored place on a live study.</p>
