@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Research for USMLE: Start Research With No Experience | Research Wise";
-$pageDescription = "A 9-hour live workshop over 3 Sundays: master case reports, original studies, systematic reviews and meta-analyses. Built for absolute beginners.";
+$pageDescription = "Recordings and notes of a 9-hour research workshop: master case reports, original studies, systematic reviews and meta-analyses. Built for absolute beginners. $20.";
 $canonical = "https://usmlewise.com/research-wise";
 $bodyClass = "msp";
 $stylesheets = [
@@ -20,7 +20,7 @@ $rwFaqs = [
     ],
     [
         'q' => 'Are the sessions recorded?',
-        'a' => 'Yes. Every session is recorded, so if you can\'t attend live, you still get full access to the recordings.',
+        'a' => 'Yes. Live registration is now closed, but you can get the recordings of all 3 sessions and the notes for $20. Each recording is added on our learning platform after its Sunday session.',
     ],
     [
         'q' => 'Does this guarantee a publication?',
@@ -32,7 +32,7 @@ $rwFaqs = [
     ],
     [
         'q' => 'Will I get a certificate?',
-        'a' => 'Yes, when you finish all 3 days.',
+        'a' => 'Certificates are for students who attended all 3 live days. The recordings package does not include one.',
     ],
     [
         'q' => 'I already have a project running. Is this for me?',
@@ -40,7 +40,7 @@ $rwFaqs = [
     ],
     [
         'q' => 'How is this different from Research Cohort Access?',
-        'a' => 'Research Wise is the live starting point. Research Cohort Access is a self-paced library for once you know the basics and have a project underway.',
+        'a' => 'Research Wise is the starting point. Research Cohort Access is a self-paced library for once you know the basics and have a project underway.',
     ],
 ];
 
@@ -66,11 +66,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <p style="margin:20px 0 0;max-width:640px;font-size:clamp(16px,1.6vw,18.5px);line-height:1.6;color:var(--uw-ink-600);text-wrap:pretty">A 9-hour live workshop taught from the basics by mentors who publish. One 3-hour session every Sunday for 3 weeks.</p>
       <div style="margin-top:22px;max-width:640px;padding:14px 20px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--uw-border);box-shadow:var(--shadow-sm);font-size:15.5px;line-height:1.55;color:var(--uw-ink-700);text-wrap:pretty"><strong style="font-weight:600;color:var(--uw-blue-600)">Built for absolute beginners.</strong> No research idea, institutional access, IRB approval or professor connections needed.</div>
 
-      <a class="rwh1" href="#reserve" data-rw-reserve style="margin-top:28px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 34px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600;box-shadow:0 10px 24px rgba(227,33,36,.22)">Reserve my spot · $49</a>
-      <div style="margin-top:16px;display:flex;align-items:flex-start;justify-content:center;gap:8px;max-width:560px;font-size:14.5px;line-height:1.5;color:var(--uw-ink-700);text-wrap:pretty">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
-        <span>100% money-back satisfaction guarantee. If you're not satisfied, you get your money back.</span>
-      </div>
+      <div class="rw-closed" role="status" style="margin-top:26px;max-width:640px;display:flex;align-items:flex-start;gap:10px;padding:14px 18px;border-radius:var(--r-lg);background:var(--uw-red-50);border:1px solid rgba(227,33,36,.25);font-size:15.5px;line-height:1.5;color:var(--uw-ink-800);text-align:left;text-wrap:pretty"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><strong style="font-weight:600;color:#a01517">Registration is closed for the live sessions.</strong> You can still get the recordings of all 3 sessions and the notes for $20.</span></div>
+      <a class="rwh1" href="#reserve" data-cp-course="research-wise-recordings" style="margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 34px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600;box-shadow:0 10px 24px rgba(227,33,36,.22)">Get the recordings · $20</a>
       <div style="position:relative;width:100%;max-width:880px;margin-top:40px">
         <div class="rw-3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border:1px solid var(--uw-border);border-top:4px solid var(--uw-blue-500);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden;text-align:left">
           <div class="rw-dc-col" style="padding:24px 26px;display:flex;flex-direction:column;gap:6px">
@@ -239,8 +236,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
       </div>
       <div style="margin-top:22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px">
-        <span style="font-size:14px;color:var(--uw-ink-500)">Every day ends with live Q&amp;A.</span>
-        <a class="rwh1" href="#reserve" data-rw-reserve style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Reserve my spot · $49</a>
+        <span style="font-size:14px;color:var(--uw-ink-500)">Every session is recorded, including the Q&amp;A.</span>
+        <a class="rwh1" href="#reserve" data-cp-course="research-wise-recordings" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Get the recordings · $20</a>
       </div>
     </div>
   </section>
@@ -314,7 +311,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </div>
         </div>
       </div>
-      <div style="margin-top:36px;text-align:center"><a class="rwh1" href="#reserve" data-rw-reserve style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Reserve my spot · $49</a></div>
+      <div style="margin-top:36px;text-align:center"><a class="rwh1" href="#reserve" data-cp-course="research-wise-recordings" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Get the recordings · $20</a></div>
     </div>
   </section>
 
@@ -322,32 +319,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <section id="reserve" class="rw-offer" style="scroll-margin-top:64px;padding:clamp(64px,8vw,96px) clamp(20px,5vw,48px);background:var(--uw-blue-50);border-top:1px solid var(--uw-blue-100)">
     <div style="max-width:640px;margin:0 auto">
       <div style="text-align:center">
-        <div id="offer-top" class="rw-offer-eb" style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">What you get</div>
-        <h2 class="rw-offer-h" style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0;text-wrap:balance">Inside the <em style="font-style:italic;color:var(--uw-blue-500)">Basics of Research</em> Level 1 Workshop</h2>
+        <div id="offer-top" class="rw-offer-eb" style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px">Live registration is closed</div>
+        <h2 class="rw-offer-h" style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.15;letter-spacing:-0.02em;color:var(--uw-ink-900);margin:0;text-wrap:balance">Get the <em style="font-style:italic;color:var(--uw-blue-500)">Basics of Research</em> recordings</h2>
       </div>
       <div class="rw-offer-card" style="margin-top:36px;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--uw-border)">
         <div style="background:#fff;padding:8px clamp(20px,4vw,32px)">
-          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">9 hours of live teaching across 3 days, with Q&amp;A at the end of each day, plus recordings of every session</span></div>
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">Recordings of all 3 sessions (9 hours), including each day's Q&amp;A. Each one is added after its Sunday session.</span></div>
           <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)"><strong style="font-weight:600;color:var(--uw-ink-900)">Master 3 types of studies:</strong> case reports and case series, original studies, and systematic reviews and meta-analyses</span></div>
-          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">Structured notes, so you can follow every step again when you sit down to write</span></div>
-          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">A certificate of completion for finishing all 3 days</span></div>
-          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">A WhatsApp group of first-time researchers, where you can ask any question</span></div>
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">Structured notes, so you can follow every step again when you sit down to write</span></div>
         </div>
         <div id="checkout" class="dot-tex" style="scroll-margin-top:90px;background-color:var(--uw-blue-500);padding:clamp(28px,4vw,40px) clamp(20px,4vw,36px);text-align:center;display:flex;flex-direction:column;align-items:center">
-          <span class="rw-pl" style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-success-300)">Launch price for our first 100 members</span>
-          <span class="rw-price" style="margin-top:10px;font-family:var(--font-display);font-size:clamp(64px,9vw,88px);line-height:1;color:#fff;letter-spacing:-0.02em">$49</span>
-          <span class="rw-once" style="margin-top:8px;font-size:14px;color:var(--uw-blue-100)">One time, for all 3 days</span>
-          <a class="rwh1" id="checkout-btn" href="#reserve" data-rw-reserve style="margin-top:22px;width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:center;height:56px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600">Reserve my spot · $49</a>
-          <span style="margin-top:12px;font-size:13px;line-height:1.5;color:var(--uw-blue-100);text-wrap:pretty">After checkout, we'll email your receipt and add you to the platform and the WhatsApp group.</span>
+          <span class="rw-pl" style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-success-300)">Recordings + notes</span>
+          <span class="rw-price" style="margin-top:10px;font-family:var(--font-display);font-size:clamp(64px,9vw,88px);line-height:1;color:#fff;letter-spacing:-0.02em">$20</span>
+          <span class="rw-once" style="margin-top:8px;font-size:14px;color:var(--uw-blue-100)">One time, for all 3 sessions</span>
+          <a class="rwh1" id="checkout-btn" href="#reserve" data-cp-course="research-wise-recordings" style="margin-top:22px;width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:center;height:56px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600">Get the recordings · $20</a>
+          <span style="margin-top:12px;font-size:13px;line-height:1.5;color:var(--uw-blue-100);text-wrap:pretty">After checkout, we'll email your receipt and your login. The recordings and notes are on our learning platform.</span>
         </div>
       </div>
-      <div class="rw-guar" style="margin-top:20px;display:flex;gap:20px;align-items:center;padding:22px 24px;background:#fff;border:1.5px solid var(--uw-success-400);border-radius:var(--r-lg)">
-        <span style="flex:none;width:76px;height:76px;border-radius:50%;background:var(--uw-blue-500);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:22px">100%</span>
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <span style="font-size:17px;font-weight:600;color:var(--uw-ink-900)">The satisfaction guarantee</span>
-          <span style="font-size:14.5px;line-height:1.55;color:var(--uw-ink-600);text-wrap:pretty">Attend the first day. If you're not satisfied, email us within 24 hours of attending and get your money back.</span>
-        </div>
-      </div>    </div>
+    </div>
   </section>
 
   <!-- FAQ -->
@@ -374,11 +363,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <!-- FINAL CTA -->
   <section class="dot-tex" style="background-color:var(--uw-blue-800);padding:clamp(72px,9vw,112px) clamp(20px,5vw,48px);text-align:center">
     <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center">
-      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.2vw,48px);line-height:1.15;letter-spacing:-0.02em;color:#fff;margin:0;text-wrap:balance">Day 1 starts Sunday, November 15, 2026.</h2>
-      <p style="margin:14px 0 0;font-size:17px;color:var(--uw-blue-100)">Then Sunday, November 22, and Sunday, November 29.</p>
-      <p style="margin:14px 0 0;max-width:560px;font-size:16px;line-height:1.6;color:#fff;text-wrap:pretty">3 Sundays from now, you'll have your first research project underway. $49, with a full refund if you're not satisfied.</p>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.2vw,48px);line-height:1.15;letter-spacing:-0.02em;color:#fff;margin:0;text-wrap:balance">Registration is closed for the live sessions.</h2>
+      <p style="margin:14px 0 0;font-size:17px;color:var(--uw-blue-100)">The workshop runs on Sunday, November 15, 22 and 29.</p>
+      <p style="margin:14px 0 0;max-width:560px;font-size:16px;line-height:1.6;color:#fff;text-wrap:pretty">Get the recordings of all 3 sessions and the notes for $20, and learn at your own pace.</p>
       <div class="rw-final-ctas" style="margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-        <a class="rwh1" href="#reserve" data-rw-reserve style="display:inline-flex;align-items:center;height:54px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16.5px;font-weight:600">Reserve my spot · $49</a>
+        <a class="rwh1" href="#reserve" data-cp-course="research-wise-recordings" style="display:inline-flex;align-items:center;height:54px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16.5px;font-weight:600">Get the recordings · $20</a>
         <a class="rwh4" href="https://wa.me/19192015700" style="display:inline-flex;align-items:center;gap:8px;height:54px;padding:0 26px;border-radius:var(--r-md);border:1.5px solid rgba(255,255,255,.7);color:#fff;font-size:16.5px;font-weight:600">Text us a question</a>
       </div>
     </div>
@@ -445,225 +434,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 
     </main>
 
-    <!-- ============== RESERVE POPUP (on-page payment: our fields + Stripe's card field, via mastery.usmlewise.com) ============== -->
-    <div class="rw-pay" id="rwPay" role="dialog" aria-modal="true" aria-labelledby="rwPayTitle" hidden>
-      <div class="rw-pay__backdrop" data-rw-close></div>
-      <div class="rw-pay__panel">
-        <div class="rw-pay__head">
-          <div>
-            <span class="rw-pay__eyebrow">Research Wise</span>
-            <h2 id="rwPayTitle" class="rw-pay__title">Reserve your spot</h2>
-          </div>
-          <button type="button" class="rw-pay__close" data-rw-close aria-label="Close">&times;</button>
-        </div>
-
-        <div class="rw-pay__summary">
-          <div><strong>3 live Sunday sessions</strong><span>November 15, 22 &amp; 29 &middot; one-time payment</span></div>
-          <b>$49</b>
-        </div>
-
-        <form id="rwPayForm" novalidate>
-          <div class="rw-field">
-            <label for="rwName">Full name</label>
-            <input id="rwName" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="rw-field">
-            <label for="rwEmail">Email</label>
-            <input id="rwEmail" name="email" type="email" autocomplete="email" inputmode="email" required>
-            <small>Your receipt and the WhatsApp group link are sent here.</small>
-          </div>
-          <div class="rw-field">
-            <label for="rwPhone">WhatsApp number</label>
-            <input id="rwPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 555 123 4567" required>
-          </div>
-          <div class="rw-field">
-            <span class="rw-label" id="rwCardNumberLabel">Card number</span>
-            <div id="rwCardNumber" class="rw-sel" aria-labelledby="rwCardNumberLabel"></div>
-          </div>
-          <div class="rw-row">
-            <div class="rw-field">
-              <span class="rw-label" id="rwCardExpiryLabel">Expiry date</span>
-              <div id="rwCardExpiry" class="rw-sel" aria-labelledby="rwCardExpiryLabel"></div>
-            </div>
-            <div class="rw-field">
-              <span class="rw-label" id="rwCardCvcLabel">Security code</span>
-              <div id="rwCardCvc" class="rw-sel" aria-labelledby="rwCardCvcLabel"></div>
-            </div>
-          </div>
-          <p class="rw-pay__error" id="rwPayError" role="alert" aria-live="polite"></p>
-          <button class="btn btn--primary rw-pay__submit" id="rwPaySubmit" type="submit">Pay $49</button>
-          <p class="rw-pay__secure"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Secure payment by Stripe. Your card details never touch our servers.</p>
-        </form>
-
-        <div class="rw-pay__done" id="rwPayDone" hidden>
-          <div class="rw-pay__tick" aria-hidden="true">&#10003;</div>
-          <h3>You're in. Thank you!</h3>
-          <p id="rwPayDoneText">Your payment is confirmed. We've emailed your receipt and the WhatsApp group link.</p>
-          <a class="btn btn--primary" id="rwPayGroup" href="#" target="_blank" rel="noopener noreferrer" hidden>Join the WhatsApp group</a>
-          <p class="rw-pay__fine">Session links and reminders are shared in the group. Sunday, November 15, 22 and 29.</p>
-        </div>
-      </div>
-    </div>
-    <style>
-      /* The popup stays light in dark mode so it matches Stripe's card field. */
-      .rw-pay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;color-scheme:light}
-      .rw-pay[hidden]{display:none}
-      .rw-pay__backdrop{position:absolute;inset:0;background:rgba(20,21,28,.55)}
-      .rw-pay__panel{position:relative;width:100%;max-width:480px;max-height:calc(100vh - 32px);overflow:auto;background:#fff;color:#14151c;border-radius:16px;padding:24px;box-shadow:0 24px 60px rgba(20,21,28,.3);font-family:var(--font-sans)}
-      .rw-pay__head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
-      .rw-pay__eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#e32124}
-      .rw-pay__title{font-family:var(--font-display);font-size:28px;line-height:1.15;margin:4px 0 0;color:#14151c}
-      .rw-pay__close{border:0;background:#f5f5f7;color:#14151c;width:36px;height:36px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;flex:none}
-      .rw-pay__summary{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f5f5f7;border-radius:10px;padding:12px 14px;margin-bottom:18px}
-      .rw-pay__summary strong{display:block;font-size:15px;color:#14151c}
-      .rw-pay__summary span{font-size:13px;color:#6d7080}
-      .rw-pay__summary b{font-family:var(--font-display);font-size:26px;font-weight:600;color:#14151c}
-      .rw-field{margin-bottom:12px}
-      .rw-field label{display:block;font-size:14px;font-weight:500;color:#32343f;margin-bottom:6px}
-      .rw-field input{width:100%;box-sizing:border-box;font:inherit;font-size:15px;color:#14151c;background:#fff;border:1px solid #d4d4cf;border-radius:8px;padding:11px 12px;transition:border-color .15s,box-shadow .15s}
-      .rw-field input::placeholder{color:#9a9ca8}
-      .rw-field input:focus{outline:none;border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
-      .rw-field input[aria-invalid="true"]{border-color:#e32124;box-shadow:0 0 0 3px rgba(227,33,36,.12)}
-      .rw-field small{display:block;margin-top:5px;font-size:12.5px;color:#6d7080}
-      .rw-label{display:block;font-size:14px;font-weight:500;color:#32343f;margin-bottom:6px}
-      .rw-sel{box-sizing:border-box;min-height:45px;background:#fff;border:1px solid #d4d4cf;border-radius:8px;padding:12px;transition:border-color .15s,box-shadow .15s}
-      .rw-sel.StripeElement--focus{border-color:#2c3386;box-shadow:0 0 0 3px rgba(44,51,134,.18)}
-      .rw-sel.StripeElement--invalid{border-color:#e32124;box-shadow:0 0 0 3px rgba(227,33,36,.12)}
-      .rw-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-      .rw-pay__error{min-height:0;margin:4px 0 10px;font-size:14px;color:#a01517}
-      .rw-pay__error:empty{display:none}
-      .rw-pay__submit{width:100%;justify-content:center;font-size:16px;padding:14px 18px;margin-top:4px}
-      .rw-pay__submit[disabled]{opacity:.65;cursor:progress}
-      .rw-pay__secure{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px 0 0;font-size:12.5px;color:#6d7080;text-align:center}
-      .rw-pay__done{text-align:center;padding:8px 4px 4px}
-      .rw-pay__tick{width:56px;height:56px;border-radius:50%;background:#2f8a5a;color:#fff;font-size:30px;line-height:56px;margin:0 auto 12px}
-      .rw-pay__done h3{font-family:var(--font-display);font-size:26px;margin:0 0 8px;color:#14151c}
-      .rw-pay__done p{color:#32343f;margin:0 0 16px}
-      .rw-pay__fine{font-size:14px;margin-top:14px!important}
-      body.rw-pay-open{overflow:hidden}
-      @media (max-width:480px){.rw-pay{padding:0;align-items:flex-end}.rw-pay__panel{border-radius:16px 16px 0 0;max-height:94vh;max-height:94dvh;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px))}.rw-field input{font-size:16px}}
-    </style>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/course-pay.php'; ?>
     <script>
     (function () {
-      var API = 'https://mastery.usmlewise.com/api/research-wise';
-      // Publishable keys are public by design; this one belongs to the Stripe account Mastery charges.
-      var STRIPE_KEY = 'pk_live_51QP4cwJDyWnuZEnfkf8zIUSEIgSpPgUPMyrg4m8UIeinhWBSeM0Do5lwYvffKwsjVj7DGUeJwLNUPKRiCD5yUd5P00yYL7zDFz';
-      var CARD_STYLE = {
-        base: { fontFamily: 'Geist, Inter, system-ui, sans-serif', fontSize: '16px', color: '#14151c', '::placeholder': { color: '#9a9ca8' } },
-        invalid: { color: '#a01517', iconColor: '#a01517' }
-      };
-
-      var dlg = document.getElementById('rwPay');
-      var form = document.getElementById('rwPayForm');
-      var errorEl = document.getElementById('rwPayError');
-      var submitBtn = document.getElementById('rwPaySubmit');
-      var done = document.getElementById('rwPayDone');
-      var stripe = null, cardNumber = null, ready = null, lastFocus = null, cardErrors = {};
-
-      // Stripe's script and card field load in the background as soon as the
-      // page is idle, so the popup is ready the moment someone clicks.
-      function prepare() {
-        if (ready) return ready;
-        ready = new Promise(function (resolve, reject) {
-          if (window.Stripe) return resolve();
-          var s = document.createElement('script');
-          s.src = 'https://js.stripe.com/v3/';
-          s.onload = resolve;
-          s.onerror = function () { reject(new Error('Secure checkout could not load. Please check your connection and try again.')); };
-          document.head.appendChild(s);
-        }).then(function () {
-          stripe = window.Stripe(STRIPE_KEY);
-          var elements = stripe.elements({ fonts: [{ cssSrc: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap' }] });
-          cardNumber = elements.create('cardNumber', { style: CARD_STYLE, showIcon: true, disableLink: true, placeholder: '1234 1234 1234 1234' });
-          var parts = [[cardNumber, '#rwCardNumber'], [elements.create('cardExpiry', { style: CARD_STYLE }), '#rwCardExpiry'], [elements.create('cardCvc', { style: CARD_STYLE }), '#rwCardCvc']];
-          parts.forEach(function (p) {
-            p[0].mount(p[1]);
-            p[0].on('change', function (ev) {
-              cardErrors[p[1]] = ev.error ? ev.error.message : '';
-              showError(cardErrors['#rwCardNumber'] || cardErrors['#rwCardExpiry'] || cardErrors['#rwCardCvc'] || '');
-            });
-          });
-        });
-        ready.catch(function () { ready = null; });
-        return ready;
-      }
-      if ('requestIdleCallback' in window) window.requestIdleCallback(function () { prepare().catch(function () {}); }, { timeout: 2500 });
-      else setTimeout(function () { prepare().catch(function () {}); }, 1200);
-
-      function showError(text) { errorEl.textContent = text || ''; }
-      function setBusy(busy) { submitBtn.disabled = busy; submitBtn.textContent = busy ? 'Processing…' : 'Pay $49'; }
-
-      function openDialog(e) {
-        if (e) e.preventDefault();
-        lastFocus = document.activeElement;
-        dlg.hidden = false;
-        document.body.classList.add('rw-pay-open');
-        if (done.hidden) document.getElementById('rwName').focus();
-        prepare().catch(function (err) { showError(err.message + ' You can also message us on WhatsApp at +1 919 201 5700.'); });
-      }
-      function closeDialog() {
-        dlg.hidden = true;
-        document.body.classList.remove('rw-pay-open');
-        if (lastFocus) lastFocus.focus();
-      }
-
-      function field(id) { return document.getElementById(id); }
-      function validate() {
-        var name = field('rwName'), email = field('rwEmail'), phone = field('rwPhone');
-        var checks = [
-          [name, name.value.trim().length >= 2, 'Please enter your full name.'],
-          [email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()), 'Please enter a valid email address.'],
-          [phone, phone.value.replace(/\D/g, '').length >= 7, 'Please enter your WhatsApp number, including country code.']
-        ];
-        for (var i = 0; i < checks.length; i++) {
-          checks[i][0].setAttribute('aria-invalid', checks[i][1] ? 'false' : 'true');
-          if (!checks[i][1]) { checks[i][0].focus(); return checks[i][2]; }
-        }
-        return '';
-      }
-
-      function finish(intentId) {
-        form.hidden = true;
-        done.hidden = false;
-        fetch(API + '/confirm', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ paymentIntentId: intentId }) })
-          .then(function (r) { return r.json(); })
-          .then(function (d) {
-            if (!d.paid) return;
-            if (d.email) field('rwPayDoneText').textContent = 'Your payment is confirmed. We’ve emailed your receipt and the WhatsApp group link to ' + d.email + '.';
-            if (d.groupUrl) { var g = field('rwPayGroup'); g.href = d.groupUrl; g.hidden = false; }
-          })
-          .catch(function () { /* the email still goes out from the server's 15-minute check */ });
-      }
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        showError('');
-        var problem = validate();
-        if (problem) return showError(problem);
-        setBusy(true);
-        var billing = { name: field('rwName').value.trim(), email: field('rwEmail').value.trim(), phone: field('rwPhone').value.trim() };
-        prepare()
-          .then(function () {
-            return fetch(API + '/intent', { method: 'POST' }).then(function (r) {
-              return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Checkout is unavailable right now.'); return d; });
-            });
-          })
-          .then(function (d) {
-            return stripe.confirmCardPayment(d.clientSecret, { payment_method: { card: cardNumber, billing_details: billing } });
-          })
-          .then(function (res) {
-            if (res.error) throw res.error;
-            var pi = res.paymentIntent;
-            if (pi && (pi.status === 'succeeded' || pi.status === 'processing')) finish(pi.id);
-            else throw new Error('The payment was not completed. Please try again.');
-          })
-          .catch(function (err) { showError((err && err.message) || 'Something went wrong. Please try again.'); setBusy(false); });
-      });
-
-      document.querySelectorAll('[data-rw-reserve]').forEach(function (a) { a.addEventListener('click', openDialog); });
-      dlg.querySelectorAll('[data-rw-close]').forEach(function (el) { el.addEventListener('click', closeDialog); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden) closeDialog(); });
-
       // Video testimonials: the YouTube player only loads on click.
       document.querySelectorAll('[data-rw-yt]').forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -676,16 +449,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           btn.replaceWith(frame);
         });
       });
-
-      // Back from a bank's verification page.
-      var params = new URLSearchParams(location.search);
-      if (params.get('payment_intent') && params.get('redirect_status') === 'succeeded') {
-        openDialog();
-        finish(params.get('payment_intent'));
-        history.replaceState(null, '', location.pathname);
-      } else if (location.hash === '#reserve') {
-        openDialog();
-      }
     })();
     </script>
 

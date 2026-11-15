@@ -16,7 +16,9 @@
     // Step 2 and Step 3 sell this month's live cohort (Mastery src/lib/cohorts.ts) plus the recorded Step 2/3 course.
     'step2-live': { eyebrow: 'Step 2 Live Crash Course', item: 'Step 2 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
     'step3-live': { eyebrow: 'Step 3 Live Crash Course', item: 'Step 3 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
-    cdbu1brx0peuyo75xzpwjcota: { eyebrow: 'Step 1 Live Crash Course', item: 'Step 1 Live Crash Course', sub: 'One-time payment', price: 49900 }
+    cdbu1brx0peuyo75xzpwjcota: { eyebrow: 'Step 1 Live Crash Course', item: 'Step 1 Live Crash Course', sub: 'One-time payment', price: 49900 },
+    // Research Wise live registration closed 2026-11-15; the page sells the recordings course instead.
+    'research-wise-recordings': { eyebrow: 'Research Wise', item: 'Session recordings & resources', sub: 'All 3 sessions + notes', price: 2000 }
   };
   // [ISO code, dial code, name]. The first block is the countries most of our students call from.
   var COUNTRIES = 'US 1 United States|CA 1 Canada|PK 92 Pakistan|IN 91 India|GB 44 United Kingdom|AE 971 United Arab Emirates|SA 966 Saudi Arabia|EG 20 Egypt|NG 234 Nigeria|BD 880 Bangladesh|NP 977 Nepal|LK 94 Sri Lanka|AF 93 Afghanistan|AL 355 Albania|DZ 213 Algeria|AR 54 Argentina|AM 374 Armenia|AU 61 Australia|AT 43 Austria|AZ 994 Azerbaijan|BH 973 Bahrain|BY 375 Belarus|BE 32 Belgium|BZ 501 Belize|BO 591 Bolivia|BA 387 Bosnia and Herzegovina|BR 55 Brazil|BG 359 Bulgaria|KH 855 Cambodia|CM 237 Cameroon|CL 56 Chile|CN 86 China|CO 57 Colombia|CR 506 Costa Rica|HR 385 Croatia|CU 53 Cuba|CY 357 Cyprus|CZ 420 Czechia|DK 45 Denmark|DO 1 Dominican Republic|EC 593 Ecuador|SV 503 El Salvador|EE 372 Estonia|ET 251 Ethiopia|FI 358 Finland|FR 33 France|GE 995 Georgia|DE 49 Germany|GH 233 Ghana|GR 30 Greece|GT 502 Guatemala|GY 592 Guyana|HT 509 Haiti|HN 504 Honduras|HK 852 Hong Kong|HU 36 Hungary|IS 354 Iceland|ID 62 Indonesia|IR 98 Iran|IQ 964 Iraq|IE 353 Ireland|IL 972 Israel|IT 39 Italy|JM 1 Jamaica|JP 81 Japan|JO 962 Jordan|KZ 7 Kazakhstan|KE 254 Kenya|KW 965 Kuwait|KG 996 Kyrgyzstan|LV 371 Latvia|LB 961 Lebanon|LY 218 Libya|LT 370 Lithuania|LU 352 Luxembourg|MY 60 Malaysia|MV 960 Maldives|MT 356 Malta|MU 230 Mauritius|MX 52 Mexico|MD 373 Moldova|MN 976 Mongolia|MA 212 Morocco|MM 95 Myanmar|NL 31 Netherlands|NZ 64 New Zealand|NI 505 Nicaragua|MK 389 North Macedonia|NO 47 Norway|OM 968 Oman|PS 970 Palestine|PA 507 Panama|PY 595 Paraguay|PE 51 Peru|PH 63 Philippines|PL 48 Poland|PT 351 Portugal|PR 1 Puerto Rico|QA 974 Qatar|RO 40 Romania|RU 7 Russia|RW 250 Rwanda|RS 381 Serbia|SG 65 Singapore|SK 421 Slovakia|SI 386 Slovenia|SO 252 Somalia|ZA 27 South Africa|KR 82 South Korea|ES 34 Spain|SD 249 Sudan|SE 46 Sweden|CH 41 Switzerland|SY 963 Syria|TW 886 Taiwan|TJ 992 Tajikistan|TZ 255 Tanzania|TH 66 Thailand|TT 1 Trinidad and Tobago|TN 216 Tunisia|TR 90 Turkey|TM 993 Turkmenistan|UG 256 Uganda|UA 380 Ukraine|UY 598 Uruguay|UZ 998 Uzbekistan|VE 58 Venezuela|VN 84 Vietnam|YE 967 Yemen|ZM 260 Zambia|ZW 263 Zimbabwe'.split('|').map(function (c) { var p = c.split(' '); return [p[0], p[1], p.slice(2).join(' ')]; });
@@ -381,6 +383,17 @@
     try { code = new URL(a.href).searchParams.get('prefilled_promo_code') || ''; } catch (err) { /* no code */ }
     openDialog('step3-live', code.toUpperCase() || linkPromo);
   });
+  // Any link or button with data-cp-course="<product>" opens the popup for that product.
+  // Runs in the capture phase so a page's own "#anchor" scroll handler never swallows the click.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-cp-course]');
+    if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    var id = a.getAttribute('data-cp-course');
+    if (!Object.prototype.hasOwnProperty.call(COURSES, id)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openDialog(id, linkPromo);
+  }, true);
   document.addEventListener('submit', function (e) {
     var id = courseOf(e.target);
     if (!id || e.defaultPrevented) return;
@@ -390,10 +403,11 @@
   });
 
   function productOnPage(id) {
+    if (document.querySelector('[data-cp-course="' + id + '"]')) return true;
     if (id === 'step3-live') return !!document.querySelector('a[href*="' + STEP3_LINK + '"]');
     return Array.prototype.some.call(document.forms, function (f) { return courseOf(f) === id; });
   }
-  var onPage = Array.prototype.some.call(document.forms, function (f) { return !!courseOf(f); }) || !!document.querySelector('a[href*="' + STEP3_LINK + '"]');
+  var onPage = Array.prototype.some.call(document.forms, function (f) { return !!courseOf(f); }) || !!document.querySelector('a[href*="' + STEP3_LINK + '"]') || !!document.querySelector('[data-cp-course]');
   if (onPage) {
     // Prices and codes load right away (tiny request); Stripe loads when the page is idle.
     Object.keys(COURSES).forEach(function (id) { if (productOnPage(id)) loadBase(id).catch(function () {}); });
