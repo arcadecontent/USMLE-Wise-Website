@@ -296,6 +296,145 @@ function usmlewise_team_members(): array
             ],
         ],
 
+        /* ---------------- Education fellows &amp; associates ---------------- */
+
+        'abhinay-sunkara' => [
+            'group'     => 'research',
+            'name'      => 'Abhinay Sunkara',
+            'role'      => 'Research Education Senior Fellow',
+            'sub'       => 'MD Student, Kenwalker International University, Tbilisi, Georgia',
+            'photo'     => '/assets/Photos/Team-Members/Abhinay-Sunkara.webp',
+            'card_line' => 'Education Intern Liaison &middot; Research reports &amp; diagnostic AI imaging projects',
+            'bio'       => [
+                "Abhinay Sunkara is an MD student at Kenwalker International University in Tbilisi, Georgia, and a Research Education Senior Fellow and Education Intern Liaison at USMLE Wise.",
+                "As an IMG, Abhinay knows how confusing the USMLE, research, and Match journey can feel, and focuses on making complex topics simple for the IMGs working through it.",
+                "Abhinay's background is in research and documentation: comprehensive research reports and feasibility studies for business and healthcare initiatives, and contributions to the development and evaluation of diagnostic AI tools for medical imaging.",
+            ],
+            'affiliations' => [
+                ['role' => 'Research Education Senior Fellow &amp; Education Intern Liaison', 'org' => 'USMLE Wise'],
+                ['role' => 'Research &amp; Documentation (2021&ndash;2023)', 'org' => 'YS Micheal Ventures'],
+                ['role' => 'Medical AI Imaging Project (2022&ndash;2025)', 'org' => 'Nettle AI'],
+            ],
+        ],
+
+        'abhisek-jha' => [
+            'group'     => 'research',
+            'name'      => 'Dr. Abhisek Jha',
+            'role'      => 'Education Associate',
+            'sub'       => 'Government Medical Officer &middot; Physician-Scientist',
+            'photo'     => '/assets/Photos/Team-Members/Abhisek-Jha.webp',
+            'card_line' => 'Abstract presenter, 8th International Cancer Congress 2026 &middot; ESMO member',
+            'bio'       => [
+                "Dr. Abhisek Jha is an MBBS graduate with distinction from Birat Medical College &amp; Teaching Hospital, Nepal, and an Education Associate at USMLE Wise. Currently a Government Medical Officer at Bhardah Hospital in Saptari, Nepal, Dr. Jha has special interests in oncology, internal medicine, and clinical research.",
+                "Research focuses on clinical oncology and cancer care delivery, especially in low- and middle-income countries. Dr. Jha has worked on studies with a range of designs, and on case reports as both primary author and co-author across oncology, internal medicine, and pediatrics.",
+                "Recognition includes a merit-based travel grant and an abstract presentation at the 8th International Cancer Congress 2026 (Binaytara Foundation), an abstract presentation at the 12th National Summit of Health and Population Scientists of Nepal 2026 (Nepal Health Research Council), membership in the European Society for Medical Oncology (ESMO), peer reviewing for Annals of Medicine and Surgery and Clinical Case Reports, and a nomination for full membership of Sigma Xi.",
+            ],
+            'affiliations' => [
+                ['role' => 'Education Associate', 'org' => 'USMLE Wise'],
+                ['role' => 'Government Medical Officer', 'org' => 'Bhardah Hospital, Saptari, Nepal'],
+                ['role' => 'Member', 'org' => 'European Society for Medical Oncology (ESMO)'],
+                ['role' => 'Peer Reviewer', 'org' => 'Annals of Medicine and Surgery &amp; Clinical Case Reports'],
+                ['role' => 'Nominee, Full Membership', 'org' => 'Sigma Xi'],
+            ],
+        ],
+
+        'arun-kumar-ramasubbu' => [
+            'group'     => 'research',
+            'name'      => 'Dr. Arun Kumar Ramasubbu',
+            'role'      => 'Education Associate',
+            'sub'       => 'International Medical Graduate &middot; Internal Medicine Aspirant',
+            'photo'     => '/assets/Photos/Team-Members/Arun-Kumar-Ramasubbu.webp',
+            'card_line' => 'USMLE Step 2 CK: 242 &middot; First author, CHEST 2026 abstract',
+            'bio'       => [
+                "Dr. Arun Kumar Ramasubbu is an international medical graduate (MD, Davao Medical School Foundation, Philippines, January 2022) and an Education Associate at USMLE Wise, working toward matching into an Internal Medicine residency in the United States.",
+                "Clinical experience includes the Emergency Department and ICU, and interests span Internal Medicine, Critical Care, and academic research, with solid expertise in systematic reviews and meta-analyses. USMLE Step 1 and Step 2 CK are both passed, with a score of 242 on Step 2 CK.",
+                "Work with USMLE Wise includes a systematic review and meta-analysis of sotatercept in pulmonary arterial hypertension (drawing on the PULSAR, STELLAR, ZENITH, and SPECTRA studies), with a first-author abstract accepted for presentation at the CHEST 2026 Annual Meeting, and a systematic review and meta-analysis of real-world evidence comparing first-line atezolizumab&ndash;bevacizumab with durvalumab&ndash;tremelimumab in advanced hepatocellular carcinoma.",
+            ],
+            'affiliations' => [
+                ['role' => 'Education Associate', 'org' => 'USMLE Wise'],
+                ['role' => 'First Author, Sotatercept in PAH Abstract', 'org' => 'CHEST 2026 Annual Meeting'],
+                ['role' => 'Doctor of Medicine (January 2022)', 'org' => 'Davao Medical School Foundation, Philippines'],
+            ],
+        ],
+
+        'nikitha-aleti' => [
+            'group'     => 'research',
+            'name'      => 'Nikitha Aleti',
+            'role'      => 'Education Associate',
+            'sub'       => 'Final-Year MBBS Student, Sri Venkateswara Medical College, Tirupati',
+            'photo'     => '/assets/Photos/Team-Members/Nikitha-Aleti.webp',
+            'card_line' => 'Clinical case presenter, FIMGICON 2026 &middot; Systematic review &amp; GBD research contributor',
+            'bio'       => [
+                "Nikitha Aleti is a final-year MBBS student at Sri Venkateswara Medical College in Tirupati, Andhra Pradesh, India, and an Education Associate at USMLE Wise. Nikitha is interested in clinical research, evidence-based medicine, and scientific writing, and is currently preparing for USMLE Step 1.",
+                "Outside USMLE Wise, Nikitha has contributed to a systematic review and meta-analysis on long-term clinical outcomes of coronary lesions with discordant FFR and non-hyperemic pressure ratios (submitted to Frontiers in Cardiovascular Medicine) and to a Global Burden of Disease (GBD) project evaluating stroke burden in India. Nikitha has also helped prepare abstracts for three research projects, assisted with literature review, data collection, and manuscript preparation for case reports, and screened titles and abstracts in Rayyan against predefined eligibility criteria.",
+                "Nikitha presented a clinical case online at FIMGICON 2026, won the Pediatrics Quiz during Breastfeeding Week, and took part in the Hematology Quiz 2026 and the Social and Preventive Medicine (SPM) Quiz. Community work includes an HPV vaccination awareness program for students in Classes 8 and 9 and free medical camps at Thatithopu, Narayanavanam, Rayalacheruvu, and Tirupati.",
+            ],
+            'affiliations' => [
+                ['role' => 'Education Associate', 'org' => 'USMLE Wise'],
+                ['role' => 'Conference Presenter (clinical case)', 'org' => 'FIMGICON 2026'],
+                ['role' => 'Final-Year MBBS', 'org' => 'Sri Venkateswara Medical College, Tirupati'],
+            ],
+        ],
+
+        'selva-priyanka' => [
+            'group'     => 'research',
+            'name'      => 'Selva Priyanka',
+            'role'      => 'Education Associate',
+            'sub'       => 'Fourth-Year MBBS Student, Tbilisi State Medical University',
+            'photo'     => '/assets/Photos/Team-Members/Selva-Priyanka.webp',
+            'card_line' => 'Incision Surgical Society events team &middot; Invited student speaker at ISRO (2019)',
+            'bio'       => [
+                "Selva Priyanka is a fourth-year MBBS student at Tbilisi State Medical University, Georgia, and an Education Associate contributing to research and educational initiatives at USMLE Wise. Interests lie in surgical sciences, clinical research, and evidence-based medicine.",
+                "Selva Priyanka is part of the Events and Workshop Team at the Incision Surgical Society, organising surgical skills workshops and facilitating hands-on learning, and has completed a six-month course in Scientific Research Skills covering research methodology and scientific writing.",
+                "In 2019, Selva Priyanka was an invited student speaker at the Indian Space Research Organisation (ISRO), an experience that strengthened an appreciation for scientific learning and communication.",
+            ],
+            'affiliations' => [
+                ['role' => 'Education Associate (Research &amp; Educational Initiatives)', 'org' => 'USMLE Wise'],
+                ['role' => 'Events &amp; Workshop Team', 'org' => 'Incision Surgical Society'],
+                ['role' => 'Invited Student Speaker (2019)', 'org' => 'Indian Space Research Organisation (ISRO)'],
+            ],
+        ],
+
+        'badar-gul' => [
+            'group'     => 'research',
+            'name'      => 'Muhammad Badar Gul',
+            'role'      => 'Associate Education Fellow',
+            'sub'       => 'Fourth-Year MBBS Student, King Edward Medical University, Lahore',
+            'photo'     => '/assets/Photos/Team-Members/Badar-Gul.webp',
+            'card_line' => 'USMLE Step 1 passed (April 2026) &middot; 12+ systematic reviews &amp; meta-analyses',
+            'bio'       => [
+                "Muhammad Badar Gul is a fourth-year MBBS student at King Edward Medical University (KEMU) in Lahore, Pakistan, and an Associate Education Fellow at USMLE Wise, onboarded in October 2026. He passed USMLE Step 1 on his first attempt in April 2026, is preparing for Step 2 CK, and earned Honors in General Pathology at KEMU.",
+                "His research centers on a methods-first systematic review and meta-analysis (SRMA) portfolio across Internal Medicine subspecialties. He has authored 12+ systematic reviews and meta-analyses, including 2 published abstracts (ACG) and 4 conference acceptances (ASH, EHC), with 6 manuscripts or abstracts currently under peer review. He is proficient across the full SRMA workflow: search strategy, PROSPERO registration, risk of bias and GRADE assessment, and meta-analysis in R Studio and RevMan.",
+                "At USMLE Wise he is leading research education webinar training on idea generation, study design, and feasibility frameworks, and starting collaborative fellowship meta-analyses, with the aim of mentoring peers through end-to-end research workflows, from topic selection and R-based statistical synthesis to manuscript publication.",
+                "Beyond research, Badar serves as Clinical Batch Representative at Mayo Hospital and has held leadership roles across KEMU's medical, sports, and arts societies: Media &amp; Strategic Design Lead (KemCardio, IFMSA-Pakistan, KCEP), Secretary of Cycling &amp; Rifle Shooting at the KEMU Sports Club, and Vocal Coordinator for the King Edward Music Club.",
+            ],
+            'affiliations' => [
+                ['role' => 'Associate Education Fellow', 'org' => 'USMLE Wise'],
+                ['role' => 'Clinical Batch Representative', 'org' => 'Mayo Hospital'],
+                ['role' => 'Media &amp; Strategic Design Lead', 'org' => 'KemCardio, IFMSA-Pakistan &amp; KCEP'],
+                ['role' => 'Honors in General Pathology', 'org' => 'King Edward Medical University'],
+            ],
+        ],
+
+        'zahraa-khan' => [
+            'group'     => 'research',
+            'name'      => 'Dr. Zahraa Khan Mohammad',
+            'role'      => 'Associate Research Education Fellow',
+            'sub'       => 'MD, Tbilisi State Medical University',
+            'photo'     => '/assets/Photos/Team-Members/Zahraa-Khan.webp',
+            'card_line' => 'Presented abstracts at international conferences &middot; Research Club &amp; Surgical Society',
+            'bio'       => [
+                "Dr. Zahraa Khan Mohammad is a Medicine MD graduate of Tbilisi State Medical University and an Associate Research Education Fellow at USMLE Wise, with a strong interest in clinical medicine and academic research.",
+                "Research experience includes active involvement in research projects and academic initiatives, contributions to scientific publications, research abstracts presented at international medical conferences, and a clinical case report being developed for publication in the university's medical journal.",
+                "During medical school, Dr. Zahraa Khan Mohammad was a member of the university's Research Club and Surgical Society, and volunteered in COVID-19 response initiatives, including patient-focused activities and contact tracing. The aim now is to contribute to meaningful research, foster academic collaboration, and keep developing as a researcher in the medical field.",
+            ],
+            'affiliations' => [
+                ['role' => 'Associate Research Education Fellow', 'org' => 'USMLE Wise'],
+                ['role' => 'Doctor of Medicine', 'org' => 'Tbilisi State Medical University'],
+                ['role' => 'Member', 'org' => 'Research Club &amp; Surgical Society, Tbilisi State Medical University'],
+            ],
+        ],
+
         /* ---------------- Sales &amp; Customer Success ---------------- */
 
         'aya-jabeur' => [
