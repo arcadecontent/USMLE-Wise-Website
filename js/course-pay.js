@@ -14,9 +14,8 @@
   var STRIPE_KEY = 'pk_live_51QP4cwJDyWnuZEnfkf8zIUSEIgSpPgUPMyrg4m8UIeinhWBSeM0Do5lwYvffKwsjVj7DGUeJwLNUPKRiCD5yUd5P00yYL7zDFz';
   var COURSES = {
     // Step 2 and Step 3 sell this month's live cohort (Mastery src/lib/cohorts.ts) plus the recorded Step 2/3 course.
-    // Both sell the same combined Step 2/3 cohort.
-    'step2-live': { eyebrow: 'Step 2/3 Live Crash Course', item: 'Step 2/3 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
-    'step3-live': { eyebrow: 'Step 2/3 Live Crash Course', item: 'Step 2/3 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
+    'step2-live': { eyebrow: 'Step 2 Live Crash Course', item: 'Step 2 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
+    'step3-live': { eyebrow: 'Step 3 Live Crash Course', item: 'Step 3 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
     cdbu1brx0peuyo75xzpwjcota: { eyebrow: 'Step 1 Live Crash Course', item: 'Step 1 Live Crash Course', sub: 'One-time payment', price: 49900 }
   };
   // [ISO code, dial code, name]. The first block is the countries most of our students call from.
@@ -300,16 +299,10 @@
     return '';
   }
 
-  // "Mastery" means nothing to most buyers, so the popup says "our learning platform" and links it.
+  // "Mastery" means nothing to most buyers, so the popup says "our learning platform" (plain text: a link distracts from paying).
   var PLATFORM = 'our learning platform';
   function doneText(before, linkText, after) {
-    var p = $('cpDoneText');
-    p.textContent = before;
-    var a = document.createElement('a');
-    a.className = 'cp-link'; a.href = 'https://mastery.usmlewise.com'; a.target = '_blank'; a.rel = 'noopener';
-    a.textContent = linkText;
-    p.appendChild(a);
-    p.appendChild(document.createTextNode(after));
+    $('cpDoneText').textContent = before + linkText + after;
   }
 
   function finish(intentId, paidCents) {

@@ -21,7 +21,7 @@
 
     <form id="cpForm" novalidate>
       <div class="cp__summary">
-        <div><strong id="cpItem">Course</strong><span><span id="cpItemSub">One-time payment</span> &middot; instant access on <a class="cp-link" href="https://mastery.usmlewise.com" target="_blank" rel="noopener">our learning platform</a></span></div>
+        <div><strong id="cpItem">Course</strong><span><span id="cpItemSub">One-time payment</span> &middot; instant access on our learning platform</span></div>
         <div class="cp__price"><s id="cpWas" hidden></s><b id="cpPrice"></b></div>
       </div>
       <p class="cp__perk" id="cpPerk" hidden></p>
@@ -33,7 +33,7 @@
       <div class="cp-field">
         <label for="cpEmail">Email</label>
         <input id="cpEmail" name="email" type="email" autocomplete="email" inputmode="email" required>
-        <small>Your receipt and your login for <a class="cp-link" href="https://mastery.usmlewise.com" target="_blank" rel="noopener">our learning platform</a> are sent here. Already have an account there? Use the same email.</small>
+        <small>Your receipt and your login for our learning platform are sent here. Already have an account there? Use the same email.</small>
       </div>
       <div class="cp-field">
         <label for="cpPhone">WhatsApp number</label>
@@ -84,7 +84,7 @@
     <div class="cp__done" id="cpDone" hidden>
       <div class="cp__tick" aria-hidden="true">&#10003;</div>
       <h3>You're enrolled. Thank you!</h3>
-      <p id="cpDoneText">Your payment is confirmed. We've emailed your receipt and your login for <a class="cp-link" href="https://mastery.usmlewise.com" target="_blank" rel="noopener">our learning platform</a>.</p>
+      <p id="cpDoneText">Your payment is confirmed. We've emailed your receipt and your login for our learning platform.</p>
       <a class="cp-wa" id="cpDoneGroup" href="#" target="_blank" rel="noopener" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Join the cohort WhatsApp group</a>
       <a class="btn btn--primary" id="cpDoneGo" href="https://mastery.usmlewise.com/login" target="_blank" rel="noopener">Open our learning platform</a>
       <p class="cp__fine">Can't find the email? Check spam, or message us on <a href="https://wa.me/19192015700" target="_blank" rel="noopener">WhatsApp</a>.</p>
