@@ -96,3 +96,8 @@
 .rw .rwh4:hover{background:rgba(255,255,255,.08)!important;border-color:#fff!important}
 
 
+
+/* Per-day buy button inside each "What happens each day" card. */
+.rw a.rw-day-buy { align-self: flex-start; margin-top: 10px; display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: var(--r-md); border: 1.5px solid var(--uw-red-500); color: var(--uw-red-500); font-size: 15px; font-weight: 600; transition: background .15s, color .15s; }
+.rw a.rw-day-buy:hover { background: var(--uw-red-500); color: #fff; }
+@media (max-width: 767px) { .rw a.rw-day-buy { align-self: stretch; justify-content: center; } }

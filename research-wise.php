@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Research for USMLE: Start Research With No Experience | Research Wise";
-$pageDescription = "Recordings and notes of a 9-hour research workshop: master case reports, original studies, systematic reviews and meta-analyses. Built for absolute beginners. $20.";
+$pageDescription = "Recordings and notes of a 9-hour research workshop: master case reports, original studies, systematic reviews and meta-analyses. Built for absolute beginners. $20 per session.";
 $canonical = "https://usmlewise.com/research-wise";
 $bodyClass = "msp";
 $stylesheets = [
@@ -20,7 +20,7 @@ $rwFaqs = [
     ],
     [
         'q' => 'Are the sessions recorded?',
-        'a' => 'Yes. Live registration is now closed, but you can get the recordings of all 3 sessions and the notes for $20. Each recording is added on our learning platform after its Sunday session.',
+        'a' => 'Yes. Live registration is now closed, but you can buy the recording and notes of each session for $20. Pick one, two or all three. Each recording is added on our learning platform after its Sunday session.',
     ],
     [
         'q' => 'Does this guarantee a publication?',
@@ -32,7 +32,7 @@ $rwFaqs = [
     ],
     [
         'q' => 'Will I get a certificate?',
-        'a' => 'Certificates are for students who attended all 3 live days. The recordings package does not include one.',
+        'a' => 'Certificates are for students who attended all 3 live days. The recordings do not include one.',
     ],
     [
         'q' => 'I already have a project running. Is this for me?',
@@ -66,8 +66,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <p style="margin:20px 0 0;max-width:640px;font-size:clamp(16px,1.6vw,18.5px);line-height:1.6;color:var(--uw-ink-600);text-wrap:pretty">A 9-hour live workshop taught from the basics by mentors who publish. One 3-hour session every Sunday for 3 weeks.</p>
       <div style="margin-top:22px;max-width:640px;padding:14px 20px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--uw-border);box-shadow:var(--shadow-sm);font-size:15.5px;line-height:1.55;color:var(--uw-ink-700);text-wrap:pretty"><strong style="font-weight:600;color:var(--uw-blue-600)">Built for absolute beginners.</strong> No research idea, institutional access, IRB approval or professor connections needed.</div>
 
-      <div class="rw-closed" role="status" style="margin-top:26px;max-width:640px;display:flex;align-items:flex-start;gap:10px;padding:14px 18px;border-radius:var(--r-lg);background:var(--uw-red-50);border:1px solid rgba(227,33,36,.25);font-size:15.5px;line-height:1.5;color:var(--uw-ink-800);text-align:left;text-wrap:pretty"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><strong style="font-weight:600;color:#a01517">Registration is closed for the live sessions.</strong> You can still get the recordings of all 3 sessions and the notes for $20.</span></div>
-      <a class="rwh1" href="#reserve" data-cp-course="research-wise-recordings" style="margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 34px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600;box-shadow:0 10px 24px rgba(227,33,36,.22)">Get the recordings · $20</a>
+      <div class="rw-closed" role="status" style="margin-top:26px;max-width:640px;display:flex;align-items:flex-start;gap:10px;padding:14px 18px;border-radius:var(--r-lg);background:var(--uw-red-50);border:1px solid rgba(227,33,36,.25);font-size:15.5px;line-height:1.5;color:var(--uw-ink-800);text-align:left;text-wrap:pretty"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-red-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><strong style="font-weight:600;color:#a01517">Registration is closed for the live sessions.</strong> You can still get the recording and notes of each session for $20. Pick one, two or all three.</span></div>
+      <a class="rwh1" href="#reserve" data-cp-course="research-wise-days" style="margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 34px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600;box-shadow:0 10px 24px rgba(227,33,36,.22)">Choose your recordings · $20 each</a>
       <div style="position:relative;width:100%;max-width:880px;margin-top:40px">
         <div class="rw-3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border:1px solid var(--uw-border);border-top:4px solid var(--uw-blue-500);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden;text-align:left">
           <div class="rw-dc-col" style="padding:24px 26px;display:flex;flex-direction:column;gap:6px">
@@ -206,6 +206,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <span style="font-size:14px;color:var(--uw-ink-500)">With Shivani Ravipati</span>
             <p style="margin:4px 0 0;font-size:15.5px;line-height:1.6;color:var(--uw-ink-700);text-wrap:pretty">Go from zero to your first case report, including how a case report is built section by section.</p>
             <div style="margin-top:8px;padding:12px 16px;border-radius:var(--r-md);background:var(--uw-blue-50);font-size:14.5px;line-height:1.5;color:var(--uw-blue-700)"><strong style="font-weight:600">You leave with:</strong> the step-by-step process to publish your first case report.</div>
+            <a class="rw-day-buy" href="#reserve" data-cp-course="research-wise-days" data-cp-days="1">Get the Day 1 recording · $20</a>
           </div>
         </div>
         <div class="rw-day" style="display:grid;grid-template-columns:200px minmax(0,1fr);padding:0;overflow:hidden;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
@@ -219,6 +220,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <span style="font-size:14px;color:var(--uw-ink-500)">With Muhammad Ahmad Barakat</span>
             <p style="margin:4px 0 0;font-size:15.5px;line-height:1.6;color:var(--uw-ink-700);text-wrap:pretty">Design your first original study from scratch, using data you can actually get as a student.</p>
             <div style="margin-top:8px;padding:12px 16px;border-radius:var(--r-md);background:var(--uw-blue-50);font-size:14.5px;line-height:1.5;color:var(--uw-blue-700)"><strong style="font-weight:600">You leave with:</strong> a first study design you can run with data you can easily reach.</div>
+            <a class="rw-day-buy" href="#reserve" data-cp-course="research-wise-days" data-cp-days="2">Get the Day 2 recording · $20</a>
           </div>
         </div>
         <div class="rw-day" style="display:grid;grid-template-columns:200px minmax(0,1fr);padding:0;overflow:hidden;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
@@ -232,12 +234,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <span style="font-size:14px;color:var(--uw-ink-500)">With Muhammad Ahmad Barakat</span>
             <p style="margin:4px 0 0;font-size:15.5px;line-height:1.6;color:var(--uw-ink-700);text-wrap:pretty">Go from a review question to a finished systematic review and meta-analysis.</p>
             <div style="margin-top:8px;padding:12px 16px;border-radius:var(--r-md);background:var(--uw-blue-50);font-size:14.5px;line-height:1.5;color:var(--uw-blue-700)"><strong style="font-weight:600">You leave with:</strong> the step-by-step plan to publish your first systematic review and meta-analysis.</div>
+            <a class="rw-day-buy" href="#reserve" data-cp-course="research-wise-days" data-cp-days="3">Get the Day 3 recording · $20</a>
           </div>
         </div>
       </div>
       <div style="margin-top:22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px">
-        <span style="font-size:14px;color:var(--uw-ink-500)">Every session is recorded, including the Q&amp;A.</span>
-        <a class="rwh1" href="#reserve" data-cp-course="research-wise-recordings" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Get the recordings · $20</a>
+        <span style="font-size:14px;color:var(--uw-ink-500)">Every session is recorded, including the Q&amp;A. Buy just the days you need, $20 each.</span>
+        <a class="rwh1" href="#reserve" data-cp-course="research-wise-days" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Choose your recordings · $20 each</a>
       </div>
     </div>
   </section>
@@ -311,7 +314,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </div>
         </div>
       </div>
-      <div style="margin-top:36px;text-align:center"><a class="rwh1" href="#reserve" data-cp-course="research-wise-recordings" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Get the recordings · $20</a></div>
+      <div style="margin-top:36px;text-align:center"><a class="rwh1" href="#reserve" data-cp-course="research-wise-days" style="display:inline-flex;align-items:center;height:52px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16px;font-weight:600">Choose your recordings · $20 each</a></div>
     </div>
   </section>
 
@@ -324,15 +327,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
       <div class="rw-offer-card" style="margin-top:36px;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--uw-border)">
         <div style="background:#fff;padding:8px clamp(20px,4vw,32px)">
-          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">Recordings of all 3 sessions (9 hours), including each day's Q&amp;A. Each one is added after its Sunday session.</span></div>
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">The recording of each session you choose (3 hours each), including that day's Q&amp;A. Each one is added after its Sunday session.</span></div>
           <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--uw-border)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)"><strong style="font-weight:600;color:var(--uw-ink-900)">Master 3 types of studies:</strong> case reports and case series, original studies, and systematic reviews and meta-analyses</span></div>
-          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">Structured notes, so you can follow every step again when you sit down to write</span></div>
+          <div class="rw-chk" style="display:flex;gap:12px;align-items:flex-start;padding:15px 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--uw-success-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:15.5px;line-height:1.5;color:var(--uw-ink-800)">That day's structured notes, so you can follow every step again when you sit down to write</span></div>
         </div>
         <div id="checkout" class="dot-tex" style="scroll-margin-top:90px;background-color:var(--uw-blue-500);padding:clamp(28px,4vw,40px) clamp(20px,4vw,36px);text-align:center;display:flex;flex-direction:column;align-items:center">
-          <span class="rw-pl" style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-success-300)">Recordings + notes</span>
+          <span class="rw-pl" style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-success-300)">Recording + notes, per session</span>
           <span class="rw-price" style="margin-top:10px;font-family:var(--font-display);font-size:clamp(64px,9vw,88px);line-height:1;color:#fff;letter-spacing:-0.02em">$20</span>
-          <span class="rw-once" style="margin-top:8px;font-size:14px;color:var(--uw-blue-100)">One time, for all 3 sessions</span>
-          <a class="rwh1" id="checkout-btn" href="#reserve" data-cp-course="research-wise-recordings" style="margin-top:22px;width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:center;height:56px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600">Get the recordings · $20</a>
+          <span class="rw-once" style="margin-top:8px;font-size:14px;color:var(--uw-blue-100)">Per session. Pick one, two or all three.</span>
+          <a class="rwh1" id="checkout-btn" href="#reserve" data-cp-course="research-wise-days" style="margin-top:22px;width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:center;height:56px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:17px;font-weight:600">Choose your recordings · $20 each</a>
           <span style="margin-top:12px;font-size:13px;line-height:1.5;color:var(--uw-blue-100);text-wrap:pretty">After checkout, we'll email your receipt and your login. The recordings and notes are on our learning platform.</span>
         </div>
       </div>
@@ -365,9 +368,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center">
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.2vw,48px);line-height:1.15;letter-spacing:-0.02em;color:#fff;margin:0;text-wrap:balance">Registration is closed for the live sessions.</h2>
       <p style="margin:14px 0 0;font-size:17px;color:var(--uw-blue-100)">The workshop runs on Sunday, November 15, 22 and 29.</p>
-      <p style="margin:14px 0 0;max-width:560px;font-size:16px;line-height:1.6;color:#fff;text-wrap:pretty">Get the recordings of all 3 sessions and the notes for $20, and learn at your own pace.</p>
+      <p style="margin:14px 0 0;max-width:560px;font-size:16px;line-height:1.6;color:#fff;text-wrap:pretty">Get the recording and notes of any session for $20 each, and learn at your own pace.</p>
       <div class="rw-final-ctas" style="margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-        <a class="rwh1" href="#reserve" data-cp-course="research-wise-recordings" style="display:inline-flex;align-items:center;height:54px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16.5px;font-weight:600">Get the recordings · $20</a>
+        <a class="rwh1" href="#reserve" data-cp-course="research-wise-days" style="display:inline-flex;align-items:center;height:54px;padding:0 30px;border-radius:var(--r-md);background:var(--uw-red-500);color:#fff;font-size:16.5px;font-weight:600">Choose your recordings · $20 each</a>
         <a class="rwh4" href="https://wa.me/19192015700" style="display:inline-flex;align-items:center;gap:8px;height:54px;padding:0 26px;border-radius:var(--r-md);border:1.5px solid rgba(255,255,255,.7);color:#fff;font-size:16.5px;font-weight:600">Text us a question</a>
       </div>
     </div>

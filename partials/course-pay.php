@@ -20,6 +20,10 @@
     </div>
 
     <form id="cpForm" novalidate>
+      <fieldset class="cp-days" id="cpDays" hidden>
+        <legend>Choose your recordings</legend>
+        <div id="cpDaysList"></div>
+      </fieldset>
       <div class="cp__summary">
         <div><strong id="cpItem">Course</strong><span><span id="cpItemSub">One-time payment</span> &middot; instant access on our learning platform</span></div>
         <div class="cp__price"><s id="cpWas" hidden></s><b id="cpPrice"></b></div>
@@ -49,7 +53,7 @@
         </div>
       </div>
 
-      <div class="cp-field">
+      <div class="cp-field" id="cpPromoField">
         <label for="cpPromo">Promo code <span class="cp__opt">(optional)</span></label>
         <div class="cp-promo" id="cpPromoBox">
           <input id="cpPromo" type="text" maxlength="80" autocomplete="off" spellcheck="false" placeholder="Enter promo code" aria-describedby="cpPromoMsg">
@@ -107,6 +111,18 @@
   .cp__price{display:flex;align-items:baseline;gap:8px;flex:none}
   .cp__price b{font-family:var(--font-display);font-size:26px;font-weight:600;color:#14151c}
   .cp__price s{font-size:15px;color:#9a9ca8}
+  .cp-days{border:0;margin:0 0 12px;padding:0;min-width:0}
+  .cp-days[hidden]{display:none}
+  .cp-days legend{padding:0;margin-bottom:8px;font-size:14px;font-weight:500;color:#32343f}
+  .cp-day{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid #d4d4cf;border-radius:10px;margin-bottom:8px;cursor:pointer;transition:border-color .15s,background .15s}
+  .cp-day:has(input:checked){border-color:#2c3386;background:#eef0fb}
+  .cp-day:has(input:focus-visible){box-shadow:0 0 0 3px rgba(44,51,134,.18)}
+  .cp-day input{flex:none;width:18px;height:18px;margin:0;accent-color:#2c3386;cursor:pointer}
+  .cp-day span{flex:1;min-width:0}
+  .cp-day b{display:block;font-size:14.5px;font-weight:600;color:#14151c}
+  .cp-day small{display:block;margin-top:2px;font-size:12.5px;color:#6d7080}
+  .cp-day em{flex:none;font-style:normal;font-weight:600;font-size:15px;color:#14151c}
+  .cp-field[hidden]{display:none}
   .cp__perk{margin:0 0 12px;padding:10px 12px;border-radius:8px;background:#e8f5ee;color:#1f6b45;font-size:13.5px;font-weight:600}
   .cp-field{margin-bottom:12px}
   .cp-field label,.cp-label{display:block;font-size:14px;font-weight:500;color:#32343f;margin-bottom:6px}
