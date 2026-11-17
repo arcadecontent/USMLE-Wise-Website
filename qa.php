@@ -129,12 +129,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 <div class="accordion__body">
                   Each is a one-time payment with lifetime access:
                   <ul>
-                  <li><a href="/step-1-high-yield-crash-course">Step 1 High Yield Crash Course</a> (recorded, 10 days, 60 hours): $199</li>
+                  <li><a href="/step-1-high-yield-crash-course">Step 1 Recorded Crash Course</a> (recorded, 10 days, 60 hours): $199</li>
                   <li><a href="/step-1-live-high-yield-crash-course">Step 1 Live Crash Course</a> (7 live days, 70 hours, every session recorded): $499</li>
-                  <li><a href="/step-2-live-crash-course">Step 2 High Yield Crash Course</a> (recorded, 70 hours): $499</li>
-                  <li><a href="/step-3-live-crash-course">Step 3 High Yield Crash Course</a> (recorded, 80 hours): $499</li>
+                  <li><a href="/step-2-high-yield-crash-course">Step 2 Recorded Crash Course</a> (recorded, 70 hours): $499</li>
+                  <li><a href="/step-2-live-crash-course">Step 2 Live Crash Course</a> (8 live days, 64 hours, every session recorded): $499</li>
+                  <li><a href="/step-3-high-yield-crash-course">Step 3 Recorded Crash Course</a> (recorded, 80 hours): $499</li>
+                  <li><a href="/step-3-live-crash-course">Step 3 Live Crash Course</a> (9 live days, 72 hours, every session recorded): $499</li>
                   </ul>
-                  Prices can change during promotions, so the course page always shows the current number.
+                  The recorded courses are always available. The live courses run in cohorts, and each live page shows the next start date. Prices can change during promotions, so the course page always shows the current number.
                 </div>
               </div>
 

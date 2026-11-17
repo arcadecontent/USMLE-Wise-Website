@@ -309,7 +309,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <p class="lpx-svc-card__desc">A 7-module, 70-hour recorded crash course covering every high-yield Step 2 CK subject, taught by a team of 270+ scorers.</p>
             <div class="lpx-svc-card__ctas">
               <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              <a href="/step-2-live-crash-course" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+              <a href="/step-2-high-yield-crash-course" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
             </div>
           </div>
         </article>
@@ -323,13 +323,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             <p class="lpx-svc-card__desc">An 8-module, 80-hour recorded crash course covering every high-yield Step 3 subject plus a full module on CCS, taught by a team of 270+ scorers.</p>
             <div class="lpx-svc-card__ctas">
               <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              <a href="/step-3-live-crash-course" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+              <a href="/step-3-high-yield-crash-course" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
             </div>
           </div>
         </article>
       </div>
     </div>
   </section>
+
+  <!-- 5b · Exam Stories -->
+  <?php $storyGroup = 'exam'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/story-carousel.php'; ?>
 
   <!-- 5c · Residency Match Mentorship -->
   <section class="lpx-svc-block" id="svc-match" aria-label="Residency Match Mentorship">
@@ -397,6 +400,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
     </div>
   </section>
+
+  <!-- 5c · Match Stories -->
+  <?php $storyGroup = 'match'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/story-carousel.php'; ?>
 
   <!-- 5d · Clinical Rotations -->
   <section class="lpx-svc-block" id="svc-rotations" aria-label="Clinical Rotations">
@@ -620,136 +626,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <div class="svc-opt-divider svc-opt-divider--end"><span>End of options</span></div>
   -->
 
-  <!-- ============== 6b · VIDEO TESTIMONIALS ============== -->
-  <section class="msp-stories" id="stories" aria-labelledby="storiesTitle">
-    <div class="msp-wrap">
-      <div class="msp-stories__head reveal">
-        <span class="msp-eyebrow msp-eyebrow--light">Success stories</span>
-        <h2 id="storiesTitle" class="msp-h2 msp-h2--invert">
-          Real journeys from IMG to residency
-        </h2>
-      </div>
-
-      <div class="msp-carousel" aria-label="Student testimonials">
-        <div class="msp-slide is-active" role="group" aria-label="Story 1 of 5">
-          <button class="msp-video-trigger" data-ytid="F8E7lTvGKRU" aria-label="Watch Rana's match story video">
-            <img src="https://img.youtube.com/vi/F8E7lTvGKRU/maxresdefault.jpg" alt="Rana shares how she matched Internal Medicine at a top-20 program" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-            <span class="yt-play">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
-            </span>
-          </button>
-          <div class="msp-slide__content">
-            <p class="msp-story-feature__outcome">Matched University of Illinois, Peoria</p>
-            <blockquote class="msp-story-feature__quote">
-              <p>I knew I wasn't a natural speaker and needed help making my answers stand out. Dr. Madan's course and our one-on-one sessions gave me the tools to personalize my responses for each interviewer. I walked into every interview with a confidence I simply didn't have before.</p>
-              <footer class="msp-story-feature__attr">
-                <cite class="msp-story-feature__cite">
-                  <span>Dr. Lakshitha</span>
-                  <span>University of Illinois, Peoria</span>
-                </cite>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="msp-slide" role="group" aria-label="Story 2 of 5" aria-hidden="true">
-          <button class="msp-video-trigger" data-ytid="O4Gns55Brh0" aria-label="Watch Dr. Shreya Sriram's match story video">
-            <img src="https://img.youtube.com/vi/O4Gns55Brh0/maxresdefault.jpg" alt="Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-            <span class="yt-play">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
-            </span>
-          </button>
-          <div class="msp-slide__content">
-            <p class="msp-story-feature__outcome">Matched SIU Carbondale · Family Medicine</p>
-            <blockquote class="msp-story-feature__quote">
-              <p>I didn't match in the main cycle, didn't match in SOAP, and was financially stretched. But I kept applying every day on Dr. Madan's advice. I flew across the country for an in-person interview at a remote program just to show my commitment. That persistence, and having the right guidance, is what got me here.</p>
-              <footer class="msp-story-feature__attr">
-                <cite class="msp-story-feature__cite">
-                  <span>Dr. Shreya Sriram</span>
-                  <span>SIU Carbondale · Family Medicine</span>
-                </cite>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="msp-slide" role="group" aria-label="Story 3 of 5" aria-hidden="true">
-          <button class="msp-video-trigger" data-ytid="ZynxmljOZDA" aria-label="Watch Dr. Hamit C.'s match story video">
-            <img src="https://img.youtube.com/vi/ZynxmljOZDA/maxresdefault.jpg" alt="Dr. Hamit C. shares how he matched at UPMC, PA" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-            <span class="yt-play">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
-            </span>
-          </button>
-          <div class="msp-slide__content">
-            <p class="msp-story-feature__outcome">Matched UPMC · Pennsylvania</p>
-            <blockquote class="msp-story-feature__quote">
-              <p>I had everything ready: personal statement, LORs, a solid program list. But I knew those only get you the interview. I've seen applicants with 11 interviews who still didn't match. Dr. Madan's course prepares you for the dynamic, unexpected side of residency interviews, not just the rehearsed answers.</p>
-              <footer class="msp-story-feature__attr">
-                <cite class="msp-story-feature__cite">
-                  <span>Dr. Hamit C.</span>
-                  <span>UPMC · Pennsylvania</span>
-                </cite>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="msp-slide" role="group" aria-label="Story 4 of 5" aria-hidden="true">
-          <button class="msp-video-trigger" data-ytid="IEphKQwawzA" aria-label="Watch Dr. Yash's match story video">
-            <img src="https://img.youtube.com/vi/IEphKQwawzA/maxresdefault.jpg" alt="Dr. Yash shares how he matched in Los Angeles" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-            <span class="yt-play">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
-            </span>
-          </button>
-          <div class="msp-slide__content">
-            <p class="msp-story-feature__outcome">Matched Los Angeles · California</p>
-            <blockquote class="msp-story-feature__quote">
-              <p>This was my first time applying and I had no idea what to expect from the interview process. I came to Dr. Madan with so many questions, and he answered every single one with patience. That guidance made all the difference when it mattered most.</p>
-              <footer class="msp-story-feature__attr">
-                <cite class="msp-story-feature__cite">
-                  <span>Dr. Yash</span>
-                  <span>Los Angeles · California</span>
-                </cite>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="msp-slide" role="group" aria-label="Story 5 of 5" aria-hidden="true">
-          <button class="msp-video-trigger" data-ytid="2pGb5xiKzdw" aria-label="Watch Dr. Srishti Shankar's match story video">
-            <img src="https://img.youtube.com/vi/2pGb5xiKzdw/maxresdefault.jpg" alt="Dr. Srishti Shankar shares how she matched at St. Vincent, MA" class="msp-video-trigger__thumb" loading="lazy" decoding="async" />
-            <span class="yt-play">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>
-            </span>
-          </button>
-          <div class="msp-slide__content">
-            <p class="msp-story-feature__outcome">Matched St. Vincent · Massachusetts</p>
-            <blockquote class="msp-story-feature__quote">
-              <p></p>
-              <footer class="msp-story-feature__attr">
-                <cite class="msp-story-feature__cite">
-                  <span>Dr. Srishti Shankar</span>
-                  <span>St. Vincent · Massachusetts</span>
-                </cite>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-
-      <div class="msp-carousel__nav">
-        <button class="msp-carousel__btn" id="prevSlide" aria-label="Previous story">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 3.5L6 9l5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <span class="msp-carousel__count" id="slideCount" aria-live="polite">1 / 5</span>
-        <button class="msp-carousel__btn" id="nextSlide" aria-label="Next story">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 3.5L12 9l-5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Video lightbox -->
+  <!-- Video lightbox: opened by every .msp-video-trigger in the two story carousels above -->
   <div class="msp-lightbox" id="mspLightbox" role="dialog" aria-modal="true" aria-label="Student testimonial video" hidden>
     <button class="msp-lightbox__close" aria-label="Close video">&times;</button>
     <div class="msp-lightbox__frame">

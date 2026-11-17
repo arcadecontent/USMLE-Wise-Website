@@ -1,0 +1,185 @@
+<?php
+/**
+ * Student story videos for the home page's two carousels.
+ *
+ * Each slide is one video from /testimonials, with a quote taken from its
+ * transcript. 'group' says which carousel it belongs to: 'match' (shown after
+ * the Residency Match service) or 'exam' (shown after Exam Prep). Slides are
+ * shown in the order listed. partials/story-carousel.php renders one group.
+ *
+ * Every slide in a carousel sits in the same grid cell, so the longest quote
+ * sets that carousel's height: keep new quotes under about 280 characters.
+ * 'thumb' is the YouTube poster size; Dr. Vamsi's Short has no maxres.
+ */
+return [
+    'groups' => [
+        'match' => [
+            'eyebrow' => 'Match stories',
+            'title'   => 'Real journeys from IMG to residency',
+            'sub'     => 'IMGs on how they matched, including through SOAP.',
+            'noun'    => 'match story',
+        ],
+        'exam' => [
+            'eyebrow' => 'Exam stories',
+            'title'   => 'Real Step scores, in their own words',
+            'sub'     => 'Students on how they prepared for Step 1 and Step 2 CK.',
+            'noun'    => 'exam story',
+        ],
+    ],
+    'slides' => [
+        [
+            'ytid'    => 'F8E7lTvGKRU',
+            'group'   => 'match',
+            'name'    => 'Dr. Lakshitha',
+            'place'   => 'University of Illinois, Peoria',
+            'outcome' => 'Matched University of Illinois, Peoria',
+            'alt'     => 'Dr. Lakshitha on matching into Internal Medicine',
+            'quote'   => "I knew I wasn't a natural speaker and needed help making my answers stand out. Dr. Madaan's course and our one-on-one sessions gave me the tools to personalize my responses for each interviewer. I walked into every interview with a confidence I simply didn't have before.",
+        ],
+        [
+            'ytid'    => 'O4Gns55Brh0',
+            'group'   => 'match',
+            'name'    => 'Dr. Shreya Sriram',
+            'place'   => 'SIU Carbondale · Family Medicine',
+            'outcome' => 'Matched SIU Carbondale · Family Medicine',
+            'alt'     => 'Dr. Shreya Sriram shares how she matched Family Medicine at SIU Carbondale',
+            'quote'   => "I didn't match in the main cycle, didn't match in SOAP, and was financially stretched. But I kept applying every day on Dr. Madaan's advice. I flew across the country for an in-person interview at a remote program just to show my commitment. That persistence, and having the right guidance, is what got me here.",
+        ],
+        [
+            'ytid'    => 'ZynxmljOZDA',
+            'group'   => 'match',
+            'name'    => 'Dr. Hamit C.',
+            'place'   => 'UPMC · Pennsylvania',
+            'outcome' => 'Matched UPMC · Pennsylvania',
+            'alt'     => 'Dr. Hamit C. shares how he matched at UPMC, PA',
+            'quote'   => "I had everything ready: personal statement, LORs, a solid program list. But I knew those only get you the interview. I've seen applicants with 11 interviews who still didn't match. Dr. Madaan's course prepares you for the dynamic, unexpected side of residency interviews, not just the rehearsed answers.",
+        ],
+        [
+            'ytid'    => 'IEphKQwawzA',
+            'group'   => 'match',
+            'name'    => 'Dr. Yash',
+            'place'   => 'Los Angeles · California',
+            'outcome' => 'Matched Los Angeles · California',
+            'alt'     => 'Dr. Yash shares how he matched in Los Angeles',
+            'quote'   => "This was my first time applying and I had no idea what to expect from the interview process. I came to Dr. Madaan with so many questions, and he answered every single one with patience. That guidance made all the difference when it mattered most.",
+        ],
+        [
+            'ytid'    => '2pGb5xiKzdw',
+            'group'   => 'match',
+            'name'    => 'Dr. Srishti Shankar',
+            'place'   => 'St. Vincent · Massachusetts',
+            'outcome' => 'Matched St. Vincent · Massachusetts',
+            'alt'     => 'Dr. Srishti Shankar shares how she matched at St. Vincent, MA',
+            'quote'   => "What I found unique about Manik's course is that it taught me how to modulate my answers and leave a lasting impression on the interviewer. Everything you've worked hard for until now is what gets you the interview. But securing a residency program depends on how you deliver the interview.",
+        ],
+        [
+            'ytid'    => 'WDrpqKmLwLs',
+            'group'   => 'match',
+            'name'    => 'Dr. Sadaf Ali',
+            'place'   => '2026 Main Match · Pakistan',
+            'outcome' => 'Matched first cycle · Graduated 2019',
+            'alt'     => 'Dr. Sadaf Ali on matching in the main match without Step 3',
+            'quote'   => "I graduated in 2019, so I'm an old graduate, but I matched in my first cycle. I had a 250 on Step 2 but no Step 3, and my whole idea was to get matched in SOAP. USMLE Wise told me I could apply in the main match before Step 3. I did, and I matched in the main cycle instead of SOAP.",
+        ],
+        [
+            'ytid'    => 'Ea1pD2xY0_s',
+            'group'   => 'match',
+            'name'    => 'Dr. Peracha',
+            'place'   => 'Family Medicine',
+            'outcome' => 'Matched Family Medicine · Graduated 2009',
+            'alt'     => 'Dr. Peracha on matching Family Medicine after graduating in 2009',
+            'quote'   => "I came to USMLE Wise late, around September 28th, and within a week they turned my application around 180 degrees. I had done all the work, but I didn't know how to put it into solid points and solid writing. On my own, I would never have done it the way they did.",
+        ],
+        [
+            'ytid'    => 'izwBvdQgVc8',
+            'group'   => 'match',
+            'name'    => 'Dr. Dyan',
+            'place'   => 'Jefferson Einstein · Internal Medicine',
+            'outcome' => 'Matched first choice · Jefferson Einstein',
+            'alt'     => 'Dr. Dyan on matching a first-choice Internal Medicine program',
+            'quote'   => "I matched into my first-choice program, and this would not have been possible without Dr. Manik Madaan's advanced interview prep course. High scores, LORs and your CV only get you the interviews. Your performance in those interviews is what secures your spot.",
+        ],
+        [
+            'ytid'    => '64yfSkj4M_8',
+            'group'   => 'match',
+            'name'    => 'Nathan Cong',
+            'place'   => 'Internal Medicine · Reapplicant',
+            'outcome' => 'Matched Internal Medicine · Graduated 5+ years ago',
+            'alt'     => 'Nathan Cong on matching Internal Medicine as a reapplicant',
+            'quote'   => "The PS was better, and the application was better as a whole. The interview modules gave me a framework to structure my answers. Last year I was acting more desperate. This time I had a more confident demeanor, and it showed in my body language.",
+        ],
+        [
+            'ytid'    => 'LKF0UYfXyE0',
+            'group'   => 'match',
+            'name'    => 'Dr. Ayra',
+            'place'   => 'Internal Medicine',
+            'outcome' => 'Matched Internal Medicine · IMG from the UK',
+            'alt'     => 'Dr. Ayra on preparing for residency interviews',
+            'quote'   => "It's shocking how unprepared I would have been without USMLE Wise helping with my CV and my interviews. I really liked the framework for a question you don't know how to answer: your theme is human connection, so think of a story that has it, and make it U.S. related.",
+        ],
+        [
+            'ytid'    => 'HSsrZERcvbI',
+            'group'   => 'match',
+            'name'    => 'Dr. Patel',
+            'place'   => 'Internal Medicine Resident',
+            'outcome' => 'Matched Internal Medicine',
+            'alt'     => 'Dr. Patel on matching into Internal Medicine',
+            'quote'   => "A building cannot stand on a single pillar, and USMLE Wise was that pillar. This is not only my win. There were people working behind me, not just on my application or my interviews, but even for my mental health. They listened to my frustrations. I don't think I could have found a better team for this journey.",
+        ],
+        [
+            'ytid'    => '8S2q-5Pb87k',
+            'group'   => 'match',
+            'name'    => 'Pavani',
+            'place'   => 'Family Medicine · Match Package',
+            'outcome' => 'Matched Family Medicine',
+            'alt'     => 'Pavani on building a personal statement and match strategy',
+            'quote'   => "I struggled with my personal statement for one or two months, and in the end it felt flat and generic, just like my CV. The soul wasn't coming out. In the brainstorming session I dug deeper into myself, and within a few days they gave me a draft that sounded really good. It sounded like me.",
+        ],
+        [
+            'ytid'    => 'lmjpF2nrXOU',
+            'group'   => 'match',
+            'name'    => 'SOAP Match Story',
+            'place'   => 'Anesthesiologist from India',
+            'outcome' => 'Matched through SOAP · Prelim Internal Medicine',
+            'alt'     => 'An anesthesiologist from India on matching through SOAP',
+            'quote'   => "I was unmatched, and in SOAP I contacted USMLE Wise. I only applied to two prelim programs, the ones with the most vacancies. The program director herself messaged me for an interview. I related my U.S. experience, and in the second round I got the offer.",
+        ],
+        [
+            'ytid'    => 'SmDKOptBIV4',
+            'group'   => 'exam',
+            'thumb'   => 'sddefault',
+            'name'    => 'Dr. Vamsi',
+            'place'   => 'JIPMER Graduate',
+            'outcome' => 'Scored 272 · USMLE Step 2 CK',
+            'alt'     => 'Dr. Vamsi on scoring 272 on USMLE Step 2 CK',
+            'quote'   => "I'm a JIPMER graduate and I scored a 272 on USMLE Step 2 CK. People ask me how to start their Step 2 CK journey, and I highly recommend Dr. Manik Madaan's YouTube video on how he scored a 271. I pretty much followed everything he mentioned in that video.",
+        ],
+        [
+            'ytid'    => '5qnypeUipdE',
+            'group'   => 'exam',
+            'name'    => 'Carmen',
+            'place'   => 'MD PhD · Spain',
+            'outcome' => 'Scored 254 · USMLE Step 1',
+            'alt'     => 'Carmen on raising a Step 1 score from about 240 to 254',
+            'quote'   => "Being five or six years out of medical school, I first needed to reach the level of students who had just finished, and then get above them. The questions I got wrong weren't about content. They were about strategy: reading fast and not missing key information. It helped me go from around 240 to 254.",
+        ],
+        [
+            'ytid'    => 'yljBSeYYx6s',
+            'group'   => 'exam',
+            'name'    => 'Divya',
+            'place'   => 'Step 1 Crash Course',
+            'outcome' => 'Scored 253 · USMLE Step 1',
+            'alt'     => 'Divya on scoring 253 on USMLE Step 1',
+            'quote'   => "One month before Step 1, my NBME and UWorld scores were just not improving. The course explained the strategy of answering questions like a mathematical formula, and I could apply it while taking the test. I saw a 10-point jump from my UWorld self-assessment on day one to my real exam, and scored 253.",
+        ],
+        [
+            'ytid'    => 'pcQuFkFmnAE',
+            'group'   => 'exam',
+            'name'    => 'Ruchika',
+            'place'   => 'Step 1 Crash Course',
+            'outcome' => 'Scored 252 · USMLE Step 1',
+            'alt'     => 'Ruchika on scoring 252 on USMLE Step 1',
+            'quote'   => "I started the course when I was scoring in the 220s and 230s, and in about two months I improved to the 250s. He teaches how to reach an answer without knowing everything about the disease. You can't always know every fact, but you need to know how to rule out answers. I scored 252 on the real deal.",
+        ],
+    ],
+];

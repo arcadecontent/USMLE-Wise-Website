@@ -1,3 +1,12 @@
+<?php
+// Each live crash course shows its next start date (data/crash-course-cohorts.php).
+require_once $_SERVER['DOCUMENT_ROOT'] . '/data/crash-course-cohorts.php';
+$ccNavLive = static function (string $step): string {
+    $c = uwcc_live_cohort($step);
+    if ($c['state'] !== 'open') return 'Live · next dates soon';
+    return $c['started'] ? 'Live · enrolling now' : 'Live · starts ' . $c['start']->format('M j');
+};
+?>
 <!-- ============== NAV ============== -->
 <header class="msp-nav" id="mspNav">
   <div class="msp-wrap msp-nav__inner">
@@ -13,22 +22,16 @@
             <span class="msp-nav__dd-name">Coaching Overview</span>
             <span class="msp-nav__dd-meta">Step 1, Step 2 CK &amp; Step 3</span>
           </a>
-          <a href="/step-1-live-high-yield-crash-course" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 1 Live Crash Course</span>
-            <span class="msp-nav__dd-meta">Live &middot; 7-day &middot; 70 hrs</span>
+          <?php foreach ([['step1', 'Step 1'], ['step2', 'Step 2'], ['step3', 'Step 3']] as [$ccKey, $ccName]): ?>
+          <a href="<?= uwcc_page_url($ccKey, 'live') ?>" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name"><?= $ccName ?> Live Course</span>
+            <span class="msp-nav__dd-meta"><?= htmlspecialchars($ccNavLive($ccKey), ENT_QUOTES, 'UTF-8') ?></span>
           </a>
-          <a href="/step-1-high-yield-crash-course" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 1 High Yield Crash Course</span>
-            <span class="msp-nav__dd-meta">Recorded &middot; 10-day</span>
+          <a href="<?= uwcc_page_url($ccKey, 'recorded') ?>" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name"><?= $ccName ?> Recorded Course</span>
+            <span class="msp-nav__dd-meta">Recorded &middot; start anytime</span>
           </a>
-          <a href="/step-2-live-crash-course" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 2 High Yield Crash Course</span>
-            <span class="msp-nav__dd-meta">Recorded &middot; 70 hrs</span>
-          </a>
-          <a href="/step-3-live-crash-course" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Step 3 High Yield Crash Course</span>
-            <span class="msp-nav__dd-meta">Recorded &middot; 80 hrs</span>
-          </a>
+          <?php endforeach; ?>
           <a href="/coaching-step1-mastery" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Step 1 Mastery</span>
             <span class="msp-nav__dd-meta">6-month &middot; From the basics</span>

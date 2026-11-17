@@ -663,6 +663,23 @@
 }
 .msp-stories__head { margin-bottom: clamp(36px, 5vw, 56px); }
 
+/* The home page loads blog.css after this file, and it redeclares the
+   .msp-eyebrow blue at equal specificity, which beat .msp-eyebrow--light and
+   left this label dark blue on dark navy. Doubling the class wins in any
+   load order. In the stories band the eyebrow takes the accent blue used
+   for the outcome labels below it. */
+.msp-eyebrow.msp-eyebrow--light { color: rgba(255,255,255,.5); }
+.msp-stories .msp-eyebrow--light { color: #7eb8f7; }
+
+/* One line under the band's heading (home page story carousels). */
+.msp-stories__sub {
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.62);
+  max-width: 54ch;
+  margin: 0;
+}
+
 /* Carousel */
 .msp-carousel {
   display: grid;

@@ -84,24 +84,49 @@
       if (img.complete && img.naturalWidth === 0) fixThumb(img);
     });
 
-    /* ---- 5. Testimonial carousel ---- */
-    var slides = Array.prototype.slice.call(document.querySelectorAll('.msp-slide'));
-    var countEl = document.getElementById('slideCount');
-    var current = 0;
+    /* ---- 5. Testimonial carousels ----
+       Each .msp-carousel runs on its own, so a page can hold several. Its
+       prev / count / next controls are the .msp-carousel__nav that sits next
+       to it in the same parent. */
+    document.querySelectorAll('.msp-carousel').forEach(function (carousel) {
+      var slides = Array.prototype.slice.call(carousel.querySelectorAll(':scope > .msp-slide'));
+      var nav = carousel.parentElement.querySelector('.msp-carousel__nav');
+      if (!slides.length || !nav) return;
 
-    function goToSlide(n) {
-      slides[current].classList.remove('is-active');
-      slides[current].setAttribute('aria-hidden', 'true');
-      current = (n + slides.length) % slides.length;
-      slides[current].classList.add('is-active');
-      slides[current].removeAttribute('aria-hidden');
-      if (countEl) countEl.textContent = (current + 1) + ' / ' + slides.length;
-    }
+      var buttons = nav.querySelectorAll('.msp-carousel__btn');
+      var prevBtn = buttons[0];
+      var nextBtn = buttons[1];
+      var countEl = nav.querySelector('.msp-carousel__count');
+      var current = 0;
 
-    var prevBtn = document.getElementById('prevSlide');
-    var nextBtn = document.getElementById('nextSlide');
-    if (prevBtn) prevBtn.addEventListener('click', function () { goToSlide(current - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { goToSlide(current + 1); });
+      // Slides can park their poster in data-src so a long carousel doesn't
+      // fetch every image up front. Load a slide's poster when it or a
+      // neighbour becomes active, so the next click shows a ready image.
+      function primeSlide(n) {
+        var slide = slides[(n + slides.length) % slides.length];
+        slide.querySelectorAll('img[data-src]').forEach(function (img) {
+          img.src = img.getAttribute('data-src');
+          img.removeAttribute('data-src');
+        });
+      }
+      primeSlide(1);
+      primeSlide(-1);
+
+      function goToSlide(n) {
+        slides[current].classList.remove('is-active');
+        slides[current].setAttribute('aria-hidden', 'true');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('is-active');
+        slides[current].removeAttribute('aria-hidden');
+        primeSlide(current);
+        primeSlide(current + 1);
+        primeSlide(current - 1);
+        if (countEl) countEl.textContent = (current + 1) + ' / ' + slides.length;
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { goToSlide(current - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { goToSlide(current + 1); });
+    });
 
     /* ---- 6. Video lightbox ---- */
     var lightbox = document.getElementById('mspLightbox');

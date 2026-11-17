@@ -179,8 +179,8 @@ function usmlewise_wiki_services(): array
     return [
         'coaching'           => ['USMLE Coaching', '/coaching', 'Live and recorded USMLE coaching for Step 1, Step 2 CK and Step 3.'],
         'step-1-crash-course'=> ['Step 1 High Yield Crash Course', '/step-1-high-yield-crash-course', 'A recorded 10-day, 60-hour course covering the high-yield Step 1 subjects.'],
-        'step-2-crash-course'=> ['Step 2 High Yield Crash Course', '/step-2-live-crash-course', 'A recorded 7-module, 70-hour course covering the high-yield Step 2 CK subjects.'],
-        'step-3-crash-course'=> ['Step 3 High Yield Crash Course', '/step-3-live-crash-course', 'A recorded 8-module, 80-hour course covering Step 3, with a full module on CCS.'],
+        'step-2-crash-course'=> ['Step 2 High Yield Crash Course', '/step-2-high-yield-crash-course', 'A recorded 7-module, 70-hour course covering the high-yield Step 2 CK subjects.'],
+        'step-3-crash-course'=> ['Step 3 High Yield Crash Course', '/step-3-high-yield-crash-course', 'A recorded 8-module, 80-hour course covering Step 3, with a full module on CCS.'],
         'match'              => ['Match Support', '/match', 'Done-for-you Match support that ties your CV, personal statement, letters, signaling and interview prep into one story.'],
         'match-mentorship'   => ['Match Mentorship', '/match-mentorship', 'Recorded masterclasses on the personal statement, ERAS CV, signaling, interviews and SOAP.'],
         'match-maker'        => ['Match Maker', '/match-maker', 'A self-serve tool that scores residency programs against your profile and plans your signals.'],

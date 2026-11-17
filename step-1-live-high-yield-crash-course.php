@@ -1,6 +1,11 @@
 <?php
+// Dates, countdown and enroll buttons come from data/crash-course-cohorts.php.
+require_once $_SERVER['DOCUMENT_ROOT'] . '/data/crash-course-cohorts.php';
+$cohort = uwcc_live_cohort('step1');
+$isOpen = $cohort['state'] === 'open';
+$h = static fn($s) => htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8');
 $pageTitle = "Step 1 Live Crash Course | USMLE Wise";
-$pageDescription = "A 7-day, 70-hour live Step 1 crash course on Zoom, taught by a team of 270+ Step 2 scorers. Finish the course, and if you don't pass, get your money back.";
+$pageDescription = "A {$cohort['days']}-day, {$cohort['hours']}-hour live Step 1 crash course on Zoom" . ($isOpen ? ", {$cohort['range']}" : "") . ", taught by a team of 270+ Step 2 scorers. Finish the course, and if you don't pass, get your money back.";
 $canonical = "https://usmlewise.com/step-1-live-high-yield-crash-course";
 $bodyClass = "msp";
 $preloadImage = "/assets/step1-crash-course/step1-live-crash-course-image.jpg";
@@ -9,7 +14,8 @@ $stylesheets = [
     "/styles/crash-course-brochure.css"
 ];
 $scripts = [
-    "/js/research-catalyst.js"
+    "/js/research-catalyst.js",
+    "/js/cohort-countdown.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -19,14 +25,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 <section class="msp-hero" aria-labelledby="heroTitle">
   <div class="msp-wrap msp-hero__grid">
     <div class="msp-hero__copy reveal">
-      <h1 id="heroTitle" class="msp-h1">Pass Step&nbsp;1 in just <em>7 live days</em>.</h1>
-      <p class="msp-lede">70 hours of live, high-yield instruction on Zoom, Nov&nbsp;1&ndash;7, 2026, from a team of 270+ Step&nbsp;2 scorers. Ask questions in real time. Finish the course, and if you don't pass, you get your money back.</p>
+      <h1 id="heroTitle" class="msp-h1">Pass Step&nbsp;1 in just <em><?= (int) $cohort['days'] ?> live days</em>.</h1>
+      <p class="msp-lede"><?= (int) $cohort['hours'] ?> hours of live, high-yield instruction on Zoom<?= $isOpen ? ', ' . $h($cohort['range']) : '' ?>, from a team of 270+ Step&nbsp;2 scorers. Ask questions in real time. Finish the course, and if you don't pass, you get your money back.</p>
+      <?php $ccCohort = $cohort; $ccVariant = 'hero'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/cohort-countdown.php'; ?>
       <div class="msp-cta-row">
+        <?php if ($isOpen): ?>
         <form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank">
           <input type="hidden" name="courseId" value="cdbu1brx0peuyo75xzpwjcota">
           <button type="submit" class="cc-checkout-btn"><span class="btn btn--primary btn--xl">Enroll Now</span></button>
         </form>
         <a class="btn btn--outline btn--xl" href="#curriculum">See the Curriculum</a>
+        <?php else: $ccVariant = 'row'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/cohort-cta.php'; endif; ?>
       </div>
     </div>
     <div class="msp-hero__frame" style="aspect-ratio:16/9">
@@ -46,6 +55,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </div>
   </div>
 </section>
+
+<?php $ccStep = 'step1'; $ccFrom = 'live'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/cohort-switch.php'; ?>
 
 <!-- ============== THE PROBLEM ============== -->
 <section class="msp-section s1-problem" aria-labelledby="problemTitle">
@@ -82,7 +93,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <div class="pg-feat-grid">
       <div class="pg-feat reveal">
         <div class="pg-feat__icon"><i data-lucide="clock" width="20" height="20"></i></div>
-        <p class="pg-feat__title">7 live days. 70 hours. Zero fluff.</p>
+        <p class="pg-feat__title"><?= (int) $cohort['days'] ?> live days. <?= (int) $cohort['hours'] ?> hours. Zero fluff.</p>
         <p class="pg-feat__body">Every session targets exactly what the USMLE tests most. If it's not high-yield, it's not in.</p>
       </div>
       <div class="pg-feat reveal">
@@ -119,51 +130,43 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <div class="msp-wrap">
     <div class="msp-head reveal" style="max-width:68ch;margin-inline:auto;text-align:center">
       <span class="msp-eyebrow" style="justify-content:center">Curriculum</span>
-      <h2 id="curriculumTitle" class="msp-h2" style="margin-inline:auto;max-width:26ch">7 days, 70 live hours, all 21 Step&nbsp;1 subjects.</h2>
-      <p class="msp-sub" style="margin-inline:auto">Sunday, Nov&nbsp;1 through Saturday, Nov&nbsp;7, 2026. Every session is recorded, with lifetime access.</p>
+      <h2 id="curriculumTitle" class="msp-h2" style="margin-inline:auto;max-width:26ch"><?= (int) $cohort['days'] ?> days, <?= (int) $cohort['hours'] ?> live hours, all 21 Step&nbsp;1 subjects.</h2>
+      <p class="msp-sub" style="margin-inline:auto"><?= $cohort['start'] ? $h($cohort['start']->format('l, M j')) . ' through ' . $h($cohort['lastDay']->format('l, M j, Y')) . '. ' : '' ?>Every session is recorded, with lifetime access.</p>
     </div>
+    <?php
+    // Hours and topics per day. The dates come from data/crash-course-cohorts.php.
+    $s1_days = [
+      ['9.5', ['General Pathology', 'General Pharmacology', 'Cardiovascular']],
+      ['10',  ['Biostatistics & Epidemiology', 'Respiratory', 'Renal']],
+      ['8',   ['Endocrine', 'Neurology']],
+      ['9',   ['Immunology', 'Genetics, Cell & Molecular Biology', 'Hematology & Oncology']],
+      ['9.5', ['Biochemistry & Nutrition', 'Bacteriology', 'Virology, Mycology & Parasitology', 'Infectious Disease Pharmacology']],
+      ['9.5', ['Reproductive', 'Psychiatry', 'Ethics & Communication']],
+      ['9',   ['Dermatology', 'Gastrointestinal', 'Musculoskeletal']],
+    ];
+    ?>
     <div class="msp-services__grid s1-curric s1-curric--list">
+      <?php foreach ($s1_days as $i => [$hrs, $topics]): ?>
       <div class="msp-svc reveal">
-        <span class="msp-svc__no">01</span>
-        <div><h3>Day 1 &middot; Sun, Nov 1</h3><p style="margin-bottom:8px">9.5 hours of live instruction.</p><div><span class="crs-tag">General Pathology</span><span class="crs-tag">General Pharmacology</span><span class="crs-tag">Cardiovascular</span></div></div>
+        <span class="msp-svc__no"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></span>
+        <div><h3><?= $h(uwcc_day_label($cohort, $i)) ?></h3><p style="margin-bottom:8px"><?= $h($hrs) ?> hours of live instruction.</p><div><?php foreach ($topics as $t): ?><span class="crs-tag"><?= $h($t) ?></span><?php endforeach; ?></div></div>
       </div>
-      <div class="msp-svc reveal">
-        <span class="msp-svc__no">02</span>
-        <div><h3>Day 2 &middot; Mon, Nov 2</h3><p style="margin-bottom:8px">10 hours of live instruction.</p><div><span class="crs-tag">Biostatistics &amp; Epidemiology</span><span class="crs-tag">Respiratory</span><span class="crs-tag">Renal</span></div></div>
-      </div>
-      <div class="msp-svc reveal">
-        <span class="msp-svc__no">03</span>
-        <div><h3>Day 3 &middot; Tue, Nov 3</h3><p style="margin-bottom:8px">8 hours of live instruction.</p><div><span class="crs-tag">Endocrine</span><span class="crs-tag">Neurology</span></div></div>
-      </div>
-      <div class="msp-svc reveal">
-        <span class="msp-svc__no">04</span>
-        <div><h3>Day 4 &middot; Wed, Nov 4</h3><p style="margin-bottom:8px">9 hours of live instruction.</p><div><span class="crs-tag">Immunology</span><span class="crs-tag">Genetics, Cell &amp; Molecular Biology</span><span class="crs-tag">Hematology &amp; Oncology</span></div></div>
-      </div>
-      <div class="msp-svc reveal">
-        <span class="msp-svc__no">05</span>
-        <div><h3>Day 5 &middot; Thu, Nov 5</h3><p style="margin-bottom:8px">9.5 hours of live instruction.</p><div><span class="crs-tag">Biochemistry &amp; Nutrition</span><span class="crs-tag">Bacteriology</span><span class="crs-tag">Virology, Mycology &amp; Parasitology</span><span class="crs-tag">Infectious Disease Pharmacology</span></div></div>
-      </div>
-      <div class="msp-svc reveal">
-        <span class="msp-svc__no">06</span>
-        <div><h3>Day 6 &middot; Fri, Nov 6</h3><p style="margin-bottom:8px">9.5 hours of live instruction.</p><div><span class="crs-tag">Reproductive</span><span class="crs-tag">Psychiatry</span><span class="crs-tag">Ethics &amp; Communication</span></div></div>
-      </div>
-      <div class="msp-svc reveal">
-        <span class="msp-svc__no">07</span>
-        <div><h3>Day 7 &middot; Sat, Nov 7</h3><p style="margin-bottom:8px">9 hours of live instruction.</p><div><span class="crs-tag">Dermatology</span><span class="crs-tag">Gastrointestinal</span><span class="crs-tag">Musculoskeletal</span></div></div>
-      </div>
+      <?php endforeach; ?>
     </div>
 
     <div class="s1-sched reveal">
-      <div class="s1-sched__head">Sessions start at 7:00 AM Eastern, every day</div>
+      <?php if ($cohort['start']): ?>
+      <div class="s1-sched__head">Sessions start at <?= $h($cohort['startTime']) ?>, every day</div>
       <div class="s1-sched__table">
         <div class="s1-sched__row s1-sched__row--head"><span></span><span>Starts</span><span>Ends</span></div>
-        <div class="s1-sched__row"><span>New York (EST)</span><span>7:00 AM</span><span>5:00 PM</span></div>
-        <div class="s1-sched__row"><span>India (IST)</span><span>5:30 PM</span><span>3:30 AM</span></div>
-        <div class="s1-sched__row"><span>London (GMT)</span><span>12:00 PM</span><span>10:00 PM</span></div>
-        <div class="s1-sched__row"><span>Dubai (GST)</span><span>4:00 PM</span><span>2:00 AM</span></div>
-        <div class="s1-sched__row"><span>Nepal (NPT)</span><span>5:45 PM</span><span>3:45 AM</span></div>
-        <div class="s1-sched__row"><span>Pakistan (PKT)</span><span>5:00 PM</span><span>3:00 AM</span></div>
+        <?php foreach (uwcc_schedule_rows($cohort) as [$place, $starts, $ends]): ?>
+        <div class="s1-sched__row"><span><?= $h($place) ?></span><span><?= $h($starts) ?></span><span><?= $h($ends) ?></span></div>
+        <?php endforeach; ?>
       </div>
+      <?php else: ?>
+      <div class="s1-sched__head">Sessions usually start at 7:00 AM Eastern, every day</div>
+      <p class="msp-sub" style="margin-inline:auto">Start and end times for your city are listed here as soon as the next cohort has a date.</p>
+      <?php endif; ?>
     </div>
   </div>
 </section>
@@ -246,7 +249,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <div class="s1-offer__list">
         <div class="s1-offer__item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span class="s1-offer__item-name">The 7-day, 70-hour live Step 1 crash course on Zoom</span>
+          <span class="s1-offer__item-name">The <?= (int) $cohort['days'] ?>-day, <?= (int) $cohort['hours'] ?>-hour live Step 1 crash course on Zoom</span>
         </div>
         <div class="s1-offer__item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -268,10 +271,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <div class="s1-offer__pay">
         <div class="s1-offer__price">$499</div>
         <p class="s1-offer__price-note">Today's price &middot; $1,397 of value included</p>
+        <?php if ($isOpen): ?>
+        <?php $ccVariant = 'line'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/cohort-countdown.php'; ?>
         <form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank">
           <input type="hidden" name="courseId" value="cdbu1brx0peuyo75xzpwjcota">
           <button type="submit" class="cc-checkout-btn"><span class="btn btn--primary btn--xl" style="width:100%">Enroll Now</span></button>
         </form>
+        <?php else: $ccVariant = 'block'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/cohort-cta.php'; endif; ?>
         <div class="s1-offer__guarantee">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
           <span>Sit day 1. Not satisfied? Full refund. Finish the course and don't pass? Full refund.</span>
@@ -384,7 +390,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <div class="accordion accordion--faq s1-faq reveal">
       <div class="accordion__item">
         <button class="accordion__head" type="button">Is this live or self-paced?</button>
-        <div class="accordion__body">It's live on Zoom, Sunday, November 1 to Saturday, November 7, 2026. Sessions start at 7:00 AM Eastern every day, and you can ask questions in real time as we teach. Every session is also recorded, with lifetime access.</div>
+        <div class="accordion__body"><?php if ($cohort['start']): ?>It's live on Zoom, <?= $h($cohort['start']->format('l, F j')) ?> to <?= $h($cohort['lastDay']->format('l, F j, Y')) ?>. Sessions start at <?= $h($cohort['startTime']) ?> every day, and you can ask questions in real time as we teach.<?php else: ?>It's live on Zoom, in cohorts we run periodically. The next dates will be announced soon, and sessions usually start at 7:00 AM Eastern every day. You can ask questions in real time as we teach.<?php endif; ?> Every session is also recorded, with lifetime access.</div>
       </div>
       <div class="accordion__item">
         <button class="accordion__head" type="button">What if I can't make every session live?</button>
@@ -423,13 +429,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   <div class="msp-wrap">
     <div class="s1-cta-card reveal" aria-labelledby="ctaTitle">
       <h2 id="ctaTitle" class="msp-h2">Ready to build the score you're proud of?</h2>
-      <p class="msp-sub">Save your seat for the Nov&nbsp;1&ndash;7 live cohort and get the QBank, the Rapid Review notes, and the N+1 framework that carries straight into Step&nbsp;2.</p>
+      <p class="msp-sub"><?= $isOpen ? 'Save your seat for the ' . $h($cohort['range']) . ' live cohort' : 'Be first in line for the next live cohort' ?> and get the QBank, the Rapid Review notes, and the N+1 framework that carries straight into Step&nbsp;2.</p>
+      <?php if ($isOpen): $ccVariant = 'line'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/cohort-countdown.php'; endif; ?>
       <div class="msp-cta-row">
+        <?php if ($isOpen): ?>
         <form action="https://mastery.usmlewise.com/api/checkout/single-course" method="post" target="_blank">
           <input type="hidden" name="courseId" value="cdbu1brx0peuyo75xzpwjcota">
           <button type="submit" class="cc-checkout-btn"><span class="btn btn--primary btn--xl">Enroll Now</span></button>
         </form>
         <a class="btn btn--outline btn--xl" href="https://wa.me/19192015700?text=I%20am%20interested%20in%20the%20step%201%20live%20crash%20course" target="_blank" rel="noopener noreferrer">Text Us on WhatsApp</a>
+        <?php else: $ccVariant = 'row'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/cohort-cta.php'; endif; ?>
       </div>
     </div>
   </div>

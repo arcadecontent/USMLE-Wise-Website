@@ -273,3 +273,84 @@
   border-color: rgba(255,255,255,.4) !important; color: #fff !important; background: transparent !important;
 }
 .s1-cta-card .btn--outline:hover { background: #fff !important; border-color: #fff !important; color: #08111f !important; }
+
+/* ---------- LIVE COHORT COUNTDOWN ----------
+   Markup: partials/cohort-countdown.php. Ticks via js/cohort-countdown.js. */
+.cc-cd { margin: 0 0 clamp(20px, 2.6vw, 28px); max-width: 52ch; }
+.cc-cd__eyebrow {
+  display: inline-flex; align-items: center; gap: 9px; margin: 0 0 14px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--uw-blue-600);
+}
+.cc-cd__dot {
+  flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--uw-red-500);
+  box-shadow: 0 0 0 0 rgba(227,33,36,.45); animation: cc-pulse 2s ease-out infinite;
+}
+@keyframes cc-pulse { 0% { box-shadow: 0 0 0 0 rgba(227,33,36,.45); } 70%, 100% { box-shadow: 0 0 0 9px rgba(227,33,36,0); } }
+@media (prefers-reduced-motion: reduce) { .cc-cd__dot { animation: none; } }
+.cc-cd__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(8px, 1.4vw, 12px); }
+.cc-cd__cell {
+  background: var(--uw-surface); border: 1px solid var(--uw-border); border-radius: var(--r-lg);
+  padding: clamp(12px, 1.6vw, 16px) 6px clamp(10px, 1.4vw, 12px); text-align: center;
+}
+.cc-cd__cell b {
+  display: block; font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 1; color: var(--uw-ink-900); font-variant-numeric: tabular-nums;
+}
+.cc-cd__cell span {
+  display: block; margin-top: 8px; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--uw-ink-500);
+}
+.cc-cd__when { margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: var(--uw-ink-600); }
+.cc-cd__when strong { color: var(--uw-ink-900); font-weight: 600; }
+
+/* No date yet, or the cohort is underway. */
+.cc-cd--tba {
+  background: var(--uw-surface-sunk); border: 1px solid var(--uw-border); border-radius: var(--r-xl);
+  padding: clamp(16px, 2vw, 22px) clamp(18px, 2.2vw, 24px);
+}
+.cc-cd--tba .cc-cd__eyebrow { margin-bottom: 8px; }
+.cc-cd__tba-title {
+  font-family: var(--font-display); font-weight: 600; font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.25; color: var(--uw-ink-900); margin: 0 0 6px;
+}
+.cc-cd__tba-sub { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--uw-ink-600); }
+
+/* One-line version, above the enroll button and in the closing card. */
+.cc-cd-line {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 0 0 14px; font-size: 14px; line-height: 1.4; color: var(--uw-ink-600);
+}
+.cc-cd-line svg { flex: none; color: var(--uw-red-500); }
+.cc-cd-line b { color: var(--uw-ink-900); font-weight: 600; font-variant-numeric: tabular-nums; }
+.s1-cta-card .cc-cd-line { color: rgba(255,255,255,.7); margin: clamp(18px, 2.4vw, 26px) 0 0; }
+.s1-cta-card .cc-cd-line b { color: #fff; }
+
+/* Buttons stacked in the offer card when there is nothing to enroll in. */
+.cc-stack { display: grid; gap: 10px; width: 100%; }
+
+/* "Prefer the other version?" strip between the hero and the first section. */
+.cc-alt-wrap { padding-block: clamp(4px, 1vw, 12px) 0; }
+.cc-alt {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 14px 24px; padding: 16px clamp(18px, 2.4vw, 26px);
+  background: var(--uw-surface-sunk); border: 1px solid var(--uw-border); border-radius: var(--r-xl);
+}
+.cc-alt__text { display: flex; flex-direction: column; gap: 3px; font-size: 14.5px; line-height: 1.5; color: var(--uw-ink-600); }
+.cc-alt__text b { font-size: 15.5px; font-weight: 600; color: var(--uw-ink-900); }
+@media (max-width: 560px) {
+  .cc-alt { flex-direction: column; align-items: flex-start; }
+  .cc-alt .btn { width: 100%; }
+}
+
+/* The promo offer line in the Step 2 and Step 3 offer cards. The code is a
+   button: js/promo-hint.js types it into the card's promo box and applies it. */
+.s1-offer__promo { margin: 0 0 18px; font-size: 14.5px; line-height: 1.5; color: var(--uw-ink-700); text-align: center; }
+.s1-offer__code {
+  font: inherit; font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: .08em;
+  color: var(--uw-blue-600); background: var(--uw-blue-50); border: 1.5px dashed var(--uw-blue-500);
+  border-radius: 999px; padding: 3px 12px; margin-left: 2px; cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.s1-offer__code:hover { background: var(--uw-blue-500); color: #fff; }
+.s1-offer__code:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 2px; }

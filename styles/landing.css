@@ -758,6 +758,12 @@
 .lpx-svc-block { border-bottom: 1px solid var(--uw-border); }
 .lpx-svc-block:last-of-type { border-bottom: none; }
 .lpx-svc-block--research { padding-bottom: clamp(48px, 6vw, 80px); }
+/* The last service block hands over to the dark stories band. Without this
+   its cards sat flush against the band's top edge. */
+.lpx-svc-block:has(+ .msp-stories) {
+  padding-bottom: clamp(56px, 8vw, 100px);
+  border-bottom: none;
+}
 
 .lpx-svc-block__pkghead {
   display: flex;
