@@ -210,6 +210,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   Yes, and it differs by program, so every term is published on the <a href="/refund-policy">Refund &amp; Guarantee Policy</a> page. In short:
                   <ul>
                   <li><strong>Step Crash Courses:</strong> a pass guarantee. Finish the course, sit your exam, and if you do not pass, send us your score report for a full refund.</li>
+                  <li><strong>Crash course spot-reservation deposit:</strong> the $99 deposit some webinar attendees pay to reserve a seat is non-refundable.</li>
                   <li><strong>Match packages:</strong> a money-back guarantee tied to your first working session. Match Maximizer also includes a Match Edit Guarantee.</li>
                   <li><strong>Research Catalyst and Junior Scientist:</strong> trial periods before the full commitment.</li>
                   <li><strong>Research Wise:</strong> a 100% money-back satisfaction guarantee.</li>

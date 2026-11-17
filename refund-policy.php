@@ -35,17 +35,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li><strong>Window:</strong> refund requests must be submitted within 14 days of your score report date. Requests submitted after this window are not covered by the guarantee.</li>
         </ul>
 
-        <h2>3. Match Packages &mdash; First-Session Guarantee</h2>
+        <h2 id="crash-course-deposit">3. Crash Course Spot-Reservation Deposit</h2>
+        <p>At some of our webinars, attendees can reserve a place in an upcoming crash course by paying a $99 deposit.</p>
+        <ul>
+          <li><strong>Non-refundable:</strong> the $99 deposit is not refundable. Paying it reserves your spot, which means we hold that place for you and it is no longer available to anyone else. We cannot refund it if you change your mind, are unable to attend, or decide not to take the course.</li>
+        </ul>
+
+        <h2>4. Match Packages &mdash; First-Session Guarantee</h2>
         <p>Every Match package (LOR editing, ERAS/CV, Personal Statement, Interview Preparation, and bundled packages) includes a money-back guarantee tied to your first working session.</p>
         <ul>
           <li><strong>How it works:</strong> start with your first working session. If you feel the package isn&rsquo;t the right fit, tell us before or at that first session and we will refund you in full.</li>
-          <li><strong>After the first session:</strong> once work has proceeded past the first session, the package is no longer covered by this guarantee; any further refund request is handled case by case (see Section 6).</li>
+          <li><strong>After the first session:</strong> once work has proceeded past the first session, the package is no longer covered by this guarantee; any further refund request is handled case by case (see Section 7).</li>
         </ul>
 
         <h3>Match Edit Guarantee (Match Maximizer package only)</h3>
         <p>The Match Maximizer package includes a Match Edit Guarantee: if you do not match in a given cycle, we continue editing and re-strategizing your materials for as many cycles as it takes, at no extra cost. This is a guarantee of continued service, not a cash refund &mdash; the final Match decision rests with residency programs, not with us.</p>
 
-        <h2>4. Research &amp; Cohort Programs</h2>
+        <h2>5. Research &amp; Cohort Programs</h2>
 
         <h3 id="research-wise">Research Wise (3-Sunday live workshop)</h3>
         <p>Research Wise is a one-time paid workshop with a short refund window tied to the first live session.</p>
@@ -61,7 +67,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <h3>Research Junior Scientist Program</h3>
         <p>Enrollment begins with a one-month trial and a deposit. If, by the end of that one-month trial, the program is not the right fit for your child, your deposit is refunded in full.</p>
 
-        <h2>5. Clinical Rotations</h2>
+        <h2>6. Clinical Rotations</h2>
         <p>Clinical rotation placements work differently from our other programs, because a placement commits a host site and a supervising physician to hold a spot for you. Rotations carry no pass guarantee, no first-session guarantee, and no trial period. Their refund rules are set out in full in our <a href="/rotation-terms">Clinical Rotation Terms</a>, and in summary:</p>
         <ul>
           <li><strong>Deposit:</strong> your $500 deposit is refunded in full if we cannot secure a placement matching your requirements within 5 business days. Once the host site confirms your placement, the deposit is non-refundable.</li>
@@ -72,10 +78,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li><strong>Change and late fees</strong> apply to date or site changes, late documents, acceptance letters, and program transfers. See the <a href="/rotation-terms">Clinical Rotation Terms</a> for the full schedule.</li>
         </ul>
 
-        <h2>6. All Other Programs</h2>
+        <h2>7. All Other Programs</h2>
         <p>Step 1 Mastery, NBME-Style Coaching (Step 1 &amp; Step 2), 1:1 Tutoring, Original Research, Systematic Review/Meta-Analysis, and J-1 Research Fellowship Placement do not currently have a fixed, published refund schedule. Refund requests for these programs are reviewed case by case &mdash; contact <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with your situation and our team will work with you directly.</p>
 
-        <h2>7. How to Request a Refund</h2>
+        <h2>8. How to Request a Refund</h2>
         <p>Email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with:</p>
         <ul>
           <li>Your full name and the email address used at purchase</li>
@@ -84,10 +90,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li>Any supporting documentation required for that program&rsquo;s guarantee (for example, an official score report for the Crash Course guarantee)</li>
         </ul>
 
-        <h2>8. Changes to This Policy</h2>
+        <h2>9. Changes to This Policy</h2>
         <p>We may update this Refund &amp; Guarantee Policy from time to time, including as we add new programs or revise guarantee terms. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page. The guarantee terms in effect on the date of your purchase are the ones that apply to your enrollment.</p>
 
-        <h2>9. Contact Us</h2>
+        <h2>10. Contact Us</h2>
         <ul>
           <li>Email: <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--></li>
           <li>Website: <a href="/">usmlewise.com</a></li>

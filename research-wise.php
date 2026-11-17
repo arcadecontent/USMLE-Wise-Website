@@ -292,7 +292,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <p style="margin:10px 0 0;font-family:var(--font-display);font-size:clamp(18px,1.9vw,21px);line-height:1.5;color:var(--uw-blue-600);text-wrap:pretty">"Most students are told to do research and never shown where to begin. I built Research Wise for that moment. Over 3 days, you go from a blank page to a real first project, and you leave knowing exactly what to do next."</p>
         </div>
       </div>
-      <div class="rw-mentors" style="margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+      <div class="rw-mentors" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px">
+        <?php /* Shivani Ravipati card: hidden. Remove these comment markers to bring it back.
         <div class="rw-mentor" style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
           <img src="/assets/research-wise/mentor-2.webp" alt="Shivani Ravipati" style="flex:none;width:104px;height:104px;object-fit:cover;object-position:top;border-radius:var(--r-md);display:block;background:var(--uw-blue-50)">
           <div class="rw-mentor__body" style="display:flex;flex-direction:column;gap:8px;min-width:0">
@@ -303,6 +304,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </ul>
           </div>
         </div>
+        */ ?>
         <div class="rw-mentor" style="display:flex;gap:20px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--uw-border);border-radius:var(--r-lg)">
           <img src="/assets/research-wise/mentor-3.webp" alt="Muhammad Ahmad Barakat" style="flex:none;width:104px;height:104px;object-fit:cover;object-position:top;border-radius:var(--r-md);display:block;background:var(--uw-blue-50)">
           <div class="rw-mentor__body" style="display:flex;flex-direction:column;gap:8px;min-width:0">

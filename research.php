@@ -460,6 +460,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
             </article>
             */ ?>
 
+            <?php /* Shivani Ravipati card: hidden. Remove these comment markers to bring it back.
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">
                 <img src="/assets/Photos/Team-Members/shivani.jpeg" alt="Shivani Ravipati" loading="lazy" decoding="async" />
@@ -477,6 +478,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 </ul>
               </div>
             </article>
+            */ ?>
 
             <article class="msp-mtr-e reveal">
               <div class="msp-mtr-e__photo">

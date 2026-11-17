@@ -96,6 +96,7 @@ function usmlewise_team_members(): array
             ],
         ],
 
+        /* Shivani Ravipati: hidden from the site. Remove these comment markers to bring her back.
         'shivani-ravipati' => [
             'group'     => 'research',
             'also_in'   => ['coaching'],
@@ -115,6 +116,7 @@ function usmlewise_team_members(): array
                 ['role' => 'Operations &amp; QA', 'org' => 'USMLE Wise Coaching'],
             ],
         ],
+        */
 
         'shelja-sharma' => [
             'group'     => 'research',
