@@ -163,6 +163,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </section>
 
     <!-- FINAL CTA -->
+    <!-- ============== EXAM STORIES ============== -->
+    <?php $storyGroup = 'exam'; $storyLightbox = true; include $_SERVER['DOCUMENT_ROOT'] . '/partials/story-carousel.php'; ?>
+
     <section class="pg-cta-wrap">
       <div class="msp-wrap">
         <div class="pg-cta-card reveal" aria-labelledby="ctaTitle">

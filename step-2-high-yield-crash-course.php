@@ -12,7 +12,8 @@ $stylesheets = [
 $scripts = [
     "/js/research-catalyst.js",
     "/js/step2-checkout.js",
-    "/js/promo-hint.js"
+    "/js/promo-hint.js",
+    "/js/story-carousel.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -365,6 +366,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
   });
 })();
 </script>
+
+<!-- ============== EXAM STORIES ============== -->
+<?php $storyGroup = 'exam'; $storyLightbox = true; include $_SERVER['DOCUMENT_ROOT'] . '/partials/story-carousel.php'; ?>
 
 <!-- ============== FAQ ============== -->
 <section class="msp-section" id="faq" aria-labelledby="faqTitle" style="background:var(--uw-surface-sunk);border-block:1px solid var(--uw-border)">

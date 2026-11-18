@@ -8,14 +8,17 @@
  *   $storyGroup = 'exam';  include .../partials/story-carousel.php;  // after Exam Prep
  *   $storyGroup = 'match'; include .../partials/story-carousel.php;  // after Residency Match
  *
- * Slides and wording live in data/story-videos.php. The page that includes
- * this must load /styles/match.css and /js/match.js, and must contain the
- * single #mspLightbox video lightbox that every .msp-video-trigger opens.
+ * Slides and wording live in data/story-videos.php. The page must load
+ * /styles/match.css (or coaching.css) and the carousel behavior: /js/match.js,
+ * /js/coaching.js, or /js/story-carousel.js for pages that run neither. Every
+ * video poster opens the one #mspLightbox on the page. A page that does not
+ * already have it sets $storyLightbox = true before the include and this
+ * prints it after the band (once per page).
  * Renders nothing when the group has no slides.
  *
  * The body runs inside a closure so its variables do not leak into the page.
  */
-(static function (string $groupKey): void {
+(static function (string $groupKey, bool $withLightbox): void {
     $data = require $_SERVER['DOCUMENT_ROOT'] . '/data/story-videos.php';
     $g = $data['groups'][$groupKey] ?? null;
     $slides = array_values(array_filter($data['slides'], static fn($s) => $s['group'] === $groupKey));
@@ -74,5 +77,14 @@
       </div>
     </div>
   </section>
+    <?php if ($withLightbox): ?>
+  <!-- Video lightbox: opened by every poster in the story band above -->
+  <div class="msp-lightbox" id="mspLightbox" role="dialog" aria-modal="true" aria-label="Student testimonial video" hidden>
+    <button class="msp-lightbox__close" aria-label="Close video">&times;</button>
+    <div class="msp-lightbox__frame">
+      <iframe id="mspLightboxIframe" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0" title="Student testimonial video"></iframe>
+    </div>
+  </div>
+    <?php endif; ?>
     <?php
-})((string) ($storyGroup ?? ''));
+})((string) ($storyGroup ?? ''), !empty($storyLightbox));
