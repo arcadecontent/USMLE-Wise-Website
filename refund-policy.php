@@ -27,10 +27,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li>Fees paid to independent third parties (for example, official exam fees, application fees, or a clinical rotation site&rsquo;s own charges) are never included in any refund &mdash; only amounts paid directly to USMLE Wise are covered.</li>
         </ul>
 
-        <h2>2. Step 1 High-Yield Crash Course &mdash; Pass Guarantee</h2>
-        <p>If you finish the recorded sessions and the required drills, sit your USMLE Step 1 exam, and do not pass, you are entitled to a full refund of the course fee.</p>
+        <h2>2. Crash Courses (Step 1, Step 2 and Step 3): Pass Guarantee</h2>
+        <p>This guarantee applies to every USMLE Wise crash course (Step 1, Step 2 CK, and Step 3), whether you take the recorded course or a live cohort. If you finish the sessions and the required drills, sit the USMLE exam the course prepares you for, and do not pass, you are entitled to a full refund of the course fee.</p>
         <ul>
-          <li><strong>Eligibility:</strong> you must have completed all sessions and the required drills before sitting the exam.</li>
+          <li><strong>Eligibility:</strong> you must have completed all sessions and the required drills before sitting the exam. In a live course, sessions you attended live or watched on the recording both count.</li>
           <li><strong>How to claim:</strong> email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--> with your official USMLE score report within 14 days of receiving it.</li>
           <li><strong>Window:</strong> refund requests must be submitted within 14 days of your score report date. Requests submitted after this window are not covered by the guarantee.</li>
         </ul>
