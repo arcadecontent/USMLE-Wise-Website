@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <a href="#why" style="padding:8px 12px;border-radius:6px">Why it works</a>
       <a href="#curriculum" style="padding:8px 12px;border-radius:6px">Curriculum</a>
       <a href="#timing" style="padding:8px 12px;border-radius:6px">Timing</a>
-      <a href="#offer" style="padding:8px 12px;border-radius:6px">What you get</a>
+      <a href="#included" style="padding:8px 12px;border-radius:6px">What you get</a>
       <a href="#faq" style="padding:8px 12px;border-radius:6px">FAQ</a>
     </div>
     <div class="cc-nav-right" style="display:flex;align-items:center;gap:10px">
@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     </section>
 
-  <section id="offer" class="cc-offer" style="scroll-margin-top:36px;background:var(--uw-surface);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
+  <section id="included" class="cc-offer" style="scroll-margin-top:36px;background:var(--uw-surface);border-top:1px solid var(--uw-border);padding:clamp(56px,7vw,96px) clamp(20px,5vw,48px)">
     <div style="max-width:780px;margin:0 auto;text-align:center">
       <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uw-red-500);margin-bottom:14px" class="cc-offer-eyebrow">Here's everything you get</div>
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(26px,3.3vw,40px);line-height:1.16;letter-spacing:-0.02em;margin:0 0 clamp(28px,3.4vw,36px);color:var(--uw-ink-900);text-wrap:pretty" class="cc-offer-h2">Inside the USMLE Wise Step&nbsp;3 High-Yield Crash Course</h2>
@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <span style="font-size:15.5px;line-height:1.55;color:var(--uw-ink-800)">Private WhatsApp community with your cohort and mentors</span>
           </div>
         </div>
-        <div class="cc-offer-pay" style="background:var(--uw-blue-500);color:#fff;padding:clamp(24px,4vw,36px);position:relative;overflow:hidden">
+        <div id="offer" class="cc-offer-pay" style="scroll-margin-top:96px;background:var(--uw-blue-500);color:#fff;padding:clamp(24px,4vw,36px);position:relative;overflow:hidden">
           <div class="dot-tex" style="position:absolute;inset:0"></div>
           <div style="position:relative;z-index:1;max-width:440px;margin:0 auto;text-align:left">
             <div class="cc-offer-label" style="font-size:12px;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.14em;font-family:var(--font-mono);margin-bottom:8px">Yours today</div>
@@ -896,14 +896,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Hero fit: keep the hero image + CTA inside the first screen, and offset #offer
-  // below the sticky nav when the "Enroll now" / "Save my seat" buttons jump to it.
+  // Hero fit: keep the hero image + CTA inside the first screen, and offset the jump
+  // targets below the sticky nav. Every "Enroll now" / "Save my seat" CTA targets #offer,
+  // which is the price + promo panel (with a sliver of the benefit list showing above it).
+  // #included is the benefit list itself, reached from the "What you get" links.
   function fitHero() {
     var nav = document.querySelector('.cc-nav');
-    var offer = document.getElementById('offer');
-    if (nav && offer) {
-      var pad = parseFloat(getComputedStyle(offer).paddingTop) || 0;
-      offer.style.setProperty('scroll-margin-top', Math.max(0, Math.ceil(nav.getBoundingClientRect().height - pad + 10)) + 'px', 'important');
+    if (nav) {
+      var navH = nav.getBoundingClientRect().height;
+      var offer = document.getElementById('offer');
+      if (offer) offer.style.setProperty('scroll-margin-top', Math.ceil(navH + 24) + 'px', 'important');
+      var included = document.getElementById('included');
+      if (included) {
+        var pad = parseFloat(getComputedStyle(included).paddingTop) || 0;
+        included.style.setProperty('scroll-margin-top', Math.max(0, Math.ceil(navH - pad + 10)) + 'px', 'important');
+      }
     }
     var media = document.querySelector('.cc-hero-media');
     var img = media && media.querySelector('a');
@@ -1019,7 +1026,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">&nbsp;</span>
-          <a href="#offer">What You Get</a>
+          <a href="#included">What You Get</a>
           <a href="#faq">FAQ</a>
           <a href="#whatsapp">Contact</a>
         </div>
