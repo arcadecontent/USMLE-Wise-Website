@@ -455,6 +455,7 @@ function usmlewise_team_members(): array
             ],
         ],
 
+        /* Kanika Chopra: hidden from the site. Remove these comment markers to bring her back.
         'kanika-chopra' => [
             'group'     => 'sales',
             'name'      => 'Kanika Chopra',
@@ -470,6 +471,7 @@ function usmlewise_team_members(): array
                 ['role' => 'Sales Executive', 'org' => 'USMLE Wise'],
             ],
         ],
+        */
 
         'khadija-grati' => [
             'group'     => 'sales',
