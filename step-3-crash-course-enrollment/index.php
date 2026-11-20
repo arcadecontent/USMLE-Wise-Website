@@ -898,8 +898,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Hero fit: keep the hero image + CTA inside the first screen, and offset the jump
   // targets below the sticky nav. Every "Enroll now" / "Save my seat" CTA targets #offer,
-  // which is the price + promo panel (with a sliver of the benefit list showing above it).
-  // #included is the benefit list itself, reached from the "What you get" links.
+  // which is the price + promo panel (with a sliver of the benefit list showing above it),
+  // except on desktop (see the click handler below), where every CTA shows all of #included.
+  // #included is the benefit list itself, also reached from the "What you get" links.
   function fitHero() {
     var nav = document.querySelector('.cc-nav');
     if (nav) {
@@ -931,6 +932,26 @@ document.addEventListener('DOMContentLoaded', function () {
   var heroImg = document.querySelector('.cc-hero-media img');
   if (heroImg && !heroImg.complete) heroImg.addEventListener('load', fitHero, { once: true });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHero);
+
+  // Desktop only: EVERY enroll CTA (any #offer link) lands on the whole "Inside the ... Crash
+  // Course" section, heading + benefit list + price card, instead of jumping straight to the
+  // price panel. Phones and tablets (<=900px) still go to #offer. The href stays "#offer" on
+  // purpose: js/uw-track.js counts that as enroll_click, and this handler does not stop
+  // propagation. The scroll position is computed here (eyebrow 16px under the sticky nav)
+  // rather than via scroll-margin, because styles.css also sets html { scroll-padding-top: 32px },
+  // which would push the section down and cut off the price card.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#offer"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (!window.matchMedia('(min-width: 901px)').matches) return;
+    var included = document.getElementById('included');
+    var nav = document.querySelector('.cc-nav');
+    if (!included || !nav) return;
+    var navH = nav.getBoundingClientRect().height;
+    e.preventDefault();
+    var pad = parseFloat(getComputedStyle(included).paddingTop) || 0;
+    window.scrollTo({ top: Math.max(0, included.getBoundingClientRect().top + window.scrollY + pad - navH - 16) });
+  });
 
   // Promo code: STEP100 takes $100 off and pre-fills the code at Stripe checkout.
   var STRIPE = 'https://buy.stripe.com/eVq9AUe5sfTDbx6604es03c';
