@@ -1,11 +1,11 @@
 <?php
 /**
  * Blog post data source.
- * No database — posts are defined here as a plain PHP array.
+ * No database: posts are defined here as a plain PHP array.
  *
  * To add a post: copy a block, give it a unique `slug`, and fill in the fields.
  * `date` is ISO (YYYY-MM-DD). `category` must match one of $blogCategories below.
- * `image` is optional — when empty, the listing renders a category-colored cover.
+ * `image` is optional: when empty, the listing renders a category-colored cover.
  * `body` is the full article HTML, rendered at /blog/<slug> by blog-post.php.
  *
  * `category: 'awards'` posts are research-award write-ups. They no longer live
@@ -446,9 +446,9 @@ $blogPosts = [
             <p>This framework has helped IMGs match into everything from Internal Medicine to Neurosurgery. It's simple, repeatable, and gives you room to be yourself.</p>
 
             <h3>Paragraph 1: The Hook</h3>
-            <p>Use one of the anchors above — a patient interaction, a specific failure, or a cultural story — but treat it as a scene, not a summary. Drop the reader into a single specific moment: what did you see, hear, or feel? One vivid scene does more work than three vague sentences about your journey.</p>
+            <p>Use one of the anchors above (a patient interaction, a specific failure, or a cultural story), but treat it as a scene, not a summary. Drop the reader into a single specific moment: what did you see, hear, or feel? One vivid scene does more work than three vague sentences about your journey.</p>
 
-            <h3>Paragraphs 2–3: Your Journey and Identity</h3>
+            <h3>Paragraphs 2 to 3: Your Journey and Identity</h3>
             <p>Tell the reader:</p>
             <ul>
               <li><strong>What's your story?</strong></li>
@@ -601,7 +601,7 @@ $blogPosts = [
     [
         'slug'     => 'how-imgs-match-us-residency',
         'title'    => 'How International Medical Graduates Can Match into a US Residency',
-        'excerpt'  => 'The journey is complex and competitive — but it is achievable. In 2026, IMGs secured 9,682 first-year residency positions. Here is the exact step-by-step roadmap.',
+        'excerpt'  => 'The journey is complex and competitive, but it is achievable. In 2026, IMGs secured 9,682 first-year residency positions. Here is the exact step-by-step roadmap.',
         'meta_title'       => 'How IMGs Can Match Into a US Residency: Step by Step',
         'meta_description' => 'A step-by-step roadmap for international medical graduates matching into US residency: exams, ECFMG certification, USCE, ERAS, interviews and Match Day.',
         'wiki_links'       => ['/wiki/start-here/imgs-roadmap', '/wiki/start-here/img-match-statistics', '/wiki/interviews-match/how-the-match-algorithm-works'],
@@ -614,7 +614,7 @@ $blogPosts = [
         'body'     => <<<'HTML'
             <p>For International Medical Graduates (IMGs), securing a residency position in the United States is the ultimate professional dream. But let's start with a dose of raw reality: the journey is notoriously complex, highly competitive, and demands flawless strategy.</p>
 
-            <p>However, it is also incredibly achievable. In the 2026 Main Residency Match, IMGs secured a total of 9,682 first-year residency positions — accounting for 23.6% of all matched applicants. U.S. citizen IMGs achieved an impressive 70% match rate, while non-U.S. IMGs reached a record high of 6,733 matches (a 56.4% match rate).</p>
+            <p>However, it is also incredibly achievable. In the 2026 Main Residency Match, IMGs secured a total of 9,682 first-year residency positions, accounting for 23.6% of all matched applicants. U.S. citizen IMGs achieved an impressive 70% match rate, while non-U.S. IMGs reached a record high of 6,733 matches (a 56.4% match rate).</p>
 
             <p>If they can do it, so can you. To succeed, you need to transition from thinking like a student to operating like a master strategist. This guide outlines the exact, step-by-step roadmap for an IMG to match into a U.S. residency.</p>
 
@@ -626,13 +626,13 @@ $blogPosts = [
               <li><strong>Medical Science Exams:</strong> You must pass USMLE Step 1 and Step 2 Clinical Knowledge (CK).</li>
               <li><strong>Clinical &amp; Communication Skills:</strong> You must fulfill one of the official ECFMG Pathways and pass the Occupational English Test (OET) Medicine to prove your communication competency.</li>
             </ul>
-            <p><strong>Crucial 2026 Operational Update:</strong> As of January 2026, key USMLE administrative services for IMGs — including exam registration, eligibility extensions, and score report delivery — have officially transitioned from the ECFMG MyIntealth environment over to the FSMB (Federation of State Medical Boards) USMLE portal. Be sure you are registering through the correct portal to avoid processing delays.</p>
+            <p><strong>Crucial 2026 Operational Update:</strong> As of January 2026, key USMLE administrative services for IMGs (including exam registration, eligibility extensions, and score report delivery) have officially transitioned from the ECFMG MyIntealth environment over to the FSMB (Federation of State Medical Boards) USMLE portal. Be sure you are registering through the correct portal to avoid processing delays.</p>
 
             <h2>Step 2: Ace the USMLE Exams (The Strategy Has Shifted)</h2>
             <p>The transition of USMLE Step 1 to a Pass/Fail system has fundamentally changed how residency programs screen IMG applications.</p>
 
             <h3>Step 1: Minimize Risk</h3>
-            <p>Your goal for Step 1 is simple: pass on your first attempt. A single fail on your transcript is a severe handicap that will automatically filter your application out of many residency programs. Treat Step 1 prep seriously — not just to pass, but to build the foundational knowledge you will need for Step 2 CK.</p>
+            <p>Your goal for Step 1 is simple: pass on your first attempt. A single fail on your transcript is a severe handicap that will automatically filter your application out of many residency programs. Treat Step 1 prep seriously: not just to pass, but to build the foundational knowledge you will need for Step 2 CK.</p>
 
             <h3>Step 2 CK: Your Make-or-Break Metric</h3>
             <p>With Step 1 numerical scores gone, Step 2 CK is now the single most important objective metric on your application.</p>
@@ -650,7 +650,7 @@ $blogPosts = [
               <li><strong>Hands-on Clinical Electives / Externships (Gold Standard):</strong> Clinical placements where you actively participate in patient care under supervision. These are highly valued because they allow physicians to evaluate your clinical skills directly.</li>
               <li><strong>Observerships (Silver Standard):</strong> Passive shadowing. While helpful if you have no other options, observerships do not carry as much weight as hands-on experience.</li>
             </ul>
-            <p>Aim for a minimum of 3 months of USCE, ideally in the specialty you are applying to. USMLE Wise partners with clinical sites across the U.S. to help IMGs secure hands-on rotations in their target specialty — not observerships, but real placements where you carry patients and get evaluated. <a href="/rotations">Browse available rotation programs →</a></p>
+            <p>Aim for a minimum of 3 months of USCE, ideally in the specialty you are applying to. USMLE Wise partners with clinical sites across the U.S. to help IMGs secure hands-on rotations in their target specialty: not observerships, but real placements where you carry patients and get evaluated. <a href="/rotations">Browse available rotation programs →</a></p>
 
             <h2>Step 4: Secure Strong, US-Formatted Letters of Recommendation</h2>
             <p>During your USCE, your primary objective is to build relationships with clinical attendings to secure Letters of Recommendation (LoRs). You need 3 to 4 LoRs to apply.</p>
@@ -663,26 +663,26 @@ $blogPosts = [
             <p>When you submit your residency applications via the Electronic Residency Application Service (ERAS), you will be using the updated, applicant-friendly system.</p>
             <ul>
               <li><strong>Geographic Preferences:</strong> Select specific geographic regions in the U.S. where you would prefer to match. Programs in your preferred regions are much more likely to offer you an interview.</li>
-              <li><strong>Program Signaling:</strong> This is your most powerful tool. ERAS allows you to "signal" a limited number of programs to show genuine, high-interest intent. Be highly strategic with your signals — do not waste them on programs that historically do not interview IMGs.</li>
+              <li><strong>Program Signaling:</strong> This is your most powerful tool. ERAS allows you to "signal" a limited number of programs to show genuine, high-interest intent. Be highly strategic with your signals: do not waste them on programs that historically do not interview IMGs.</li>
               <li><strong>Simplified Fee Structure:</strong> You pay $11 per program for your first 30 applications (per specialty) and $30 per program beyond that.</li>
             </ul>
 
             <h2>Step 6: Master the Interview</h2>
-            <p>If you receive an interview invitation, congratulations — you have made it past the initial filters. The interview is purely a test of cultural fit and communication. Most residency programs now schedule and host their virtual interviews via the Thalamus Core platform. Practice mock interviews, and focus on showing humility, a strong work ethic, and adaptability.</p>
+            <p>If you receive an interview invitation, congratulations: you have made it past the initial filters. The interview is purely a test of cultural fit and communication. Most residency programs now schedule and host their virtual interviews via the Thalamus Core platform. Practice mock interviews, and focus on showing humility, a strong work ethic, and adaptability.</p>
 
             <h2>The Ultimate IMG Match Success Checklist</h2>
             <ul>
               <li>Verify Medical School Eligibility in the World Directory of Medical Schools</li>
               <li>Submit application for ECFMG Certification via the MyIntealth portal</li>
               <li>Pass USMLE Step 1 on the first attempt</li>
-              <li>Pass USMLE Step 2 CK — target 250+ (register via the FSMB USMLE portal)</li>
+              <li>Pass USMLE Step 2 CK: target 250+ (register via the FSMB USMLE portal)</li>
               <li>Satisfy Clinical Skills Requirement: ECFMG Pathway + OET Medicine exam</li>
-              <li>Complete 3+ months of USCE and secure 3–4 strong U.S. LoRs</li>
+              <li>Complete 3+ months of USCE and secure 3 to 4 strong U.S. LoRs</li>
               <li>Obtain ERAS Token in June and build your profile</li>
               <li>Register for the NRMP Match (opens mid-September)</li>
               <li>Submit ERAS application by the early September deadline</li>
             </ul>
-            <p>Every item on that checklist has a deadline, a dependency, and room for a costly mistake. USMLE Wise's IMG mentorship program was designed around this exact roadmap — combining Step 2 CK coaching, USCE placement, personal statement review, and ERAS strategy into one guided process so nothing falls through the cracks. <a href="/coaching">Start with a free guidance call →</a></p>
+            <p>Every item on that checklist has a deadline, a dependency, and room for a costly mistake. USMLE Wise's IMG mentorship program was designed around this exact roadmap, combining Step 2 CK coaching, USCE placement, personal statement review, and ERAS strategy into one guided process so nothing falls through the cracks. <a href="/coaching">Start with a free guidance call →</a></p>
             HTML,
     ],
     [
@@ -694,6 +694,7 @@ $blogPosts = [
         'wiki_links'       => ['/wiki/exams/how-long-to-study', '/wiki/exams/question-banks-compared', '/wiki/start-here/common-img-mistakes'],
         'category' => 'usmle',
         'date'     => '2026-07-07',
+        'updated'  => '2026-11-21',
         'read'     => 7,
         'author'   => 'Dr. Manik Madaan',
         'featured' => false,
@@ -718,18 +719,18 @@ $blogPosts = [
             <p><strong>The Fix:</strong> Shift 70% of your study time to active learning. Do practice questions, analyze why wrong answers are wrong, and use spaced-repetition tools like Anki.</p>
 
             <h2>4. Ignoring the 30-Minute Modular Pacing Changes</h2>
-            <p>Both Step 1 and Step 2 CK now use a modernized modular format: Step 1 has 14 blocks of 20 questions (30 minutes per block); Step 2 CK has 16 blocks of 18–20 questions (30 minutes per block). Many IMGs continue training using legacy 60-minute, 40-question practice blocks.</p>
+            <p>Both Step 1 and Step 2 CK now use a modernized modular format: Step 1 has 14 blocks of 20 questions (30 minutes per block); Step 2 CK has 16 blocks of 18 to 20 questions (30 minutes per block). Many IMGs continue training using legacy 60-minute, 40-question practice blocks.</p>
             <p><strong>The Reality:</strong> Managing energy and focus across 14 to 16 short blocks requires a totally different stamina and a faster "mental reset." If you don't train in 20-question, 30-minute timed bursts, you risk running out of time on test day.</p>
 
             <h2>5. Hoarding Too Many Study Resources</h2>
             <p>It is easy to fall into the trap of resource FOMO. IMGs often buy three different question banks, multiple video series, and four textbooks.</p>
             <p><strong>The Reality:</strong> Using too many resources leads to superficial learning and severe burnout.</p>
-            <p><strong>The Fix:</strong> Stick to the gold-standard UFAPS stack — UWorld, First Aid, Pathoma, Sketchy, and Anki. Master these core materials deeply rather than skimming ten different resources.</p>
+            <p><strong>The Fix:</strong> Stick to the gold-standard UFAPS stack: UWorld, First Aid, Pathoma, Sketchy, and Anki. Master these core materials deeply rather than skimming ten different resources.</p>
 
             <h2>6. Postponing Practice Exams Due to Fear</h2>
             <p>It is common to put off official NBME practice exams because "I don't feel ready yet."</p>
             <p><strong>The Reality:</strong> You will never feel 100% ready. Delaying practice exams prevents you from getting an objective, metric-driven reality check on your progress.</p>
-            <p><strong>The Fix:</strong> Take a baseline practice exam early. Use NBME Forms 25–31 for Step 1. Do not sit for the actual exam until your practice scores are consistently in the passing range (65%+ for Step 1).</p>
+            <p><strong>The Fix:</strong> Take a baseline practice exam early. Use NBME Forms 25 to 31 for Step 1. Do not sit for the actual exam until your practice scores are consistently at a level you are comfortable with. Many students use around 65% as a rule of thumb for Step 1, but no practice score can guarantee a pass, so check the estimated probability of passing on each NBME score report too.</p>
 
             <h2>7. Failing to Plan for ECFMG and the OET Early Enough</h2>
             <p>To participate in the Match, IMGs must be ECFMG certified, which requires passing the Occupational English Test (OET) Medicine and fulfilling Pathway requirements.</p>
@@ -739,12 +740,12 @@ $blogPosts = [
             <h2>8. Underestimating the Importance of US Clinical Experience</h2>
             <p>Many IMGs assume high scores alone will guarantee a match.</p>
             <p><strong>The Reality:</strong> Program directors want to know that you can function smoothly in a U.S. hospital setting, understand EMR systems, and communicate effectively with American patients.</p>
-            <p><strong>The Fix:</strong> Secure hands-on clinical electives or externships — not just passive observerships. Use these experiences to secure strong, clinically detailed Letters of Recommendation from U.S. physicians.</p>
+            <p><strong>The Fix:</strong> Secure hands-on clinical electives or externships, not just passive observerships. Use these experiences to secure strong, clinically detailed Letters of Recommendation from U.S. physicians.</p>
 
             <h2>9. Treating the QBank as an Assessment Tool Rather Than a Learning Tool</h2>
             <p>A very common mistake is using UWorld simply to track your daily percentage and feeling discouraged by low scores.</p>
             <p><strong>The Reality:</strong> A question bank is designed to teach you, not just test you.</p>
-            <p><strong>The Fix:</strong> It does not matter if you get 40% correct on an early block, as long as you thoroughly read and understand the explanations for every question — including the incorrect options. The QBank is your textbook; the NBME is your test.</p>
+            <p><strong>The Fix:</strong> It does not matter if you get 40% correct on an early block, as long as you thoroughly read and understand the explanations for every question, including the incorrect options. The QBank is your textbook; the NBME is your test.</p>
 
             <h2>10. Neglecting Communication, Ethics, and Quality Safety Modules</h2>
             <p>Step 2 CK places heavy emphasis on systems-based practice, medical ethics, professionalism, and patient safety.</p>
@@ -754,7 +755,7 @@ $blogPosts = [
             <h2>Quick Summary: The IMG Success Blueprint</h2>
             <p>Solid Step 1 Foundation → Early &amp; Focused Step 2 CK Study → U.S. Clinical Experience &amp; LoRs → Early ECFMG/OET Processing → September ERAS Submission</p>
             <p>By avoiding these ten missteps, you can approach your preparation systematically, protect your timeline, and walk into the Match with a highly competitive application.</p>
-            <p>USMLE Wise coaching is built specifically around the IMG journey — from avoiding these exact strategic errors on Step 1 and Step 2 CK, to navigating USCE, LoRs, and ERAS as a foreign-trained physician. If you want a mentor who knows the IMG roadmap from the inside, <a href="/coaching">see how we work →</a></p>
+            <p>USMLE Wise coaching is built specifically around the IMG journey: from avoiding these exact strategic errors on Step 1 and Step 2 CK, to navigating USCE, LoRs, and ERAS as a foreign-trained physician. If you want a mentor who knows the IMG roadmap from the inside, <a href="/coaching">see how we work →</a></p>
             HTML,
     ],
     [
@@ -779,8 +780,8 @@ $blogPosts = [
             <h2>The Core Differences: Step 1 vs. Step 2 CK</h2>
             <p>At a high level, the difference boils down to <em>Why</em> vs. <em>What next?</em></p>
             <ul>
-              <li><strong>Step 1</strong> tests your understanding of the foundational basic sciences — biochemistry, pathology, pharmacology, and microbiology. It asks: what is the underlying mechanism of this disease at a cellular level?</li>
-              <li><strong>Step 2 CK</strong> tests clinical application. It asks: this patient has walked into your clinic with these symptoms — what is the most appropriate next step in management or diagnosis?</li>
+              <li><strong>Step 1</strong> tests your understanding of the foundational basic sciences: biochemistry, pathology, pharmacology, and microbiology. It asks: what is the underlying mechanism of this disease at a cellular level?</li>
+              <li><strong>Step 2 CK</strong> tests clinical application. It asks: this patient has walked into your clinic with these symptoms. What is the most appropriate next step in management or diagnosis?</li>
             </ul>
 
             <h3>The Structural Breakdown</h3>
@@ -825,7 +826,7 @@ $blogPosts = [
             <p>A more useful question than "which is harder?" is "which exam carries more risk for me?" A failed Step 1 attempt stays on your record, and a Step 2 CK score below your target can narrow your specialty options. Plan for both, and base your timing on your own practice results rather than on what a forum says is harder.</p>
 
             <h2>The Core Dilemma: Pass/Fail vs. The Ultimate Numeric Filter</h2>
-            <p>Because Step 1 is Pass/Fail, many students make the fatal mistake of taking their foot off the gas. Let's inject some candor here: Step 1 is still a brutally difficult exam. The fail rate has remained a sobering reality for those who under-prepare. Furthermore, residency program directors can see if you failed Step 1 on your first attempt — a red flag that is exceptionally difficult to overcome, regardless of how well you do on Step 2 CK.</p>
+            <p>Because Step 1 is Pass/Fail, many students make the fatal mistake of taking their foot off the gas. Let's inject some candor here: Step 1 is still a brutally difficult exam. The fail rate has remained a sobering reality for those who under-prepare. Furthermore, residency program directors can see if you failed Step 1 on your first attempt, a red flag that is exceptionally difficult to overcome, regardless of how well you do on Step 2 CK.</p>
 
             <h3>The Rise of Step 2 CK</h3>
             <p>Since Step 1 lost its numerical score, Step 2 CK has become one of the most important objective metrics residency programs can use to filter applicants. The minimum passing score for Step 2 CK is 218 for exams on or after July 1, 2025, but passing is merely the baseline. Competitive specialties tend to match applicants with higher scores, and our breakdown of NRMP Charting Outcomes data shows <a href="/blog/usmle-scores-explained-specialty-requirements">what the numbers look like by specialty</a>. For score distributions, check the current figures from USMLE and NRMP rather than relying on a number you read in a forum.</p>
@@ -834,14 +835,14 @@ $blogPosts = [
             <p>The short answer: you must focus on Step 2 CK to match, but you cannot ace Step 2 CK without mastering Step 1. Think of Step 1 as the foundation of a house, and Step 2 CK as the structure built on top of it. If your foundation is made of sand, the house will collapse the moment you try to build.</p>
 
             <h3>Why Your Step 1 Prep Dictates Your Step 2 CK Score</h3>
-            <p>Step 2 CK questions routinely require "two-step" or "three-step" reasoning. A Step 2 CK question might present a patient with specific symptoms, require you to diagnose the condition (Step 1 knowledge), identify the first-line pharmaceutical treatment, and then ask you to identify the mechanism of action or a common side effect — pure Step 1 knowledge. If you do not master the basic sciences during Step 1, you will waste precious weeks of your Step 2 CK prep relearning cardiac physiology and autonomic pharmacology from scratch.</p>
+            <p>Step 2 CK questions routinely require "two-step" or "three-step" reasoning. A Step 2 CK question might present a patient with specific symptoms, require you to diagnose the condition (Step 1 knowledge), identify the first-line pharmaceutical treatment, and then ask you to identify the mechanism of action or a common side effect: pure Step 1 knowledge. If you do not master the basic sciences during Step 1, you will waste precious weeks of your Step 2 CK prep relearning cardiac physiology and autonomic pharmacology from scratch.</p>
 
             <h2>How to Strategize Your Preparation</h2>
 
             <h3>Phase 1: The Step 1 Strategy</h3>
             <ul>
               <li><strong>Focus on Comprehension over Memorization:</strong> Understand the <em>why</em> behind pathophysiology. If you understand why a failing heart causes pulmonary edema, you won't need to memorize the symptoms of left-sided heart failure.</li>
-              <li><strong>Keep Your Resource Stack Tight:</strong> Stick to UWorld, First Aid, and Pathoma (specifically Chapters 1–3).</li>
+              <li><strong>Keep Your Resource Stack Tight:</strong> Stick to UWorld, First Aid, and Pathoma (specifically Chapters 1 to 3).</li>
               <li><strong>Goal:</strong> Secure a comfortable passing margin. Many students wait for a steady upward trend across several full-length practice exams before booking, and no practice score can guarantee a pass. Our <a href="/blog/best-resources-usmle-step-1">Step 1 resources guide</a> covers how to use the practice exams.</li>
             </ul>
 
@@ -859,9 +860,9 @@ $blogPosts = [
             </ul>
 
             <h2>The Verdict</h2>
-            <p>You cannot choose to ignore either exam. However, your intensity and execution must peak during your Step 2 CK preparation. View Step 1 as a necessary, high-yield boot camp — pass it comfortably on your first attempt while building a deep, conceptual understanding of medicine. Once that hurdle is cleared, pivot your entire focus toward Step 2 CK. Treat it as your primary job, your primary differentiator, and your golden ticket to the residency program of your dreams.</p>
+            <p>You cannot choose to ignore either exam. However, your intensity and execution must peak during your Step 2 CK preparation. View Step 1 as a necessary, high-yield boot camp: pass it comfortably on your first attempt while building a deep, conceptual understanding of medicine. Once that hurdle is cleared, pivot your entire focus toward Step 2 CK. Treat it as your primary job, your primary differentiator, and your golden ticket to the residency program of your dreams.</p>
             <p>Planning your timing? Read <a href="/blog/ultimate-usmle-timeline">The Ultimate USMLE Timeline</a>, the <a href="/blog/how-to-prepare-usmle-step-1-2026">Step 1 study guide</a> and our <a href="/blog/perfect-usmle-study-schedule">study schedule guide</a>.</p>
-            <p>At USMLE Wise, our coaching programs cover both phases — a Step 1 foundation built around the UFAPS method, and a Step 2 CK program focused on clinical reasoning and the pacing demands of the 16-block exam day. If you want a mentor who understands the full picture, <a href="/coaching">explore our coaching programs →</a></p>
+            <p>At USMLE Wise, our coaching programs cover both phases: a Step 1 foundation built around the UFAPS method, and a Step 2 CK program focused on clinical reasoning and the pacing demands of the 16-block exam day. If you want a mentor who understands the full picture, <a href="/coaching">explore our coaching programs →</a></p>
             HTML,
     ],
     [
@@ -901,26 +902,26 @@ $blogPosts = [
             <p>Back in the day, the prescription for USMLE success was simple: buy First Aid, complete UWorld twice, and lock yourself in a library for 12 hours a day. Today, that brute-force strategy is failing a lot of brilliant students. Here is why:</p>
             <ul>
               <li><strong>The Step 2 CK Bottleneck:</strong> With Step 1 being Pass/Fail, Step 2 CK has become the primary metric residency programs use to screen applicants. A single bad day can derail your dream of matching into a competitive specialty.</li>
-              <li><strong>The Holistic ERAS Shift:</strong> Program directors aren't just looking at numbers anymore. They want a cohesive narrative — your personal statement, letters of recommendation, and geographic preferences must align perfectly.</li>
+              <li><strong>The Holistic ERAS Shift:</strong> Program directors aren't just looking at numbers anymore. They want a cohesive narrative: your personal statement, letters of recommendation, and geographic preferences must align perfectly.</li>
               <li><strong>The IMG Uphill Battle:</strong> For International Medical Graduates, navigating U.S. clinical experience, securing strong letters of recommendation, and mastering the nuances of American medical communication require insider knowledge that most applicants simply don't have.</li>
             </ul>
-            <p>In this hyper-competitive ecosystem, a mentor isn't just a tutor who explains renal physiology — they are a strategic advisor who helps you navigate the entire residency pipeline.</p>
+            <p>In this hyper-competitive ecosystem, a mentor isn't just a tutor who explains renal physiology. They are a strategic advisor who helps you navigate the entire residency pipeline.</p>
 
             <h2>When Coaching Actually Makes a Difference</h2>
             <p>While some students can fly solo and land a top-tier residency, others find that a mentor is the difference between matching and SOAPing. Here is when hiring a coach is highly effective:</p>
 
             <h3>1. You've Hit a Score Plateau</h3>
             <p>You've done the Anki decks. You've finished 80% of UWorld. Yet your NBME practice scores are stubbornly stuck in the low 220s, and you need a 245+ for your target specialty.</p>
-            <p>At a certain point, a score plateau isn't a knowledge problem — it's a test-taking pathology. An expert mentor can dissect your thought process, identify cognitive biases (like second-guessing or misinterpreting the vignette lead-in), and teach you how to think like the test writers.</p>
+            <p>At a certain point, a score plateau isn't a knowledge problem: it's a test-taking pathology. An expert mentor can dissect your thought process, identify cognitive biases (like second-guessing or misinterpreting the vignette lead-in), and teach you how to think like the test writers.</p>
 
             <h3>2. You're an IMG Navigating the U.S. System</h3>
-            <p>The U.S. residency application process is a cultural and bureaucratic beast. From securing hands-on USCE to understanding the unwritten rules of interviewing, the learning curve is steep. An experienced mentor — especially one who is a former IMG or has sat on a residency selection committee — can provide a step-by-step roadmap and help you translate your home-country achievements into terms that American program directors value.</p>
+            <p>The U.S. residency application process is a cultural and bureaucratic beast. From securing hands-on USCE to understanding the unwritten rules of interviewing, the learning curve is steep. An experienced mentor, especially one who is a former IMG or has sat on a residency selection committee, can provide a step-by-step roadmap and help you translate your home-country achievements into terms that American program directors value.</p>
 
             <h3>3. You Have a "Red Flag" on Your Application</h3>
-            <p>A Step 1 failure, a gap in your medical training, or a low GPA can feel like a death sentence for your residency dreams. A mentor who understands the NRMP and ERAS mechanics can help you build a damage-control strategy — teaching you how to address these weaknesses honestly and constructively in your personal statement and during interviews, shifting the focus back to your resilience and growth.</p>
+            <p>A Step 1 failure, a gap in your medical training, or a low GPA can feel like a death sentence for your residency dreams. A mentor who understands the NRMP and ERAS mechanics can help you build a damage-control strategy, teaching you how to address these weaknesses honestly and constructively in your personal statement and during interviews, shifting the focus back to your resilience and growth.</p>
 
             <h3>4. You Struggle with Executive Dysfunction or Severe Anxiety</h3>
-            <p>If you struggle with time management, scheduling, or paralyzing test anxiety, the self-directed nature of USMLE prep can lead to burnout. A mentor acts as an objective accountability partner — designing a realistic day-by-day study calendar, keeping you on track, and providing the psychological support needed to manage the mental toll of this process.</p>
+            <p>If you struggle with time management, scheduling, or paralyzing test anxiety, the self-directed nature of USMLE prep can lead to burnout. A mentor acts as an objective accountability partner, designing a realistic day-by-day study calendar, keeping you on track, and providing the psychological support needed to manage the mental toll of this process.</p>
 
             <h2>Benefits of Tutoring for IMGs, and Its Limits</h2>
             <p>For international medical graduates, the useful parts of tutoring tend to be practical rather than magical. In our opinion, the realistic benefits are:</p>
@@ -937,7 +938,7 @@ $blogPosts = [
             <p>Let's be completely candid: coaching is not a magic bullet, and it is certainly not necessary for everyone. You can likely save your money if:</p>
             <ul>
               <li><strong>You are a highly disciplined self-starter</strong> with a history of performing well on standardized tests and excellent study habits.</li>
-              <li><strong>You have a strong, active peer network</strong> — upperclassmen who recently matched and are willing to share their strategies.</li>
+              <li><strong>You have a strong, active peer network</strong>: upperclassmen who recently matched and are willing to share their strategies.</li>
               <li><strong>You expect the mentor to do the heavy lifting.</strong> A coach cannot memorize pharmacology for you. If you aren't prepared to put in the grueling hours of active recall and question blocks, hiring a mentor is just a very expensive way to procrastinate.</li>
             </ul>
 
@@ -963,7 +964,7 @@ $blogPosts = [
 
             <h2>The Bottom Line: Calculate Your ROI</h2>
             <p>When deciding whether to hire a tutor or mentor, compare what it costs with what it could realistically save you. A retake means another exam fee, more months of study and, for many IMGs, a delay that makes the application harder to explain. A good tutor may help you avoid some of that, but no one can promise a score, a pass or a match, and a provider who does should make you cautious. Ask for the price in writing, ask exactly what is included, and decide before you pay what result would tell you it was not working.</p>
-            <p>Be honest with yourself about your weaknesses. If you need strategy, accountability, or a guide to navigate the complex waters of the NRMP Match, seeking professional mentorship isn't a sign of weakness — it's a smart, executive decision for your future career.</p>
+            <p>Be honest with yourself about your weaknesses. If you need strategy, accountability, or a guide to navigate the complex waters of the NRMP Match, seeking professional mentorship isn't a sign of weakness: it's a smart, executive decision for your future career.</p>
             <h2>Where USMLE Wise Fits</h2>
             <p>USMLE Wise sells exam preparation, so weigh this article with that in mind. If what you need is a structured, exam-specific plan rather than one-to-one tutoring, we run a <a href="/step-1-high-yield-crash-course">Step 1 High Yield Crash Course</a>, a <a href="/step-2-high-yield-crash-course">Step 2 High Yield Crash Course</a> and a <a href="/step-3-high-yield-crash-course">Step 3 High Yield Crash Course</a>. Choose the Step you are preparing for, read what is included, and compare it with the other options above.</p>
             <p><strong>Not sure whether you need a tutor, a course or just a better plan?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call</a> and we will talk through where you are and what would help.</p>
@@ -984,10 +985,10 @@ $blogPosts = [
         'image'    => '/assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp',
         'body'     => <<<'HTML'
             <p>When the USMLE Step 1 transitioned to a Pass/Fail scoring model, the burden of being the primary academic filter shifted entirely to USMLE Step 2 Clinical Knowledge (CK). Because of this, your Step 2 CK score is arguably the most critical three-digit number on your residency application.</p>
-            <p>If you are mapping out your medical career, you need to know: what score do programs actually look for? The numbers below come from NRMP's Charting Outcomes in the Match, U.S. MD Seniors report for the 2026 appointment year (published July 2026) — primary-source Step 2 CK data supplied directly through USMLE's partnership with NRMP, covering 16,379 MD seniors who consented to share their results.</p>
+            <p>If you are mapping out your medical career, you need to know: what score do programs actually look for? The numbers below come from NRMP's Charting Outcomes in the Match, U.S. MD Seniors report for the 2026 appointment year (published July 2026), primary-source Step 2 CK data supplied directly through USMLE's partnership with NRMP, covering 16,379 MD seniors who consented to share their results.</p>
 
             <h2>The Big Picture: National Score Medians</h2>
-            <p>Across all specialties combined, U.S. MD seniors who matched to their preferred specialty had a median Step 2 CK score of <strong>253</strong> (n=14,889); those who did not match had a median of <strong>244</strong> (n=1,636) — a 9-point gap.</p>
+            <p>Across all specialties combined, U.S. MD seniors who matched to their preferred specialty had a median Step 2 CK score of <strong>253</strong> (n=14,889); those who did not match had a median of <strong>244</strong> (n=1,636), a 9-point gap.</p>
             <ul>
               <li>The minimum passing score for Step 2 CK is <strong>218</strong>.</li>
               <li>The median for matched U.S. MD seniors, across all specialties, is <strong>253</strong>.</li>
@@ -996,8 +997,8 @@ $blogPosts = [
             <p><strong>The General Rule of Thumb:</strong></p>
             <ul>
               <li><strong>253+:</strong> At or above the national matched median. You are in a comfortable position for most specialties.</li>
-              <li><strong>240–252:</strong> Solid. Competitive for most core specialties (Internal Medicine, Pediatrics, Psychiatry, Neurology).</li>
-              <li><strong>230–239:</strong> Workable. Safe for primary care fields, but requires stronger letters or research to compete in moderately competitive fields.</li>
+              <li><strong>240 to 252:</strong> Solid. Competitive for most core specialties (Internal Medicine, Pediatrics, Psychiatry, Neurology).</li>
+              <li><strong>230 to 239:</strong> Workable. Safe for primary care fields, but requires stronger letters or research to compete in moderately competitive fields.</li>
               <li><strong>Below 230:</strong> Vulnerable. You will need to apply broadly, target friendly programs, and rely on non-academic strengths.</li>
             </ul>
 
@@ -1020,7 +1021,7 @@ $blogPosts = [
               </tbody>
             </table>
 
-            <h3>Tier 2: Highly Competitive Specialties (Target Score: 248–255)</h3>
+            <h3>Tier 2: Highly Competitive Specialties (Target Score: 248 to 255)</h3>
             <p>These fields are competitive, but place a strong emphasis on clinical performance and research alongside test scores.</p>
             <table>
               <thead>
@@ -1035,7 +1036,7 @@ $blogPosts = [
               </tbody>
             </table>
 
-            <h3>Tier 3: Broadly Accessible Specialties (Target Score: 230–249)</h3>
+            <h3>Tier 3: Broadly Accessible Specialties (Target Score: 230 to 249)</h3>
             <p>These specialties typically have a larger volume of residency slots available, making them much more accommodating to a wider range of test scores.</p>
             <table>
               <thead>
@@ -1049,7 +1050,7 @@ $blogPosts = [
                 <tr><td>Family Medicine</td><td>244</td><td>240</td><td>231</td></tr>
               </tbody>
             </table>
-            <p>Two things stand out in the new data. First, the spread is narrower than you'd think: just 17 points separate Otolaryngology's median (261) from Family Medicine's (244). Second, the gap between matched and not-matched applicants within the <em>same</em> specialty is often just as large as the gap between specialties — in Emergency Medicine, the matched median is 249 versus 229 for those who didn't match their preferred specialty, a 20-point spread.</p>
+            <p>Two things stand out in the new data. First, the spread is narrower than you'd think: just 17 points separate Otolaryngology's median (261) from Family Medicine's (244). Second, the gap between matched and not-matched applicants within the <em>same</em> specialty is often just as large as the gap between specialties: in Emergency Medicine, the matched median is 249 versus 229 for those who didn't match their preferred specialty, a 20-point spread.</p>
 
             <h2>How Much Do Scores Matter for IMGs?</h2>
             <p>For International Medical Graduates, the baseline score thresholds are generally higher. Because U.S. residency program directors may not be familiar with your home medical institution, they rely on the USMLE as an objective equalizer. An IMG with a Step 2 score of 240 may face steeper competition in Internal Medicine than a domestic U.S. MD senior with the same score.</p>
@@ -1066,13 +1067,13 @@ $blogPosts = [
               <li><strong>Research &amp; Publications:</strong> If you are targeting a competitive field, a robust research portfolio with peer-reviewed publications can heavily compensate for a lower score.</li>
             </ul>
             <p>Knowing these averages allows you to apply realistically, align your expectations, and build a strategic application that gets you into the residency of your dreams.</p>
-            <p>If you are working toward a specific score target or trying to recover from a lower-than-expected result, USMLE Wise coaching includes focused Step 2 CK preparation built around your specialty and current baseline — identifying the clinical reasoning gaps that question banks alone can't fix. <a href="/coaching">Explore Step 2 CK coaching →</a></p>
+            <p>If you are working toward a specific score target or trying to recover from a lower-than-expected result, USMLE Wise coaching includes focused Step 2 CK preparation built around your specialty and current baseline, identifying the clinical reasoning gaps that question banks alone can't fix. <a href="/coaching">Explore Step 2 CK coaching →</a></p>
             HTML,
     ],
     [
         'slug'     => 'nrmp-match-process-explained',
         'title'    => 'Everything You Need to Know About the NRMP Match Process',
-        'excerpt'  => 'The NRMP Match uses a Nobel Prize-winning algorithm — and most applicants try to game it wrong. Here is a complete guide to how the algorithm actually works and how to use it to your advantage.',
+        'excerpt'  => 'The NRMP Match uses a Nobel Prize-winning algorithm, and most applicants try to game it wrong. Here is a complete guide to how the algorithm actually works and how to use it to your advantage.',
         'meta_title'       => 'NRMP Match Process Explained: How the Algorithm Works',
         'meta_description' => 'How the NRMP Match works, from ERAS and rank order lists to the applicant-proposing algorithm and Match Week, and how to use it to your advantage.',
         'wiki_links'       => ['/wiki/interviews-match/how-the-match-algorithm-works', '/wiki/interviews-match/rank-order-list-strategy', '/wiki/interviews-match/match-week-timeline'],
@@ -1084,12 +1085,12 @@ $blogPosts = [
         'image'    => '/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp',
         'body'     => <<<'HTML'
             <p>For medical students and International Medical Graduates (IMGs), the National Resident Matching Program (NRMP) Match is the ultimate gateway to practicing medicine in the United States. Often referred to simply as "The Match," this highly structured system bypasses traditional job-seeking channels, replacing them with a computerized algorithm designed to pair applicants and residency programs based on mutual preference.</p>
-            <p>Understanding how it operates is not optional — it is a critical career strategy. Here is your comprehensive guide to how the NRMP Match works, how the algorithm operates, and what you need to do to succeed.</p>
+            <p>Understanding how it operates is not optional: it is a critical career strategy. Here is your comprehensive guide to how the NRMP Match works, how the algorithm operates, and what you need to do to succeed.</p>
 
             <h2>1. ERAS vs. NRMP: The Two Parallel Systems</h2>
             <p>A common point of confusion is the difference between ERAS and the NRMP. They are entirely separate entities, and you must register for both.</p>
             <ul>
-              <li><strong>ERAS (Electronic Residency Application Service):</strong> Managed by the AAMC, this is the centralized application portal — the "Common App" for medical residency. You use ERAS to build your CV, submit your personal statement, upload letters of recommendation, request USMLE transcripts, and apply directly to programs.</li>
+              <li><strong>ERAS (Electronic Residency Application Service):</strong> Managed by the AAMC, this is the centralized application portal, the "Common App" for medical residency. You use ERAS to build your CV, submit your personal statement, upload letters of recommendation, request USMLE transcripts, and apply directly to programs.</li>
               <li><strong>NRMP (National Resident Matching Program):</strong> This is the organization that runs the actual matchmaking algorithm. You register with the NRMP separately, pay a separate fee, and build your final Rank Order List (ROL) on their R3 platform.</li>
             </ul>
 
@@ -1100,9 +1101,9 @@ $blogPosts = [
                 <tr><th>Timeframe</th><th>Phase</th><th>Major Milestones</th></tr>
               </thead>
               <tbody>
-                <tr><td>June – August</td><td>Preparation</td><td>Register for ERAS; begin requesting LoRs and drafting personal statements.</td></tr>
+                <tr><td>June to August</td><td>Preparation</td><td>Register for ERAS; begin requesting LoRs and drafting personal statements.</td></tr>
                 <tr><td>September</td><td>Submission</td><td>ERAS opens for application submission. Programs begin reviewing in late September. NRMP Registration opens.</td></tr>
-                <tr><td>October – January</td><td>Interviews</td><td>Programs review candidates and send virtual or in-person interview invitations.</td></tr>
+                <tr><td>October to January</td><td>Interviews</td><td>Programs review candidates and send virtual or in-person interview invitations.</td></tr>
                 <tr><td>Early February</td><td>Ranking Opens</td><td>The NRMP R3 system opens. Both applicants and programs begin entering their Rank Order Lists.</td></tr>
                 <tr><td>Early March</td><td>Rank List Deadline</td><td>The final, certified ROL must be submitted (usually by 9:00 PM ET on the first Wednesday of March).</td></tr>
                 <tr><td>Mid-March</td><td>Match Week</td><td>Results week begins, concluding on Match Day (Friday) at 12:00 PM ET.</td></tr>
@@ -1111,7 +1112,7 @@ $blogPosts = [
 
             <h2>3. Demystifying the Match Algorithm</h2>
             <p>Many applicants try to "game" the system by ranking programs based on how they think the program will rank them. This is a critical mistake.</p>
-            <p>The NRMP uses a Nobel Prize-winning algorithm based on the Gale-Shapley stable matching theory. The most important thing to know is that the algorithm is <strong>applicant-proposing</strong> — it always prioritizes your preferences over those of the residency programs.</p>
+            <p>The NRMP uses a Nobel Prize-winning algorithm based on the Gale-Shapley stable matching theory. The most important thing to know is that the algorithm is <strong>applicant-proposing</strong>: it always prioritizes your preferences over those of the residency programs.</p>
 
             <h3>How "Tentative Matches" and "Bumping" Work</h3>
             <ol>
@@ -1123,23 +1124,23 @@ $blogPosts = [
             <p><strong>The Golden Rule:</strong> Always rank programs in order of your true preference. Ranking a program higher because they told you "we are ranking you highly" does not help you. The algorithm is structurally built to protect your true preferences.</p>
 
             <h2>4. Understanding Couples Matching</h2>
-            <p>If you and your spouse, partner, or fiancé are entering the Match at the same time, you can link your rank lists as a couple. Instead of ranking individual programs, you submit paired combinations — for example, "Program A for Partner 1 + Program B for Partner 2" (typically in the same city). The algorithm will only match you if both of you can secure a spot in that specific paired combination.</p>
+            <p>If you and your spouse, partner, or fiancé are entering the Match at the same time, you can link your rank lists as a couple. Instead of ranking individual programs, you submit paired combinations: for example, "Program A for Partner 1 + Program B for Partner 2" (typically in the same city). The algorithm will only match you if both of you can secure a spot in that specific paired combination.</p>
             <p>Because couples matching links your outcomes, it naturally restricts the number of available match combinations. Couples must apply very broadly and plan geographic pairs meticulously to maximize success.</p>
 
             <h2>5. Match Week: What to Expect</h2>
             <p>Match Week is a highly emotional, five-day experience:</p>
             <ul>
               <li><strong>Monday (10:00 AM ET):</strong> You receive an email telling you only <em>if</em> you matched. You do not find out where yet.</li>
-              <li><strong>Tuesday – Thursday (SOAP):</strong> If you are unmatched or "partially matched" (e.g., you secured a preliminary year but not an advanced year), you enter the Supplemental Offer and Acceptance Program (SOAP). During SOAP, unmatched applicants quickly apply to programs with unfilled slots remaining after the main match.</li>
-              <li><strong>Friday (12:00 PM ET) — Match Day:</strong> The final, binding results are released. This is when you finally discover where you will spend the next three to seven years of your life as a resident physician.</li>
+              <li><strong>Tuesday to Thursday (SOAP):</strong> If you are unmatched or "partially matched" (e.g., you secured a preliminary year but not an advanced year), you enter the Supplemental Offer and Acceptance Program (SOAP). During SOAP, unmatched applicants quickly apply to programs with unfilled slots remaining after the main match.</li>
+              <li><strong>Friday (12:00 PM ET), Match Day:</strong> The final, binding results are released. This is when you finally discover where you will spend the next three to seven years of your life as a resident physician.</li>
             </ul>
-            <p>The Match is a process you can absolutely navigate — but the applicants who match into their top choices are the ones who understand every phase of this timeline and execute on it without scrambling. USMLE Wise's residency match mentorship walks you through each of these phases with a personalized roadmap built around your profile, scores, and target specialty. <a href="/match">Learn about match mentorship →</a></p>
+            <p>The Match is a process you can absolutely navigate, but the applicants who match into their top choices are the ones who understand every phase of this timeline and execute on it without scrambling. USMLE Wise's residency match mentorship walks you through each of these phases with a personalized roadmap built around your profile, scores, and target specialty. <a href="/match">Learn about match mentorship →</a></p>
             HTML,
     ],
     [
         'slug'     => 'how-to-prepare-usmle-step-1-2026',
         'title'    => 'How to Prepare for the USMLE Step 1 in 2026: The Complete Study Guide',
-        'excerpt'  => 'The testing experience has undergone its most significant structural evolution in years — 14 blocks of 20 questions instead of 7 blocks of 40. Here is the definitive, up-to-date roadmap.',
+        'excerpt'  => 'The testing experience has undergone its most significant structural evolution in years: 14 blocks of 20 questions instead of 7 blocks of 40. Here is the definitive, up-to-date roadmap.',
         'meta_title'       => 'How to Prepare for USMLE Step 1 in 2026: Study Guide',
         'meta_description' => 'A USMLE Step 1 study guide for 2026: the 14-block format, resources, study tips, a 6-week schedule and a 14-day final-stretch plan.',
         'wiki_links'       => ['/wiki/exams/step-1', '/wiki/exams/step-1-study-schedule', '/wiki/exams/step-1-resources-guide'],
@@ -1152,7 +1153,7 @@ $blogPosts = [
         'image'    => '/assets/Photos/surface-XHSYzoIC_SM-unsplash.webp',
         'body'     => <<<'HTML'
             <p>The USMLE Step 1 remains one of the most critical milestones of your medical career. However, if you are preparing to take the exam in 2026, your strategy must be vastly different from what worked in the past.</p>
-            <p>Since transitioning to a Pass/Fail scoring system, Step 1 is no longer about stress-induced cramming for a 260+. The goal is building a bulletproof foundation that ensures a first-time pass and sets you up for success on Step 2 CK — which now carries the brunt of residency matching pressure. And the testing experience itself has undergone its most significant structural evolution in years.</p>
+            <p>Since transitioning to a Pass/Fail scoring system, Step 1 is no longer about stress-induced cramming for a 260+. The goal is building a bulletproof foundation that ensures a first-time pass and sets you up for success on Step 2 CK, which now carries the brunt of residency matching pressure. And the testing experience itself has undergone its most significant structural evolution in years.</p>
 
             <h2>Your Step 1 Guide at a Glance: Resources, Study Tips, Plan and Schedule</h2>
             <p>This guide is the hub for Step 1 preparation. Use the table to jump to the part you need, and follow the links for the deeper articles instead of reading everything twice.</p>
@@ -1197,7 +1198,7 @@ $blogPosts = [
             </ul>
 
             <h2>2. Pacing the 30-Minute Sprint</h2>
-            <p>On paper, splitting the exam into 14 shorter blocks sounds easier. In practice, it drastically alters the momentum of your exam day. A 60-minute block allows for a slight mid-block lull where you can catch up if you get stuck. In a 30-minute block, that margin for error is halved — you cannot afford to dwell on a single question for three minutes.</p>
+            <p>On paper, splitting the exam into 14 shorter blocks sounds easier. In practice, it drastically alters the momentum of your exam day. A 60-minute block allows for a slight mid-block lull where you can catch up if you get stuck. In a 30-minute block, that margin for error is halved: you cannot afford to dwell on a single question for three minutes.</p>
             <p>Furthermore, you have to mentally "reset" your focus 14 times instead of 7. To survive this, you must train your brain in 20-question, 30-minute timed bursts during your dedicated study period.</p>
 
             <h2>3. Streamline Your Resource Stack (The UFAPS Method)</h2>
@@ -1205,7 +1206,7 @@ $blogPosts = [
             <ul>
               <li><strong>UWorld:</strong> The ultimate learning tool. Use it in tutor mode early on, then transition to timed 20-question blocks as you get closer to your test date.</li>
               <li><strong>First Aid (FA):</strong> Your syllabus framework. Treat it as a master checklist rather than a primary learning textbook.</li>
-              <li><strong>Pathoma:</strong> Essential pathology. Chapters 1–3 are mandatory for high-yield general principles.</li>
+              <li><strong>Pathoma:</strong> Essential pathology. Chapters 1 to 3 are mandatory for high-yield general principles.</li>
               <li><strong>Sketchy Medical:</strong> Crucial for encoding Microbiology and Pharmacology into visual memory palaces.</li>
               <li><strong>Anki (AnKing Deck):</strong> Use daily spaced repetition to prevent your brain from "leaking" basic science details.</li>
             </ul>
@@ -1214,40 +1215,40 @@ $blogPosts = [
             <h2>4. Where to Focus: High-Yield Topic Breakdown</h2>
             <p>The exam has largely abandoned "What is this drug?" recall questions in favor of "How does this biochemical defect cause this physical presentation?" Pay extra attention to the highest-weighted disciplines:</p>
             <ul>
-              <li><strong>Pathology (44–52% of the exam):</strong> The single largest discipline tested. Focus on structural, functional, and cellular mechanisms of disease.</li>
-              <li><strong>Physiology (25–35% of the exam):</strong> Specifically, the "physics" of the renal, cardiovascular, and respiratory systems.</li>
-              <li><strong>Pharmacology (15–22% of the exam):</strong> Focus on mechanisms of action, rate-limiting steps, and adverse side effects — especially autonomic drugs and antimicrobials.</li>
-              <li><strong>Systems-Based Heavy Hitters:</strong> Reproductive &amp; Endocrine (12–16%), Nervous System &amp; Special Senses (11–15%), and Cardiovascular (10–14%).</li>
+              <li><strong>Pathology (44 to 52% of the exam):</strong> The single largest discipline tested. Focus on structural, functional, and cellular mechanisms of disease.</li>
+              <li><strong>Physiology (25 to 35% of the exam):</strong> Specifically, the "physics" of the renal, cardiovascular, and respiratory systems.</li>
+              <li><strong>Pharmacology (15 to 22% of the exam):</strong> Focus on mechanisms of action, rate-limiting steps, and adverse side effects, especially autonomic drugs and antimicrobials.</li>
+              <li><strong>Systems-Based Heavy Hitters:</strong> Reproductive &amp; Endocrine (12 to 16%), Nervous System &amp; Special Senses (11 to 15%), and Cardiovascular (10 to 14%).</li>
             </ul>
 
             <h2>5. A Sample Daily Routine for Your Dedicated Study Period</h2>
             <p>Consistency and structure are your shields against anxiety. Here is a template for a balanced, high-efficiency daily routine:</p>
             <ul>
-              <li><strong>7:30 – 8:00 AM:</strong> Quick review of daily Anki cards (keep this limited to high-yield or weak areas).</li>
-              <li><strong>8:00 – 9:30 AM:</strong> Block 1 — 20 timed questions + comprehensive review of explanations.</li>
-              <li><strong>9:30 – 10:00 AM:</strong> Short break (stretch, get water).</li>
-              <li><strong>10:00 – 11:30 AM:</strong> Block 2 — 20 timed questions + comprehensive review.</li>
-              <li><strong>11:30 AM – 12:30 PM:</strong> Lunch and complete mental disconnect from medicine.</li>
-              <li><strong>12:30 – 2:00 PM:</strong> Block 3 — 20 timed questions + comprehensive review.</li>
-              <li><strong>2:00 – 4:30 PM:</strong> Targeted Content Review — dive deep into a weak organ system using Pathoma or First Aid.</li>
-              <li><strong>4:30 – 5:30 PM:</strong> Weak area retention (Sketchy micro/pharm videos or targeted flashcards).</li>
+              <li><strong>7:30 to 8:00 AM:</strong> Quick review of daily Anki cards (keep this limited to high-yield or weak areas).</li>
+              <li><strong>8:00 to 9:30 AM:</strong> Block 1: 20 timed questions + comprehensive review of explanations.</li>
+              <li><strong>9:30 to 10:00 AM:</strong> Short break (stretch, get water).</li>
+              <li><strong>10:00 to 11:30 AM:</strong> Block 2: 20 timed questions + comprehensive review.</li>
+              <li><strong>11:30 AM to 12:30 PM:</strong> Lunch and complete mental disconnect from medicine.</li>
+              <li><strong>12:30 to 2:00 PM:</strong> Block 3: 20 timed questions + comprehensive review.</li>
+              <li><strong>2:00 to 4:30 PM:</strong> Targeted Content Review: dive deep into a weak organ system using Pathoma or First Aid.</li>
+              <li><strong>4:30 to 5:30 PM:</strong> Weak area retention (Sketchy micro/pharm videos or targeted flashcards).</li>
               <li><strong>5:30 PM onward:</strong> Turn off the computer. Relax, exercise, and sleep. Sleep is when consolidation happens.</li>
             </ul>
             <p>That is one sample day. For the week-by-week structure of a 6-week dedicated period, including a free weekly template, see <a href="/blog/perfect-usmle-study-schedule">How to Build the Perfect USMLE Study Schedule</a>. If you only have two weeks left, jump to the 14-day plan further down this page.</p>
 
             <h2>6. How to Simulate the New Exam Day</h2>
-            <p>Do not let your real exam be the first time you experience the new 14-block format. Two weeks before your test date, run a full simulation. With 14 blocks, you must plan your transitions carefully. You start with 55 minutes of break time — skip the 5-minute tutorial and boost that pool to 60 minutes.</p>
+            <p>Do not let your real exam be the first time you experience the new 14-block format. Two weeks before your test date, run a full simulation. With 14 blocks, you must plan your transitions carefully. You start with 55 minutes of break time: skip the 5-minute tutorial and boost that pool to 60 minutes.</p>
             <p>Here is an optimized break strategy for the 14-block run:</p>
             <ul>
-              <li><strong>Blocks 1–3:</strong> Power through without a break (90 minutes of testing).</li>
+              <li><strong>Blocks 1 to 3:</strong> Power through without a break (90 minutes of testing).</li>
               <li><strong>Break 1:</strong> 10 minutes (quick snack, stretch).</li>
-              <li><strong>Blocks 4–6:</strong> 90 minutes of testing.</li>
+              <li><strong>Blocks 4 to 6:</strong> 90 minutes of testing.</li>
               <li><strong>Break 2 (Lunch):</strong> 25 minutes (low-glycemic lunch to avoid a crash).</li>
-              <li><strong>Blocks 7–9:</strong> 90 minutes of testing.</li>
+              <li><strong>Blocks 7 to 9:</strong> 90 minutes of testing.</li>
               <li><strong>Break 3:</strong> 15 minutes (rehydrate, walk around).</li>
-              <li><strong>Blocks 10–12:</strong> 90 minutes of testing.</li>
+              <li><strong>Blocks 10 to 12:</strong> 90 minutes of testing.</li>
               <li><strong>Break 4:</strong> 10 minutes (mental reset).</li>
-              <li><strong>Blocks 13–14:</strong> The final sprint.</li>
+              <li><strong>Blocks 13 to 14:</strong> The final sprint.</li>
             </ul>
 
             <h2>7. The Ultimate Goal: Step 2 CK Readiness</h2>
@@ -1292,13 +1293,13 @@ $blogPosts = [
             </table>
             <p>If you have fewer than 14 days, keep the order: baseline, targeted fixes, one more assessment, then rest. For a longer runway, use the 6-week structure in our <a href="/blog/perfect-usmle-study-schedule">study schedule guide</a> instead.</p>
 
-            <p>Many IMGs find that having a mentor coordinate their prep — deciding which Pathoma chapters to prioritize, when to increase their QBank block frequency, and how to interpret their NBME trends — saves weeks of misdirected effort. <a href="/coaching">USMLE Wise coaching</a> is built around exactly this kind of personalized, data-driven strategy for Step 1 and beyond.</p>
+            <p>Many IMGs find that having a mentor coordinate their prep (deciding which Pathoma chapters to prioritize, when to increase their QBank block frequency, and how to interpret their NBME trends) saves weeks of misdirected effort. <a href="/coaching">USMLE Wise coaching</a> is built around exactly this kind of personalized, data-driven strategy for Step 1 and beyond.</p>
             HTML,
     ],
     [
         'slug'     => 'best-resources-usmle-step-1',
         'title'    => 'Best Resources for USMLE Step 1: UWorld, First Aid, AnKing, Sketchy & More',
-        'excerpt'  => 'The sheer volume of study materials can feel completely overwhelming. Here is the definitive guide to the gold-standard UFAPS resources for Step 1 — and exactly how to use each one.',
+        'excerpt'  => 'The sheer volume of study materials can feel completely overwhelming. Here is the definitive guide to the gold-standard UFAPS resources for Step 1, and exactly how to use each one.',
         'meta_title'       => 'Best Step 1 Resources and Books: UWorld, First Aid & More',
         'meta_description' => 'The best USMLE Step 1 resources and books, how to use each one, and whether any book covers everything. A streamlined stack that avoids resource overload.',
         'wiki_links'       => ['/wiki/exams/step-1-resources-guide', '/wiki/exams/question-banks-compared', '/wiki/exams/nbme-self-assessments'],
@@ -1310,18 +1311,18 @@ $blogPosts = [
         'featured' => false,
         'image'    => '/assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp',
         'body'     => <<<'HTML'
-            <p>When preparing for the USMLE Step 1, the sheer volume of study materials can feel completely overwhelming. It is easy to fall into the trap of "resource hoarding" — buying every book, video series, and QBank available, only to end up with superficial knowledge and severe burnout.</p>
-            <p>Since the transition to a Pass/Fail system, the key to Step 1 success is high-yield efficiency. Your goal is to build a rock-solid foundation for Step 2 CK without wasting precious time. To do this, you only need a handful of resources. Here is the definitive guide to the gold-standard UFAPS method — and how to use each resource effectively.</p>
+            <p>When preparing for the USMLE Step 1, the sheer volume of study materials can feel completely overwhelming. It is easy to fall into the trap of "resource hoarding": buying every book, video series, and QBank available, only to end up with superficial knowledge and severe burnout.</p>
+            <p>Since the transition to a Pass/Fail system, the key to Step 1 success is high-yield efficiency. Your goal is to build a rock-solid foundation for Step 2 CK without wasting precious time. To do this, you only need a handful of resources. Here is the definitive guide to the gold-standard UFAPS method, and how to use each resource effectively.</p>
 
             <h2>1. UWorld: The Core Question Bank</h2>
-            <p>UWorld is not an assessment tool — it is your primary learning textbook. Many students make the mistake of using UWorld solely to see what score they get, but its true value lies in its incredibly detailed explanations.</p>
+            <p>UWorld is not an assessment tool: it is your primary learning textbook. Many students make the mistake of using UWorld solely to see what score they get, but its true value lies in its incredibly detailed explanations.</p>
             <p><strong>How to Use It:</strong> Treat every explanation (both for correct and incorrect answer choices) as a mini-lecture. Pay close attention to why the wrong answers are incorrect.</p>
             <p><strong>A Crucial 2026 Shift:</strong> Step 1 now uses a modernized modular delivery format consisting of 14 blocks of 20 questions (30 minutes per block), rather than the legacy 40-question blocks. From day one, configure your custom UWorld blocks to 20 questions on timed mode to master the rapid pacing of the actual exam.</p>
             <p><strong>The Goal:</strong> Complete at least one full pass of UWorld. A second pass or a thorough review of your "incorrects" is ideal if time permits.</p>
 
             <h2>2. First Aid: Your Master Blueprint</h2>
             <p>First Aid is widely treated as the "bible" of Step 1 prep. However, it is written as a dense, high-yield outline, not a textbook. Trying to read it cover-to-cover without any context is a recipe for rote-memorization failure.</p>
-            <p><strong>How to Use It:</strong> Use First Aid as a framework to organize your knowledge. When you review a UWorld question, open the corresponding page in First Aid and annotate any extra pearls of wisdom directly into the margins. Use it to review weak organ systems alongside your practice blocks — if you are struggling with a concept, watch the relevant Pathoma or Boards &amp; Beyond video first to understand the <em>why</em> before trying to memorize the First Aid page.</p>
+            <p><strong>How to Use It:</strong> Use First Aid as a framework to organize your knowledge. When you review a UWorld question, open the corresponding page in First Aid and annotate any extra pearls of wisdom directly into the margins. Use it to review weak organ systems alongside your practice blocks: if you are struggling with a concept, watch the relevant Pathoma or Boards &amp; Beyond video first to understand the <em>why</em> before trying to memorize the First Aid page.</p>
 
             <h2>3. AnKing (Anki): The Spaced Repetition Powerhouse</h2>
             <p>The USMLE Step 1 tests an immense amount of detail. Flashcards are the best way to prevent your brain from "leaking" information over a multi-month study period. The AnKing deck (built on the open-source flashcard app Anki) is one of the most popular community decks.</p>
@@ -1332,7 +1333,7 @@ $blogPosts = [
             <p>Pathology accounts for roughly 44% to 52% of the Step 1 exam. Created by Dr. Husain Sattar, Pathoma is a masterclass in making complex disease processes simple and logical.</p>
             <p><strong>How to Use It:</strong></p>
             <ul>
-              <li><strong>Chapters 1 to 3 (General Pathology):</strong> These three chapters are the absolute bedrock of the exam — covering cellular injury, inflammation, and neoplasia. You must watch these videos and fully understand them multiple times before your exam day.</li>
+              <li><strong>Chapters 1 to 3 (General Pathology):</strong> These three chapters are the absolute bedrock of the exam, covering cellular injury, inflammation, and neoplasia. You must watch these videos and fully understand them multiple times before your exam day.</li>
               <li><strong>Organ Systems:</strong> Watch the corresponding Pathoma videos before you dive into a new organ system block in UWorld. It will save you hours of confusion.</li>
             </ul>
 
@@ -1361,7 +1362,7 @@ $blogPosts = [
                 <tr><td>UWorld</td><td>Primary Learning</td><td>1 full pass (20-question timed blocks)</td></tr>
                 <tr><td>First Aid</td><td>Blueprint &amp; Review Checklist</td><td>Daily annotation and systems review</td></tr>
                 <tr><td>AnKing</td><td>Long-Term Retention</td><td>Daily reviews of targeted cards</td></tr>
-                <tr><td>Pathoma</td><td>Core Pathology</td><td>Focus heavily on Chapters 1–3</td></tr>
+                <tr><td>Pathoma</td><td>Core Pathology</td><td>Focus heavily on Chapters 1 to 3</td></tr>
                 <tr><td>Sketchy</td><td>Micro &amp; Pharm Memorization</td><td>Watch videos paired with Anki cards</td></tr>
                 <tr><td>NBMEs</td><td>Assessment &amp; Readiness</td><td>Current NBME forms and the Free 120</td></tr>
               </tbody>
@@ -1407,7 +1408,7 @@ $blogPosts = [
             <p>Choosing resources is only half the job. For the plan around them, read <a href="/blog/how-to-prepare-usmle-step-1-2026">How to Prepare for the USMLE Step 1 in 2026</a>, which includes a 14-day final-stretch plan, then <a href="/blog/perfect-usmle-study-schedule">How to Build the Perfect USMLE Study Schedule</a> for the 6-week planner and free template, and <a href="/blog/ultimate-usmle-timeline">The Ultimate USMLE Timeline</a> for when to test. Our wiki also has a vendor-neutral <a href="/wiki/exams/step-1-resources-guide">Step 1 resources guide</a> and a comparison of <a href="/wiki/exams/question-banks-compared">question banks</a>.</p>
 
             <h2>One More Resource: Expert Mentorship</h2>
-            <p>The tools above will give you everything you need to study — but they won't tell you <em>how to use them together</em> around your specific timeline, weak subjects, and score target. That gap is where most IMGs lose months of preparation chasing the wrong things.</p>
+            <p>The tools above will give you everything you need to study, but they won't tell you <em>how to use them together</em> around your specific timeline, weak subjects, and score target. That gap is where most IMGs lose months of preparation chasing the wrong things.</p>
             <p>USMLE Wise coaching pairs you with a mentor who has navigated this exact process. They review your NBME trends, build a week-by-week schedule around your gaps, and adjust your plan in real time as your scores move. It is the one resource that makes every other resource on this list more effective. <a href="/coaching">See how USMLE Wise coaching works →</a></p>
             HTML,
     ],
@@ -1420,6 +1421,7 @@ $blogPosts = [
         'wiki_links'       => ['/wiki/exams/step-1-study-schedule', '/wiki/exams/step-2-ck-study-schedule', '/wiki/exams/how-long-to-study'],
         'category' => 'usmle',
         'date'     => '2026-05-19',
+        'updated'  => '2026-11-21',
         'read'     => 6,
         'author'   => 'USMLE Wise Team',
         'featured' => false,
@@ -1442,22 +1444,22 @@ $blogPosts = [
 
             <h3>The 8-Hour Active Day</h3>
             <ul>
-              <li><strong>8:00 – 9:30 AM | Active Warm-Up:</strong> Complete your daily due Anki cards. Keep this focused — speed is key.</li>
-              <li><strong>9:30 – 11:30 AM | QBank Block 1 &amp; Review:</strong> Do a timed 20-to-40 question block, take a 5-minute break, and then review every explanation thoroughly (including the ones you got right).</li>
-              <li><strong>11:30 AM – 12:30 PM | Lunch Break:</strong> Walk away from your desk, eat, and completely disconnect.</li>
-              <li><strong>12:30 – 2:30 PM | QBank Block 2 &amp; Review:</strong> A second block of 20-to-40 questions followed by a comprehensive review of the answers.</li>
-              <li><strong>2:30 – 3:00 PM | Short Break:</strong> Get some fresh air or stretch.</li>
-              <li><strong>3:00 – 5:00 PM | Targeted Content Review:</strong> Dive into a weak subject (e.g., Renal Pathology or Autonomic Pharmacology) using First Aid, Pathoma, or Sketchy.</li>
-              <li><strong>5:00 – 6:00 PM | Consolidation:</strong> Create flashcards for the questions you got wrong today, do a quick wrap-up, and shut down your computer.</li>
+              <li><strong>8:00 to 9:30 AM | Active Warm-Up:</strong> Complete your daily due Anki cards. Keep this focused: speed is key.</li>
+              <li><strong>9:30 to 11:30 AM | QBank Block 1 &amp; Review:</strong> Do a timed 20-to-40 question block, take a 5-minute break, and then review every explanation thoroughly (including the ones you got right).</li>
+              <li><strong>11:30 AM to 12:30 PM | Lunch Break:</strong> Walk away from your desk, eat, and completely disconnect.</li>
+              <li><strong>12:30 to 2:30 PM | QBank Block 2 &amp; Review:</strong> A second block of 20-to-40 questions followed by a comprehensive review of the answers.</li>
+              <li><strong>2:30 to 3:00 PM | Short Break:</strong> Get some fresh air or stretch.</li>
+              <li><strong>3:00 to 5:00 PM | Targeted Content Review:</strong> Dive into a weak subject (e.g., Renal Pathology or Autonomic Pharmacology) using First Aid, Pathoma, or Sketchy.</li>
+              <li><strong>5:00 to 6:00 PM | Consolidation:</strong> Create flashcards for the questions you got wrong today, do a quick wrap-up, and shut down your computer.</li>
             </ul>
 
             <h2>3. The 6-Week Dedicated Phase Planner</h2>
             <p>A typical dedicated study period is 6 weeks long. Here is how to structure your macro-schedule:</p>
             <ul>
-              <li><strong>Week 1:</strong> Take a baseline NBME practice exam to find your weak spots. Spend this week reviewing foundational general pathology (Pathoma Chapters 1–3), immunology, and microbiology.</li>
-              <li><strong>Weeks 2–4:</strong> Power through organ systems (Cardiovascular, Renal, Pulm, GI, Endocrine). Complete 2 blocks of questions daily. Take an NBME practice exam every 7 to 10 days.</li>
+              <li><strong>Week 1:</strong> Take a baseline NBME practice exam to find your weak spots. Spend this week reviewing foundational general pathology (Pathoma Chapters 1 to 3), immunology, and microbiology.</li>
+              <li><strong>Weeks 2 to 4:</strong> Power through organ systems (Cardiovascular, Renal, Pulm, GI, Endocrine). Complete 2 blocks of questions daily. Take an NBME practice exam every 7 to 10 days.</li>
               <li><strong>Week 5:</strong> Focus almost entirely on your weak areas and test endurance.</li>
-              <li><strong>Week 6 (The Final Stretch):</strong> Take the official Free 120 practice test 5 days before your exam. Do not study the day before the test — rest, sleep, and let your brain consolidate.</li>
+              <li><strong>Week 6 (The Final Stretch):</strong> Take the official Free 120 practice test 5 days before your exam. Do not study the day before the test: rest, sleep, and let your brain consolidate.</li>
             </ul>
 
             <h2>4. Free USMLE Step 1 Weekly Study Template</h2>
@@ -1473,17 +1475,17 @@ $blogPosts = [
                 <tr><td>Thursday</td><td>Anki Review + QBank Block 1 (Timed)</td><td>QBank Block 2 + Detailed Review</td><td>Content Review: Renal Path</td></tr>
                 <tr><td>Friday</td><td>Anki Review + QBank Block 1 (Timed)</td><td>QBank Block 2 + Detailed Review</td><td>Catch-up on missed concepts / Anki</td></tr>
                 <tr><td>Saturday</td><td>Practice Exam Day: Take full NBME</td><td>Walk / Lunch / Rest</td><td>Review NBME Incorrects</td></tr>
-                <tr><td>Sunday</td><td colspan="3">REST DAY — Recharge, exercise, meal prep. No studying.</td></tr>
+                <tr><td>Sunday</td><td colspan="3">REST DAY: Recharge, exercise, meal prep. No studying.</td></tr>
               </tbody>
             </table>
 
             <h3>Important Template Rules</h3>
             <ul>
               <li><strong>Keep Sundays Sacred:</strong> Burnout is real. At least one full day of rest per week is mandatory to keep your cognitive performance high.</li>
-              <li><strong>The "Buffer" Rule:</strong> Leave Friday afternoon open. You will fall behind on your schedule at some point — use this block to catch up so you do not carry stress into your weekend.</li>
-              <li><strong>The NBME Safety Threshold:</strong> Do not book your real test date until you are scoring 65%+ on your NBMEs (Forms 25–31), which correlates to a &gt;99% statistical chance of passing the real Step 1 exam.</li>
+              <li><strong>The "Buffer" Rule:</strong> Leave Friday afternoon open. You will fall behind on your schedule at some point: use this block to catch up so you do not carry stress into your weekend.</li>
+              <li><strong>The NBME Safety Threshold:</strong> Do not book your real test date until your recent NBME self-assessments show a steady upward trend and the estimated probability of passing on each score report looks comfortable. Many students use around 65% as a rule of thumb, but any single threshold is only a guide: practice scores are an imperfect predictor, and nothing guarantees a pass. Our wiki page on <a href="/wiki/exams/nbme-self-assessments">NBME self-assessments</a> explains what the scores can and cannot tell you.</li>
             </ul>
-            <p>If building and sticking to this kind of structure feels overwhelming alongside everything else on your plate, USMLE Wise coaching includes a personalized day-by-day study plan built around your exam date, your current NBME baseline, and your specific weak subjects — along with weekly check-ins to keep you on track. <a href="/coaching">Get a custom study plan →</a></p>
+            <p>If building and sticking to this kind of structure feels overwhelming alongside everything else on your plate, USMLE Wise coaching includes a personalized day-by-day study plan built around your exam date, your current NBME baseline, and your specific weak subjects, along with weekly check-ins to keep you on track. <a href="/coaching">Get a custom study plan →</a></p>
             HTML,
     ],
     [
@@ -1506,17 +1508,17 @@ $blogPosts = [
             <p>A standard four-year medical curriculum timeline generally flows like this:</p>
             <p><strong>Year 1 &amp; 2 → Step 1 → Year 3 Clinicals → Step 2 CK → ERAS Application &amp; Match</strong></p>
 
-            <h2>Phase 1: USMLE Step 1 — The Foundation</h2>
+            <h2>Phase 1: USMLE Step 1 (The Foundation)</h2>
             <h3>When to Take It: Spring of MS2 (Typically April to June)</h3>
             <p>Because Step 1 is Pass/Fail, your primary goal is to pass comfortably on your first try before starting your core clinical rotations.</p>
             <ul>
-              <li><strong>Pre-Dedicated Prep (MS1 to Winter of MS2):</strong> Keep up with your classes. Utilize Anki, Sketchy, and Pathoma to build long-term memory. Do not start heavy QBank grinding yet — focus on understanding.</li>
+              <li><strong>Pre-Dedicated Prep (MS1 to Winter of MS2):</strong> Keep up with your classes. Utilize Anki, Sketchy, and Pathoma to build long-term memory. Do not start heavy QBank grinding yet: focus on understanding.</li>
               <li><strong>Dedicated Study Period (February to April/May of MS2):</strong> This is usually a 6-to-8-week window granted by your medical school.</li>
               <li><strong>The Target Exam Window:</strong> Take Step 1 between late April and mid-June of your second year.</li>
             </ul>
             <p><strong>Critical Operational Change:</strong> The Step 1 exam format is now structured as 14 blocks of 20 questions (30 minutes per block), rather than the legacy 7 blocks of 40 questions. Make sure your practice exams and pacing reflect this 30-minute block sprint.</p>
 
-            <h2>Phase 2: Core Rotations &amp; Step 2 CK — The Clinical Crucible</h2>
+            <h2>Phase 2: Core Rotations &amp; Step 2 CK (The Clinical Crucible)</h2>
             <h3>When to Take It: Summer of MS3/MS4 Transition (Typically June to August)</h3>
             <p>Step 2 CK is a numeric-scored exam and is arguably the single most important academic metric on your residency application.</p>
             <ul>
@@ -1528,10 +1530,10 @@ $blogPosts = [
 
             <h2>Phase 3: The ERAS &amp; NRMP Match Timeline</h2>
 
-            <h3>Spring (April – May)</h3>
+            <h3>Spring (April to May)</h3>
             <ul>
               <li>Secure Letters of Recommendation (LoRs): approach attendings from your core rotations. You will need 3 to 4 letters, preferably in your specialty of choice.</li>
-              <li>Draft your personal statement: write a compelling narrative (700–850 words) focused on why you chose your specialty.</li>
+              <li>Draft your personal statement: write a compelling narrative (700 to 850 words) focused on why you chose your specialty.</li>
             </ul>
 
             <h3>June</h3>
@@ -1539,20 +1541,20 @@ $blogPosts = [
               <li>MyERAS Token Opens (Early June): buy your ERAS token to gain access to the residency application portal and start filling out your profile, CV, and work/volunteer/research experiences.</li>
             </ul>
 
-            <h3>July – August</h3>
+            <h3>July to August</h3>
             <ul>
-              <li>Finalize your application elements — polish up to 10 experience descriptions (designating 3 as "Most Meaningful").</li>
+              <li>Finalize your application elements: polish up to 10 experience descriptions (designating 3 as "Most Meaningful").</li>
               <li>Upload your medical school transcript, personal statement, and photo. Confirm your LoR writers have uploaded their letters.</li>
             </ul>
 
-            <h3>September — The Critical Month</h3>
+            <h3>September: The Critical Month</h3>
             <ul>
               <li><strong>September 2 (approx.):</strong> ERAS submission opens. You can officially certify and submit your applications to programs.</li>
-              <li><strong>September 15:</strong> NRMP Registration opens. Registering on ERAS does not register you for the Match — you must register on both portals.</li>
-              <li><strong>Late September (approx. Sept 23–25):</strong> The "Gates Open" date. Residency programs gain access to all applications and MSPEs (Dean's Letters). Ensure everything is completely submitted and paid for at least 48 hours before this date.</li>
+              <li><strong>September 15:</strong> NRMP Registration opens. Registering on ERAS does not register you for the Match: you must register on both portals.</li>
+              <li><strong>Late September (approx. Sept 23 to 25):</strong> The "Gates Open" date. Residency programs gain access to all applications and MSPEs (Dean's Letters). Ensure everything is completely submitted and paid for at least 48 hours before this date.</li>
             </ul>
 
-            <h3>October – January (Interview Season)</h3>
+            <h3>October to January (Interview Season)</h3>
             <p>Keep your phone close. Program coordinators will email you invitation links to schedule virtual or in-person interviews. Complete your mock interviews and attend program socials.</p>
 
             <h3>February (The Rank List)</h3>
@@ -1570,10 +1572,10 @@ $blogPosts = [
             <h2>Pro-Tips for International Medical Graduates</h2>
             <p>If you are an IMG, your timeline requires even more padding:</p>
             <ul>
-              <li><strong>ECFMG Certification:</strong> You must be ECFMG certified before you can match. This requires passing Step 1, Step 2 CK, and fulfilling the ECFMG Pathway requirements. Start this process early — processing backlogs are real.</li>
+              <li><strong>ECFMG Certification:</strong> You must be ECFMG certified before you can match. This requires passing Step 1, Step 2 CK, and fulfilling the ECFMG Pathway requirements. Start this process early: processing backlogs are real.</li>
               <li><strong>Step 2 CK Timing:</strong> IMGs should ideally have their Step 2 CK score back by late June or July. Program directors are often more hesitant to offer interviews to IMGs without a completed Step 2 CK score already on file.</li>
             </ul>
-            <p>Coordinating all of these moving pieces — ECFMG, exams, USCE, and ERAS — while staying ahead of processing deadlines is genuinely difficult to do alone. USMLE Wise works with IMGs from Step 1 prep through Match Day, keeping every part of your timeline on track. <a href="/coaching">See how we work with IMGs →</a></p>
+            <p>Coordinating all of these moving pieces (ECFMG, exams, USCE, and ERAS) while staying ahead of processing deadlines is genuinely difficult to do alone. USMLE Wise works with IMGs from Step 1 prep through Match Day, keeping every part of your timeline on track. <a href="/coaching">See how we work with IMGs →</a></p>
             HTML,
     ],
     [
@@ -1609,11 +1611,11 @@ $blogPosts = [
             </table>
 
             <h2>Hospitalist Medicine in Kissimmee</h2>
-            <p>The <a href="/rotation-florida">AdventHealth Kissimmee Campus</a> rotation, affiliated with AdventHealth Orlando, is a 100% inpatient hospitalist experience built around a 7-days-on/7-days-off schedule. On your "on" weeks you get roughly 5–6 hours of direct clinical exposure daily; "off" weeks are reserved for self-study and case presentations. At $2,425 with monthly starts and a max of 4 students, it is one of the more accessible entry points into inpatient medicine in the state.</p>
+            <p>The <a href="/rotation-florida">AdventHealth Kissimmee Campus</a> rotation, affiliated with AdventHealth Orlando, is a 100% inpatient hospitalist experience built around a 7-days-on/7-days-off schedule. On your "on" weeks you get roughly 5 to 6 hours of direct clinical exposure daily; "off" weeks are reserved for self-study and case presentations. At $2,425 with monthly starts and a max of 4 students, it is one of the more accessible entry points into inpatient medicine in the state.</p>
 
             <h2>General Surgery: Two Very Different Miami-Area Options</h2>
             <p>Florida has two General Surgery placements, and they are worth comparing directly. <a href="/rotation-miami-surgery">General Surgery at Larkin Community Hospital</a> (with rounds also at Hialeah Hospital) is an ACGME-accredited site. You will round alongside Caribbean students enrolled in accredited programs and get real OR observation time, which is a genuine differentiator on an ERAS application. It runs $3,400 for 4 weeks, capped at 2 students.</p>
-            <p><a href="/rotation-kissimmee-surgery">General Surgery in Kissimmee</a> is clinic-based rather than hospital-based: a steady Monday–Friday, 9am–5pm schedule with pre- and post-operative evaluations, wound care, and suturing practice, plus OR observation. At $3,200, it is a strong option if you want more consistent one-on-one time with a single surgeon rather than a larger teaching-hospital environment.</p>
+            <p><a href="/rotation-kissimmee-surgery">General Surgery in Kissimmee</a> is clinic-based rather than hospital-based: a steady Monday to Friday, 9am to 5pm schedule with pre- and post-operative evaluations, wound care, and suturing practice, plus OR observation. At $3,200, it is a strong option if you want more consistent one-on-one time with a single surgeon rather than a larger teaching-hospital environment.</p>
 
             <h2>Pediatrics in Miami</h2>
             <p>The <a href="/rotation-mercy-pediatrics">Mercy Hospital Faculty</a> rotation pairs clinic and inpatient hospital rounding with full EMR access (useful if you want documentation experience alongside direct patient care). It starts on the first Monday of each month, and documents are due 28 days in advance, so this one requires planning further ahead than most.</p>
@@ -1668,7 +1670,7 @@ $blogPosts = [
             <p>The <a href="/rotation-south-texas">Internal Medicine Sub-Internship</a> at South Texas Health System (DHR Health &amp; Cornerstone Regional Medical Center) is the closest thing on our roster to a true acting internship. You are managing patient care from admission to discharge, rounding daily, and presenting cases directly to the attending, inside an active IM residency environment capped at just 3 students. At $3,500, it is priced accordingly for the depth of hands-on responsibility it offers.</p>
 
             <h2>Two Psychiatry Options in Houston, at Very Different Price Points</h2>
-            <p><a href="/rotation-flourish-psychiatry">Flourish Mental Health</a> is a one-on-one rotation (max 1 student) with a child and adolescent psychiatrist who has particular expertise in autism-spectrum cases. It runs a full Monday–Friday, 9am–7pm schedule at $2,800.</p>
+            <p><a href="/rotation-flourish-psychiatry">Flourish Mental Health</a> is a one-on-one rotation (max 1 student) with a child and adolescent psychiatrist who has particular expertise in autism-spectrum cases. It runs a full Monday to Friday, 9am to 7pm schedule at $2,800.</p>
             <p>The second Houston option, <a href="/rotation-houston-psychiatry">Psychiatry with 30 Years of Experience</a>, is broader in scope: the preceptor sees patients of all ages, from children through adults, and has served on the medical staff at the University of Houston providing psychiatric evaluations for graduate students. At $2,000 for a max of 2 students, it is one of the more affordable psychiatry placements on our entire roster.</p>
 
             <h2>Family Medicine with a Mentor Who Was an IMG Himself</h2>
@@ -1718,7 +1720,7 @@ $blogPosts = [
             <p>The <a href="/rotation-new-york">Elective in New York</a> at St. Luke's Cornwall Hospital's affiliated campus in Newburgh is a 4-week combined inpatient and outpatient Internal Medicine experience, and one of the few rotations on our entire roster where housing is included in the price. You get dorm accommodation close to the hospital, occasional meals and pickup/drop-off support from the mentor, and a genuinely IMG-friendly environment: this hospital has a residency program, and past rotators through this exact placement have gone on to match. At $4,150 (rotation plus housing), capped at 2 students, it is priced as a complete package rather than tuition alone.</p>
 
             <h2>Family Medicine in the Heart of NYC</h2>
-            <p>The <a href="/rotation-new-york-family-medicine">Family Medicine rotation</a> is run by a board-certified physician who also serves as a Visiting Attending Physician with Mount Sinai Hospital. You will split time across two outpatient clinics in New York City, seeing the full spectrum of primary care in a high-volume, diverse patient population, on a standard Monday–Friday, 9am–5pm schedule. It runs $2,900, capped at 2 students, and the resulting letter of recommendation carries the added weight of the Mount Sinai affiliation.</p>
+            <p>The <a href="/rotation-new-york-family-medicine">Family Medicine rotation</a> is run by a board-certified physician who also serves as a Visiting Attending Physician with Mount Sinai Hospital. You will split time across two outpatient clinics in New York City, seeing the full spectrum of primary care in a high-volume, diverse patient population, on a standard Monday to Friday, 9am to 5pm schedule. It runs $2,900, capped at 2 students, and the resulting letter of recommendation carries the added weight of the Mount Sinai affiliation.</p>
 
             <h2>What Both New York Rotations Include</h2>
             <ul>
@@ -1771,7 +1773,7 @@ $blogPosts = [
 
             <h2>Two Pediatrics Rotations, Different Intensities</h2>
             <p><a href="/rotation-st-joseph-pediatrics">St. Joseph University Medical Center</a> in Clifton pairs you one-on-one with residency program faculty for at least 30 hours per week of outpatient pediatric exposure, with limited inpatient experience possible at the preceptor's discretion. At $3,500, it is priced for that one-on-one residency-faculty access.</p>
-            <p>The <a href="/rotation-jersey-city-pediatrics">Jersey City</a> rotation, with a board-certified Medical Director, is higher-volume and more clinic-paced: a standard 8:30am–4:30pm schedule (extended to 7pm on Wednesdays) with regular literature discussions built into the week, and a path toward taking histories independently after the first week. At $2,000, it is the more budget-friendly of the two pediatrics options.</p>
+            <p>The <a href="/rotation-jersey-city-pediatrics">Jersey City</a> rotation, with a board-certified Medical Director, is higher-volume and more clinic-paced: a standard 8:30am to 4:30pm schedule (extended to 7pm on Wednesdays) with regular literature discussions built into the week, and a path toward taking histories independently after the first week. At $2,000, it is the more budget-friendly of the two pediatrics options.</p>
 
             <h2>Family Medicine Across Three Care Settings</h2>
             <p>The <a href="/rotation-englewood-family-medicine">Englewood Hospital</a> Family Medicine rotation is led by the hospital's Chief of Family Practice, who is board-certified not just in Family Medicine but also Geriatric Medicine and Hospice &amp; Palliative Medicine. That breadth shows up in the rotation itself: you will spend time across an outpatient clinic, assisted living facilities, and nursing homes, a genuinely unusual mix of care settings for a single 4-week rotation, at $1,996.</p>
@@ -2435,11 +2437,11 @@ $blogPosts = [
         'featured' => false,
         'image'    => '/assets/Photos/researcher-in-lab-computer.webp',
         'body'     => <<<'HTML'
-            <p>Every year, NRMP publishes Charting Outcomes in the Match: a statistical profile of applicants who did and did not match to their preferred specialty. The 2026 edition, covering the Main Residency Match for U.S. MD seniors, tracked 16,379 consented applicants across 13 measures — everything from how many programs they ranked to whether they belonged to Alpha Omega Alpha.</p>
+            <p>Every year, NRMP publishes Charting Outcomes in the Match: a statistical profile of applicants who did and did not match to their preferred specialty. The 2026 edition, covering the Main Residency Match for U.S. MD seniors, tracked 16,379 consented applicants across 13 measures: everything from how many programs they ranked to whether they belonged to Alpha Omega Alpha.</p>
             <p>Most applicants never read the actual report. They hear secondhand that "research matters" or "you need a high Step 2 score," without ever seeing the numbers behind those claims. Here is the real data, and what it does and does not tell you.</p>
 
             <h2>The Headline Number: 86.1% Matched</h2>
-            <p>Across all specialties, 86.1 percent of U.S. MD seniors matched to their preferred specialty in 2026. That figure swings enormously by specialty — from a high of 100 percent in Public Health and Preventive Medicine (a small, low-competition field) down to a low of 62.6 percent in Dermatology. In other words, roughly 1 in 3 MD seniors who ranked Dermatology first did not match into it.</p>
+            <p>Across all specialties, 86.1 percent of U.S. MD seniors matched to their preferred specialty in 2026. That figure swings enormously by specialty: from a high of 100 percent in Public Health and Preventive Medicine (a small, low-competition field) down to a low of 62.6 percent in Dermatology. In other words, roughly 1 in 3 MD seniors who ranked Dermatology first did not match into it.</p>
 
             <h2>The 13-Measure Scorecard</h2>
             <p>NRMP's Table 2 compares matched applicants (n=14,889) against those who did not match their preferred specialty (n=1,636) on every measure in the report, combined across all specialties:</p>
@@ -2470,9 +2472,9 @@ $blogPosts = [
               <li><strong>Rank more programs in their preferred specialty.</strong> The gap here is the largest in the entire report: a median of 13 contiguous ranks for matched applicants versus 5 for those who did not match. We break this down specialty-by-specialty in <a href="/blog/how-many-programs-should-you-rank">How Many Residency Programs Should You Rank?</a></li>
               <li><strong>Score higher on Step 2 CK.</strong> A 9-point median gap (253 vs. 244) nationally, widening to 20 points in specialties like Emergency Medicine. Full specialty-by-specialty numbers are in our <a href="/blog/usmle-scores-explained-specialty-requirements">updated Step 2 CK breakdown</a>.</li>
               <li><strong>Be AOA members.</strong> 17.2 percent of matched applicants were AOA members versus 9.0 percent of those who did not match.</li>
-              <li><strong>Have graduated from a top-40 NIH-funded medical school.</strong> 30.2 percent of matched applicants versus 25.4 percent of those who did not match — a real gap, but smaller than most applicants assume. We unpack what this does and does not mean in <a href="/blog/does-medical-school-matter-in-the-match">Does Your Medical School's Name Matter?</a></li>
+              <li><strong>Have graduated from a top-40 NIH-funded medical school.</strong> 30.2 percent of matched applicants versus 25.4 percent of those who did not match: a real gap, but smaller than most applicants assume. We unpack what this does and does not mean in <a href="/blog/does-medical-school-matter-in-the-match">Does Your Medical School's Name Matter?</a></li>
             </ul>
-            <p>Notice what is <em>not</em> in that list: research output. At the aggregate level, applicants who did <em>not</em> match actually had slightly higher medians for research experiences (5.0 vs. 4.0), presentations (5.0 vs. 4.0), and publications (3.0 vs. 2.0). That is not a typo, and it is not the whole story either — we explain why in <a href="/blog/does-research-matter-in-the-match">Does Research Actually Matter in the Match?</a>.</p>
+            <p>Notice what is <em>not</em> in that list: research output. At the aggregate level, applicants who did <em>not</em> match actually had slightly higher medians for research experiences (5.0 vs. 4.0), presentations (5.0 vs. 4.0), and publications (3.0 vs. 2.0). That is not a typo, and it is not the whole story either. We explain why in <a href="/blog/does-research-matter-in-the-match">Does Research Actually Matter in the Match?</a>.</p>
             <p>NRMP itself is careful to note that these trends, "while informative, do not convey the full story." Course evaluations, letters of recommendation, and the Medical School Performance Evaluation (MSPE) all factor into Match outcomes and none of them show up in this data.</p>
 
             <h2>The Most Competitive Specialties in 2026</h2>
@@ -2497,8 +2499,8 @@ $blogPosts = [
             <p>Three practical takeaways, in order of how much control you actually have over them this cycle:</p>
             <ol>
               <li><strong>Rank list length is the single most actionable lever.</strong> It is the largest gap in the dataset, it is entirely within your control, and it costs nothing but application fees once you have already applied broadly.</li>
-              <li><strong>Your Step 2 CK score is close to fixed once you have taken the exam</strong> — but if you have not sat for it yet, the specialty-by-specialty targets are worth planning around now rather than after the fact.</li>
-              <li><strong>AOA membership and school pedigree are not things you can change this cycle.</strong> If you are not AOA and did not attend a top-40 NIH-funded school, the data says you are not alone — the majority of matched applicants in every specialty fall into that group too.</li>
+              <li><strong>Your Step 2 CK score is close to fixed once you have taken the exam</strong>, but if you have not sat for it yet, the specialty-by-specialty targets are worth planning around now rather than after the fact.</li>
+              <li><strong>AOA membership and school pedigree are not things you can change this cycle.</strong> If you are not AOA and did not attend a top-40 NIH-funded school, the data says you are not alone: the majority of matched applicants in every specialty fall into that group too.</li>
             </ol>
             <p>If you are still finalizing your rank order list or deciding how broadly to apply, a strategy session that looks at your actual numbers against this year's data can save you from the two most common mistakes: ranking too narrow a list, or spreading signals too thin. <a href="/coaching">Explore USMLE Wise coaching →</a></p>
             HTML,
@@ -2521,49 +2523,49 @@ $blogPosts = [
             <p>The 2026 data, covering 16,379 U.S. MD seniors, makes the relationship between list length and Match success about as clear as this kind of data ever gets.</p>
 
             <h2>The Headline Gap</h2>
-            <p>Across all specialties combined, U.S. MD seniors who matched to their preferred specialty ranked a median of <strong>13 programs</strong> within it. Those who did not match ranked a median of <strong>5</strong>. That is the single largest gap of any measure in the entire report — larger than the Step 2 CK gap, larger than the research-experience gap, larger than anything else NRMP tracks.</p>
+            <p>Across all specialties combined, U.S. MD seniors who matched to their preferred specialty ranked a median of <strong>13 programs</strong> within it. Those who did not match ranked a median of <strong>5</strong>. That is the single largest gap of any measure in the entire report: larger than the Step 2 CK gap, larger than the research-experience gap, larger than anything else NRMP tracks.</p>
             <p>NRMP's own language is direct about the implication: "applicants with longer rank order lists appear to have a higher likelihood of matching than those with shorter ones."</p>
 
             <h2>Contiguous Ranks by Specialty</h2>
-            <p>The right number is not the same for every specialty. Here is the median number of contiguous ranks for matched vs. not-matched U.S. MD seniors, specialty by specialty (Q1–Q3 shown in parentheses):</p>
+            <p>The right number is not the same for every specialty. Here is the median number of contiguous ranks for matched vs. not-matched U.S. MD seniors, specialty by specialty (Q1 to Q3 shown in parentheses):</p>
             <table>
               <thead>
-                <tr><th>Specialty</th><th>Matched Median (Q1–Q3)</th><th>Not Matched Median (Q1–Q3)</th></tr>
+                <tr><th>Specialty</th><th>Matched Median (Q1 to Q3)</th><th>Not Matched Median (Q1 to Q3)</th></tr>
               </thead>
               <tbody>
-                <tr><td>Vascular Surgery (Integrated)</td><td>21.0 (15.0–25.0)</td><td>6.5 (1.0–11.0)</td></tr>
-                <tr><td>Radiation Oncology</td><td>16.0 (12.0–19.0)</td><td>too few to report</td></tr>
-                <tr><td>Pediatrics</td><td>15.0 (12.0–18.0)</td><td>1.0 (1.0–2.0)</td></tr>
-                <tr><td>Emergency Medicine</td><td>15.0 (12.0–18.0)</td><td>4.0 (3.0–6.0)</td></tr>
-                <tr><td>Neurological Surgery</td><td>15.0 (12.0–18.0)</td><td>7.0 (5.0–9.0)</td></tr>
-                <tr><td>Family Medicine</td><td>14.0 (10.0–17.0)</td><td>1.0 (1.0–3.0)</td></tr>
-                <tr><td>Surgery-General</td><td>14.0 (10.0–17.0)</td><td>5.0 (3.0–8.0)</td></tr>
-                <tr><td>Anesthesiology</td><td>13.0 (9.0–16.0)</td><td>5.0 (3.0–8.0)</td></tr>
-                <tr><td>Physical Medicine and Rehabilitation</td><td>13.0 (9.0–17.0)</td><td>6.0 (3.0–8.0)</td></tr>
-                <tr><td>Radiology-Diagnostic</td><td>13.0 (10.0–17.0)</td><td>2.0 (1.0–4.0)</td></tr>
-                <tr><td>Internal Medicine</td><td>12.0 (9.0–15.0)</td><td>3.0 (2.0–5.0)</td></tr>
-                <tr><td>Internal Medicine/Pediatrics</td><td>12.0 (7.0–16.0)</td><td>2.0 (1.0–4.0)</td></tr>
-                <tr><td>Neurology</td><td>12.0 (9.0–15.0)</td><td>4.5 (3.0–6.0)</td></tr>
-                <tr><td>Obstetrics and Gynecology</td><td>12.0 (9.0–14.0)</td><td>6.0 (4.0–9.0)</td></tr>
-                <tr><td>Otolaryngology</td><td>12.0 (9.0–15.0)</td><td>7.0 (4.0–9.0)</td></tr>
-                <tr><td>Pathology-Anatomic and Clinical</td><td>12.5 (9.0–17.0)</td><td>6.0 (2.0–9.0)</td></tr>
-                <tr><td>Plastic Surgery (Integrated)</td><td>12.0 (9.0–15.0)</td><td>6.0 (4.0–8.0)</td></tr>
-                <tr><td>Psychiatry</td><td>12.0 (8.0–15.0)</td><td>5.0 (3.0–8.0)</td></tr>
-                <tr><td>Child Neurology</td><td>14.0 (11.0–17.0)</td><td>too few to report</td></tr>
-                <tr><td>Orthopaedic Surgery</td><td>10.0 (7.0–13.0)</td><td>6.0 (4.0–8.0)</td></tr>
-                <tr><td>Dermatology</td><td>7.0 (5.0–10.0)</td><td>4.0 (2.0–5.0)</td></tr>
-                <tr><td>Thoracic Surgery (Integrated)</td><td>7.0 (4.0–9.0)</td><td>3.0 (2.0–7.0)</td></tr>
-                <tr><td>Interventional Radiology (Integrated)</td><td>3.0 (1.0–8.0)</td><td>1.0 (1.0–5.0)</td></tr>
+                <tr><td>Vascular Surgery (Integrated)</td><td>21.0 (15.0 to 25.0)</td><td>6.5 (1.0 to 11.0)</td></tr>
+                <tr><td>Radiation Oncology</td><td>16.0 (12.0 to 19.0)</td><td>too few to report</td></tr>
+                <tr><td>Pediatrics</td><td>15.0 (12.0 to 18.0)</td><td>1.0 (1.0 to 2.0)</td></tr>
+                <tr><td>Emergency Medicine</td><td>15.0 (12.0 to 18.0)</td><td>4.0 (3.0 to 6.0)</td></tr>
+                <tr><td>Neurological Surgery</td><td>15.0 (12.0 to 18.0)</td><td>7.0 (5.0 to 9.0)</td></tr>
+                <tr><td>Family Medicine</td><td>14.0 (10.0 to 17.0)</td><td>1.0 (1.0 to 3.0)</td></tr>
+                <tr><td>Surgery-General</td><td>14.0 (10.0 to 17.0)</td><td>5.0 (3.0 to 8.0)</td></tr>
+                <tr><td>Anesthesiology</td><td>13.0 (9.0 to 16.0)</td><td>5.0 (3.0 to 8.0)</td></tr>
+                <tr><td>Physical Medicine and Rehabilitation</td><td>13.0 (9.0 to 17.0)</td><td>6.0 (3.0 to 8.0)</td></tr>
+                <tr><td>Radiology-Diagnostic</td><td>13.0 (10.0 to 17.0)</td><td>2.0 (1.0 to 4.0)</td></tr>
+                <tr><td>Internal Medicine</td><td>12.0 (9.0 to 15.0)</td><td>3.0 (2.0 to 5.0)</td></tr>
+                <tr><td>Internal Medicine/Pediatrics</td><td>12.0 (7.0 to 16.0)</td><td>2.0 (1.0 to 4.0)</td></tr>
+                <tr><td>Neurology</td><td>12.0 (9.0 to 15.0)</td><td>4.5 (3.0 to 6.0)</td></tr>
+                <tr><td>Obstetrics and Gynecology</td><td>12.0 (9.0 to 14.0)</td><td>6.0 (4.0 to 9.0)</td></tr>
+                <tr><td>Otolaryngology</td><td>12.0 (9.0 to 15.0)</td><td>7.0 (4.0 to 9.0)</td></tr>
+                <tr><td>Pathology-Anatomic and Clinical</td><td>12.5 (9.0 to 17.0)</td><td>6.0 (2.0 to 9.0)</td></tr>
+                <tr><td>Plastic Surgery (Integrated)</td><td>12.0 (9.0 to 15.0)</td><td>6.0 (4.0 to 8.0)</td></tr>
+                <tr><td>Psychiatry</td><td>12.0 (8.0 to 15.0)</td><td>5.0 (3.0 to 8.0)</td></tr>
+                <tr><td>Child Neurology</td><td>14.0 (11.0 to 17.0)</td><td>too few to report</td></tr>
+                <tr><td>Orthopaedic Surgery</td><td>10.0 (7.0 to 13.0)</td><td>6.0 (4.0 to 8.0)</td></tr>
+                <tr><td>Dermatology</td><td>7.0 (5.0 to 10.0)</td><td>4.0 (2.0 to 5.0)</td></tr>
+                <tr><td>Thoracic Surgery (Integrated)</td><td>7.0 (4.0 to 9.0)</td><td>3.0 (2.0 to 7.0)</td></tr>
+                <tr><td>Interventional Radiology (Integrated)</td><td>3.0 (1.0 to 8.0)</td><td>1.0 (1.0 to 5.0)</td></tr>
               </tbody>
             </table>
 
             <h2>Why the Range Is So Wide</h2>
-            <p>Vascular Surgery (Integrated) sits at one extreme: matched applicants ranked a median of 21 programs, and even that only got them to a 85.7 percent match rate on a small applicant pool. Interventional Radiology sits at the other: matched applicants ranked a median of just 3 programs. The difference is not about how "hard" each specialty is to match into in the abstract — it comes down to how many programs even exist. There are only a handful of Vascular Surgery and Interventional Radiology programs nationally, so there is a hard ceiling on how long any applicant's list in that specialty can possibly be, regardless of strategy.</p>
+            <p>Vascular Surgery (Integrated) sits at one extreme: matched applicants ranked a median of 21 programs, and even that only got them to a 85.7 percent match rate on a small applicant pool. Interventional Radiology sits at the other: matched applicants ranked a median of just 3 programs. The difference is not about how "hard" each specialty is to match into in the abstract: it comes down to how many programs even exist. There are only a handful of Vascular Surgery and Interventional Radiology programs nationally, so there is a hard ceiling on how long any applicant's list in that specialty can possibly be, regardless of strategy.</p>
             <p>The practical lesson: do not import a "rank at least 15 programs" rule of thumb into a specialty that only has 20 programs in the country. Check how many programs actually exist in your specialty, and use the matched-applicant median above as your real target.</p>
 
             <h2>What "Contiguous Ranks" Does and Doesn't Capture</h2>
-            <p>One definitional note that changes how you should read this data: contiguous ranks count programs in your <strong>preferred specialty only</strong>, stopping the count the moment a different specialty appears anywhere on the list. If you ranked 10 Internal Medicine programs, then one Family Medicine backup program, then five more Internal Medicine programs further down, your contiguous rank count is 10 — not 15. This measure rewards applicants who front-load their list with their actual first choice rather than interleaving backup specialties early.</p>
-            <p>It also is not the same as <em>total</em> applications submitted through ERAS. Plenty of matched applicants applied to far more programs than they ultimately ranked — interviews, waitlists, and program fit all thin that number down before Rank Order List Certification Deadline. Contiguous ranks measure the end of that funnel, not the start of it.</p>
+            <p>One definitional note that changes how you should read this data: contiguous ranks count programs in your <strong>preferred specialty only</strong>, stopping the count the moment a different specialty appears anywhere on the list. If you ranked 10 Internal Medicine programs, then one Family Medicine backup program, then five more Internal Medicine programs further down, your contiguous rank count is 10, not 15. This measure rewards applicants who front-load their list with their actual first choice rather than interleaving backup specialties early.</p>
+            <p>It also is not the same as <em>total</em> applications submitted through ERAS. Plenty of matched applicants applied to far more programs than they ultimately ranked: interviews, waitlists, and program fit all thin that number down before Rank Order List Certification Deadline. Contiguous ranks measure the end of that funnel, not the start of it.</p>
 
             <h2>How to Use This When Building Your List</h2>
             <ul>
@@ -2577,7 +2579,7 @@ $blogPosts = [
     [
         'slug'     => 'does-research-matter-in-the-match',
         'title'    => 'Does Research Actually Matter in the Match? What the 2026 Data Shows',
-        'excerpt'  => 'Nationally, applicants who did not match actually had slightly more research experiences than those who did. The real pattern is more specific than "more research is better" — here is what the data actually supports.',
+        'excerpt'  => 'Nationally, applicants who did not match actually had slightly more research experiences than those who did. The real pattern is more specific than "more research is better": here is what the data actually supports.',
         'meta_title'       => 'Does Research Matter in the Match? What 2026 Data Shows',
         'meta_description' => 'Does research help you match? NRMP 2026 data shows a more specific pattern than "more is better". See what the evidence supports and what it does not.',
         'wiki_links'       => ['/wiki/research/why-research-matters-for-imgs', '/wiki/research/how-programs-view-research', '/wiki/application/research-on-your-application'],
@@ -2588,7 +2590,7 @@ $blogPosts = [
         'featured' => false,
         'image'    => '/assets/Photos/pexels-tara-winstead-7722791.webp',
         'body'     => <<<'HTML'
-            <p>If you have spent any time on residency applicant forums, you have heard some version of: "you need research to match into a competitive specialty." NRMP's 2026 Charting Outcomes data lets us actually test that claim, measure by measure, specialty by specialty — and the honest answer is more specific than the forum wisdom suggests.</p>
+            <p>If you have spent any time on residency applicant forums, you have heard some version of: "you need research to match into a competitive specialty." NRMP's 2026 Charting Outcomes data lets us actually test that claim, measure by measure, specialty by specialty, and the honest answer is more specific than the forum wisdom suggests.</p>
             <p>One methodology note before the numbers: starting with the 2026 report, NRMP separated what used to be a single combined "scholarly activity" item into three distinct measures: abstracts, presentations, and publications, plus a fourth measure for research experiences generally. That is a meaningfully more precise dataset than prior years, and it's what makes this breakdown possible.</p>
 
             <h2>The Counterintuitive Headline</h2>
@@ -2604,7 +2606,7 @@ $blogPosts = [
                 <tr><td>Publications</td><td>2.0</td><td>3.0</td></tr>
               </tbody>
             </table>
-            <p>Taken at face value, that table says not-matched applicants out-published matched ones. That is real data, not a typo — but it is also a textbook example of why aggregate statistics can mislead. The explanation is a composition effect: applicants who do not match are disproportionately concentrated in the handful of ultra-competitive, research-saturated specialties (Dermatology, Neurological Surgery, Plastic Surgery) where <em>everyone</em> in the pool, matched or not, has enormous research output. That pulls the "not matched" aggregate upward even though, within most individual specialties, the opposite relationship holds.</p>
+            <p>Taken at face value, that table says not-matched applicants out-published matched ones. That is real data, not a typo, but it is also a textbook example of why aggregate statistics can mislead. The explanation is a composition effect: applicants who do not match are disproportionately concentrated in the handful of ultra-competitive, research-saturated specialties (Dermatology, Neurological Surgery, Plastic Surgery) where <em>everyone</em> in the pool, matched or not, has enormous research output. That pulls the "not matched" aggregate upward even though, within most individual specialties, the opposite relationship holds.</p>
 
             <h2>What the Specialty-Level Data Actually Shows</h2>
             <p>Looking within individual specialties tells a cleaner story. Here is matched vs. not-matched medians across nine specialties spanning primary care to the most research-intensive surgical subspecialties:</p>
@@ -2623,19 +2625,19 @@ $blogPosts = [
                 <tr><td>Dermatology</td><td>7.0 / 8.0</td><td>4.0 / 4.0</td><td>12.0 / 9.0</td><td>9.0 / 6.0</td></tr>
               </tbody>
             </table>
-            <p>(M = matched, NM = not matched. Family Medicine is excluded from this table — its not-matched group was only 11 applicants, too small to read any pattern into.)</p>
+            <p>(M = matched, NM = not matched. Family Medicine is excluded from this table: its not-matched group was only 11 applicants, too small to read any pattern into.)</p>
 
             <h2>The Real Pattern: Output Beats Volume</h2>
-            <p>Across these eight specialties, raw "research experiences" is the <em>weakest</em> and least consistent differentiator — it ties or even runs slightly higher for not-matched applicants in three of the eight, including both Dermatology and Plastic Surgery. But <strong>presentations and publications</strong> — the measures that require you to actually finish something, not just join a lab — favor matched applicants in the large majority of specialties, including every surgical subspecialty in this table.</p>
-            <p>The practical reading: once you are in a competitive applicant pool, simply accumulating research "experiences" stops differentiating you — everyone around you has plenty of those too. What separates matched from not-matched applicants within that pool is whether those experiences turned into finished output: an abstract that got presented, a manuscript that got published. Starting five projects you never finish is weaker than finishing two.</p>
+            <p>Across these eight specialties, raw "research experiences" is the <em>weakest</em> and least consistent differentiator: it ties or even runs slightly higher for not-matched applicants in three of the eight, including both Dermatology and Plastic Surgery. But <strong>presentations and publications</strong> (the measures that require you to actually finish something, not just join a lab) favor matched applicants in the large majority of specialties, including every surgical subspecialty in this table.</p>
+            <p>The practical reading: once you are in a competitive applicant pool, simply accumulating research "experiences" stops differentiating you: everyone around you has plenty of those too. What separates matched from not-matched applicants within that pool is whether those experiences turned into finished output: an abstract that got presented, a manuscript that got published. Starting five projects you never finish is weaker than finishing two.</p>
 
             <h2>A Caveat Worth Taking Seriously</h2>
-            <p>None of this is causal. NRMP's data cannot tell you whether strong research output <em>causes</em> a match, or whether the kind of applicant who finishes publications also tends to be stronger across the board — clinical grades, letters, interview performance — in ways this dataset does not capture. NRMP's own introduction to the report makes the same point: these trends "do not convey the full story," and course evaluations, letters of recommendation, and the MSPE all factor into outcomes without appearing anywhere in this data.</p>
+            <p>None of this is causal. NRMP's data cannot tell you whether strong research output <em>causes</em> a match, or whether the kind of applicant who finishes publications also tends to be stronger across the board (clinical grades, letters, interview performance) in ways this dataset does not capture. NRMP's own introduction to the report makes the same point: these trends "do not convey the full story," and course evaluations, letters of recommendation, and the MSPE all factor into outcomes without appearing anywhere in this data.</p>
 
             <h2>What This Means for Your Application</h2>
             <ul>
               <li><strong>If you are early in medical school and specialty-undecided:</strong> prioritize finishing projects over starting new ones. A completed abstract beats three half-finished chart reviews.</li>
-              <li><strong>If you are applying to a research-saturated specialty</strong> (Dermatology, Plastic Surgery, Neurological Surgery): assume research output alone will not differentiate you from the rest of the pool. It is necessary to be competitive, not sufficient — your rank list length and Step 2 CK score are doing more of the differentiating work (see our <a href="/blog/2026-match-by-the-numbers">full breakdown of the 2026 Match data</a>).</li>
+              <li><strong>If you are applying to a research-saturated specialty</strong> (Dermatology, Plastic Surgery, Neurological Surgery): assume research output alone will not differentiate you from the rest of the pool. It is necessary to be competitive, not sufficient: your rank list length and Step 2 CK score are doing more of the differentiating work (see our <a href="/blog/2026-match-by-the-numbers">full breakdown of the 2026 Match data</a>).</li>
               <li><strong>If you are applying to a less research-intensive specialty</strong> (Internal Medicine, Psychiatry, Emergency Medicine): even modest, completed research output appears to correlate with better outcomes, and the bar to stand out is much lower.</li>
             </ul>
             <p>Figuring out where to put research on your actual application once you have it? Our guide on <a href="/blog/where-to-put-your-research-on-eras">where to put your research on ERAS</a> covers exactly how MyERAS's Scholarly Work section works, entry type by entry type.</p>
@@ -2644,7 +2646,7 @@ $blogPosts = [
     [
         'slug'     => 'does-medical-school-matter-in-the-match',
         'title'    => 'Does Your Medical School\'s Name Matter? AOA, Top-40 Funding, and Match Outcomes',
-        'excerpt'  => 'Even in Plastic Surgery, the most "pedigree-heavy" specialty in the 2026 data, 55% of matched applicants did not attend a top-40 NIH-funded school. Here is what AOA membership and school funding actually predict — and what they don\'t.',
+        'excerpt'  => 'Even in Plastic Surgery, the most "pedigree-heavy" specialty in the 2026 data, 55% of matched applicants did not attend a top-40 NIH-funded school. Here is what AOA membership and school funding actually predict, and what they don\'t.',
         'meta_title'       => 'Does Your Medical School Matter in the Match? 2026 Data',
         'meta_description' => 'Does your medical school matter for the Match? See what 2026 NRMP data shows about AOA membership and top-40 NIH-funded schools, even in Plastic Surgery.',
         'wiki_links'       => ['/wiki/application/program-screening-filters', '/wiki/application/identifying-img-friendly-programs', '/wiki/start-here/img-match-statistics'],
@@ -2655,7 +2657,7 @@ $blogPosts = [
         'featured' => false,
         'image'    => '/assets/Photos/frustrated.webp',
         'body'     => <<<'HTML'
-            <p>Every applicant who did not attend a "big name" medical school has had the same thought while building their rank list: <em>am I even competitive without the brand name?</em> NRMP's 2026 Charting Outcomes data gives a real answer, using two measures that function as school-pedigree proxies — AOA (Alpha Omega Alpha) membership and graduation from one of the 40 U.S. medical schools with the highest NIH funding.</p>
+            <p>Every applicant who did not attend a "big name" medical school has had the same thought while building their rank list: <em>am I even competitive without the brand name?</em> NRMP's 2026 Charting Outcomes data gives a real answer, using two measures that function as school-pedigree proxies: AOA (Alpha Omega Alpha) membership and graduation from one of the 40 U.S. medical schools with the highest NIH funding.</p>
 
             <h2>The Aggregate Gap Is Real, But Smaller Than You'd Guess</h2>
             <p>Across all specialties, 17.2 percent of matched U.S. MD seniors were AOA members, versus 9.0 percent of those who did not match. For top-40 NIH-funded school graduates, the gap was 30.2 percent matched versus 25.4 percent not matched. Both gaps point the same direction NRMP's summary describes: matched applicants were somewhat more likely to hold these credentials. Neither gap is small. But neither one comes close to being the dividing line either.</p>
@@ -2677,14 +2679,14 @@ $blogPosts = [
                 <tr><td>Family Medicine</td><td>6.4% / 0.0%</td><td>25.2% / 27.3%</td></tr>
               </tbody>
             </table>
-            <p>A pattern emerges fast: AOA rates track almost perfectly with how competitive a specialty is overall — highest in Plastic Surgery, Dermatology, and Orthopaedic Surgery, lowest in Family Medicine and Psychiatry. Top-40 NIH funding follows a looser version of the same pattern, with one exception: Family Medicine is the only specialty in this table where not-matched applicants had a <em>higher</em> top-40 school rate than matched ones (27.3% vs. 25.2%) — a reminder that in less research-driven specialties, school funding stops being predictive at all.</p>
+            <p>A pattern emerges fast: AOA rates track almost perfectly with how competitive a specialty is overall: highest in Plastic Surgery, Dermatology, and Orthopaedic Surgery, lowest in Family Medicine and Psychiatry. Top-40 NIH funding follows a looser version of the same pattern, with one exception: Family Medicine is the only specialty in this table where not-matched applicants had a <em>higher</em> top-40 school rate than matched ones (27.3% vs. 25.2%), a reminder that in less research-driven specialties, school funding stops being predictive at all.</p>
 
             <h2>The Number That Should Actually Reassure You</h2>
-            <p>Flip the AOA and top-40 percentages around and a different story appears. In Plastic Surgery — the single most "pedigree-leaning" specialty in this dataset — <strong>64.8 percent of matched applicants were not AOA members</strong>, and <strong>55.3 percent did not graduate from a top-40 NIH-funded school</strong>. In Dermatology, 64.9 percent of matched applicants were not AOA, and 58.7 percent were not from a top-40 school. Even at the most competitive end of the spectrum, the clear majority of people who matched did not hold either credential.</p>
-            <p>If you are neither AOA nor a graduate of a top-40 NIH-funded program, the data says you are not an exception — you are the norm, in every single specialty this report tracks.</p>
+            <p>Flip the AOA and top-40 percentages around and a different story appears. In Plastic Surgery (the single most "pedigree-leaning" specialty in this dataset), <strong>64.8 percent of matched applicants were not AOA members</strong>, and <strong>55.3 percent did not graduate from a top-40 NIH-funded school</strong>. In Dermatology, 64.9 percent of matched applicants were not AOA, and 58.7 percent were not from a top-40 school. Even at the most competitive end of the spectrum, the clear majority of people who matched did not hold either credential.</p>
+            <p>If you are neither AOA nor a graduate of a top-40 NIH-funded program, the data says you are not an exception: you are the norm, in every single specialty this report tracks.</p>
 
             <h2>One More Data Point: Extra Degrees Don't Reliably Help</h2>
-            <p>It's worth separating AOA and top-40 school status from a third credential some applicants chase: a second graduate degree (MPH, MBA, MS, and similar, excluding Ph.D.). The 2026 data does not support this as a differentiator — if anything, the relationship often runs backward. Nationally, 18.9 percent of matched applicants held another graduate degree versus 26.2 percent of those who did not match. The same reversal shows up within individual specialties:</p>
+            <p>It's worth separating AOA and top-40 school status from a third credential some applicants chase: a second graduate degree (MPH, MBA, MS, and similar, excluding Ph.D.). The 2026 data does not support this as a differentiator: if anything, the relationship often runs backward. Nationally, 18.9 percent of matched applicants held another graduate degree versus 26.2 percent of those who did not match. The same reversal shows up within individual specialties:</p>
             <table>
               <thead>
                 <tr><th>Specialty</th><th>Other Graduate Degree % (Matched / Not Matched)</th></tr>
@@ -2697,12 +2699,12 @@ $blogPosts = [
                 <tr><td>Internal Medicine</td><td>17.8% / 28.6%</td></tr>
               </tbody>
             </table>
-            <p>This almost certainly is not a case of extra degrees hurting anyone directly — it more likely reflects that applicants add a second degree after an earlier setback, or pursue one alongside a weaker overall application. Either way, the data gives no support to the idea that stacking credentials compensates for other gaps. A Ph.D. shows a modestly positive association in most specialties (unlike other graduate degrees); a second master's degree largely does not.</p>
+            <p>This almost certainly is not a case of extra degrees hurting anyone directly: it more likely reflects that applicants add a second degree after an earlier setback, or pursue one alongside a weaker overall application. Either way, the data gives no support to the idea that stacking credentials compensates for other gaps. A Ph.D. shows a modestly positive association in most specialties (unlike other graduate degrees); a second master's degree largely does not.</p>
 
             <h2>What to Actually Do With This</h2>
             <ul>
               <li><strong>Do not let a non-top-40 school or missed AOA induction talk you out of a competitive specialty.</strong> The majority of matched applicants in every specialty in this report lack both.</li>
-              <li><strong>Do not add a second master's degree purely as a credential play.</strong> The data gives no indication it correlates with better outcomes — spend that time on your Step 2 CK score or your rank list instead.</li>
+              <li><strong>Do not add a second master's degree purely as a credential play.</strong> The data gives no indication it correlates with better outcomes: spend that time on your Step 2 CK score or your rank list instead.</li>
               <li><strong>Remember what this data cannot see.</strong> NRMP is explicit that course evaluations, letters of recommendation, and the Medical School Performance Evaluation all factor into outcomes, and none of them show up in this report. A strong MSPE from a lesser-known school can do work that no NIH funding ranking captures.</li>
             </ul>
             <p>For the full picture of what did and did not separate matched from not-matched applicants in 2026, see <a href="/blog/2026-match-by-the-numbers">The 2026 Match by the Numbers</a>. If your application is strong on paper but you're unsure how to position a non-traditional background, a strategy session can help you build a rank list and signaling plan around your actual strengths. <a href="/coaching">Explore USMLE Wise coaching →</a></p>
@@ -2722,7 +2724,7 @@ $blogPosts = [
         'featured' => false,
         'image'    => '/assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp',
         'body'     => <<<'HTML'
-            <p>Medical students are told, constantly, to "build a well-rounded application." Shadowing, volunteering, part-time research-adjacent jobs, committee memberships — the implicit promise is that more extracurricular activity adds up to a stronger candidate. NRMP's 2026 Charting Outcomes data gives us a way to check that promise against actual outcomes, and the result is the flattest, least supportive relationship in the entire report.</p>
+            <p>Medical students are told, constantly, to "build a well-rounded application." Shadowing, volunteering, part-time research-adjacent jobs, committee memberships: the implicit promise is that more extracurricular activity adds up to a stronger candidate. NRMP's 2026 Charting Outcomes data gives us a way to check that promise against actual outcomes, and the result is the flattest, least supportive relationship in the entire report.</p>
 
             <h2>The National Numbers</h2>
             <p>Across all specialties combined, matched U.S. MD seniors reported a median of <strong>2.0 work experiences</strong> and <strong>5.0 volunteer experiences</strong>. Applicants who did not match their preferred specialty actually reported slightly <em>more</em> of both: a median of <strong>3.0 work experiences</strong> and the same <strong>5.0 volunteer experiences</strong>. Unlike Step 2 CK or rank list length, where matched applicants consistently come out ahead, these two measures run flat or in reverse.</p>
@@ -2746,26 +2748,26 @@ $blogPosts = [
             <p>Of the eight specialties above, not one shows matched applicants with a meaningfully higher median on either measure. Internal Medicine is the closest thing to an exception (matched applicants reported one more volunteer experience, 5.0 vs. 4.0), and even that gap is small relative to the Step 2 CK or rank-list gaps covered in our other 2026 Match breakdowns.</p>
 
             <h2>Why This Is Probably Not What It Looks Like</h2>
-            <p>This does not mean volunteering or working is bad for your application, and it is not evidence that program directors penalize these experiences. The more likely explanation is that work and volunteer experiences are nearly universal — almost every applicant in every specialty has a handful of them — so the raw count stops carrying useful information. When virtually everyone has 2 to 5 of something, that count cannot be what's separating matched from not-matched applicants, even if having some baseline level matters for every single person in the pool.</p>
+            <p>This does not mean volunteering or working is bad for your application, and it is not evidence that program directors penalize these experiences. The more likely explanation is that work and volunteer experiences are nearly universal (almost every applicant in every specialty has a handful of them), so the raw count stops carrying useful information. When virtually everyone has 2 to 5 of something, that count cannot be what's separating matched from not-matched applicants, even if having some baseline level matters for every single person in the pool.</p>
             <p>Compare this to research output (covered in <a href="/blog/does-research-matter-in-the-match">our companion piece on research and the Match</a>), where completed presentations and publications showed a real, consistent gap favoring matched applicants in most specialties. Work and volunteer experiences do not show that pattern anywhere in this dataset.</p>
 
             <h2>The Opportunity Cost Argument</h2>
             <p>Here is the actual, practical implication. Every hour spent accumulating a sixth or seventh volunteer entry is an hour not spent on the two measures that showed the largest, most consistent gaps in the 2026 data:</p>
             <ul>
-              <li><strong>Rank list breadth</strong> — the single largest gap in the entire report (13 vs. 5 median contiguous ranks). See <a href="/blog/how-many-programs-should-you-rank">how many programs you should actually rank</a>.</li>
-              <li><strong>Step 2 CK score</strong> — a 9-point national median gap that widens to 20 points in some specialties. See our <a href="/blog/usmle-scores-explained-specialty-requirements">specialty-by-specialty score targets</a>.</li>
+              <li><strong>Rank list breadth</strong>: the single largest gap in the entire report (13 vs. 5 median contiguous ranks). See <a href="/blog/how-many-programs-should-you-rank">how many programs you should actually rank</a>.</li>
+              <li><strong>Step 2 CK score</strong>: a 9-point national median gap that widens to 20 points in some specialties. See our <a href="/blog/usmle-scores-explained-specialty-requirements">specialty-by-specialty score targets</a>.</li>
             </ul>
             <p>If you already have 3 to 5 solid work and volunteer entries and are debating whether to add a sixth versus spending that time on a dedicated Step 2 CK study block or researching additional programs to rank, the 2026 data suggests the second option is the better use of your time.</p>
 
             <h2>What This Doesn't Mean</h2>
-            <p>Do not read this as "stop volunteering." Having some meaningful work and volunteer experience is close to universal among applicants, which itself suggests a baseline level is expected. The data simply does not support the belief that piling on more of either, past that baseline, differentiates your application. Quality, depth, and what you can speak to meaningfully in an interview almost certainly matter more than the raw count — this dataset just cannot measure quality, only quantity.</p>
+            <p>Do not read this as "stop volunteering." Having some meaningful work and volunteer experience is close to universal among applicants, which itself suggests a baseline level is expected. The data simply does not support the belief that piling on more of either, past that baseline, differentiates your application. Quality, depth, and what you can speak to meaningfully in an interview almost certainly matter more than the raw count: this dataset just cannot measure quality, only quantity.</p>
             <p>For the full picture of what the 2026 data says actually separates matched from not-matched applicants, start with <a href="/blog/2026-match-by-the-numbers">The 2026 Match by the Numbers</a>.</p>
             HTML,
     ],
     [
         'slug'     => 'matching-into-dermatology-2026-data',
         'title'    => 'Matching Into Dermatology in 2026: The Real Numbers Behind Step 2 CK, Research, and Rank Lists',
-        'excerpt'  => 'Dermatology had the lowest MD-senior match rate of any specialty in the 2026 Charting Outcomes report — 62.6%. Here is the complete, verified data profile: Step 2 CK, contiguous ranks, research output, and AOA rates, matched vs. not matched.',
+        'excerpt'  => 'Dermatology had the lowest MD-senior match rate of any specialty in the 2026 Charting Outcomes report: 62.6%. Here is the complete, verified data profile: Step 2 CK, contiguous ranks, research output, and AOA rates, matched vs. not matched.',
         'meta_title'       => 'Matching Into Dermatology 2026: Step 2 CK, Research, Ranks',
         'meta_description' => 'Dermatology 2026 match data: Step 2 CK, contiguous ranks, research output and AOA rates for matched versus unmatched applicants, from NRMP data.',
         'wiki_links'       => ['/wiki/specialties/img-match-rates-by-specialty', '/wiki/specialties/choosing-a-specialty', '/wiki/specialties/backup-specialties'],
@@ -2776,7 +2778,7 @@ $blogPosts = [
         'featured' => false,
         'image'    => '/assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp',
         'body'     => <<<'HTML'
-            <p>Of every specialty tracked in NRMP's 2026 Charting Outcomes report, Dermatology had the lowest match rate for U.S. MD seniors: <strong>62.6 percent</strong>. Of the 727 MD seniors who ranked Dermatology as their preferred specialty, 455 matched into it and 272 did not. That is roughly 1 in 3 applicants who did not get their first choice — the toughest odds of any specialty in the entire dataset.</p>
+            <p>Of every specialty tracked in NRMP's 2026 Charting Outcomes report, Dermatology had the lowest match rate for U.S. MD seniors: <strong>62.6 percent</strong>. Of the 727 MD seniors who ranked Dermatology as their preferred specialty, 455 matched into it and 272 did not. That is roughly 1 in 3 applicants who did not get their first choice, the toughest odds of any specialty in the entire dataset.</p>
             <p>None of that means Dermatology is unmatchable. It means the margin for a weak application is the thinnest of any specialty. Here is the complete, verified 2026 data profile, straight from NRMP's Dermatology chapter (Table DM-1) and the full-report Step 2 CK and contiguous-rank tables.</p>
 
             <h2>The Full Picture: Matched vs. Not Matched</h2>
@@ -2802,15 +2804,15 @@ $blogPosts = [
             </table>
 
             <h2>Step 2 CK: A 6-Point Gap, With a Wide Spread</h2>
-            <p>Matched applicants scored a median of 258 (Q1 251, Q3 266, range 221–285). Not-matched applicants scored a median of 252 (Q1 239, Q3 259, range 218–281). The gap is real but narrower than in some other competitive specialties — and the ranges overlap heavily. Plenty of applicants matched with scores in the low 250s, and plenty with scores above 260 did not match. Score alone is not the deciding factor here; it is a threshold you need to clear, not a ranking you need to win outright.</p>
+            <p>Matched applicants scored a median of 258 (Q1 251, Q3 266, range 221 to 285). Not-matched applicants scored a median of 252 (Q1 239, Q3 259, range 218 to 281). The gap is real but narrower than in some other competitive specialties, and the ranges overlap heavily. Plenty of applicants matched with scores in the low 250s, and plenty with scores above 260 did not match. Score alone is not the deciding factor here; it is a threshold you need to clear, not a ranking you need to win outright.</p>
 
             <h2>Rank List Length: Shorter Than You'd Expect, Still Decisive</h2>
-            <p>Matched Dermatology applicants ranked a median of just 7 contiguous programs — far shorter than the 13-program national median across all specialties, and shorter than most other competitive surgical subspecialties. That is simply a function of how few Dermatology programs exist nationally. But the relative gap still matters: not-matched applicants ranked a median of only 4, nearly half as many. If your list is sitting at 4 or 5 Dermatology programs, the 2026 data says that is squarely in not-matched territory, not matched territory.</p>
-            <p>One more detail worth noting: matched applicants ranked a median of 3 distinct specialties overall, versus 2 for those who did not match. Having a genuine backup specialty on your rank order list — not just a long Dermatology list — was more common among applicants who successfully matched.</p>
+            <p>Matched Dermatology applicants ranked a median of just 7 contiguous programs, far shorter than the 13-program national median across all specialties, and shorter than most other competitive surgical subspecialties. That is simply a function of how few Dermatology programs exist nationally. But the relative gap still matters: not-matched applicants ranked a median of only 4, nearly half as many. If your list is sitting at 4 or 5 Dermatology programs, the 2026 data says that is squarely in not-matched territory, not matched territory.</p>
+            <p>One more detail worth noting: matched applicants ranked a median of 3 distinct specialties overall, versus 2 for those who did not match. Having a genuine backup specialty on your rank order list (not just a long Dermatology list) was more common among applicants who successfully matched.</p>
 
             <h2>Research: Volume Doesn't Differentiate, Output Does</h2>
             <p>This is the most counterintuitive line in Dermatology's data, and it's worth sitting with. Not-matched applicants actually reported <em>more</em> raw research experiences (median 8.0 vs. 7.0) and tied on abstracts (4.0 vs. 4.0). But matched applicants had meaningfully more presentations (12.0 vs. 9.0) and more publications (9.0 vs. 6.0, a 50 percent difference in medians).</p>
-            <p>The pattern matches what we found across the broader 2026 dataset in <a href="/blog/does-research-matter-in-the-match">our research-and-the-Match breakdown</a>: in a research-saturated specialty like Dermatology, simply joining more projects does not differentiate you — essentially every applicant in the pool has done that. What separates matched from not-matched applicants is whether those projects turned into finished, citable output.</p>
+            <p>The pattern matches what we found across the broader 2026 dataset in <a href="/blog/does-research-matter-in-the-match">our research-and-the-Match breakdown</a>: in a research-saturated specialty like Dermatology, simply joining more projects does not differentiate you: essentially every applicant in the pool has done that. What separates matched from not-matched applicants is whether those projects turned into finished, citable output.</p>
 
             <h2>AOA and School Funding: Real Signal, Still a Minority</h2>
             <p>Dermatology has one of the highest AOA rates of any specialty in the report: 35.1 percent of matched applicants were AOA members, and 41.3 percent graduated from a top-40 NIH-funded medical school. Those are the largest such gaps you'll find anywhere in the 2026 data (21.0% and 29.8% respectively among not-matched applicants).</p>
@@ -2818,7 +2820,7 @@ $blogPosts = [
 
             <h2>Building a Realistic Dermatology Application</h2>
             <ul>
-              <li><strong>Treat 258 as your Step 2 CK target</strong>, not a hard cutoff — but know that 252 (the not-matched median) is where margin for error starts disappearing.</li>
+              <li><strong>Treat 258 as your Step 2 CK target</strong>, not a hard cutoff, but know that 252 (the not-matched median) is where margin for error starts disappearing.</li>
               <li><strong>Rank broadly within Dermatology and have a real backup specialty on your list.</strong> A median of 7 contiguous Dermatology ranks plus a genuine second-specialty plan outperformed shorter, single-specialty lists in this data.</li>
               <li><strong>Finish what you start.</strong> A smaller number of completed, published projects beat a larger number of in-progress "experiences" in this dataset.</li>
               <li><strong>Do not count yourself out for lacking AOA or a top-40 school.</strong> Nearly two-thirds of matched applicants had neither.</li>
@@ -2829,7 +2831,7 @@ $blogPosts = [
     [
         'slug'     => 'matching-into-orthopaedic-surgery-2026-data',
         'title'    => 'Matching Into Orthopaedic Surgery in 2026: The Real Numbers Behind Step 2 CK, Research, and Rank Lists',
-        'excerpt'  => 'Orthopaedic Surgery MD seniors matched at a 69.1% rate in 2026 — and it is the rare specialty where every research measure, not just completed output, favored matched applicants. Here is the full verified data profile.',
+        'excerpt'  => 'Orthopaedic Surgery MD seniors matched at a 69.1% rate in 2026, and it is the rare specialty where every research measure, not just completed output, favored matched applicants. Here is the full verified data profile.',
         'meta_title'       => 'Matching Into Orthopaedic Surgery 2026: The Real Numbers',
         'meta_description' => 'Orthopaedic Surgery 2026 match data: Step 2 CK, rank lists, research and AOA rates for matched versus unmatched MD seniors, from NRMP Charting Outcomes.',
         'wiki_links'       => ['/wiki/specialties/img-match-rates-by-specialty', '/wiki/specialties/choosing-a-specialty', '/wiki/application/applying-to-multiple-specialties'],
@@ -2840,7 +2842,7 @@ $blogPosts = [
         'featured' => false,
         'image'    => '/assets/Photos/general-surgery-operating-room.webp',
         'body'     => <<<'HTML'
-            <p>Orthopaedic Surgery offered 963 positions in the 2026 Main Residency Match and drew 1,598 total applicants — a 1.66 applicant-to-position ratio, among the tightest in the report. Of the 1,108 U.S. MD seniors who ranked it as their preferred specialty, 765 matched and 343 did not, for a <strong>69.1 percent</strong> MD-senior match rate.</p>
+            <p>Orthopaedic Surgery offered 963 positions in the 2026 Main Residency Match and drew 1,598 total applicants, a 1.66 applicant-to-position ratio, among the tightest in the report. Of the 1,108 U.S. MD seniors who ranked it as their preferred specialty, 765 matched and 343 did not, for a <strong>69.1 percent</strong> MD-senior match rate.</p>
             <p>Here is the complete, verified 2026 data profile for Orthopaedic Surgery, straight from NRMP's chapter table (ORS-1) and the full-report Step 2 CK and contiguous-rank tables.</p>
 
             <h2>The Full Picture: Matched vs. Not Matched</h2>
@@ -2866,25 +2868,25 @@ $blogPosts = [
             </table>
 
             <h2>Step 2 CK: An 8-Point Gap</h2>
-            <p>Matched applicants scored a median of 259 (Q1 250, Q3 266, range 220–281). Not-matched applicants scored a median of 251 (Q1 241, Q3 260, range 214–276). That puts Orthopaedic Surgery's matched median among the highest of any specialty in the 2026 report, just behind Otolaryngology, Plastic Surgery, and Dermatology.</p>
+            <p>Matched applicants scored a median of 259 (Q1 250, Q3 266, range 220 to 281). Not-matched applicants scored a median of 251 (Q1 241, Q3 260, range 214 to 276). That puts Orthopaedic Surgery's matched median among the highest of any specialty in the 2026 report, just behind Otolaryngology, Plastic Surgery, and Dermatology.</p>
 
             <h2>Rank List Length: A Clear, Almost Linear Gap</h2>
-            <p>Matched applicants ranked a median of 10 contiguous Orthopaedic Surgery programs; not-matched applicants ranked a median of 6. That gap — matched applicants ranking roughly 1.7 times as many programs — is one of the cleaner, more consistent rank-list gaps in the entire 2026 dataset.</p>
-            <p>What stands out more is the distinct-specialties-ranked measure: both matched and not-matched applicants had a median of exactly <strong>1.0</strong>. Orthopaedic Surgery applicants, far more than Dermatology applicants (median 3.0, see our <a href="/blog/matching-into-dermatology-2026-data">Dermatology data breakdown</a>), tend to rank Orthopaedic Surgery and essentially nothing else. There is very little hedging into a backup specialty in this applicant pool — the culture here leans all-in on a single specialty, for matched and not-matched applicants alike.</p>
+            <p>Matched applicants ranked a median of 10 contiguous Orthopaedic Surgery programs; not-matched applicants ranked a median of 6. That gap (matched applicants ranking roughly 1.7 times as many programs) is one of the cleaner, more consistent rank-list gaps in the entire 2026 dataset.</p>
+            <p>What stands out more is the distinct-specialties-ranked measure: both matched and not-matched applicants had a median of exactly <strong>1.0</strong>. Orthopaedic Surgery applicants, far more than Dermatology applicants (median 3.0, see our <a href="/blog/matching-into-dermatology-2026-data">Dermatology data breakdown</a>), tend to rank Orthopaedic Surgery and essentially nothing else. There is very little hedging into a backup specialty in this applicant pool: the culture here leans all-in on a single specialty, for matched and not-matched applicants alike.</p>
 
             <h2>Research: One of the Few Specialties Where Every Measure Favors Matched Applicants</h2>
-            <p>Orthopaedic Surgery stands out in our broader analysis of <a href="/blog/does-research-matter-in-the-match">research and the 2026 Match</a>. In most research-intensive specialties, raw research "experiences" ties or even reverses between matched and not-matched applicants — more projects started doesn't reliably separate the two groups. Orthopaedic Surgery is one of the few specialties in the entire report where matched applicants came out ahead on <em>all four</em> research measures: experiences (7.5 vs. 7.0), abstracts (5.0 vs. 4.0), presentations (11.0 vs. 8.0), and publications (7.0 vs. 5.0). The gaps are modest on raw experience count but widen substantially on completed output — matched applicants had 40 percent more publications at the median.</p>
+            <p>Orthopaedic Surgery stands out in our broader analysis of <a href="/blog/does-research-matter-in-the-match">research and the 2026 Match</a>. In most research-intensive specialties, raw research "experiences" ties or even reverses between matched and not-matched applicants: more projects started doesn't reliably separate the two groups. Orthopaedic Surgery is one of the few specialties in the entire report where matched applicants came out ahead on <em>all four</em> research measures: experiences (7.5 vs. 7.0), abstracts (5.0 vs. 4.0), presentations (11.0 vs. 8.0), and publications (7.0 vs. 5.0). The gaps are modest on raw experience count but widen substantially on completed output: matched applicants had 40 percent more publications at the median.</p>
 
-            <h2>AOA and School Funding: A Real, Sizeable Gap — Still a Minority</h2>
-            <p>34.9 percent of matched Orthopaedic Surgery applicants were AOA members, versus 14.3 percent of those who did not match — a 2.4x difference, one of the largest AOA gaps in the report. 33.0 percent of matched applicants graduated from a top-40 NIH-funded school, versus 23.7 percent of those who did not match.</p>
+            <h2>AOA and School Funding: A Real, Sizeable Gap, but Still a Minority</h2>
+            <p>34.9 percent of matched Orthopaedic Surgery applicants were AOA members, versus 14.3 percent of those who did not match, a 2.4x difference, one of the largest AOA gaps in the report. 33.0 percent of matched applicants graduated from a top-40 NIH-funded school, versus 23.7 percent of those who did not match.</p>
             <p>Even so, <strong>65.1 percent of matched applicants were not AOA members</strong>, and <strong>67.0 percent did not attend a top-40 NIH-funded school</strong>. The credential helps, but its absence is still the norm among successfully matched applicants. See <a href="/blog/does-medical-school-matter-in-the-match">Does Your Medical School's Name Matter?</a> for how this compares across specialties.</p>
 
             <h2>Building a Realistic Orthopaedic Surgery Application</h2>
             <ul>
               <li><strong>Treat 259 as your Step 2 CK target</strong>, with 251 marking where the not-matched group clusters.</li>
               <li><strong>Rank at least 10 contiguous Orthopaedic Surgery programs if you can.</strong> The not-matched median of 6 is a real warning sign, not a safe middle ground.</li>
-              <li><strong>Convert research experiences into finished output.</strong> This is one specialty where the full research pipeline — not just completed publications — showed a real gap, so depth matters at every stage, not just the end.</li>
-              <li><strong>Decide early whether you are all-in on Orthopaedics.</strong> Unlike Dermatology applicants, most of this applicant pool — matched or not — ranked no backup specialty at all. If you want insurance, build it deliberately; it is not the norm in this data.</li>
+              <li><strong>Convert research experiences into finished output.</strong> This is one specialty where the full research pipeline (not just completed publications) showed a real gap, so depth matters at every stage, not just the end.</li>
+              <li><strong>Decide early whether you are all-in on Orthopaedics.</strong> Unlike Dermatology applicants, most of this applicant pool (matched or not) ranked no backup specialty at all. If you want insurance, build it deliberately; it is not the norm in this data.</li>
             </ul>
             <p>Want a rank list, signaling strategy, and Step 2 CK target built around your actual numbers against this year's data? <a href="/coaching">Explore USMLE Wise coaching →</a></p>
             HTML,
