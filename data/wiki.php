@@ -481,9 +481,20 @@ function usmlewise_wiki_render(array $article): array
         'CHANGED' => ['changed', 'Recently changed'],
         'KEY'     => ['key', 'Key point'],
     ];
-    $html = preg_replace_callback('#<blockquote>\s*<p>\[!([A-Z ]+)\]\s*(.*?)</blockquote>#s', function ($m) use ($labels) {
-        [$cls, $label] = $labels[$m[1]] ?? ['note', ucfirst(strtolower($m[1]))];
-        return '<aside class="wk-callout wk-callout--' . $cls . '"><span class="wk-callout__label">' . $label . '</span><p>' . $m[2] . '</aside>';
+    // Markdown merges two callouts separated by a single blank line into ONE
+    // blockquote, so each blockquote is split at every "<p>[!LABEL]" and every
+    // chunk becomes its own aside (otherwise the second marker prints literally).
+    $html = preg_replace_callback('#<blockquote>(\s*<p>\[![A-Z ]+\].*?)</blockquote>#s', function ($m) use ($labels) {
+        $out = '';
+        foreach (preg_split('#(?=<p>\[![A-Z ]+\])#', $m[1], -1, PREG_SPLIT_NO_EMPTY) as $chunk) {
+            if (preg_match('#\A\s*<p>\[!([A-Z ]+)\]\s*(.*)\z#s', $chunk, $cm)) {
+                [$cls, $label] = $labels[$cm[1]] ?? ['note', ucfirst(strtolower($cm[1]))];
+                $out .= '<aside class="wk-callout wk-callout--' . $cls . '"><span class="wk-callout__label">' . $label . '</span><p>' . $cm[2] . '</aside>';
+            } else {
+                $out .= $chunk;
+            }
+        }
+        return $out;
     }, $html);
 
     // Heading ids + anchors + table of contents (h2/h3).
