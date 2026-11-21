@@ -1,26 +1,33 @@
 ---
-title: MSPE, Transcripts and Medical School Documents for IMGs
-description: How the MSPE, medical school transcript and ECFMG Status Report reach ERAS for IMGs, who uploads each one, and what to do if your school is slow.
+title: MSPE for IMGs: Medical Student Performance Evaluation and School Documents
+description: What the MSPE (Medical Student Performance Evaluation) is, how it and your transcript reach ERAS for IMGs, and what to do if your school does not issue one.
 status: published
 review: pending
-updated: 2026-11-06
+updated: 2026-11-21
 order: 12
 group: Documents and red flags
-keywords: [mspe, dean letter, medical school transcript, eras documents, ecfmg status report, imgs, eras support services]
+keywords: [mspe, medical student performance evaluation, what if my school does not issue an mspe, dean letter, medical school transcript, eras documents, ecfmg status report, imgs, eras support services]
+service: match
 related: [application/myeras-walkthrough, application/eras-timeline, ecfmg/eras-token, application/letters-of-recommendation, application/program-screening-filters]
 key_facts:
+  - The MSPE (Medical Student Performance Evaluation, often called the dean's letter) is written by your school, and AAMC describes it as a summary evaluation, not a letter of recommendation.
   - In MyERAS, IMGs must say whether they or their medical school will provide the MSPE and the medical school transcript to ECFMG's ERAS document office.
   - Residency applicants do not assign the MSPE or the medical school transcript; both go automatically to every program you apply to.
   - The ECFMG Status Report is uploaded by ECFMG and assigned automatically to all programs an IMG applies to; it does not contain USMLE scores.
   - Programs begin reviewing MSPEs on a fixed date in the fall, so a late school document can delay your review.
 sources:
   - AAMC: 2027 ERAS MyERAS Applicant User Guide | https://students-residents.aamc.org/media/16871/download
+  - AAMC: Recommendations for Revising the Medical Student Performance Evaluation (MSPE) | https://www.aamc.org/media/23311/download
   - ECFMG: ERAS supporting documents for IMG applicants | https://certification.ecfmg.org/eras/applicants-documents-index.html
   - ECFMG: ERAS applicants frequently asked questions | https://apps.wdoms.org/eras/applicants-faq.html
   - NRMP: Charting Outcomes, Program Director Survey Results, 2026 Main Residency Match | https://www.nrmp.org/wp-content/uploads/2026/08/2026-PD-Survey-Report-Narrative-FINAL.pdf
 faq:
   - q: What is an MSPE and is it the same as a dean's letter?
     a: The Medical Student Performance Evaluation is the standardized summary of your performance that your school writes, often called the dean's letter. ERAS support services may accept a dean's letter that is not in MSPE format, but ECFMG encourages schools to follow the AAMC MSPE guidelines.
+  - q: What does an MSPE include?
+    a: AAMC's recommendations describe six sections: identifying information, noteworthy characteristics, academic history, academic progress (including professionalism), a summary, and medical school information. Schools outside the US may follow the format only in part.
+  - q: What if my school does not issue an MSPE?
+    a: Tell MyERAS honestly who will provide it, ask your school what it can issue (for example a dean's letter), and tell ECFMG's ERAS support team if the school will provide nothing. Confirm the current options on ECFMG's ERAS pages, because they set the rules for IMGs.
   - q: Can I upload my own MSPE?
     a: ECFMG's pages describe a route for applicants to upload documents themselves in some cases, and official student copies can be acceptable. Confirm the current rule on ECFMG's ERAS pages before relying on it.
   - q: What if my school does not respond?
@@ -29,11 +36,17 @@ faq:
     a: ECFMG states that only the English translation goes to ERAS support services for the MSPE. Check ECFMG's current translation instructions for the exact requirements.
 ---
 
-The MSPE and your medical school transcript are the two school-issued documents in your ERAS file, and for IMGs they travel a different route from the one US students use. **You tell MyERAS whether you or your school will send each document to ECFMG's ERAS document office, and ECFMG then uploads it into ERAS for programs to see.** Most delays come from schools that are slow, not from the applicant's own steps.
+The MSPE (Medical Student Performance Evaluation, often called the dean's letter) is the summary of your performance that your medical school writes and programs read alongside your application. Together with your medical school transcript, it is one of the two school-issued documents in your ERAS file, and for IMGs it travels a different route from the one US students use. **You tell MyERAS whether you or your school will send each document to ECFMG's ERAS document office, and ECFMG then uploads it into ERAS for programs to see.** Most delays come from schools that are slow, not from the applicant's own steps.
 
 > [!NOTE] ECFMG's own pages returned errors to our automated tools while we wrote this. The ECFMG-specific details below come from the AAMC guide and from search summaries of ECFMG's pages. Confirm every ECFMG step on its current ERAS pages before you act.
 
-## What each document is
+## What is the MSPE (Medical Student Performance Evaluation)?
+
+The MSPE is written by your school, not by you. AAMC's recommendations describe it as an honest, objective summary of your attributes, experiences and academic performance, and say it is a summary letter of evaluation, not a letter of recommendation. For US MD schools, AAMC recommends six sections: identifying information, noteworthy characteristics, academic history, academic progress (including a statement on professional standards), a summary, and medical school information.
+
+Many international schools follow this format only in part, and some use an older dean's letter style. That is one reason ECFMG encourages schools to follow AAMC's MSPE guidelines. Because you cannot edit your MSPE, there is no template for you to fill in; your job is to make sure the document is requested on time and that the rest of your application agrees with it.
+
+## Which documents reach ERAS, and how
 
 | Document | Who creates it | How it reaches ERAS (IMGs) | Do you assign it to programs? |
 |---|---|---|---|
@@ -45,11 +58,22 @@ The MSPE and your medical school transcript are the two school-issued documents 
 
 These rules come from the AAMC 2027 applicant guide. The guide says IMG residency applicants must indicate in MyERAS whether they or their medical school will provide the MSPE and the medical school transcript to the ERAS Documents office at ECFMG, and that answers can be changed until you certify and submit.
 
-## What programs see and why it matters
+## What programs see and why the MSPE matters
 
 The MSPE is where a program learns things that no score shows: clerkship performance, your school's description of you, and anything the school notes about interruptions or professionalism. NRMP's 2026 Program Director Survey lists the MSPE, clerkship grades, class ranking and "evidence of continuous medical education without gaps" among the factors programs were asked about when selecting applicants for interview. The survey is a sample (12.7% response rate in 2026), so treat it as an indication, not a rule for any one program.
 
 For IMGs the MSPE also carries weight because programs may not know your school. A clear, English, complete MSPE with consistent dates helps a reader trust the rest of the file.
+
+## What if my school does not issue an MSPE?
+
+Some schools issue a dean's letter in another format, and a few issue nothing. What to do, in order (the first step is a rule, the rest is practice):
+
+1. **Answer the MyERAS question honestly.** IMG applicants must say whether they or their school will provide the MSPE to ECFMG's ERAS Documents office. Do this even if the answer is uncertain; you can change it until you certify and submit.
+2. **Ask your school what it can issue.** ECFMG's pages, as described in search summaries, say a dean's letter from your school can be accepted even when it is not in MSPE format, though ECFMG encourages the AAMC format.
+3. **If the school will provide nothing, tell ECFMG's ERAS support team** when it contacts you about supporting documents. Search summaries of ECFMG's pages describe a neutral placeholder letter being used in that case. Confirm this on ECFMG's current pages before relying on it.
+4. **Make the rest of the file carry the context.** In our opinion, programs read a missing MSPE as missing information, so make sure your dates, experiences and letters are consistent and complete.
+
+Never write, alter or submit your own MSPE in place of the school's. See the warning below.
 
 ## The steps, in order
 

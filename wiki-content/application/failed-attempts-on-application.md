@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 14
 group: Documents and red flags
 keywords: [failed step, failed attempt, usmle attempts, red flag, residency application, retake, imgs]
+service: match
 related: [exams/what-to-do-after-failing-a-step, exams/usmle-attempt-limits-and-retakes, application/program-screening-filters, application/strategy-with-lower-scores, application/gap-years-and-how-to-explain]
 key_facts:
   - A failed attempt is permanent on your USMLE transcript, and ERAS sends that transcript to programs you assign it to.

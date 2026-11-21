@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 6
 group: Orientation
 keywords: [img match statistics, nrmp, match rate, us citizen img, non-us citizen img, placement rate, survivorship bias]
+service: match-maker
 related: [specialties/img-match-rates-by-specialty, how-long-does-it-take, common-img-mistakes, application/how-many-programs-to-apply-to, interviews-match/if-you-do-not-match]
 key_facts:
   - In the {{fact:nrmp_match_year}} Main Residency Match, NRMP reported a PGY-1 match rate of {{fact:us_img_match_rate}} percent for U.S. citizen IMGs and {{fact:nonus_img_match_rate}} percent for non-U.S. citizen IMGs.

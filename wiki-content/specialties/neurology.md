@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 7
 group: Specialty guides
 keywords: [neurology, img, residency, competitiveness, advanced position, preliminary year, step 2 ck, visa]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, internal-medicine, categorical-vs-preliminary, backup-specialties]
 key_facts:
   - In the 2026 Match, Neurology offered 1,003 PGY-1 positions and non-U.S. citizen IMGs filled 17.4 percent of them (NRMP).

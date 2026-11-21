@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 11
 group: Specialty guides
 keywords: [general surgery, surgery, img, preliminary surgery, categorical, residency, competitiveness, step 2 ck, visa]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, categorical-vs-preliminary, backup-specialties, internal-medicine]
 key_facts:
   - In the 2026 Match, categorical General Surgery offered 1,807 positions and non-U.S. citizen IMGs filled 7.1 percent of them (NRMP).

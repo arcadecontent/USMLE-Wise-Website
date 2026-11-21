@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 8
 group: Orientation
 keywords: [too old for residency, years since graduation, yog, gap years, older img, usmle time limit, ecfmg sponsor note]
+service: match
 related: [common-img-mistakes, img-match-statistics, application/program-screening-filters, application/reapplicant-strategy, clinical-experience/how-much-usce-programs-want]
 key_facts:
   - There is no official age limit in USMLE or ECFMG rules that we could find, but your graduation year must fall within the years your school is listed as eligible.

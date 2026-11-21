@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 17
 group: Documents and red flags
 keywords: [low step 2 ck, lower scores, weak application, strategy, program list, imgs, screening]
+service: match
 related: [application/program-screening-filters, application/failed-attempts-on-application, application/identifying-img-friendly-programs, application/building-a-program-list, exams/step-2-ck-score-and-what-it-means]
 key_facts:
   - In NRMP's 2026 Program Director Survey, 97% of programs that required Step 1 for IMGs required a pass result, and 32% of programs requiring Step 2 CK required a target score for IMGs.

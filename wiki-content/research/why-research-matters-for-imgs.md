@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 1
 group: Core guides
 keywords: [research, imgs, residency application, publications, abstracts, nrmp charting outcomes]
+service: research
 related: [finding-a-research-position, how-programs-view-research, application/eras-experiences-section, specialties/choosing-a-specialty]
 key_facts:
   - Research matters more in some specialties and programs than others, and it rarely replaces exam results.

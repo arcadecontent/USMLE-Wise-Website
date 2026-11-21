@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 12
 group: Specialty guides
 keywords: [ob-gyn, obstetrics and gynecology, ob/gyn, img, residencycas, residency, competitiveness, visa]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, emergency-medicine, backup-specialties, internal-medicine]
 key_facts:
   - In the 2026 Match, Obstetrics and Gynecology offered 1,638 PGY-1 positions, 99.9 percent filled, and non-U.S. citizen IMGs filled 2.7 percent of them (NRMP).

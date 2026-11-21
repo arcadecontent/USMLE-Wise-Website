@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 8
 group: The Match
 keywords: [interview invitations, scheduling, cancel interview, time zones, interview tracker, nrmp rules, imgs]
+service: match-interview
 related: [interview-season-overview, virtual-interview-setup, post-interview-communication, application/eras-timeline, visas/b1-b2-for-interviews-and-exams]
 key_facts:
   - NRMP expects programs to give at least 48 hours to accept or decline an interview offer and not to offer more interviews than they have slots.

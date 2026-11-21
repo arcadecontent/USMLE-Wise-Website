@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 5
 group: Specialty guides
 keywords: [pediatrics, img, residency, competitiveness, categorical, child health, visa]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, family-medicine, internal-medicine]
 key_facts:
   - In NRMP's 2026 Charting Outcomes, Pediatrics had the highest rate of non-U.S. citizen IMGs matching to their preferred specialty (68.5 percent) among specialties with 50 or more positions.

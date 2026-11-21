@@ -1,18 +1,19 @@
 ---
-title: USMLE Exam Day: Rules, ID Requirements and What to Bring
-description: The official USMLE exam day rules for ID, name matching, check-in, breaks and prohibited items, plus a practical checklist so nothing blocks you from testing.
+title: USMLE Exam Day: Rules, ID, Breaks and What to Bring
+description: USMLE exam day rules for ID, check-in, breaks and prohibited items, with a Step 2 CK exam day schedule, break and lunch guide, and a practical checklist.
 status: published
 review: pending
-updated: 2026-11-06
+updated: 2026-11-21
 order: 12
 group: Planning your exams
-keywords: [usmle exam day, id requirements, name matching, prohibited items, breaks, prometric check in, scheduling permit]
-related: [scheduling-with-prometric, international-test-centers, step-1, step-2-ck, step-3]
+keywords: [usmle exam day, step 2 ck exam day schedule, step 2 exam schedule lunch, step 2 ck breaks, id requirements, name matching, prohibited items, breaks, prometric check in, scheduling permit]
+related: [scheduling-with-prometric, international-test-centers, step-1, step-2-ck, step-3, step-2-ck-study-schedule]
 key_facts:
   - Bring your scheduling permit (paper or electronic) and one valid, unexpired government-issued photo ID with your signature, on every test day.
   - Your name on the permit must match your ID, with only limited permitted differences.
   - Arrive at least 30 minutes early; arriving more than 30 minutes late means you are not admitted and pay a fee to reschedule.
   - Phones, watches, notes and any transmitting device go in a locker; you may leave your seat only when the break screen is visible.
+  - Step 2 CK is one {{fact:step2ck_session_hours}}-hour session of {{fact:step2ck_block_count}} blocks of {{fact:usmle_block_minutes}} minutes, with one shared pool of at least {{fact:usmle_min_break_minutes}} minutes of break time and no scheduled lunch described by USMLE.
 sources:
   - USMLE Bulletin of Information: examination day and testing | https://www.usmle.org/bulletin-information/examination-day-testing
   - USMLE: Admission to the test | https://www.usmle.org/what-to-know/exam-day-information/admission-test
@@ -28,6 +29,12 @@ faq:
     a: No. Phones, watches, tablets, fitness trackers, notes and anything with transmitting or receiving capability must go into a locker, and devices must be fully turned off.
   - q: Can I take extra breaks?
     a: Only through approved process. You may apply for additional break time for medical or other reasons before testing, by following the USMLE accommodation procedure.
+  - q: Is there a lunch break on the Step 2 CK exam?
+    a: USMLE does not describe a scheduled lunch period. It gives you one pool of break time (a minimum of {{fact:usmle_min_break_minutes}} minutes) for authorized breaks and computer transitions between blocks, and you decide when to use it. Any time over your allotment is deducted from your testing time, so plan in advance when you will eat and drink. Check the current pre-approved items list and your test center's rules for what you may bring.
+  - q: How long is the Step 2 CK exam day?
+    a: USMLE describes Step 2 CK as one {{fact:step2ck_session_hours}}-hour testing session made up of {{fact:step2ck_block_count}} blocks of {{fact:usmle_block_minutes}} minutes each, for test dates on or after {{fact:usmle_step2ck_new_format_date}}. Arrive at least 30 minutes before your appointment for check-in.
+  - q: How many breaks do you get on Step 2 CK?
+    a: USMLE counts any time between test blocks as break time, and gives you a total allotment (a minimum of {{fact:usmle_min_break_minutes}} minutes) to share across them rather than listing fixed break lengths. You can leave your seat only when the break screen is visible. Finishing a block or the tutorial early adds the unused time to your break total.
 ---
 
 On exam day you need two things to be admitted: your scheduling permit and an acceptable government photo ID whose name matches the permit. Beyond that, the rules are about arriving early, handing over personal items, taking breaks only when the break screen is visible, and protecting exam content. This page summarizes the official rules from the USMLE Bulletin and exam-day pages. Always check the current Bulletin for your test date, because rules and exam formats are updated.
@@ -78,6 +85,41 @@ If you need an item not on the list for a medical reason, request a test accommo
 Because Step 1 and Step 2 CK moved to shorter blocks in 2026, there are more transitions between blocks. Plan your breaks on the day: when you will eat, drink and rest.
 
 > [!CHANGED] Step 1 (for test dates on or after {{fact:usmle_step1_new_format_date}}) and Step 2 CK (on or after {{fact:usmle_step2ck_new_format_date}}) use shorter {{fact:usmle_block_minutes}}-minute blocks according to USMLE's exam pages. Older guides describe 60-minute blocks. Use the current USMLE page for your format.
+
+## Step 2 CK exam day schedule: breaks and lunch
+
+USMLE does not publish a clock-time schedule for the day or a fixed lunch period. What it publishes for Step 2 CK (for test dates on or after {{fact:usmle_step2ck_new_format_date}}) is a block structure and one pool of break time that you manage yourself.
+
+| Item | What USMLE says |
+|---|---|
+| Blocks | {{fact:step2ck_block_count}} blocks, each {{fact:usmle_block_minutes}} minutes, with up to 20 questions |
+| Session length | One {{fact:step2ck_session_hours}}-hour testing session |
+| Break time | A minimum of {{fact:usmle_min_break_minutes}} minutes, for authorized breaks and computer transitions between blocks |
+| Time between blocks | Counts as break time, whether you stay at your seat or leave the room |
+| Finishing early | Unused time from a block or the tutorial is added to your break time |
+| Going over | Any excess is deducted from your testing time |
+| Leaving your seat | Only when the break screen is visible; once a block has started you may not leave except in an emergency |
+
+### What the day looks like, in order
+
+1. **Arrive at least 30 minutes before your appointment** and go through check-in, ID, locker and screening.
+2. **Optional tutorial.** If you skip it or finish early, the unused time goes into your break time.
+3. **Block 1** ({{fact:usmle_block_minutes}} minutes). When it ends, you reach a break screen. Time between blocks counts as break time.
+4. **Repeat through block {{fact:step2ck_block_count}}.** You leave your seat only when the break screen is visible, and you are screened again after each break.
+5. **End of exam.** Sign out as directed by the test center.
+
+### Is there a lunch break?
+
+In the USMLE pages we reviewed, there is no scheduled lunch period. Lunch is whatever part of your break allotment you choose to spend eating. Because every minute over your allotment comes out of your testing time, the practical task is to decide in advance how you will spend it.
+
+A way to plan your breaks (our opinion, not a USMLE rule):
+
+- **Treat the allotment as a budget.** Decide before the day where your longest break will go (for example, around the middle of the exam) and keep the others short.
+- **Rehearse it.** Do at least one full-length mock with the same block length and the same break budget, including the meal or snack you plan to have.
+- **Do not rush blocks to bank break time.** Finishing a block early adds time to your pool, but only helps if you are not giving up accuracy for it.
+- **Check what you can bring.** We did not find a food policy for Step 2 CK on the USMLE pages we reviewed beyond the pre-approved items list, which includes water in a clear container with a lid. Check the current pre-approved items list and ask your Prometric test center what you may keep in your locker and eat during an authorized break before you pack a meal.
+
+> [!NOTE] Block counts, block length and break time can change for later test dates. Confirm them on the current [Step 2 CK exam page](https://www.usmle.org/step-exams/step-2-ck) before you plan your day. See also the [Step 2 CK study schedule](/wiki/exams/step-2-ck-study-schedule) for how to practice the block rhythm.
 
 ## Conduct and confidentiality
 

@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 14
 group: Preparing for the exams
 keywords: [question bank, qbank, usmle prep, how to choose, practice questions, nbme]
+service: coaching
 related: [nbme-self-assessments, step-1, step-2-ck, how-long-to-study, step-2-ck-study-schedule, step-1-resources-guide]
 key_facts:
   - We do not rank question banks; this page gives criteria so you can judge them for your situation.

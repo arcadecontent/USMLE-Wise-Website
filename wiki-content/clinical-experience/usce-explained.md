@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 1
 group: Core guides
 keywords: [usce, us clinical experience, imgs, observership, externship, residency application]
+service: clinical-rotations
 related: [observership-vs-externship-vs-hands-on, how-to-get-usce, how-much-usce-programs-want, application/letters-of-recommendation]
 key_facts:
   - US clinical experience (USCE) means time spent in a US clinical setting, from watching care to taking part in it.

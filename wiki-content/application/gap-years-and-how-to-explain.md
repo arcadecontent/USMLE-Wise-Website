@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 13
 group: Documents and red flags
 keywords: [gap year, gap in training, time since graduation, explain gap, eras experiences, personal statement, imgs]
+service: match-ps3x
 related: [application/eras-experiences-section, application/years-since-graduation, application/personal-statement-guide, application/mspe-and-transcripts-for-imgs, start-here/am-i-too-old-or-too-late, strategy-with-lower-scores]
 key_facts:
   - A gap is not an automatic rejection; an unexplained gap with no clinical activity is what worries programs most.

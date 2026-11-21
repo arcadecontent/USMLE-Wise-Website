@@ -1,42 +1,71 @@
 ---
-title: A Step 1 Study Schedule: 3, 6 and 12 Month Plans
-description: A method-driven Step 1 plan with phases, self-assessment checkpoints and an error log, plus three example timelines for different starting points. No plan guarantees a result.
+title: Step 1 Study Plan and Schedule: 14-Day, 3, 6 and 12 Month Plans
+description: A Step 1 study guide with a 14-day plan and 3, 6 and 12 month schedules built on phases, checkpoints and an error log. No plan guarantees a result.
 status: published
 review: pending
-updated: 2026-11-06
+updated: 2026-11-21
 order: 15
 group: Preparing for the exams
-keywords: [step 1 study schedule, dedicated study, study plan, 3 month plan, 6 month plan, 12 month plan, error log, self assessment]
+keywords: [step 1 study plan, step 1 study schedule, step 1 study guide, step 1 study tips, step 1 resources, 14 day step 1 study plan, dedicated study, 3 month plan, 6 month plan, 12 month plan, error log, self assessment]
 service: step-1-crash-course
-related: [step-1, how-long-to-study, question-banks-compared, nbme-self-assessments, when-to-take-each-step, step-1-resources-guide]
+related: [step-1, how-long-to-study, question-banks-compared, nbme-self-assessments, when-to-take-each-step, step-1-resources-guide, exam-day-rules-and-checklist]
 key_facts:
   - A good plan is built from phases, checkpoints and an error log, not from a fixed number of weeks.
-  - The three timelines here are examples for different starting points, not recommendations or predictions.
+  - The 14-day, 3, 6 and 12 month timelines here are examples for different starting points, not recommendations or predictions.
+  - A 14-day plan is a consolidation plan for a strong base. It cannot rebuild a weak one.
   - Step 1 is pass/fail, so the goal is a safe, repeatable pass, not a peak score.
   - Move your test date based on self-assessment data, but check scheduling and eligibility rules first.
+faq:
+  - q: How should I study for Step 1?
+    a: Take a baseline assessment, choose one question bank and one core review source, make timed mixed question blocks your main method, keep an error log, and reassess every few weeks. Adjust the length of each phase to your starting point rather than copying a template.
+  - q: How many months should I study for Step 1?
+    a: It depends on your starting point, recent exposure to basic sciences and results from self-assessments. The 3, 6 and 12 month tables are examples; use your own data to decide.
+  - q: Can I follow a 14-day Step 1 study plan?
+    a: Only as a final consolidation plan, and only if a baseline assessment and your error log already show a strong base. Two weeks is enough to repair specific weak areas and rehearse a full exam day, not to rebuild basic sciences. If your recent assessments are not comfortably above the margin you set, consider moving the date.
+  - q: Can I follow a 3-month plan if I graduated years ago?
+    a: Possibly, but only if a baseline assessment and your error log show a strong base. If you have been away from the basic sciences, a longer plan with a foundation phase is safer.
+  - q: Should I move my exam date if my practice results are low?
+    a: Often it is better to move than to fail, but you must stay within your eligibility period and know the rescheduling fee rules. Decide using trend data over several assessments.
+  - q: How many resources do I need for Step 1?
+    a: Usually one primary question bank and one core review source per weak subject are enough. More resources is not more learning. See the Step 1 resources guide and question banks compared.
+  - q: Is pass/fail Step 1 easier to prepare for?
+    a: The scoring is simpler, but the exam content and standard still require thorough preparation. Treat it as a must-pass-comfortably exam.
 sources:
   - USMLE Step 1 exam page | https://www.usmle.org/step-exams/step-1
   - USMLE: prepare for your exam | https://www.usmle.org/prepare-your-exam
   - NBME self-assessments | https://www.nbme.org/examinees/self-assessments
   - USMLE Bulletin of Information: applying and scheduling | https://www.usmle.org/bulletin-information/applying-scheduling
-faq:
-  - q: How many months should I study for Step 1?
-    a: It depends on your starting point, recent exposure to basic sciences and results from self-assessments. The 3, 6 and 12 month tables are examples; use your own data to decide.
-  - q: Can I follow a 3-month plan if I graduated years ago?
-    a: Possibly, but only if a baseline assessment and your error log show a strong base. If you have been away from the basic sciences, a longer plan with a foundation phase is safer.
-  - q: Should I move my exam date if my practice results are low?
-    a: Often it is better to move than to fail, but you must stay within your eligibility period and know the rescheduling fee rules. Decide using trend data over several assessments.
-  - q: Is pass/fail Step 1 easier to prepare for?
-    a: The scoring is simpler, but the exam content and standard still require thorough preparation. Treat it as a must-pass-comfortably exam.
 ---
 
-A solid Step 1 plan has three parts: **phases** that move from rebuilding to practicing to simulating, **checkpoints** where you measure yourself with independent assessments, and an **error log** that turns mistakes into a to-do list. How many weeks each phase takes is set by your starting point, not by a template. Below are the method, then three example timelines (about 3, 6 and 12 months). They are illustrations, not promises, and no schedule can guarantee a pass.
+A solid Step 1 study plan has three parts: **phases** that move from rebuilding to practicing to simulating, **checkpoints** where you measure yourself with independent assessments, and an **error log** that turns mistakes into a to-do list. How many weeks each phase takes is set by your starting point, not by a template. Below are the method, a 14-day plan for the final stretch, and three longer example timelines (about 3, 6 and 12 months). They are illustrations, not promises, and no schedule can guarantee a pass.
 
 Step 1 is reported as pass/fail only (since {{fact:step1_pass_fail_since}}), and you get a limited number of attempts per Step ({{fact:usmle_attempts_per_step}}). Read the full [Step 1 guide](/wiki/exams/step-1) for format and eligibility first.
+
+## Step 1 study guide: where to start
+
+If you only have time for the short version, do this:
+
+1. **Take a baseline.** An independent, timed self-assessment shows which systems are weak. See [NBME self-assessments](/wiki/exams/nbme-self-assessments).
+2. **Cap your resources.** One question bank and one core review source. See the [Step 1 resources guide](/wiki/exams/step-1-resources-guide) and [question banks compared](/wiki/exams/question-banks-compared).
+3. **Pick the timeline that matches your baseline.** About 14 days for final consolidation, about 3 months for a strong recent base, about 6 months for a mixed base, about 12 months for a long gap or part-time study. About 8 weeks is a compressed version of the 3-month plan and only fits a strong baseline.
+4. **Make timed question blocks your main method** and review every explanation.
+5. **Keep an error log and reassess every few weeks.**
+6. **Write your date-change rule before you start.**
 
 ## What you are preparing for
 
 According to USMLE's Step 1 page, exams on or after {{fact:usmle_step1_new_format_date}} use {{fact:step1_block_count}} blocks of up to 20 questions, {{fact:usmle_block_minutes}} minutes each, in one {{fact:step1_session_hours}}-hour session, with a minimum of {{fact:usmle_min_break_minutes}} minutes of break time. Earlier dates used seven 60-minute blocks. Confirm the format for your test date on the official page. Practice in blocks of that length so the timing is familiar.
+
+## Step 1 study tips that matter most
+
+These are practice and opinion, not USMLE rules:
+
+- **Questions are the main study method.** Do timed, mixed blocks, then review every explanation, including the ones you got right.
+- **Study to your error log.** Group wrong answers by cause (knowledge gap, misread, reasoning, timing) and fix the cause, not just the topic.
+- **Do not collect resources.** Finishing one resource beats starting five.
+- **Practice at the real block length** ({{fact:usmle_block_minutes}} minutes) so pacing is automatic.
+- **Protect sleep and one rest day a week.** Fatigue lowers practice quality.
+- **Check your trend, not a single score.** Self-assessment results are estimates.
 
 ## The method
 
@@ -77,6 +106,30 @@ At fixed points, take an independent self-assessment and look at the trend, not 
 ### 6. Decide with rules you set in advance
 
 Write down before you start: what trend and consistency would make you keep the date, and what would make you move it. See [how long to study](/wiki/exams/how-long-to-study).
+
+## A 14-day Step 1 study plan
+
+A 14-day plan is a **final consolidation plan**. It can repair specific weak areas and rehearse a full exam day. It cannot rebuild basic sciences from scratch, so use it only if your recent assessments and error log already show a strong base. If they do not, a 14-day countdown is the wrong tool and moving your date (within your eligibility period) is worth considering.
+
+| Day | Focus | What you finish |
+|---|---|---|
+| 1 | Baseline or latest assessment review | Read the report, rank your weak systems, review the error log |
+| 2-4 | Weakest systems | Short targeted review, then timed mixed blocks on those systems; log every miss |
+| 5-6 | Second pass | Re-quiz past errors, one longer mixed set for stamina |
+| 7 | Light day | Rest, sleep, catch up on the log only |
+| 8-9 | All systems, mixed | Timed mixed blocks at the real block length, full explanation review |
+| 10 | Full-length practice day | All {{fact:step1_block_count}} blocks of {{fact:usmle_block_minutes}} minutes with the real break structure |
+| 11 | Review the practice day | Fix the top two or three error causes only |
+| 12 | Repair and rest | Short targeted sets on the remaining weak area, early night |
+| 13 | Logistics and light review | Permit, ID, route and what to bring (see [exam day rules](/wiki/exams/exam-day-rules-and-checklist)), log re-read |
+| 14 | Day before the exam | Very light review, rest, sleep |
+
+Rules for a 14-day plan (our opinion):
+
+1. **No new resources.** Use what you already know.
+2. **No new topics late in the plan.** Fix recurring errors instead.
+3. **Judge the full-length day as information.** If it shows a large problem, you still have time to decide about the date. If it is consistent with your earlier results, trust the plan and rest.
+4. **Check the date rules first.** A reschedule within 45 calendar days of the appointment carries a fee, according to the Bulletin, so decide early. See [scheduling with Prometric](/wiki/exams/scheduling-with-prometric).
 
 ## Three example timelines
 

@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 8
 group: Specialty guides
 keywords: [pathology, anatomic and clinical pathology, img, residency, competitiveness, step 2 ck, visa]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, internal-medicine, backup-specialties, neurology]
 key_facts:
   - In the 2026 Match, Pathology offered 636 positions and non-U.S. citizen IMGs filled 26.7 percent of them (NRMP).

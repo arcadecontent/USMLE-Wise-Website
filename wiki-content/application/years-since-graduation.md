@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 15
 group: Documents and red flags
 keywords: [years since graduation, ysg, graduation year, recent graduate, older img, residency screening, imgs]
+service: match
 related: [application/program-screening-filters, application/gap-years-and-how-to-explain, application/identifying-img-friendly-programs, start-here/am-i-too-old-or-too-late, clinical-experience/how-much-usce-programs-want, glossary/yog]
 key_facts:
   - Time since graduation is a program-set filter, not a national rule; many programs publish a maximum, and others publish none.

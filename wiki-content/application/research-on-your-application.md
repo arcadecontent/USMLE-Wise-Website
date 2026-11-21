@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 16
 group: Documents and red flags
 keywords: [research eras, scholarly work, publications, abstracts, posters, eras 2027, most meaningful, imgs]
+service: research
 related: [research/how-programs-view-research, research/why-research-matters-for-imgs, application/eras-experiences-section, application/myeras-walkthrough, research/authorship-and-author-order]
 key_facts:
   - For the 2027 ERAS season, the Publications section was redesigned and renamed Scholarly Work.

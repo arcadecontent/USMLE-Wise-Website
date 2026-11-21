@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 5
 group: Core guides
 keywords: [letter of recommendation, usce letter, observership letter, imgs, supervisor, strong letter]
+service: clinical-rotations
 related: [usce-explained, how-to-get-usce, application/letters-of-recommendation, application/eras-timeline]
 key_facts:
   - A strong letter comes from a physician who supervised you closely enough to describe specific things you did.

@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 4
 group: Core guides
 keywords: [how much usce, usce requirements, months of usce, program expectations, nrmp program director survey, imgs]
+service: clinical-rotations
 related: [usce-explained, how-to-get-usce, application/identifying-img-friendly-programs, application/program-screening-filters, specialties/img-match-rates-by-specialty]
 key_facts:
   - No single number of months is required; programs set their own USCE expectations.

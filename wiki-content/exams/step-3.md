@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 3
 group: The three Steps
 keywords: [step 3, usmle step 3, ccs, foundations of independent practice, advanced clinical medicine, h1b, img eligibility]
+service: step-3-crash-course
 related: [step-2-ck, when-to-take-each-step, usmle-eligibility-for-imgs, scheduling-with-prometric, visas/step-3-and-h1b-timing]
 key_facts:
   - Step 3 is the final exam in the USMLE sequence and is given over two days, in the US and its territories only.

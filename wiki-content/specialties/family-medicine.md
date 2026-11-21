@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 4
 group: Specialty guides
 keywords: [family medicine, img, residency, competitiveness, primary care, fill rate, visa]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, internal-medicine, pediatrics]
 key_facts:
   - In the 2026 Match, Family Medicine offered 5,491 positions and non-U.S. citizen IMGs filled 17.5 percent of them.

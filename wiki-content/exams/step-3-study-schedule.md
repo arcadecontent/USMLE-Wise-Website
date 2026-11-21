@@ -1,36 +1,52 @@
 ---
-title: A Step 3 Study Plan: Including CCS Cases
-description: A method-driven Step 3 plan covering both exam days, multiple-choice practice and Primum CCS case simulations, with three example timelines for different situations.
+title: Step 3 Study Plan: How to Study for Step 3, Including CCS Practice
+description: A Step 3 study plan for both exam days: multiple-choice practice, CCS case simulation routines and three example timelines. No plan guarantees a result.
 status: published
 review: pending
-updated: 2026-11-06
+updated: 2026-11-21
 order: 17
 group: Preparing for the exams
-keywords: [step 3 study plan, ccs cases, primum ccs, foundations of independent practice, advanced clinical medicine, step 3 schedule, residency]
+keywords: [step 3 study plan, how to study for step 3, step 3 study schedule, step 3 ccs study schedule, ccs cases, primum ccs, foundations of independent practice, advanced clinical medicine, residency]
 service: step-3-crash-course
-related: [step-3, visas/step-3-and-h1b-timing, when-to-take-each-step, question-banks-compared, how-long-to-study]
+related: [step-3, visas/step-3-and-h1b-timing, when-to-take-each-step, question-banks-compared, how-long-to-study, nbme-self-assessments, exam-day-rules-and-checklist]
 key_facts:
   - Step 3 is a two-day exam: Foundations of Independent Practice on Day 1 and Advanced Clinical Medicine, including case simulations, on Day 2.
   - Step 3 is given only in the U.S. and its territories.
   - Performance on the case simulations affects the Step 3 outcome, so practicing the software matters.
+  - USMLE provides official CCS practice cases with feedback, and says no practice cases are offered at your test appointment, so practice beforehand.
   - The three timelines are examples, not predictions, and you should set your own date-change rule.
+faq:
+  - q: How do I make a Step 3 study plan?
+    a: Take an independent baseline, choose one question bank and the official CCS practice materials, then work in phases (foundation, core, CCS skills, integration, final) with a checkpoint every few weeks and an error log for both multiple-choice and CCS mistakes. The example timelines below show how the phases stretch or compress.
+  - q: How long should I study for Step 3?
+    a: It depends on your baseline, how recently you passed Step 2 CK and how much time you have around work or residency. The example timelines (about 4 to 6 weeks, 8 to 12 weeks, and 4 to 6 months) are illustrations, not recommendations, and USMLE does not publish a recommended length.
+  - q: How is Step 3 different to prepare for?
+    a: It adds case simulations (Primum CCS) and emphasizes patient management in ambulatory and inpatient settings, so you must practice both multiple-choice items and the CCS software.
+  - q: Do I need to practice CCS cases?
+    a: Yes. USMLE says CCS performance counts toward the Step 3 outcome, and the software has its own interface and workflow, so practice before test day.
+  - q: How do I study for the Step 3 CCS cases?
+    a: Start with the official tutorial and USMLE's practice cases, learn how orders and the simulated clock work, use a repeatable structure for each case, and review every case against the official feedback. Log your CCS errors separately from your multiple-choice errors.
+  - q: Can I study for Step 3 during intern year?
+    a: Many people do, but time is limited. A longer, lower-intensity plan with regular checkpoints is common. Check your program's policies on study leave and exam days.
+  - q: Where can I take Step 3?
+    a: Only in the U.S. and its territories at Prometric centers, so IMGs outside the US must plan travel and any visa.
 sources:
   - USMLE Step 3 exam content | https://www.usmle.org/step-exams/step-3/step-3-exam-content
   - USMLE Step 3 exam page | https://www.usmle.org/step-exams/step-3
+  - USMLE: Step 3 computer-based case simulations | https://www.usmle.org/exam-resources/step-3-materials/step-3-test-question-formats/computer-based-case-simulations
   - USMLE: examination results and scoring | https://www.usmle.org/scores-transcripts/examination-results-and-scoring
   - USMLE Bulletin of Information: eligibility | https://www.usmle.org/bulletin-information/eligibility
-faq:
-  - q: How is Step 3 different to prepare for?
-    a: It adds case simulations (Primum CCS) and emphasizes patient management in ambulatory and inpatient settings, so you must practice both multiple-choice items and the CCS software.
-  - q: Can I study for Step 3 during intern year?
-    a: Many people do, but time is limited. A longer, lower-intensity plan with regular checkpoints is common. Check your program's policies on study leave and exam days.
-  - q: Do I need to practice CCS cases?
-    a: Yes. USMLE says CCS performance counts toward the Step 3 outcome, and the software has its own interface and workflow, so practice before test day.
-  - q: Where can I take Step 3?
-    a: Only in the U.S. and its territories at Prometric centers, so IMGs outside the US must plan travel and any visa.
 ---
 
-Step 3 prepares you for unsupervised practice, and it is the only Step with a second exam day that includes interactive case simulations. A good plan treats it as two separate skills: **multiple-choice reasoning** (both days) and **Primum CCS case management** (Day 2). The method below uses phases, checkpoints and an error log, with three example timelines for different circumstances. They illustrate a method; they do not promise a result. For format, eligibility and timing context, see the [Step 3 guide](/wiki/exams/step-3).
+A Step 3 study plan has to build two separate skills: **multiple-choice reasoning** (both days) and **Primum CCS case management** (Day 2). Step 3 prepares you for unsupervised practice, and it is the only Step with a second exam day that includes interactive case simulations. The method below uses phases, checkpoints and an error log, with three example timelines for different circumstances. They illustrate a method; they do not promise a result. For format, eligibility and timing context, see the [Step 3 guide](/wiki/exams/step-3).
+
+## How to study for Step 3 in five steps
+
+1. **Take a baseline.** An independent assessment shows which Day 1 and Day 2 skills need work. See [NBME self-assessments](/wiki/exams/nbme-self-assessments) for what the Step 3 assessment does and does not cover.
+2. **Fix your resources.** One question bank, plus USMLE's official CCS tutorial and practice cases.
+3. **Practice both skills every week.** Multiple-choice blocks most days, and CCS cases several times a week once you know the software.
+4. **Keep two error logs.** One for multiple-choice errors and one for CCS errors.
+5. **Reassess on a schedule and rehearse the two days.** Use your date-change rule, and do full mock days before you test.
 
 ## The exam you are preparing for
 
@@ -72,13 +88,38 @@ Choose one primary question bank and one source for CCS practice. See [question 
 
 Log multiple-choice errors by cause (knowledge, misread, wrong next step, two good answers, timing). Log CCS errors separately: missed an urgent action, ordered unnecessary tests, wrong sequence of orders, forgot to set follow-up or change location, ran out of time.
 
-### 5. CCS practice
-
-Cases are interactive: you order tests and treatments, advance time and manage the patient. Practice a repeatable structure for each case (initial stabilization, focused history and exam, key orders, reassess, disposition and follow-up) and review each case afterward against what was needed. Do not rely on a generic checklist; learn how the software handles orders and time.
-
-### 6. Checkpoints and date-change rule
+### 5. Checkpoints and date-change rule
 
 Take independent assessments at planned intervals and compare the trend. Write your date-change rule in advance. See [how long to study](/wiki/exams/how-long-to-study).
+
+## Step 3 CCS practice: how to prepare for the case simulations
+
+CCS (computer-based case simulations) is the part of Step 3 most candidates have not met before, and it behaves differently from multiple-choice questions. This section summarizes how USMLE describes it, then gives a practice routine (the routine is our opinion).
+
+### How CCS works, according to USMLE
+
+- **You manage a patient over time.** USMLE says each case is a dynamic, interactive simulation using the Primum software, covering diagnosis, treatment and monitoring.
+- **You write the orders yourself.** Orders go on the order sheet, and USMLE says you should not assume other members of the health care team will write them for you.
+- **Orders do nothing until you advance the clock.** Test results and treatment effects appear only after you advance simulated time. Requesting an interval history or physical exam also advances the clock.
+- **Simulated time and real time are separate.** Each case has a maximum amount of real time, and a case can span minutes or months of simulated time.
+- **You can change the patient's location.** For example between office, emergency department, inpatient unit, ICU or home. USMLE notes you cannot send patients directly to surgical, lab or imaging areas.
+- **How it ends.** A case ends when you reach the real-time limit or when enough has been shown. USMLE says reaching the end-of-case screen early does not necessarily mean you did something right or wrong. You then get a short window to finalize orders and must select Exit Case.
+- **How it is scored.** USMLE says indicated actions earn credit, unindicated or risky actions lower your score, timing and sequence matter, and restraint is scored too. Scoring is based on criteria set by expert physicians.
+
+### Where to practice
+
+USMLE provides official CCS practice cases with feedback through the Step 3 interactive testing experience on usmle.org, and a short CCS tutorial is part of the exam session. USMLE also says that at your test appointment an optional tutorial is offered but no practice cases are available, so do your practice beforehand. Check the USMLE site for the current list of cases and the technical requirements for the practice software.
+
+### A practice routine (our opinion)
+
+1. **Start with the tutorial and the official cases.** Learn the interface before you worry about speed.
+2. **Use a repeatable structure for each case.** For example: stabilize if needed, focused history and exam, key orders, advance the clock deliberately, reassess, then disposition and follow-up. Do not rely on a generic checklist; learn how the software handles orders and time.
+3. **Read the official feedback for every case.** Compare what you did with what was needed, including timing, sequence and location.
+4. **Log your CCS errors by type.** Missed urgent action, unnecessary orders, wrong sequence, forgotten follow-up or location change, ran out of time. Change one habit at a time.
+5. **Practice under the real time limits.** Once the mechanics are comfortable, use the real-time allotments so pacing becomes familiar.
+6. **Mix CCS with blocks in the same session** in the integration phase, because on Day 2 you do both.
+
+> [!NOTE] NBME's Step 3 self-assessment is described as multiple-choice questions, so it does not replace CCS practice. Use USMLE's official cases for that.
 
 ## Three example timelines
 

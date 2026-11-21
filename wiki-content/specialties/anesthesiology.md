@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 9
 group: Specialty guides
 keywords: [anesthesiology, anesthesia, img, residency, competitiveness, step 2 ck, visa, clinical base year]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, internal-medicine, categorical-vs-preliminary, backup-specialties]
 key_facts:
   - In the 2026 Match, Anesthesiology offered 1,865 PGY-1 positions, all filled, and non-U.S. citizen IMGs filled 4.4 percent of them (NRMP).

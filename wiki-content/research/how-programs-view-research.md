@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 3
 group: Core guides
 keywords: [research, publications, posters, abstracts, work in progress, program directors, nrmp, imgs, eras]
+service: research
 related: [why-research-matters-for-imgs, finding-a-research-position, application/eras-experiences-section, application/program-screening-filters]
 key_facts:
   - NRMP says applicant research counts are self-reported, not verified, and that quality varies greatly.

@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 10
 group: Preparing for the exams
 keywords: [step 2 ck score, passing score, what is a good step 2 score, program screening, img, step 1 pass fail]
+service: step-2-crash-course
 related: [step-2-ck, step-1, nbme-self-assessments, application/program-screening-filters, specialties/choosing-a-specialty]
 key_facts:
   - The minimum passing score for Step 2 CK is {{fact:step2ck_passing_standard}}, for exams taken on or after July 1, 2025.

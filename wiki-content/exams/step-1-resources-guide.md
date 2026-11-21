@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 25
 group: Preparing
 keywords: [step 1 resources, question bank, flashcards, self assessment, first aid, study resources, pass fail, imgs]
+service: step-1-crash-course
 related: [step-1, question-banks-compared, nbme-self-assessments, step-1-study-schedule, how-long-to-study]
 key_facts:
   - Choose resources by the job they do (practice, reference, explanation, recall, measurement), not by popularity.

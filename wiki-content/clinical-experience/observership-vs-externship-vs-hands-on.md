@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 2
 group: Core guides
 keywords: [observership, externship, hands-on, clinical rotation, usce, imgs]
+service: clinical-rotations
 related: [usce-explained, how-to-get-usce, turning-usce-into-a-letter, application/letters-of-recommendation]
 key_facts:
   - An observership means watching care; observers do not examine patients, give treatment or write orders.

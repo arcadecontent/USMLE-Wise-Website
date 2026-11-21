@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 3
 group: Specialty guides
 keywords: [internal medicine, img, categorical, residency, competitiveness, step 2 ck, visa]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, family-medicine, interviews-match/rank-order-list-strategy]
 key_facts:
   - Internal Medicine is the specialty where most matched non-U.S. citizen IMGs land: 52.8 percent in the 2026 Match.

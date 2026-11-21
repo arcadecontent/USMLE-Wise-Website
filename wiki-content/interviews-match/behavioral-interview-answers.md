@@ -1,17 +1,17 @@
 ---
-title: Behavioral Interview Answers That Work for IMGs
-description: A framework for answering residency behavioral questions, with illustrative sample outlines for conflict, mistakes and difficult patients, plus pitfalls specific to IMGs.
+title: Behavioral Questions in Residency Interviews: STAR Method and Answers for IMGs
+description: How to answer behavioral questions in residency interviews with the STAR method, the common questions to prepare for, and the pitfalls that affect IMGs.
 status: published
 review: pending
-updated: 2026-11-06
+updated: 2026-11-21
 order: 5
 group: The Match
-keywords: [behavioral interview, star method, residency interview, tell me about a time, conflict, mistake, imgs]
+keywords: [behavioral questions residency interviews, common behavioral residency interview questions, star method, behavioral interview, tell me about a time, conflict, mistake, imgs]
 service: match-interview
 related: [common-interview-questions, interview-season-overview, virtual-interview-setup, questions-to-ask-programs, application/eras-experiences-section]
 key_facts:
   - Behavioral questions ask for a real past example ("Tell me about a time when..."), because past behavior is used to predict how you will work with patients and teams.
-  - A reliable structure is situation, task, action, result, then one sentence on what you learned.
+  - The STAR method gives a reliable structure: situation, task, action, result, then one sentence on what you learned.
   - The sample outlines on this page are invented illustrations, not real people. Use your own true stories.
   - Do not invent or embellish a story. Follow-up questions are designed to expose that.
 sources:
@@ -20,6 +20,12 @@ sources:
   - NRMP: Introduction to the 2027 Main Residency Match | https://www.nrmp.org/wp-content/uploads/2026/08/2027-MRM-Intro-for-Applicants.pdf
   - ACGME: Common Program Requirements (Residency) | https://www.acgme.org/programs-and-institutions/programs/common-program-requirements/
 faq:
+  - q: What is the STAR method for residency interviews?
+    a: STAR stands for situation, task, action and result. You set the scene in a sentence or two, say what you were responsible for, describe what you personally did, and finish with the result and one lesson. Spend most of your time on the action.
+  - q: What are the most common behavioral questions in residency interviews?
+    a: Tell me about a time you disagreed with a colleague, made a mistake, dealt with an upset patient or family, led a team, received critical feedback, felt overwhelmed or faced an ethical concern. The list on this page groups them by theme.
+  - q: How do I answer "tell me about a time you failed" in a residency interview?
+    a: Pick a real setback, say plainly what happened and your part in it, what you did to repair it and what you do differently now. Keep your facts consistent with your application, and avoid blaming others or choosing a trivial example.
   - q: How long should a behavioral answer be?
     a: Aim for about one to two minutes. Lead with the situation briefly, spend most of the time on what you did, and finish with the result and what you learned.
   - q: What if I have never done something the question asks about?
@@ -30,22 +36,48 @@ faq:
     a: Name it plainly, say what the effect was, what you did to fix it and what you changed afterward. Avoid blaming others or choosing a trivial "mistake".
 ---
 
-A behavioral question asks you to describe something you actually did: "Tell me about a time you disagreed with a colleague." Interviewers use your answer to predict how you will behave on a team and with patients. This page gives a structure, a bank of stories to prepare, and illustrative outlines. It builds on [common interview questions](/wiki/interviews-match/common-interview-questions), which lists the usual topics.
+Behavioral questions in residency interviews ask you to describe something you actually did: "Tell me about a time you disagreed with a colleague." Interviewers use your answer to predict how you will behave on a team and with patients. This page gives the STAR method, the common behavioral residency interview questions, a bank of stories to prepare, and illustrative outlines. It builds on [common interview questions](/wiki/interviews-match/common-interview-questions), which is the overview of every question category.
 
-## Why programs ask these questions
+## Why programs ask behavioral questions
 
 In NRMP's 2026 program director survey, interpersonal skills (89 percent of respondents) and interview interactions (84 percent) were among the leading ranking factors. Behavioral questions test those directly. They also check for honesty and self-awareness, which are hard to read from scores.
 
-## The structure: situation, action, result, lesson
+## The STAR method for residency behavioral questions
 
-Many people teach STAR (situation, task, action, result). A compact version for a one-to-two-minute answer:
+STAR stands for situation, task, action, result. It is a method for organizing a true story so the interviewer can follow it and hear what you did. A compact version for a one-to-two-minute answer adds a short lesson at the end:
 
-1. **Situation and task (15 to 25 percent of your time):** who, where, what was at stake. Two or three sentences.
-2. **Action (50 percent):** what you personally did and why. Use "I", not "we", for your part.
-3. **Result (15 to 20 percent):** what happened, in concrete terms where possible.
-4. **Lesson (one sentence):** what you do differently now.
+| Step | What to say | Share of your time (practice) | Common mistake |
+|---|---|---|---|
+| Situation and task | Who, where, what was at stake, and what you were responsible for. Two or three sentences. | 15 to 25 percent | A long set-up that eats the answer |
+| Action | What you personally did and why. Use "I", not "we", for your part. | About 50 percent | Describing what the team did |
+| Result | What happened, in concrete terms where possible. | 15 to 20 percent | A vague ending such as "it went well" |
+| Lesson | One sentence on what you do differently now. | One sentence | Skipping it, or a lesson that does not fit the story |
 
 > [!KEY] Spend most of your time on your actions and your reasoning. Long set-ups and vague endings are the usual failures.
+
+A quick test before you practice a story aloud: can you say the situation in one sentence, the action in three, and the result in one? If not, the story is probably too big, or you are telling the history instead of the decision.
+
+### Behavioral vs situational questions
+
+A **behavioral** question asks what you did ("Tell me about a time..."). A **situational** question asks what you would do ("What would you do if..."). In our opinion, when you get a situational question it is often stronger to answer with a real past example and then say how you would apply it. If you have no example, give your reasoning step by step and say so.
+
+## Common behavioral residency interview questions
+
+These are the prompts interviewers use most often, grouped by theme. Wording varies, so prepare the theme, not the sentence.
+
+| Theme | Typical prompts |
+|---|---|
+| Conflict | Tell me about a time you disagreed with a colleague or supervisor. Describe a conflict on a team and how you handled it. |
+| Mistake or failure | Tell me about a mistake you made and what you did. Describe a setback and what you learned from it. |
+| Difficult patient or family | Describe a time a patient or family member was upset. Tell me about a patient you found hard to work with. |
+| Leadership and initiative | Tell me about a time you led a team or took initiative without being asked. |
+| Critical feedback | Tell me about a time you received criticism. How did you respond? |
+| Pressure and workload | Describe a time your workload was overwhelming. How did you manage it? |
+| Ethics and professionalism | Tell me about an ethical or uncomfortable situation you faced. |
+| Teamwork | Tell me about a time you worked effectively on a team. |
+| Adapting | Tell me about a time you adapted to a new system, language or culture. |
+
+For the other categories of residency interview questions (why this specialty, why this program, exam failures, gaps and visas), see [common interview questions](/wiki/interviews-match/common-interview-questions).
 
 ## Build a story bank
 

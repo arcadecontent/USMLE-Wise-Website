@@ -1,14 +1,14 @@
 ---
-title: Common Residency Interview Questions and How to Answer Them
-description: The questions residency interviewers commonly ask IMGs, how to structure honest answers, how to handle exam failures, gaps and visa questions, and what to avoid.
+title: Common Residency Interview Questions: Categories and How to Answer Them
+description: The common residency interview questions by category, how to structure honest answers, and how IMGs should handle exam failures, gaps and visa questions.
 status: published
 review: pending
-updated: 2026-11-06
+updated: 2026-11-21
 order: 2
 group: The Match
-keywords: [residency interview questions, tell me about yourself, why this specialty, gap year, usmle failure, behavioral questions, imgs]
+keywords: [common residency interview questions, residency interview questions, tell me about yourself, why this specialty, gap year, usmle failure, behavioral questions, imgs]
 service: match-interview
-related: [interview-season-overview, rank-order-list-strategy, application/personal-statement-guide, how-the-match-algorithm-works]
+related: [interview-season-overview, behavioral-interview-answers, rank-order-list-strategy, application/personal-statement-guide, how-the-match-algorithm-works, questions-to-ask-programs]
 key_facts:
   - NRMP's 2026 program director survey ranked interpersonal skills (89 percent) and interview interactions (84 percent) among the top ranking factors.
   - You must answer accurately about exam failures, delays and visa needs, because omissions can be treated as Match violations.
@@ -19,6 +19,12 @@ sources:
   - NRMP: Introduction to the 2027 Main Residency Match | https://www.nrmp.org/wp-content/uploads/2026/08/2027-MRM-Intro-for-Applicants.pdf
   - AAMC: ERAS for applicants | https://students-residents.aamc.org/applying-residency/applying-residency-eras
 faq:
+  - q: What are the most common residency interview questions?
+    a: Tell me about yourself, why this specialty, why this program, why the United States, your strengths and weaknesses, a time you made a mistake or had a conflict, how you would handle a difficult patient, and do you have questions for us. IMGs should also prepare for questions about exam attempts, gaps and visa status.
+  - q: How do I prepare for residency interview questions as an IMG?
+    a: Write bullet points, not scripts, for each category on this page, prepare six to eight real stories, and practice aloud with someone who gives specific feedback. Prepare short, factual answers for exam failures, gaps and visa questions, because those are the ones that go wrong when improvised.
+  - q: What questions should I ask at the end of a residency interview?
+    a: Ask two or three real questions that the program website does not answer: how residents are supervised, how feedback is given, what recent graduates do, and how the program supports IMGs. See the page on questions to ask programs.
   - q: How long should an answer be?
     a: Most behavioral answers work in one to two minutes. Give the key point first, then a specific example, then stop and let the interviewer follow up.
   - q: Do I have to answer questions about visa status?
@@ -29,11 +35,23 @@ faq:
     a: Programs are generally expected to avoid questions about protected personal topics, and NRMP says programs cannot ask where else you applied or your ranking. You may politely decline to answer, and you can contact your advisor or NRMP if you feel pressured.
 ---
 
-Residency interviews are more predictable than they feel. Most questions fall into a dozen categories, and the strongest answers are specific, honest and short. This page lists the common questions and shows how to structure answers. It does not offer scripts, because interviewers notice scripts.
+Residency interviews are more predictable than they feel. The common residency interview questions fall into a handful of categories, and the strongest answers are specific, honest and short. This page is the overview: it lists the categories, shows how to structure answers and covers the harder questions IMGs get. It does not offer scripts, because interviewers notice scripts. For deeper practice on "tell me about a time" questions, see [behavioral interview answers](/wiki/interviews-match/behavioral-interview-answers).
 
 ## What interviewers are actually assessing
 
 In NRMP's 2026 Program Director Survey, the leading factors for ranking were interpersonal skills (89 percent of respondents), interactions during interviews (84 percent) and feedback from current residents (74 percent). So they are assessing three things: Can you communicate with patients and teams? Will you fit and stay? Are you honest and reflective?
+
+## Common residency interview questions at a glance
+
+| Category | Typical questions | Where to go deeper |
+|---|---|---|
+| Opening | Tell me about yourself | Below |
+| Motivation | Why this specialty? Why this program? Why the United States? | Below |
+| Self-assessment | Strengths and weaknesses | Below |
+| Behavioral | Tell me about a time you made a mistake, had a conflict or led a team | [Behavioral interview answers](/wiki/interviews-match/behavioral-interview-answers) |
+| Judgment and ethics | How would you handle a difficult patient or an ethical dilemma? | Below |
+| IMG-specific | Exam failures, gaps, visa status, English communication | Below |
+| Closing | Do you have questions for us? | [Questions to ask programs](/wiki/interviews-match/questions-to-ask-programs) |
 
 ## A simple structure for answers
 
@@ -44,7 +62,7 @@ For behavioral questions, use a short structure often called STAR:
 - **Action:** what you did, in the first person.
 - **Result:** what happened and what you learned.
 
-Prepare six to eight real stories that can be reused: a difficult patient, a team conflict, a mistake, a time you led, a time you were wrong, a time you taught, an ethical concern. Do not invent. Interviewers ask follow-up questions that expose invented stories.
+Prepare six to eight real stories that can be reused: a difficult patient, a team conflict, a mistake, a time you led, a time you were wrong, a time you taught, an ethical concern. Do not invent. Interviewers ask follow-up questions that expose invented stories. The [behavioral interview answers](/wiki/interviews-match/behavioral-interview-answers) page walks through the method in detail.
 
 ## The questions you should expect
 
@@ -107,7 +125,7 @@ NRMP says programs cannot ask where you applied or interviewed or ask you to dis
 
 ## Do you have questions for us?
 
-Always have two or three real questions: how residents are supervised, how feedback is given, what recent graduates do, how the program supports IMGs, wellness and call schedules. Avoid questions you can answer from the website.
+Always have two or three real questions: how residents are supervised, how feedback is given, what recent graduates do, how the program supports IMGs, wellness and call schedules. Avoid questions you can answer from the website. More ideas are on the [questions to ask programs](/wiki/interviews-match/questions-to-ask-programs) page.
 
 ## Practice plan
 
@@ -118,6 +136,6 @@ Always have two or three real questions: how residents are supervised, how feedb
 
 > [!IMG TIP] If you can only improve one thing, make your answers shorter and more specific. A concrete two-minute story beats a long general speech.
 
-> [!NOTE] Opinion: confident, honest answers that acknowledge difficulty generally land better than polished perfection. Programs are looking for colleagues who learn.
+**Opinion:** confident, honest answers that acknowledge difficulty generally land better than polished perfection. Programs are looking for colleagues who learn.
 
 For a mock interview with feedback, the Interview Preparation service below is optional; the structure on this page works without it.

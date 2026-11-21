@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 6
 group: Going deeper
 keywords: [publish a paper, peer review, manuscript submission, cover letter, revision, EQUATOR, reporting guidelines, PubMed]
+service: research-coauthor
 related: [case-reports, predatory-journals, authorship-and-author-order, posters-and-conferences, how-programs-view-research, pubmed-and-orcid-setup]
 key_facts:
   - Match the study type to its reporting guideline (for example CARE, STROBE, PRISMA, CONSORT) before you write.

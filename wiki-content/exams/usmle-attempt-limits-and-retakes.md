@@ -1,37 +1,44 @@
 ---
-title: USMLE Attempt Limits, Waiting Periods and Retakes
-description: How many times you can take each USMLE Step, the 12-month and 6-month timing rules, whether you can retake a passed Step, and how attempts affect IMGs.
+title: How Many Times Can You Take USMLE Step 1? Attempt Limits and Retakes
+description: How many times you can take USMLE Step 1, Step 2 CK or Step 3, the 12-month and 6-month timing rules, retaking a passed Step, and what a failed attempt means.
 status: published
 review: pending
-updated: 2026-11-06
+updated: 2026-11-21
 order: 7
 group: Planning your exams
-keywords: [usmle attempt limit, four attempts, retake, waiting period, 12 month rule, passed step retake]
-related: [what-to-do-after-failing-a-step, when-to-take-each-step, usmle-eligibility-for-imgs, scheduling-with-prometric, application/program-screening-filters]
+keywords: [how many times can you take usmle step 1, usmle attempt limit, four attempts, can you retake step 2 ck, retake, waiting period, 12 month rule, passed step retake, can i match with a failed step 2]
+related: [what-to-do-after-failing-a-step, when-to-take-each-step, usmle-eligibility-for-imgs, scheduling-with-prometric, application/program-screening-filters, application/failed-attempts-on-application]
 key_facts:
   - The total number of attempts allowed per Step is {{fact:usmle_attempts_per_step}}. It was six before July 2021.
+  - The limit applies to each Step: Step 1, Step 2 CK and Step 3 each allow {{fact:usmle_attempts_per_step}} attempts.
   - You may not take the same examination more than three times within a 12-month period.
   - A fourth attempt must be at least 12 months after your first attempt and at least six months after your most recent attempt.
   - You cannot retake a Step you passed, except in narrow cases the Bulletin lists.
-sources:
-  - USMLE Common Questions: Attempt Limit | https://www.usmle.org/common-questions/attempt-limit
-  - USMLE Bulletin of Information: eligibility | https://www.usmle.org/bulletin-information/eligibility
-  - USMLE Common Questions | https://www.usmle.org/common-questions
-  - USMLE Bulletin of Information | https://www.usmle.org/bulletin-information
 faq:
-  - q: How many times can I take a USMLE Step?
-    a: Four attempts per Step in total. If you have made four or more attempts at any Step, including Step 2 CS, without passing, you cannot apply for any Step.
+  - q: How many times can you take USMLE Step 1?
+    a: Four attempts in total, and the same limit applies to Step 2 CK and Step 3. If you have made four or more attempts at any Step, including Step 2 CS, without passing, you cannot apply for any Step. You also may not take the same exam more than three times in a 12-month period.
+  - q: Can you retake Step 2 CK?
+    a: If you failed it, yes, within the attempt limit and the timing rules (no more than three attempts in 12 months, and special timing for a fourth). If you passed it, no: USMLE does not allow you to retake a passed Step to raise your score, apart from narrow exceptions in the Bulletin.
+  - q: Can I match with a failed Step 2 CK?
+    a: It is not ruled out by the attempt rules, but it is never guaranteed. A failed attempt stays on your transcript and programs set their own screening rules. See failed attempts on your application and what to do after failing a Step.
   - q: Do incomplete attempts count?
     a: The Bulletin's eligibility page states that incomplete attempts count toward the attempt limit and the fourth-attempt timing rule. Read the current Bulletin for the exact definition of an attempt.
   - q: Can I retake a Step to raise a passing score?
     a: No. Passed Steps cannot be retaken except for specific exceptions such as a licensing authority's time limit, and only with approval.
   - q: Is there a minimum wait after a first failure?
     a: The pages reviewed state no separate wait for second and third attempts beyond the three-in-12-months limit. Check the current Bulletin and your registering organization for any additional rules.
+sources:
+  - USMLE Common Questions: Attempt Limit | https://www.usmle.org/common-questions/attempt-limit
+  - USMLE Bulletin of Information: eligibility | https://www.usmle.org/bulletin-information/eligibility
+  - USMLE Common Questions | https://www.usmle.org/common-questions
+  - USMLE Bulletin of Information | https://www.usmle.org/bulletin-information
 ---
 
-You can attempt each USMLE Step a total of **{{fact:usmle_attempts_per_step}}** times. Within that, you may not take the same exam more than three times in any 12-month period, and a fourth attempt has additional timing rules. If you pass a Step, you generally cannot retake it. This page summarizes the rules as reviewed in November 2026; the current Bulletin is the final authority.
+You can take USMLE Step 1 a total of **{{fact:usmle_attempts_per_step}}** times, and the same limit applies to Step 2 CK and Step 3. Within that, you may not take the same exam more than three times in any 12-month period, and a fourth attempt has additional timing rules. If you pass a Step, you generally cannot retake it. This page summarizes the rules as reviewed in November 2026; the current Bulletin is the final authority.
 
-## The rules at a glance
+## How many times can you take Step 1, Step 2 CK or Step 3?
+
+The limit is per Step: {{fact:usmle_attempts_per_step}} attempts at Step 1, {{fact:usmle_attempts_per_step}} at Step 2 CK and {{fact:usmle_attempts_per_step}} at Step 3. But failing any one Step four times affects all of them, as the table shows.
 
 | Rule | What the USMLE says |
 |---|---|
@@ -50,11 +57,11 @@ The Bulletin's eligibility page says incomplete attempts count toward the four-a
 
 > [!WARNING] Because incomplete attempts count, do not treat a session you might not finish as a free trial. If you are unsure how a situation would be recorded, ask your registering organization before exam day, not after.
 
-## Waiting periods
+## How soon can you retake a failed Step?
 
 The sources reviewed describe two timing rules: the three-attempts-in-12-months limit and the fourth-attempt rule above. The Common Questions page did not state any other minimum waiting period between earlier attempts, and secondary sites quote a figure that we could not confirm on the official pages. Practically, your next attempt also depends on the registration process, the eligibility period, scheduling availability and receipt of your score report, which can take weeks. See [scheduling with Prometric](/wiki/exams/scheduling-with-prometric).
 
-## Retaking a passed Step
+## Can you retake Step 1 or Step 2 CK if you passed?
 
 You are not allowed to retake a Step you have passed, except to meet a time limit set by a US medical licensing authority or another recognized authority, in cases the Bulletin lists. Those exceptions require the sponsoring authority to confirm eligibility and that the time limit has expired. A separate exception applies to some US medical students expected to graduate at least six years after passing Step 1 or Step 2.
 
@@ -62,6 +69,10 @@ Two consequences matter for IMGs:
 
 - You cannot improve a passing Step 2 CK score by retaking it.
 - If you retake Step 1 or Step 2 CK for such a reason and fail, you will no longer be eligible for Step 3.
+
+## Can you match with a failed Step 2 CK?
+
+The attempt rules do not by themselves rule out matching after a failed attempt, but nothing guarantees it either. Each attempt appears on your record and programs set their own screening rules: some state that they do not accept any failed attempt, others read the whole file. For the detail, see [failed exam attempts and your application](/wiki/application/failed-attempts-on-application) and [how programs screen applications](/wiki/application/program-screening-filters). For what to do first, see [what to do after failing a Step](/wiki/exams/what-to-do-after-failing-a-step).
 
 ## Why attempt limits matter for residency
 

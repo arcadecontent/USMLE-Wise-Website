@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 7
 group: Going deeper
 keywords: [poster, abstract, conference, oral presentation, clinical vignette, imgs, research, eras]
+service: research-cohort
 related: [case-reports, how-to-publish, authorship-and-author-order, predatory-journals, application/research-on-your-application]
 key_facts:
   - A poster or abstract is usually faster to produce than a paper, but programs may weigh it less than a peer-reviewed publication.

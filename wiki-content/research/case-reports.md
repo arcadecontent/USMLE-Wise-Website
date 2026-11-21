@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 5
 group: Going deeper
 keywords: [case report, CARE guideline, patient consent, de-identification, HIPAA, clinical vignette, imgs, publication]
+service: research-original
 related: [how-to-publish, posters-and-conferences, predatory-journals, authorship-and-author-order, how-programs-view-research, pubmed-and-orcid-setup]
 key_facts:
   - The CARE guideline is the standard reporting checklist for case reports and is listed by the EQUATOR Network.

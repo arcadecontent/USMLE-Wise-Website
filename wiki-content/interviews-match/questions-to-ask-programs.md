@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 6
 group: The Match
 keywords: [questions to ask residency programs, residency interview, visa questions, program culture, img friendly, rank list]
+service: match-interview
 related: [interview-season-overview, rank-order-list-strategy, behavioral-interview-answers, virtual-interview-setup, visas/j1-vs-h1b]
 key_facts:
   - Asking good questions shows preparation and gives you information for your rank list.

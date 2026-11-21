@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 7
 group: Orientation
 keywords: [img mistakes, common errors, usmle planning, eras mistakes, application strategy, img advice]
+service: match
 related: [imgs-roadmap, img-match-statistics, am-i-too-old-or-too-late, exams/when-to-take-each-step, application/how-many-programs-to-apply-to, tools/self-evaluation]
 key_facts:
   - Most avoidable mistakes are about sequence and verification: booking, applying or spending before confirming the rule.

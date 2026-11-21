@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 18
 group: Preparing for the exams
 keywords: [how long to study usmle, study duration, readiness, self assessment, date change rule, error log, dedicated study]
+service: coaching
 related: [nbme-self-assessments, step-1-study-schedule, step-2-ck-study-schedule, step-3-study-schedule, what-to-do-after-failing-a-step]
 key_facts:
   - There is no official or universal study duration: it depends on your starting point, consistency and trend.

@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 19
 group: Documents and red flags
 keywords: [multiple specialties, dual application, backup specialty, cross-apply, rank order list, program signals, imgs]
+service: match
 related: [application/program-signaling-explained, application/personal-statement-guide, application/eras-and-match-costs, interviews-match/rank-order-list-strategy, specialties/backup-specialties]
 key_facts:
   - ERAS fees are based on the number of programs per specialty, and pricing resets with each additional specialty.

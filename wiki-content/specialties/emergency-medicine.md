@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 10
 group: Specialty guides
 keywords: [emergency medicine, em, img, sloe, residencycas, residency, competitiveness, visa, soap]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, internal-medicine, backup-specialties, general-surgery, radiology]
 key_facts:
   - In the 2026 Match, Emergency Medicine offered 3,198 PGY-1 positions, 140 went unfilled in the algorithm, and non-U.S. citizen IMGs filled 2.9 percent (U.S. citizen IMGs 10.0 percent).

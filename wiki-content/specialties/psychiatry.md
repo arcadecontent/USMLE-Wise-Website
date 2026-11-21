@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 6
 group: Specialty guides
 keywords: [psychiatry, img, residency, competitiveness, mental health, step 2 ck, visa]
+service: match-maker
 related: [choosing-a-specialty, img-match-rates-by-specialty, internal-medicine, family-medicine]
 key_facts:
   - In the 2026 Match, Psychiatry offered 2,516 positions and non-U.S. citizen IMGs filled 8.8 percent of them.

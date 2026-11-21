@@ -7,6 +7,7 @@ updated: 2026-11-06
 order: 16
 group: Specialty guides
 keywords: [pm&r, physical medicine and rehabilitation, physiatry, advanced position, preliminary year, img, residency, signaling]
+service: match-maker
 related: [choosing-a-specialty, categorical-vs-preliminary, img-match-rates-by-specialty, application/preliminary-and-transitional-years, neurology]
 key_facts:
   - In the 2026 Match, PM&R offered 601 positions across PGY-1, PGY-2 and Physician (R) types, and non-U.S. citizen IMGs matched to 22 of them (NRMP).
