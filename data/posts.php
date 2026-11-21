@@ -74,6 +74,9 @@ $blogPosts = [
         'slug'     => 'where-to-put-your-research-on-eras',
         'title'    => 'Where to Put Your Research on ERAS: A Guide to the MyERAS Scholarly Work Section',
         'excerpt'  => 'MyERAS gives you exactly five categories for scholarly work and no way to create your own. Here is the table to find your exact situation, plus the rules for statuses, authors, and the mistakes that get flagged in review.',
+        'meta_title'       => 'Where to Put Research on ERAS: Scholarly Work Guide',
+        'meta_description' => 'Which MyERAS Scholarly Work entry type and status fits your poster, talk, paper or draft? Use the lookup table, then avoid the mistakes that get flagged.',
+        'wiki_links'       => ['/wiki/application/myeras-walkthrough', '/wiki/application/eras-experiences-section', '/wiki/application/research-on-your-application'],
         'category' => 'research',
         'date'     => '2026-09-16',
         'read'     => 8,
@@ -237,8 +240,12 @@ $blogPosts = [
         'slug'     => 'residency-program-signaling-gold-silver-signals',
         'title'    => 'Residency Program Signaling: How to Use Your Gold and Silver Signals',
         'excerpt'  => 'Program signaling is the highest-leverage decision in your residency application, and you only get a handful. Here is how gold and silver signals actually work, how many each specialty gives you, and where to spend them.',
+        'meta_title'       => 'Residency Program Signaling: Gold and Silver Signals',
+        'meta_description' => 'How residency program signals work, how many each specialty gives you, and how IMGs can spend gold and silver signals, plus geographic preferences.',
+        'wiki_links'       => ['/wiki/application/program-signaling-explained', '/wiki/application/building-a-program-list', '/wiki/application/identifying-img-friendly-programs'],
         'category' => 'match',
         'date'     => '2026-08-28',
+        'updated'  => '2026-11-21',
         'read'     => 8,
         'author'   => 'USMLE Wise Team',
         'featured' => false,
@@ -264,7 +271,7 @@ $blogPosts = [
               <li><strong>Gold signal:</strong> this program is among my very top choices.</li>
               <li><strong>Silver signal:</strong> I am seriously and specifically interested in this program.</li>
             </ul>
-            <p>Silver signals are not consolation prizes. In the published data, both tiers substantially raise the odds of an interview invitation compared with an unsignaled application. Gold simply raises them more. A silver signal at a program that fits your profile is worth far more than a gold signal at a program that was never going to interview an IMG with your file.</p>
+            <p>Silver signals are not consolation prizes. In the published data, both tiers raise the odds of an interview invitation compared with an unsignaled application. Gold simply raises them more. A silver signal at a program that fits your profile is worth far more than a gold signal at a program that was never going to interview an IMG with your file.</p>
 
             <h2>How Many Signals Do You Get?</h2>
             <p>Allotments are set by each specialty's leadership, and they change between cycles. As a rough picture of the range in the 2027 season:</p>
@@ -304,9 +311,9 @@ $blogPosts = [
 
             <h2>Where Your Signals Should Actually Go</h2>
 
-            <h3>Do not signal programs that already know you</h3>
-            <p>This is the mistake we correct most often. If you did an away rotation at a program, or it is your home institution, that program already has more information about you than any signal could convey. Several specialties explicitly instruct applicants not to signal home or away-rotation programs. Spending a gold signal there converts your scarcest resource into a message the program already received.</p>
-            <p>If you want to reinforce that connection, a silver signal (where the specialty allows it) is usually the right instrument. Save gold for programs that have no other reason to notice you.</p>
+            <h3>Home and away programs: signal them, but think about the tier</h3>
+            <p>AAMC's guidance is to signal the programs you are most interested in, including your home program and programs where you did an away rotation. AAMC says it gave all participating specialties guidance about home and away rotations, and individual specialties can add their own advice, so check your specialty's instructions for the current cycle before you decide.</p>
+            <p>Our opinion, not an AAMC rule: a program that has already worked with you knows more about you than any signal can say, so a gold signal there often adds less than the same gold signal at a program with no other reason to notice you. If your specialty uses tiers, a silver signal is often the better fit for a rotation site you want to reinforce. Save gold for programs that have no other connection to you.</p>
 
             <h3>Do not signal the programs you would match at anyway</h3>
             <p>The same logic applies at the other end. If your profile is comfortably above a program's typical resident, and it interviews plenty of IMGs like you every year, your signal is buying attention you were already going to get.</p>
@@ -321,12 +328,48 @@ $blogPosts = [
             </ul>
 
             <h3>Be honest about geography</h3>
-            <p>Geographic preferences and signals are read together. Programs in regions with few IMG-friendly options, and programs outside major coastal metros, tend to weigh a signal more heavily because they receive fewer credible expressions of interest. If you have real ties to a region (family, prior training, language), a signal there does more work than the same signal spent on a saturated market.</p>
+            <p>Geographic preferences and signals are separate tools (more on that below), but programs can see both when they review your file. In our opinion, programs in regions with few IMG-friendly options, and programs outside major coastal metros, may weigh a signal more heavily because they receive fewer credible expressions of interest. AAMC says programs use signals in different ways, so treat this as a tendency, not a rule. If you have real ties to a region (family, prior training, language), a signal there does more work than the same signal spent on a saturated market.</p>
+
+            <h2>Which Specialties Offer Signals?</h2>
+            <p>Signals are not available in every specialty. For the 2027 season, AAMC lists program signals for most of the specialties that apply through ERAS, including Internal Medicine, Family Medicine, Pediatrics, Psychiatry, Neurology, General Surgery, Anesthesiology, Diagnostic Radiology, Dermatology, Pathology, Physical Medicine &amp; Rehabilitation, Otolaryngology, Neurological Surgery, Orthopedic Surgery, Urology, integrated Plastic Surgery and Transitional Year programs. Many combined programs and July and December fellowships are on the list too.</p>
+            <p>Three details matter more than the list itself:</p>
+            <ul>
+              <li><strong>Tiers differ by specialty.</strong> AAMC lists gold and silver tiers for Internal Medicine, Anesthesiology, Dermatology, Diagnostic Radiology, Child Neurology and integrated Vascular Surgery. Most other specialties use a single type of signal.</li>
+              <li><strong>Program participation is optional.</strong> A specialty offering signals does not mean every program in it accepts them. Only participating programs can receive your signal.</li>
+              <li><strong>Some specialties run their own systems.</strong> Emergency Medicine and OB-GYN moved to ResidencyCAS (see above). If your specialty is not in AAMC's table, check how its own application service handles signaling.</li>
+            </ul>
+            <p>The list and the counts change between cycles, so check the current cycle's instructions on AAMC's program signaling page before you plan.</p>
+
+            <h3>Signal Statements: The Program Signal Explanation</h3>
+            <p>A few specialties ask for a short written reason with each signal. AAMC's overview names four: Anesthesiology, integrated Plastic Surgery, Physical Medicine &amp; Rehabilitation and Radiation Oncology. In those specialties the explanation is limited to 300 characters, and AAMC states that if you do not provide one, your signal will not be saved.</p>
+            <p>AAMC says the explanation should say why you are assigning the signal to that program, and it should not share ranking preferences or ranking intentions. Treat it as one concrete reason (a rotation, a mentor, a research interest, a family or regional tie), not a promise to rank the program first. Check the current cycle's instructions to see whether your specialty has this field, because the list can change.</p>
+
+            <h2>Geographic Preferences and Signals: Two Different Tools</h2>
+            <p>Geographic preferences are not the same thing as signals, and the two are easy to confuse. A signal goes to a specific program and you only get a few. A geographic preference is a statement about where in the country you want to train, and it is not tied to any one program.</p>
+            <p>Under AAMC's 2027 MyERAS guidance:</p>
+            <ul>
+              <li>You can select up to three of the nine U.S. Census divisions (New England, Middle Atlantic, East North Central, West North Central, South Atlantic, East South Central, West South Central, Mountain and Pacific), or choose "I do not have a division preference."</li>
+              <li>Only the programs you apply to in a division you selected see your answer. Programs outside your selected divisions do not see any information about your geographic preferences. If you choose "no division preference," every program you apply to sees that answer, and if you skip the question, no program receives anything.</li>
+              <li>You can also describe your preferences in a free-text box, and answer a similar question about setting (urban, suburban or rural).</li>
+              <li>For 2027, Otolaryngology, Orthopedic Surgery and integrated Plastic Surgery do not receive geographic or setting answers.</li>
+              <li>AAMC tells programs to treat these answers as one piece of information, not as a screening tool on their own, but it acknowledges that some programs may use them during screening.</li>
+            </ul>
+            <p>These details can change from one cycle to the next, so check the current cycle's instructions in the AAMC applicant guide before you answer.</p>
+
+            <h3>How to Use Geography and Signals Together</h3>
+            <p>What follows is our opinion, not an AAMC rule.</p>
+            <ul>
+              <li><strong>Remember who sees what.</strong> A program outside the divisions you picked sees nothing about your geographic preferences. If you want that program to know you are interested, the signal and a real tie in your application have to carry that message.</li>
+              <li><strong>Geography does not run out; signals do.</strong> Choose your divisions honestly, then spend signals on specific programs where you clear the hard filters.</li>
+              <li><strong>Narrowing has a cost.</strong> Picking one division means programs elsewhere hear nothing from you on geography. Only narrow if the tie is real.</li>
+              <li><strong>Back it with a concrete tie.</strong> Family, prior training, a rotation or language are easier for a program to believe than general enthusiasm.</li>
+            </ul>
+            <p>If you use the free-text box, keep it to one or two sentences: name the tie, name the region and say what it means for your plans. An illustrative example written by the USMLE Wise team (do not copy it): "My family lives in the Middle Atlantic division and I completed a clinical rotation there, so I am especially interested in training in this region." Only write what is true for you.</p>
 
             <h2>Five Ways Applicants Waste Signals</h2>
             <ul>
               <li><strong>Signaling by prestige.</strong> Picking programs off a ranking list rather than off your own competitiveness data.</li>
-              <li><strong>Signaling your home and away programs.</strong> Reinforcing a message that was already delivered.</li>
+              <li><strong>Spending gold on programs that already know you.</strong> A gold signal at a home or away program may add little; consider silver there, and check your specialty's guidance.</li>
               <li><strong>Signaling all in one city.</strong> Concentrating every signal in a single saturated market where IMG spots are scarce.</li>
               <li><strong>Signaling before checking visa status.</strong> The single most common way an IMG throws away a gold signal.</li>
               <li><strong>Waiting until the deadline.</strong> Signal allocation is a research task, not a form field. Applicants who start it the week applications are due make list-shaped decisions instead of profile-shaped ones.</li>
@@ -338,7 +381,7 @@ $blogPosts = [
 
             <h2>Getting This Right</h2>
             <p>Signal allocation requires something genuinely hard to do alone: an honest, outside read of your own competitiveness, measured against real program-level match data rather than a guess. Most applicants either aim too high across the board or too low across the board, and neither error is visible until interview season has already gone quiet.</p>
-            <p>USMLE Wise's <a href="/match-signaling">Program Signaling Strategy</a> is built for exactly this decision: a competitiveness assessment against real program-match data, personalized program selection with geographic planning, a 1:1 call with a senior advisor, and self-serve access to our Matchmaker tool, a searchable database of IMG-friendly programs with match history plus a signal allocation calculator.</p>
+            <p>USMLE Wise's <a href="/match-signaling">Program Signaling Strategy</a> is built for exactly this decision: a competitiveness assessment against real program-match data, personalized program selection with geographic planning, a 1:1 call with a senior advisor, and self-serve access to our <a href="/match-maker">Match Maker tool</a>, a searchable database of IMG-friendly programs with match history plus a signal allocation calculator.</p>
             <p>If you want to build the rest of the application around it, see our full <a href="/match">residency match mentorship</a>, or read our guides to the <a href="/blog/nrmp-match-process-explained">NRMP Match process</a> and the <a href="/blog/img-residency-personal-statement-guide">IMG personal statement</a>.</p>
             <p><strong>Not sure where your signals should go?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call</a> and we'll map your specialty, your competitiveness, and your allocation before the deadline forces the decision for you.</p>
             HTML,
@@ -347,6 +390,9 @@ $blogPosts = [
         'slug'     => 'img-residency-personal-statement-guide',
         'title'    => "The IMG's Residency Personal Statement: What Actually Works",
         'excerpt'  => 'The ultimate guide for IMGs: how to write a compelling personal statement for the US residency match, including brainstorming prompts and a proven paragraph-by-paragraph structure.',
+        'meta_title'       => 'IMG Residency Personal Statement: What Actually Works',
+        'meta_description' => 'How IMGs can write a residency personal statement that works, with brainstorming prompts and a paragraph-by-paragraph structure for the US residency match.',
+        'wiki_links'       => ['/wiki/application/personal-statement-guide', '/wiki/application/myeras-walkthrough', '/wiki/application/eras-timeline'],
         'category' => 'match',
         'date'     => '2026-07-27',
         'read'     => 6,
@@ -461,6 +507,9 @@ $blogPosts = [
         'slug'     => 'what-to-do-after-j1-visa',
         'title'    => 'What to Do After Getting Your J-1 Visa for USMLE Residency: A Complete IMG Guide',
         'excerpt'  => 'Got your J-1 visa for USMLE residency? Discover the essential next steps every IMG must take regarding SEVIS, health insurance, travel rules, and 212(e) home residency requirements.',
+        'meta_title'       => 'What to Do After Getting Your J-1 Visa for Residency',
+        'meta_description' => 'Got your J-1 visa for residency? Your next steps as an IMG: SEVIS, health insurance, travel rules and the 212(e) two-year home residency requirement.',
+        'wiki_links'       => ['/wiki/visas/j1-visa-process', '/wiki/visas/two-year-home-residency-rule', '/wiki/life-in-us/arrival-checklist'],
         'category' => 'img-life',
         'date'     => '2026-07-27',
         'read'     => 5,
@@ -553,6 +602,9 @@ $blogPosts = [
         'slug'     => 'how-imgs-match-us-residency',
         'title'    => 'How International Medical Graduates Can Match into a US Residency',
         'excerpt'  => 'The journey is complex and competitive — but it is achievable. In 2026, IMGs secured 9,682 first-year residency positions. Here is the exact step-by-step roadmap.',
+        'meta_title'       => 'How IMGs Can Match Into a US Residency: Step by Step',
+        'meta_description' => 'A step-by-step roadmap for international medical graduates matching into US residency: exams, ECFMG certification, USCE, ERAS, interviews and Match Day.',
+        'wiki_links'       => ['/wiki/start-here/imgs-roadmap', '/wiki/start-here/img-match-statistics', '/wiki/interviews-match/how-the-match-algorithm-works'],
         'category' => 'img-life',
         'date'     => '2026-07-14',
         'read'     => 8,
@@ -637,6 +689,9 @@ $blogPosts = [
         'slug'     => '10-common-mistakes-imgs-usmle-preparation',
         'title'    => '10 Common Mistakes IMGs Make During USMLE Preparation',
         'excerpt'  => 'Many brilliant IMGs fail to match not because they lack medical knowledge, but because they make critical strategic errors during preparation. Here are the ten mistakes to avoid.',
+        'meta_title'       => '10 Common USMLE Preparation Mistakes IMGs Make',
+        'meta_description' => 'Strong IMGs often stumble on strategy, not knowledge. Ten USMLE preparation mistakes that cost time, scores and matches, and how to avoid each one.',
+        'wiki_links'       => ['/wiki/exams/how-long-to-study', '/wiki/exams/question-banks-compared', '/wiki/start-here/common-img-mistakes'],
         'category' => 'usmle',
         'date'     => '2026-07-07',
         'read'     => 7,
@@ -704,10 +759,14 @@ $blogPosts = [
     ],
     [
         'slug'     => 'usmle-step-1-vs-step-2-ck',
-        'title'    => 'USMLE Step 1 vs Step 2 CK: What\'s the Difference and Which Should You Focus On?',
+        'title'    => 'USMLE Step 1 vs Step 2 CK: Differences, Difficulty and Where to Focus',
         'excerpt'  => 'Step 1 is Pass/Fail. Step 2 CK is the number that defines your application. Here is how the two exams differ, and the strategy that lets you master both without burning out.',
+        'meta_title'       => 'Step 1 vs Step 2 CK: Difficulty and Key Differences',
+        'meta_description' => 'Is Step 2 CK harder than Step 1? An honest comparison of difficulty, format, scoring and strategy, plus where to focus your prep time.',
+        'wiki_links'       => ['/wiki/exams/step-1', '/wiki/exams/step-2-ck', '/wiki/exams/when-to-take-each-step'],
         'category' => 'usmle',
         'date'     => '2026-06-30',
+        'updated'  => '2026-11-21',
         'read'     => 8,
         'author'   => 'USMLE Wise Team',
         'featured' => false,
@@ -715,6 +774,7 @@ $blogPosts = [
         'body'     => <<<'HTML'
             <p>For years, the USMLE journey was defined by a singular, terrifying number: your Step 1 score. A 260 was your ticket to a competitive surgical residency; a 210 meant adjusting your expectations. Today, the residency landscape has experienced a complete paradigm shift. With Step 1 transitioning to a Pass/Fail system, the spotlight has shifted entirely to Step 2 Clinical Knowledge (CK).</p>
             <p>If you are navigating your medical school years, you might be asking yourself: what actually is the difference between these two massive exams? And how should you allocate your limited time between them?</p>
+            <p><strong>Short answer on difficulty:</strong> there is no official ranking of the two exams, and people disagree, so be wary of anyone who gives you a single verdict. They are hard in different ways. Step 1 asks you to explain why disease happens, and Step 2 CK asks you to decide what to do for a patient. Which one feels harder usually depends on your background, and the stakes differ too: Step 1 is pass/fail, while Step 2 CK produces the number programs see.</p>
 
             <h2>The Core Differences: Step 1 vs. Step 2 CK</h2>
             <p>At a high level, the difference boils down to <em>Why</em> vs. <em>What next?</em></p>
@@ -730,19 +790,45 @@ $blogPosts = [
               </thead>
               <tbody>
                 <tr><td>Primary Focus</td><td>Basic Sciences &amp; Disease Mechanisms</td><td>Clinical Science &amp; Patient Management</td></tr>
-                <tr><td>Scoring</td><td>Pass / Fail</td><td>Three-Digit Score (1 to 300)</td></tr>
-                <tr><td>Minimum Passing Score</td><td>Roughly equivalent to 196</td><td>218</td></tr>
-                <tr><td>Total Question Count</td><td>280 questions</td><td>~316 questions</td></tr>
-                <tr><td>Format</td><td>14 blocks (20 questions / 30 min each)</td><td>16 blocks (18–20 questions / 30 min each)</td></tr>
-                <tr><td>Total Test Day Length</td><td>8 hours</td><td>9 hours</td></tr>
+                <tr><td>Scoring</td><td>Pass / Fail</td><td>Three-Digit Score</td></tr>
+                <tr><td>Passing Standard</td><td>196 on the three-digit scale (the result is reported as pass/fail only)</td><td>218 for exams on or after July 1, 2025</td></tr>
+                <tr><td>Format</td><td>14 blocks of up to 20 questions, 30 minutes each</td><td>16 blocks of up to 20 questions, 30 minutes each</td></tr>
+                <tr><td>Test Day Length</td><td>One 8-hour session</td><td>One 9-hour session</td></tr>
+                <tr><td>Minimum Break Time</td><td>55 minutes</td><td>55 minutes</td></tr>
+                <tr><td>What Programs See</td><td>A pass or fail outcome</td><td>A three-digit score</td></tr>
               </tbody>
             </table>
+            <p>Block counts, timing and passing standards are set by USMLE and can change, so confirm them on usmle.org before you plan.</p>
+
+            <h2>Is Step 2 CK Harder Than Step 1? An Honest Comparison</h2>
+            <p>Nobody can give you a single answer, and no official source ranks the two exams by difficulty. USMLE publishes pass rates by examinee group on its <a href="https://www.usmle.org/performance-data" target="_blank" rel="noopener noreferrer">performance data page</a>, but those tables compare groups of test takers within each exam. They do not tell you how hard one exam is compared with the other, so we do not quote them as a verdict. What we can do is lay out why people find each one hard.</p>
+            <table>
+              <thead>
+                <tr><th>Factor</th><th>Why Step 1 can feel harder</th><th>Why Step 2 CK can feel harder</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Type of thinking</td><td>Mechanisms and detail across a wide range of basic science, often recalled from courses taken years earlier.</td><td>Clinical decisions: several answer choices can look reasonable and you must pick the best next step.</td></tr>
+                <tr><td>Scope</td><td>Dense, detail-heavy content that rewards repeated review.</td><td>A very wide clinical range across specialties, plus screening, prevention and management guidelines.</td></tr>
+                <tr><td>Test day</td><td>14 blocks over an 8-hour session.</td><td>16 blocks over a 9-hour session, so stamina matters more.</td></tr>
+                <tr><td>Stakes</td><td>Pass/fail: a failed attempt is visible on your transcript and is hard to explain away.</td><td>The score is visible to programs, so a below-target result can feel costly even when you pass.</td></tr>
+                <tr><td>Prep time</td><td>Often a dedicated period with few other obligations.</td><td>Often squeezed around clinical rotations or work.</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Who Tends to Find Which One Harder (Opinion, Not Data)</h3>
+            <p>These are patterns we hear from applicants, not statistics, and plenty of people fit neither description.</p>
+            <ul>
+              <li><strong>Step 1 often feels harder if</strong> you are far from your basic science courses, you learn better from patients than from pathways, or it is your first major standardized exam.</li>
+              <li><strong>Step 2 CK often feels harder if</strong> you have had little supervised clinical work in a US-style setting, you are not used to guideline-driven management decisions, or you have to study around a heavy rotation or work schedule.</li>
+              <li><strong>For many IMGs,</strong> the gap is less about raw knowledge and more about format: American-style clinical vignettes and "next best step" reasoning can feel unfamiliar even when your clinical training was strong.</li>
+            </ul>
+            <p>A more useful question than "which is harder?" is "which exam carries more risk for me?" A failed Step 1 attempt stays on your record, and a Step 2 CK score below your target can narrow your specialty options. Plan for both, and base your timing on your own practice results rather than on what a forum says is harder.</p>
 
             <h2>The Core Dilemma: Pass/Fail vs. The Ultimate Numeric Filter</h2>
             <p>Because Step 1 is Pass/Fail, many students make the fatal mistake of taking their foot off the gas. Let's inject some candor here: Step 1 is still a brutally difficult exam. The fail rate has remained a sobering reality for those who under-prepare. Furthermore, residency program directors can see if you failed Step 1 on your first attempt — a red flag that is exceptionally difficult to overcome, regardless of how well you do on Step 2 CK.</p>
 
             <h3>The Rise of Step 2 CK</h3>
-            <p>Since Step 1 lost its numerical score, Step 2 CK has become the single most important objective metric used by residency programs to filter applicants. The USMLE program raised the minimum passing score for Step 2 CK to 218 — but that is merely the baseline. The national mean score sits around 250. For highly competitive specialties like Orthopedic Surgery, Dermatology, or Plastic Surgery, matching applicants regularly average north of 255 to 260.</p>
+            <p>Since Step 1 lost its numerical score, Step 2 CK has become one of the most important objective metrics residency programs can use to filter applicants. The minimum passing score for Step 2 CK is 218 for exams on or after July 1, 2025, but passing is merely the baseline. Competitive specialties tend to match applicants with higher scores, and our breakdown of NRMP Charting Outcomes data shows <a href="/blog/usmle-scores-explained-specialty-requirements">what the numbers look like by specialty</a>. For score distributions, check the current figures from USMLE and NRMP rather than relying on a number you read in a forum.</p>
 
             <h2>Where Should You Focus Your Energy?</h2>
             <p>The short answer: you must focus on Step 2 CK to match, but you cannot ace Step 2 CK without mastering Step 1. Think of Step 1 as the foundation of a house, and Step 2 CK as the structure built on top of it. If your foundation is made of sand, the house will collapse the moment you try to build.</p>
@@ -756,24 +842,25 @@ $blogPosts = [
             <ul>
               <li><strong>Focus on Comprehension over Memorization:</strong> Understand the <em>why</em> behind pathophysiology. If you understand why a failing heart causes pulmonary edema, you won't need to memorize the symptoms of left-sided heart failure.</li>
               <li><strong>Keep Your Resource Stack Tight:</strong> Stick to UWorld, First Aid, and Pathoma (specifically Chapters 1–3).</li>
-              <li><strong>Goal:</strong> Secure a comfortable passing margin. When your practice NBME exams are consistently hitting 65%+ (which correlates to a >99% chance of passing), you are ready to test.</li>
+              <li><strong>Goal:</strong> Secure a comfortable passing margin. Many students wait for a steady upward trend across several full-length practice exams before booking, and no practice score can guarantee a pass. Our <a href="/blog/best-resources-usmle-step-1">Step 1 resources guide</a> covers how to use the practice exams.</li>
             </ul>
 
             <h3>Phase 2: The Clinical Year Transition</h3>
             <ul>
               <li><strong>Treat Wards as Step 2 CK Prep:</strong> The hours you spend on Internal Medicine, Surgery, and OB/GYN rotations are active study sessions. Pay attention to the clinical decisions your residents and attendings make.</li>
-              <li><strong>Utilize Shelf Exams:</strong> Treat every clinical shelf exam as a mini-Step 2 CK. If you study diligently using targeted QBanks (like AMBOSS or UWorld Clinical Review), by the time you reach your Step 2 dedicated period you will already be in the 230–240 scoring range.</li>
+              <li><strong>Utilize Shelf Exams:</strong> Treat every clinical shelf exam as a mini-Step 2 CK. If you study diligently using targeted QBanks (like AMBOSS or UWorld Clinical Review), by the time you reach your Step 2 dedicated period you will usually have a much stronger starting point than if you studied cold.</li>
             </ul>
 
             <h3>Phase 3: The Step 2 CK Strategy</h3>
             <ul>
               <li><strong>Train with Shorter Blocks:</strong> Step 2 CK uses the modernized 30-minute block structure. Practice 18-to-20-question blocks to build stamina for the grueling 9-hour, 16-block exam day.</li>
               <li><strong>Focus on Algorithms:</strong> Step 2 CK loves "next best step" questions. Master diagnostic algorithms (when to get an ultrasound vs. a CT scan, when to call surgery vs. manage conservatively).</li>
-              <li><strong>Over-Index on Quality and Safety:</strong> Up to 10–15% of Step 2 CK questions focus on systems-based practice, professionalism, patient safety, and ethics. Do not ignore these modules in your QBank.</li>
+              <li><strong>Over-Index on Quality and Safety:</strong> A meaningful share of Step 2 CK questions touches on systems-based practice, professionalism, patient safety, and ethics. Do not ignore these modules in your QBank, and check the current content outline on usmle.org for the exact weighting.</li>
             </ul>
 
             <h2>The Verdict</h2>
             <p>You cannot choose to ignore either exam. However, your intensity and execution must peak during your Step 2 CK preparation. View Step 1 as a necessary, high-yield boot camp — pass it comfortably on your first attempt while building a deep, conceptual understanding of medicine. Once that hurdle is cleared, pivot your entire focus toward Step 2 CK. Treat it as your primary job, your primary differentiator, and your golden ticket to the residency program of your dreams.</p>
+            <p>Planning your timing? Read <a href="/blog/ultimate-usmle-timeline">The Ultimate USMLE Timeline</a>, the <a href="/blog/how-to-prepare-usmle-step-1-2026">Step 1 study guide</a> and our <a href="/blog/perfect-usmle-study-schedule">study schedule guide</a>.</p>
             <p>At USMLE Wise, our coaching programs cover both phases — a Step 1 foundation built around the UFAPS method, and a Step 2 CK program focused on clinical reasoning and the pacing demands of the 16-block exam day. If you want a mentor who understands the full picture, <a href="/coaching">explore our coaching programs →</a></p>
             HTML,
     ],
@@ -781,8 +868,12 @@ $blogPosts = [
         'slug'     => 'should-you-hire-usmle-mentor',
         'title'    => 'Should You Hire a USMLE Mentor? Here\'s When Coaching Makes a Difference',
         'excerpt'  => 'At hundreds or thousands of dollars, you have to ask: is hiring a USMLE mentor actually worth it, or is it expensive hand-holding? Here is the honest breakdown.',
+        'meta_title'       => 'USMLE Tutor or Mentor: When Tutoring Helps IMGs',
+        'meta_description' => 'Is a USMLE tutor worth it? Honest guidance on when tutoring helps IMGs, when it does not, and what to ask before you hire a tutor or mentor.',
+        'wiki_links'       => ['/wiki/exams/how-long-to-study', '/wiki/exams/exam-anxiety-and-burnout', '/wiki/exams/what-to-do-after-failing-a-step'],
         'category' => 'usmle',
         'date'     => '2026-06-23',
+        'updated'  => '2026-11-21',
         'read'     => 7,
         'author'   => 'Dr. Manik Madaan',
         'featured' => false,
@@ -790,6 +881,21 @@ $blogPosts = [
         'body'     => <<<'HTML'
             <p>Let's not sugarcoat it: the road to a U.S. residency match is a grueling, high-stakes marathon. Between the sheer volume of medical knowledge, the strategic maneuvering of the NRMP Match, and the psychological warfare of standardized testing, it is easy to feel like you are wandering through a labyrinth in the dark.</p>
             <p>Ever since USMLE Step 1 transitioned to a Pass/Fail system, the pressure has only intensified. All eyes are now on your Step 2 CK score, your clinical rotations, and the holistic review of your ERAS application. With so much on the line, a thriving industry of USMLE tutors, mentors, and residency consultants has emerged. But is hiring a USMLE mentor actually worth the investment, or is it just expensive hand-holding?</p>
+            <p>The short, honest answer: sometimes yes, sometimes no, and it depends on what is actually going wrong in your preparation. This guide covers USMLE tutoring and mentoring for IMGs: what each option is, when it helps, when it does not, and what to ask before you pay anyone.</p>
+
+            <h2>USMLE Tutor, Mentor, Coach or Course: What You Are Actually Buying</h2>
+            <p>These words get used loosely, and providers do not all mean the same thing by them. Before you compare options, work out which kind of help you need.</p>
+            <table>
+              <thead>
+                <tr><th>Option</th><th>What it usually is</th><th>Often a good fit when</th><th>Watch for</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>USMLE tutor</td><td>One-to-one help with content: explaining concepts and going over missed questions</td><td>You have specific content gaps you cannot close alone</td><td>Content drilling with no plan and no way to measure progress</td></tr>
+                <tr><td>Mentor or coach</td><td>Strategy and accountability: schedule, resources, test-taking approach, sometimes application planning</td><td>You have plateaued, struggle with time management or anxiety, or need orientation to the US system</td><td>Generic copy-paste study plans; unclear credentials</td></tr>
+                <tr><td>Structured course</td><td>A fixed program taught on a set schedule, often to a group</td><td>You want ready-made structure and a defined scope</td><td>Coverage that does not match your weak areas</td></tr>
+                <tr><td>Self-study with peers</td><td>Your own plan, plus friends or a study group</td><td>You are disciplined and have a peer network that recently took the exam</td><td>Blind spots you cannot see on your own</td></tr>
+              </tbody>
+            </table>
 
             <h2>The Landscape Has Changed: Why "Studying Harder" Isn't Enough Anymore</h2>
             <p>Back in the day, the prescription for USMLE success was simple: buy First Aid, complete UWorld twice, and lock yourself in a library for 12 hours a day. Today, that brute-force strategy is failing a lot of brilliant students. Here is why:</p>
@@ -816,6 +922,17 @@ $blogPosts = [
             <h3>4. You Struggle with Executive Dysfunction or Severe Anxiety</h3>
             <p>If you struggle with time management, scheduling, or paralyzing test anxiety, the self-directed nature of USMLE prep can lead to burnout. A mentor acts as an objective accountability partner — designing a realistic day-by-day study calendar, keeping you on track, and providing the psychological support needed to manage the mental toll of this process.</p>
 
+            <h2>Benefits of Tutoring for IMGs, and Its Limits</h2>
+            <p>For international medical graduates, the useful parts of tutoring tend to be practical rather than magical. In our opinion, the realistic benefits are:</p>
+            <ul>
+              <li><strong>Diagnosing the real problem.</strong> A good tutor looks at your question-bank results and practice exams to separate a knowledge gap from a reading problem, a timing problem or an anxiety problem. Each needs a different fix.</li>
+              <li><strong>Getting used to US-style questions.</strong> Long clinical vignettes and "next best step" reasoning can feel unfamiliar even when your training was strong, and feedback on how you reason through them can help.</li>
+              <li><strong>Structure and accountability.</strong> A weekly check-in is a simple way to keep a plan from drifting.</li>
+              <li><strong>An outside view of readiness.</strong> Someone who is not you can tell you whether your results support booking the exam or moving the date.</li>
+            </ul>
+            <p>The limits matter just as much. A tutor cannot study for you. We are not aware of independent data showing how much tutoring changes outcomes for a typical examinee, so be skeptical of any provider that quotes a score gain or a pass rate without a source. And no one can guarantee a score, a pass or a match.</p>
+            <p>Before you pay, it is worth trying the free options first: a timed set of blocks with careful review, an honest practice exam, the official sample questions on usmle.org, and a study partner who has taken the exam recently. Our wiki guides on <a href="/wiki/exams/how-long-to-study">how long to study</a> and <a href="/wiki/exams/exam-anxiety-and-burnout">exam anxiety and burnout</a> can help you see which problem you actually have.</p>
+
             <h2>When You Probably Don't Need a Mentor</h2>
             <p>Let's be completely candid: coaching is not a magic bullet, and it is certainly not necessary for everyone. You can likely save your money if:</p>
             <ul>
@@ -833,16 +950,32 @@ $blogPosts = [
               <li><strong>Comprehensive Vision:</strong> The best coaches don't just look at the exam. They understand how your scores fit into your broader ERAS application and NRMP rank list strategy.</li>
             </ul>
 
+            <h3>Questions to Ask Before You Hire a USMLE Tutor</h3>
+            <ul>
+              <li>What exactly happens in each session, and what am I expected to do between sessions?</li>
+              <li>How do you measure progress, and what result would make you tell me to move my exam date?</li>
+              <li>Who will actually teach me? What are their credentials, and can I speak with them before I pay?</li>
+              <li>Do you promise a score, a pass or a match? (If yes, treat that as a warning sign.)</li>
+              <li>What is the cancellation and refund policy, in writing?</li>
+              <li>Have you worked with IMGs preparing for this specific Step?</li>
+              <li>Do you earn anything from recommending other paid services to me?</li>
+            </ul>
+
             <h2>The Bottom Line: Calculate Your ROI</h2>
-            <p>When deciding whether to hire a mentor, think in terms of Return on Investment. The cost of failing to match — including the financial burden of a gap year, the emotional toll, and the depreciating value of your medical degree the longer you are out of school — is astronomically high. If a mentor increases your chances of matching into your preferred specialty or saves you from a costly retake, the upfront cost of coaching is a drop in the bucket over the course of your medical career.</p>
+            <p>When deciding whether to hire a tutor or mentor, compare what it costs with what it could realistically save you. A retake means another exam fee, more months of study and, for many IMGs, a delay that makes the application harder to explain. A good tutor may help you avoid some of that, but no one can promise a score, a pass or a match, and a provider who does should make you cautious. Ask for the price in writing, ask exactly what is included, and decide before you pay what result would tell you it was not working.</p>
             <p>Be honest with yourself about your weaknesses. If you need strategy, accountability, or a guide to navigate the complex waters of the NRMP Match, seeking professional mentorship isn't a sign of weakness — it's a smart, executive decision for your future career.</p>
-            <p>USMLE Wise was built for exactly this. Our mentors are former IMGs and physicians who have sat on the other side of the residency process — they combine up-to-date exam strategy, ERAS application coaching, and USCE guidance into a single, cohesive plan. If you are weighing whether coaching is right for you, <a href="/coaching">start with a free guidance call →</a></p>
+            <h2>Where USMLE Wise Fits</h2>
+            <p>USMLE Wise sells exam preparation, so weigh this article with that in mind. If what you need is a structured, exam-specific plan rather than one-to-one tutoring, we run a <a href="/step-1-high-yield-crash-course">Step 1 High Yield Crash Course</a>, a <a href="/step-2-high-yield-crash-course">Step 2 High Yield Crash Course</a> and a <a href="/step-3-high-yield-crash-course">Step 3 High Yield Crash Course</a>. Choose the Step you are preparing for, read what is included, and compare it with the other options above.</p>
+            <p><strong>Not sure whether you need a tutor, a course or just a better plan?</strong> <a href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Book a free guidance call</a> and we will talk through where you are and what would help.</p>
             HTML,
     ],
     [
         'slug'     => 'usmle-scores-explained-specialty-requirements',
         'title'    => 'USMLE Scores Explained: What Score Do You Need for Your Dream Specialty?',
         'excerpt'  => 'Step 2 CK is now the most critical three-digit number on your application. Updated with NRMP\'s 2026 Charting Outcomes data: here is exactly what score you need, specialty by specialty.',
+        'meta_title'       => 'USMLE Scores by Specialty: Step 2 CK Score You Need',
+        'meta_description' => 'What Step 2 CK score do you need for your specialty? A specialty-by-specialty breakdown built on NRMP Charting Outcomes data from the 2026 Match.',
+        'wiki_links'       => ['/wiki/exams/step-2-ck-score-and-what-it-means', '/wiki/specialties/choosing-a-specialty', '/wiki/specialties/img-match-rates-by-specialty'],
         'category' => 'match',
         'date'     => '2026-10-02',
         'read'     => 7,
@@ -940,6 +1073,9 @@ $blogPosts = [
         'slug'     => 'nrmp-match-process-explained',
         'title'    => 'Everything You Need to Know About the NRMP Match Process',
         'excerpt'  => 'The NRMP Match uses a Nobel Prize-winning algorithm — and most applicants try to game it wrong. Here is a complete guide to how the algorithm actually works and how to use it to your advantage.',
+        'meta_title'       => 'NRMP Match Process Explained: How the Algorithm Works',
+        'meta_description' => 'How the NRMP Match works, from ERAS and rank order lists to the applicant-proposing algorithm and Match Week, and how to use it to your advantage.',
+        'wiki_links'       => ['/wiki/interviews-match/how-the-match-algorithm-works', '/wiki/interviews-match/rank-order-list-strategy', '/wiki/interviews-match/match-week-timeline'],
         'category' => 'match',
         'date'     => '2026-06-09',
         'read'     => 7,
@@ -1004,8 +1140,12 @@ $blogPosts = [
         'slug'     => 'how-to-prepare-usmle-step-1-2026',
         'title'    => 'How to Prepare for the USMLE Step 1 in 2026: The Complete Study Guide',
         'excerpt'  => 'The testing experience has undergone its most significant structural evolution in years — 14 blocks of 20 questions instead of 7 blocks of 40. Here is the definitive, up-to-date roadmap.',
+        'meta_title'       => 'How to Prepare for USMLE Step 1 in 2026: Study Guide',
+        'meta_description' => 'A USMLE Step 1 study guide for 2026: the 14-block format, resources, study tips, a 6-week schedule and a 14-day final-stretch plan.',
+        'wiki_links'       => ['/wiki/exams/step-1', '/wiki/exams/step-1-study-schedule', '/wiki/exams/step-1-resources-guide'],
         'category' => 'usmle',
         'date'     => '2026-06-02',
+        'updated'  => '2026-11-21',
         'read'     => 9,
         'author'   => 'Dr. Manik Madaan',
         'featured' => false,
@@ -1013,6 +1153,24 @@ $blogPosts = [
         'body'     => <<<'HTML'
             <p>The USMLE Step 1 remains one of the most critical milestones of your medical career. However, if you are preparing to take the exam in 2026, your strategy must be vastly different from what worked in the past.</p>
             <p>Since transitioning to a Pass/Fail scoring system, Step 1 is no longer about stress-induced cramming for a 260+. The goal is building a bulletproof foundation that ensures a first-time pass and sets you up for success on Step 2 CK — which now carries the brunt of residency matching pressure. And the testing experience itself has undergone its most significant structural evolution in years.</p>
+
+            <h2>Your Step 1 Guide at a Glance: Resources, Study Tips, Plan and Schedule</h2>
+            <p>This guide is the hub for Step 1 preparation. Use the table to jump to the part you need, and follow the links for the deeper articles instead of reading everything twice.</p>
+            <table>
+              <thead>
+                <tr><th>You want to know</th><th>Start here</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>What the 2026 exam format looks like</td><td>Sections 1 and 2 below</td></tr>
+                <tr><td>Which resources to use</td><td>Section 3 below, then <a href="/blog/best-resources-usmle-step-1">Best Resources for USMLE Step 1</a> (including books)</td></tr>
+                <tr><td>Study tips</td><td>Sections 2 and 4, plus the study tips section near the end</td></tr>
+                <tr><td>A study plan and schedule</td><td>Section 5 (a sample day), <a href="/blog/perfect-usmle-study-schedule">the 6-week planner and weekly template</a>, and the 14-day plan below</td></tr>
+                <tr><td>When to take Step 1 and what comes next</td><td><a href="/blog/ultimate-usmle-timeline">The Ultimate USMLE Timeline</a></td></tr>
+                <tr><td>What to avoid</td><td><a href="/blog/10-common-mistakes-imgs-usmle-preparation">10 Common Mistakes IMGs Make During USMLE Preparation</a></td></tr>
+                <tr><td>How Step 1 compares with Step 2 CK</td><td><a href="/blog/usmle-step-1-vs-step-2-ck">Step 1 vs Step 2 CK</a></td></tr>
+              </tbody>
+            </table>
+            <p>For the official details, USMLE's own <a href="https://www.usmle.org/step-exams/step-1" target="_blank" rel="noopener noreferrer">Step 1 page</a> and our <a href="/wiki/exams/step-1">Step 1 wiki guide</a> are the places to confirm the current format.</p>
 
             <h2>1. The 2026 Structural Revolution: What Actually Changed?</h2>
             <p>The USMLE program rolled out updated test-delivery software. While the core syllabus, question types, and total question count (280 multiple-choice questions) remain completely unchanged, the delivery format and interface have transformed.</p>
@@ -1051,6 +1209,7 @@ $blogPosts = [
               <li><strong>Sketchy Medical:</strong> Crucial for encoding Microbiology and Pharmacology into visual memory palaces.</li>
               <li><strong>Anki (AnKing Deck):</strong> Use daily spaced repetition to prevent your brain from "leaking" basic science details.</li>
             </ul>
+            <p>This is the short version. For how to use each resource, a section on Step 1 books, and a note on what no single resource covers, read our full <a href="/blog/best-resources-usmle-step-1">Step 1 resources guide</a>.</p>
 
             <h2>4. Where to Focus: High-Yield Topic Breakdown</h2>
             <p>The exam has largely abandoned "What is this drug?" recall questions in favor of "How does this biochemical defect cause this physical presentation?" Pay extra attention to the highest-weighted disciplines:</p>
@@ -1061,7 +1220,7 @@ $blogPosts = [
               <li><strong>Systems-Based Heavy Hitters:</strong> Reproductive &amp; Endocrine (12–16%), Nervous System &amp; Special Senses (11–15%), and Cardiovascular (10–14%).</li>
             </ul>
 
-            <h2>5. A Sample 6-Week Dedicated Study Schedule</h2>
+            <h2>5. A Sample Daily Routine for Your Dedicated Study Period</h2>
             <p>Consistency and structure are your shields against anxiety. Here is a template for a balanced, high-efficiency daily routine:</p>
             <ul>
               <li><strong>7:30 – 8:00 AM:</strong> Quick review of daily Anki cards (keep this limited to high-yield or weak areas).</li>
@@ -1074,6 +1233,7 @@ $blogPosts = [
               <li><strong>4:30 – 5:30 PM:</strong> Weak area retention (Sketchy micro/pharm videos or targeted flashcards).</li>
               <li><strong>5:30 PM onward:</strong> Turn off the computer. Relax, exercise, and sleep. Sleep is when consolidation happens.</li>
             </ul>
+            <p>That is one sample day. For the week-by-week structure of a 6-week dedicated period, including a free weekly template, see <a href="/blog/perfect-usmle-study-schedule">How to Build the Perfect USMLE Study Schedule</a>. If you only have two weeks left, jump to the 14-day plan further down this page.</p>
 
             <h2>6. How to Simulate the New Exam Day</h2>
             <p>Do not let your real exam be the first time you experience the new 14-block format. Two weeks before your test date, run a full simulation. With 14 blocks, you must plan your transitions carefully. You start with 55 minutes of break time — skip the 5-minute tutorial and boost that pool to 60 minutes.</p>
@@ -1092,7 +1252,46 @@ $blogPosts = [
 
             <h2>7. The Ultimate Goal: Step 2 CK Readiness</h2>
             <p>Do not fall into the trap of studying just to pass. A "Fail" on Step 1 is a massive red flag on your residency application that cannot be easily erased. Furthermore, Step 2 CK clinical reasoning is built entirely on the basic science framework tested in Step 1. Mastery of pathophysiology, pharmacology mechanisms, and high-yield physiology will pay massive dividends when you begin studying for Step 2 CK.</p>
-            <p>Before booking your exam, make sure you are scoring 65%+ on multiple NBME practice exams (Forms 25–31). Once you hit that threshold, you can walk into your Prometric center with the absolute confidence that you are going to pass.</p>
+            <p>Before booking your exam, look for a steady upward trend across several full-length practice assessments, such as NBME self-assessments. Many students use around 65% as a rule of thumb, but no practice score can guarantee a pass, so ask someone who knows your results to help you interpret them. Our wiki page on <a href="/wiki/exams/nbme-self-assessments">NBME self-assessments</a> explains what those scores can and cannot tell you.</p>
+
+            <h2>Step 1 Study Tips That Hold Up</h2>
+            <p>These are practical habits rather than secrets, and they work with every resource stack:</p>
+            <ul>
+              <li><strong>Start questions early.</strong> Learn from the explanations as you go instead of saving all practice for the final weeks.</li>
+              <li><strong>Sort your mistakes by cause.</strong> Keep a short running list: knowledge gap, misread the question, ran out of time, changed a correct answer. Each cause needs a different fix.</li>
+              <li><strong>Recall before you reread.</strong> Close the book and try to explain the concept first, then check yourself.</li>
+              <li><strong>Revisit weak topics several times.</strong> A weak area reviewed three times in short sessions usually sticks better than one long session.</li>
+              <li><strong>Practice at exam pace.</strong> Timed 20-question blocks in 30 minutes, with a break plan you have rehearsed.</li>
+              <li><strong>Check scope against the official outline.</strong> The content outline on usmle.org shows what can be tested, so you can spot gaps your resources leave.</li>
+              <li><strong>Protect sleep and take one rest day a week.</strong> Tired studying is inefficient studying.</li>
+              <li><strong>If you have been away from basic science for a while</strong> (common for IMGs who finished the preclinical years long ago), allow extra time at the start. Our wiki guide on <a href="/wiki/exams/how-long-to-study">how long to study</a> can help you plan, and your scheduling window matters too, so read the <a href="/wiki/exams/scheduling-with-prometric">Prometric scheduling guide</a> before you book.</li>
+            </ul>
+
+            <h2>A 14-Day Step 1 Study Plan (Final-Stretch Version)</h2>
+            <p>This plan covers the last 14 days before your exam. It assumes you have already worked through the content with a question bank and now want to consolidate and sharpen. It is not a way to learn Step 1 from scratch in two weeks, and it is our suggested structure, not an official USMLE recommendation. If the Day 1 assessment shows you are far from ready, talk to someone who knows your results and consider whether to move your test date. The current rescheduling rules are in our <a href="/wiki/exams/scheduling-with-prometric">Prometric scheduling guide</a>.</p>
+            <table>
+              <thead>
+                <tr><th>Day</th><th>Focus</th><th>What to do</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Baseline</td><td>Take a full-length timed practice assessment (for example, an NBME self-assessment) using the break plan from section 6. Do no other studying today.</td></tr>
+                <tr><td>2</td><td>Review</td><td>Go through every question you missed or guessed. Sort the errors by cause and pick no more than ten weak topics to fix.</td></tr>
+                <tr><td>3</td><td>Weak topics 1 to 3</td><td>Short content review for each, then one or two timed 20-question blocks on those topics, with full review.</td></tr>
+                <tr><td>4</td><td>Weak topics 4 to 6</td><td>Same format as Day 3.</td></tr>
+                <tr><td>5</td><td>Mixed practice</td><td>Two or three mixed timed blocks at exam pace, each followed by a careful review.</td></tr>
+                <tr><td>6</td><td>Weak topics 7 to 10</td><td>Same format as Day 3. Finish at a reasonable hour.</td></tr>
+                <tr><td>7</td><td>Rest</td><td>No questions. Walk, eat well, sleep.</td></tr>
+                <tr><td>8</td><td>Second assessment</td><td>A different full-length practice assessment under the same conditions as Day 1. Compare error causes and pacing, not just the score.</td></tr>
+                <tr><td>9</td><td>Review</td><td>Review it the way you did on Day 2. Update your weak-topic list and drop topics that are now solid.</td></tr>
+                <tr><td>10</td><td>Pacing</td><td>Mixed timed blocks at the real 30-minute pace. Practice flagging, skipping and returning. Short review of your top weak areas.</td></tr>
+                <tr><td>11</td><td>Official materials</td><td>Work through the sample questions and the interactive testing experience on usmle.org so the real interface feels familiar.</td></tr>
+                <tr><td>12</td><td>Light review</td><td>Skim your error list and summary notes. One or two blocks at most, and no new resources.</td></tr>
+                <tr><td>13</td><td>Logistics</td><td>Confirm your test center, ID and travel plan (see the <a href="/wiki/exams/exam-day-rules-and-checklist">exam day checklist</a>). Short review, early night.</td></tr>
+                <tr><td>14</td><td>Day before the exam</td><td>Rest. No new content. Eat normally and sleep.</td></tr>
+              </tbody>
+            </table>
+            <p>If you have fewer than 14 days, keep the order: baseline, targeted fixes, one more assessment, then rest. For a longer runway, use the 6-week structure in our <a href="/blog/perfect-usmle-study-schedule">study schedule guide</a> instead.</p>
+
             <p>Many IMGs find that having a mentor coordinate their prep — deciding which Pathoma chapters to prioritize, when to increase their QBank block frequency, and how to interpret their NBME trends — saves weeks of misdirected effort. <a href="/coaching">USMLE Wise coaching</a> is built around exactly this kind of personalized, data-driven strategy for Step 1 and beyond.</p>
             HTML,
     ],
@@ -1100,8 +1299,12 @@ $blogPosts = [
         'slug'     => 'best-resources-usmle-step-1',
         'title'    => 'Best Resources for USMLE Step 1: UWorld, First Aid, AnKing, Sketchy & More',
         'excerpt'  => 'The sheer volume of study materials can feel completely overwhelming. Here is the definitive guide to the gold-standard UFAPS resources for Step 1 — and exactly how to use each one.',
+        'meta_title'       => 'Best Step 1 Resources and Books: UWorld, First Aid & More',
+        'meta_description' => 'The best USMLE Step 1 resources and books, how to use each one, and whether any book covers everything. A streamlined stack that avoids resource overload.',
+        'wiki_links'       => ['/wiki/exams/step-1-resources-guide', '/wiki/exams/question-banks-compared', '/wiki/exams/nbme-self-assessments'],
         'category' => 'usmle',
         'date'     => '2026-05-26',
+        'updated'  => '2026-11-21',
         'read'     => 6,
         'author'   => 'USMLE Wise Team',
         'featured' => false,
@@ -1110,19 +1313,19 @@ $blogPosts = [
             <p>When preparing for the USMLE Step 1, the sheer volume of study materials can feel completely overwhelming. It is easy to fall into the trap of "resource hoarding" — buying every book, video series, and QBank available, only to end up with superficial knowledge and severe burnout.</p>
             <p>Since the transition to a Pass/Fail system, the key to Step 1 success is high-yield efficiency. Your goal is to build a rock-solid foundation for Step 2 CK without wasting precious time. To do this, you only need a handful of resources. Here is the definitive guide to the gold-standard UFAPS method — and how to use each resource effectively.</p>
 
-            <h2>1. UWorld: The Undisputed King</h2>
+            <h2>1. UWorld: The Core Question Bank</h2>
             <p>UWorld is not an assessment tool — it is your primary learning textbook. Many students make the mistake of using UWorld solely to see what score they get, but its true value lies in its incredibly detailed explanations.</p>
             <p><strong>How to Use It:</strong> Treat every explanation (both for correct and incorrect answer choices) as a mini-lecture. Pay close attention to why the wrong answers are incorrect.</p>
             <p><strong>A Crucial 2026 Shift:</strong> Step 1 now uses a modernized modular delivery format consisting of 14 blocks of 20 questions (30 minutes per block), rather than the legacy 40-question blocks. From day one, configure your custom UWorld blocks to 20 questions on timed mode to master the rapid pacing of the actual exam.</p>
             <p><strong>The Goal:</strong> Complete at least one full pass of UWorld. A second pass or a thorough review of your "incorrects" is ideal if time permits.</p>
 
             <h2>2. First Aid: Your Master Blueprint</h2>
-            <p>First Aid is the undisputed "bible" of Step 1 prep. However, it is written as a dense, high-yield outline — not a textbook. Trying to read it cover-to-cover without any context is a recipe for rote-memorization failure.</p>
+            <p>First Aid is widely treated as the "bible" of Step 1 prep. However, it is written as a dense, high-yield outline, not a textbook. Trying to read it cover-to-cover without any context is a recipe for rote-memorization failure.</p>
             <p><strong>How to Use It:</strong> Use First Aid as a framework to organize your knowledge. When you review a UWorld question, open the corresponding page in First Aid and annotate any extra pearls of wisdom directly into the margins. Use it to review weak organ systems alongside your practice blocks — if you are struggling with a concept, watch the relevant Pathoma or Boards &amp; Beyond video first to understand the <em>why</em> before trying to memorize the First Aid page.</p>
 
             <h2>3. AnKing (Anki): The Spaced Repetition Powerhouse</h2>
-            <p>The USMLE Step 1 tests an immense amount of detail. Flashcards are the best way to prevent your brain from "leaking" information over a multi-month study period. The AnKing deck (built on the open-source flashcard app Anki) is the gold-standard community deck.</p>
-            <p><strong>How to Use It:</strong> Do not try to do all 30,000+ cards in the deck. Instead, search for and "unsuspend" cards that correspond specifically to the UWorld questions you got wrong or the Sketchy/Pathoma videos you watched that day.</p>
+            <p>The USMLE Step 1 tests an immense amount of detail. Flashcards are the best way to prevent your brain from "leaking" information over a multi-month study period. The AnKing deck (built on the open-source flashcard app Anki) is one of the most popular community decks.</p>
+            <p><strong>How to Use It:</strong> Do not try to do every card in the deck, because it is very large. Instead, search for and "unsuspend" cards that correspond specifically to the UWorld questions you got wrong or the Sketchy/Pathoma videos you watched that day.</p>
             <p><strong>Consistency is Key:</strong> Spaced repetition only works if you do your reviews every single day. Spend the first 30 to 45 minutes of your morning clearing your daily review queue.</p>
 
             <h2>4. Pathoma: The Pathology Holy Grail</h2>
@@ -1136,7 +1339,7 @@ $blogPosts = [
             <h2>5. Sketchy Medical: Visual Memory Palaces</h2>
             <p>Microbiology and Pharmacology are heavily tested, but they require a massive amount of dry memorization. Sketchy solves this by using highly structured, visual "memory palaces" where characters and symbols represent specific drug mechanisms, side effects, or bacterial characteristics.</p>
             <ul>
-              <li><strong>Sketchy Micro:</strong> An absolute necessity. Virtually every student who passes Step 1 credits Sketchy Micro with locking down bacteria, viruses, fungi, and parasites.</li>
+              <li><strong>Sketchy Micro:</strong> Many students credit it with helping them lock down bacteria, viruses, fungi, and parasites. Whether it works for you depends on how you learn, so try a few videos before committing.</li>
               <li><strong>Sketchy Pharm:</strong> Highly recommended for autonomic drugs, antimicrobials, and chemotherapy agents.</li>
             </ul>
             <p><strong>How to Use It:</strong> Watch a Sketchy video, look at the annotated image summary, and immediately unsuspend the corresponding Anki cards to lock the visual associations into your long-term memory.</p>
@@ -1144,8 +1347,8 @@ $blogPosts = [
             <h2>6. The Assessment Tools: NBME Practice Exams</h2>
             <p>You should not step foot into a Prometric center until you have objective proof that you are ready to pass. This is where the National Board of Medical Examiners (NBME) self-assessments come in.</p>
             <ul>
-              <li><strong>Which to Take:</strong> Focus on NBME Forms 25 through 31 and the Official Free 120.</li>
-              <li><strong>The Safety Threshold:</strong> Because Step 1 is Pass/Fail, you are aiming for a comfortable safety margin. A score of 65% or higher on at least two consecutive NBME practice exams correlates to a &gt;99% statistical probability of passing the actual exam.</li>
+              <li><strong>Which to Take:</strong> Focus on the NBME Step 1 forms that are currently offered and the Official Free 120. Form availability changes, so check NBME's site for the current list.</li>
+              <li><strong>The Safety Threshold:</strong> Because Step 1 is Pass/Fail, you are aiming for a comfortable safety margin. Many students use 65% or higher on several recent practice exams as a rule of thumb. That is a rule of thumb, not a guarantee: practice scores are an imperfect predictor, so look at your trend and read the score report for each form. Our wiki page on <a href="/wiki/exams/nbme-self-assessments">NBME self-assessments</a> explains what the scores can and cannot tell you.</li>
               <li><strong>Pacing Practice:</strong> Use these assessments to practice your mental stamina and build your break strategy around the 14-block format.</li>
             </ul>
 
@@ -1160,10 +1363,48 @@ $blogPosts = [
                 <tr><td>AnKing</td><td>Long-Term Retention</td><td>Daily reviews of targeted cards</td></tr>
                 <tr><td>Pathoma</td><td>Core Pathology</td><td>Focus heavily on Chapters 1–3</td></tr>
                 <tr><td>Sketchy</td><td>Micro &amp; Pharm Memorization</td><td>Watch videos paired with Anki cards</td></tr>
-                <tr><td>NBMEs</td><td>Assessment &amp; Readiness</td><td>Forms 25–31 and the Free 120</td></tr>
+                <tr><td>NBMEs</td><td>Assessment &amp; Readiness</td><td>Current NBME forms and the Free 120</td></tr>
               </tbody>
             </table>
             <p>By streamlining your resource list to these core, high-yield tools, you will avoid cognitive overload, build a deeper understanding of medicine, and confidently secure your "Pass" on Step 1.</p>
+
+            <h2>Best Step 1 Books: Do USMLE Books Have Everything?</h2>
+            <p>Short answer: no. No single book covers everything that can be tested, and no book replaces practice questions. Books and outlines work best as a framework and a reference, while questions show you what you do not yet know.</p>
+
+            <h3>Why No Book Has Everything</h3>
+            <ul>
+              <li><strong>Outline books compress on purpose.</strong> A review outline has to cut detail to stay a manageable size, so it works as a checklist and memory aid, not as a full explanation.</li>
+              <li><strong>The exam tests application, not page recall.</strong> Questions are clinical vignettes. Knowing a fact on a page is not the same as recognizing it in a question stem.</li>
+              <li><strong>Editions differ and go out of date.</strong> Check the edition year of any annual review book, and confirm it matches the exam you are taking.</li>
+              <li><strong>Your curriculum has its own gaps.</strong> Depending on your school, topics such as biostatistics, ethics or behavioral science may have been taught lightly. A book cannot tell you which gaps you personally have, but your question results can.</li>
+            </ul>
+
+            <h3>Types of Step 1 Books Students Commonly Use</h3>
+            <p>The titles below are examples that students commonly mention, not endorsements, and none is required. Check that you are buying the current edition.</p>
+            <table>
+              <thead>
+                <tr><th>Type</th><th>Examples students commonly use</th><th>What it is for</th><th>Limit</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Review outline</td><td>First Aid for the USMLE Step 1</td><td>Framework and checklist; annotate it with what you learn from questions</td><td>Compressed by design, so it is not a textbook</td></tr>
+                <tr><td>Pathology book or companion</td><td>Pathoma (book and videos); a reference text such as Robbins</td><td>Understanding disease mechanisms</td><td>Reference texts are long, so use them for lookup rather than cover to cover</td></tr>
+                <tr><td>Physiology text</td><td>Costanzo Physiology</td><td>Building understanding of renal, cardiovascular and respiratory physiology</td><td>Written for understanding, not in exam style</td></tr>
+                <tr><td>Subject review series</td><td>Lippincott Illustrated Reviews (pharmacology, microbiology, biochemistry, immunology)</td><td>Illustrated review of a single subject</td><td>Depth and coverage vary by volume</td></tr>
+                <tr><td>Biostatistics and epidemiology</td><td>A short dedicated text such as High-Yield Biostatistics, Epidemiology, and Public Health</td><td>Quick coverage of an area many students find weak</td><td>Confirm it is current</td></tr>
+                <tr><td>Your own school notes</td><td>Course notes and textbooks you already own</td><td>Filling gaps specific to your curriculum</td><td>Often more detailed than the exam needs</td></tr>
+              </tbody>
+            </table>
+
+            <h3>How to Choose Books Without Wasting Months</h3>
+            <ol>
+              <li>Look at the official Step 1 content outline on usmle.org to see the scope.</li>
+              <li>Do a few timed blocks of questions and note the topics you miss.</li>
+              <li>Add a book only to fill a specific gap, instead of buying one for every subject up front.</li>
+              <li>Stop adding resources once your plan is full. Finishing a small stack beats starting a large one.</li>
+            </ol>
+
+            <h3>Turn Your Resources Into a Plan</h3>
+            <p>Choosing resources is only half the job. For the plan around them, read <a href="/blog/how-to-prepare-usmle-step-1-2026">How to Prepare for the USMLE Step 1 in 2026</a>, which includes a 14-day final-stretch plan, then <a href="/blog/perfect-usmle-study-schedule">How to Build the Perfect USMLE Study Schedule</a> for the 6-week planner and free template, and <a href="/blog/ultimate-usmle-timeline">The Ultimate USMLE Timeline</a> for when to test. Our wiki also has a vendor-neutral <a href="/wiki/exams/step-1-resources-guide">Step 1 resources guide</a> and a comparison of <a href="/wiki/exams/question-banks-compared">question banks</a>.</p>
 
             <h2>One More Resource: Expert Mentorship</h2>
             <p>The tools above will give you everything you need to study — but they won't tell you <em>how to use them together</em> around your specific timeline, weak subjects, and score target. That gap is where most IMGs lose months of preparation chasing the wrong things.</p>
@@ -1174,6 +1415,9 @@ $blogPosts = [
         'slug'     => 'perfect-usmle-study-schedule',
         'title'    => 'How to Build the Perfect USMLE Study Schedule (With Free Template)',
         'excerpt'  => 'The perfect study schedule is not about cramming 14 hours of passive reading into every day. It is about a structured, sustainable routine that respects your brain\'s cognitive limits.',
+        'meta_title'       => 'USMLE Study Schedule: Build Your Plan (Free Template)',
+        'meta_description' => 'Build a USMLE study schedule you can sustain: a daily block-and-review routine, a 6-week dedicated-phase planner and a free weekly template.',
+        'wiki_links'       => ['/wiki/exams/step-1-study-schedule', '/wiki/exams/step-2-ck-study-schedule', '/wiki/exams/how-long-to-study'],
         'category' => 'usmle',
         'date'     => '2026-05-19',
         'read'     => 6,
@@ -1246,6 +1490,9 @@ $blogPosts = [
         'slug'     => 'ultimate-usmle-timeline',
         'title'    => 'The Ultimate USMLE Timeline: When Should You Take Step 1, Step 2, and Apply for the Match?',
         'excerpt'  => 'If you do not plan your exams and application steps strategically, you can easily miss the ERAS deadline. Here is the master timeline that keeps you ahead of every milestone.',
+        'meta_title'       => 'USMLE Timeline: When to Take Step 1, Step 2 and Match',
+        'meta_description' => 'Plan your USMLE timeline: when to take Step 1 and Step 2 CK, what to finish before ERAS and the Match, and extra padding for IMGs.',
+        'wiki_links'       => ['/wiki/exams/when-to-take-each-step', '/wiki/application/eras-timeline', '/wiki/tools/timeline-planner'],
         'category' => 'usmle',
         'date'     => '2026-05-12',
         'read'     => 6,
@@ -1333,6 +1580,9 @@ $blogPosts = [
         'slug'     => 'clinical-rotations-in-florida-for-imgs',
         'title'    => 'Clinical Rotations in Florida for IMGs: Your Complete Guide (2026)',
         'excerpt'  => 'Florida is one of the busiest states for IMG clinical rotations, from an ACGME-accredited surgery site in Miami to hospitalist medicine in Kissimmee. Here is every placement, broken down.',
+        'meta_title'       => 'Clinical Rotations in Florida for IMGs (2026 Guide)',
+        'meta_description' => 'Every USMLE Wise clinical rotation in Florida for IMGs, from an ACGME-accredited surgery site in Miami to hospitalist medicine in Kissimmee.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/how-to-get-usce', '/wiki/clinical-experience/usce-costs'],
         'category' => 'rotations',
         'date'     => '2026-08-10',
         'read'     => 7,
@@ -1389,6 +1639,9 @@ $blogPosts = [
         'slug'     => 'clinical-rotations-in-texas-for-imgs',
         'title'    => 'US Clinical Rotations in Texas: Where IMGs Can Train',
         'excerpt'  => 'From an Internal Medicine sub-internship in McAllen to psychiatry and family medicine in Houston, here is a full breakdown of every USMLE Wise clinical rotation currently available in Texas.',
+        'meta_title'       => 'US Clinical Rotations in Texas: Where IMGs Can Train',
+        'meta_description' => 'Clinical rotations in Texas for IMGs: an Internal Medicine sub-internship in McAllen plus psychiatry and family medicine in Houston, compared side by side.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/how-to-get-usce', '/wiki/specialties/internal-medicine'],
         'category' => 'rotations',
         'date'     => '2026-08-11',
         'read'     => 6,
@@ -1438,6 +1691,9 @@ $blogPosts = [
         'slug'     => 'clinical-rotations-in-new-york-for-imgs',
         'title'    => 'Clinical Rotations in New York for International Medical Graduates',
         'excerpt'  => 'New York offers two very different paths for IMGs: a housing-included Internal Medicine elective near the Hudson Valley, and a Mount Sinai-affiliated Family Medicine rotation in NYC.',
+        'meta_title'       => 'New York Clinical Rotations for IMGs: IM and Family Med',
+        'meta_description' => 'New York rotations for IMGs: a housing-included Internal Medicine elective near the Hudson Valley and a Mount Sinai-affiliated Family Medicine rotation.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/usce-costs', '/wiki/specialties/internal-medicine'],
         'category' => 'rotations',
         'date'     => '2026-08-12',
         'read'     => 5,
@@ -1481,6 +1737,9 @@ $blogPosts = [
         'slug'     => 'clinical-rotations-in-new-jersey-for-imgs',
         'title'    => 'New Jersey Clinical Rotations for IMGs: Hospitals, Specialties & LORs',
         'excerpt'  => 'New Jersey has the deepest bench of any state on our roster: five rotations spanning surgery, psychiatry, pediatrics, and family medicine, several with Hackensack- and department-head-level mentors.',
+        'meta_title'       => 'New Jersey Clinical Rotations for IMGs: Hospitals & LORs',
+        'meta_description' => 'Five New Jersey clinical rotations for IMGs across surgery, psychiatry, pediatrics and family medicine, with hospital details and LOR mentors.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/turning-usce-into-a-letter', '/wiki/clinical-experience/how-much-usce-programs-want'],
         'category' => 'rotations',
         'date'     => '2026-08-13',
         'read'     => 7,
@@ -1534,6 +1793,9 @@ $blogPosts = [
         'slug'     => 'clinical-rotations-in-virginia-for-imgs',
         'title'    => 'Clinical Rotations in Virginia: Georgetown-Affiliated Training for IMGs',
         'excerpt'  => 'Virginia offers two outpatient rotations in the DC metro area, including a Family Medicine placement led by a Georgetown University Associate Professor with 39 years of active practice.',
+        'meta_title'       => 'Clinical Rotations in Virginia for IMGs (DC Metro)',
+        'meta_description' => 'Two outpatient clinical rotations in the DC metro area of Virginia for IMGs, including Family Medicine led by a Georgetown University Associate Professor.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/observership-vs-externship-vs-hands-on', '/wiki/specialties/family-medicine'],
         'category' => 'rotations',
         'date'     => '2026-08-14',
         'read'     => 5,
@@ -1577,6 +1839,9 @@ $blogPosts = [
         'slug'     => 'psychiatry-clinical-rotations-for-imgs',
         'title'    => 'Psychiatry Clinical Rotations for IMGs: What to Expect and How to Choose',
         'excerpt'  => 'From one-on-one mentorship with a psychiatric hospital Department Head to academic training with a UNC Chapel Hill Associate Professor, here is how to choose the right psychiatry rotation.',
+        'meta_title'       => 'Psychiatry Clinical Rotations for IMGs: How to Choose',
+        'meta_description' => 'How IMGs can choose a psychiatry clinical rotation, from one-on-one mentorship with a hospital Department Head to academic training with UNC faculty.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/how-to-get-usce', '/wiki/specialties/psychiatry'],
         'category' => 'rotations',
         'date'     => '2026-08-04',
         'read'     => 6,
@@ -1626,6 +1891,9 @@ $blogPosts = [
         'slug'     => 'internal-medicine-sub-internships-for-imgs',
         'title'    => 'Internal Medicine Sub-Internships for IMGs: A Complete Guide',
         'excerpt'  => 'What is a sub-internship, and why does it matter so much for an IMG applying Internal Medicine? Here is what to expect from our inpatient IM placements in Texas, New York, and Tennessee.',
+        'meta_title'       => 'Internal Medicine Sub-Internships for IMGs: A Guide',
+        'meta_description' => 'What an Internal Medicine sub-internship is and why it matters for IMGs, plus what to expect from inpatient IM placements in Texas, New York and Tennessee.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/how-much-usce-programs-want', '/wiki/specialties/internal-medicine'],
         'category' => 'rotations',
         'date'     => '2026-08-05',
         'read'     => 6,
@@ -1674,6 +1942,9 @@ $blogPosts = [
         'slug'     => 'general-surgery-rotations-for-imgs',
         'title'    => 'General Surgery Rotations for IMGs: OR Exposure, LORs, and What Matters',
         'excerpt'  => 'ACGME accreditation, hands-on suturing labs, or a former Program Director on your letter: our five General Surgery rotations each offer something different. Here is how to weigh them.',
+        'meta_title'       => 'General Surgery Rotations for IMGs: OR Time and LORs',
+        'meta_description' => 'How IMGs can weigh five General Surgery rotations by ACGME accreditation, hands-on suturing labs, OR exposure and the strength of the letter.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/how-to-get-usce', '/wiki/specialties/general-surgery'],
         'category' => 'rotations',
         'date'     => '2026-08-06',
         'read'     => 7,
@@ -1726,6 +1997,9 @@ $blogPosts = [
         'slug'     => 'pediatrics-rotations-for-imgs-inpatient-vs-outpatient',
         'title'    => 'Pediatrics Rotations for IMGs: Outpatient vs. Inpatient Explained',
         'excerpt'  => 'Most pediatrics rotations for IMGs are outpatient by design, but one of ours adds hospital rounding into the mix. Here is what the difference actually means for your training and your LOR.',
+        'meta_title'       => 'Pediatrics Rotations for IMGs: Outpatient vs Inpatient',
+        'meta_description' => 'Outpatient versus inpatient pediatrics rotations for IMGs: what the difference means for your hands-on training and for your letter of recommendation.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/observership-vs-externship-vs-hands-on', '/wiki/specialties/pediatrics'],
         'category' => 'rotations',
         'date'     => '2026-08-07',
         'read'     => 6,
@@ -1772,6 +2046,9 @@ $blogPosts = [
         'slug'     => 'family-medicine-rotations-for-imgs',
         'title'    => 'Family Medicine Rotations for IMGs: Building Your Primary Care Foundation',
         'excerpt'  => 'From a Georgetown Associate Professor in Virginia to inpatient telemedicine in Florida, our six Family Medicine rotations cover the full range of what primary care training can look like.',
+        'meta_title'       => 'Family Medicine Rotations for IMGs: Primary Care Training',
+        'meta_description' => 'Six Family Medicine rotations for IMGs, from a Georgetown Associate Professor in Virginia to inpatient telemedicine in Florida, compared side by side.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/turning-usce-into-a-letter', '/wiki/specialties/family-medicine'],
         'category' => 'rotations',
         'date'     => '2026-08-08',
         'read'     => 7,
@@ -1825,6 +2102,9 @@ $blogPosts = [
         'slug'     => 'hospitalist-rotations-for-imgs',
         'title'    => 'Hospitalist Rotations Explained: What IMGs Gain from a 7-on/7-off Schedule',
         'excerpt'  => 'Hospitalist medicine runs on a schedule most students have never experienced before residency. Here is what that actually looks like, and what our Kissimmee, Florida rotation offers.',
+        'meta_title'       => 'Hospitalist Rotations for IMGs: The 7-on/7-off Schedule',
+        'meta_description' => 'What a hospitalist 7-on/7-off schedule looks like, what IMGs gain from it, and how the Kissimmee, Florida hospitalist rotation is structured.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/observership-vs-externship-vs-hands-on', '/wiki/specialties/internal-medicine'],
         'category' => 'rotations',
         'date'     => '2026-08-09',
         'read'     => 5,
@@ -1867,6 +2147,9 @@ $blogPosts = [
         'slug'     => 'psychiatry-rotations-in-new-jersey',
         'title'    => 'Psychiatry Rotations in New Jersey: One-on-One Mentorship with a Department Head',
         'excerpt'  => 'Our New Jersey psychiatry placement is a one-on-one rotation with the Department Head at Ramapo Ridge Psychiatric Hospital. Here is exactly what the schedule, mentorship, and LOR look like.',
+        'meta_title'       => 'Psychiatry Rotations in New Jersey: One-on-One Mentorship',
+        'meta_description' => 'A one-on-one psychiatry rotation in New Jersey with the Department Head at Ramapo Ridge Psychiatric Hospital: the schedule, the mentorship and the LOR.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/turning-usce-into-a-letter', '/wiki/specialties/psychiatry'],
         'category' => 'rotations',
         'date'     => '2026-07-29',
         'read'     => 5,
@@ -1910,6 +2193,9 @@ $blogPosts = [
         'slug'     => 'general-surgery-rotations-in-florida-acgme-miami',
         'title'    => 'General Surgery Rotations in Florida: ACGME-Accredited Clinical Exposure in Miami',
         'excerpt'  => 'Our Miami General Surgery rotation is the only ACGME-accredited site on our entire roster. Here is what that accreditation means for your application, plus a second, clinic-based option in Kissimmee.',
+        'meta_title'       => 'General Surgery Rotations in Florida: ACGME Miami Site',
+        'meta_description' => 'Our ACGME-accredited General Surgery rotation in Miami explained for IMGs, plus a second, clinic-based surgery option in Kissimmee, Florida.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/observership-vs-externship-vs-hands-on', '/wiki/specialties/general-surgery'],
         'category' => 'rotations',
         'date'     => '2026-07-30',
         'read'     => 6,
@@ -1955,6 +2241,9 @@ $blogPosts = [
         'slug'     => 'family-medicine-rotations-in-florida',
         'title'    => 'Family Medicine Rotations in Florida: Inpatient, Outpatient & Telemedicine Training',
         'excerpt'  => 'Most Family Medicine rotations are outpatient-only. Our two Florida placements are the exception, combining inpatient rounding, outpatient clinic, and telemedicine in a single 4-week rotation.',
+        'meta_title'       => 'Family Medicine Rotations in Florida for IMGs',
+        'meta_description' => 'Two Florida Family Medicine rotations for IMGs that combine inpatient rounding, outpatient clinic and telemedicine in a single 4-week placement.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/how-to-get-usce', '/wiki/specialties/family-medicine'],
         'category' => 'rotations',
         'date'     => '2026-07-31',
         'read'     => 6,
@@ -1997,6 +2286,9 @@ $blogPosts = [
         'slug'     => 'pediatrics-rotations-in-maryland',
         'title'    => 'Pediatrics Rotations in Maryland: Hands-On Clinical Experience for IMGs',
         'excerpt'  => 'Our Baltimore pediatrics placement pairs you with an attending of 20-plus years for a genuinely hands-on, high-volume outpatient experience, at the lowest price of any pediatrics rotation we offer.',
+        'meta_title'       => 'Pediatrics Rotations in Maryland: Hands-On for IMGs',
+        'meta_description' => 'A hands-on, high-volume outpatient pediatrics rotation in Baltimore for IMGs, led by an attending with 20-plus years of experience. See who it suits.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/usce-costs', '/wiki/specialties/pediatrics'],
         'category' => 'rotations',
         'date'     => '2026-08-01',
         'read'     => 5,
@@ -2040,6 +2332,9 @@ $blogPosts = [
         'slug'     => 'psychiatry-rotations-in-north-carolina',
         'title'    => 'Psychiatry Rotations in North Carolina: Training with UNC Chapel Hill Faculty',
         'excerpt'  => 'Our North Carolina psychiatry rotation puts you with a UNC Chapel Hill Associate Professor who spent 20-plus years as Clinical Director of the university counseling and psychological services.',
+        'meta_title'       => 'Psychiatry Rotations in North Carolina: UNC Faculty',
+        'meta_description' => 'A North Carolina psychiatry rotation for IMGs with a UNC Chapel Hill Associate Professor and former Clinical Director of university counseling services.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/turning-usce-into-a-letter', '/wiki/specialties/psychiatry'],
         'category' => 'rotations',
         'date'     => '2026-08-02',
         'read'     => 5,
@@ -2083,6 +2378,9 @@ $blogPosts = [
         'slug'     => 'internal-medicine-rotations-in-new-york-housing-included',
         'title'    => 'Internal Medicine Rotations in New York: Housing-Included Clinical Training',
         'excerpt'  => 'Our New York Internal Medicine rotation is one of the only placements on our roster with housing built into the price. Here is what that actually covers, and why it matters logistically.',
+        'meta_title'       => 'Internal Medicine Rotations in New York With Housing',
+        'meta_description' => 'A New York Internal Medicine rotation for IMGs with housing built into the price: what the housing covers and why it matters for logistics.',
+        'wiki_links'       => ['/wiki/clinical-experience/usce-explained', '/wiki/clinical-experience/usce-costs', '/wiki/specialties/internal-medicine'],
         'category' => 'rotations',
         'date'     => '2026-08-03',
         'read'     => 5,
@@ -2127,6 +2425,9 @@ $blogPosts = [
         'slug'     => '2026-match-by-the-numbers',
         'title'    => 'The 2026 Match by the Numbers: What Separates Matched from Unmatched Applicants',
         'excerpt'  => 'NRMP tracked 16,379 U.S. MD seniors through the 2026 Match on 13 measures, from Step 2 CK to AOA membership. Here is what actually separated the applicants who matched from the ones who did not.',
+        'meta_title'       => '2026 Match by the Numbers: Matched vs Unmatched',
+        'meta_description' => 'NRMP tracked U.S. MD seniors through the 2026 Match on 13 measures. See what separated matched from unmatched applicants, from Step 2 CK to AOA.',
+        'wiki_links'       => ['/wiki/start-here/img-match-statistics', '/wiki/specialties/img-match-rates-by-specialty', '/wiki/interviews-match/how-the-match-algorithm-works'],
         'category' => 'match',
         'date'     => '2026-09-20',
         'read'     => 8,
@@ -2206,6 +2507,9 @@ $blogPosts = [
         'slug'     => 'how-many-programs-should-you-rank',
         'title'    => 'How Many Residency Programs Should You Rank? What NRMP\'s 2026 Data Shows',
         'excerpt'  => 'Matched U.S. MD seniors ranked a median of 13 programs in their preferred specialty; those who did not match ranked 5. Here is the specialty-by-specialty breakdown and how to use it to build your own rank order list.',
+        'meta_title'       => 'How Many Programs Should You Rank? NRMP 2026 Data',
+        'meta_description' => 'How many residency programs should you rank? NRMP 2026 data by specialty shows how matched and unmatched applicants differed, and how to build your list.',
+        'wiki_links'       => ['/wiki/interviews-match/rank-order-list-strategy', '/wiki/interviews-match/how-the-match-algorithm-works', '/wiki/application/how-many-programs-to-apply-to'],
         'category' => 'match',
         'date'     => '2026-09-24',
         'read'     => 7,
@@ -2274,6 +2578,9 @@ $blogPosts = [
         'slug'     => 'does-research-matter-in-the-match',
         'title'    => 'Does Research Actually Matter in the Match? What the 2026 Data Shows',
         'excerpt'  => 'Nationally, applicants who did not match actually had slightly more research experiences than those who did. The real pattern is more specific than "more research is better" — here is what the data actually supports.',
+        'meta_title'       => 'Does Research Matter in the Match? What 2026 Data Shows',
+        'meta_description' => 'Does research help you match? NRMP 2026 data shows a more specific pattern than "more is better". See what the evidence supports and what it does not.',
+        'wiki_links'       => ['/wiki/research/why-research-matters-for-imgs', '/wiki/research/how-programs-view-research', '/wiki/application/research-on-your-application'],
         'category' => 'research',
         'date'     => '2026-09-27',
         'read'     => 8,
@@ -2338,6 +2645,9 @@ $blogPosts = [
         'slug'     => 'does-medical-school-matter-in-the-match',
         'title'    => 'Does Your Medical School\'s Name Matter? AOA, Top-40 Funding, and Match Outcomes',
         'excerpt'  => 'Even in Plastic Surgery, the most "pedigree-heavy" specialty in the 2026 data, 55% of matched applicants did not attend a top-40 NIH-funded school. Here is what AOA membership and school funding actually predict — and what they don\'t.',
+        'meta_title'       => 'Does Your Medical School Matter in the Match? 2026 Data',
+        'meta_description' => 'Does your medical school matter for the Match? See what 2026 NRMP data shows about AOA membership and top-40 NIH-funded schools, even in Plastic Surgery.',
+        'wiki_links'       => ['/wiki/application/program-screening-filters', '/wiki/application/identifying-img-friendly-programs', '/wiki/start-here/img-match-statistics'],
         'category' => 'match',
         'date'     => '2026-09-29',
         'read'     => 7,
@@ -2402,6 +2712,9 @@ $blogPosts = [
         'slug'     => 'work-volunteer-experience-match',
         'title'    => 'Work and Volunteer Experience: Do They Actually Move the Needle in the Match?',
         'excerpt'  => 'Nationally, applicants who did not match reported more work and volunteer experiences than those who did. Here is why piling up extracurriculars is probably the lowest-leverage way to spend your remaining application time.',
+        'meta_title'       => 'Work and Volunteer Experience in the Match: Do They Help?',
+        'meta_description' => 'Do work and volunteer experiences help you match? NRMP 2026 data suggests piling up extracurriculars is a low-leverage use of your application time.',
+        'wiki_links'       => ['/wiki/application/eras-experiences-section', '/wiki/application/myeras-walkthrough'],
         'category' => 'match',
         'date'     => '2026-10-01',
         'read'     => 6,
@@ -2453,6 +2766,9 @@ $blogPosts = [
         'slug'     => 'matching-into-dermatology-2026-data',
         'title'    => 'Matching Into Dermatology in 2026: The Real Numbers Behind Step 2 CK, Research, and Rank Lists',
         'excerpt'  => 'Dermatology had the lowest MD-senior match rate of any specialty in the 2026 Charting Outcomes report — 62.6%. Here is the complete, verified data profile: Step 2 CK, contiguous ranks, research output, and AOA rates, matched vs. not matched.',
+        'meta_title'       => 'Matching Into Dermatology 2026: Step 2 CK, Research, Ranks',
+        'meta_description' => 'Dermatology 2026 match data: Step 2 CK, contiguous ranks, research output and AOA rates for matched versus unmatched applicants, from NRMP data.',
+        'wiki_links'       => ['/wiki/specialties/img-match-rates-by-specialty', '/wiki/specialties/choosing-a-specialty', '/wiki/specialties/backup-specialties'],
         'category' => 'match',
         'date'     => '2026-10-03',
         'read'     => 8,
@@ -2514,6 +2830,9 @@ $blogPosts = [
         'slug'     => 'matching-into-orthopaedic-surgery-2026-data',
         'title'    => 'Matching Into Orthopaedic Surgery in 2026: The Real Numbers Behind Step 2 CK, Research, and Rank Lists',
         'excerpt'  => 'Orthopaedic Surgery MD seniors matched at a 69.1% rate in 2026 — and it is the rare specialty where every research measure, not just completed output, favored matched applicants. Here is the full verified data profile.',
+        'meta_title'       => 'Matching Into Orthopaedic Surgery 2026: The Real Numbers',
+        'meta_description' => 'Orthopaedic Surgery 2026 match data: Step 2 CK, rank lists, research and AOA rates for matched versus unmatched MD seniors, from NRMP Charting Outcomes.',
+        'wiki_links'       => ['/wiki/specialties/img-match-rates-by-specialty', '/wiki/specialties/choosing-a-specialty', '/wiki/application/applying-to-multiple-specialties'],
         'category' => 'match',
         'date'     => '2026-10-05',
         'read'     => 8,
