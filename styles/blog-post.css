@@ -36,11 +36,24 @@
 }
 
 .post-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 4px;
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.02em;
   color: var(--uw-ink-500);
 }
+.post-hero__byline a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.post-hero__byline a:hover { color: var(--uw-blue-500); }
+.post-hero__dot { margin-inline: 9px; }
 
 /* ---------- COVER (optional) ---------- */
 .post-cover {
@@ -179,4 +192,56 @@
   font-style: italic;
   font-size: 20px;
   color: var(--uw-ink-700);
+}
+
+/* ---------- RELATED READING ----------
+   Sits between the article and the call-to-action: related wiki guides (from
+   the post's `wiki_links`) and a few more posts. Same column width as the body. */
+.post-related { padding-bottom: clamp(32px, 5vw, 64px); }
+.post-related__inner { max-width: 720px; margin-inline: auto; }
+
+.post-related__title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--uw-blue-700);
+  margin: 0 0 var(--space-4);
+}
+
+.post-related__list {
+  list-style: none;
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.post-related__list a {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--uw-border);
+  border-radius: var(--r-lg);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.post-related__list a:hover {
+  border-color: var(--uw-blue-200);
+  background: var(--uw-blue-50);
+}
+
+.post-related__name {
+  display: block;
+  font-weight: 600;
+  font-size: var(--fs-15-5);
+  line-height: 1.35;
+  color: var(--uw-ink-900);
+}
+.post-related__desc {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--fs-14-5);
+  line-height: 1.5;
+  color: var(--uw-ink-500);
 }

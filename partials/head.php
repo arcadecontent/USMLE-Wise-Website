@@ -39,16 +39,55 @@
 <?php if (!empty($metaRobots)): ?>
 <meta name="robots" content="<?php echo $metaRobots; ?>" />
 <?php endif; ?>
-<meta property="og:type" content="website" />
+<?php
+// Social/preview tags. A page may set $ogType ('article'), $ogImage (a path
+// or full URL) and $ogPublished / $ogModified (ISO dates). With no $ogImage,
+// a default share image is used if one has been dropped in at
+// /assets/og-default.png (or .jpg / .webp); with none, no image tag is sent.
+$_ogType  = !empty($ogType) ? $ogType : 'website';
+$_ogImage = !empty($ogImage) ? $ogImage : '';
+if ($_ogImage === '') {
+    foreach (['png', 'jpg', 'webp'] as $_ogExt) {
+        if (is_file($_SERVER['DOCUMENT_ROOT'] . '/assets/og-default.' . $_ogExt)) {
+            $_ogImage = '/assets/og-default.' . $_ogExt;
+            break;
+        }
+    }
+}
+if ($_ogImage !== '' && $_ogImage[0] === '/') {
+    $_ogImage = 'https://usmlewise.com' . $_ogImage;
+}
+?>
+<meta property="og:type" content="<?php echo htmlspecialchars($_ogType, ENT_QUOTES, 'UTF-8'); ?>" />
+<meta property="og:site_name" content="USMLE Wise" />
 <meta property="og:title" content="<?php echo $pageTitle; ?>" />
 <meta property="og:description" content="<?php echo $pageDescription; ?>" />
 <meta property="og:url" content="<?php echo $canonical; ?>" />
+<?php if ($_ogImage !== ''): ?>
+<meta property="og:image" content="<?php echo htmlspecialchars($_ogImage, ENT_QUOTES, 'UTF-8'); ?>" />
+<?php endif; ?>
+<?php if ($_ogType === 'article' && !empty($ogPublished)): ?>
+<meta property="article:published_time" content="<?php echo htmlspecialchars($ogPublished, ENT_QUOTES, 'UTF-8'); ?>" />
+<?php endif; ?>
+<?php if ($_ogType === 'article' && !empty($ogModified)): ?>
+<meta property="article:modified_time" content="<?php echo htmlspecialchars($ogModified, ENT_QUOTES, 'UTF-8'); ?>" />
+<?php endif; ?>
+<meta name="twitter:card" content="<?php echo $_ogImage !== '' ? 'summary_large_image' : 'summary'; ?>" />
+<meta name="twitter:title" content="<?php echo $pageTitle; ?>" />
+<meta name="twitter:description" content="<?php echo $pageDescription; ?>" />
+<?php if ($_ogImage !== ''): ?>
+<meta name="twitter:image" content="<?php echo htmlspecialchars($_ogImage, ENT_QUOTES, 'UTF-8'); ?>" />
+<?php endif; ?>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
-<?php if (!empty($preloadImage)): ?>
-<link rel="preload" as="image" href="<?php echo $preloadImage; ?>" type="image/webp" fetchpriority="high" />
+<?php if (!empty($preloadImage)):
+    // The type hint must match the file, or the browser may skip the preload.
+    $_plExt  = strtolower(pathinfo((string) (parse_url($preloadImage, PHP_URL_PATH) ?: ''), PATHINFO_EXTENSION));
+    $_plType = ['webp' => 'image/webp', 'jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'png' => 'image/png', 'avif' => 'image/avif'][$_plExt] ?? '';
+?>
+<link rel="preload" as="image" href="<?php echo $preloadImage; ?>"<?php if ($_plType !== '') echo ' type="' . $_plType . '"'; ?> fetchpriority="high" />
 <?php endif; ?>
 <link rel="icon" type="image/svg+xml" href="/assets/usmle-design-system/assets/emblem.svg" />
 <?php

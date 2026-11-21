@@ -73,6 +73,20 @@ if ($isDraft) {
 }
 
 // ---- Structured data ----
+// datePublished: the optional `published:` front matter date; articles that
+// pre-date that field went live with the wiki on 2026-11-06. It is never later
+// than `updated`. Set `published:` when you flip a new page from draft to
+// published, otherwise it falls back to the launch date above.
+$wikiLaunchDate = '2026-11-06';
+$dateModified   = (string) ($article['updated'] ?? '');
+$datePublished  = trim((string) ($article['published'] ?? '')) !== '' ? (string) $article['published'] : $wikiLaunchDate;
+if ($dateModified !== '' && $datePublished > $dateModified) {
+    $datePublished = $dateModified;
+}
+$ogType      = 'article';
+$ogPublished = $datePublished;
+$ogModified  = $dateModified;
+
 $ld = [
     '@context' => 'https://schema.org',
     '@graph'   => [
@@ -81,9 +95,15 @@ $ld = [
             'headline'         => $article['title'],
             'description'      => (string) ($article['description'] ?? ''),
             'mainEntityOfPage' => $abs,
-            'dateModified'     => $article['updated'] ?? null,
+            'datePublished'    => $datePublished,
+            'dateModified'     => $dateModified !== '' ? $dateModified : null,
             'author'           => ['@type' => 'Organization', 'name' => 'USMLE Wise Editorial Team', 'url' => 'https://usmlewise.com'],
-            'publisher'        => ['@type' => 'Organization', 'name' => 'USMLE Wise', 'url' => 'https://usmlewise.com'],
+            'publisher'        => [
+                '@type' => 'Organization',
+                'name'  => 'USMLE Wise',
+                'url'   => 'https://usmlewise.com',
+                'logo'  => ['@type' => 'ImageObject', 'url' => 'https://usmlewise.com/assets/usmle-design-system/assets/Logo-Horizontal.svg'],
+            ],
         ],
         [
             '@type' => 'BreadcrumbList',

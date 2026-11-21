@@ -12,6 +12,7 @@ title: USMLE Step 1: The Complete Guide for IMGs
 description: One sentence, 70 to 160 characters. Shown in search results and as the page intro.
 status: draft                  # draft | published
 updated: 2026-11-06            # last time the CONTENT changed
+published: 2026-11-06          # optional: the day the page first went live. Set it when you flip a draft to published (used as datePublished in search-engine markup; defaults to the wiki launch date 2026-11-06 if missing, never later than `updated`)
 reviewed_by: manik-madaan      # slug from data/team.php; required to publish
 reviewed_on: 2026-11-06        # required to publish
 order: 1                       # optional: position within the section
