@@ -3,7 +3,7 @@ title: Scheduling Your USMLE Exam with Prometric
 description: How scheduling permits, eligibility periods and Prometric bookings work for IMGs, including rescheduling fees, extensions and how to avoid losing a registration.
 status: published
 review: pending
-updated: 2026-11-06
+updated: 2026-11-21
 order: 6
 group: Planning your exams
 keywords: [prometric, scheduling permit, eligibility period, usmle scheduling, reschedule, extension, img]
@@ -11,12 +11,13 @@ related: [usmle-eligibility-for-imgs, when-to-take-each-step, usmle-attempt-limi
 key_facts:
   - After registration you receive a scheduling permit by email, with your eligibility period, and then book your seat with Prometric.
   - Seats are first-come, first-served and scheduling may not be available more than six months in advance.
-  - Changing an appointment within 45 calendar days of the test date costs a fee.
+  - Changing an appointment within 45 calendar days of the test date costs a fee, and USMLE's current schedule makes that fee higher the closer you are to the exam date.
   - Fees are non-refundable and non-transferable, and an eligibility extension is possible once, for a fee.
 sources:
   - USMLE Bulletin of Information: applying and scheduling | https://www.usmle.org/bulletin-information/applying-scheduling
   - USMLE Service Transition (January 2026) | https://www.usmle.org/usmle-service-transition-launching-january-2026
   - USMLE Common Questions | https://www.usmle.org/common-questions
+  - USMLE: rescheduling your exam | https://www.usmle.org/reschedule-exam
   - ECFMG news: USMLE service transition | https://www.ecfmg.org/news/2026/01/12/phase-one-of-usmle-service-transition-is-complete-all-usmle-step-exam-services-for-imgs-now-managed-by-fsmb/
 faq:
   - q: Can I test without a scheduling permit?
@@ -24,7 +25,7 @@ faq:
   - q: How far ahead can I book?
     a: The Bulletin says scheduling may not be available more than six months in advance. Seats are first-come, first-served.
   - q: Can I move my test date?
-    a: Yes, within your eligibility period, but changes within the 45 calendar days before the appointment require a fee.
+    a: Yes, within your eligibility period, but changes within the 45 calendar days before the appointment require a fee, and USMLE's current schedule makes the fee higher the closer you are to the exam date. Check the reschedule page on usmle.org for the current amounts before you decide.
   - q: What if I miss my eligibility period?
     a: You must reapply with a new application and fees. Fees are non-refundable and non-transferable.
 ---
@@ -54,7 +55,7 @@ Prometric administers Step 1, Step 2 CK and Step 3 at its centers. Step 1 and St
 
 | Situation | What the Bulletin says |
 |---|---|
-| Change within your eligibility period | Allowed; a fee applies if you change within the 45 calendar days before the appointment |
+| Change within your eligibility period | Allowed; a fee applies if you change within the 45 calendar days before the appointment, and it rises as the date gets closer (check the current schedule on usmle.org) |
 | Need more time | Ask the organization that registered you for a one-time contiguous eligibility period extension; a fee applies |
 | Miss the eligibility period | You must submit a new application and fees |
 | Refunds | Fees are non-refundable and non-transferable |
