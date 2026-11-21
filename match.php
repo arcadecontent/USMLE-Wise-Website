@@ -278,7 +278,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <li>Live 1-hour session to build your CV and PS together</li>
               <li>1-hour mock interview</li>
               <li>Match membership: 9+ courses ($399 value)</li>
-              <li>Advanced Interviewing course ($500 value)</li>
+              <li>Advanced Interviewing course ($399 value)</li>
               <li>2 to 4 day turnaround</li>
             </ul>
           </div>

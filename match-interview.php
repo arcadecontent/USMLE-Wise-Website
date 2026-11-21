@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Interview Preparation | USMLE Wise";
-$pageDescription = "Mock interviews, peer buddy sessions, and a 1,200+ question bank to prepare IMG residency applicants for ranking season. Advanced Interview Course $500, Mock Interview Package $1,000.";
+$pageDescription = "Mock interviews, peer buddy sessions, and a 1,200+ question bank to prepare IMG residency applicants for ranking season. Advanced Interview Course $399, Mock Interview Package $1,000.";
 $canonical = "https://usmlewise.com/match-interview";
 $bodyClass = "msp";
 $stylesheets = [
@@ -218,7 +218,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
               <div class="msp-tier__info">
                 <span class="msp-tier__badge">Recorded &middot; Self-paced</span>
                 <span class="msp-tier__name">Advanced Interview Course</span>
-                <div class="msp-tier__price">$500</div>
+                <div class="msp-tier__price">$399</div>
                 <p class="msp-tier__sub">The full recorded curriculum, made by Dr. Manik.</p>
                 <a class="btn btn--outline btn--sm" href="https://team.manikmadaan.com/guidance-call/book" target="_blank" rel="noopener noreferrer">Get Started</a>
               </div>
