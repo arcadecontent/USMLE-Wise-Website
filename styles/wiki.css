@@ -522,3 +522,27 @@ a.wk-card:hover { border-color: var(--uw-blue-300); box-shadow: 0 8px 24px rgba(
   .wk-eval__nav, .wk-svc__item .btn { display: none !important; }
   .wk-res__help { background: none; border: 1px solid var(--uw-border); }
 }
+
+/* ============================================================
+   Step 3 readiness checker (wk-s3r)
+   Reuses the self-evaluation question, chip, step and service classes;
+   only the result band and the "not fully met" list are new.
+   ============================================================ */
+.wk-s3r-band { margin: 0 0 var(--space-5); padding: var(--space-4) var(--space-5); border: 1px solid var(--uw-border-strong); border-left-width: 6px; border-radius: 14px; background: var(--uw-surface-sunk); }
+.wk-s3r-band--ok { border-color: var(--uw-success-500); background: var(--uw-success-50); }
+.wk-s3r-band--mid { border-color: var(--uw-warning-500); background: var(--uw-warning-50); }
+.wk-s3r-band--warn { border-color: var(--uw-danger-500); background: var(--uw-danger-50); }
+.wk-s3r-band__label { margin: 0 0 var(--space-2); font-family: var(--font-display); font-size: var(--fs-2xl); line-height: 1.2; font-weight: 600; color: var(--uw-ink-900); }
+.wk-s3r-band__sum { margin: 0 0 var(--space-3); color: var(--uw-ink-800); line-height: 1.55; }
+.wk-s3r-band__why { margin: 0 0 var(--space-3); padding-left: 1.2em; color: var(--uw-ink-700); font-size: var(--fs-base); line-height: 1.5; }
+.wk-s3r-band__fine { margin: 0; font-size: var(--fs-sm); color: var(--uw-ink-600); }
+.wk-s3r-un { list-style: none; margin: 0; padding: 0; }
+.wk-s3r-un__item { padding: var(--space-3) 0; border-bottom: 1px solid var(--uw-border); }
+.wk-s3r-un__item:last-child { border-bottom: 0; }
+.wk-s3r-un__a { margin: 0 0 2px; font-weight: 600; color: var(--uw-ink-900); }
+.wk-s3r-un__s { margin: 0; font-size: var(--fs-sm); color: var(--uw-ink-600); line-height: 1.5; }
+.wk-s3r-un .wk-tool__badge { margin-left: 4px; }
+
+@media print {
+  .wk-s3r-band { background: none; }
+}
