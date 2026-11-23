@@ -218,6 +218,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         ['2026 alignment', 'Rebuilt line by line for the 2026 syllabus, including the shift toward longer chart-style stems and ethics items', 'Often reuses older decks with partial updates'],
         ['Focus', (int) $cohort['hours'] . ' live hours, zero fluff, only what the NBME repeatedly tests', 'Broad sweep, mixed yield, time dilution'],
         ['Teaching engine', 'Question-powered: NBME-style vignettes train knowledge and test-taking together', 'Lecture-heavy, QBank left for homework'],
+        ['Session notes', 'Practice questions that explain why each option is right or wrong, flowcharts for next-best-step decisions, and cheat sheets that turn exam clues into a diagnosis', 'Slides or a transcript of the class'],
         ['Instructors', '270+ Step 2 scorers who reverse-engineered the patterns', 'Limited experience and credentials'],
         ['Accountability', 'Live daily sessions with real-time Q&amp;A and daily quizzes that make you apply each lesson', 'Passive watching, little pressure to execute'],
         ['Pass guarantee', 'Finish the course, don’t pass, full refund', 'No guarantee, or store credit only'],
@@ -258,6 +259,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="s1-offer__item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           <span class="s1-offer__item-name">Lifetime access to every session recording</span>
+        </div>
+        <div class="s1-offer__item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="s1-offer__item-name">Detailed notes after every session, so you can review what was taught without rewatching the class</span>
         </div>
         <div class="s1-offer__item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -423,7 +428,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       </div>
       <div class="accordion__item">
         <button class="accordion__head" type="button">Is this better for first-timers or retakers?</button>
-        <div class="accordion__body">Both. First-timers get a clean high-yield map. Retakers get the usual leak points fixed: pacing, elimination under pressure, and ethics items.</div>
+        <div class="accordion__body">Both. It's built for students who have already studied the material and need one fast, structured burst before the exam. First-timers get a clean high-yield map for the final stretch. Retakers get the usual leak points fixed: pacing, elimination under pressure, and ethics items.</div>
       </div>
       <div class="accordion__item">
         <button class="accordion__head" type="button">What actually changed on Step 2 in 2026?</button>
