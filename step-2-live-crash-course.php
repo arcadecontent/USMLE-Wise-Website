@@ -139,9 +139,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <?php
     // Topics and hours per day. The dates come from data/crash-course-cohorts.php.
     $s2_days = [
-      [['Pediatrics', '6.5'], ['Dermatology', '1.5']],
+      [['Pediatrics', '2.5'], ['Gastrointestinal', '5.5']],
       [['General Surgery', '6.5'], ['Screening & Vaccination', '1.5']],
-      [['Obstetrics & Gynecology', '5.5'], ['Gastrointestinal', '2.5']],
+      [['Obstetrics & Gynecology', '5.5'], ['Dermatology', '2.5']],
       [['Neurology', '5'], ['Musculoskeletal', '3']],
       [['Cardiovascular', '4.5'], ['Hematology & Oncology', '3.5']],
       [['Renal', '4.5'], ['Endocrine', '3.5']],
