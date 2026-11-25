@@ -21,6 +21,7 @@ const C = {
   red50: css('--uw-red-50'), red100: css('--uw-red-100'), red200: css('--uw-red-200'), red300: css('--uw-red-300'),
   red400: css('--uw-red-400'), red500: css('--uw-red-500'), red600: css('--uw-red-600'), red700: css('--uw-red-700'),
   surface: css('--uw-surface'), border: css('--uw-border'),
+  warn50: css('--uw-warning-50'), warn500: css('--uw-warning-500'), warn700: css('--uw-warning-700'),
 };
 
 /* ============================================================
@@ -554,7 +555,7 @@ function syncMurmurUI() {
   $$('.hl-site').forEach((b) => { b.setAttribute('aria-pressed', b.dataset.site === loud); });
   renderManNote();
   renderMurmurPanel();
-  Heart.setValve(m.id === 'NORMAL' ? null : m.site, m.valve);
+  Heart.setValve(m.id === 'NORMAL' ? null : m.site, m.valve, m.id);
   drawPCG();
 }
 
@@ -648,6 +649,8 @@ function drawPCG() {
 /* ============================================================
    6. 3D HEART
    ============================================================ */
+const HI_YELLOW = new THREE.Color(C.warn500).offsetHSL(0.03, 0.15, 0.2); // the warning token pushed to a clear yellow
+
 const Heart = (() => {
   const host = $('#heartCanvas');
   let renderer, scene, camera, controls, ventricle, colorAttr, terrIdx, baseColors, infarctW, vessels = {}, valves = {}, occlusion;
@@ -896,10 +899,12 @@ const Heart = (() => {
     // Territory weights per vertex
     const pos = mesh.geometry.attributes.position;
     const terr = new Array(pos.count);
+    const loc = new Float32Array(pos.count * 3); // heart-local position of every vertex, for the part highlight
     const p = new THREE.Vector3(), d = new THREE.Vector3();
     const meshToWrap = new THREE.Matrix4().copy(wrapG.matrixWorld).invert().multiply(mesh.matrixWorld);
     for (let i = 0; i < pos.count; i++) {
       p.fromBufferAttribute(pos, i).applyMatrix4(meshToWrap);
+      loc[i * 3] = p.x; loc[i * 3 + 1] = p.y; loc[i * 3 + 2] = p.z;
       d.copy(p).sub(AX_B);
       const along = d.dot(a);
       const v = along / L;
@@ -915,15 +920,27 @@ const Heart = (() => {
     const inf = new Float32Array(pos.count);
     const infAttr = new THREE.BufferAttribute(inf, 1);
     mesh.geometry.setAttribute('aInf', infAttr);
+    const hi = new Float32Array(pos.count);
+    const hiAttr = new THREE.BufferAttribute(hi, 1);
+    mesh.geometry.setAttribute('aHi', hiAttr);
 
     // Tint the infarct in the shader, on top of the model's own texture
-    const uniforms = { uInfCol: { value: new THREE.Color(C.ink100).lerp(new THREE.Color(C.red100), 0.35) }, uPulse: { value: 0 } };
+    const uniforms = {
+      uInfCol: { value: new THREE.Color(C.ink100).lerp(new THREE.Color(C.red100), 0.35) }, uPulse: { value: 0 },
+      uHiCol: { value: HI_YELLOW.clone() }, uHiAmt: { value: 0 },
+    };
     mesh.material.onBeforeCompile = (sh) => {
       Object.assign(sh.uniforms, uniforms);
-      sh.vertexShader = 'attribute float aInf;\nvarying float vInf;\n' + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n  vInf = aInf;');
-      sh.fragmentShader = 'uniform vec3 uInfCol;\nuniform float uPulse;\nvarying float vInf;\n' + sh.fragmentShader.replace(
+      sh.vertexShader = 'attribute float aInf;\nattribute float aHi;\nvarying float vInf;\nvarying float vHi;\n' + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n  vInf = aInf;\n  vHi = aHi;');
+      sh.fragmentShader = 'uniform vec3 uInfCol;\nuniform float uPulse;\nuniform vec3 uHiCol;\nuniform float uHiAmt;\nvarying float vInf;\nvarying float vHi;\n' + sh.fragmentShader.replace(
         '#include <map_fragment>',
-        '#include <map_fragment>\n  float inf = clamp(vInf, 0.0, 1.0);\n  diffuseColor.rgb = mix(diffuseColor.rgb, uInfCol * (0.9 + 0.1 * uPulse), inf * 0.78);'
+        '#include <map_fragment>\n  float inf = clamp(vInf, 0.0, 1.0);\n  diffuseColor.rgb = mix(diffuseColor.rgb, uInfCol * (0.9 + 0.1 * uPulse), inf * 0.78);' +
+        // yellow, multiplied through the tissue's own light and shade so the texture still reads
+        '\n  float hiW = clamp(vHi, 0.0, 1.0) * uHiAmt;\n  float lum = dot(diffuseColor.rgb, vec3(0.299, 0.587, 0.114));\n  vec3 hiC = min(uHiCol * (0.55 + 1.6 * lum), vec3(1.0));\n  diffuseColor.rgb = mix(diffuseColor.rgb, hiC, hiW * 0.82);'
+      ).replace(
+        // and a glow after lighting, so the part still reads through the ribs and in shadow
+        '#include <opaque_fragment>',
+        'outgoingLight = mix(outgoingLight, uHiCol * (0.75 + 0.6 * lum), hiW * 0.55);\n#include <opaque_fragment>'
       );
     };
     mesh.material.needsUpdate = true;
@@ -971,7 +988,8 @@ const Heart = (() => {
     rim.color.set(0xffffff); rim.intensity = 0.8;
     controls.target.set(0, 0.1, 0);
 
-    real = { mesh, terr, inf, infAttr, uniforms, wrapG, k, base: k, vessels: vesselMeshes };
+    real = { mesh, terr, inf, infAttr, hi, hiAttr, loc, uniforms, wrapG, k, base: k, vessels: vesselMeshes };
+    applyPart();
     proc.visible = false;
     setLoading(false);
     // re-apply whatever the visitor already picked while it loaded
@@ -994,8 +1012,46 @@ const Heart = (() => {
   // Measured by ray scans of ribcage.glb at x = 0.0525 (the MCL): rib 5 crosses at y -0.022..-0.032,
   // rib 6 at -0.044..-0.056, so the 5th intercostal space at the MCL is centred at y -0.038.
   const MCL_ICS5_Y = -0.038;
-  const SITE_VALVE = { aortic: 'aortic', pulmonic: 'pulmonic', erb: 'aortic', tricuspid: 'tricuspid', mitral: 'mitral' };
   const SITE_LABEL = { aortic: 'A', pulmonic: 'P', erb: 'E', tricuspid: 'T', mitral: 'M' };
+
+  /* ---- The part of the heart each murmur comes from, lit yellow with its listening point ----
+     Ellipsoids in the heart model's own centred frame (metres; +x patient's left, +z anterior),
+     read off the model: aortic root and ascending aorta, pulmonary trunk and outflow tract,
+     left atrium with the mitral side of the AV groove, right atrium with the tricuspid side,
+     the atrial septum, and the ductus between pulmonary trunk and arch. The ventricular
+     septum comes from the territory map (its anterior groove band). */
+  const PART_SHAPES = {
+    aortic: [{ c: [-0.008, 0.016, 0.004], r: [0.019, 0.016, 0.02] }, { c: [-0.012, 0.035, 0.006], r: [0.017, 0.021, 0.019] }],
+    pulmonic: [{ c: [0.006, 0.022, 0.024], r: [0.019, 0.019, 0.018] }, { c: [0.014, 0.036, 0.014], r: [0.019, 0.014, 0.019] }],
+    mitral: [{ c: [0.014, 0.016, -0.019], r: [0.027, 0.015, 0.021] }, { c: [0.031, 0.004, -0.004], r: [0.017, 0.013, 0.019] }, { c: [0.022, 0.018, 0.012], r: [0.013, 0.011, 0.013] }],
+    tricuspid: [{ c: [-0.036, 0.008, 0.004], r: [0.019, 0.021, 0.023] }, { c: [-0.02, -0.002, 0.018], r: [0.015, 0.011, 0.015] }],
+    atrialSeptum: [{ c: [-0.016, 0.018, -0.012], r: [0.017, 0.017, 0.017] }],
+    ductus: [{ c: [0.008, 0.043, -0.006], r: [0.015, 0.012, 0.015] }],
+  };
+  const MURMUR_PARTS = {
+    AS: ['aortic'], AR: ['aortic'], PS: ['pulmonic'], MR: ['mitral'], MVP: ['mitral'], MS: ['mitral'], TR: ['tricuspid'],
+    VSD: ['septum'], HOCM: ['septum', 'aortic'], ASD: ['atrialSeptum', 'tricuspid'], PDA: ['ductus', 'pulmonic'],
+  };
+  let activeMurmur = null;
+  function applyPart() {
+    if (!real) return;
+    const parts = (activeMurmur && MURMUR_PARTS[activeMurmur]) || [];
+    const { loc, hi, terr } = real;
+    for (let i = 0; i < hi.length; i++) {
+      let w = 0;
+      const x = loc[i * 3], y = loc[i * 3 + 1], z = loc[i * 3 + 2];
+      for (const part of parts) {
+        if (part === 'septum') { w = Math.max(w, terr[i].septal); continue; }
+        for (const e of PART_SHAPES[part]) {
+          const dx = (x - e.c[0]) / e.r[0], dy = (y - e.c[1]) / e.r[1], dz = (z - e.c[2]) / e.r[2];
+          const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+          if (dist < 1) w = Math.max(w, Math.min(1, (1 - dist) / 0.35)); // soft edge over the outer third
+        }
+      }
+      hi[i] = w;
+    }
+    real.hiAttr.needsUpdate = true;
+  }
 
   function placeHeart() {
     if (!real) return;
@@ -1141,7 +1197,7 @@ const Heart = (() => {
       const pulse = new THREE.Group(); pulse.add(face, ring);
       grp.add(pulse, hit);
       g.add(grp); hits.push(hit);
-      const tex = [labelTex(SITE_LABEL[site], C.blue700), labelTex(SITE_LABEL[site], C.red600)];
+      const tex = [labelTex(SITE_LABEL[site], C.blue700), labelTex(SITE_LABEL[site], C.warn700)];
       const label = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex[0], depthTest: false, depthWrite: false, transparent: true }));
       label.scale.setScalar(0.017); label.renderOrder = 30;
       // beside the disc, on the side that keeps the valve behind it in view
@@ -1149,57 +1205,6 @@ const Heart = (() => {
       label.position.copy(s.p).add(new THREE.Vector3(lx * (PR + 0.0075), ly, 0.003));
       g.add(label);
       points[site] = { grp, pulse, face, ring, label, tex, p: s.p.clone() };
-    });
-
-    // ---- valves at their true positions behind the chest wall ----
-    // x/y from the surface anatomy; z (depth) from where each valve sits in the heart model
-    const VALVES = {
-      aortic: { at: [lm.sternumHalfWidth, ics(R[3].leftSternal[1], R[4].leftSternal[1]), 0.016], n: [-0.2, 0.5, 0.85], kind: 'semilunar' }, // behind the left sternal edge, 3rd ICS
-      pulmonic: { at: [0.02, R[3].leftSternal[1], 0.026], n: [0.2, 0.5, 0.85], kind: 'semilunar' },                               // behind the left 3rd costal cartilage
-      mitral: { at: [0.025, R[4].leftSternal[1], 0.002], n: [0.5, -0.4, 0.75], kind: 'mitral' },                                   // behind the left 4th costal cartilage
-      tricuspid: { at: [0, ics(R[4].leftSternal[1], R[5].leftSternal[1]), 0.014], n: [0.3, -0.3, 0.9], kind: 'tricuspid' },        // behind the sternum, 4th ICS
-    };
-    const VR = 0.0052;
-    const vmat = (col, op) => new THREE.MeshBasicMaterial({ color: new THREE.Color(col), transparent: true, opacity: op, depthTest: false, depthWrite: false });
-    const seam = (curve, m) => new THREE.Mesh(new THREE.TubeGeometry(curve, 16, VR * 0.075, 6, false), m);
-    const cvalves = {};
-    Object.entries(VALVES).forEach(([key, v]) => {
-      const grp = new THREE.Group();
-      grp.position.set(...v.at);
-      grp.quaternion.setFromUnitVectors(zUp, new THREE.Vector3(...v.n).normalize());
-      const disc = new THREE.Group();
-      const faceM = vmat(C.blue100, 0.8), rimM = vmat(C.blue500, 0.95), seamM = vmat(C.blue700, 0.95);
-      const face = new THREE.Mesh(new THREE.CircleGeometry(VR, 40), faceM);
-      const rim = new THREE.Mesh(new THREE.TorusGeometry(VR, VR * 0.16, 8, 48), rimM);
-      face.renderOrder = 10; rim.renderOrder = 11;
-      disc.add(face, rim);
-      const V = (a, r = VR * 0.97) => new THREE.Vector3(Math.cos(a) * r, Math.sin(a) * r, 0);
-      const O = new THREE.Vector3();
-      let seams = [];
-      if (v.kind === 'semilunar') {
-        // three cusps meeting in a "Mercedes" star
-        seams = [Math.PI / 2, Math.PI / 2 + 2.094, Math.PI / 2 + 4.189].map((a) => new THREE.LineCurve3(O, V(a)));
-      } else if (v.kind === 'mitral') {
-        // two leaflets: the closure line is a shallow smile
-        seams = [new THREE.QuadraticBezierCurve3(V(Math.PI + 0.12), new THREE.Vector3(0, -VR * 0.55, 0), V(-0.12))];
-      } else {
-        // three leaflets of unequal size, curved commissures
-        seams = [1.75, 3.75, 5.6].map((a) => new THREE.QuadraticBezierCurve3(new THREE.Vector3(VR * 0.08, -VR * 0.05, 0), V(a + 0.35, VR * 0.5), V(a)));
-      }
-      seams.forEach((c) => { const m = seam(c, seamM); m.renderOrder = 12; disc.add(m); });
-      grp.add(disc);
-      g.add(grp);
-      cvalves[key] = { grp, disc, faceM, rimM, seamM };
-    });
-
-    // ---- dashed line from each listening point to the valve it reports on ----
-    const lines = {};
-    Object.entries(points).forEach(([site, pt]) => {
-      const to = cvalves[SITE_VALVE[site]].grp.position;
-      const geo = new THREE.BufferGeometry().setFromPoints([pt.p, to]);
-      const line = new THREE.Line(geo, new THREE.LineDashedMaterial({ color: new THREE.Color(C.blue400), dashSize: 0.0024, gapSize: 0.0018, transparent: true, opacity: 0.85, depthTest: false, depthWrite: false }));
-      line.computeLineDistances(); line.renderOrder = 9;
-      g.add(line); lines[site] = line;
     });
 
     // ---- radiation: curves on the chest surface (above the jugular notch they follow the neck) ----
@@ -1258,38 +1263,26 @@ const Heart = (() => {
     g.position.set(0, CHEST_Y, 0);
     g.visible = false;
     scene.add(g);
-    chest = { g, ribs, points, valves: cvalves, lines, rad, hits };
+    chest = { g, ribs, points, rad, hits };
     setMode(state.mode);
   }
 
-  // per-frame: the selected site and its valve turn red and pulse with the murmur's loudness
+  // per-frame: the selected listening point turns yellow, like the part of the heart it reports on,
+  // and pulses with the murmur's loudness
   function chestFrame(lvl, beat) {
     const m = byId[state.murmur];
     const site = activeValve; // the selected murmur's listening site (null for normal sounds)
-    const vk = site ? activeLesion : null; // the valve at fault (null for septal and ductal lesions)
     const L = reduceMotion ? 0.5 : lvl;
     Object.entries(chest.points).forEach(([k, pt]) => {
       const on = k === site;
-      pt.ring.material.color.set(on ? C.red500 : C.blue500);
-      pt.ring.material.emissive.set(on ? C.red500 : C.blue500);
-      pt.ring.material.emissiveIntensity = on ? 0.2 + 0.45 * L : 0.2;
-      pt.face.material.color.set(on ? C.red100 : C.blue50);
-      pt.face.material.emissive.set(on ? C.red300 : C.blue300);
-      pt.face.material.emissiveIntensity = on ? 0.15 + 0.5 * L : 0.15;
+      pt.ring.material.color.set(on ? HI_YELLOW : C.blue500);
+      pt.ring.material.emissive.set(on ? HI_YELLOW : C.blue500);
+      pt.ring.material.emissiveIntensity = on ? 0.35 + 0.45 * L : 0.2;
+      pt.face.material.color.set(on ? C.warn50 : C.blue50);
+      pt.face.material.emissive.set(on ? HI_YELLOW : C.blue300);
+      pt.face.material.emissiveIntensity = on ? 0.25 + 0.5 * L : 0.15;
       pt.pulse.scale.setScalar(on ? 1 + 0.22 * L * beat : 1);
       pt.label.material.map = pt.tex[on ? 1 : 0];
-      const lit = on && SITE_VALVE[k] === vk; // the link is red only when this point reports on the valve at fault
-      chest.lines[k].material.color.set(lit ? C.red500 : C.blue400);
-      chest.lines[k].material.opacity = lit ? 0.95 : 0.55;
-      chest.lines[k].renderOrder = lit ? 9.5 : 9;
-    });
-    Object.entries(chest.valves).forEach(([k, v]) => {
-      const on = k === vk;
-      v.rimM.color.set(on ? C.red500 : C.blue500);
-      v.faceM.color.set(on ? C.red100 : C.blue100);
-      v.seamM.color.set(on ? C.red700 : C.blue700);
-      v.faceM.opacity = on ? 0.6 + 0.35 * L : 0.75;
-      v.disc.scale.setScalar(on ? 1 + 0.3 * L * beat : 1);
     });
     const now = performance.now() / 1000;
     Object.entries(chest.rad).forEach(([id, r]) => {
@@ -1352,16 +1345,24 @@ const Heart = (() => {
     } else occlusion.visible = false;
   }
 
-  function setValve(site, valve) { activeValve = site; activeLesion = valve || null; }
+  function setValve(site, valve, id) {
+    activeValve = site; activeLesion = valve || null;
+    const next = site ? id : null;
+    if (next !== activeMurmur) {
+      activeMurmur = next; applyPart();
+      // mitral murmurs come from the left atrium at the back: turn the chest a little to the left to show it
+      if (chest && state.mode === 'murmur' && next) view(['MR', 'MVP', 'MS'].includes(next) ? 'chestLeft' : 'chest', { auto: true });
+    }
+  }
   // Murmurs mode shows the chest (when it loaded); MI mode shows the heart alone, exactly as before
   function setMode(mode) {
     const murmur = mode === 'murmur';
-    ['aortic', 'pulmonic', 'mitral', 'tricuspid'].forEach((k) => { valves[k].grp.visible = murmur && !chest; });
+    ['aortic', 'pulmonic', 'mitral', 'tricuspid'].forEach((k) => { valves[k].grp.visible = murmur && !real; }); // rings only on the simple fallback heart
     placeHeart();
     if (murmur && chest) view('chest', { auto: true });
   }
 
-  const VIEW_DIRS = { front: [0, 0.05, 1], left: [1, 0.05, 0.1], back: [0, 0.1, -1], below: [0.15, -0.7, 0.7], frontleft: [0.45, 0.08, 0.9], frontright: [-0.6, -0.1, 0.8], backbelow: [0.25, -0.5, -0.85], chest: [Math.sin(CHEST_AZ), 0.05, Math.cos(CHEST_AZ)] };
+  const VIEW_DIRS = { front: [0, 0.05, 1], left: [1, 0.05, 0.1], back: [0, 0.1, -1], below: [0.15, -0.7, 0.7], frontleft: [0.45, 0.08, 0.9], frontright: [-0.6, -0.1, 0.8], backbelow: [0.25, -0.5, -0.85], chest: [Math.sin(CHEST_AZ), 0.05, Math.cos(CHEST_AZ)], chestLeft: [Math.sin(0.85), 0.05, Math.cos(0.85)] };
   function view(name, { auto = false } = {}) {
     const to = new THREE.Vector3(...VIEW_DIRS[name]).normalize().multiplyScalar(DIST);
     controls.autoRotate = false;
@@ -1404,6 +1405,7 @@ const Heart = (() => {
     });
 
     if (chest && chest.g.visible) chestFrame(lvl, beat);
+    if (real) real.uniforms.uHiAmt.value = state.mode === 'murmur' ? (reduceMotion ? 0.9 : 0.72 + 0.28 * lvl) : 0;
 
     if (occlusion.visible) occlusion.scale.setScalar((occlusion.userData.base || 1) * (1 + 0.25 * Math.sin(performance.now() / 180) * beat));
 
@@ -1578,7 +1580,7 @@ function renderLegend() {
     const m = miById[state.mi];
     L.innerHTML = `<span class="hl-leg hl-leg--infarct"><i></i>Dying muscle (turns pale)</span><span class="hl-leg hl-leg--culprit"><i></i>Blocked artery: ${m.art}</span>`;
   } else {
-    L.innerHTML = `<span class="hl-leg hl-leg--cap">Murmur Man: tap a listening point</span><span class="hl-leg hl-leg--site"><i></i>Listening point</span><span class="hl-leg hl-leg--valve"><i></i>Valve (red = at fault)</span><span class="hl-leg hl-leg--link"><i></i>Point to valve</span><span class="hl-leg hl-leg--spread"><i></i>Spreads to</span>`;
+    L.innerHTML = `<span class="hl-leg hl-leg--cap">Murmur Man: tap a listening point</span><span class="hl-leg hl-leg--site"><i></i>Listening point</span><span class="hl-leg hl-leg--part"><i></i>Selected point and the part of the heart it hears</span><span class="hl-leg hl-leg--spread"><i></i>Spreads to</span>`;
   }
 }
 
