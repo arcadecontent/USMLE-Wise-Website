@@ -59,6 +59,7 @@ $curatedPages = [
     ['/policy',                       '2026-11-10', 'monthly', '0.3'],
     ['/qa',                           '2026-11-25', 'monthly', '0.7'],
     ['/contact',                      '2026-10-20', 'yearly',  '0.4'],
+    ['/events',                       '2026-11-25', 'weekly',  '0.6'],
     ['/research-catalyst',            '2026-11-17', 'monthly', '0.8'],
     ['/research-junior-scientist',    '2026-11-15', 'monthly', '0.8'],
     ['/research-original',            '2026-11-03', 'monthly', '0.8'],

@@ -56,6 +56,7 @@
           <a href="/blog">Blog</a>
           <a href="/qa">FAQ</a>
           <a href="/team">Our Team</a>
+          <a href="/events">Our Events</a>
           <a href="/contact">Contact Us</a>
           <a href="/legal">Legal &amp; Policies</a>
           <button type="button" class="msp-foot__consent" data-uw-consent-open hidden>Cookie settings</button>

@@ -1911,22 +1911,27 @@ svg.lucide {
   transition: color 0.12s ease, background 0.12s ease;
 }
 .msp-nav__item > a:hover { color: var(--uw-ink-900); background: var(--uw-ink-75); }
-/* Keep the logo from being squeezed, and tighten link spacing on narrow
-   desktops (the full nav shows from 941px). Doubled class beats the
-   page stylesheets' .msp-nav__links a / .msp-nav__inner rules. */
+/* Room for the full nav. With eight top-level items (About Us added
+   2026-11-25) the row only fits from 1600px at default spacing, so:
+   below 1200px it collapses into the hamburger drawer, the same one used
+   at 940px and under (mobile-nav.js); from 1200 to 1599px "Home" is
+   dropped (the logo links home) and link spacing is tightened. Doubled
+   class beats the page stylesheets' .msp-nav__links a / .msp-nav__inner
+   rules. If you add or remove a top-level item, re-check 1200px and
+   1372px: those are the tightest widths. */
 .msp-nav .msp-brand { flex-shrink: 0; }
 @media (min-width: 941px) and (max-width: 1199px) {
+  .msp-nav .msp-nav__links { display: none; }
+  .msp-nav .msp-nav__inner { justify-content: space-between; gap: 12px; }
+  .msp-nav .msp-nav__cta { margin-left: auto; }
+  .msp-nav .msp-nav__burger { display: flex; margin-left: 0; }
+}
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .msp-nav .msp-nav__links > a[href="/"] { display: none; }
   .msp-nav .msp-nav__inner { gap: 16px; }
   .msp-nav .msp-nav__links { gap: 0; }
   .msp-nav .msp-nav__links > a,
-  .msp-nav .msp-nav__item > a { padding-left: 7px; padding-right: 7px; }
-}
-/* Narrowest desktops: drop "Home" (the logo links home) so the CTA fits. */
-@media (min-width: 941px) and (max-width: 1023px) {
-  .msp-nav .msp-nav__links > a[href="/"] { display: none; }
-  .msp-nav .msp-nav__inner { gap: 12px; }
-  .msp-nav .msp-brand img { height: 30px; width: auto; }
-  .msp-nav .msp-nav__cta { padding-left: 14px; padding-right: 14px; }
+  .msp-nav .msp-nav__item > a { padding-left: 8px; padding-right: 8px; }
 }
 .msp-nav__dd-caret {
   color: var(--uw-ink-400);
@@ -2058,7 +2063,8 @@ svg.lucide {
 
 /* ============================================================
    MOBILE NAV — hamburger button + off-canvas drawer
-   Shown at ≤940px. Injected into DOM via mobile-nav.js.
+   Shown at ≤1199px (≤940px here, 941 to 1199px in the NAV DROPDOWN
+   rules above). Injected into DOM via mobile-nav.js.
    ============================================================ */
 
 .msp-nav__burger {

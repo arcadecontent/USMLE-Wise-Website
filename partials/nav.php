@@ -175,16 +175,8 @@ $ccNavLive = static function (string $step): string {
         </div>
       </div>
       <div class="msp-nav__item msp-nav__item--has-dd">
-        <a href="/testimonials">Resources <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+        <a href="/blog">Resources <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
         <div class="msp-nav__dropdown">
-          <a href="/testimonials" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Testimonials</span>
-            <span class="msp-nav__dd-meta">Real IMG match outcomes</span>
-          </a>
-          <a href="/research-awards" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Research Awards</span>
-            <span class="msp-nav__dd-meta">Conference wins by our students</span>
-          </a>
           <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/data/wiki.php'; if (USMLEWISE_WIKI_NAV_LIVE || usmlewise_wiki_show_drafts()): ?>
           <a href="/wiki" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Wiki</span>
@@ -195,13 +187,30 @@ $ccNavLive = static function (string $step): string {
             <span class="msp-nav__dd-name">Blog</span>
             <span class="msp-nav__dd-meta">Guides &amp; match strategy</span>
           </a>
-          <a href="/qa" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">FAQ</span>
-            <span class="msp-nav__dd-meta">Answers to common questions</span>
-          </a>
+        </div>
+      </div>
+      <div class="msp-nav__item msp-nav__item--has-dd">
+        <a href="/team">About Us <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+        <div class="msp-nav__dropdown">
           <a href="/team" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Our Team</span>
             <span class="msp-nav__dd-meta">Meet the mentors &amp; team</span>
+          </a>
+          <a href="/events" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Our Events</span>
+            <span class="msp-nav__dd-meta">Conferences &amp; live courses</span>
+          </a>
+          <a href="/testimonials" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Testimonials</span>
+            <span class="msp-nav__dd-meta">Real IMG match outcomes</span>
+          </a>
+          <a href="/research-awards" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">Research Awards</span>
+            <span class="msp-nav__dd-meta">Conference wins by our students</span>
+          </a>
+          <a href="/qa" class="msp-nav__dd-link">
+            <span class="msp-nav__dd-name">FAQ</span>
+            <span class="msp-nav__dd-meta">Answers to common questions</span>
           </a>
           <a href="/contact" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Contact Us</span>
