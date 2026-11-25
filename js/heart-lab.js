@@ -675,6 +675,8 @@ const Heart = (() => {
   let activeValve = null, targetW = null, curW = 0, camTween = null, ok = false;
   let proc = null, hemi = null, rim = null;
   let real = null; // the realistic GLB heart once it has loaded
+  let chest = null; // the rib cage scene for Murmurs mode once it has loaded
+  let touched = false; // the visitor has turned the view themselves
   const DIST = 10;
   const SHOW_ALL_ARTERIES = new URLSearchParams(location.search).has('arteries'); // dev aid for aligning paths
 
@@ -829,7 +831,7 @@ const Heart = (() => {
     controls.enableDamping = true; controls.dampingFactor = 0.08;
     controls.autoRotate = !reduceMotion; controls.autoRotateSpeed = 0.7;
     controls.target.set(0.05, 0.3, 0);
-    controls.addEventListener('start', () => { controls.autoRotate = false; camTween = null; $('.hl-heart').classList.add('is-touched'); });
+    controls.addEventListener('start', () => { controls.autoRotate = false; camTween = null; touched = true; $('.hl-heart').classList.add('is-touched'); });
 
     // Tap to pick a valve (murmurs) or a wall (MI)
     const ray = new THREE.Raycaster(); const ndc = new THREE.Vector2(); let down = null;
@@ -840,7 +842,7 @@ const Heart = (() => {
       ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
       ray.setFromCamera(ndc, camera);
       if (state.mode === 'murmur') {
-        const hits = ray.intersectObjects(['aortic', 'pulmonic', 'mitral', 'tricuspid'].map((k) => valves[k].hit));
+        const hits = ray.intersectObjects(chest ? chest.hits : ['aortic', 'pulmonic', 'mitral', 'tricuspid'].map((k) => valves[k].hit));
         if (hits.length) pickSite(hits[0].object.userData.site);
       } else {
         const hit = ray.intersectObject(real ? real.mesh : ventricle)[0];
@@ -990,11 +992,335 @@ const Heart = (() => {
     rim.color.set(0xffffff); rim.intensity = 0.8;
     controls.target.set(0, 0.1, 0);
 
-    real = { mesh, terr, inf, infAttr, uniforms, wrapG, k, vessels: vesselMeshes };
+    real = { mesh, terr, inf, infAttr, uniforms, wrapG, k, base: k, vessels: vesselMeshes };
     proc.visible = false;
     setLoading(false);
     // re-apply whatever the visitor already picked while it loaded
     if (state.mode === 'mi') { const m = miById[state.mi]; setInfarct(m.terr); setCulprit(m.culprit, m.occl); }
+    // then the chest around it (Murmurs mode); without it Murmurs keeps the heart alone with its rings
+    loadChest(GLTFLoader, MeshoptDecoder).catch((e) => console.warn('Heart Lab: rib cage failed, Murmurs mode shows the heart alone', e));
+  }
+  /* ---- The chest for Murmurs mode (CC0 rib cage, see assets/models/ribcage-LICENSE.txt) ----
+     Both models are real size in metres, so the heart sits in the rib cage's own frame
+     (bbox-centred, +x = patient's left, +z = anterior) at true scale; the whole chest
+     group is then scaled up for the camera. */
+  const CHEST_S = 15;              // world units per metre in Murmurs mode
+  const CHEST_Y = 0.1 - 0.008 * 15; // puts chest y = 0.008 m on the camera target (y 0.1)
+  const CHEST_AZ = 0.22;           // slight left-anterior oblique
+  let swayT0 = 0;
+  // Heart in the chest frame: the AX_A apex lands on the left 5th ICS near the midclavicular
+  // line, the AX_B base on the 3rd costal cartilage (y 0.028), about one third right of the
+  // midline; turned 0.12 rad about z, 1.6 cm forward so it sits just behind the sternum.
+  const HEART_IN_CHEST = { pos: [0.0036, 0.0165, 0.016], rotZ: 0.12 };
+  // Measured by ray scans of ribcage.glb at x = 0.0525 (the MCL): rib 5 crosses at y -0.022..-0.032,
+  // rib 6 at -0.044..-0.056, so the 5th intercostal space at the MCL is centred at y -0.038.
+  const MCL_ICS5_Y = -0.038;
+  const SITE_VALVE = { aortic: 'aortic', pulmonic: 'pulmonic', erb: 'aortic', tricuspid: 'tricuspid', mitral: 'mitral' };
+  const SITE_LABEL = { aortic: 'A', pulmonic: 'P', erb: 'E', tricuspid: 'T', mitral: 'M' };
+
+  function placeHeart() {
+    if (!real) return;
+    const w = real.wrapG;
+    if (chest && state.mode === 'murmur') {
+      chest.g.add(w);
+      w.position.set(...HEART_IN_CHEST.pos); w.rotation.set(0, 0, HEART_IN_CHEST.rotZ);
+      real.base = 1;
+    } else {
+      scene.add(w);
+      w.position.set(0, 0.1, 0); w.rotation.set(0, 0, 0);
+      real.base = real.k;
+    }
+    w.scale.setScalar(real.base);
+    if (chest) chest.g.visible = state.mode === 'murmur';
+  }
+
+  async function loadChest(GLTFLoader, MeshoptDecoder) {
+    const [gltf, lm] = await Promise.all([
+      new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/assets/models/ribcage.glb'),
+      fetch('/assets/models/ribcage-landmarks.json').then((r) => { if (!r.ok) throw new Error('landmarks ' + r.status); return r.json(); }),
+    ]);
+    const mono = css('--font-mono') || 'monospace';
+    try { await document.fonts.load(`700 44px ${mono}`); } catch (e) { /* the fallback font is fine */ }
+
+    const root = gltf.scene;
+    root.updateMatrixWorld(true);
+    const centre = new THREE.Box3().setFromObject(root).getCenter(new THREE.Vector3());
+    root.position.sub(centre);
+    const g = new THREE.Group(); // stays at identity until every point is measured
+    g.add(root);
+    g.updateMatrixWorld(true);
+    const ribs = [];
+    root.traverse((o) => { if (o.isMesh) ribs.push(o); });
+    ribs.forEach((o) => {
+      // own bone texture, translucent so the heart reads through the sternum and cartilage; a
+      // depth-only copy drawn first keeps the back ribs from washing through the front ones
+      o.material.transparent = true; o.material.opacity = 0.55; o.material.depthWrite = false;
+      o.renderOrder = 2;
+      const pre = new THREE.Mesh(o.geometry, new THREE.MeshBasicMaterial({ colorWrite: false }));
+      pre.renderOrder = 1;
+      o.add(pre);
+    });
+    if (!ribs.length) throw new Error('no mesh in ribcage.glb');
+
+    // ---- the anterior chest surface: a 1 mm depth map of the front-most bone, seen from the front ----
+    const GS = 0.001, gx0 = -0.11, gy0 = -0.175, GW = 221, GH = 351;
+    const depth = new Float32Array(GW * GH).fill(-1);
+    {
+      const va = new THREE.Vector3(), vb = new THREE.Vector3(), vc = new THREE.Vector3();
+      ribs.forEach((mesh) => {
+        const pos = mesh.geometry.attributes.position, index = mesh.geometry.index;
+        const n = index ? index.count : pos.count;
+        const vert = (i, v) => v.fromBufferAttribute(pos, index ? index.getX(i) : i).applyMatrix4(mesh.matrixWorld);
+        for (let t = 0; t < n; t += 3) {
+          vert(t, va); vert(t + 1, vb); vert(t + 2, vc);
+          const i0 = Math.max(0, Math.ceil((Math.min(va.x, vb.x, vc.x) - gx0) / GS)), i1 = Math.min(GW - 1, Math.floor((Math.max(va.x, vb.x, vc.x) - gx0) / GS));
+          const j0 = Math.max(0, Math.ceil((Math.min(va.y, vb.y, vc.y) - gy0) / GS)), j1 = Math.min(GH - 1, Math.floor((Math.max(va.y, vb.y, vc.y) - gy0) / GS));
+          const det = (vb.y - vc.y) * (va.x - vc.x) + (vc.x - vb.x) * (va.y - vc.y);
+          if (Math.abs(det) < 1e-12) continue;
+          for (let j = j0; j <= j1; j++) for (let i = i0; i <= i1; i++) {
+            const x = gx0 + i * GS, y = gy0 + j * GS;
+            const l1 = ((vb.y - vc.y) * (x - vc.x) + (vc.x - vb.x) * (y - vc.y)) / det;
+            const l2 = ((vc.y - va.y) * (x - vc.x) + (va.x - vc.x) * (y - vc.y)) / det;
+            const l3 = 1 - l1 - l2;
+            if (l1 < 0 || l2 < 0 || l3 < 0) continue;
+            const z = l1 * va.z + l2 * vb.z + l3 * vc.z;
+            const c = j * GW + i;
+            if (z > depth[c]) depth[c] = z;
+          }
+        }
+      });
+    }
+    const hitZ = (x, y) => {
+      const i = Math.round((x - gx0) / GS), j = Math.round((y - gy0) / GS);
+      if (i < 0 || j < 0 || i >= GW || j >= GH) return null;
+      const z = depth[j * GW + i];
+      return z > 0.015 ? z : null;
+    };
+    // z of the surface at (x, y); in a rib gap, bridge the crests of the ribs above and below
+    const crest = (x, y, dir) => {
+      for (let s = 0.001; s <= 0.024; s += 0.001) {
+        const z = hitZ(x, y + dir * s);
+        if (z !== null) {
+          const z2 = Math.max(z, hitZ(x, y + dir * (s + 0.003)) ?? z, hitZ(x, y + dir * (s + 0.006)) ?? z);
+          return { z: z2, d: s + 0.003 };
+        }
+      }
+      return null;
+    };
+    const zAt = (x, y) => {
+      const z = hitZ(x, y);
+      if (z !== null) return z;
+      const up = crest(x, y, 1), dn = crest(x, y, -1);
+      if (up && dn) return up.z + (dn.z - up.z) * (up.d / (up.d + dn.d));
+      return up ? up.z : dn ? dn.z : null;
+    };
+    // a point on the surface, lifted along the local normal (from the surface gradient)
+    const onSurface = (x, y, lift) => {
+      const z = zAt(x, y);
+      if (z === null) return null;
+      const e = 0.005;
+      const zx = ((zAt(x + e, y) ?? z) - (zAt(x - e, y) ?? z)) / (2 * e);
+      const zy = ((zAt(x, y + e) ?? z) - (zAt(x, y - e) ?? z)) / (2 * e);
+      const n = new THREE.Vector3(-zx, -zy, 1).normalize();
+      return { p: new THREE.Vector3(x, y, z).addScaledVector(n, lift), n };
+    };
+
+    // ---- listening points ----
+    const R = lm.ribs;
+    const ics = (a, b) => (a + b) / 2;
+    const edge = lm.sternumHalfWidth + 0.004;
+    const SITE_XY = {
+      aortic: [-edge, ics(R[2].rightSternal[1], R[3].rightSternal[1])],   // right 2nd ICS, sternal edge
+      pulmonic: [edge, ics(R[2].leftSternal[1], R[3].leftSternal[1])],    // left 2nd ICS, sternal edge
+      erb: [edge, ics(R[3].leftSternal[1], R[4].leftSternal[1])],         // left 3rd ICS, sternal edge
+      tricuspid: [edge, ics(R[4].leftSternal[1], R[5].leftSternal[1])],   // left 4th ICS, lower left sternal edge
+      mitral: [lm.leftMidclavicularX, MCL_ICS5_Y],                          // left 5th ICS, midclavicular line
+    };
+    const PR = 0.0055; // diaphragm radius, metres
+    const LABEL_AT = { aortic: [-1, 0], pulmonic: [1, 0.002], erb: [-1, 0], tricuspid: [1, -0.003], mitral: [1, -0.002] };
+    const points = {}, hits = [];
+    const ptFace = (col) => new THREE.MeshStandardMaterial({ color: new THREE.Color(col), roughness: 0.35, metalness: 0.15, emissive: new THREE.Color(C.blue300), emissiveIntensity: 0.15 });
+    const ptRing = () => new THREE.MeshStandardMaterial({ color: new THREE.Color(C.blue500), roughness: 0.28, metalness: 0.75, emissive: new THREE.Color(C.blue500), emissiveIntensity: 0.2 });
+    const zUp = new THREE.Vector3(0, 0, 1);
+    const labelTex = (txt, fill) => {
+      const cv = document.createElement('canvas'); cv.width = cv.height = 64;
+      const x = cv.getContext('2d');
+      x.font = `700 44px ${mono}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.lineJoin = 'round';
+      x.lineWidth = 9; x.strokeStyle = C.surface; x.strokeText(txt, 32, 34);
+      x.fillStyle = fill; x.fillText(txt, 32, 34);
+      const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; return t;
+    };
+    Object.entries(SITE_XY).forEach(([site, [x, y]]) => {
+      const s = onSurface(x, y, 0.0028);
+      if (!s) throw new Error('no chest surface at ' + site);
+      const grp = new THREE.Group();
+      grp.position.copy(s.p); grp.quaternion.setFromUnitVectors(zUp, s.n);
+      const face = new THREE.Mesh(new THREE.CylinderGeometry(PR * 0.86, PR * 0.86, 0.0012, 40).rotateX(Math.PI / 2), ptFace(C.blue50));
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(PR, PR * 0.17, 14, 48), ptRing());
+      const hit = new THREE.Mesh(new THREE.SphereGeometry(PR * 1.9, 12, 8), new THREE.MeshBasicMaterial({ visible: false }));
+      hit.userData.site = site;
+      const pulse = new THREE.Group(); pulse.add(face, ring);
+      grp.add(pulse, hit);
+      g.add(grp); hits.push(hit);
+      const tex = [labelTex(SITE_LABEL[site], C.blue700), labelTex(SITE_LABEL[site], C.red600)];
+      const label = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex[0], depthTest: false, depthWrite: false, transparent: true }));
+      label.scale.setScalar(0.017); label.renderOrder = 30;
+      // beside the disc, on the side that keeps the valve behind it in view
+      const [lx, ly] = LABEL_AT[site];
+      label.position.copy(s.p).add(new THREE.Vector3(lx * (PR + 0.0075), ly, 0.003));
+      g.add(label);
+      points[site] = { grp, pulse, face, ring, label, tex, p: s.p.clone() };
+    });
+
+    // ---- valves at their true positions behind the chest wall ----
+    // x/y from the surface anatomy; z (depth) from where each valve sits in the heart model
+    const VALVES = {
+      aortic: { at: [lm.sternumHalfWidth, ics(R[3].leftSternal[1], R[4].leftSternal[1]), 0.016], n: [-0.2, 0.5, 0.85], kind: 'semilunar' }, // behind the left sternal edge, 3rd ICS
+      pulmonic: { at: [0.02, R[3].leftSternal[1], 0.026], n: [0.2, 0.5, 0.85], kind: 'semilunar' },                               // behind the left 3rd costal cartilage
+      mitral: { at: [0.025, R[4].leftSternal[1], 0.002], n: [0.5, -0.4, 0.75], kind: 'mitral' },                                   // behind the left 4th costal cartilage
+      tricuspid: { at: [0, ics(R[4].leftSternal[1], R[5].leftSternal[1]), 0.014], n: [0.3, -0.3, 0.9], kind: 'tricuspid' },        // behind the sternum, 4th ICS
+    };
+    const VR = 0.0052;
+    const vmat = (col, op) => new THREE.MeshBasicMaterial({ color: new THREE.Color(col), transparent: true, opacity: op, depthTest: false, depthWrite: false });
+    const seam = (curve, m) => new THREE.Mesh(new THREE.TubeGeometry(curve, 16, VR * 0.075, 6, false), m);
+    const cvalves = {};
+    Object.entries(VALVES).forEach(([key, v]) => {
+      const grp = new THREE.Group();
+      grp.position.set(...v.at);
+      grp.quaternion.setFromUnitVectors(zUp, new THREE.Vector3(...v.n).normalize());
+      const disc = new THREE.Group();
+      const faceM = vmat(C.blue100, 0.8), rimM = vmat(C.blue500, 0.95), seamM = vmat(C.blue700, 0.95);
+      const face = new THREE.Mesh(new THREE.CircleGeometry(VR, 40), faceM);
+      const rim = new THREE.Mesh(new THREE.TorusGeometry(VR, VR * 0.16, 8, 48), rimM);
+      face.renderOrder = 10; rim.renderOrder = 11;
+      disc.add(face, rim);
+      const V = (a, r = VR * 0.97) => new THREE.Vector3(Math.cos(a) * r, Math.sin(a) * r, 0);
+      const O = new THREE.Vector3();
+      let seams = [];
+      if (v.kind === 'semilunar') {
+        // three cusps meeting in a "Mercedes" star
+        seams = [Math.PI / 2, Math.PI / 2 + 2.094, Math.PI / 2 + 4.189].map((a) => new THREE.LineCurve3(O, V(a)));
+      } else if (v.kind === 'mitral') {
+        // two leaflets: the closure line is a shallow smile
+        seams = [new THREE.QuadraticBezierCurve3(V(Math.PI + 0.12), new THREE.Vector3(0, -VR * 0.55, 0), V(-0.12))];
+      } else {
+        // three leaflets of unequal size, curved commissures
+        seams = [1.75, 3.75, 5.6].map((a) => new THREE.QuadraticBezierCurve3(new THREE.Vector3(VR * 0.08, -VR * 0.05, 0), V(a + 0.35, VR * 0.5), V(a)));
+      }
+      seams.forEach((c) => { const m = seam(c, seamM); m.renderOrder = 12; disc.add(m); });
+      grp.add(disc);
+      g.add(grp);
+      cvalves[key] = { grp, disc, faceM, rimM, seamM };
+    });
+
+    // ---- dashed line from each listening point to the valve it reports on ----
+    const lines = {};
+    Object.entries(points).forEach(([site, pt]) => {
+      const to = cvalves[SITE_VALVE[site]].grp.position;
+      const geo = new THREE.BufferGeometry().setFromPoints([pt.p, to]);
+      const line = new THREE.Line(geo, new THREE.LineDashedMaterial({ color: new THREE.Color(C.blue400), dashSize: 0.0024, gapSize: 0.0018, transparent: true, opacity: 0.85, depthTest: false, depthWrite: false }));
+      line.computeLineDistances(); line.renderOrder = 9;
+      g.add(line); lines[site] = line;
+    });
+
+    // ---- radiation: curves on the chest surface (above the jugular notch they follow the neck) ----
+    const notch = lm.jugularNotch;
+    const surfaceOrNeck = (x, y, lift) => {
+      if (y > notch[1] - 0.004) return new THREE.Vector3(x, y, notch[2] - 0.004 - (y - notch[1]) * 0.35);
+      const s = onSurface(x, y, lift);
+      return s ? s.p : null;
+    };
+    const P = (site) => SITE_XY[site];
+    const RAD3 = {
+      AS: [[P('aortic'), [-0.02, 0.065], [-0.024, 0.092], [-0.026, 0.128]], [P('aortic'), [-0.004, 0.058], [0.012, 0.09], [0.024, 0.128]]], // both carotids
+      MR: [[P('mitral'), [0.068, -0.032], [0.082, -0.024], [0.094, -0.014]]],                                                           // to the left axilla along the 5th rib
+      TR: [[P('tricuspid'), [0.002, -0.004], [-0.014, -0.01], [-0.026, -0.016]]],                                                       // right lower sternal border
+      VSD: [[P('tricuspid'), [0.034, 0.0], [0.05, -0.004], [0.064, -0.008]], [P('tricuspid'), [-0.004, 0.003], [-0.022, 0.002], [-0.038, 0.0]]], // across the precordium
+      AR: [[P('erb'), [0.021, 0.004], [0.032, -0.018], [0.046, -0.032]]],                                                               // down the left sternal border to the apex
+      PDA: [[P('pulmonic'), [0.03, 0.054], [0.046, 0.063], [0.062, 0.07]]],                                                             // left infraclavicular
+      PS: [[P('pulmonic'), [0.022, 0.062], [0.028, 0.078], [0.034, 0.09]]],                                                             // toward the left clavicle
+    };
+    const radMat = () => new THREE.MeshBasicMaterial({ color: new THREE.Color(C.red500), transparent: true, opacity: 0.7, depthWrite: false });
+    const rad = {};
+    Object.entries(RAD3).forEach(([id, paths]) => {
+      const grp = new THREE.Group(); grp.visible = false;
+      const flows = [];
+      paths.forEach((ctrl) => {
+        // walk the 2D polyline in small steps, skipping the first 8 mm (the diaphragm is there)
+        const flat = new THREE.CatmullRomCurve3(ctrl.map(([x, y]) => new THREE.Vector3(x, y, 0)));
+        const len = flat.getLength();
+        const pts = [];
+        for (let i = 0; i <= 14; i++) {
+          const q = flat.getPointAt(Math.min(1, 0.009 / len + (i / 14) * (1 - 0.009 / len)));
+          const p = surfaceOrNeck(q.x, q.y, 0.0026);
+          if (p) pts.push(p);
+        }
+        if (pts.length < 3) return;
+        const curve = new THREE.CatmullRomCurve3(pts);
+        const tube = new THREE.Mesh(new THREE.TubeGeometry(curve, 64, 0.0009, 8, false), radMat());
+        tube.renderOrder = 5;
+        const end = curve.getPointAt(1), tan = curve.getTangentAt(1);
+        const head = new THREE.Mesh(new THREE.ConeGeometry(0.0026, 0.0055, 16), radMat());
+        head.material.opacity = 0.9;
+        head.position.copy(end); head.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tan);
+        head.renderOrder = 5;
+        grp.add(tube, head);
+        for (let i = 0; i < 3; i++) {
+          const dot = new THREE.Mesh(new THREE.SphereGeometry(0.0016, 12, 8), radMat());
+          dot.renderOrder = 6; dot.visible = !reduceMotion;
+          grp.add(dot); flows.push({ dot, curve, off: i / 3 });
+        }
+      });
+      g.add(grp);
+      rad[id] = { grp, flows };
+    });
+
+    g.scale.setScalar(CHEST_S);
+    g.position.set(0, CHEST_Y, 0);
+    g.visible = false;
+    scene.add(g);
+    chest = { g, ribs, points, valves: cvalves, lines, rad, hits };
+    setMode(state.mode);
+  }
+
+  // per-frame: the selected site and its valve turn red and pulse with the murmur's loudness
+  function chestFrame(lvl, beat) {
+    const m = byId[state.murmur];
+    const site = activeValve; // the selected murmur's listening site (null for normal sounds)
+    const vk = site ? SITE_VALVE[site] : null;
+    const L = reduceMotion ? 0.5 : lvl;
+    Object.entries(chest.points).forEach(([k, pt]) => {
+      const on = k === site;
+      pt.ring.material.color.set(on ? C.red500 : C.blue500);
+      pt.ring.material.emissive.set(on ? C.red500 : C.blue500);
+      pt.ring.material.emissiveIntensity = on ? 0.2 + 0.45 * L : 0.2;
+      pt.face.material.color.set(on ? C.red100 : C.blue50);
+      pt.face.material.emissive.set(on ? C.red300 : C.blue300);
+      pt.face.material.emissiveIntensity = on ? 0.15 + 0.5 * L : 0.15;
+      pt.pulse.scale.setScalar(on ? 1 + 0.22 * L * beat : 1);
+      pt.label.material.map = pt.tex[on ? 1 : 0];
+      chest.lines[k].material.color.set(on ? C.red500 : C.blue400);
+      chest.lines[k].material.opacity = on ? 0.95 : 0.55;
+      chest.lines[k].renderOrder = on ? 9.5 : 9;
+    });
+    Object.entries(chest.valves).forEach(([k, v]) => {
+      const on = k === vk;
+      v.rimM.color.set(on ? C.red500 : C.blue500);
+      v.faceM.color.set(on ? C.red100 : C.blue100);
+      v.seamM.color.set(on ? C.red700 : C.blue700);
+      v.faceM.opacity = on ? 0.6 + 0.35 * L : 0.75;
+      v.disc.scale.setScalar(on ? 1 + 0.3 * L * beat : 1);
+    });
+    const now = performance.now() / 1000;
+    Object.entries(chest.rad).forEach(([id, r]) => {
+      r.grp.visible = id === m.id;
+      if (!r.grp.visible || reduceMotion) return;
+      r.flows.forEach((f) => {
+        const t = (now / 1.6 + f.off) % 1;
+        f.dot.position.copy(f.curve.getPointAt(t));
+        f.dot.material.opacity = Math.sin(Math.PI * t) * 0.9;
+      });
+    });
   }
 
   function setInfarct(terrs) { targetW = terrs; curW = 0; }
@@ -1047,14 +1373,21 @@ const Heart = (() => {
   }
 
   function setValve(site) { activeValve = site; }
-  function showValves(on) { ['aortic', 'pulmonic', 'mitral', 'tricuspid'].forEach((k) => { valves[k].grp.visible = on; }); }
+  // Murmurs mode shows the chest (when it loaded); MI mode shows the heart alone, exactly as before
+  function setMode(mode) {
+    const murmur = mode === 'murmur';
+    ['aortic', 'pulmonic', 'mitral', 'tricuspid'].forEach((k) => { valves[k].grp.visible = murmur && !chest; });
+    placeHeart();
+    if (murmur && chest) view('chest', { auto: true });
+  }
 
-  function view(name) {
-    const d = DIST;
-    const dirs = { front: [0, 0.05, 1], left: [1, 0.05, 0.1], back: [0, 0.1, -1], below: [0.15, -0.7, 0.7], frontleft: [0.45, 0.08, 0.9], frontright: [-0.6, -0.1, 0.8], backbelow: [0.25, -0.5, -0.85] };
-    const to = new THREE.Vector3(...dirs[name]).normalize().multiplyScalar(d).toArray();
+  const VIEW_DIRS = { front: [0, 0.05, 1], left: [1, 0.05, 0.1], back: [0, 0.1, -1], below: [0.15, -0.7, 0.7], frontleft: [0.45, 0.08, 0.9], frontright: [-0.6, -0.1, 0.8], backbelow: [0.25, -0.5, -0.85], chest: [Math.sin(CHEST_AZ), 0.05, Math.cos(CHEST_AZ)] };
+  function view(name, { auto = false } = {}) {
+    const to = new THREE.Vector3(...VIEW_DIRS[name]).normalize().multiplyScalar(DIST);
     controls.autoRotate = false;
-    camTween = { from: camera.position.clone(), to: new THREE.Vector3(...to), t: 0 };
+    camTween = { from: camera.position.clone(), to, t: 0 };
+    if (auto) return;
+    touched = true;
     $('.hl-heart').classList.add('is-touched');
   }
 
@@ -1067,7 +1400,7 @@ const Heart = (() => {
     const sys = phase > 0.04 && phase < 0.36 ? Math.sin(((phase - 0.04) / 0.32) * Math.PI) : 0;
     const atr = phase > 0.86 ? Math.sin(((phase - 0.86) / 0.14) * Math.PI) : 0;
     const beat = reduceMotion ? 0 : 1;
-    if (real) real.wrapG.scale.setScalar(real.k * (1 - 0.03 * sys * beat));
+    if (real) real.wrapG.scale.setScalar(real.base * (1 - 0.03 * sys * beat));
     else ventricle.scale.setScalar(1 - 0.045 * sys * beat);
     if (real) real.uniforms.uPulse.value = 0.5 + 0.5 * Math.sin(performance.now() / 260);
 
@@ -1090,13 +1423,19 @@ const Heart = (() => {
       v.dot.quaternion.premultiply(v.grp.parent.quaternion.clone().invert());
     });
 
+    if (chest && chest.g.visible) chestFrame(lvl, beat);
+
     if (occlusion.visible) occlusion.scale.setScalar((occlusion.userData.base || 1) * (1 + 0.25 * Math.sin(performance.now() / 180) * beat));
 
     if (camTween) {
       camTween.t = Math.min(1, camTween.t + dt / 0.9);
       const e = 1 - Math.pow(1 - camTween.t, 3);
       camera.position.lerpVectors(camTween.from, camTween.to, e).setLength(DIST);
-      if (camTween.t >= 1) camTween = null;
+      if (camTween.t >= 1) { camTween = null; swayT0 = performance.now(); }
+    } else if (chest && chest.g.visible && !touched && !reduceMotion) {
+      // a slow sway around the left-anterior oblique view keeps the chest alive without hiding the front
+      const az = CHEST_AZ + 0.16 * Math.sin((performance.now() - swayT0) / 2600);
+      camera.position.set(Math.sin(az), 0.05, Math.cos(az)).setLength(DIST);
     }
     controls.update();
     renderer.render(scene, camera);
@@ -1106,7 +1445,7 @@ const Heart = (() => {
     try { build(); } catch (e) { $('#heartFallback').hidden = false; console.warn('Heart Lab: 3D unavailable', e); }
   }
   const safe = (fn) => (...a) => (ok ? fn(...a) : undefined);
-  return { init, setInfarct: safe(setInfarct), setCulprit: safe(setCulprit), setValve: safe(setValve), showValves: safe(showValves), view: safe(view) };
+  return { init, setInfarct: safe(setInfarct), setCulprit: safe(setCulprit), setValve: safe(setValve), setMode: safe(setMode), view: safe(view) };
 })();
 
 /* ============================================================
@@ -1270,10 +1609,10 @@ function setMode(mode) {
   $$('[data-show]').forEach((el) => { el.hidden = el.dataset.show !== mode; });
   if (mode === 'mi') {
     stopListening();
-    Heart.showValves(false);
+    Heart.setMode('mi');
     selectMI(state.mi);
   } else {
-    Heart.showValves(true);
+    Heart.setMode('murmur');
     Heart.setInfarct(null); Heart.setCulprit(null, null);
     Heart.setInfarct([]);
     renderLegend();
