@@ -33,7 +33,7 @@ const S1 = 0.02, S2 = 0.37;
 
 const MURMURS = [
   {
-    id: 'NORMAL', name: 'Normal heart sounds', short: 'Normal', group: 'Start here', site: 'mitral', kind: 'normal',
+    id: 'NORMAL', name: 'Normal heart sounds', short: 'Normal', group: 'Start here', site: 'mitral', valve: null, kind: 'normal',
     one: 'S1 is the mitral and tricuspid valves closing. S2 is the aortic and pulmonic valves closing. Everything between them is systole.',
     facts: {
       Timing: '“Lub” (S1) then “dub” (S2). Diastole is the longer gap.',
@@ -46,7 +46,7 @@ const MURMURS = [
     eff: {},
   },
   {
-    id: 'AS', name: 'Aortic stenosis', short: 'Aortic stenosis', group: 'Systolic', site: 'aortic', kind: 'Systolic ejection',
+    id: 'AS', name: 'Aortic stenosis', short: 'Aortic stenosis', group: 'Systolic', site: 'aortic', valve: 'aortic', kind: 'Systolic ejection',
     one: 'A stiff, narrowed aortic valve. Blood squeezes through it in systole, so the murmur rises and falls like a diamond.',
     facts: {
       Timing: 'Crescendo-decrescendo (“diamond”) systolic ejection murmur. A later peak means more severe stenosis.',
@@ -61,7 +61,7 @@ const MURMURS = [
     eff: { insp: 0.9, grip: 0.55, squat: 1.4, valsalva: 0.55 },
   },
   {
-    id: 'PS', name: 'Pulmonic stenosis', short: 'Pulmonic stenosis', group: 'Systolic', site: 'pulmonic', kind: 'Systolic ejection',
+    id: 'PS', name: 'Pulmonic stenosis', short: 'Pulmonic stenosis', group: 'Systolic', site: 'pulmonic', valve: 'pulmonic', kind: 'Systolic ejection',
     one: 'A narrowed pulmonic valve. Like AS but on the right side, so it gets louder when you breathe in.',
     facts: {
       Timing: 'Crescendo-decrescendo systolic ejection murmur, often after an ejection click.',
@@ -76,7 +76,7 @@ const MURMURS = [
     eff: { insp: 1.55, grip: 1, squat: 1.2, valsalva: 0.6 },
   },
   {
-    id: 'MR', name: 'Mitral regurgitation', short: 'Mitral regurgitation', group: 'Systolic', site: 'mitral', kind: 'Holosystolic',
+    id: 'MR', name: 'Mitral regurgitation', short: 'Mitral regurgitation', group: 'Systolic', site: 'mitral', valve: 'mitral', kind: 'Holosystolic',
     one: 'The mitral valve leaks. Blood shoots back into the left atrium for the whole of systole, so the murmur is flat from S1 to S2.',
     facts: {
       Timing: 'Holosystolic (pansystolic), even loudness from S1 to S2.',
@@ -91,7 +91,7 @@ const MURMURS = [
     eff: { insp: 0.9, grip: 1.5, squat: 1.3, valsalva: 0.55 },
   },
   {
-    id: 'TR', name: 'Tricuspid regurgitation', short: 'Tricuspid regurgitation', group: 'Systolic', site: 'tricuspid', kind: 'Holosystolic',
+    id: 'TR', name: 'Tricuspid regurgitation', short: 'Tricuspid regurgitation', group: 'Systolic', site: 'tricuspid', valve: 'tricuspid', kind: 'Holosystolic',
     one: 'The tricuspid valve leaks. It sounds like MR, but it sits lower on the left sternal border and grows on inspiration.',
     facts: {
       Timing: 'Holosystolic, even loudness.',
@@ -106,7 +106,7 @@ const MURMURS = [
     eff: { insp: 1.6, grip: 1, squat: 1.2, valsalva: 0.6 },
   },
   {
-    id: 'VSD', name: 'Ventricular septal defect', short: 'VSD', group: 'Systolic', site: 'tricuspid', kind: 'Holosystolic',
+    id: 'VSD', name: 'Ventricular septal defect', short: 'VSD', group: 'Systolic', site: 'tricuspid', valve: null, kind: 'Holosystolic',
     one: 'A hole between the ventricles. High-pressure LV blood jets into the RV through all of systole.',
     facts: {
       Timing: 'Holosystolic.',
@@ -121,7 +121,7 @@ const MURMURS = [
     eff: { insp: 1, grip: 1.5, squat: 1.3, valsalva: 0.6 },
   },
   {
-    id: 'MVP', name: 'Mitral valve prolapse', short: 'Mitral valve prolapse', group: 'Systolic', site: 'mitral', kind: 'Late systolic + click',
+    id: 'MVP', name: 'Mitral valve prolapse', short: 'Mitral valve prolapse', group: 'Systolic', site: 'mitral', valve: 'mitral', kind: 'Late systolic + click',
     one: 'A floppy mitral leaflet bulges back into the left atrium mid-systole. You hear a click, then a short late murmur.',
     facts: {
       Timing: 'Mid-systolic <b>click</b>, then a late systolic murmur.',
@@ -137,7 +137,7 @@ const MURMURS = [
     clickShift: { grip: 0.04, squat: 0.05, valsalva: -0.08 },
   },
   {
-    id: 'HOCM', name: 'Hypertrophic cardiomyopathy (HOCM)', short: 'HOCM', group: 'Systolic', site: 'tricuspid', kind: 'Systolic ejection',
+    id: 'HOCM', name: 'Hypertrophic cardiomyopathy (HOCM)', short: 'HOCM', group: 'Systolic', site: 'tricuspid', valve: 'aortic', kind: 'Systolic ejection',
     one: 'A thick septum blocks the LV outflow tract during systole. The less blood in the LV, the worse the block.',
     facts: {
       Timing: 'Crescendo-decrescendo systolic murmur.',
@@ -152,7 +152,7 @@ const MURMURS = [
     eff: { insp: 1, grip: 0.55, squat: 0.5, valsalva: 1.7 },
   },
   {
-    id: 'ASD', name: 'Atrial septal defect', short: 'ASD', group: 'Systolic', site: 'pulmonic', kind: 'Fixed split S2',
+    id: 'ASD', name: 'Atrial septal defect', short: 'ASD', group: 'Systolic', site: 'pulmonic', valve: null, kind: 'Fixed split S2',
     one: 'A hole between the atria. Extra blood flows through the right heart, so the pulmonic valve always closes late.',
     facts: {
       Timing: 'Soft systolic flow murmur, with a <b>wide, fixed split S2</b>.',
@@ -167,7 +167,7 @@ const MURMURS = [
     eff: { insp: 1.1, grip: 1, squat: 1.1, valsalva: 0.8 },
   },
   {
-    id: 'AR', name: 'Aortic regurgitation', short: 'Aortic regurgitation', group: 'Diastolic', site: 'erb', kind: 'Early diastolic',
+    id: 'AR', name: 'Aortic regurgitation', short: 'Aortic regurgitation', group: 'Diastolic', site: 'erb', valve: 'aortic', kind: 'Early diastolic',
     one: 'The aortic valve leaks. Right after S2, blood falls back into the LV, loudest at first and then fading.',
     facts: {
       Timing: 'Early diastolic decrescendo, starting right after S2.',
@@ -182,7 +182,7 @@ const MURMURS = [
     eff: { insp: 0.9, grip: 1.5, squat: 1.3, valsalva: 0.55 },
   },
   {
-    id: 'MS', name: 'Mitral stenosis', short: 'Mitral stenosis', group: 'Diastolic', site: 'mitral', kind: 'Mid-diastolic',
+    id: 'MS', name: 'Mitral stenosis', short: 'Mitral stenosis', group: 'Diastolic', site: 'mitral', valve: 'mitral', kind: 'Mid-diastolic',
     one: 'A narrowed mitral valve. In diastole it snaps open, then blood rumbles slowly through into the LV.',
     facts: {
       Timing: 'Loud S1, <b>opening snap</b> after S2, then a low mid-diastolic rumble.',
@@ -197,11 +197,11 @@ const MURMURS = [
     eff: { insp: 0.9, grip: 1.2, squat: 1.2, valsalva: 0.6 },
   },
   {
-    id: 'PDA', name: 'Patent ductus arteriosus', short: 'PDA', group: 'Continuous', site: 'pulmonic', kind: 'Continuous',
+    id: 'PDA', name: 'Patent ductus arteriosus', short: 'PDA', group: 'Continuous', site: 'pulmonic', valve: null, kind: 'Continuous',
     one: 'The fetal ductus between the aorta and pulmonary artery stays open. Aortic pressure is always higher, so blood flows the whole cycle.',
     facts: {
       Timing: 'Continuous “machine-like” murmur, loudest around S2.',
-      Where: 'Left infraclavicular area (just below the pulmonic area).',
+      Where: 'Left infraclavicular area (just above the pulmonic area).',
       Radiates: 'Toward the left clavicle and back.',
       'Sounds like': 'A rumbling machine that never fully stops.',
       Causes: 'Prematurity, congenital rubella, high altitude.',
@@ -554,7 +554,7 @@ function syncMurmurUI() {
   $$('.hl-site').forEach((b) => { b.setAttribute('aria-pressed', b.dataset.site === loud); });
   renderManNote();
   renderMurmurPanel();
-  Heart.setValve(m.id === 'NORMAL' ? null : m.site);
+  Heart.setValve(m.id === 'NORMAL' ? null : m.site, m.valve);
   drawPCG();
 }
 
@@ -651,7 +651,7 @@ function drawPCG() {
 const Heart = (() => {
   const host = $('#heartCanvas');
   let renderer, scene, camera, controls, ventricle, colorAttr, terrIdx, baseColors, infarctW, vessels = {}, valves = {}, occlusion;
-  let activeValve = null, targetW = null, curW = 0, camTween = null, ok = false;
+  let activeValve = null, activeLesion = null, targetW = null, curW = 0, camTween = null, ok = false;
   let proc = null, hemi = null, rim = null;
   let real = null; // the realistic GLB heart once it has loaded
   let chest = null; // the rib cage scene for Murmurs mode once it has loaded
@@ -1211,7 +1211,7 @@ const Heart = (() => {
     };
     const P = (site) => SITE_XY[site];
     const RAD3 = {
-      AS: [[P('aortic'), [-0.02, 0.065], [-0.024, 0.092], [-0.026, 0.128]], [P('aortic'), [-0.004, 0.058], [0.012, 0.09], [0.024, 0.128]]], // both carotids
+      AS: [[P('aortic'), [-0.02, 0.065], [-0.024, 0.088], [-0.026, 0.104]], [P('aortic'), [-0.004, 0.058], [0.012, 0.086], [0.024, 0.104]]], // both carotids
       MR: [[P('mitral'), [0.068, -0.032], [0.082, -0.024], [0.094, -0.014]]],                                                           // to the left axilla along the 5th rib
       TR: [[P('tricuspid'), [0.002, -0.004], [-0.014, -0.01], [-0.026, -0.016]]],                                                       // right lower sternal border
       VSD: [[P('tricuspid'), [0.034, 0.0], [0.05, -0.004], [0.064, -0.008]], [P('tricuspid'), [-0.004, 0.003], [-0.022, 0.002], [-0.038, 0.0]]], // across the precordium
@@ -1266,7 +1266,7 @@ const Heart = (() => {
   function chestFrame(lvl, beat) {
     const m = byId[state.murmur];
     const site = activeValve; // the selected murmur's listening site (null for normal sounds)
-    const vk = site ? SITE_VALVE[site] : null;
+    const vk = site ? activeLesion : null; // the valve at fault (null for septal and ductal lesions)
     const L = reduceMotion ? 0.5 : lvl;
     Object.entries(chest.points).forEach(([k, pt]) => {
       const on = k === site;
@@ -1278,9 +1278,10 @@ const Heart = (() => {
       pt.face.material.emissiveIntensity = on ? 0.15 + 0.5 * L : 0.15;
       pt.pulse.scale.setScalar(on ? 1 + 0.22 * L * beat : 1);
       pt.label.material.map = pt.tex[on ? 1 : 0];
-      chest.lines[k].material.color.set(on ? C.red500 : C.blue400);
-      chest.lines[k].material.opacity = on ? 0.95 : 0.55;
-      chest.lines[k].renderOrder = on ? 9.5 : 9;
+      const lit = on && SITE_VALVE[k] === vk; // the link is red only when this point reports on the valve at fault
+      chest.lines[k].material.color.set(lit ? C.red500 : C.blue400);
+      chest.lines[k].material.opacity = lit ? 0.95 : 0.55;
+      chest.lines[k].renderOrder = lit ? 9.5 : 9;
     });
     Object.entries(chest.valves).forEach(([k, v]) => {
       const on = k === vk;
@@ -1351,7 +1352,7 @@ const Heart = (() => {
     } else occlusion.visible = false;
   }
 
-  function setValve(site) { activeValve = site; }
+  function setValve(site, valve) { activeValve = site; activeLesion = valve || null; }
   // Murmurs mode shows the chest (when it loaded); MI mode shows the heart alone, exactly as before
   function setMode(mode) {
     const murmur = mode === 'murmur';
@@ -1391,7 +1392,7 @@ const Heart = (() => {
     const lvl = ap !== null ? Math.min(1, murmurLevel(res, ap) + (res.tr.some((t) => Math.abs(ap - t.t) < 0.03) ? 0.6 : 0)) : 0.35 + 0.25 * Math.sin(performance.now() / 300);
     ['aortic', 'pulmonic', 'mitral', 'tricuspid'].forEach((k) => {
       const v = valves[k];
-      const on = activeValve && valves[activeValve] === v;
+      const on = activeLesion && valves[activeLesion] === v;
       v.ring.material.color.set(on ? C.red500 : C.blue500);
       v.dot.material.color.set(C.red500);
       v.dot.material.opacity = on ? 0.35 + 0.55 * lvl : 0;
@@ -1566,7 +1567,7 @@ function selectMI(id) {
   renderMiPanel();
   Heart.setInfarct(m.terr);
   Heart.setCulprit(m.culprit, m.occl);
-  Heart.view(m.view);
+  Heart.view(m.view, { auto: true });
   renderLegend();
   animateECG();
 }
@@ -1577,7 +1578,7 @@ function renderLegend() {
     const m = miById[state.mi];
     L.innerHTML = `<span class="hl-leg hl-leg--infarct"><i></i>Dying muscle (turns pale)</span><span class="hl-leg hl-leg--culprit"><i></i>Blocked artery: ${m.art}</span>`;
   } else {
-    L.innerHTML = `<span class="hl-leg hl-leg--cap">Murmur Man: tap a listening point</span><span class="hl-leg hl-leg--site"><i></i>Listening point</span><span class="hl-leg hl-leg--valve"><i></i>Valve</span><span class="hl-leg hl-leg--spread"><i></i>Spreads to</span>`;
+    L.innerHTML = `<span class="hl-leg hl-leg--cap">Murmur Man: tap a listening point</span><span class="hl-leg hl-leg--site"><i></i>Listening point</span><span class="hl-leg hl-leg--valve"><i></i>Valve (red = at fault)</span><span class="hl-leg hl-leg--link"><i></i>Point to valve</span><span class="hl-leg hl-leg--spread"><i></i>Spreads to</span>`;
   }
 }
 
@@ -1615,7 +1616,7 @@ function startListening() {
   const loop = () => { drawPCG(); if (AudioEngine.playing && !Quiz.active) pcgLoop = requestAnimationFrame(loop); else drawPCG(); };
   loop();
 }
-function stopListening() { AudioEngine.stop(true); setPlayBtn(false); drawPCG(); }
+function stopListening() { AudioEngine.stop(true); Quiz.reset(); setPlayBtn(false); drawPCG(); }
 AudioEngine.onStop = () => setPlayBtn(false);
 
 /* ============================================================

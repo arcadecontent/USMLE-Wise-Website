@@ -234,9 +234,11 @@
 .hl-leg--culprit i { background: var(--uw-red-600); }
 .hl-leg--infarct i { background: var(--uw-ink-100); box-shadow: inset 0 0 0 1px var(--uw-ink-300); height: 10px; border-radius: 3px; }
 .hl-leg--cap { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .02em; color: var(--uw-ink-500); flex-basis: 100%; }
-.hl-leg--site i { background: var(--uw-blue-500); height: 10px; width: 10px; border-radius: 50%; }
-.hl-leg--spread i { background: none; border-top: 2px dashed var(--uw-red-500); height: 0; width: 16px; border-radius: 0; }
-.hl-leg--valve i { background: var(--uw-red-500); height: 10px; width: 10px; border-radius: 50%; }
+.hl-leg--site i { background: var(--uw-blue-50); box-shadow: inset 0 0 0 2px var(--uw-blue-500); height: 10px; width: 10px; border-radius: 50%; }
+.hl-leg--valve i { background: var(--uw-blue-100); box-shadow: inset 0 0 0 2px var(--uw-blue-500); height: 10px; width: 10px; border-radius: 50%; }
+.hl-leg--link i { background: none; border-top: 2px dashed var(--uw-blue-400); height: 0; width: 16px; border-radius: 0; }
+.hl-leg--spread i { position: relative; background: var(--uw-red-500); height: 2px; width: 16px; border-radius: 0; opacity: .8; }
+.hl-leg--spread i::after { content: ""; position: absolute; right: -1px; top: -3px; border-left: 6px solid var(--uw-red-500); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
 
 .hl-heart__views {
   position: absolute;
@@ -478,7 +480,8 @@
   .hl-mode { flex: 1; justify-content: center; padding: 10px 8px; font-size: 14px; }
   .hl-stage { grid-template-columns: minmax(0, 1fr); grid-template-areas: "heart" "strip" "left" "panel"; border-radius: var(--r-xl); }
   .hl-main[data-mode="mi"] .hl-stage { grid-template-areas: "heart" "left" "panel"; }
-  .hl-heart { min-height: 360px; }
+  .hl-heart { min-height: 430px; }
+  .hl-heart__canvas { top: 72px; } /* keeps the chest and its arrows clear of the legend */
   .hl-heart__hint { display: none; }
   .hl-left { padding: var(--space-4); border-top: 1px solid var(--uw-border); border-bottom: 1px solid var(--uw-border); }
   .hl-panel { border-left: 0; padding: var(--space-5) var(--space-4); }
