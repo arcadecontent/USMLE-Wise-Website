@@ -51,14 +51,14 @@ function uwcc_courses(): array
         'step2' => [
             'label'         => 'Step 2',
             'days'          => 8,
-            'hours'         => 64,
+            'hours'         => 61,
             'session_hours' => 8,
             'cohort'        => ['start' => '2026-11-24 07:00'],
         ],
         'step3' => [
             'label'         => 'Step 3',
             'days'          => 9,
-            'hours'         => 72,
+            'hours'         => 68,
             'session_hours' => 8,
             'cohort'        => ['start' => '2026-11-24 07:00'],
         ],
