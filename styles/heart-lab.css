@@ -122,49 +122,39 @@
   min-width: 0;
 }
 
-/* ---------- Murmur Man ---------- */
-.hl-man { margin: 0 auto var(--space-4); max-width: 210px; }
-.hl-man__svg { width: 100%; height: auto; display: block; overflow: visible; }
-.hl-man__skin { fill: var(--uw-blue-50); stroke: var(--uw-blue-300); stroke-width: 1.4; }
-.hl-man__line { fill: none; stroke: var(--uw-blue-300); stroke-width: 1.4; stroke-linecap: round; }
-.hl-man__bone { fill: var(--uw-surface); stroke: var(--uw-blue-300); stroke-width: 1.2; }
-.hl-man__rib { fill: none; stroke: var(--uw-blue-200); stroke-width: 1.2; stroke-linecap: round; }
-.hl-man__side { font-family: var(--font-mono); font-size: 11px; fill: var(--uw-ink-400); }
-.hl-man__cap {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: .02em;
+/* ---------- Where to listen ---------- */
+.hl-where { display: grid; gap: 6px; margin-bottom: var(--space-4); }
+.hl-where__h {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   color: var(--uw-ink-500);
-  text-align: center;
-  margin-top: var(--space-2);
+  margin: 0 0 2px;
 }
-
-.hl-pt { cursor: pointer; outline: none; }
-.hl-pt__hit { fill: transparent; }
-.hl-pt__dot {
-  fill: var(--uw-surface);
-  stroke: var(--uw-blue-500);
-  stroke-width: 2;
-  transition: fill var(--dur-med) var(--ease-out), r var(--dur-med) var(--ease-out);
+.hl-site {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--uw-border);
+  background: var(--uw-surface);
+  color: var(--uw-ink-700);
+  font-size: 13px;
+  line-height: 1.3;
+  padding: 8px 12px;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
 }
-.hl-pt__lab { font-family: var(--font-mono); font-size: 12px; font-weight: 500; fill: var(--uw-blue-600); pointer-events: none; }
-.hl-pt:hover .hl-pt__dot, .hl-pt:focus-visible .hl-pt__dot { fill: var(--uw-blue-100); }
-.hl-pt:focus-visible .hl-pt__hit { stroke: var(--uw-blue-500); stroke-width: 1.5; stroke-dasharray: 3 3; }
-.hl-pt.is-on .hl-pt__dot { fill: var(--uw-red-500); stroke: var(--uw-red-600); }
-.hl-pt.is-on .hl-pt__lab { fill: var(--uw-red-600); }
-.hl-pt.is-on .hl-pt__dot { animation: hl-throb 0.9s var(--ease-out) infinite; transform-box: fill-box; transform-origin: center; }
-@keyframes hl-throb { 0% { transform: scale(1); } 12% { transform: scale(1.35); } 40% { transform: scale(1); } }
-
-.hl-man__rad path {
-  fill: none;
-  stroke: var(--uw-red-500);
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-dasharray: 5 6;
-  animation: hl-flow 0.9s linear infinite;
-}
-.hl-man__arrowhead { fill: var(--uw-red-500); }
-@keyframes hl-flow { to { stroke-dashoffset: -11; } }
+.hl-site b { font-family: var(--font-mono); font-weight: 600; color: var(--uw-blue-600); min-width: 1ch; }
+.hl-site__n { font-weight: 600; }
+.hl-site__w { color: var(--uw-ink-500); }
+.hl-site:hover { border-color: var(--uw-blue-300); }
+.hl-site:focus-visible { outline: 2px solid var(--uw-blue-500); outline-offset: 2px; }
+.hl-site[aria-pressed="true"] { background: var(--uw-blue-500); border-color: var(--uw-blue-500); color: #fff; }
+.hl-site[aria-pressed="true"] b, .hl-site[aria-pressed="true"] .hl-site__w { color: #fff; }
 
 /* ---------- Selection lists ---------- */
 .hl-list { display: grid; gap: var(--space-4); }
@@ -243,6 +233,9 @@
 .hl-leg--vessel i { background: var(--uw-blue-600); }
 .hl-leg--culprit i { background: var(--uw-red-600); }
 .hl-leg--infarct i { background: var(--uw-ink-100); box-shadow: inset 0 0 0 1px var(--uw-ink-300); height: 10px; border-radius: 3px; }
+.hl-leg--cap { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .02em; color: var(--uw-ink-500); flex-basis: 100%; }
+.hl-leg--site i { background: var(--uw-blue-500); height: 10px; width: 10px; border-radius: 50%; }
+.hl-leg--spread i { background: none; border-top: 2px dashed var(--uw-red-500); height: 0; width: 16px; border-radius: 0; }
 .hl-leg--valve i { background: var(--uw-red-500); height: 10px; width: 10px; border-radius: 50%; }
 
 .hl-heart__views {
@@ -488,7 +481,6 @@
   .hl-heart { min-height: 360px; }
   .hl-heart__hint { display: none; }
   .hl-left { padding: var(--space-4); border-top: 1px solid var(--uw-border); border-bottom: 1px solid var(--uw-border); }
-  .hl-man { max-width: 260px; margin-inline: auto; }
   .hl-panel { border-left: 0; padding: var(--space-5) var(--space-4); }
   .hl-strip { padding: var(--space-4); }
   .hl-quiz__inner { grid-template-columns: 1fr; }

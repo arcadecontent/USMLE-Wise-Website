@@ -31,25 +31,6 @@ const C = {
 const CYCLE = 0.9;
 const S1 = 0.02, S2 = 0.37;
 
-const SITES = {
-  aortic: 'Aortic area (right 2nd intercostal space)',
-  pulmonic: 'Pulmonic area (left 2nd intercostal space)',
-  erb: "Erb's point (left 3rd intercostal space)",
-  tricuspid: 'Tricuspid area (left lower sternal border)',
-  mitral: 'Mitral area (apex, 5th intercostal space)',
-};
-
-// Radiation arrows on Murmur Man, in its SVG coordinates.
-const RAD = {
-  AS: ['M100 116 C 96 100, 100 86, 108 72', 'M104 116 C 112 100, 124 88, 133 72'],
-  MR: ['M180 194 C 196 186, 206 174, 214 156'],
-  TR: ['M128 186 C 120 188, 112 188, 104 184'],
-  VSD: ['M142 182 C 156 176, 168 172, 182 170', 'M126 182 C 114 178, 104 176, 94 176'],
-  AR: ['M136 156 C 134 170, 134 182, 136 196'],
-  PDA: ['M146 116 C 156 108, 166 104, 180 100'],
-  PS: ['M144 114 C 148 104, 152 98, 158 92'],
-};
-
 const MURMURS = [
   {
     id: 'NORMAL', name: 'Normal heart sounds', short: 'Normal', group: 'Start here', site: 'mitral', kind: 'normal',
@@ -569,10 +550,8 @@ function syncMurmurUI() {
     b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on);
     b.classList.toggle('is-dim', !!state.site && !on && byId[b.dataset.murmur].site !== state.site && b.dataset.murmur !== 'NORMAL');
   });
-  $$('.hl-pt').forEach((g) => g.classList.toggle('is-on', g.dataset.site === m.site && m.id !== 'NORMAL'));
-  const rad = $('#manRadiation');
-  rad.innerHTML = (RAD[m.id] || []).map((d) => `<path d="${d}" marker-end="url(#hlArrow)" />`).join('');
-  $('#manCap').textContent = m.id === 'NORMAL' ? "A · P · E · T · M: Aortic, Pulmonic, Erb's, Tricuspid, Mitral" : `Loudest: ${SITES[m.site]}${RAD[m.id] ? '' : ' · does not radiate'}`;
+  const loud = m.id === 'NORMAL' ? null : m.site;
+  $$('.hl-site').forEach((b) => { b.setAttribute('aria-pressed', b.dataset.site === loud); });
   renderManNote();
   renderMurmurPanel();
   Heart.setValve(m.id === 'NORMAL' ? null : m.site);
@@ -1598,7 +1577,7 @@ function renderLegend() {
     const m = miById[state.mi];
     L.innerHTML = `<span class="hl-leg hl-leg--infarct"><i></i>Dying muscle (turns pale)</span><span class="hl-leg hl-leg--culprit"><i></i>Blocked artery: ${m.art}</span>`;
   } else {
-    L.innerHTML = `<span class="hl-leg hl-leg--valve"><i></i>Valve at fault (tap a ring to switch)</span>`;
+    L.innerHTML = `<span class="hl-leg hl-leg--cap">Murmur Man: tap a listening point</span><span class="hl-leg hl-leg--site"><i></i>Listening point</span><span class="hl-leg hl-leg--valve"><i></i>Valve</span><span class="hl-leg hl-leg--spread"><i></i>Spreads to</span>`;
   }
 }
 
@@ -1711,8 +1690,6 @@ function init() {
     else if (t.id === 'quizPlay') Quiz.play();
     else if (t.dataset.answer) Quiz.choose(t.dataset.answer);
   });
-  // keyboard on the SVG listening spots
-  $$('.hl-pt').forEach((g) => g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pickSite(g.dataset.site); } }));
   // mode tabs: arrow keys
   $('.hl-modes').addEventListener('keydown', (e) => {
     if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;

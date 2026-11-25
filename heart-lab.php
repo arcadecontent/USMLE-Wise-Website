@@ -32,7 +32,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
       <header class="hl-head">
         <div class="hl-head__text">
           <h1 class="hl-title" id="hlTitle">Heart <em>Lab</em></h1>
-          <p class="hl-lede" data-show="murmur">Tap a spot on Murmur Man or a murmur below. Listen, watch the sound trace, then try the bedside maneuvers.</p>
+          <p class="hl-lede" data-show="murmur">Tap a listening point on the chest, or pick a murmur below. Listen, watch the sound trace, then try the bedside maneuvers.</p>
           <p class="hl-lede" data-show="mi" hidden>Pick an infarct. The dying wall turns pale on the heart, the blocked artery lights up red, and the 12-lead ECG redraws.</p>
         </div>
         <div class="hl-modes" role="tablist" aria-label="Lab">
@@ -50,60 +50,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <!-- Left: Murmur Man (murmurs) or the infarct picker (MI) -->
         <div class="hl-left">
           <div data-show="murmur">
-            <figure class="hl-man" aria-label="Murmur Man: the five listening areas on the chest">
-              <svg viewBox="0 0 240 300" class="hl-man__svg" id="manSvg" role="group" aria-label="Listening areas">
-                <defs>
-                  <marker id="hlArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                    <path d="M0 0 L10 5 L0 10 z" class="hl-man__arrowhead" />
-                  </marker>
-                </defs>
-                <!-- head and neck -->
-                <ellipse cx="120" cy="38" rx="25" ry="29" class="hl-man__skin" />
-                <path d="M106 62 L104 82 M134 62 L136 82" class="hl-man__line" />
-                <!-- torso -->
-                <path d="M104 80 C 80 84, 44 88, 30 104 C 22 116, 22 150, 24 190 L 26 296 L 214 296 L 216 190 C 218 150, 218 116, 210 104 C 196 88, 160 84, 136 80 Z" class="hl-man__skin" />
-                <!-- clavicles -->
-                <path d="M114 96 C 96 92, 70 92, 46 100 M126 96 C 144 92, 170 92, 194 100" class="hl-man__line" />
-                <!-- sternum -->
-                <path d="M114 98 L 126 98 L 124 196 L 120 210 L 116 196 Z" class="hl-man__bone" />
-                <!-- ribs (hint) -->
-                <path d="M112 122 C 92 120, 70 124, 52 134 M128 122 C 148 120, 170 124, 188 134
-                         M112 146 C 92 144, 70 148, 54 160 M128 146 C 148 144, 170 148, 186 160
-                         M114 170 C 94 170, 74 176, 60 188 M126 170 C 146 170, 166 176, 180 188
-                         M116 192 C 98 194, 82 202, 70 214 M124 192 C 142 194, 158 202, 170 214" class="hl-man__rib" />
-                <!-- side labels: the patient faces you, so their left is on your right -->
-                <text x="30" y="286" class="hl-man__side">R</text>
-                <text x="203" y="286" class="hl-man__side">L</text>
-
-                <!-- radiation paths (drawn when a murmur radiates) -->
-                <g id="manRadiation" class="hl-man__rad"></g>
-
-                <!-- listening areas -->
-                <g class="hl-man__pts">
-                  <g class="hl-pt" data-site="aortic" tabindex="0" role="button" aria-label="Aortic area, right second intercostal space">
-                    <circle cx="100" cy="122" r="13" class="hl-pt__hit" /><circle cx="100" cy="122" r="7" class="hl-pt__dot" />
-                    <text x="80" y="126" class="hl-pt__lab" text-anchor="end">A</text>
-                  </g>
-                  <g class="hl-pt" data-site="pulmonic" tabindex="0" role="button" aria-label="Pulmonic area, left second intercostal space">
-                    <circle cx="140" cy="122" r="13" class="hl-pt__hit" /><circle cx="140" cy="122" r="7" class="hl-pt__dot" />
-                    <text x="160" y="126" class="hl-pt__lab">P</text>
-                  </g>
-                  <g class="hl-pt" data-site="erb" tabindex="0" role="button" aria-label="Erb's point, left third intercostal space">
-                    <circle cx="140" cy="148" r="13" class="hl-pt__hit" /><circle cx="140" cy="148" r="7" class="hl-pt__dot" />
-                    <text x="160" y="152" class="hl-pt__lab">E</text>
-                  </g>
-                  <g class="hl-pt" data-site="tricuspid" tabindex="0" role="button" aria-label="Tricuspid area, left lower sternal border">
-                    <circle cx="134" cy="184" r="13" class="hl-pt__hit" /><circle cx="134" cy="184" r="7" class="hl-pt__dot" />
-                    <text x="134" y="210" class="hl-pt__lab" text-anchor="middle">T</text>
-                  </g>
-                  <g class="hl-pt" data-site="mitral" tabindex="0" role="button" aria-label="Mitral area, the apex">
-                    <circle cx="172" cy="196" r="13" class="hl-pt__hit" /><circle cx="172" cy="196" r="7" class="hl-pt__dot" />
-                    <text x="192" y="200" class="hl-pt__lab">M</text>
-                  </g>
-                </g>
-              </svg>
-              <figcaption class="hl-man__cap" id="manCap">A · P · E · T · M: Aortic, Pulmonic, Erb's, Tricuspid, Mitral</figcaption>
-            </figure>
+            <div class="hl-where" role="group" aria-label="Where to listen">
+              <h3 class="hl-where__h">Where to listen</h3>
+              <button type="button" class="hl-site" data-site="aortic" aria-pressed="false"><b>A</b><span><span class="hl-site__n">Aortic</span> <span class="hl-site__w">right 2nd intercostal space</span></span></button>
+              <button type="button" class="hl-site" data-site="pulmonic" aria-pressed="false"><b>P</b><span><span class="hl-site__n">Pulmonic</span> <span class="hl-site__w">left 2nd intercostal space</span></span></button>
+              <button type="button" class="hl-site" data-site="erb" aria-pressed="false"><b>E</b><span><span class="hl-site__n">Erb's point</span> <span class="hl-site__w">left 3rd intercostal space</span></span></button>
+              <button type="button" class="hl-site" data-site="tricuspid" aria-pressed="false"><b>T</b><span><span class="hl-site__n">Tricuspid</span> <span class="hl-site__w">left lower sternal border</span></span></button>
+              <button type="button" class="hl-site" data-site="mitral" aria-pressed="false"><b>M</b><span><span class="hl-site__n">Mitral</span> <span class="hl-site__w">apex, 5th intercostal space</span></span></button>
+            </div>
 
             <div class="hl-list" id="murmurList" aria-label="Murmurs"></div>
           </div>
