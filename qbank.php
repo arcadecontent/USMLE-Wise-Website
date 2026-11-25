@@ -6,12 +6,17 @@
  * brochure (Nov 2026). If plans or prices change in the app, change them
  * here too, including the JSON-LD offers at the bottom.
  *
- * SEO targets: "usmle wise qbank" (title, URL, eyebrow) and "manik qbank"
- * (meta description + the first FAQ). Dr. Manik is a Volunteer Advisor:
- * never call the Qbank his or say he wrote it.
+ * SEO targets: "usmle wise qbank" (title, URL) and "manik qbank" (title,
+ * meta description, the advisor section and the first FAQ). Approved claim
+ * (user, 2026-11-25): the Qbank was developed with Dr. Manik's help as an
+ * advisor. Don't go further than that (he did not write it, it isn't his).
+ *
+ * The systems/subjects lists in "What's covered" are the standard Step 1
+ * outline, not pulled from the app (its filters sit behind login). Keep
+ * them in step with the app's own filter names.
  */
-$pageTitle = "USMLE Wise Qbank (StepNinja): Step 1 Questions, Free to Start";
-$pageDescription = "StepNinja is the USMLE Wise Qbank, from the team Dr. Manik Madaan advises: 3,800+ Step 1 questions, 4 NBME-style assessments and 5 free questions a day.";
+$pageTitle = "USMLE Wise Qbank: Step 1 Questions, Advised by Dr. Manik Madaan";
+$pageDescription = "StepNinja is the USMLE Wise Qbank, developed with Dr. Manik Madaan as advisor: 3,800+ Step 1 questions, 4 NBME-style assessments and 5 free questions a day.";
 $canonical = "https://usmlewise.com/qbank";
 $bodyClass = "msp";
 $stylesheets = [
@@ -27,7 +32,7 @@ $snApp = "https://stepninja.usmlewise.com/";
 $snFaqs = [
     [
         'q' => "Is this Dr. Manik's Qbank?",
-        'a' => 'StepNinja is the USMLE Wise Qbank, built by the USMLE Wise team. <a href="/team/manik-madaan">Dr. Manik Madaan</a> is a volunteer advisor to USMLE Wise, so if you were looking for the Manik Qbank or the USMLE Wise Qbank, you are in the right place.',
+        'a' => 'StepNinja is the USMLE Wise Qbank, developed by the USMLE Wise team with <a href="/team/manik-madaan">Dr. Manik Madaan</a> as advisor. If you were looking for the Manik Qbank or the USMLE Wise Qbank, this is the one.',
     ],
     [
         'q' => 'What do I get for free?',
@@ -74,12 +79,77 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent);
                 mask-image: linear-gradient(to bottom, #000 78%, transparent);
       }
-      .pg-shot figcaption {
-        font-size: 12.5px;
-        color: var(--uw-ink-500);
-        margin-top: 12px;
-        text-align: center;
+
+      /* what's covered: label column + chips */
+      .pg-topics {
+        max-width: 980px;
+        margin: clamp(40px, 5vw, 60px) auto 0;
+        border: 1px solid var(--uw-border);
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        background: var(--uw-surface);
       }
+      .pg-topics__row {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        gap: clamp(16px, 3vw, 40px);
+        padding: clamp(22px, 2.6vw, 32px) clamp(20px, 3vw, 40px);
+        border-bottom: 1px solid var(--uw-border);
+      }
+      .pg-topics__row:last-child { border-bottom: none; }
+      .pg-topics__label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--uw-ink-600);
+        padding-top: 7px;
+      }
+      .pg-topics__label small {
+        display: block;
+        margin-top: 6px;
+        font-family: var(--font-sans);
+        font-size: 12.5px;
+        letter-spacing: 0;
+        text-transform: none;
+        color: var(--uw-ink-400);
+      }
+      .pg-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+      .pg-chips li {
+        font-size: var(--fs-14);
+        line-height: 1.3;
+        color: var(--uw-ink-800);
+        background: var(--uw-surface-sunk);
+        border: 1px solid var(--uw-border);
+        border-radius: 999px;
+        padding: 6px 13px;
+      }
+
+      /* advisor */
+      .pg-advisor {
+        max-width: 980px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: clamp(200px, 24vw, 280px) 1fr;
+        gap: clamp(28px, 4vw, 56px);
+        align-items: center;
+      }
+      .pg-advisor__photo {
+        border-radius: clamp(16px, 2vw, 22px);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        aspect-ratio: 1;
+      }
+      .pg-advisor__photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      .pg-advisor .msp-h2 { margin-bottom: 18px; }
+      .pg-advisor p.pg-advisor__text {
+        font-size: var(--fs-md);
+        line-height: 1.65;
+        color: var(--uw-ink-600);
+        max-width: 58ch;
+        margin: 0 0 14px;
+      }
+      .pg-advisor__link { font-size: var(--fs-14); font-weight: 500; }
 
       .pg-tutor__note {
         font-size: var(--fs-14);
@@ -128,6 +198,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         .pg-hero__grid { grid-template-columns: 1fr; }
         .pg-shot { max-width: 520px; margin-inline: auto; }
       }
+      @media (max-width: 640px) {
+        .pg-topics__row { grid-template-columns: 1fr; gap: 12px; }
+        .pg-topics__label { padding-top: 0; }
+        .pg-advisor { grid-template-columns: 1fr; }
+        .pg-advisor__photo { width: 180px; }
+      }
     </style>
 
 <main>
@@ -136,7 +212,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     <section class="msp-hero" aria-labelledby="heroTitle">
       <div class="msp-wrap msp-hero__grid pg-hero__grid">
         <div class="msp-hero__copy reveal">
-          <span class="msp-eyebrow">The USMLE Wise Qbank &middot; StepNinja</span>
           <h1 id="heroTitle" class="msp-h1">The Step 1 Qbank that <span class="msp-h1__accent">teaches every answer.</span></h1>
           <p class="msp-lede">Board-style questions, NBME-style assessments and a Wise Tutor explanation for every question: what each clue means, how to reason to the answer, and why every other choice is wrong.</p>
           <div class="msp-cta-row">
@@ -149,7 +224,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <div class="pg-shot__frame">
             <img src="/assets/stepninja/wise-tutor-explanation.webp" width="820" height="960" alt="A Wise Tutor explanation in StepNinja: the correct answer, ABO blood group antigens, with each clue from the question stem quoted and translated, followed by step-by-step reasoning." fetchpriority="high" />
           </div>
-          <figcaption>A real Wise Tutor explanation, as students see it in the app.</figcaption>
         </figure>
       </div>
       <div class="msp-bar msp-wrap" aria-label="StepNinja at a glance">
@@ -204,6 +278,80 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           </div>
         </div>
         <p class="pg-tutor__note reveal">Every question also comes with a differential table comparing the look-alike diagnoses, and Ask AI for follow-up questions about that exact case.</p>
+      </div>
+    </section>
+
+    <!-- WHAT'S COVERED -->
+    <section class="msp-section" aria-labelledby="topicsTitle">
+      <div class="msp-wrap">
+        <div class="msp-head reveal">
+          <span class="msp-eyebrow">What's covered</span>
+          <h2 id="topicsTitle" class="msp-h2">Every Step 1 system and subject.</h2>
+          <p class="msp-sub">Every question is tagged by system and subject, so you can build a block on exactly what you need and see your accuracy broken down the same way.</p>
+        </div>
+        <div class="pg-topics reveal">
+          <div class="pg-topics__row">
+            <div class="pg-topics__label">Systems</div>
+            <ul class="pg-chips">
+              <li>Cardiovascular</li>
+              <li>Respiratory</li>
+              <li>Renal &amp; Urinary</li>
+              <li>Gastrointestinal</li>
+              <li>Endocrine</li>
+              <li>Reproductive</li>
+              <li>Nervous System &amp; Special Senses</li>
+              <li>Behavioral Health</li>
+              <li>Musculoskeletal</li>
+              <li>Skin &amp; Subcutaneous Tissue</li>
+              <li>Blood &amp; Lymphoreticular</li>
+              <li>Immune System</li>
+              <li>Multisystem Processes</li>
+              <li>Biostatistics &amp; Epidemiology</li>
+              <li>Social Sciences &amp; Ethics</li>
+            </ul>
+          </div>
+          <div class="pg-topics__row">
+            <div class="pg-topics__label">Subjects</div>
+            <ul class="pg-chips">
+              <li>Anatomy</li>
+              <li>Physiology</li>
+              <li>Biochemistry</li>
+              <li>Pathology</li>
+              <li>Pharmacology</li>
+              <li>Microbiology</li>
+              <li>Immunology</li>
+              <li>Genetics</li>
+              <li>Histology &amp; Cell Biology</li>
+              <li>Behavioral Science</li>
+            </ul>
+          </div>
+          <div class="pg-topics__row">
+            <div class="pg-topics__label">Ways to study</div>
+            <ul class="pg-chips">
+              <li>Tutor mode</li>
+              <li>Test mode</li>
+              <li>High-Yield mode, 1,740 questions</li>
+              <li>4 NBME-style Assessments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVISOR -->
+    <section class="msp-section pg-about" aria-labelledby="advisorTitle">
+      <div class="msp-wrap">
+        <div class="pg-advisor reveal">
+          <div class="pg-advisor__photo">
+            <img src="/assets/stepninja/manik-madaan.webp" width="640" height="640" alt="Dr. Manik Madaan" loading="lazy" />
+          </div>
+          <div>
+            <span class="msp-eyebrow">Our advisor</span>
+            <h2 id="advisorTitle" class="msp-h2">Developed with Dr. Manik Madaan as advisor.</h2>
+            <p class="pg-advisor__text">The USMLE Wise team developed this Qbank with Dr. Manik Madaan's help as an advisor. Dr. Manik is a practicing doctor in the United States who has served four years on a Residency Selection Committee, and a volunteer advisor to USMLE Wise.</p>
+            <a class="pg-advisor__link" href="/team/manik-madaan">Read Dr. Manik's profile &rarr;</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -325,6 +473,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                 'operatingSystem'     => 'Any (web browser)',
                 'description'         => 'Step 1 Qbank with 3,800+ questions, Wise Tutor explanations for every question, 4 NBME-style assessments and a 1,740-question High-Yield mode.',
                 'publisher'           => ['@type' => 'Organization', 'name' => 'USMLE Wise', 'url' => 'https://usmlewise.com'],
+                'contributor'         => ['@type' => 'Person', 'name' => 'Dr. Manik Madaan', 'url' => 'https://usmlewise.com/team/manik-madaan'],
                 'offers'              => [
                     $snOffer('Free', '0'),
                     $snOffer('Single Step (Step 1), monthly', '49'),

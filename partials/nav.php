@@ -161,8 +161,8 @@ $ccNavLive = static function (string $step): string {
             <span class="msp-nav__dd-meta">Full course library</span>
           </a>
           <a href="/qbank" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">StepNinja Qbank</span>
-            <span class="msp-nav__dd-meta">Step 1 Qbank &middot; Free to start</span>
+            <span class="msp-nav__dd-name">Qbank</span>
+            <span class="msp-nav__dd-meta">Step 1 questions &middot; Free to start</span>
           </a>
           <a href="/match-maker" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Match Maker</span>
