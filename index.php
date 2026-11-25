@@ -194,83 +194,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </div>
   </div>
 
-  <!-- 5a · Research (two-column intro row, then package cards, then awards) -->
-  <section class="lpx-svc-block lpx-svc-block--research" id="svc-research" aria-label="Research Guidance">
-    <div class="lpx-wrap">
-      <article class="lpx-sva-row reveal">
-        <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp')"></div>
-        <div class="lpx-sva-body">
-          <span class="lpx-sva-eyebrow">01 &middot; Research</span>
-          <h3 class="lpx-sva-title">Research Guidance</h3>
-          <p class="lpx-sva-desc">Build your academic profile with mentored research and publication support tailored to your target specialty. From picking the right project to submitting your manuscript, we guide every step toward a credit that strengthens your application.</p>
-          <div class="lpx-sva-ctas">
-            <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
-            <a href="/research" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-          </div>
-        </div>
-      </article>
-
-      <div class="lpx-svc-block__pkghead reveal">
-        <h4 class="lpx-svc-block__pkgtitle">Popular Packages</h4>
-        <a href="/research" class="lpx-svc-block__more">See all our research programs <i data-lucide="arrow-right" width="14" height="14"></i></a>
-      </div>
-
-      <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
-        <article class="lpx-svc-card">
-          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp')"></div>
-          <div class="lpx-svc-card__body">
-            <span class="lpx-svc-card__eyebrow">Live &middot; Mentored</span>
-            <h4 class="lpx-svc-card__title">Get Published</h4>
-            <div class="lpx-svc-card__price">$300&ndash;$1,000</div>
-            <p class="lpx-svc-card__desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation.</p>
-            <div class="lpx-svc-card__ctas">
-              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              <a href="/research-coauthor" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="lpx-svc-card">
-          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp')"></div>
-          <div class="lpx-svc-card__body">
-            <span class="lpx-svc-card__eyebrow">Placement Service &middot; 12-month fellowship</span>
-            <h4 class="lpx-svc-card__title">J-1 Research Fellowship Placement</h4>
-            <div class="lpx-svc-card__price">$20,000</div>
-            <p class="lpx-svc-card__desc">End-to-end placement support for a 12-month J-1 research fellowship: institution matching, application guidance, and visa documentation.</p>
-            <div class="lpx-svc-card__ctas">
-              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              <a href="/research-j1-fellowship" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="lpx-svc-card">
-          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp')"></div>
-          <div class="lpx-svc-card__body">
-            <span class="lpx-svc-card__eyebrow">Live &middot; 12-month program</span>
-            <h4 class="lpx-svc-card__title">Research Catalyst</h4>
-            <div class="lpx-svc-card__price">$4,500</div>
-            <p class="lpx-svc-card__desc">A fully guided 12-month pathway from zero to publication: topic selection, study design, writing, and journal submission.</p>
-            <div class="lpx-svc-card__ctas">
-              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
-              <a href="/research-catalyst" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5a · Research Awards -->
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
-
-  <!-- 5b · Exam Prep -->
+  <!-- 5a · Exam Prep -->
   <section class="lpx-svc-block" id="svc-examprep" aria-label="USMLE Exam Prep">
     <div class="lpx-wrap">
       <article class="lpx-sva-row reveal">
         <div class="lpx-sva-img" style="background-image: url('assets/Photos/national-cancer-institute-NFvdKIhxYlU-unsplash.webp')"></div>
         <div class="lpx-sva-body">
-          <span class="lpx-sva-eyebrow">02 &middot; Exam Prep</span>
+          <span class="lpx-sva-eyebrow">01 &middot; Exam Prep</span>
           <h3 class="lpx-sva-title">USMLE Exam Preparation</h3>
           <p class="lpx-sva-desc">Structured strategies from high-scoring mentors who have been through the process. Build the score your application needs.</p>
           <div class="lpx-sva-ctas">
@@ -331,16 +261,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </div>
   </section>
 
-  <!-- 5b · Exam Stories -->
+  <!-- 5a · Exam Stories -->
   <?php $storyGroup = 'exam'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/story-carousel.php'; ?>
 
-  <!-- 5c · Residency Match Mentorship -->
+  <!-- 5b · Residency Match Mentorship -->
   <section class="lpx-svc-block" id="svc-match" aria-label="Residency Match Mentorship">
     <div class="lpx-wrap">
       <article class="lpx-sva-row lpx-sva-row--flip reveal">
         <div class="lpx-sva-img" style="background-image: url('assets/Photos/fotos-CCDMI3dfnIo-unsplash.webp')"></div>
         <div class="lpx-sva-body">
-          <span class="lpx-sva-eyebrow">03 &middot; Residency Match</span>
+          <span class="lpx-sva-eyebrow">02 &middot; Residency Match</span>
           <h3 class="lpx-sva-title">Residency Match Mentorship</h3>
           <p class="lpx-sva-desc">A personalized roadmap built around your profile, scores, specialty, and timeline. Weekly guidance every step of the way.</p>
           <div class="lpx-sva-ctas">
@@ -401,8 +331,78 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     </div>
   </section>
 
-  <!-- 5c · Match Stories -->
+  <!-- 5b · Match Stories -->
   <?php $storyGroup = 'match'; include $_SERVER['DOCUMENT_ROOT'] . '/partials/story-carousel.php'; ?>
+
+  <!-- 5c · Research (two-column intro row, then package cards, then awards) -->
+  <section class="lpx-svc-block lpx-svc-block--research" id="svc-research" aria-label="Research Guidance">
+    <div class="lpx-wrap">
+      <article class="lpx-sva-row reveal">
+        <div class="lpx-sva-img" style="background-image: url('assets/Photos/researcher-in-lab-computer.webp')"></div>
+        <div class="lpx-sva-body">
+          <span class="lpx-sva-eyebrow">03 &middot; Research</span>
+          <h3 class="lpx-sva-title">Research Guidance</h3>
+          <p class="lpx-sva-desc">Build your academic profile with mentored research and publication support tailored to your target specialty. From picking the right project to submitting your manuscript, we guide every step toward a credit that strengthens your application.</p>
+          <div class="lpx-sva-ctas">
+            <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Guidance Call</a>
+            <a href="/research" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <div class="lpx-svc-block__pkghead reveal">
+        <h4 class="lpx-svc-block__pkgtitle">Popular Packages</h4>
+        <a href="/research" class="lpx-svc-block__more">See all our research programs <i data-lucide="arrow-right" width="14" height="14"></i></a>
+      </div>
+
+      <div class="lpx-svc-grid lpx-svc-grid--pkgs reveal">
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/doctors-day-cute-young-handsome-man-lab-coat-glasses-writing-notebook.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; Mentored</span>
+            <h4 class="lpx-svc-card__title">Get Published</h4>
+            <div class="lpx-svc-card__price">$300&ndash;$1,000</div>
+            <p class="lpx-svc-card__desc">Get published as co-author or lead author on a mentor-run research project, with an optional conference presentation.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/research-coauthor" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/team-young-specialist-doctors-standing-corridor-hospital.webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Placement Service &middot; 12-month fellowship</span>
+            <h4 class="lpx-svc-card__title">J-1 Research Fellowship Placement</h4>
+            <div class="lpx-svc-card__price">$20,000</div>
+            <p class="lpx-svc-card__desc">End-to-end placement support for a 12-month J-1 research fellowship: institution matching, application guidance, and visa documentation.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/research-j1-fellowship" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="lpx-svc-card">
+          <div class="lpx-svc-card__img" style="background-image: url('assets/Photos/dan-dimmock-3mt71MKGjQ0-unsplash-(1).webp')"></div>
+          <div class="lpx-svc-card__body">
+            <span class="lpx-svc-card__eyebrow">Live &middot; 12-month program</span>
+            <h4 class="lpx-svc-card__title">Research Catalyst</h4>
+            <div class="lpx-svc-card__price">$4,500</div>
+            <p class="lpx-svc-card__desc">A fully guided 12-month pathway from zero to publication: topic selection, study design, writing, and journal submission.</p>
+            <div class="lpx-svc-card__ctas">
+              <a href="https://team.manikmadaan.com/guidance-call/book" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="/research-catalyst" class="btn btn--ghost btn--sm">Learn More <i data-lucide="arrow-right" width="14" height="14"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5c · Research Awards -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/awards-carousel.php'; ?>
 
   <!-- 5d · Clinical Rotations -->
   <section class="lpx-svc-block" id="svc-rotations" aria-label="Clinical Rotations">
