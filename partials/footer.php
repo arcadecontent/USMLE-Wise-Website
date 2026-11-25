@@ -22,6 +22,7 @@
           <a href="/coaching-step1-mastery">Step 1 Mastery</a>
           <a href="/coaching-step23-mastery">NBME Style Coaching (Step 1 and Step 2)</a>
           <a href="/coaching-tutoring">1:1 Tutoring</a>
+          <a href="/qbank">StepNinja Qbank (Step 1)</a>
         </div>
         <div class="msp-foot__nav-group">
           <span class="msp-foot__nav-label">Research</span>

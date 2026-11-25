@@ -57,7 +57,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
                   What does USMLE Wise offer?
                 </button>
                 <div class="accordion__body">
-                  USMLE Wise supports international medical graduates (IMGs) from exam prep to Match Day. Our programs fall into four areas: <a href="/coaching">USMLE exam prep</a> for Step 1, Step 2 CK and Step 3; <a href="/match">residency Match support</a>, from your ERAS CV and personal statement to interviews and SOAP; <a href="/research">research guidance</a> and publication programs; and <a href="/rotations">U.S. clinical rotations</a>. We also run two tools: <a href="/match-maker">Match Maker</a>, a program list and signal planner, and the <a href="/conference-finder">Conference Finder</a>.
+                  USMLE Wise supports international medical graduates (IMGs) from exam prep to Match Day. Our programs fall into four areas: <a href="/coaching">USMLE exam prep</a> for Step 1, Step 2 CK and Step 3; <a href="/match">residency Match support</a>, from your ERAS CV and personal statement to interviews and SOAP; <a href="/research">research guidance</a> and publication programs; and <a href="/rotations">U.S. clinical rotations</a>. We also run three tools: the <a href="/qbank">StepNinja Qbank</a> for Step 1; <a href="/match-maker">Match Maker</a>, a program list and signal planner; and the <a href="/conference-finder">Conference Finder</a>.
                 </div>
               </div>
 
