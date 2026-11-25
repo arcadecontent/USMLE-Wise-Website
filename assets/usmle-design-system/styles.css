@@ -1907,9 +1907,27 @@ svg.lucide {
   padding: 8px 12px;
   border-radius: var(--r-sm);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 0.12s ease, background 0.12s ease;
 }
 .msp-nav__item > a:hover { color: var(--uw-ink-900); background: var(--uw-ink-75); }
+/* Keep the logo from being squeezed, and tighten link spacing on narrow
+   desktops (the full nav shows from 941px). Doubled class beats the
+   page stylesheets' .msp-nav__links a / .msp-nav__inner rules. */
+.msp-nav .msp-brand { flex-shrink: 0; }
+@media (min-width: 941px) and (max-width: 1199px) {
+  .msp-nav .msp-nav__inner { gap: 16px; }
+  .msp-nav .msp-nav__links { gap: 0; }
+  .msp-nav .msp-nav__links > a,
+  .msp-nav .msp-nav__item > a { padding-left: 7px; padding-right: 7px; }
+}
+/* Narrowest desktops: drop "Home" (the logo links home) so the CTA fits. */
+@media (min-width: 941px) and (max-width: 1023px) {
+  .msp-nav .msp-nav__links > a[href="/"] { display: none; }
+  .msp-nav .msp-nav__inner { gap: 12px; }
+  .msp-nav .msp-brand img { height: 30px; width: auto; }
+  .msp-nav .msp-nav__cta { padding-left: 14px; padding-right: 14px; }
+}
 .msp-nav__dd-caret {
   color: var(--uw-ink-400);
   transition: transform 0.15s ease;

@@ -16,7 +16,7 @@ $ccNavLive = static function (string $step): string {
     <nav class="msp-nav__links" aria-label="Primary">
       <a href="/">Home</a>
       <div class="msp-nav__item msp-nav__item--has-dd">
-        <a href="/coaching">Steps <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
+        <a href="/coaching">Exam Coaching <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
         <div class="msp-nav__dropdown">
           <a href="/coaching" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Coaching Overview</span>
@@ -157,8 +157,8 @@ $ccNavLive = static function (string $step): string {
         <a href="/match-maker">Tools <i data-lucide="chevron-down" width="12" height="12" class="msp-nav__dd-caret"></i></a>
         <div class="msp-nav__dropdown">
           <a href="/mastery" class="msp-nav__dd-link">
-            <span class="msp-nav__dd-name">Mastery Platform</span>
-            <span class="msp-nav__dd-meta">Full course library</span>
+            <span class="msp-nav__dd-name">Course Platform</span>
+            <span class="msp-nav__dd-meta">Every course in one place</span>
           </a>
           <a href="/qbank" class="msp-nav__dd-link">
             <span class="msp-nav__dd-name">Qbank</span>
