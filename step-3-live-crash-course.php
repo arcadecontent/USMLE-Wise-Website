@@ -136,14 +136,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
     // Topics and hours per day. The dates come from data/crash-course-cohorts.php.
     $s3_days = [
       [['Pediatrics', '2.5'], ['Gastrointestinal', '5.5']],
-      [['General Surgery', '6.5'], ['Screening & Vaccination', '1.5']],
+      [['General Surgery', '6'], ['Screening & Vaccination', '1.5']],
       [['Obstetrics & Gynecology', '5.5'], ['Dermatology', '2.5']],
       [['Neurology', '5'], ['Musculoskeletal', '3']],
-      [['Cardiovascular', '4.5'], ['Hematology & Oncology', '3.5']],
-      [['Renal', '4.5'], ['Endocrine', '3.5']],
-      [['Respiratory', '4'], ['Psychiatry', '4']],
-      [['Ethics', '3.5'], ['Biostatistics', '2.5'], ['Nutrition', '2']],
-      [['Step 3 CCS Cases', '3'], ['Pharmacology', '2'], ['Microbiology', '1'], ['Biochemistry & General Pathology', '1'], ['Risk Factors', '1']],
+      [['Cardiovascular', '4'], ['Hematology & Oncology', '3.5']],
+      [['Renal', '4'], ['Endocrine', '3.5']],
+      [['Respiratory', '3.5'], ['Psychiatry', '3.5']],
+      [['Ethics', '3.5'], ['Biostatistics', '2'], ['Nutrition', '2']],
+      [['Step 3 CCS Cases', '3'], ['Step 3 Exclusive', '4']],
     ];
     ?>
     <div class="msp-services__grid s1-curric s1-curric--list">
