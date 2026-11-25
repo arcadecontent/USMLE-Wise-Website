@@ -1,0 +1,16 @@
+{
+  "rotationY": 0,
+  "bbox": {"min": [-0.1065, -0.17, -0.0741], "max": [0.1065, 0.17, 0.0741]},
+  "jugularNotch": [0, 0.091, 0.0395],
+  "xiphoid": [0, -0.053, 0.0731],
+  "sternumHalfWidth": 0.012,
+  "ribs": {
+    "2": {"rightSternal": [-0.012, 0.053, 0.0535], "leftSternal": [0.012, 0.053, 0.0534]},
+    "3": {"rightSternal": [-0.012, 0.031, 0.0637], "leftSternal": [0.012, 0.031, 0.0638]},
+    "4": {"rightSternal": [-0.012, 0.0115, 0.0697], "leftSternal": [0.012, 0.0115, 0.0696]},
+    "5": {"rightSternal": [-0.012, -0.0065, 0.0717], "leftSternal": [0.012, -0.0065, 0.0718]}
+  },
+  "leftMidclavicularX": 0.0525,
+  "anteriorSurfaceZAt": {"0.08": 0.0459, "0.06": 0.0532, "0.04": 0.0629, "0.02": 0.0701, "0": 0.073, "-0.02": 0.0734, "-0.04": 0.0729},
+  "notes": "Units are metres, model centred on its bbox centre (model already faces +z, y up, +x = patient's left, so rotationY is 0). anteriorSurfaceZAt is the front-most surface along the sternal midline (x=0). Ribs counted from the top: rib 1 cartilage meets the manubrium at y~0.077; the manubriosternal joint (slight step) is at y~0.059; rib 2 cartilage meets the sternum just below it (y 0.053), then rib 3 (0.031), rib 4 (0.0115), rib 5 (-0.0065); ribs 6 and 7 follow (-0.0205, -0.034), giving the expected 7 true ribs. Found by ray-casting from +z at x=+-0.016 and reading where cartilage bands start and end. Sternal points use x=+-sternumHalfWidth with z ray-cast on the anterior surface. leftMidclavicularX is half of the rib-5 lateral extent (0.105). The model has no clavicles."
+}
