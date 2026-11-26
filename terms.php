@@ -35,16 +35,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li>Guidance calls and certain consultations are booked through an external scheduling platform; the date/time and details you submit there are used to deliver that call.</li>
         </ul>
 
-        <h2>4. Guarantees &amp; Refunds</h2>
+        <h2>4. Free Classes &amp; Sign-Ups</h2>
+        <p>From time to time we run free classes, webinars and similar sessions. When you sign up for one and give us your contact details, such as your name, email address and phone or WhatsApp number, you allow us to store those details and to use them to contact you with updates about the class and with promotions of our other programs, products and services.</p>
+        <p>You can opt out of promotional messages at any time by messaging us on WhatsApp at <a href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">+1 (919) 201-5700</a> or emailing <!--email_off--><a href="mailto:support@usmlewise.com">support@usmlewise.com</a><!--/email_off-->, and we will remove you from our promotions list. Your details will remain stored for archiving purposes, because you have taken a service from us. See our <a href="/policy">Privacy Policy</a> for how we handle this information and for your data rights.</p>
+
+        <h2>5. Guarantees &amp; Refunds</h2>
         <p>Several of our programs include a specific guarantee (for example, the Crash Course pass guarantee, the Match packages&rsquo; first-session guarantee, the Research Wise 24-hour refund window, or a program trial period). The $99 deposit some webinar attendees pay to reserve a crash course spot is non-refundable. The exact terms, eligibility conditions, and how to request a refund are set out in full in our <a href="/refund-policy">Refund &amp; Guarantee Policy</a>, which forms part of these Terms. Where a program has no published guarantee, refund requests are reviewed case by case &mdash; contact us at <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off-->.</p>
 
-        <h2>5. No Guarantee of Outcome</h2>
+        <h2>6. No Guarantee of Outcome</h2>
         <p>Except for the specific, narrowly defined guarantees described in our Refund &amp; Guarantee Policy, we do not guarantee that you will pass any exam, match into any residency program, or achieve any particular research or academic outcome. Outcomes depend on factors outside our control, including your own effort, prior preparation, and decisions made by third-party institutions (exam boards, residency programs, journals, and clinical sites). See our <a href="/disclaimer">Disclaimer</a> for more detail.</p>
 
-        <h2>6. License to Use Course Materials</h2>
+        <h2>7. License to Use Course Materials</h2>
         <p>When you enroll in a recorded or live course, we grant you a personal, non-transferable, non-exclusive license to access and view that course&rsquo;s materials for your own study. You may not record, download, reproduce, resell, share your login, or otherwise redistribute course materials to any third party. All course content, slides, videos, and written materials remain the intellectual property of USMLE Wise.</p>
 
-        <h2>7. Your Conduct</h2>
+        <h2>8. Your Conduct</h2>
         <p>When using the Site or our Services, you agree not to:</p>
         <ul>
           <li>Share your course access or login credentials with anyone else</li>
@@ -54,32 +58,32 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </ul>
         <p>We may suspend or terminate your access to a Service if you violate these Terms.</p>
 
-        <h2>8. Third-Party Services</h2>
+        <h2>9. Third-Party Services</h2>
         <p>We rely on third-party platforms to help deliver our Services, including scheduling/booking platforms, WhatsApp, video-hosting, and clinical rotation host sites. We are not responsible for the acts, omissions, availability, or policies of these independent third parties. See our <a href="/policy">Privacy Policy</a> for how these services handle your data.</p>
 
-        <h2>9. Clinical Rotation Placements</h2>
+        <h2>10. Clinical Rotation Placements</h2>
         <p>Where we assist with placement at a clinical rotation site, the rotation itself is hosted and supervised by an independent third-party clinical site, physician, or institution &mdash; not by USMLE Wise. We help facilitate the placement, but we do not control, and are not responsible for, the third-party site&rsquo;s supervision, accreditation, scheduling, or day-to-day conduct. You are responsible for confirming that any placement satisfies your own school&rsquo;s requirements.</p>
         <p>Because a rotation places you inside a working clinical environment with real patients, rotations carry their own detailed terms covering your obligations, scope of practice, background screening, fees and deadlines, visa documentation, and cancellations. Those terms are set out in full in our <a href="/rotation-terms">Clinical Rotation Terms</a>, which form part of these Terms and which you accept when you pay a rotation deposit. Where these Terms and the Clinical Rotation Terms differ on a point specific to rotations, the Clinical Rotation Terms control.</p>
 
-        <h2>10. Intellectual Property</h2>
+        <h2>11. Intellectual Property</h2>
         <p>The Site, its design, branding, and all original content (excluding materials owned by third parties) are the property of USMLE Wise and are protected by applicable intellectual property laws. Nothing in these Terms transfers any ownership of that intellectual property to you.</p>
 
-        <h2>11. Limitation of Liability</h2>
+        <h2>12. Limitation of Liability</h2>
         <p>To the fullest extent permitted by law, USMLE Wise and its coaches, contractors, and staff will not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Site or Services, including but not limited to lost income, lost opportunities, or exam or match outcomes. Our total liability for any claim relating to a Service will not exceed the amount you paid for that specific Service.</p>
 
-        <h2>12. Indemnification</h2>
+        <h2>13. Indemnification</h2>
         <p>You agree to indemnify and hold USMLE Wise harmless from any claim or demand, including reasonable legal fees, arising out of your misuse of the Site or Services or your violation of these Terms.</p>
 
-        <h2>13. Termination</h2>
+        <h2>14. Termination</h2>
         <p>We may suspend or terminate your access to a Service at our discretion if you materially violate these Terms. Sections of these Terms that by their nature should survive termination (including intellectual property, limitation of liability, and indemnification) will continue to apply.</p>
 
-        <h2>14. Governing Law</h2>
+        <h2>15. Governing Law</h2>
         <p>These Terms are governed by the laws of the Commonwealth of Pennsylvania, United States, without regard to its conflict-of-law principles. Any dispute arising from these Terms or our Services will be subject to the exclusive jurisdiction of the state and federal courts located in Pennsylvania.</p>
 
-        <h2>15. Changes to These Terms</h2>
+        <h2>16. Changes to These Terms</h2>
         <p>We may update these Terms from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page. Continued use of the Site or Services after any changes constitutes acceptance of the updated Terms.</p>
 
-        <h2>16. Contact Us</h2>
+        <h2>17. Contact Us</h2>
         <p>Questions about these Terms? Reach out:</p>
         <ul>
           <li>Email: <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--></li>

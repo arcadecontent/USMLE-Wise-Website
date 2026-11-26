@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Privacy Policy | USMLE Wise";
-$pageDescription = "Privacy Policy for USMLE Wise: how we collect, use, and protect your information, including student enrollment and webinar registration data.";
+$pageDescription = "Privacy Policy for USMLE Wise: how we collect, use, and protect your information, including student enrollment, webinar and free class registration data.";
 $canonical = "https://usmlewise.com/policy";
 $bodyClass = "msp";
 $stylesheets = [
@@ -27,9 +27,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <ul>
           <li><strong>Information you provide directly:</strong> When you book a guidance call, fill in a form on our website, inquire via email, or contact us through WhatsApp, you may share your name, email address, phone or WhatsApp number, country of residence, and details about your medical training and USMLE status. When you submit a form, we also record the page address it was sent from, which can include campaign details if you arrived through a campaign link.</li>
           <li><strong>Enrollment and student records:</strong> When you enroll in any of our programs, we create a student record so that we can administer your enrollment. It typically includes your name, email address, phone or WhatsApp number, country, the training and exam background relevant to your program, the program or package you enrolled in, your payment status and receipts, your scheduling, access and attendance details, and our correspondence with you. If you use a service such as application or document editing, it also includes the materials you send us, such as your CV, personal statement or letters of recommendation. Card payments are processed by our payment providers, and we do not store your full card number.</li>
-          <li><strong>Webinar and event registrants:</strong> When you register for or attend a webinar, masterclass, workshop or other event we run, we collect the details you give us at registration (typically your name, email address, and phone or WhatsApp number) and attendance information from the webinar platform, such as whether you joined. We keep this so that we can follow up with you later, including about our programs and services. See Section 3 below.</li>
+          <li><strong>Webinar, free class and event registrants:</strong> When you register for or attend a webinar, free class, masterclass, workshop or other event we run, we collect the details you give us at registration (typically your name, email address, and phone or WhatsApp number) and attendance information from the webinar platform, such as whether you joined. We keep this so that we can follow up with you later, including about our programs and services. See Sections 3 and 4 below.</li>
           <li><strong>Session recordings:</strong> Some live sessions, such as live courses and workshops, are recorded, and recordings may be made available to enrolled students. A recording can include your name, your voice, your image if your camera is on, and any questions or messages you share during the session.</li>
-          <li><strong>Information collected automatically:</strong> When you visit our website, our analytics and advertising providers may collect technical data such as your IP address, browser and device type, and the pages you view. Our own analytics records which pages you view, the page or campaign link that referred you, which key buttons you click, and how long you spend on a page. It ties this activity to a random identifier stored in your browser, not to your name or contact details. See Section 5 and our <a href="/cookie-policy">Cookie Policy</a>.</li>
+          <li><strong>Information collected automatically:</strong> When you visit our website, our analytics and advertising providers may collect technical data such as your IP address, browser and device type, and the pages you view. Our own analytics records which pages you view, the page or campaign link that referred you, which key buttons you click, and how long you spend on a page. It ties this activity to a random identifier stored in your browser, not to your name or contact details. See Section 6 and our <a href="/cookie-policy">Cookie Policy</a>.</li>
           <li><strong>Communications:</strong> If you email us or message us on WhatsApp, we retain those messages to respond to your inquiries and improve our services.</li>
           <li><strong>Clinical rotation placement data:</strong> If you enroll in a clinical rotation, we collect the documentation host sites require in order to confirm a placement. This typically includes your CV, medical school transcript or enrollment verification, proof of identity, immunization and titre records, health insurance details, and HIPAA or other certification records.</li>
           <li><strong>Background screening and drug testing results:</strong> Clinical rotations place you in contact with patients and medical records, so host sites generally require screening before confirming a placement. With your authorization, given when you enroll, we and our placement partners and service providers may obtain and process criminal history, educational and employment verification, and (where a host site requires it) credit history, including consumer reports from the relevant agencies. Where we or a host site requires drug testing, we process the result. We collect this category of data only for rotation placements, and only to the extent the host site requires it.</li>
@@ -46,7 +46,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li>To comply with applicable legal obligations</li>
           <li>To arrange and confirm clinical rotation placements, which requires sharing your placement documentation, and the outcome of any required screening, with the host site, supervising physician, and (for partner-sourced placements) the partner organization&rsquo;s coordinator</li>
         </ul>
-        <p>We do not sell your personal information, and we do not rent or share your contact details with third parties for their own marketing. The analytics and advertising tools described in Sections 4 and 5 collect limited technical data about your visit, as explained there.</p>
+        <p>We do not sell your personal information, and we do not rent or share your contact details with third parties for their own marketing. The analytics and advertising tools described in Sections 5 and 6 collect limited technical data about your visit, as explained there.</p>
         <p>We share rotation placement documentation and screening outcomes only with the host site, supervising physician, placement partner, or screening provider involved in your specific placement, and only to the extent needed to secure and run it. We do not use this data for marketing, and we do not share it for any purpose unrelated to your placement.</p>
 
         <h2>3. Follow-Up and Marketing Communications</h2>
@@ -54,7 +54,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p>Messages that are part of delivering a service you have enrolled in, such as scheduling, access details, receipts and program updates, are service messages and will continue even if you opt out of marketing.</p>
         <p>You can opt out of follow-up and marketing messages at any time. Use the unsubscribe link in our marketing emails, tell us on WhatsApp or on a call that you do not want to be contacted, or email <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off-->. We will stop within a reasonable time. We do not sell or rent our webinar and enrollment contact lists.</p>
 
-        <h2>4. Third-Party Services</h2>
+        <h2>4. Free Classes and Webinars</h2>
+        <p>From time to time we run free classes, webinars and similar sessions. When you sign up for one, you give us your contact details, such as your name, email address and phone or WhatsApp number. By signing up, you allow us to store these details and to use them to contact you, by email, phone call or WhatsApp, with updates about the class you registered for and with information and promotions about our other programs, products and services.</p>
+        <p>If you do not want to be contacted, you can opt out at any time by messaging us on WhatsApp at <a href="https://wa.me/19192015700" target="_blank" rel="noopener noreferrer">+1 (919) 201-5700</a> or by emailing our support team at <!--email_off--><a href="mailto:support@usmlewise.com">support@usmlewise.com</a><!--/email_off-->. We will remove you from our promotions list and stop sending you promotional messages.</p>
+        <p>Opting out does not delete your details. Because you have taken a service from us by attending or registering for a class, we keep your name and contact details on file for archiving purposes. They will not be used for promotions after you opt out. If you want your data deleted, see Section 10.</p>
+
+        <h2>5. Third-Party Services</h2>
         <p>We use the following third-party platforms in the course of delivering our services. Each has its own privacy policy:</p>
         <ul>
           <li><strong>Booking &amp; scheduling:</strong> Guidance calls are booked through an external scheduling platform. Information you enter during booking (name, email, notes) is processed by that platform.</li>
@@ -72,23 +77,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
           <li><strong>Clinical rotation host sites, placement partners, and screening providers:</strong> To confirm a rotation placement we share your placement documentation with the host site and supervising physician, and, where a placement is sourced through a partner organization, with that organization&rsquo;s coordinator. Background screening and drug testing are performed by independent providers under their own privacy terms. Each of these parties handles your data under its own policies, and we are not responsible for their practices. See our <a href="/rotation-terms">Clinical Rotation Terms</a> for what placement requires.</li>
         </ul>
 
-        <h2>5. Cookies and Similar Technologies</h2>
+        <h2>6. Cookies and Similar Technologies</h2>
         <p>We use Google Analytics to understand aggregate site traffic, which sets cookies on your device. Our Meta Pixels also set an advertising cookie so that we and our advertising partners can measure our ads and reach people who have visited us. In addition, our own analytics records page views, button clicks and time on page using identifiers saved in your browser&rsquo;s local and session storage rather than in cookies, and sends them to our own server; they are not shared with advertisers. On the main pages of our website, these analytics and advertising tools are on by default, and you can turn them off at any time with Cookie settings in the footer. We set one cookie of our own, uw_consent, to remember a choice you make there. Features such as payments, forms and embedded video may set cookies of their own when you use them. We do not store your name or contact details in cookies. See our <a href="/cookie-policy">Cookie Policy</a> for the full list and how to manage them.</p>
 
-        <h2>6. Data Retention</h2>
+        <h2>7. Data Retention</h2>
         <p>We retain your information for as long as necessary to provide our services and fulfill the purposes described in this policy. If you request deletion of your data, we will remove it within a reasonable timeframe, except where retention is required by law.</p>
-        <p>Enrollment records are kept for as long as you are a student with us, and afterward for as long as we reasonably need them to administer your account, provide support, and meet accounting and legal obligations. Contact details of webinar registrants and attendees are kept so that we can follow up with you, until you ask us to stop contacting you or to delete your data.</p>
+        <p>Enrollment records are kept for as long as you are a student with us, and afterward for as long as we reasonably need them to administer your account, provide support, and meet accounting and legal obligations. Contact details of webinar and free class registrants and attendees are used to follow up with you until you ask us to stop contacting you. After that, we keep them on file for archiving purposes only (see Section 4), unless you ask us to delete your data.</p>
         <p>Clinical rotation placement documentation and screening outcomes are retained only as long as needed to arrange and evidence your placement, and to meet any record-keeping obligation a host site or applicable law imposes on us. You may ask us to delete this material once your rotation is complete, and we will do so except where we are required to retain it.</p>
 
-        <h2>7. Data Security and International Processing</h2>
+        <h2>8. Data Security and International Processing</h2>
         <p>We take reasonable technical and organizational measures to protect your information from unauthorized access, disclosure, or loss. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
         <p>We serve students around the world. Your information may be processed and stored in the United States and in other countries where we or our service providers operate, and those countries may have data protection laws that differ from those where you live.</p>
 
-        <h2>8. Children&rsquo;s Privacy</h2>
+        <h2>9. Children&rsquo;s Privacy</h2>
         <p>Our services are intended for medical graduates and adult students. We do not knowingly collect information from anyone under the age of 18, except as described below for our Research Junior Scientist Program. If you believe a minor has submitted information to us outside that program, please contact us and we will delete it promptly.</p>
         <p>The Research Junior Scientist Program is open to students in grades 9 to 12. For that program, a parent or legal guardian enrolls the student and provides the information we need, and we use it only to run the program. A parent or guardian can ask us to review or delete their child&rsquo;s information at any time.</p>
 
-        <h2>9. Your Rights and Choices</h2>
+        <h2>10. Your Rights and Choices</h2>
         <p>Depending on your location, you may have the right to:</p>
         <ul>
           <li>Access the personal data we hold about you</li>
@@ -100,10 +105,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <p>To exercise any of these rights, contact us at <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off-->.</p>
         <p>We will honor requests to the extent required by the law that applies to you. If you ask us to delete your data or to stop contacting you, we may keep a minimal record of that request so that we can respect it.</p>
 
-        <h2>10. Changes to This Policy</h2>
+        <h2>11. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page. Continued use of our website after any changes constitutes acceptance of the updated policy.</p>
 
-        <h2>11. Contact Us</h2>
+        <h2>12. Contact Us</h2>
         <p>If you have questions or concerns about this Privacy Policy or how your data is handled, please reach out:</p>
         <ul>
           <li>Email: <!--email_off--><a href="mailto:admin@usmlewise.com">admin@usmlewise.com</a><!--/email_off--></li>

@@ -22,7 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         <div class="msp-legal-grid">
           <a class="msp-legal-card" href="/policy">
             <h2>Privacy Policy</h2>
-            <p>What information we collect, including student enrollment and webinar registration data, how we use it, and your rights regarding your data.</p>
+            <p>What information we collect, including student enrollment, webinar and free class registration data, how we use it, and your rights regarding your data.</p>
           </a>
           <a class="msp-legal-card" href="/terms">
             <h2>Terms &amp; Conditions</h2>
