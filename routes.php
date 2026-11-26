@@ -121,6 +121,7 @@
         'match-interview-prep'          => '/match-interview',
         'match/eras-cv'                 => '/match-eras-cv',
         'match-2'                        => '/match',
+        'heart-lab'                      => '/murmur', // the Heart Lab's preview address
         'research/catalyst'             => '/research-catalyst',
         'research/original-research'    => '/research-original',
         'research-original-research'    => '/research-original',

@@ -1,6 +1,6 @@
 <?php
 /**
- * Heart Lab, served at /heart-lab: a free interactive cardiology tool.
+ * Heart Lab, served at /murmur: a free interactive cardiology tool.
  * Murmurs mode: Murmur Man auscultation figure, synthesized heart sounds,
  * a live phonocardiogram and bedside maneuvers. MI mode: a 3D heart whose
  * infarct territory, culprit artery and 12-lead ECG change together.
@@ -8,8 +8,7 @@
  */
 $pageTitle       = 'Heart Lab: Murmur Man, Heart Sounds and MI Territories on a 3D Heart | USMLE Wise';
 $pageDescription = 'Free interactive cardiology lab for USMLE: hear every board murmur, see where it sits and radiates on Murmur Man, test maneuvers, and see each MI on a 3D heart with its 12-lead ECG.';
-$canonical       = 'https://usmlewise.com/heart-lab';
-$metaRobots      = 'noindex, nofollow'; // preview only until approved
+$canonical       = 'https://usmlewise.com/murmur';
 $bodyClass       = 'msp hl';
 $stylesheets     = ['/styles/blog.css', '/styles/heart-lab.css']; // blog.css carries the shared nav and footer styles
 $scripts         = ['/js/blog.js'];
