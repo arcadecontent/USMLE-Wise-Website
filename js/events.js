@@ -1,8 +1,6 @@
 /* ============================================================
-   USMLE Wise: Our Events page
-   Photo gallery for past events: "show all" toggle and a lightbox with
-   previous / next, keyboard and swipe. Each gallery is its own set, so a
-   page can hold several events.
+   USMLE Wise: event pages (/events/<slug>)
+   Photo gallery lightbox with previous / next, keyboard and swipe.
    ============================================================ */
 (function () {
   'use strict';
@@ -14,7 +12,8 @@
 
   ready(function () {
     var lb = document.getElementById('evLightbox');
-    if (!lb) return;
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.ed-photo__btn'));
+    if (!lb || !buttons.length) return;
 
     var img = document.getElementById('evLightboxImg');
     var capText = document.getElementById('evLightboxCap');
@@ -23,29 +22,27 @@
     var btnPrev = lb.querySelector('.ev-lb__prev');
     var btnNext = lb.querySelector('.ev-lb__next');
 
-    var items = [];      // the open gallery's thumbnail buttons
     var index = 0;
-    var opener = null;   // returns focus here on close
+    var opener = null; // returns focus here on close
 
     function show(i) {
-      index = (i + items.length) % items.length;
-      var btn = items[index];
+      index = (i + buttons.length) % buttons.length;
+      var btn = buttons[index];
       var thumb = btn.querySelector('img');
       lb.classList.add('is-loading');
       img.onload = img.onerror = function () { lb.classList.remove('is-loading'); };
       img.src = btn.getAttribute('data-full');
       img.alt = thumb ? thumb.alt : '';
       capText.textContent = btn.getAttribute('data-caption') || '';
-      capCount.textContent = (index + 1) + ' / ' + items.length;
+      capCount.textContent = (index + 1) + ' / ' + buttons.length;
       // warm the neighbours so next / previous feels instant
       [index + 1, index - 1].forEach(function (n) {
-        var nb = items[(n + items.length) % items.length];
+        var nb = buttons[(n + buttons.length) % buttons.length];
         if (nb) new Image().src = nb.getAttribute('data-full');
       });
     }
 
-    function open(list, i, from) {
-      items = list;
+    function open(i, from) {
       opener = from;
       lb.removeAttribute('hidden');
       document.body.classList.add('ev-lb-open');
@@ -60,20 +57,8 @@
       if (opener && opener.focus) opener.focus();
     }
 
-    // Wire up every gallery on the page.
-    document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
-      var buttons = Array.prototype.slice.call(gallery.querySelectorAll('.pe-grid__btn'));
-      buttons.forEach(function (btn, i) {
-        btn.addEventListener('click', function () { open(buttons, i, btn); });
-      });
-
-      var more = gallery.querySelector('[data-gallery-more]');
-      if (more) {
-        more.addEventListener('click', function () {
-          gallery.classList.remove('is-collapsed');
-          more.closest('.pe-gal__more').setAttribute('hidden', '');
-        });
-      }
+    buttons.forEach(function (btn, i) {
+      btn.addEventListener('click', function () { open(i, btn); });
     });
 
     btnClose.addEventListener('click', close);

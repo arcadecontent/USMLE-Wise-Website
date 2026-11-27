@@ -43,7 +43,7 @@
     }
 
     $pageFile = function (string $s): ?string {
-        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail', 'team-member', 'sitemap', 'wiki-section', 'wiki-article', 'wiki-search-index'], true)) {
+        if (preg_match('/\A[a-z0-9-]+\z/', $s) !== 1 || in_array($s, ['index', 'router', 'routes', '404', 'rotation-detail', 'team-member', 'event-detail', 'sitemap', 'wiki-section', 'wiki-article', 'wiki-search-index'], true)) {
             return null;
         }
         if (is_file(__DIR__ . '/' . $s . '.php')) {
@@ -314,6 +314,23 @@
             }
         }
         $redirect('/team');
+    }
+    // Past-event pages render from data/past-events.php via event-detail.php;
+    // adding an event there is all that is needed for /events/<slug> to resolve.
+    if (strpos($slug, 'events/') === 0) {
+        $rest = substr($slug, strlen('events/'));
+        if ($rest !== '' && preg_match('/\A[a-z0-9-]+\z/', $rest)) {
+            require_once __DIR__ . '/data/past-events.php';
+            $pastEvent = usmlewise_find_past_event($rest);
+            if ($pastEvent !== null) {
+                if ($hadExtension || $reqPath !== '/events/' . $rest) {
+                    $redirect('/events/' . $rest);
+                }
+                require __DIR__ . '/event-detail.php';
+                exit;
+            }
+        }
+        $redirect('/events');
     }
     if (strpos($slug, 'rotations/') === 0) {
         $rest = substr($slug, strlen('rotations/'));

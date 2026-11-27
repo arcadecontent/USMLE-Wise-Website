@@ -11,6 +11,7 @@
  *   - blog posts from data/posts.php, award write-ups from data/awards.php
  *   - team profiles from data/team.php (a member commented out of that file,
  *     such as a hidden team member, is not listed)
+ *   - past-event pages (/events/<slug>) from data/past-events.php
  *
  * Curated <lastmod> values are the date each page file last changed in git.
  * They are hard-coded because file mtimes are reset on every deploy, which
@@ -60,7 +61,7 @@ $curatedPages = [
     ['/policy',                       '2026-11-10', 'monthly', '0.3'],
     ['/qa',                           '2026-11-25', 'monthly', '0.7'],
     ['/contact',                      '2026-10-20', 'yearly',  '0.4'],
-    ['/events',                       '2026-11-25', 'weekly',  '0.6'],
+    ['/events',                       '2026-11-27', 'weekly',  '0.6'],
     ['/research-catalyst',            '2026-11-17', 'monthly', '0.8'],
     ['/research-junior-scientist',    '2026-11-15', 'monthly', '0.8'],
     ['/research-original',            '2026-11-03', 'monthly', '0.8'],
@@ -145,6 +146,13 @@ foreach (array_keys(usmlewise_team_members()) as $teamSlug) {
     $teamEntries[] = ['/team/' . $teamSlug, '', '0.4'];
 }
 
+// Pages for the events we've hosted, from data/past-events.php.
+require_once __DIR__ . '/data/past-events.php';
+$eventEntries = [];
+foreach (usmlewise_past_events() as $eventSlug => $pastEvent) {
+    $eventEntries[] = ['/events/' . $eventSlug, (string) $pastEvent['date'], '0.5'];
+}
+
 header('Content-Type: application/xml; charset=UTF-8');
 
 $esc = static function (string $v): string {
@@ -164,7 +172,7 @@ foreach ($curatedPages as [$path, $lastmod, $changefreq, $priority]) {
 }
 
 // Generated groups share one shape: [path, lastmod (may be empty), priority].
-foreach ([$wikiEntries, $blogEntries, $awardEntries, $teamEntries] as $group) {
+foreach ([$wikiEntries, $blogEntries, $awardEntries, $teamEntries, $eventEntries] as $group) {
     foreach ($group as [$path, $lastmod, $priority]) {
         echo '  <url>', "\n";
         echo '    <loc>', $esc($base . $path), '</loc>', "\n";

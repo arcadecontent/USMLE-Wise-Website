@@ -8,14 +8,14 @@
  *                Mark a conference as attending in the CRM and it appears.
  *   Live courses the cohort dates in data/crash-course-cohorts.php, the same
  *                source the live course pages and the nav use.
- *   Past events  events we organized ourselves, with write-up and photo
- *                gallery, from data/past-events.php (photos live in
- *                /assets/events/<slug>/). Add an entry there and it shows up.
+ *   Past events  events we organized ourselves, from data/past-events.php.
+ *                Each one is a card here that links to its own page at
+ *                /events/<slug> (event-detail.php: write-up, program, speakers
+ *                and photo gallery). Add an entry there and both appear.
  */
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/conferences.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/crash-course-cohorts.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/data/past-events.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/data/team.php';
 
 $evTz    = new DateTimeZone(UWCC_TZ);
 $evToday = (new DateTimeImmutable('now', $evTz))->format('Y-m-d');
@@ -33,14 +33,11 @@ usort($evConferences, static function (array $a, array $b): int {
 });
 $evConfTotal = count($evPayload['conferences']);
 
-// Events we've hosted, newest first. Speakers come from the team roster so
-// names and profile links stay in step with /team.
+// Events we've hosted, newest first.
 $evPast = array_values(usmlewise_past_events());
 usort($evPast, static function (array $a, array $b): int {
     return strcmp($b['date'], $a['date']);
 });
-$evTeam = usmlewise_team_members();
-$evGalleryPreview = 13; // photos shown before "Show all" (12 on narrow screens; see styles/events.css)
 
 $pageTitle = "Our Events: Conferences, Live Courses & Past Events | USMLE Wise";
 $pageDescription = "Upcoming medical conferences the USMLE Wise team is attending, our live Step 1, Step 2 CK and Step 3 crash course dates, and events we've hosted, like our residency and research workshop in Tbilisi.";
@@ -51,8 +48,7 @@ $stylesheets = [
     "/styles/events.css"
 ];
 $scripts = [
-    "/js/match.js",
-    "/js/events.js"
+    "/js/match.js"
 ];
 include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
 ?>
@@ -113,29 +109,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         color: var(--uw-ink-900);
         margin: 0 0 6px;
       }
-      .ev-meta {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 6px 14px;
-        font-size: var(--fs-14);
-        color: var(--uw-ink-500);
-        margin: 0;
-      }
-      .ev-meta span { display: inline-flex; align-items: center; gap: 5px; }
-      .ev-meta svg { flex-shrink: 0; color: var(--uw-ink-400); }
-      .ev-pill {
-        font-family: var(--font-mono);
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 3px 9px;
-        border-radius: 999px;
-        color: var(--uw-ink-600);
-        background: var(--uw-ink-100);
-      }
-      .ev-pill--open { color: #fff; background: var(--uw-red-500); }
-      .ev-pill--live { color: var(--uw-blue-700, var(--uw-blue-600)); background: var(--uw-blue-50); }
+      /* .ev-meta and .ev-pill live in styles/events.css (the event pages use them too) */
       .ev-row .btn { white-space: nowrap; }
 
       .ev-empty {
@@ -153,24 +127,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         margin: clamp(20px, 3vw, 26px) auto 0;
       }
 
-      /* CTA card */
-      .pg-cta-wrap { padding-block: clamp(72px, 9vw, 120px); }
-      .pg-cta-card {
-        background: #08111f;
-        border: 1px solid rgba(255,255,255,.08);
-        border-radius: clamp(20px, 2.4vw, 28px);
-        box-shadow: var(--shadow-lg);
-        padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
-        text-align: center;
-      }
-      .pg-cta-card .msp-h2 { color: #fff; text-align: center; max-width: 24ch; margin-inline: auto; margin-bottom: 0; }
-      .pg-cta-card .msp-sub { color: rgba(255,255,255,.65); max-width: 54ch; margin-inline: auto; margin-top: clamp(14px,2vw,20px); text-align: center; }
-      .pg-cta-card .msp-cta-row { justify-content: center; margin-inline: auto; margin-top: clamp(28px,4vw,44px); }
-      .pg-cta-card .btn--outline {
-        border-color: rgba(255,255,255,.4) !important; color: #fff !important; background: transparent !important;
-        transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-      }
-      .pg-cta-card .btn--outline:hover { background: #fff !important; border-color: #fff !important; color: #08111f !important; }
+      /* the closing CTA card (.pg-cta-*) is in styles/events.css */
 
       @media (max-width: 640px) {
         .ev-row { grid-template-columns: 60px 1fr; align-items: start; }
@@ -302,122 +259,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/partials/head.php';
         </div>
 
         <?php foreach ($evPast as $p):
-            $pd         = new DateTimeImmutable($p['date'], $evTz);
-            $base       = '/assets/events/' . $p['slug'] . '/';
-            $place      = $p['city'] . ', ' . $p['country'];
-            $photoCount = count($p['photos']);
-            $titleId    = 'pe-title-' . $p['slug'];
-            $ld = [
-                '@context'            => 'https://schema.org',
-                '@type'               => 'Event',
-                'name'                => $p['title'],
-                'description'         => $p['summary'],
-                'startDate'           => $p['date'],
-                'eventStatus'         => 'https://schema.org/EventScheduled',
-                'eventAttendanceMode' => 'https://schema.org/OfflineEventAttendanceMode',
-                'location'            => [
-                    '@type'   => 'Place',
-                    'name'    => $p['venue'],
-                    'address' => ['@type' => 'PostalAddress', 'addressLocality' => $p['city'], 'addressCountry' => 'GE'],
-                ],
-                'image'               => 'https://usmlewise.com' . $base . $p['cover']['file'],
-                'organizer'           => [
-                    ['@type' => 'Organization', 'name' => 'USMLE Wise', 'url' => 'https://usmlewise.com'],
-                    ['@type' => 'Organization', 'name' => $p['partner']],
-                ],
-            ];
+            $pd     = new DateTimeImmutable($p['date'], $evTz);
+            $url    = '/events/' . $p['slug'];
+            $cover  = '/assets/events/' . $p['slug'] . '/' . $p['cover']['file'];
+            $place  = $p['city'] . ', ' . $p['country'];
+            $photos = count($p['photos']);
         ?>
-        <article class="pe" id="<?= $evEsc($p['slug']) ?>" aria-labelledby="<?= $evEsc($titleId) ?>">
-
-          <div class="pe__top reveal">
-            <figure class="pe__cover">
-              <img src="<?= $evEsc($base . $p['cover']['file']) ?>" width="<?= (int) $p['cover']['w'] ?>" height="<?= (int) $p['cover']['h'] ?>" alt="<?= $evEsc($p['cover']['alt']) ?>" loading="lazy" decoding="async" />
-            </figure>
-            <div>
-              <p class="ev-meta pe__meta">
-                <span class="ev-pill ev-pill--live"><?= $evEsc($p['format']) ?></span>
-                <span><i data-lucide="calendar" width="13" height="13"></i><?= $evEsc($pd->format('F j, Y')) ?></span>
-                <span><i data-lucide="map-pin" width="13" height="13"></i><?= $evEsc($place) ?></span>
-              </p>
-              <h3 class="pe__title" id="<?= $evEsc($titleId) ?>"><?= $evEsc($p['title']) ?></h3>
-              <p class="pe__lede"><?= $evEsc($p['summary']) ?></p>
-              <ul class="pe__people" aria-label="Speakers">
-                <?php foreach ($p['speakers'] as $s):
-                    $m = $evTeam[$s['team']] ?? null;
-                    if (!$m) continue;
-                    $mName = html_entity_decode(strip_tags((string) $m['name']), ENT_QUOTES, 'UTF-8');
-                ?>
-                <li>
-                  <a class="pe__person" href="/team/<?= $evEsc($s['team']) ?>">
-                    <img src="<?= $evEsc($base . $s['photo']) ?>" width="44" height="44" alt="" loading="lazy" decoding="async" />
-                    <span>
-                      <span class="pe__person-name"><?= $evEsc($mName) ?></span>
-                      <span class="pe__person-topic"><?= $evEsc($s['topic']) ?></span>
-                    </span>
-                  </a>
-                </li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
+        <article class="evc reveal" aria-labelledby="evc-<?= $evEsc($p['slug']) ?>">
+          <div class="evc__media">
+            <img src="<?= $evEsc($cover) ?>" width="<?= (int) $p['cover']['w'] ?>" height="<?= (int) $p['cover']['h'] ?>" alt="<?= $evEsc($p['cover']['alt']) ?>" loading="lazy" decoding="async" />
+            <span class="evc__count"><i data-lucide="images" width="14" height="14"></i><?= $photos ?> photos</span>
           </div>
-
-          <ol class="pe__program reveal" aria-label="Program">
-            <?php foreach ($p['program'] as $step): ?>
-            <li class="pe__step">
-              <h4><?= $evEsc($step['title']) ?></h4>
-              <?php if (!empty($step['session'])): ?><p class="pe__session"><?= $evEsc($step['session']) ?></p><?php endif; ?>
-              <p><?= $evEsc($step['text']) ?></p>
-            </li>
-            <?php endforeach; ?>
-          </ol>
-
-          <p class="pe__closing reveal"><?= $evEsc($p['closing']) ?></p>
-
-          <div class="pe-gal<?= $photoCount > $evGalleryPreview ? ' is-collapsed' : '' ?>" data-gallery>
-            <div class="pe-gal__head reveal">
-              <h4 class="pe-gal__title">Photo gallery</h4>
-              <span class="pe-gal__count"><?= $photoCount ?> photos</span>
-            </div>
-            <ul class="pe-grid">
-              <?php foreach ($p['photos'] as $i => $ph): ?>
-              <li class="pe-grid__item">
-                <button type="button" class="pe-grid__btn" data-full="<?= $evEsc($base . $ph['file'] . '.webp') ?>" data-caption="<?= $evEsc($ph['caption']) ?>">
-                  <img src="<?= $evEsc($base . $ph['file'] . '-sm.webp') ?>" width="<?= (int) $ph['w'] ?>" height="<?= (int) $ph['h'] ?>" alt="<?= $evEsc($ph['alt']) ?>" loading="lazy" decoding="async" />
-                  <span class="pe-grid__cap" aria-hidden="true"><?= $evEsc($ph['caption']) ?></span>
-                </button>
-              </li>
-              <?php endforeach; ?>
-            </ul>
-            <?php if ($photoCount > $evGalleryPreview): ?>
-            <div class="pe-gal__more">
-              <button type="button" class="btn btn--outline" data-gallery-more>Show all <?= $photoCount ?> photos</button>
-            </div>
-            <noscript><style>.pe-gal.is-collapsed .pe-grid__item { display: block !important; } .pe-gal__more { display: none; }</style></noscript>
-            <?php endif; ?>
+          <div class="evc__body">
+            <p class="ev-meta evc__meta">
+              <span class="ev-pill ev-pill--live"><?= $evEsc($p['format']) ?></span>
+              <span><i data-lucide="calendar" width="13" height="13"></i><?= $evEsc($pd->format('F j, Y')) ?></span>
+              <span><i data-lucide="map-pin" width="13" height="13"></i><?= $evEsc($place) ?></span>
+            </p>
+            <h3 class="evc__title" id="evc-<?= $evEsc($p['slug']) ?>"><?= $evEsc($p['title']) ?></h3>
+            <p class="evc__blurb"><?= $evEsc($p['blurb']) ?></p>
+            <a class="btn btn--primary evc__link" href="<?= $evEsc($url) ?>">View event recap <i data-lucide="arrow-right" width="15" height="15"></i></a>
           </div>
-
         </article>
-        <script type="application/ld+json"><?= json_encode($ld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP) ?></script>
         <?php endforeach; ?>
       </div>
     </section>
-
-    <!-- Photo lightbox (used by the past-event galleries) -->
-    <div class="ev-lb" id="evLightbox" role="dialog" aria-modal="true" aria-label="Event photos" hidden>
-      <figure class="ev-lb__fig">
-        <img class="ev-lb__img" id="evLightboxImg" alt="" />
-        <figcaption class="ev-lb__cap"><span id="evLightboxCap"></span><span class="ev-lb__count" id="evLightboxCount"></span></figcaption>
-      </figure>
-      <button type="button" class="ev-lb__btn ev-lb__close" aria-label="Close photo viewer">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-      <button type="button" class="ev-lb__btn ev-lb__prev" aria-label="Previous photo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-      </button>
-      <button type="button" class="ev-lb__btn ev-lb__next" aria-label="Next photo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-      </button>
-    </div>
     <?php endif; ?>
 
     <!-- CTA -->

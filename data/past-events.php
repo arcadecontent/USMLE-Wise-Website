@@ -1,20 +1,24 @@
 <?php
 /**
- * Past events we've organized: the "Past events" section of /events.
+ * Past events we've organized. /events shows one big card per event; each card
+ * links to its own page at /events/<slug>, rendered by event-detail.php.
  *
  * Adding an event: append an entry below and drop its photos in
- * /assets/events/<slug>/. /events renders newest first, so order here doesn't
- * matter. Nothing else needs touching.
+ * /assets/events/<slug>/. The card, the page, the route and the sitemap entry
+ * all come from this array (routes.php resolves /events/<slug> against it).
+ * /events lists newest first, so order here doesn't matter.
  *
  * Photos: for each one, <file>.webp (about 2000px, opened in the lightbox) and
  * <file>-sm.webp (about 800px, the grid thumbnail). 'w'/'h' are the pixel size
  * of the thumbnail, so the grid doesn't jump while images load. 'cover' is a
- * single wide image (about 1600px) shown beside the write-up.
+ * single wide image (about 1600px) used on the card and at the top of the page;
+ * 'og' is a 1200x630 JPG used as the link-preview image when the page is shared.
  *
  * Fields per event:
- *   slug      anchor id on the page and the folder name under /assets/events
+ *   slug      URL slug (/events/<slug>) and the folder name under /assets/events
  *   title, date (Y-m-d), venue, city, country, format (pill label), partner
- *   summary   the opening paragraph
+ *   blurb     one or two sentences for the card on /events
+ *   summary   the opening paragraph on the event page
  *   program   ordered sessions: ['title', 'session' (optional name), 'text']
  *   speakers  ['team' => slug in data/team.php, 'photo' => avatar file, 'topic' => what they did here]
  *   closing   the wrap-up line under the program
@@ -34,6 +38,7 @@ function usmlewise_past_events(): array
             'country' => 'Georgia',
             'format'  => 'Workshop',
             'partner' => 'MEDMARK',
+            'blurb'   => 'Residency orientation, a hands-on research workshop, a networking break and a live Q&A with our mentors, hosted with MEDMARK for aspiring medical students.',
             'summary' => 'USMLE Wise and the MEDMARK team hosted an interactive academic event at Caucasus International University (CIU) in Tbilisi, bringing together aspiring medical students to demystify the pathway to U.S. medical residency and clinical research.',
             'program' => [
                 [
@@ -63,6 +68,7 @@ function usmlewise_past_events(): array
                 ['team' => 'meghana-reddy',    'photo' => 'speaker-meghana.webp',  'topic' => 'Live Q&A: medical research'],
             ],
             'closing' => 'Through practical workshops and direct mentorship, the event equipped students in Tbilisi with actionable steps for both their research and their future U.S. residency applications.',
+            'og'      => 'og.jpg',
             'cover'   => ['file' => 'cover.webp', 'w' => 1600, 'h' => 1067, 'alt' => 'A USMLE Wise presenter pointing to the "Let\'s Talk" slide in front of a seated audience, between the MEDMARK and USMLE Wise banners'],
             'photos'  => [
                 ['file' => '01-welcome-orientation',     'w' => 800, 'h' => 533, 'alt' => 'The USMLE Orientation slide on screen beside the MEDMARK and USMLE Wise banners', 'caption' => 'The USMLE Orientation session opens.'],
@@ -89,4 +95,13 @@ function usmlewise_past_events(): array
         ],
 
     ];
+}
+
+/**
+ * One event by slug, or null. routes.php uses this to resolve /events/<slug>.
+ */
+function usmlewise_find_past_event(string $slug): ?array
+{
+    $events = usmlewise_past_events();
+    return $events[$slug] ?? null;
 }

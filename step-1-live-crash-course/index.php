@@ -59,10 +59,10 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
     .cc-results { grid-template-columns: repeat(2,1fr) !important; }
     .cc-wa { columns: 1 !important; }
     .cc-formrow { grid-template-columns: 1fr !important; }
-    .cc-hero { gap: 0 !important; }
+    .cc-hero { gap: 0 !important; padding-top: 24px !important; }
     .cc-h1 { font-size: min(32px, 7.4vw) !important; line-height: 1.2 !important; letter-spacing: -0.02em !important; max-width: 100% !important; word-spacing: normal; }
     .cc-hero > p { font-size: 16.5px !important; margin-top: 16px !important; }
-    .cc-hero-img { margin-top: 24px !important; }
+    .cc-hero-img { margin-top: 20px !important; }
     .cc-hero-img > div { width: 80px !important; height: 80px !important; top: -14px !important; right: -8px !important; }
     .cc-nav { padding-top: 10px !important; padding-bottom: 10px !important; }
     .cc-date-long { display: none !important; }
@@ -71,7 +71,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
     .cc-logo { height: 26px !important; }
     .cc-eyebrow { font-size: 11px !important; letter-spacing: .08em !important; margin-bottom: 10px !important; }
     .cc-seat { text-align: center !important; }
-    .cc-meta { flex-wrap: nowrap !important; display: grid !important; grid-template-columns: minmax(0,1fr) 1px minmax(0,1fr) 1px minmax(0,1fr) !important; align-items: center !important; width: 100% !important; max-width: 360px !important; padding: 14px 10px !important; font-size: 12.5px !important; font-weight: 500 !important; gap: 0 10px !important; box-sizing: border-box !important; border-radius: 18px !important; margin: 20px 0 16px !important; }
+    .cc-meta { flex-wrap: nowrap !important; display: grid !important; grid-template-columns: minmax(0,1fr) 1px minmax(0,1fr) 1px minmax(0,1fr) !important; align-items: center !important; width: 100% !important; max-width: 360px !important; padding: 14px 10px !important; font-size: 12.5px !important; font-weight: 500 !important; gap: 0 10px !important; box-sizing: border-box !important; border-radius: 18px !important; margin: 18px 0 14px !important; }
     .cc-meta > span:not(.cc-meta-sep) { flex-direction: column !important; gap: 6px !important; text-align: center !important; line-height: 1.25 !important; white-space: normal !important; text-wrap: balance; }
     .cc-meta-sep { display: block !important; width: 1px !important; height: 36px !important; background: var(--uw-border) !important; }
     .cc-meta svg { width: 15px !important; height: 15px !important; }
@@ -156,7 +156,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
       <a href="#faq" style="padding:8px 12px;border-radius:6px">FAQ</a>
     </div>
     <div style="display:flex;align-items:center;gap:10px;flex:none">
-      <a href="#contact" style="display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:999px;background:#25D366;color:#fff;font-size:13px;font-weight:600;white-space:nowrap;box-shadow:var(--shadow-xs)" class="ccx-h1"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.150c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.240zm4.52-6.160c-.25-.12-1.47-.72-1.690-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.990-1.23-.74-.66-1.230-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.180.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"></path></svg>Request free sample lesson</a>
+      <a href="https://wa.me/19192015700?text=Send%20me%20a%20FREE%20sample%20lesson%20of%20Step%201%20crash%20course" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:999px;background:#25D366;color:#fff;font-size:13px;font-weight:600;white-space:nowrap;box-shadow:var(--shadow-xs)" class="ccx-h1"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.150c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.240zm4.52-6.160c-.25-.12-1.47-.72-1.690-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.990-1.23-.74-.66-1.230-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.180.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"></path></svg>Request free sample lesson</a>
       <a href="#offer" class="cc-hide-sm"><span class="btn btn--primary btn--sm">Enroll Now</span></a>
     </div>
   </nav>
@@ -827,7 +827,7 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
       <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.4vw,40px);letter-spacing:-0.02em;line-height:1.15;margin:0 0 14px;color:var(--uw-ink-900);text-wrap:balance">See how we teach before you enroll.</h2>
       <p style="margin:0 auto;max-width:52ch;font-size:16px;line-height:1.6;color:var(--uw-ink-600);text-wrap:pretty">See one of our 270+ Step&nbsp;2 mentors teach a high-yield Step&nbsp;1 topic. You'll see how every lesson works USMLE-style questions and content together, from the first minute.</p>
       <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:26px">
-        <a href="#contact" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;box-sizing:border-box;border-radius:999px;background:#25D366;color:#fff;font-size:16px;font-weight:600;white-space:nowrap;box-shadow:var(--shadow-sm)" class="ccx-h1"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.150c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.240zm4.52-6.160c-.25-.12-1.47-.72-1.690-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.990-1.23-.74-.66-1.230-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.180.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"></path></svg>Request a free sample lesson</a>
+        <a href="https://wa.me/19192015700?text=Send%20me%20a%20FREE%20sample%20lesson%20of%20Step%201%20crash%20course" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;box-sizing:border-box;border-radius:999px;background:#25D366;color:#fff;font-size:16px;font-weight:600;white-space:nowrap;box-shadow:var(--shadow-sm)" class="ccx-h1"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.150c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.240zm4.52-6.160c-.25-.12-1.47-.72-1.690-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.990-1.23-.74-.66-1.230-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.180.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"></path></svg>Request a free sample lesson</a>
         <span style="font-size:13px;color:var(--uw-ink-500)">We'll send it to you on WhatsApp.</span>
       </div>
     </div>
@@ -1189,30 +1189,66 @@ $styles_v = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/usmle-design-system/
   }
   startMarquee();
 
-  // Hero image autosize: ported from the design's _fitHero(). On wide screens
-  // the hero photo targets 720px, but shrinks itself so the Enroll button
-  // below it never gets pushed past the first viewport.
-  function fitHero() {
+  // Hero image autosize: ported from the design's _fitHero(). The hero photo
+  // targets 720px on wide screens (the full column width on phones) but shrinks
+  // itself so the Enroll button below it never gets pushed past the first
+  // viewport. On phones it keeps a 40px gap between the button and the bottom
+  // edge (Manik's feedback: the button was sitting right on the edge).
+  var lastW = -1;
+  function fitHero(force) {
     var img = document.querySelector('.cc-hero-img');
     var hero = document.querySelector('.cc-hero');
     if (!img || !hero) return;
     var btn = hero.lastElementChild;
-    if (window.innerWidth <= 560) { img.style.maxWidth = ''; return; }
-    img.style.maxWidth = '720px';
-    var imgH = img.getBoundingClientRect().height;
+    var phone = window.innerWidth <= 560;
+    // On phones the address bar slides away while scrolling and fires a resize
+    // each time; only re-fit when the width really changed so the image never
+    // jumps mid-scroll.
+    if (phone && force !== true && window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    img.style.maxWidth = phone ? '' : '720px';
+    var box = img.getBoundingClientRect();
     var btnBottom = btn.getBoundingClientRect().bottom + window.scrollY;
-    var target = window.innerHeight - 28;
+    var target = window.innerHeight - (phone ? 40 : 28);
     var over = btnBottom - target;
-    if (over > 0) img.style.maxWidth = Math.max(260, Math.min(720, (imgH - over) * 16 / 9)) + 'px';
+    if (over > 0) img.style.maxWidth = Math.min(box.width, Math.max(260, (box.height - over) * 16 / 9)) + 'px';
   }
   function fitLater(n) {
     n = n || 0;
     if (!document.querySelector('.cc-hero-img')) { if (n < 100) setTimeout(function () { fitLater(n + 1); }, 100); return; }
-    fitHero();
-    setTimeout(fitHero, 400);
+    fitHero(true);
+    setTimeout(function () { fitHero(true); }, 400);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fitHero(true); });
   }
   fitLater();
-  window.addEventListener('resize', fitHero);
+  window.addEventListener('resize', function () { fitHero(); });
+})();
+</script>
+<script>
+(function () {
+  // Enroll buttons on phones and tablets: scroll so the whole price card (price,
+  // "Get Access Now", promo box and the STEP100 note) is on screen instead of
+  // stopping at the top of the section, where the bottom of the card sat below
+  // the fold. The section heading may slide up under the nav; the card's top is
+  // never allowed to. Every enroll link keeps href="#offer" so js/uw-track.js
+  // still counts the click. Desktop keeps the plain anchor jump.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#offer"]');
+    if (!a || window.innerWidth > 880) return;
+    var sec = document.getElementById('offer');
+    var pay = sec && sec.querySelector('.cc-offer-pay');
+    if (!sec || !pay) return;
+    e.preventDefault();
+    var nav = document.querySelector('.cc-nav');
+    var navH = nav ? nav.getBoundingClientRect().height : 0;
+    var y0 = window.pageYOffset;
+    var eyebrow = sec.querySelector('.cc-offer-eyebrow') || sec;
+    var start = eyebrow.getBoundingClientRect().top + y0 - navH - 16;   // eyebrow just under the nav
+    var r = pay.getBoundingClientRect();
+    var showBottom = r.bottom + y0 - window.innerHeight + 16;           // card fully above the bottom edge
+    var maxDown = r.top + y0 - navH - 12;                               // never hide the card's top
+    window.scrollTo(0, Math.max(0, Math.min(Math.max(start, showBottom), maxDown)));
+  });
 })();
 </script>
 <script>
