@@ -16,7 +16,8 @@
     // Step 2 and Step 3 sell this month's live cohort (Mastery src/lib/cohorts.ts) plus the recorded Step 2/3 course.
     'step2-live': { eyebrow: 'Step 2 Live Crash Course', item: 'Step 2 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
     'step3-live': { eyebrow: 'Step 3 Live Crash Course', item: 'Step 3 Live Crash Course', sub: 'This month’s cohort + recorded course', price: 49900 },
-    cdbu1brx0peuyo75xzpwjcota: { eyebrow: 'Step 1 Live Crash Course', item: 'Step 1 Live Crash Course', sub: 'One-time payment', price: 49900 },
+    // Step 1 sells the Step 1 cohort on sale now (Mastery src/lib/step1-cohorts.ts), with the 90-day QBank.
+    'step1-live': { eyebrow: 'Step 1 Live Crash Course', item: 'Step 1 Live Crash Course', sub: 'Next live cohort + 90-day QBank', price: 49900 },
     // Research Wise live registration closed 2026-11-15; the page sells the recordings course instead.
     'research-wise-recordings': { eyebrow: 'Research Wise', item: 'Session recordings & resources', sub: 'All 3 sessions + notes', price: 2000 },
     // Since 2026-11-16 each session is sold on its own ($20 each). The buyer ticks one or more days
@@ -428,7 +429,8 @@
   // Take over the page's Mastery buy forms. Runs after each form's own submit
   // handlers, so a form that blocks itself (e.g. a bad code) stays blocked.
   // Old buy forms name the recorded Step 2/3 course; they now sell the Step 2 cohort.
-  var FORM_PRODUCT = { cmtb3d8b90n2oqyu2t9a69zlc: 'step2-live' };
+  // Step 1 forms name the first (November 2026) cohort; they now sell the Step 1 cohort on sale.
+  var FORM_PRODUCT = { cmtb3d8b90n2oqyu2t9a69zlc: 'step2-live', cdbu1brx0peuyo75xzpwjcota: 'step1-live' };
   // Step 3 pages link to this Stripe payment link; clicks open the popup instead.
   var STEP3_LINK = 'buy.stripe.com/eVq9AUe5sfTDbx6604es03c';
   function courseOf(f) {
